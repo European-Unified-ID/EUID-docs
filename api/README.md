@@ -1,5 +1,5 @@
 # Getting Started with EUID
-For EUID definition, forms, guiding principles, components, and other conceptual details, see [European Unified ID Overview](../README.md).
+For EUID definition, forms, guiding principles, components, differences between UID2 and EUID, and other conceptual details, see [European Unified ID Overview](../README.md).
 
 This page provides the following information required for you to get started with the EUID API:
 * [Contact Info](#contact-info)
@@ -17,8 +17,8 @@ To access to EUID, contact the appropriate team at The Trade Desk listed below.
 
 | Your Role | Contact Email |
 | :--- | :--- |
-| App Developer<br>Publisher | TBD |
-| Agency<br>Brand<br>CDP<br>Data Provider<br>DSP<br>SSP | TBD |
+| App Developer<br>Publisher | EUIDpublishers@thetradedesk.com |
+| Agency<br>Brand<br>CDP<br>Data Provider<br>DSP<br>SSP | EUIDpartners@thetradedesk.com |
 
 ## API Versions
 
