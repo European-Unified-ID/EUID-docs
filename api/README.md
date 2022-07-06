@@ -24,7 +24,26 @@ To access to EUID, contact the appropriate team at The Trade Desk listed below.
 
 ## API Versions
 
-Currently, there are two versions of the EUID APIs: [EUID API v1](./v1/README.md). 
+The current version of EUID APIs is v1.
+
+## Environment 
+
+All EUID endpoints use the same base URL.
+
+| Environment | Base URL |
+| :--- | :--- |
+| Testing | ```https://integ.euid.eu/v2``` |
+| Production | ```https://prod.euid.eu/v1``` |
+
+For example, https://operator-integ.uidapi.com/v2/token/generate
+
+## Authentication and Authorization
+
+To authenticate to EUID endpoints, you need the following:
+
+- A client API key, which is to be included as a bearer token in the request's authorization header. 
+  <br/>```Authorization: Bearer YourTokenBV3tua4BXNw+HVUFpxLlGy8nWN6mtgMlIk=```
+- A client secret for encrypting API requests and decrypting API responses for all endpoints, except [POST /token/refresh](./endpoints/post-token-refresh.md). <br/>For details and Python examples, see [Encrypting Requests and Decrypting Responses](./encryption-decryption.md).
 
 
 ## Email Address Normalization
@@ -48,51 +67,6 @@ Email hashes are base64-encoded SHA256 hashes of the normalized email address.
 | Normalized email address | `user@example.com` | |
 | SHA256 of email address | `b4c9a289323b21a01c3e940f150eb9b8c542587f1abfd8f0e1cc1ffc5e475514` | |
 | base64-encoded SHA256 of email address | `tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ=` | Use this encoding for `email_hash` values sent in the request body. |
-
-## Phone Number Normalization
-
->IMPORTANT: You must normalize phone numbers before sending them in a request, regardless of whether you send them hashed or unhashed in a request.
-
-Here's what you need to know about phone number normalization rules:
-
-- The EUID Operator accepts phone numbers in the [E.164](https://en.wikipedia.org/wiki/E.164) format, which is the international telephone number format that ensures global uniqueness. 
-- E.164 phone numbers can have a maximum of 15 digits.
-- Normalized E.164 phone numbers use the following syntax: `[+] [country code] [subscriber number including area code]`, with no spaces, hyphens, parentheses, or other special characters. For example, the phone numbers `+123 44 555-66-77` and `1 (123) 456-7890` must be normalized as `+123445556677` and `+11234567890`, respectively.
-
-## Phone Number Hash Encoding
-
-Phone number hashes are base64-encoded SHA256 hashes of the normalized phone number.
-
-| Type | Example | Usage |
-| :--- | :--- | :--- |
-| Normalized phone number | `+12345678901` | |
-| SHA256 of phone number | `c1d3756a586b6f0d419b3e3d1b328674fbc6c4b842367ee7ded780390fc548ae` | |
-| base64-encoded SHA256 of phone number | `wdN1alhrbw1Bmz49GzKGdPvGxLhCNn7n3teAOQ/FSK4=` | Use this encoding for `phone_hash` values sent in the request body. |
-
-
-
-
-
-
-## Environment 
-
-All EUID endpoints use the same base URL.
-
-| Environment | Base URL |
-| :--- | :--- |
-| Testing | ```https://operator-integ.uidapi.com/v2``` |
-| Production | ```https://prod.uidapi.com/v2``` |
-
-For example, https://operator-integ.uidapi.com/v2/token/generate
-
-## Authentication and Authorization
-
-To authenticate to EUID endpoints, you need the following:
-
-- A client API key, which is to be included as a bearer token in the request's authorization header. 
-  <br/>```Authorization: Bearer YourTokenBV3tua4BXNw+HVUFpxLlGy8nWN6mtgMlIk=```
-- A client secret for encrypting API requests and decrypting API responses for all endpoints, except [POST /token/refresh](./endpoints/post-token-refresh.md). <br/>For details and Python examples, see [Encrypting Requests and Decrypting Responses](./encryption-decryption.md).
-
 
 ## License
 All work and artifacts are licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt).
