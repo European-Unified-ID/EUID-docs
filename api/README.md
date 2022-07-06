@@ -41,7 +41,7 @@ To authenticate to EUID endpoints, you need the following:
 
 - A client API key, which is to be included as a bearer token in the request's authorization header. 
   <br/>```Authorization: Bearer YourTokenBV3tua4BXNw+HVUFpxLlGy8nWN6mtgMlIk=```
-- A client secret for encrypting API requests and decrypting API responses for all endpoints, except [POST /token/refresh](./endpoints/post-token-refresh.md). <br/>For details and Python examples, see [Encrypting Requests and Decrypting Responses](./encryption-decryption.md).
+- A client secret for encrypting API requests and decrypting API responses for all endpoints, except [POST /token/refresh](./v1/endpoints/post-token-refresh.md). <br/>For details and Python examples, see [Encrypting Requests and Decrypting Responses](./v1/encryption-decryption.md).
 
 
 ## Email Address Normalization
