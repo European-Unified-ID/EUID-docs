@@ -1,4 +1,4 @@
-[EUID API Documentation](../../README.md) > [v2](./README.md) > Encrypting Requests and Decrypting Responses
+[EUID API Documentation](../../README.md) > [v1](./README.md) > Encrypting Requests and Decrypting Responses
 
 # Encrypting Requests and Decrypting Responses
 
