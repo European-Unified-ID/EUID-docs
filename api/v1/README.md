@@ -1,6 +1,6 @@
 # EUID API Documentation
 
-For EUID definition, forms, guiding principles, components, and other conceptual details, see [EUID Overview](../../README.md). For contact and license information, as well as normalization and hash encoding rules, see [Getting Started with EUID](../README.md).
+For EUID definition, forms, guiding principles, components, and other conceptual details, see [EUID Overview](../../README.md). For contact and license information, normalization and hash encoding rules, and other requirements, see [Getting Started with EUID](../README.md).
 
 For details on using the API, see the following pages.
 
