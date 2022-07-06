@@ -20,7 +20,7 @@ To access to EUID, contact the appropriate team at The Trade Desk listed below.
 | App Developer<br>Publisher | EUIDpublishers@thetradedesk.com |
 | Agency<br>Brand<br>CDP<br>Data Provider<br>DSP<br>SSP | EUIDpartners@thetradedesk.com |
 
-## API Versions
+## API Version
 
 The current version of EUID APIs is v1.
 
