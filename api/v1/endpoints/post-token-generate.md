@@ -1,4 +1,4 @@
-[EUID API Documentation](../../README.md) > [v2](../README.md) > [Endpoints](./README.md) > POST /token/generate
+[EUID API Documentation](../../README.md) > [v1](../README.md) > [Endpoints](./README.md) > POST /token/generate
 
 # POST /token/generate
 Generate an EUID token from a hashed or unhashed email address or phone number.
