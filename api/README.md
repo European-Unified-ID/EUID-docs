@@ -32,10 +32,10 @@ All EUID endpoints use the same base URL.
 
 | Environment | Base URL |
 | :--- | :--- |
-| Testing | ```https://integ.euid.eu/v2``` |
+| Testing | ```https://integ.euid.eu/v1``` |
 | Production | ```https://prod.euid.eu/v1``` |
 
-For example, https://operator-integ.uidapi.com/v2/token/generate
+For example, https://integ.euid.eu/v1/token/generate
 
 ## Authentication and Authorization
 
