@@ -1,4 +1,4 @@
-# EUID API Documentation
+# Getting Started with EUID
 For EUID definition, forms, guiding principles, components, and other conceptual details, see [UID2 Overview](../README.md).
 
 This page provides the following information required for you to get started with the UID2 API:
