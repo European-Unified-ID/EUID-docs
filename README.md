@@ -1,2 +1,2 @@
 # European Unified ID Overview
-TBD
+TBD, differences, etc
