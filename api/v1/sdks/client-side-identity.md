@@ -2,7 +2,7 @@
 
 # EUID Client-Side Identity JavaScript SDK
 
-The EUID SDK is intended to facilitate the process of establishing client identity using EUID and retrieving advertising tokens. The following sections describe the high-level [workflow](#workflow-overview) for establishing EUID identity, provide the SDK [API reference](#api-reference), and explain the [EUID cookie format](#euid-cookie-format). 
+The EUID SDK is intended to facilitate the process of establishing client identity using EUID and retrieving advertising tokens. The following sections describe the high-level [workflow](#workflow-overview) for establishing EUID identity, provide the SDK [API reference](#api-reference), and explain the [EUID cookie format](#euid-cookie-format).
 For integration steps for content publishers, see [EUID SDK Integration Guide](../guides/publisher-client-side.md). 
 
 >NOTE: Within this documentation, the term "identity" refers to a package of EUID tokens, including the advertising token.
