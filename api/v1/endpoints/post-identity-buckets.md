@@ -6,7 +6,7 @@ Monitor rotated salt buckets. This endpoint is intended for use by [Advertisers/
 
 ## Request Format
 
-```POST '{environment}/v2/identity/buckets'```
+```POST '{environment}/v1/identity/buckets'```
 
 >IMPORTANT: You must encrypt all request using your secret. For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../encryption-decryption.md).
 
@@ -14,7 +14,7 @@ Monitor rotated salt buckets. This endpoint is intended for use by [Advertisers/
 
 | Path Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
-| `{environment}` | string | Required | Testing environment: `https://operator-integ.uidapi.com`<br/>Production environment: `https://prod.uidapi.com` |
+| `{environment}` | string | Required | Testing environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu` |
 
 ### Unencrypted JSON Body Parameters
 
