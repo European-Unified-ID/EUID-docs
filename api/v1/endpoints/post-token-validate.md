@@ -7,7 +7,7 @@ Validate that an advertising token matches the specified hashed or unhashed emai
 
 ## Request Format 
 
-```POST '{environment}/v2/token/validate'```
+```POST '{environment}/v1/token/validate'```
 
 >IMPORTANT: You must encrypt all request using your secret. For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../encryption-decryption.md).
 
@@ -16,22 +16,20 @@ Validate that an advertising token matches the specified hashed or unhashed emai
 
 | Path Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
-| `{environment}` | string | Required | Testing environment: `https://integ.uidapi.com`<br/>Production environment: `https://prod.uidapi.com` |
+| `{environment}` | string | Required | Testing environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu` |
 
 
 ###  Unencrypted JSON Body Parameters
 
-- You must include only one of the following parameters: `email`, `email_hash`, `phone`, or `phone_hash`. 
+- You must include only one of the following parameters: `email` or `email_hash`. 
 - Include the required body parameters as key-value pairs in the JSON body of a request when encrypting it.
-- To test identities, use the `validate@email.com` email address or `+12345678901` phone number. For details, see the FAQs sections in the [EUID SDK Integration Guide](../guides/publisher-client-side.md) and [Server-Only Integration Guide](../guides/custom-publisher-integration.md) for publishers.
+- To test identities, use the `validate@email.com` email address. For details, see the FAQs sections in the [EUID SDK Integration Guide](../guides/publisher-client-side.md) and [Server-Only Integration Guide](../guides/custom-publisher-integration.md) for publishers.
 
 | Body Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
 | `token` | string | Required | The advertising token returned by the [POST /token/generate](./post-token-generate.md) response. |
 | `email` | string | Conditionally Required |  The email address for token validation. |
 | `email_hash` | string | Conditionally Required | The [base64-encoded SHA256](../../README.md#email-address-hash-encoding) hash of a [normalized](../../README.md#email-address-normalization) email address for token validation. |
-| `phone` | string | Conditionally Required | The [normalized](../../README.md#phone-number-normalization) phone number for which to generate tokens. |
-| `phone_hash` | string | Conditionally Required | The [base64-encoded SHA256](../../README.md#email-address-hash-encoding) hash of a [normalized](../../README.md#phone-number-normalization) phone number. |
 
 
 ### Request Examples
@@ -47,18 +45,6 @@ The following are unencrypted JSON request body examples for each parameter, whi
 {
     "token": "AdvertisingTokenmZ4dZgeuXXl6DhoXqbRXQbHlHhA96leN94U1uavZVspwKXlfWETZ3b%2FbesPFFvJxNLLySg4QEYHUAiyUrNncgnm7ppu0mi6wU2CW6hssiuEkKfstbo9XWgRUbWNTM%2BewMzXXM8G9j8Q%3D",
     "email_hash": "tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ="
-}
-```
-```json
-{
-    "token": "AdvertisingTokenmZ4dZgeuXXl6DhoXqbRXQbHlHhA96leN94U1uavZVspwKXlfWETZ3b%2FbesPFFvJxNLLySg4QEYHUAiyUrNncgnm7ppu0mi6wU2CW6hssiuEkKfstbo9XWgRUbWNTM%2BewMzXXM8G9j8Q%3D",
-    "phone": "+12345678901"
-}
-```
-```json
-{
-    "token": "AdvertisingTokenmZ4dZgeuXXl6DhoXqbRXQbHlHhA96leN94U1uavZVspwKXlfWETZ3b%2FbesPFFvJxNLLySg4QEYHUAiyUrNncgnm7ppu0mi6wU2CW6hssiuEkKfstbo9XWgRUbWNTM%2BewMzXXM8G9j8Q%3D",
-    "phone_hash": "wdN1alhrbw1Bmz49GzKGdPvGxLhCNn7n3teAOQ/FSK4="
 }
 ```
 
@@ -100,7 +86,7 @@ A successful decrypted response returns a boolean value that indicates the valid
 
 | Property | Data Type | Description |
 | :--- | :--- | :--- |
-| `body` | boolean | A value of `true` indicates that the email address, phone number, or the respective hash specified in the request is the same as the one used to generate the advertising token.<br/><br/>A value of `false` indicates any of the following:<br/>- The request included an invalid advertising token.<br/>-  The email address, phone number, or the respective hash specified in the request is either different from the one used to generate the advertising token or is not for the testing email `validate@email.com` `+12345678901` phone number. |
+| `body` | boolean | A value of `true` indicates that the email address or email address hash specified in the request is the same as the one used to generate the advertising token.<br/><br/>A value of `false` indicates any of the following:<br/>- The request included an invalid advertising token.<br/>-  The email address or email address hash specified in the request is either different from the one used to generate the advertising token or is not for the testing email `validate@email.com`. |
 
 ### Response Status Codes
 
