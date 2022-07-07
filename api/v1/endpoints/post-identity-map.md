@@ -2,17 +2,17 @@
 
 # POST /identity/map
 
-Map multiple email addresses, phone numbers, or respective hashes to their EUIDs and salt bucket IDs. This endpoint is intended for use by [Advertisers/Data Providers](../guides/advertiser-dataprovider-guide.md).
+Map multiple email addresses or email address hashes to their EUIDs and salt bucket IDs. This endpoint is intended for use by [Advertisers/Data Providers](../guides/advertiser-dataprovider-guide.md).
 
 Here's what you need to know:
 - The maximum request size is 1MB. 
-- To map a large number of email addresses, phone numbers, or respective hashes, send them in *sequential* batches with a maximum batch size of 5,000 items per batch.
+- To map a large number of email addresses or email address hashes, send them in *sequential* batches with a maximum batch size of 5,000 items per batch.
 - Do not send batches in parallel.
 
 
 ## Request Format
 
-```POST '{environment}/v2/identity/map'```
+```POST '{environment}/v1/identity/map'```
 
 >IMPORTANT: You must encrypt all request using your secret. For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../encryption-decryption.md).
 
@@ -20,7 +20,7 @@ Here's what you need to know:
 
 | Path Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
-| `{environment}` | string | Required | Testing environment: `https://operator-integ.uidapi.com`<br/>Production environment: `https://prod.uidapi.com` |
+| `{environment}` | string | Required | Testing environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu` |
 
 ###  Unencrypted JSON Body Parameters
 
@@ -30,8 +30,6 @@ Here's what you need to know:
 | :--- | :--- | :--- | :--- |
 | `email` | string array | Conditionally Required | The list of email addresses to be mapped. |
 | `email_hash` | string array | Conditionally Required | The list of [base64-encoded SHA256](../../README.md#email-address-hash-encoding) hashes of [normalized](../../README.md#email-address-normalization) email addresses. |
-| `phone` | string array | Conditionally Required | The list of [normalized](../../README.md#phone-number-normalization) phone numbers to be mapped. |
-| `phone_hash` | string array | Conditionally Required | The list of [base64-encoded SHA256](../../README.md#email-address-hash-encoding) hashes of [normalized](../../README.md#phone-number-normalization) phone numbers. |
 
 
 ### Request Examples
@@ -54,22 +52,7 @@ The following are unencrypted JSON request body examples for each parameter, one
     ]    
 }
 ```
-```json
-{
-    "phone":[
-        "+1111111111",
-        "+2222222222"
-    ]  
-}
-```
-```json
-{
-    "phone_hash":[
-        "eVvLS/Vg+YZ6+z3i0NOpSXYyQAfEXqCZ7BTpAjFUBUc=",
-        "tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ="
-    ]    
-}
-```
+
 
 Here's an encrypted identity mapping request format with placeholder values:
 
@@ -80,10 +63,10 @@ echo '[Unencrypted-JSON-Request-Body]' \
   | decrypt_response.py [Your-Client-Secret] 
 ```
 
-Here's an encrypted identity mapping request example for an email hash:
+Here's an encrypted identity mapping request example for email addresses:
 
 ```sh
-echo '{"phone": ["+1111111111", "+2222222222"]}' \
+echo '{"email": ["user@example.com", "user2@example.com"]}' \
   | encrypt_request.py DELPabG/hsJsZk4Xm9Xr10Wb8qoKarg4ochUdY9e+Ow= \
   | curl -X POST 'https://prod.uidapi.com/v2/identity/map' -H 'Authorization: Bearer YourTokenBV3tua4BXNw+HVUFpxLlGy8nWN6mtgMlIk=' \
   | decrypt_response.py DELPabG/hsJsZk4Xm9Xr10Wb8qoKarg4ochUdY9e+Ow= 
@@ -95,7 +78,7 @@ For details and Python script examples, see [Encrypting Requests and Decrypting 
 
 >NOTE: The responses are encrypted only if the HTTP status code is 200. Otherwise, the response is not encrypted.
 
-A successful decrypted response returns the EUIDs and salt bucket IDs for the specified email addresses, phone numbers, or respective hashes.
+A successful decrypted response returns the EUIDs and salt bucket IDs for the specified email addresses email address hashes.
 
 ```json
 {
@@ -121,7 +104,7 @@ A successful decrypted response returns the EUIDs and salt bucket IDs for the sp
 
 | Property | Data Type | Description |
 | :--- | :--- | :--- |
-| `identifier` | string | The email address, phone number, or respective hash specified in the request body. |
+| `identifier` | string | The email address or email address hash specified in the request body. |
 | `advertising_id` | string | The corresponding advertising ID (raw EUID). |
 | `bucket_id` | string | The ID of the salt bucket used to generate the EUID. |
 
