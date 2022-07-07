@@ -37,7 +37,7 @@ For example, https://integ.euid.eu/v1/token/generate
 
 ## Authentication and Authorization
 
-To authenticate to EUID endpoints, you need the following:
+To authenticate to the EUID endpoints, you need the following:
 
 - A client API key, which is to be included as a bearer token in the request's authorization header. 
   <br/>```Authorization: Bearer YourTokenBV3tua4BXNw+HVUFpxLlGy8nWN6mtgMlIk=```
