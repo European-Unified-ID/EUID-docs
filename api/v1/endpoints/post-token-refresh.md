@@ -11,7 +11,7 @@ The following integration workflows use this endpoint:
 
 ## Request Format 
 
-```POST '{environment}/v2/token/refresh'```
+```POST '{environment}/v1/token/refresh'```
 
 Here's what you need to know about this endpoint:
 
@@ -24,14 +24,11 @@ Here's what you need to know about this endpoint:
 
 | Path Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
-| `{environment}` | string | Required | Testing environment: `https://operator-integ.uidapi.com`<br/>Production environment: `https://prod.uidapi.com` |
+| `{environment}` | string | Required | Testing environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu` |
 
 #### Testing Notes
 
-Using either of the following parameters in a [POST /token/generate](./post-token-generate.md) request always generates an identity response with a `refresh_token` that results in a logout response when used with the `POST /token/refresh` endpoint:
-
-- The `optout@email.com` email address
-- The `+00000000000` phone number
+Using the `optout@email.com` email address in a [POST /token/generate](./post-token-generate.md) request always generates an identity response with a `refresh_token` that results in a logout response when used with the `POST /token/refresh` endpoint.
 
 ### Request Example
 
