@@ -47,8 +47,6 @@ The following are unencrypted JSON request body examples for each parameter, one
     "email_hash": "tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ="
 }
 ```
-```json
-
 
 Here's an encrypted token generation request format with placeholder values:
 
