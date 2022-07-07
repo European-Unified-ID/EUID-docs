@@ -1,7 +1,7 @@
 [EUID API Documentation](../../README.md) > [v1](../README.md) > [Endpoints](./README.md) > POST /token/generate
 
 # POST /token/generate
-Generate an EUID token from a hashed or unhashed email address or phone number.
+Generate an EUID token from a hashed or unhashed email address.
 
 The following integration workflows use this endpoint:
 * [Publisher - Standard](../guides/publisher-client-side.md)
@@ -9,7 +9,7 @@ The following integration workflows use this endpoint:
 
 ## Request Format 
 
-```POST '{environment}/v2/token/generate'```
+```POST '{environment}/v1/token/generate'```
 
 Here's what you need to know about this endpoint requests:
 - To ensure that the API key used to access the service remains secret, EUID tokens must be generated only on the server side after authentication. 
@@ -19,7 +19,7 @@ Here's what you need to know about this endpoint requests:
 
 | Path Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
-| `{environment}` | string | Required | Testing environment: `https://operator-integ.uidapi.com`<br/>Production environment: `https://prod.uidapi.com` |
+| `{environment}` | string | Required | Testing environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu` |
 
 ###  Unencrypted JSON Body Parameters
 
@@ -29,8 +29,6 @@ You must include only one of the following parameters as a key-value pair in the
 | :--- | :--- | :--- | :--- |
 | `email` | string | Conditionally Required | The email address for which to generate tokens. | 
 | `email_hash` | string | Conditionally Required | The [base64-encoded SHA256](../../README.md#email-address-hash-encoding) hash of a [normalized](../../README.md#email-address-normalization) email address. |
-| `phone` | string | Conditionally Required | The [normalized](../../README.md#phone-number-normalization) phone number for which to generate tokens. |
-| `phone_hash` | string | Conditionally Required | The [base64-encoded SHA256](../../README.md#email-address-hash-encoding) hash of a [normalized](../../README.md#phone-number-normalization) phone number. | 
 
 
 ### Request Examples
@@ -50,15 +48,7 @@ The following are unencrypted JSON request body examples for each parameter, one
 }
 ```
 ```json
-{
-    "phone": "+12345678901"
-}
-```
-```json
-{
-    "phone_hash": "wdN1alhrbw1Bmz49GzKGdPvGxLhCNn7n3teAOQ/FSK4="
-}
-```
+
 
 Here's an encrypted token generation request format with placeholder values:
 
@@ -84,7 +74,7 @@ For details and Python script examples, see [Encrypting Requests and Decrypting 
 
 >NOTE: The responses are encrypted only if the HTTP status code is 200. Otherwise, the response is not encrypted.
 
-A successful decrypted response returns the user's advertising and refresh tokens for the specified email address, phone number, or the respective hash. 
+A successful decrypted response returns the user's advertising and refresh tokens for the specified email address or email address hash. 
 
 ```json
 {
@@ -131,5 +121,3 @@ If the `status` value is other than `success`, the `message` field provides addi
 | :--- | :--- | :--- | :--- |
 | Email | `validate@email.com` | Test that the `advertising_token` you've cached matches the `advertising_token` for the specified email address. | [POST /token/validate](./post-token-validate.md) |
 | Email | `optout@email.com` | Using this email for the request always generates an identity response with a `refresh_token` that results in a logout response. | [POST /token/refresh](./post-token-refresh.md) |
-| Phone | `+12345678901` | Test that the `advertising_token` you've cached matches the `advertising_token` for the specified phone number. | [POST /token/validate](./post-token-validate.md) |
-| Phone | `+00000000000` | Using this phone number for the request always generates an identity response with a `refresh_token` that results in a logout response. | [POST /token/refresh](./post-token-refresh.md) |
