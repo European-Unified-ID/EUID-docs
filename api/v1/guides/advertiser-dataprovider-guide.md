@@ -37,7 +37,7 @@ Even though each salt bucket is updated roughly once a year, individual bucket u
 | 3-c | [POST /identity/map](../endpoints/post-identity-map.md) | Compare the returned `bucket_id` to the salt buckets of EUIDs you've cached.<br>If a EUID's salt bucket rotated, resend the PII to the identity mapping service for a new EUID. |
 | 3-d | [POST /identity/map](../endpoints/post-identity-map.md) | Store the returned `advertising_id` and `bucket_id`. |
 
-### Use an incremental process to continuously update EUID
+### Use an incremental process to continuously update EUIDs
 
 Continuously update and maintain EUID-based audiences utilizing the preceding steps.
 
