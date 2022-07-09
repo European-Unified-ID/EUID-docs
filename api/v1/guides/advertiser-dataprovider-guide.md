@@ -1,6 +1,6 @@
 [EUID API Documentation](../../README.md) > [v1](../README.md) > [Integration Guides](README.md) > Advertiser/Data Provider Integration Guide
 
-# Advertiser/Data Provider Integration Guide
+# Advertiser and Data Provider Integration Guide
 
 This guide covers integration steps for organizations that collect user data and push it to DSPs. Data collectors include advertisers, data on-boarders, measurement providers, identity graph providers, third-party data providers, and other organizations who send data to DSPs. The guide includes the following sections:
 
