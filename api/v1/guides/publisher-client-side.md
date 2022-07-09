@@ -137,7 +137,7 @@ You can use the [POST /token/validate](../endpoints/post-token-validate.md) endp
 
 ### How can I test the refresh token logout workflow?
 
-You can use the `optout@email.com` email address to test your token refresh workflow. Using this parameter value in a request always generates an identity response with a `refresh_token` that results in a logout response.
+You can use the `optout@email.com` email address to test your token refresh workflow. Using this email addrees in a request always generates an identity response with a `refresh_token` that results in a logout response.
 
 1. Send a [POST /token/generate](../endpoints/post-token-generate.md) request using one of the following values:
     - The `optout@email.com` as the `email` value.
