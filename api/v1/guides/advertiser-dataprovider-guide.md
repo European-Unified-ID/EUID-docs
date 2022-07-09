@@ -7,8 +7,6 @@ This guide covers integration steps for organizations that collect user data and
 * [Integration Steps](#integration-steps)
 * [FAQs](#faqs)
 
-If you are using an Open Operator service hosted in the Snowflake Data Marketplace, see also [Snowflake Integration](../sdks/snowflake_integration.md).
-
 ## Integration Steps
 
 The following diagram outlines the steps data collectors need to complete to map PII to EUID identifiers for audience-building and targeting. PII refers to a user's normalized email address or SHA256-hashed and normalized email address.
