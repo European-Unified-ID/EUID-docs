@@ -16,7 +16,7 @@ For integration guides, supported SDKs, and endpoint reference, see [EUID API Do
 
 Addressable advertising enables publishers and developers to provide the content and services consumers have come to enjoy, whether through mobile apps, streaming TV, or web experiences. This value exchange has not always been well understood by, or communicated to, consumers. As the industry reduces reliance on the third-party cookie, there is an opportunity to improve how we reach consumers with relevant advertising across the open internet. The solution is an identification system in which content creators and consumers both benefit from improved engagement opportunities with transparent control over consumer data.
 
-EUID is a deterministic identifier based on PII (for example, email or phone number) with user transparency and privacy controls. The EUID identifier enables logged-in experiences from publisher websites, mobile apps, and CTV apps to monetize through programmatic workflows. Benefitting from several layers of security and privacy measures, EUIDs can be safely distributed across the open internet. EUID is a non-proprietary standard and accessible to constituents across the advertising ecosystem--including advertisers, publishers, DSPs, SSPs, SSOs, CDPs, CMPs,identity providers, data providers, and measurement providers--while they remain in compliance with a code of conduct.
+EUID is a deterministic identifier based on PII, such as email addresses, with user transparency and privacy controls. The EUID identifier enables logged-in experiences from publisher websites, mobile apps, and CTV apps to monetize through programmatic workflows. Benefitting from several layers of security and privacy measures, EUIDs can be safely distributed across the open internet. EUID is a non-proprietary standard and accessible to constituents across the advertising ecosystem--including advertisers, publishers, DSPs, SSPs, SSOs, CDPs, CMPs,identity providers, data providers, and measurement providers--while they remain in compliance with a code of conduct.
 
 EUID’s goal is to enable deterministic identity for advertising opportunities on the open internet with consumer transparency and controls in place. EUID provides a collaborative framework for all constituents and a healthy, open internet by utilizing a transparent and interoperable approach.
 
@@ -203,7 +203,7 @@ The buy-side workflow consists of the following high-level steps:
 
 DSPs integrate with EUID to receive EUIDs from brands (as first-party data) and data providers (as third-party data) and leverage them to inform bidding on EUIDs in the bid stream.
 
-The integration must meet the following requirements:
+##### Requirements
 
 - Accept data in the form of EUIDs.
 - Bid on data in the form of EUIDs.
@@ -233,36 +233,41 @@ The data provider workflow consists of the following high-level steps:
 
 To generate EUIDs from users' PII, data providers must access the EUID Operator APIs. Some advertisers may choose to work through CDPs, data on-boarders, or other service providers instead.
 
-See also [Advertiser/Data Provider Integration Guide](/api/v1/guides/advertiser-dataprovider-guide.md).
-
 ##### Requirements
 
 - Integrate with the EUID Operator to generate EUIDs and handle salt bucket rotations.
 
+For details, see [Advertiser/Data Provider Integration Guide](/api/v1/guides/advertiser-dataprovider-guide.md).
+
 ### Publisher Workflow
+
+The following diagram illustrates the publisher workflow that applies to organizations that propagate IDs to the bid stream via SSPs. Publisher organizations include identity providers, publishers, and SSOs.
 
 ![Publisher Workflow](/images/publisher_workflow.jpg)
 
-This workflow is for organizations that propagate IDs to the bid stream via SSPs. Publisher organizations include identity providers, publishers, and SSOs.
-
-#### Publisher Workflow Overview
+The publisher workflow consists of the following high-level steps:
 
 1. A user visits a publisher website, mobile app, or CTV app.
 2. The publisher explains the value exchange of the open internet and requests the user to log in.
-3. Once the user logs in, the publisher sends the first-party PII and corresponding privacy settings to the EUID Operator via an SDK or direct API integration. A publisher may authorize an SSO provider or identity provider to pass PII and privacy settings on their behalf.
-4. The EUID Operator performs the salt, hash, and encryption process and returns the EUID Token.
-5. The publisher stores the EUID Token to share with SSPs during real-time bidding.
+3. After the user logs in, the publisher sends the first-party PII and corresponding privacy settings to the EUID Operator via an SDK or direct API integration. 
+   >NOTE: A publisher may authorize an SSO provider or identity provider to pass PII and privacy settings on their behalf.
+5. The EUID Operator completes the salt, hash, and encryption process and returns the EUID token.
+6. The publisher stores the EUID token to share with SSPs during real-time bidding.
     a. Server-side: The publisher stores the token in a mapping table, DMP, data lake, or other server-side application.
     b. Client-side: The publisher stores the token in a client-side app or in the user’s browser as a first-party cookie.
 6. The publisher sends the EUID token to the SSP at the time of impression.
 7. The SSP places a bid request using the EUID token, capturing it in the bid stream.
-8. The publisher requests updated EUID tokens using a refresh token. When applicable, the refresh token includes a user’s opt-out request.
+8. The publisher requests updated EUID tokens using a refresh token. When applicable, the refresh token includes the user’s opt-out request.
 
-#### Publisher Integration
+#### Publisher Integrations
 
-For integration scenarios, token management, and other details, see [Publisher Integration Guides](/api/v1/guides/README.md). See also [Endpoints](/api/v1/endpoints/README.md).
+For integration scenarios, token management, and other details, see the following documentation:
 
-##### Publisher Direct Integration
+- [EUID SDK Publisher Integration Guide](/api/v1/guides/publisher-client-side.md)
+- [Server-Only EUID Publisher Integration Guide](/api/v1/guides/custom-publisher-integration.md)
+- [Endpoints](/api/v1/endpoints/README.md)
+
+##### Direct Integration
 
 Publishers who want to send users' PII and generate EUIDs need to access the EUID Operator API.
 
@@ -272,21 +277,21 @@ Publishers who want to send users' PII and generate EUIDs need to access the EUI
 - Maintain refresh tokens or use the JavaScript client-side SDK provided by EUID to manage the refresh token.
 - Enable sending the EUID token to SSPs and other integrating organizations.
 
-##### Publisher Integration Through SSO or Identity Providers
+##### Integration Through SSO or Identity Providers
 
 Publishers may choose to work with an SSO or independent ID provider who is interoperable with EUID. The provider may handle the EUID integration on their behalf.
 
 #### User Trust Workflow
 
+The following diagram illustrates the publisher workflow that applies to users engaging with publishers or publisher-related SSOs and identity providers. This workflow allows a user to consent to the creation of a EUID and manage their EUID consent and privacy settings in the Opt-Out Portal.
+
 ![User Trust Workflow](/images/user_trust_workflow.jpg)
 
-This workflow is for users engaging with publishers or publisher-related SSOs and identity providers. This workflow allows a user to consent to the creation of a EUID and manage their EUID consent and privacy settings in the Opt-Out Portal.
+The user trust workflow consists of the following high-level steps:
 
-#### User Trust Workflow Overview
-
-1. Users visit the Opt-Out Portal where they can globally opt-out of EUID for all publishers.
-2. Opt-out requests are sent to EUID Administrator.
-3. EUID Administrators distribute the request to DSPs.
+1. Users visit the [Opt-Out Portal](#opt-out-portal) where they can globally opt-out of EUID for all publishers.
+2. Opt-out requests are sent to the EUID Administrator.
+3. The EUID Administrator distributes the request to DSPs.
 4. EUID Operators distribute the request to publishers utilizing the refresh token.
 
 ## FAQs
