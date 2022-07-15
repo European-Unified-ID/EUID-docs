@@ -10,6 +10,7 @@ This page provides the following information about EUID:
 - [FAQs](#faqs)
 - [License](#license)
 
+For integration guides, supported SDKs, and endpoint reference, see [EUID API Documentation](/api/v1/README.md). See also [Getting Started](/api/README.md).
 
 ## Introduction
 
