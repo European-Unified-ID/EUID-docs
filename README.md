@@ -259,7 +259,6 @@ The publisher workflow consists of the following high-level steps:
 7. The SSP places a bid request using the EUID token, capturing it in the bid stream.
 8. The publisher requests updated EUID tokens using a refresh token. When applicable, the refresh token includes the user’s opt-out request.
 
-#### Publisher Integrations
 
 For integration scenarios, token management, and other details, see the following documentation:
 
@@ -267,7 +266,7 @@ For integration scenarios, token management, and other details, see the followin
 - [Server-Only EUID Publisher Integration Guide](/api/v1/guides/custom-publisher-integration.md)
 - [Endpoints](/api/v1/endpoints/README.md)
 
-##### Direct Integration
+#### Direct Integration
 
 Publishers who want to send users' PII and generate EUIDs need to access the EUID Operator API.
 
@@ -277,19 +276,19 @@ Publishers who want to send users' PII and generate EUIDs need to access the EUI
 - Maintain refresh tokens or use the JavaScript client-side SDK provided by EUID to manage the refresh token.
 - Enable sending the EUID token to SSPs and other integrating organizations.
 
-##### Integration Through SSO or Identity Providers
+#### Integration Through SSO or Identity Providers
 
 Publishers may choose to work with an SSO or independent ID provider who is interoperable with EUID. The provider may handle the EUID integration on their behalf.
 
-#### User Trust Workflow
+### User Trust Workflow
 
-The following diagram illustrates the publisher workflow that applies to users engaging with publishers or publisher-related SSOs and identity providers. This workflow allows a user to consent to the creation of a EUID and manage their EUID consent and privacy settings in the Opt-Out Portal.
+The following diagram illustrates the publisher workflow that applies to users engaging with publishers or publisher-related SSOs and identity providers. This workflow allows a user to consent to the creation of a EUID and manage their EUID consent and privacy settings in the [Opt-Out Portal](#opt-out-portal).
 
 ![User Trust Workflow](/images/user_trust_workflow.jpg)
 
 The user trust workflow consists of the following high-level steps:
 
-1. Users visit the [Opt-Out Portal](#opt-out-portal) where they can globally opt-out of EUID for all publishers.
+1. Users visit the Opt-Out Portal where they can globally opt-out of EUID for all publishers.
 2. Opt-out requests are sent to the EUID Administrator.
 3. The EUID Administrator distributes the request to DSPs.
 4. EUID Operators distribute the request to publishers utilizing the refresh token.
