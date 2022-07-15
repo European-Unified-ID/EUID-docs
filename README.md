@@ -16,38 +16,24 @@ For integration guides, supported SDKs, and endpoint reference, see [EUID API Do
 
 Addressable advertising enables publishers and developers to provide the content and services consumers have come to enjoy, whether through mobile apps, streaming TV, or web experiences. This value exchange has not always been well understood by, or communicated to, consumers. As the industry reduces reliance on the third-party cookie, there is an opportunity to improve how we reach consumers with relevant advertising across the open internet. The solution is an identification system in which content creators and consumers both benefit from improved engagement opportunities with transparent control over consumer data.
 
-EUID is a deterministic identifier based on PII, such as email addresses, with user transparency and privacy controls. The EUID identifier enables logged-in experiences from publisher websites, mobile apps, and CTV apps to monetize through programmatic workflows. Benefitting from several layers of security and privacy measures, EUIDs can be safely distributed across the open internet. EUID is a non-proprietary standard and accessible to constituents across the advertising ecosystem--including advertisers, publishers, DSPs, SSPs, SSOs, CDPs, CMPs,identity providers, data providers, and measurement providers--while they remain in compliance with a code of conduct.
+EUID is a deterministic identifier based on PII, such as email addresses, with user transparency and privacy controls specific to the market requirements in Europe and the UK, including GDPR regulations and current consent framework limitations. The EUID identifier enables logged-in experiences from publisher websites, mobile apps, and CTV apps to monetize through programmatic workflows. Benefitting from several layers of security and privacy measures, EUIDs can be safely distributed across the open internet. EUID is a non-proprietary standard and accessible to constituents across the advertising ecosystem--including advertisers, publishers, DSPs, SSPs, SSOs, CDPs, CMPs,identity providers, data providers, and measurement providers--while they remain in compliance with a code of conduct.
 
-EUID’s goal is to enable deterministic identity for advertising opportunities on the open internet with consumer transparency and controls in place. EUID provides a collaborative framework for all constituents and a healthy, open internet by utilizing a transparent and interoperable approach.
+The goal for EUID is to enable deterministic identity for advertising opportunities on the open internet with consumer transparency and controls in place. EUID provides a collaborative framework for all constituents and a healthy, open internet by utilizing a transparent and interoperable approach.
 
 ## EUID vs. UID2
 
-EUID is open-source, stand-alone solution with its own unique namespace. It is a separate identifier, not interoperable with UID2, but EUID builds on the UID2 framework, accounting for market requirements in Europe and the UK, GDPR regulations, and current consent framework limitations. 
+EUID is open-source, stand-alone solution with its own unique namespace that builds on the UID2 framework. The main differences between UID2 and EUID result from more stringent EU data protection laws related to the consent-collection framework and data rights for data subjects and obligations between parties. Otherwise, EUID follows the same [guiding principles](#guiding-principles) as UID2.
 
+>IMPORTANT: Even though it builds on the UID2 framework, EUID is a separate identifier, not interoperable with UID2. 
 
-- EUID will function similarly to UID2 as a token based on email.
+The following table summarizes the key differences.
 
-- The data storage will be very similar to how we store UID2s in our system. Both EUIDs and UID2s will exist in the TTD platform in their hashed/salted/encrypted form. We do not keep raw email addresses in our system.
-
-- The UID2 and EUID systems themselves do not keep central storage of the identifiers. The identity generation and storage is decentralized. 
-
-- EUID has the same data security protections as UID2. Both leverage multiple layers of security, cryptography, and encryption to secure PII and user data. By decentralizing the generation of UID2s and EUIDs, we avoid having a central “honeypot” of IDs, mitigating many of the potential security risks that could come with a centralized infrastructure. 
-
-EUID will have specific consent requirements related to the regulatory requirements in Europe. The consent/opt out process is being finalized in partnership with key industry leaders including LiveRamp. 
-
-
-
-
-The main differences between UID2 and EUID are driven by more stringent EU data protection laws as the consent-collection framework and data rights for data subjects and obligations between parties all differ for EUID vs UID2. 
-
-
-EUID follows the same 
-
-not interoperable with UID2; consent will be unique and customizable.
-
-Will all the partners that we integrated with for the UID infrastructure (SSPs, data providers, Nielsen etc.) automatically be integrated with EUID or does each partner need to re-confirm interoperability with EUID? 
-EUID will function as its own identifier separate from UID2. As such, paperwork containing usage and access to UID2 does not automatically grant usage and access for EUID. Exact processes are still being finalized, but we anticipate EUID will be separately addressed within contracts.  
-
+| Comparison Aspect | UID2 | EUID |
+| :--- | :--- | :--- |
+| Open-sourced framework | Yes | Yes |
+| Interoperable | Yes | Yes |
+| PII | Email addresses, phone numbers | Email addresses |
+| Consent | Based on local regulations like CPRA, CCPA | Driven by GDPR, TCF2.0 outcomes and local regulatory input |
 
 
 ### Guiding Principles
@@ -325,6 +311,10 @@ The user trust workflow consists of the following high-level steps:
 
 ## FAQs
 
+- [Identity](#identity)
+- [User Trust](#user-trust)
+- [EUID vs. UID2](#euid-vs-uid2)
+
 ### Identity
 
 #### How does a holder of EUID know when to refresh the EUID due to salt rotation?
@@ -353,6 +343,12 @@ Publishers, SSOs, or consent management platforms disclose links to the Opt-Out 
 
 Opt-outs relate to opting out of targeted advertising, which is handled through the publisher and DSP opt-out workflows. If the consumer wishes to disengage with a specific advertiser, they need to contact the advertiser directly.
 
+### EUID vs. UID2
+
+#### 
+
+Will all the partners that we integrated with for the UID infrastructure (SSPs, data providers, Nielsen etc.) automatically be integrated with EUID or does each partner need to re-confirm interoperability with EUID? 
+EUID will function as its own identifier separate from UID2. As such, paperwork containing usage and access to UID2 does not automatically grant usage and access for EUID. Exact processes are still being finalized, but we anticipate EUID will be separately addressed within contracts.  
 
 ## License
 All work and artifacts are licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt).
