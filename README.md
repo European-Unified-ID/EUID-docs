@@ -16,7 +16,7 @@ For integration guides, supported SDKs, and endpoint reference, see [EUID API Do
 
 Addressable advertising enables publishers and developers to provide the content and services consumers have come to enjoy, whether through mobile apps, streaming TV, or web experiences. This value exchange has not always been well understood by, or communicated to, consumers. As the industry reduces reliance on the third-party cookie, there is an opportunity to improve how we reach consumers with relevant advertising across the open internet. The solution is an identification system in which content creators and consumers both benefit from improved engagement opportunities with transparent control over consumer data.
 
-EUID is a deterministic identifier based on PII, such as email addresses, with user transparency and privacy controls specific to the market requirements in Europe and the UK, including GDPR regulations and current consent framework limitations. The EUID identifier enables logged-in experiences from publisher websites, mobile apps, and CTV apps to monetize through programmatic workflows. Benefitting from several layers of security and privacy measures, EUIDs can be safely distributed across the open internet. EUID is a non-proprietary standard and accessible to constituents across the advertising ecosystem--including advertisers, publishers, DSPs, SSPs, SSOs, CDPs, CMPs,identity providers, data providers, and measurement providers--while they remain in compliance with a code of conduct.
+EUID is a deterministic identifier based on PII, such as email addresses, with user transparency and privacy controls specific to the market requirements in Europe and the UK, including GDPR regulations and current consent framework limitations. The EUID identifier enables logged-in experiences from publisher websites, mobile apps, and CTV apps to monetize through programmatic workflows. Benefitting from several layers of security and privacy measures, EUIDs can be safely distributed across the open internet. EUID is a non-proprietary standard and accessible to constituents across the advertising ecosystem--including advertisers, publishers, DSPs, SSPs, SSOs, CDPs, CMPs, identity providers, data providers, and measurement providers--while they remain in compliance with a code of conduct.
 
 The goal for EUID is to enable deterministic identity for advertising opportunities on the open internet with consumer transparency and controls in place. EUID provides a collaborative framework for all constituents and a healthy, open internet by utilizing a transparent and interoperable approach.
 
@@ -313,7 +313,7 @@ The user trust workflow consists of the following high-level steps:
 
 - [Identity](#identity)
 - [User Trust](#user-trust)
-- [UID2 vs.EUID](#uid2-vs-euid)
+- [UID2 vs. EUID](#uid2-vs-euid)
 
 ### Identity
 
@@ -349,7 +349,6 @@ Opt-outs relate to opting out of targeted advertising, which is handled through 
 
 EUID will function as its own identifier separate from UID2. As such, paperwork containing usage and access to UID2 does not automatically grant usage and access for EUID. New contracts are required to be signed for EUID.
 
-#### TBD
 
 ## License
 All work and artifacts are licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt).
