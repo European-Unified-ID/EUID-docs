@@ -32,7 +32,7 @@ EUID’s goal is to enable deterministic identity for advertising opportunities 
 
 - **Secure and Encrypted Data:** EUID leverages multiple layers of security, cryptography, and encryption to secure PII and user data.
 
-- **Consumer Control:** Consumers can opt out of EUID at any time through the [Transparency and Control Portal](https://transparentadvertising.org).
+- **Consumer Control:** Consumers can opt out of EUID at any time through the [Transparency and Control Portal](https://transparentadvertising.eu). For details, see [Opt-Out Portal](#opt-out-portal).
 
 ### Technical Design Principles
 
@@ -123,7 +123,7 @@ There are multiple operators that comprise the EUID system and participants may 
 
 ### Opt-Out Portal
 
-Consumers can opt out of EUID at any time through a user-facing website, the [Transparency and Control Portal](https://transparentadvertising.eu).
+A user-facing website, the [Transparency and Control Portal](https://transparentadvertising.eu), that allows consumers to opt out of EUID at any time.
 
 #### Functions
 
@@ -299,11 +299,11 @@ The user trust workflow consists of the following high-level steps:
 
 #### How does a holder of EUID know when to refresh the EUID due to salt rotation?
 
-Metadata supplied with the EUID generation request indicates the salt bucket used for generating the EUID. Salt buckets are persistent and assigned to the underlying PII. Use the API provided to return which salt buckets rotated since a given timestamp. The returned rotated salt buckets inform the EUID holder which EUIDs to refresh. This workflow typically applies to data providers.
+Metadata supplied with the EUID generation request indicates the salt bucket used for generating the EUID. Salt buckets are persistent and assigned to the underlying PII. Use the [API](/api/v1/endpoints/README.md) provided to return which salt buckets rotated since a given timestamp. The returned rotated salt buckets inform the EUID holder which EUIDs to refresh. This workflow typically applies to data providers.
 
 #### How does a holder of a EUID token know when to refresh it?
 
-The EUID token is automatically refreshed as part of the refresh token. This workflow typically applies to publishers and SSOs.
+EUID tokens are automatically refreshed. This workflow typically applies to publishers and SSOs.
 
 #### How do companies interfacing with EUID tokens know which decryption key to apply?
 
@@ -313,13 +313,13 @@ Metadata supplies with the EUID token discloses the timestamp of encryption, whi
 
 #### Can a user opt out of targeted advertising tied to their EUID?
 
-Yes, through the Opt-Out Portal (also known as the [Transparency and Control Portal](https://transparentadvertising.org)), a user can opt out of being served targeted ads tied to their EUID. The request will be distributed through EUID Administrator and EUID Operators to all relevant members. Some publishers and service providers have the option to limit access to their products based on a user’s participation in EUID and it is the publisher’s responsibility to communicate this as part of their value exchange dialogue with the user.
+Yes, through the Opt-Out Portal (also known as the [Transparency and Control Portal](https://transparentadvertising.eu)), a user can opt out of being served targeted ads tied to their EUID. The request will be distributed through EUID Administrator and EUID Operators to all relevant members. Some publishers and service providers have the option to limit access to their products based on a user’s participation in EUID and it is the publisher’s responsibility to communicate this as part of their value exchange dialog with the user.
 
 #### How does a user know where to access the Opt-Out Portal?
 
 Publishers, SSOs, or consent management platforms disclose links to the Opt-Out portal in their login/consent flows, privacy policies, and other means.
 
-#### Why do advertisers/data providers not need to integrate with the opt-out feed?
+#### Why do advertisers and data providers not need to integrate with the opt-out feed?
 
 Opt-outs relate to opting out of targeted advertising, which is handled through the publisher and DSP opt-out workflows. If the consumer wishes to disengage with a specific advertiser, they need to contact the advertiser directly.
 
