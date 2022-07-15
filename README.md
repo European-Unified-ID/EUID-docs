@@ -3,6 +3,7 @@
 
 This page provides the following information about EUID:
 - [Introduction](#introduction)
+- [EUID vs. UID2](#euid-vs-uid2)
 - [ID Forms](#id-forms)
 - [Components](#components)
 - [Roles](#roles)
@@ -313,7 +314,7 @@ The user trust workflow consists of the following high-level steps:
 
 - [Identity](#identity)
 - [User Trust](#user-trust)
-- [EUID vs. UID2](#euid-vs-uid2)
+- [UID2 vs.EUID](#uid2-vs-euid)
 
 ### Identity
 
@@ -343,7 +344,7 @@ Publishers, SSOs, or consent management platforms disclose links to the Opt-Out 
 
 Opt-outs relate to opting out of targeted advertising, which is handled through the publisher and DSP opt-out workflows. If the consumer wishes to disengage with a specific advertiser, they need to contact the advertiser directly.
 
-### EUID vs. UID2
+### UID2 vs. EUID
 
 #### 
 
