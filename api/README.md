@@ -13,7 +13,7 @@ This page provides the following information required for you to get started wit
 
 ## Contact Info
 
-To access to EUID, contact the appropriate team at The Trade Desk listed below. 
+To get access to EUID, contact the appropriate team at The Trade Desk listed below. 
 
 | Your Role | Contact Email |
 | :--- | :--- |
