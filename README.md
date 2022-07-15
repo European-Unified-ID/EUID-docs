@@ -3,7 +3,6 @@
 
 This page provides the following information about EUID:
 - [Introduction](#introduction)
-- [EUID vs. UID2](#euid-vs-uid2)
 - [ID Forms](#id-forms)
 - [Components](#components)
 - [Roles](#roles)
@@ -21,7 +20,7 @@ EUID is a deterministic identifier based on PII, such as email addresses, with u
 
 The goal for EUID is to enable deterministic identity for advertising opportunities on the open internet with consumer transparency and controls in place. EUID provides a collaborative framework for all constituents and a healthy, open internet by utilizing a transparent and interoperable approach.
 
-## EUID vs. UID2
+### EUID vs. UID2
 
 EUID is open-source, stand-alone solution with its own unique namespace that builds on the UID2 framework. The main differences between UID2 and EUID result from more stringent EU data protection laws related to the consent-collection framework and data rights for data subjects and obligations between parties. Otherwise, EUID follows the same [guiding principles](#guiding-principles) as UID2.
 
@@ -104,7 +103,7 @@ EUID Tokens are designed to be stored by publishers or publisher service provide
 The EUID infrasctructure consists of the following components:
 
 - [Administrator](#administrator)
-- [Open Operators](#open-operators)
+- [Open Operators](#open-operators) TBD
 - [Opt-Out Portal](#opt-out-portal)
 - [EUID Compliance Manager](#euid-compliance-manager)
 
@@ -346,10 +345,11 @@ Opt-outs relate to opting out of targeted advertising, which is handled through 
 
 ### UID2 vs. EUID
 
-#### 
+#### Will all integration partners in the UID2 infrastructure (SSPs, data providers, measurement providers) automatically be integrated with EUID or does each partner need to re-confirm interoperability with EUID? 
 
-Will all the partners that we integrated with for the UID infrastructure (SSPs, data providers, Nielsen etc.) automatically be integrated with EUID or does each partner need to re-confirm interoperability with EUID? 
-EUID will function as its own identifier separate from UID2. As such, paperwork containing usage and access to UID2 does not automatically grant usage and access for EUID. Exact processes are still being finalized, but we anticipate EUID will be separately addressed within contracts.  
+EUID will function as its own identifier separate from UID2. As such, paperwork containing usage and access to UID2 does not automatically grant usage and access for EUID. New contracts are required to be signed for EUID.
+
+#### TBD
 
 ## License
 All work and artifacts are licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt).
