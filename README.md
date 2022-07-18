@@ -16,13 +16,13 @@ For integration guides, supported SDKs, and endpoint reference, see [EUID API Do
 
 Addressable advertising enables publishers and developers to provide the content and services consumers have come to enjoy, whether through mobile apps, streaming TV, or web experiences. This value exchange has not always been well understood by, or communicated to, consumers. As the industry reduces reliance on the third-party cookie, there is an opportunity to improve how we reach consumers with relevant advertising across the open internet. The solution is an identification system in which content creators and consumers both benefit from improved engagement opportunities with transparent control over consumer data.
 
-EUID is a deterministic identifier based on PII, such as email addresses, with user transparency and privacy controls specific to the market requirements in Europe and the UK, including GDPR regulations and current consent framework limitations. The EUID identifier enables logged-in experiences from publisher websites, mobile apps, and CTV apps to monetize through programmatic workflows. Benefitting from several layers of security and privacy measures, EUIDs can be safely distributed across the open internet. EUID is a non-proprietary standard and accessible to constituents across the advertising ecosystem--including advertisers, publishers, DSPs, SSPs, SSOs, CDPs, CMPs, identity providers, data providers, and measurement providers--while they remain in compliance with a code of conduct.
+EUID is a deterministic identifier based on personally identifiable information (PII), such as email addresses, with user transparency and privacy controls specific to the market requirements in Europe and the UK, including GDPR regulations and current consent framework limitations, in place. The EUID identifier enables logged-in experiences from publisher websites, mobile apps, and CTV apps to monetize through programmatic workflows. Benefitting from several layers of security and privacy measures, EUIDs can be safely distributed across the open internet. EUID is a non-proprietary standard and accessible to constituents across the advertising ecosystem--including advertisers, publishers, DSPs, SSPs, SSOs, CDPs, CMPs, identity providers, data providers, and measurement providers--while they remain in compliance with a code of conduct.
 
 The goal for EUID is to enable deterministic identity for advertising opportunities on the open internet with consumer transparency and controls in place. EUID provides a collaborative framework for all constituents and a healthy, open internet by utilizing a transparent and interoperable approach.
 
 ### EUID vs. UID2
 
-EUID is open-source, stand-alone solution with its own unique namespace that builds on the UID2 framework. The main differences between UID2 and EUID result from more stringent EU data protection laws related to the consent-collection framework and data rights for data subjects and obligations between parties. Otherwise, EUID follows the same [guiding principles](#guiding-principles) as UID2.
+EUID is open-source, standalone solution with its own unique namespace that builds on the [UID2 framework](https://github.com/UnifiedID2/uid2docs/blob/main/api/README.md). The main differences between UID2 and EUID result from more stringent EU data protection laws related to the consent-collection framework and data rights for data subjects and obligations between parties. Otherwise, EUID follows the same [guiding principles](#guiding-principles) as UID2.
 
 >IMPORTANT: Even though it builds on the UID2 framework, EUID is a separate identifier, not interoperable with UID2. 
 
@@ -69,7 +69,7 @@ The following table summarizes the key differences.
 
 ### EUID
 
-The EUID (raw EUID) is an unencrypted alphanumeric identifier created through a set of APIs or SDKs using a user’s verifiable PII as an input. Examples of PII are an email address or phone number.
+The EUID (raw EUID) is an unencrypted alphanumeric identifier created through a set of APIs or SDKs using a user’s verifiable PII, such as an email address, as an input.
 
 A EUID is designed to be stored by advertisers, data providers, and DSPs and is never shared in the bid stream. Note that the EUID Token (or encrypted form of the EUID) is shared in the bid stream.
 
@@ -165,7 +165,7 @@ EUID participants must choose a predefined role ([generator](#generator) or [obs
 
 ### Generator
 
-Parties that generate EUID values from the email or phone numbers with the appropriate consent, and honor opt-outs. For example, these  parties may include publishers, advertisers, data providers, onboarders, and login providers.
+Parties that generate EUIDs from email addresses with the appropriate consent and honor opt-outs. For example, these  parties may include publishers, advertisers, data providers, onboarders, and login providers.
 
 The generator responsibilities include the following:
 
@@ -238,7 +238,7 @@ The following diagram illustrates the data provider workflow that applies to org
 
 The data provider workflow consists of the following high-level steps:
 
-1. Data provider sends a user’s consented personally identifiable information (PII) to the EUID Operator.
+1. Data provider sends a user’s consented PII to the EUID Operator.
 2. EUID Operator generates and returns a raw EUID.
 3. Data provider stores the EUID and salt bucket.
     >NOTE: On the server side, the data provider stores the EUID in a mapping table, DMP, data lake, or other server-side application.
@@ -345,9 +345,9 @@ Opt-outs relate to opting out of targeted advertising, which is handled through 
 
 ### UID2 vs. EUID
 
-#### Will all integration partners in the UID2 infrastructure (SSPs, data providers, measurement providers) automatically be integrated with EUID or does each partner need to re-confirm interoperability with EUID? 
+#### Will all integration partners in the UID2 infrastructure (SSPs, data providers, measurement providers) be automatically integrated with EUID? 
 
-EUID will function as its own identifier separate from UID2. As such, paperwork containing usage and access to UID2 does not automatically grant usage and access for EUID. New contracts are required to be signed for EUID.
+No. EUID will function as its own identifier separate from UID2. As such, paperwork containing usage and access to UID2 does not automatically grant usage and access for EUID. New contracts are required to be signed for EUID.
 
 
 ## License
