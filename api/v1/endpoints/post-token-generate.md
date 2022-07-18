@@ -4,8 +4,8 @@
 Generate an EUID token from a hashed or unhashed email address.
 
 The following integration workflows use this endpoint:
-* [Publisher - Standard](../guides/publisher-client-side.md)
-* [Publisher - Custom](../guides/custom-publisher-integration.md)
+* [Publisher EUID SDK Integration Guide](../guides/publisher-client-side.md)
+* [Publisher Srver-Only Integration Guide](../guides/custom-publisher-integration.md)
 
 ## Request Format 
 
