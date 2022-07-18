@@ -7,7 +7,7 @@ Generate a new token for a user by specifying their refresh token issued by usin
 
 The following integration workflows use this endpoint:
 * [Publisher EUID SDK Integration Guide](../guides/publisher-client-side.md)
-* [Publisher Srver-Only Integration Guide](../guides/custom-publisher-integration.md)
+* [Publisher Server-Only Integration Guide](../guides/custom-publisher-integration.md)
 
 ## Request Format 
 
