@@ -1,3 +1,4 @@
+  %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#0099F9', 'noteBorderColor':'#0099F9','actorTextColor': '#FFF', 'secondaryColor':'#ededed'}}}%%
   sequenceDiagram
     participant U as User
     participant P as Publisher
@@ -36,10 +37,10 @@
     Note over U,SSP: 4. User Logout
     U->>P: 4-a. The user logs out from a publisher asset.
     activate P
-    P->>U: 4-b. The user's identity clears.
+    P->>U: 4-b. The user's identity is cleared.
     deactivate P
 
-    <!-- Mermaid Live Editor Source: https://mermaid-js.github.io/mermaid-live-editor/edit#pako:eNqNVT2P2zAM_SuElxuaGGguU4YbimQIWhRGc96y8GTaEepIriSnTQ_330tJ_ujFcdEssSmK7_HpUX5NhC4o2SQAln60pARtJVYGz0cF_GvQOClkg8pBDmght2SmS5lfytqXWtrTvfVdvt_6lPB_IHORgqZZh0MWg1-1I9AXMpAvOLiBjynsrMNQH_YFKSfdNebmy6enDz5liSk8nwhaZggXaaWzgND0pBjekkvjpow3LXO_6SVuGtPoV1OjVBYchy9Yt8QhcUJVMaUyRHVDCqRyZBQ5QFWA8drZAFjrSqoOBoWTF-Re8pFroCr-ooot1-SGBCfaUM1HtJG_KZIQhtBJrTw8qqBhV7-gW4ThPRsb9Rs8aHHbqiVVRAhP5IFPcL8Hp0PE6e_cZEWKTAS38dSmyNkNsoeLIf_Ud0wRfK4sK-haozqHhCw7hRpL3-sznGc5bdIfS5QNSm2Gfmc7mbhvlcInWbD1papinedA0KeP8DG1d-FIQGBdR5U5IzBAVr0NxXx07PjWNcM88EPUcdX71ZfqJfPl-NQKadm512lbQ5kZ0Va9HUfOXa1Iu6v_T91mlHtM4RuVhnhqR8niHERXPvZ6HbafOz9iP00e1HS7B6FG3Yale9JNTJh7LBZvzzMU5-6EVj04HmZHBejWLaZVJ-5U9BNkd_38h0sneqzTcIHCF10x4rtLYf3u_uJbxHpSUBp9nr3GZg503bukG-uBsagJzR3GWbJIzmTOKAv-FLwGXyesxpmOyYYf2bR8HsfkqN44s20K3rQrpNMm2ZRYW1okfGfpw1WJZONMS31S9y3pst7-AC3RF0Y -->
+    <!-- Mermaid Live Editor Source: https://mermaid-js.github.io/mermaid-live-editor/edit#pako:eNqNVU1v2zAM_SuEi8CHpUHX9lIfeujaAMGGIVjqnXJhLCYR5kiZJGfNgvz3UZI_1jgZhh7qUCQf-fgoHZJCC0qyBGAwOEglXQaH1K1pQ2kG6QItpUOIhu9oJC5KsnxygHRr5AbN_pMutfG-Vzc3Dw_jB--utKMnbQSZ-rQ7TLFw2rzSm-sCx-Oxj7JUaCW6lOkVCf-XHo_HwWCuACz9rEgV9CxxZXDjTQBbNE4WcovKQQ5oIbdk-kdTfzStFqW063PnL_nk2buE_zMyO1lQ32s2m0bjV24R9I4M5EM2ZvBxBC_WYcgPE0HKSbePvvn14-MH73KNI3hdE1RcIeyklc4CwrYpiuEtuVEMmnLQde6DFjGoc6O3bYlSWeCxwA7LithUrFGtuKRlsOotKZDKkVHkAJUA47mzAbDUK6lqGB6H3CH3kne1hlKLv0rFinNyQwU72pDNW7SRvykWURhCJ7Xy8KgCh3V-QacI7e9p16gP8KDitFVLSkQIX0jKE5xMwOlgcfoHN7kiRSaC2zi1PvL0BNnDRZP_ajqmCH4pLTPoKqNqhQQv24fqUp_rM8xz2W_SjyXSBktt2n4vdtJT3-0InqRg6Uu1inleQ4HevYOPro0KuwIKLMvIMnuECpBZr0Iyb-06PlVNuw_8EXm8bfTqUzWU-XQ8NSEtK3ffb6tNc4G020aOXc11rlh2nf-fvF1g7m4E32hpiLe2oyzuQVTlXcPX7PlzrUdstsmDmjq6JarjrT06R11PhLnHYvImvENx79ZoVep4mR0J0JUb9rP21KnoF8j6-vkPlfb4uB-FCxS-6BUjvrsU7t_dX3yLWF8ULI3eXLzGLgz0vlFJvdZtxdJCURIaEmeGmAyTDZkNSsEv1iFoOwlP0zzJ-JOFyzOZJ3N1ZM9qKzjoRUh-b5JsiaWlYcL3lp7tVZFkzlTUONXvSe11_ANYRkvh -->
     
     
     
