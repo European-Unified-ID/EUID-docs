@@ -10,7 +10,7 @@ To facilitate the process of establishing client identity using EUID and retriev
 
 >IMPORTANT: The EUID SDK currently stores tokens in first-party cookies. Since implementation details like this may change in the future, to avoid potential issues, be sure to rely on the [EUID SDK APIs](../sdks/client-side-identity.md#api-reference) for your identity management.
 
-For custom integration scenarios for app developers and CTV broadcasters without utilizing the EUID SDK, see [Publisher EUID SDK Integration Guide](./custom-publisher-integration.md). 
+For custom integration scenarios for app developers and CTV broadcasters without utilizing the EUID SDK, see [Publisher Server-Only Integration Guide](./custom-publisher-integration.md). 
 
 
 ## Integration Steps 
