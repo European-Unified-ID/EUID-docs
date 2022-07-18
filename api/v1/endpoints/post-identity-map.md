@@ -2,7 +2,7 @@
 
 # POST /identity/map
 
-Map multiple email addresses or email address hashes to their EUIDs and salt bucket IDs. This endpoint is intended for use by [Advertisers/Data Providers](../guides/advertiser-dataprovider-guide.md).
+Map multiple email addresses or email address hashes to their EUIDs and salt bucket IDs. This endpoint is intended for use by [Advertisers and Data Providers](../guides/advertiser-dataprovider-guide.md).
 
 Here's what you need to know:
 - The maximum request size is 1MB. 
