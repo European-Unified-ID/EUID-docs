@@ -1,12 +1,12 @@
-[EUID API Documentation](../../README.md) > [v1](../README.md) > [Integration Guides](README.md) > Publisher Integration Guide 
+[EUID API Documentation](../../README.md) > [v1](../README.md) > [Integration Guides](README.md) > Publisher Server-Only Integration Guide 
 
-# EUID Server-Only Publisher Integration Guide
+# Publisher Server-Only Integration Guide
 
 This guide is intended for app developers and CTV broadcasters who would like to generate identity tokens utilizing EUID for the RTB bid stream, while integrating directly with EUID rather than EUID-enabled single-sign-on or identity providers. 
 
 The guide outlines the [basic steps](#integration-steps) that you need to consider for your custom integration. For example, you need to decide how to implement user login and logout, how to manage EUID identity information and use it for targeted advertising, how to refresh tokens, deal with missing identities, and handle user opt-outs. See also [FAQs](#faqs).
 
->TIP: To facilitate the process of establishing client identity using EUID and retrieving advertising tokens, consider using the [Client-Side Identity JavaScript SDK](../sdks/client-side-identity.md). For details, see [EUID SDK Publisher Integration Guide](./publisher-client-side.md).
+>TIP: To facilitate the process of establishing client identity using EUID and retrieving advertising tokens, consider using the [Client-Side Identity JavaScript SDK](../sdks/client-side-identity.md). For details, see [Publisher EUID SDK Integration Guide](./publisher-client-side.md).
 
 ## Integration Steps
 
