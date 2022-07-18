@@ -6,8 +6,8 @@ Generate a new token for a user by specifying their refresh token issued by usin
 >NOTE: This endpoint can be called from the client side (for example, a browser or a mobile app) because it does not require using an API key.
 
 The following integration workflows use this endpoint:
-* [Publisher - Standard](../guides/publisher-client-side.md)
-* [Publisher - Custom](../guides/custom-publisher-integration.md)
+* [Publisher EUID SDK Integration Guide](../guides/publisher-client-side.md)
+* [Publisher Srver-Only Integration Guide](../guides/custom-publisher-integration.md)
 
 ## Request Format 
 
