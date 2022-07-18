@@ -1,3 +1,4 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#0099F9', 'labelTextColor': '#FFF', 'actorTextColor': '#FFF'}}}%%
   sequenceDiagram
     participant DP as Data Provider
     participant EUID as EUID Service
@@ -7,6 +8,7 @@
     EUID->>DP: 1-b. Store the EUID and salt bucket returned from the identity mapping service.
     end
     DP-->>DSP: 2. Send stored EUIDs to DSPs to create audiences.
+
     loop 3. Monitor for salt bucket rotations related to your stored EUIDs.
        DP->>EUID: 3-a. Monitor salt bucket rotations using the bucket service.
        EUID->>DP: 3-b. Return salt buckets rotated since a given timestamp.
@@ -14,6 +16,6 @@
        EUID->>DP: 3-d. Store the EUID and salt bucket returned from the identity mapping service.
     end
 
-    <!-- Mermaid Live Editor Source: https://mermaid-js.github.io/mermaid-live-editor/edit#pako:eNq1kzFv4zAMhf8KoTk10MtmFFnqDhkKGA26eWEkJidcLLkSnSIo-t9L2k4vvibjZXFgit97fJQ_jI2OTGkAMr31FCxVHvcJ2yaA_DpM7K3vMDBUNWCGChmhTvHoHaWfh55e15UeG54bSkdv6QpqU48vDzF2cF_AC3HydCTAMLbuYoJ6vYY--7AH_k0geoE9n6DFDii4LvrAuRg5VX23WmljCfd3WIhycICQdKbMYGNg9EFRCuX4g9hp7V-qAoVb1UrdCpVjoqF1HFM0Mh4Ytr39Qyxq3KdADnYpttcV8pjIxBe9b_uqsxGhX5P5rFpuEMpqWIrD0yZClpx653VbavUiymUBzzF46R0SnLmLjOxjyOLzIAintFPs00xqcjaPdKmRnrnXmX_3NJXmk87DXGqYL0Nal7g88sSKwKzMCHt_pADsW1kitt0Nc7aAx9jK_Rp38w25JMusF2POasXDNq3Wu3PfQvLJuoHpptza4RAwQqD3AXljUPefbo1ZmJZSi97Jx_uhhcZIb0uNKeWveJPIGtOETznZd04me3K6P1Pu8JBpYbDnuDkFa0pOPZ0PTV__dOrzC0SxX1s -->
+    <!-- Mermaid Live Editor Source: https://mermaid-js.github.io/mermaid-live-editor/edit#pako:eNq1lEFv2kAQhf_KyBXiQqyknLAqLnGQOFSyQtsTl7F3oKvau-7umhZZ_PfO2CbBAY49GXlmv_fmzeI2KqyiKIkAJpNWGx0SaKfhJ1U0TWCao6fpDPoXP9BpzEvyXGlhWjtdoTs-29I66f30-LhYrBbSXmJO5Tf6G96Lq9VKKlgE664rp9NpMtkaAE-_GzIFpRr3Dit5BVCjC7rQNZoAaQboIcWAkDl70IrcddPL93Uqbd1zQ-6gC7qB2mT9y9LaGp5ieKXgNB0I0PRHd9ZBtl5D47XZA4cArGeCDkeosAYyqrbaBB_3nDR7WC7lYAJPDxizslGA4GQmH6CwJiBHzCiBBntFrKX2kSpA5qaZUHOmcoLUHe3HZA2PZYC8KX5RYLXQOEMKds5WtxV8n8jAZ703-6KzYaHPg3kvWqoT8mKYi92zcISBc2qUlm2J1Yso5zF8tXyVOD1JcOTOBgzaGs8-S0YooR1t40ZSg7NxpHOJ9My9zXzf01AaTzoOcy5hvnZpXeJ8z2MrDCt4RtjrAxkIuuIlYlXfMVfE8Gwrvl_9bt4gl2Se9WLMUS3-krvlenc-N-N8vGxguCn3dtgFjGDoT4e8M6j6T7cmmkUVuQq14i9IK4Vt1H0qtlHCP9kbR7aNtubEnU2teLIXJfuLkh2WnmYRNsFujqaIkuAaOjcN__6h6_QPD3aIjw -->
     
     
