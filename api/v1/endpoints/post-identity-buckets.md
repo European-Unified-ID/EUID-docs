@@ -2,7 +2,7 @@
 
 # POST /identity/buckets
 
-Monitor rotated salt buckets. This endpoint is intended for use by [Advertisers/Data Providers](../guides/advertiser-dataprovider-guide.md).
+Monitor rotated salt buckets. This endpoint is intended for use by [Advertisers and Data Providers](../guides/advertiser-dataprovider-guide.md).
 
 ## Request Format
 
