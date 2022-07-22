@@ -55,7 +55,10 @@ Not necessarily. After you remap emails associated with a particular bucket ID, 
 >IMPORTANT: When mapping and remapping emails, be sure not to make any assumptions of the number of buckets, their specific rotation dates, or to which bucket an email gets assigned. 
 
 ### How often should UIDs be refreshed for incremental updates?
-The recommended cadence for updating audiences is daily. 
+The recommended cadence for updating audiences is daily.
+
+Even though each salt bucket is updated roughly once a year, individual bucket updates are spread over the year. This means that about 1/365th of all buckets is rotated daily. If fidelity is critical, consider calling the [POST /identity/buckets](../endpoints/post-identity-buckets.md) endpoint more frequently, for example, hourly.
+
 
 ### How should I generate the SHA256 of PII for mapping?
 The system should follow the [email normalization rules](../../README.md#email-address-normalization) and hash without salting.
@@ -66,6 +69,6 @@ Yes. Not storing email address or hash mappings may increase processing time dra
 >IMPORTANT: Unless you are using a private operator, you must map email addresses or hashes consecutively, using a single HTTP connection, in batches of 5-10K emails at a time. In other words, do your mapping without creating multiple parallel connections. 
 
 ### How should I handle user optouts?
-When a user opts out of EUID-based targeted advertising through the [Transparency and Control Portal](https://www.transparentadvertising.org/), the optout signal is sent to DSPs and publishers, which handle optouts at bid time. As an advertiser or data provider, you do not need to check for EUID optout in this scenario.
+When a user opts out of EUID-based targeted advertising through the [Transparency and Control Portal](https://www.transparentadvertising.eu/), the optout signal is sent to DSPs and publishers, which handle optouts at bid time. As an advertiser or data provider, you do not need to check for EUID optout in this scenario.
 
 If a user opts out through your website, you should follow your internal procedures for handling the optout, for example, you might choose not to generate a EUID for that user.
