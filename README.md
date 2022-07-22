@@ -24,7 +24,7 @@ The goal for EUID is to enable deterministic identity for advertising opportunit
 
 EUID is open-source, standalone solution with its own unique namespace that builds on the [UID2 framework](https://github.com/UnifiedID2/uid2docs/blob/main/api/README.md). The main differences between UID2 and EUID result from more stringent EU data protection laws related to the consent-collection framework and data rights for data subjects and obligations between parties. Otherwise, EUID follows the same [guiding principles](#guiding-principles) as UID2.
 
->IMPORTANT: Even though it builds on the UID2 framework, EUID is a separate identifier, not interoperable with UID2. 
+>IMPORTANT: Even though it builds on the UID2 framework, EUID is a separate identifier. 
 
 The following table summarizes the key differences.
 
@@ -75,13 +75,13 @@ A EUID is designed to be stored by advertisers, data providers, and DSPs and is 
 
 #### Technical Details
 
-- The EUID Operator API or SDK interface is used to create a EUID.
+- The EUID Operator API or SDK interface is used to create an EUID.
 
-- The EUID Operator SHA256 hashes the PII and adds a secret salt to the user’s PII to generate a EUID.
+- The EUID Operator SHA256 hashes the PII and adds a secret salt to the user’s PII to generate an EUID.
 
 - Each EUID is assigned a salt bucket. The salt for each bucket rotates once every 12 months. Each salt bucket has an alphanumeric designation between 1 and 1,000,000.
 
-- Participants who store EUIDs monitor the EUID Operator API to know when a EUID’s salt bucket rotated.
+- Participants who store EUIDs monitor the EUID Operator API to know when an EUID’s salt bucket rotated.
 
 ### EUID Token
 
@@ -94,7 +94,7 @@ EUID Tokens are designed to be stored by publishers or publisher service provide
 - A cryptographic nonce is generated and appended to the EUID, which is then encrypted to create the EUID Tokens.
 
   - A nonce is an arbitrary number that may only be used once.
-  - AES/CBC/PKCS5P with 256-bit keys are used for encryption and rotate on a daily basis.
+  - AES/GCM with 256-bit keys are used for encryption and rotate on a daily basis.
 
 - The EUID's encryption timestamp is attached as payload metadata.
 
@@ -117,8 +117,6 @@ This is a centralized service that manages access to the distributed EUID system
 
 - Distribute encryption keys and salts to EUID operators.
 
-- Distribute decryption keys to compliant members for use in decrypting EUID tokens.
-
 - Send EUID user opt-outs requests to operators and DSPs.
 
 ### Open Operators
@@ -130,12 +128,11 @@ There are multiple operators that comprise the EUID system and participants may 
 #### Functions
 
 - Receive and store encryption keys and salts from the EUID Administrator service.
+- Distribute decryption keys to compliant members for use in decrypting EUID tokens.
 
-- Salt and hash PII to return a EUID.
+- Salt and hash PII to return an EUID.
 
 - Encrypt EUIDs to generate EUID tokens.
-
-- Broadcast EUID token updates, such as handling opt-outs and salt bucket rotations, to publishers utilizing the refresh token.
 
 ### Opt-Out Portal
 
@@ -298,7 +295,7 @@ Publishers may choose to work with an SSO or independent ID provider who is inte
 
 ### User Trust Workflow
 
-The following diagram illustrates the publisher workflow that applies to users engaging with publishers or publisher-related SSOs and identity providers. This workflow allows a user to consent to the creation of a EUID and manage their EUID consent and privacy settings in the [Opt-Out Portal](#opt-out-portal).
+The following diagram illustrates the publisher workflow that applies to users engaging with publishers or publisher-related SSOs and identity providers. This workflow allows a user to consent to the creation of an EUID and manage their EUID consent and privacy settings in the [Opt-Out Portal](#opt-out-portal).
 
 ![User Trust Workflow](/images/user_trust_workflow.jpg)
 
@@ -321,7 +318,7 @@ The user trust workflow consists of the following high-level steps:
 
 Metadata supplied with the EUID generation request indicates the salt bucket used for generating the EUID. Salt buckets are persistent and assigned to the underlying PII. Use the [API](/api/v1/endpoints/README.md) provided to return which salt buckets rotated since a given timestamp. The returned rotated salt buckets inform the EUID holder which EUIDs to refresh. This workflow typically applies to data providers.
 
-#### How does a holder of a EUID token know when to refresh it?
+#### How does a holder of an EUID token know when to refresh it?
 
 EUID tokens are automatically refreshed. This workflow typically applies to publishers and SSOs.
 
