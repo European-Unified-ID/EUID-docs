@@ -100,10 +100,10 @@ EUID Tokens are designed to be stored by publishers or publisher service provide
 
 ## Components
 
-The EUID infrasctructure consists of the following components:
+The EUID infrastructure consists of the following components:
 
 - [Administrator](#administrator)
-- [Open Operators](#open-operators) TBD
+- [Open Operators](#open-operators)
 - [Opt-Out Portal](#opt-out-portal)
 - [EUID Compliance Manager](#euid-compliance-manager)
 
@@ -169,7 +169,7 @@ The generator responsibilities include the following:
 - Register with the EUID [administrator](#administrator) to obtain API keys.
 -	Receive consent from consumers to generate EUIDs from PII and use the EUIDs for advertising purposes.
 -	Provide consumers with access to the [Opt-Out Portal](#opt-out-portal) to manage their EUID consent.
--	Generate EUIDs though an integrations with an [Open Operator](#open-operators).
+-	Generate EUIDs though an integration with an [Open Operator](#open-operators).
 -	Honor opted-out EUIDs.
 -	Keep the EUID tokens refreshed.
 
