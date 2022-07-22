@@ -60,17 +60,26 @@ if (established_timestamp < optout_timestamp) {
 | 2-b | | DSPs are required to honor opt-out protocol for EUIDs. For details on configuring user opt-outs and honoring them during bidding, see [Honor user opt-outs](#honor-user-opt-outs). |
 
 ## FAQs
-### How do I know which decryption key to apply to a EUID?
-Updating decryption keys is handled automatically by the provided [RTB SDK](../sdks/dsp-client-v1-overview.md). Metadata supplied with the EUID token discloses the timestamp of encryption, which informs which decryption key applies. 
+### How do I know which decryption key to apply to a UID2?
+The provided [RTB SDK](../sdks/dsp-client-v1-overview.md) updates decryption keys automatically. Metadata supplied with the UID2 token discloses the IDs of the decryption keys to use. 
 
 ### Where do I get the decryption keys?
-The [RTB SDK](../sdks/dsp-client-v1-overview.md) library communicates with the EUID service in the background and periodically fetches the latest keys.
+You can use the [RTB SDK](../sdks/dsp-client-v1-overview.md) library to communicate with the UID2 service and fetch the latest keys. To make sure that the keys remain up-to-date, it is recommended to fetch them periodically, for example, once every hour. 
 
 ### How do I know if/when the salt bucket has rotated?
-The DSP is not privy to when the EUID salt bucket rotates. This is similar to a DSP being unaware if users cleared their cookies. Salt bucket rotation has no significant impact on the DSP.  
+The DSP is not privy to when the UID2 salt bucket rotates. This is similar to a DSP being unaware if users cleared their cookies. Salt bucket rotation has no significant impact on the DSP.  
 
 ### Should the DSP be concerned with latency?
-The EUID service does not introduce latency into the bidding process. Any latency experienced can be attributed to the network, not the EUID service.
+The UID2 service does not introduce latency into the bidding process. Any latency experienced can be attributed to the network, not the UID2 service.
 
-### How should the DSP maintain proper frequency capping with EUID?
-The EUID has the same chance as a cookie of becoming stale. Hence, the DSP can adapt the same infrastructure currently used for cookie or deviceID-based frequency capping for EUID. For details, see this [FAQ](../guides/advertiser-dataprovider-guide.md#how-do-i-know-when-to-refresh-the-euid-due-to-salt-bucket-rotation) on salt bucket rotation. 
+### How should the DSP maintain proper frequency capping with UID2?
+The UID2 has the same chance as a cookie of becoming stale. Hence, the DSP can adapt the same infrastructure currently used for cookie or deviceID-based frequency capping for UID2. For details, see this [FAQ](../guides/advertiser-dataprovider-guide.md#how-do-i-know-when-to-refresh-the-uid2-due-to-salt-bucket-rotation) on salt bucket rotation. 
+
+### Will all user opt-out traffic be sent to the DSP?
+Yes, all opt-outs from the UID2 [Transparency and Control Portal](https://transparentadvertising.org/) will hit the opt-out endpoint that the DSP must configure to [honor user opt-outs](#honor-user-opt-outs).
+
+### Is the DSP expected to handle opt-out signals only for the UID2s that they already store?
+In some cases a DSP may receive a UID2 token for a newly-stored UID2 where the token is generated before the opt-out timestamp. The DSP is not allowed to bid on such tokens. It is therefore recommended to store all opt out signals regardless of whether the corresponding UID2 is currently stored by the DSP or not. For details, see the diagram in [Bidding Opt-Out Logic](#bidding-opt-out-logic).
+
+### How long should the DSP keep the opt-out list?
+At least for 30 days.
