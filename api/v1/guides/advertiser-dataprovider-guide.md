@@ -24,7 +24,7 @@ The following diagram outlines the steps data collectors need to complete to map
 Send the `advertising_id` (EUID) from the [preceding step](#retrieve-a-euid-for-pii-using-the-identity-map-endpoints) to a DSP while building your audiences. Each DSP has a unique integration process for building audiences. Please follow the integration guidance provided by the DSP for sending EUIDs to build an audience.
 
 ### Monitor for salt bucket rotations related to your stored EUIDs
-A EUID is an identifier for a user at a particular moment in time, which means that a user's EUID will rotate at least once a year. 
+An EUID is an identifier for a user at a particular moment in time, which means that a user's EUID will rotate at least once a year. 
 
 Even though each salt bucket is updated roughly once a year, individual bucket updates are spread over the year. This means that about 1/365th of all buckets is rotated daily.
 
