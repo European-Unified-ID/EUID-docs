@@ -52,9 +52,9 @@ Here's an encrypted token generation request format with placeholder values:
 
 ```sh
 echo '[Unencrypted-JSON-Request-Body]' \
-  | encrypt_request.py [Your-Client-Secret] \
+  | encrypt_request.py [CLIENT_SECRET] \
   | curl -X POST 'https://prod.uidapi.com/v2/token/generate' -H 'Authorization: Bearer [Your-Client-API-Key]' \
-  | decrypt_response.py [Your-Client-Secret]
+  | decrypt_response.py [CLIENT_SECRET]
 ```
 
 Here's an encrypted token generation request example for an email hash:
