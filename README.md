@@ -24,7 +24,6 @@ European Unified ID (EUID) is a deterministic identifier based on personally ide
 
 The goal for EUID is to enable deterministic identity for advertising opportunities on the open internet with consumer transparency and controls in place. EUID enables logged-in experiences from publisher websites, mobile apps, and CTV apps to monetize through programmatic workflows.  
 
-With its transparent and interoperable approach, EUID provides a collaborative framework for all participants across the advertising ecosystem—advertisers, publishers, DSPs, SSPs, SSOs, CDPs, CMPs, identity providers, data providers, and measurement providers. 
 
 ### EUID vs. UID2
 
@@ -68,22 +67,41 @@ The following table summarizes the key differences.
 
 - **Self-Reliant:** No reliance on external services for real-time processing of RTB data.
 
-## Raw EUIDs vs. EUID Tokens
-
-The following table explains two EUID forms.
-
-| ID Form | Shared in Bid Stream? | Description |
-| :--- | :--- | :--- |
-| Raw EUIDs | Never | These are unencrypted alphanumeric identifiers created through a set of EUID APIs or SDKs with users’ verifiable PII, such as email addresses, as input. Raw EUIDs are designed to be stored by advertisers, data providers, and DSPs.|
-| EUID (Advertising) Tokens | Shared | These are encrypted raw EUIDs. EUID tokens are generated from hashed or unhashed email addressesand are designed to be stored by publishers or publisher service providers. SSPs pass the EUID token in bid stream and DSPs decrypt them at bid request time. |
-
 
 ## EUID Infrastructure
 TBd
 
+### EUID Types
+
+There are two types of EUIDs, raw EUIDs and EUID tokens (also know as advertising tokens). The following table explains each type.
+
+| ID Form | Shared in Bid Stream? | Description |
+| :--- | :--- | :--- |
+| **Raw EUIDs** | Never | This is an unencrypted alphanumeric identifier created through a set of EUID APIs or SDKs with users’ verifiable PII, such as an email address, as input. Raw EUIDs are designed to be stored by advertisers, data providers, and DSPs.|
+| **EUID (Advertising) Token** | Shared | This is an encrypted form of a raw EUID. EUID tokens are generated from hashed or unhashed email addressesand are designed to be stored by publishers or publisher service providers. SSPs pass the EUID token in bid stream and DSPs decrypt them at bid request time. |
+
+### Core Components
+
+The EUID infrastructure consists of the following components.
+|  | Description |
+| :--- | :--- |
+| **Core System**  | A centralized service that manages access to the distributed EUID system. |  
+| **Opt-out Service**  | A global service that manages user opt-out requests, for example, by routing them to all EUID data holders. | 
+| **Transparency and Control Portal**  | A user-facing website, [https://transparentadvertising.eu](https://transparentadvertising.eu), that allows consumers to opt out of EUID at any time. | 
+
+
 ### Participants 
 
-The EUID workflows involve the following participants. 
+With its transparent and interoperable approach, EUID provides a collaborative framework for all participants across the advertising ecosystem—advertisers, publishers, DSPs, SSPs, SSOs, CDPs, CMPs, identity providers, data providers, and measurement providers.  The EUID workflows involve the following participants. 
+
+|  | Description |
+| :--- | :--- |
+| ****  |  |  
+| ****  |  | 
+| ****  |  | 
+| ****  |  | 
+| ****  |  | 
+| ****  |  | 
 
 #### Core Administrator 
 - Distribute encryption keys and salts to EUID operators.
@@ -125,22 +143,7 @@ Publishers may choose to work with an SSO or independent ID provider who is inte
 #### End Users (consumers) 
 users engaging with publishers or publisher-related SSOs and identity providers. This workflow allows a user to consent to the creation of an EUID and manage their EUID consent and privacy settings in the [Opt-Out Portal](#opt-out-portal).
 
-### Components
 
-The EUID infrastructure consists of the following components:
-
-#### Core system 
-This is a centralized service that manages access to the distributed EUID system. 
-
-#### Opt-out system 
-
-#### Transparency and Control Portal 
-A user-facing website, the [Transparency and Control Portal](https://transparentadvertising.eu), that allows consumers to opt out of EUID at any time.
-
-
-- Offers transparency to users about their EUIDs.
-
-- Provides users a way to globally opt out of EUID, which triggers opt-out requests to all EUID data holders.
 
 
 ## Workflows
