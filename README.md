@@ -108,25 +108,24 @@ The following table lists the key participants and their roles in the EUID workf
 | **Compliance Manager**  | An organization that audits EUID participants for compliance with stated rules and relays compliance information to the EUID administrators and EUID operators. | 
 | **DSPs**  | DSPs integrate with the EUID system to receive EUIDs from brands (as first-party data) and data providers (as third-party data) and leverage them to inform bidding on EUIDs in the bid stream. | 
 | **Data Providers**  | Organizations that collect user data and push it to DSPs and include advertisers, data on-boarders, measurement providers, identity graph providers, third-party data providers, and other participants who push data to DSPs. | 
-| **Publishers**  | Organizations that propagate IDs to the bid stream via SSP and include identity providers, publishers, and SSOs. Publishers can choose to work with an SSO or independent ID provider who is interoperable with EUID. The provider may handle the EUID integration on their behalf. | 
+| **Publishers**  | Organizations that propagate EUIDs to the bid stream via SSP and include identity providers, publishers, and SSOs. Publishers can choose to work with an SSO or independent ID provider who is interoperable with EUID. The provider may handle the EUID integration on their behalf. | 
 | **Consumers**  | Users who engage with publishers or publisher-related SSOs and identity providers. Users can consent to the creation of an EUID and manage their EUID consent and privacy settings in the [Transparency and Control Portal]([#opt-out-portal](https://transparentadvertising.eu)). | 
 
 ## Workflows
 
-There are four key workflows in the EUID system:
+The following lists four key workflows in the EUID system and provides links to the integration guides, which include specific diagrams, integration steps, FAQs, and other relevant information for each workflow.
 
-| Workflow | Intended Participants | Intergation Guide |
+| Workflow | Intended Primary Participants | Intergation Guide |
 | :--- | :--- | :--- |
-| **Buy-side** | DSPs who transact on EUIDs in the bid stream. | [Publisher (with EUID SDK)](/../../publisher-client-side.md)<br/>[Publisher (Server-Only)](./custom-publisher-integration.md) |
-| **Data provider** | Organizations that collect user data and push it to DSPs. | [DSP](./dsp-guide.md) |
-| **Publisher** | Organizations that propagate IDs to the bid stream via SSPs. | [Advertiser and Data Provider](./advertiser-dataprovider-guide.md) |
+| **Buy-side** | DSPs who transact on EUIDs in the bid stream. | [Publisher (with EUID SDK)](./api/v1/guides/publisher-client-side.md)<br/>[Publisher (Server-Only)](./api/v1/guides/custom-publisher-integration.md) |
+| **Data provider** | Organizations that collect user data and push it to DSPs. | [DSP](./api/v1/guides/dsp-guide.md) |
+| **Publisher** | Organizations that propagate EUIDs to the bid stream via SSPs. | [Advertiser and Data Provider](./api/v1/guides/advertiser-dataprovider-guide.md) |
 | **User trust** | Consumers who engage with publishers or publisher-related SSOs and identity providers. | N/A |
 
 
 This diagram summarizes all four workflows.
 
 ![The EUID Ecosystem](/images/macro_view.jpg)
-
 
 
 ## FAQs
