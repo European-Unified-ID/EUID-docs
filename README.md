@@ -119,7 +119,7 @@ The following lists four key workflows in the EUID system and provides links to 
 | :--- | :--- | :--- |
 | **Buy-side** | DSPs who transact on EUIDs in the bid stream. | [DSP](./api/v1/guides/dsp-guide.md) |
 | **Data provider** | Organizations that collect user data and push it to DSPs. | [Advertiser and Data Provider](./api/v1/guides/advertiser-dataprovider-guide.md) |
-| **Publisher** | Organizations that propagate EUIDs to the bid stream via SSPs.<br/> NOTE: Publishers can choose to leverage the [EUID SDK](./api/v1/sdks/client-side-identity.md) or choose to complete their own custom, server-side integration. | [Publisher (with EUID SDK)](./api/v1/guides/publisher-client-side.md)<br/>[Publisher (Server-Only)](./api/v1/guides/custom-publisher-integration.md) |
+| **Publisher** | Organizations that propagate EUIDs to the bid stream via SSPs.<br/> NOTE: Publishers can choose to leverage the [EUID SDK](./api/v1/sdks/client-side-identity.md) or choose to complete their own custom, server-only integration. | [Publisher (with EUID SDK)](./api/v1/guides/publisher-client-side.md)<br/>[Publisher (Server-Only)](./api/v1/guides/custom-publisher-integration.md) |
 | **User trust** | Consumers who engage with publishers or publisher-related SSOs and identity providers. | N/A |
 
 
@@ -138,11 +138,11 @@ No. EUID will function as its own identifier separate from UID2. As such, paperw
 
 #### How do companies interfacing with EUID tokens know which decryption key to apply?
 
-Metadata supplies with the EUID token discloses the timestamp of encryption, which informs which decryption key applies.
+Metadata supplied with the EUID token discloses the timestamp of encryption, which informs which decryption key applies.
 
 #### Can a user opt out of targeted advertising tied to their EUID?
 
-Yes, through the [Transparency and Control Portal](https://transparentadvertising.eu), a user can opt out of being served targeted ads tied to their EUID. The request will be distributed through EUID Administrator and EUID Operators to all relevant members. Some publishers and service providers have the option to limit access to their products based on a user’s participation in EUID and it is the publisher’s responsibility to communicate this as part of their value exchange dialog with the user.
+Yes, through the [Transparency and Control Portal](https://transparentadvertising.eu), a user can opt out of being served targeted ads tied to their EUID. The request is distributed through the EUID Core System and EUID Operators to all relevant paricipants. Some publishers and service providers have the option to limit access to their products based on a user’s participation in EUID and it is the publisher’s responsibility to communicate this as part of their value exchange dialog with the user.
 
 #### How does a user know where to access the opt-out portal?
 
