@@ -53,7 +53,7 @@ The following table summarizes the key differences.
 
 - **Secure and Encrypted Data:** EUID leverages multiple layers of security to secure PII and user data.
 
-- **Consumer Control:** Consumers can opt out of EUID at any time through the [Transparency and Control Portal](https://transparentadvertising.eu). For details, see [Opt-Out Portal](#opt-out-portal).
+- **Consumer Control:** Consumers can opt out of EUID at any time through the [Transparency and Control Portal](https://transparentadvertising.eu). For details, see [Core Components](#core-components).
 
 ### Technical Design Principles
 
@@ -79,10 +79,10 @@ TBd
 
 There are two types of EUIDs, raw EUIDs and EUID tokens (also known as advertising tokens). The following table explains each type.
 
-| ID Form | Shared in Bid Stream? | Description |
+| ID Type | Shared in Bid Stream? | Description |
 | :--- | :--- | :--- |
 | **Raw EUIDs** | Never | This is an unencrypted alphanumeric identifier created through a set of EUID APIs or SDKs with users’ verifiable PII, such as an email address, as input. Raw EUIDs are designed to be stored by advertisers, data providers, and DSPs.|
-| **EUID (Advertising) Token** | Shared | This is an encrypted form of a raw EUID. EUID tokens are generated from hashed or unhashed email addressesand are designed to be stored by publishers or publisher service providers. SSPs pass the EUID token in bid stream and DSPs decrypt them at bid request time. |
+| **EUID (Advertising) Token** | Shared | This is an encrypted form of a raw EUID. EUID tokens are generated from hashed or unhashed email addresses and are designed to be stored by publishers or publisher service providers. SSPs pass the EUID token in bid stream and DSPs decrypt them at bid request time. |
 
 ### Core Components
 
@@ -103,7 +103,7 @@ The following table lists the key participants and their roles in the EUID workf
 
 | Participant | Role Description |
 | :--- | :--- |
-| **Core Administrator**  | An organization (currenlty, The Trade Desk) that manages the EUID Core System and other [components](#core-components), for example, for distributing encryption keys and salts to EUID operators and sending user opt-outs requests to operators and DSPs. |  
+| **Core Administrator**  | An organization (currently, The Trade Desk) that manages the EUID Core System and other [components](#core-components), for example, for distributing encryption keys and salts to EUID operators and sending user opt-outs requests to operators and DSPs. |  
 | **Open Operators**  | Organizations that operate the service (via the APIs) and are accessible to all participants. Operators receive and store encryption keys and salts from the EUID Core System, salt and hash PII to return EUIDs, encrypt EUIDs to generate EUID tokens, and distribute EUID token decryption keys.<br/><br/>There may multiple operators that participants may choose to work with. Any participant can choose to become a closed operator and operate their own internal version of the service to generate and manage EUIDs.<br/><br/>Currently, The Trade Desk is the only open operator for EUID. | 
 | **Compliance Manager**  | An organization that audits EUID participants for compliance with stated rules and relays compliance information to the EUID administrators and EUID operators. | 
 | **DSPs**  | DSPs integrate with the EUID system to receive EUIDs from brands (as first-party data) and data providers (as third-party data) and leverage them to inform bidding on EUIDs in the bid stream. | 
@@ -115,7 +115,7 @@ The following table lists the key participants and their roles in the EUID workf
 
 The following lists four key workflows in the EUID system and provides links to the integration guides, which include specific diagrams, integration steps, FAQs, and other relevant information for each workflow.
 
-| Workflow | Intended Primary Participants | Intergation Guide |
+| Workflow | Intended Primary Participants | Integration Guide |
 | :--- | :--- | :--- |
 | **Buy-side** | DSPs who transact on EUIDs in the bid stream. | [DSP](./api/v1/guides/dsp-guide.md) |
 | **Data provider** | Organizations that collect user data and push it to DSPs. | [Advertiser and Data Provider](./api/v1/guides/advertiser-dataprovider-guide.md) |
@@ -142,7 +142,7 @@ Metadata supplied with the EUID token discloses the timestamp of encryption, whi
 
 #### Can a user opt out of targeted advertising tied to their EUID?
 
-Yes, through the [Transparency and Control Portal](https://transparentadvertising.eu), a user can opt out of being served targeted ads tied to their EUID. The request is distributed through the EUID Core System and EUID Operators to all relevant paricipants. Some publishers and service providers have the option to limit access to their products based on a user’s participation in EUID and it is the publisher’s responsibility to communicate this as part of their value exchange dialog with the user.
+Yes, through the [Transparency and Control Portal](https://transparentadvertising.eu), a user can opt out from being served targeted ads tied to their EUID. The request is distributed through the EUID Core System and EUID Operators to all relevant participants. Some publishers and service providers have the option to limit access to their products based on a user’s participation in EUID and it is the publisher’s responsibility to communicate this as part of their value exchange dialog with the user.
 
 #### How does a user know where to access the opt-out portal?
 
