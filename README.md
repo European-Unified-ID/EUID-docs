@@ -83,7 +83,7 @@ The core administrative EUID infrastructure consists of the following components
 
 | Component | Description |
 | :--- | :--- |
-| **Core System**  | A centralized service that manages access to the distributed EUID system. |  
+| **Core System**  | A centralized service that stores salt secrets, encryption keys, and manages access to the distributed EUID system. |  
 | **Opt-out Service**  | A global service that manages user opt-out requests, for example, by routing them to all EUID data holders. | 
 | **Transparency and Control Portal**  | A user-facing website, [https://transparentadvertising.eu](https://transparentadvertising.eu), that allows consumers to opt out of EUID at any time. | 
 
@@ -127,15 +127,17 @@ The following are the commonly asked questions regarding EUID.
 
 #### Will all integration partners in the UID2 infrastructure (SSPs, data providers, measurement providers) be automatically integrated with EUID? 
 
-No. EUID will function as its own identifier separate from UID2. As such, paperwork containing usage and access to UID2 does not automatically grant usage and access for EUID. New contracts are required to be signed for EUID.
+No. EUID functions as its own identifier separate from UID2. As such, paperwork containing usage and access to UID2 does not automatically grant usage and access for EUID. New contracts are required to be signed for EUID.
 
 #### How do companies interfacing with EUID tokens know which decryption key to apply?
 
-Metadata supplied with the EUID token discloses the timestamp of encryption, which informs which decryption key applies.
+Metadata supplied with a EUID token discloses the timestamp of encryption, which informs which decryption key applies.
 
 #### Can a user opt out of targeted advertising tied to their EUID?
 
-Yes, through the [Transparency and Control Portal](https://transparentadvertising.eu), a user can opt out from being served targeted ads tied to their EUID. The request is distributed through the EUID Core System and EUID Operators to all relevant participants. Some publishers and service providers have the option to limit access to their products based on a user’s participation in EUID and it is the publisher’s responsibility to communicate this as part of their value exchange dialog with the user.
+Yes, through the [Transparency and Control Portal](https://transparentadvertising.eu), a user can opt out from being served targeted ads tied to their EUID. The request is distributed through the EUID Core System and EUID Operators to all relevant participants. 
+
+Some publishers and service providers have the option to limit access to their products based on a user’s participation in EUID and it is the publisher’s responsibility to communicate this as part of their value exchange dialog with the user.
 
 #### How does a user know where to access the opt-out portal?
 
@@ -143,8 +145,7 @@ Publishers, SSOs, or consent management platforms disclose links to the [Transpa
 
 #### Why do advertisers and data providers not need to integrate with the opt-out feed?
 
-Opt-outs relate to opting out of targeted advertising, which is handled through the publisher and DSP opt-out workflows. If the consumer wishes to disengage with a specific advertiser, they need to contact the advertiser directly.
-
+Opt-outs relate to opting out of targeted advertising, which is handled through the publisher and DSP opt-out [workflows](#workflows). If the consumer wishes to disengage from a specific advertiser, they need to contact the advertiser directly.
 
 ## License
 All work and artifacts are licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt).
