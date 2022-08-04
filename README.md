@@ -48,7 +48,7 @@ The following table summarizes the key differences between the two solutions.
 
 ### Technical Design Principles
 
-- **Accountability:** Access requires all participanaats to abide by a code of conduct governed by an independent body.
+- **Accountability:** Access requires all participants to abide by a code of conduct governed by an independent body.
 
 - **Distributed Integration:** Multiple certified integration paths provide options for publishers, advertisers, and data providers to generate EUIDs.
 
