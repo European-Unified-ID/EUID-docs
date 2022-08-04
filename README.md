@@ -28,7 +28,7 @@ The following table summarizes the key differences between the two solutions.
 | :--- | :--- | :--- |
 | Open-sourced framework | Yes | Yes |
 | Interoperable | Yes | Yes |
-| PII | Email addresses, phone numbers | Email addresses |
+| PII used | Email addresses, phone numbers | Email addresses |
 | Consent | Based on local regulations like CPRA, CCPA | Driven by GDPR, TCF2.0 outcomes and local regulatory input |
 
 
