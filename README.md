@@ -97,25 +97,19 @@ The core administrative EUID infrastructure consists of the following components
 
 ### Participants 
 
-With its transparent and interoperable approach, EUID provides a collaborative framework for many participants across the advertising ecosystem—advertisers, publishers, DSPs, SSPs, SSOs, CDPs, CMPs, identity providers, data providers, and measurement providers.  The EUID workflows involve the following participants.
+With its transparent and interoperable approach, EUID provides a collaborative framework for many participants across the advertising ecosystem—advertisers, publishers, DSPs, SSPs, SSOs, CDPs, CMPs, identity providers, data providers, and measurement providers.  
 
-The following table lists the key participants
+The following table lists the key participants in the EUID workflows.
 
 | Participant | Role Description |
 | :--- | :--- |
 | **Core Administrator**  | An organization (currenlty, The Trade Desk) that manages the EUID Core System and other [components](#core-components), for example, for distributing encryption keys and salts to EUID operators and sending user opt-outs requests to operators and DSPs. |  
-| **Open Operators**  | Organizations that operate the service (via the APIs) and are accessible to all participants. Operators receive and store encryption keys and salts from the EUID Core System, salt and hash PII to return EUIDs, encrypt EUIDs to generate EUID tokens, and distribute EUID token decryption keys.<br/><br/>There may multiple operators that participants may choose to work with.<br/><br/>Any participant can choose to become a closed operator and operate their own internal version of the service to generate and manage EUIDs.<br/><br/>Currently, The Trade Desk is the Open Operator for EUID. | 
-| **Compliance Manager**  | An organization that audits all the participant EUID parties for compliance with stated rules relays compliance information to the EUID administrators and EUID operators. | 
-| **DSPs**  |  | 
-| **Data Providers**  | DSPs integrate with EUID to receive EUIDs from brands (as first-party data) and data providers (as third-party data) and leverage them to inform bidding on EUIDs in the bid stream. transact on EUIDs in the bid stream.
- | 
-| **Publishers**  | organizations that propagate IDs to the bid stream via SSPs. Publisher organizations include identity providers, publishers, and SSOs.
-Publishers who want to send users' PII and generate EUIDs need to access the EUID Operator API.
-Publishers may choose to work with an SSO or independent ID provider who is interoperable with EUID. The provider may handle the EUID integration on their behalf. | 
-| **Consumers**  | users engaging with publishers or publisher-related SSOs and identity providers. This workflow allows a user to consent to the creation of an EUID and manage their EUID consent and privacy settings in the [Opt-Out Portal](#opt-out-portal). | 
-
-
-
+| **Open Operators**  | Organizations that operate the service (via the APIs) and are accessible to all participants. Operators receive and store encryption keys and salts from the EUID Core System, salt and hash PII to return EUIDs, encrypt EUIDs to generate EUID tokens, and distribute EUID token decryption keys.<br/><br/>There may multiple operators that participants may choose to work with. Any participant can choose to become a closed operator and operate their own internal version of the service to generate and manage EUIDs.<br/><br/>Currently, The Trade Desk is the Open Operator for EUID. | 
+| **Compliance Manager**  | An organization that audits EUID participants for compliance with stated rules and relays compliance information to the EUID administrators and EUID operators. | 
+| **DSPs**  | DSPs integrate with the EUID system to receive EUIDs from brands (as first-party data) and data providers (as third-party data) and leverage them to inform bidding on EUIDs in the bid stream. | 
+| **Data Providers**  | Organizations that collect user data and push it to DSPs and include advertisers, data on-boarders, measurement providers, identity graph providers, third-party data providers, and other organizations who push data to DSPs. | 
+| **Publishers**  | Organizations that propagate IDs to the bid stream via SSP and include identity providers, publishers, and SSOs. Publishers can choose to work with an SSO or independent ID provider who is interoperable with EUID. The provider may handle the EUID integration on their behalf. | 
+| **Consumers**  | Users who engage with publishers or publisher-related SSOs and identity providers. Users can consent to the creation of an EUID and manage their EUID consent and privacy settings in the [Transparency and Control Portal]([#opt-out-portal](https://transparentadvertising.eu)). | 
 
 ## Workflows
 
