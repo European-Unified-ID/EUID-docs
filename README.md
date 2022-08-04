@@ -52,7 +52,7 @@ The following table summarizes the key differences between the two solutions.
 
 - **Distributed Integration:** Multiple certified integration paths provide options for publishers, advertisers, and data providers to generate EUIDs.
 
-- **Decentralized Storage:** To block malicious actors, the frameworks provides no centralized storage of PII-to-EUID mappings.
+- **Decentralized Storage:** To block malicious actors, the framework provides no centralized storage of PII-to-EUID mappings.
 
 - **Lean Infrastructure:** Infrastructure is light and inexpensive to operate.
 
