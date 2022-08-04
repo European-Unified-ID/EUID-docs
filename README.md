@@ -77,7 +77,7 @@ TBd
 
 ### EUID Types
 
-There are two types of EUIDs, raw EUIDs and EUID tokens (also know as advertising tokens). The following table explains each type.
+There are two types of EUIDs, raw EUIDs and EUID tokens (also known as advertising tokens). The following table explains each type.
 
 | ID Form | Shared in Bid Stream? | Description |
 | :--- | :--- | :--- |
@@ -86,7 +86,7 @@ There are two types of EUIDs, raw EUIDs and EUID tokens (also know as advertisin
 
 ### Core Components
 
-The core administrative EUID infrastructure consists of the following components.
+The core administrative EUID infrastructure consists of the following components, all of which are currently managed by The Trade Desk.
 
 | Component | Description |
 | :--- | :--- |
@@ -99,12 +99,12 @@ The core administrative EUID infrastructure consists of the following components
 
 With its transparent and interoperable approach, EUID provides a collaborative framework for many participants across the advertising ecosystem—advertisers, publishers, DSPs, SSPs, SSOs, CDPs, CMPs, identity providers, data providers, and measurement providers.  
 
-The following table lists the key participants in the EUID workflows.
+The following table lists the key participants and their roles in the EUID workflows.
 
 | Participant | Role Description |
 | :--- | :--- |
 | **Core Administrator**  | An organization (currenlty, The Trade Desk) that manages the EUID Core System and other [components](#core-components), for example, for distributing encryption keys and salts to EUID operators and sending user opt-outs requests to operators and DSPs. |  
-| **Open Operators**  | Organizations that operate the service (via the APIs) and are accessible to all participants. Operators receive and store encryption keys and salts from the EUID Core System, salt and hash PII to return EUIDs, encrypt EUIDs to generate EUID tokens, and distribute EUID token decryption keys.<br/><br/>There may multiple operators that participants may choose to work with. Any participant can choose to become a closed operator and operate their own internal version of the service to generate and manage EUIDs.<br/><br/>Currently, The Trade Desk is the Open Operator for EUID. | 
+| **Open Operators**  | Organizations that operate the service (via the APIs) and are accessible to all participants. Operators receive and store encryption keys and salts from the EUID Core System, salt and hash PII to return EUIDs, encrypt EUIDs to generate EUID tokens, and distribute EUID token decryption keys.<br/><br/>There may multiple operators that participants may choose to work with. Any participant can choose to become a closed operator and operate their own internal version of the service to generate and manage EUIDs.<br/><br/>Currently, The Trade Desk is the only open operator for EUID. | 
 | **Compliance Manager**  | An organization that audits EUID participants for compliance with stated rules and relays compliance information to the EUID administrators and EUID operators. | 
 | **DSPs**  | DSPs integrate with the EUID system to receive EUIDs from brands (as first-party data) and data providers (as third-party data) and leverage them to inform bidding on EUIDs in the bid stream. | 
 | **Data Providers**  | Organizations that collect user data and push it to DSPs and include advertisers, data on-boarders, measurement providers, identity graph providers, third-party data providers, and other organizations who push data to DSPs. | 
@@ -127,6 +127,11 @@ This diagram summarizes all four workflows.
 
 ## FAQs
 
+The following are the commonly asked questions regarding EUID.
+
+#### Will all integration partners in the UID2 infrastructure (SSPs, data providers, measurement providers) be automatically integrated with EUID? 
+
+No. EUID will function as its own identifier separate from UID2. As such, paperwork containing usage and access to UID2 does not automatically grant usage and access for EUID. New contracts are required to be signed for EUID.
 
 #### How do companies interfacing with EUID tokens know which decryption key to apply?
 
@@ -134,19 +139,15 @@ Metadata supplies with the EUID token discloses the timestamp of encryption, whi
 
 #### Can a user opt out of targeted advertising tied to their EUID?
 
-Yes, through the Opt-Out Portal (also known as the [Transparency and Control Portal](https://transparentadvertising.eu)), a user can opt out of being served targeted ads tied to their EUID. The request will be distributed through EUID Administrator and EUID Operators to all relevant members. Some publishers and service providers have the option to limit access to their products based on a user’s participation in EUID and it is the publisher’s responsibility to communicate this as part of their value exchange dialog with the user.
+Yes, through the [Transparency and Control Portal](https://transparentadvertising.eu), a user can opt out of being served targeted ads tied to their EUID. The request will be distributed through EUID Administrator and EUID Operators to all relevant members. Some publishers and service providers have the option to limit access to their products based on a user’s participation in EUID and it is the publisher’s responsibility to communicate this as part of their value exchange dialog with the user.
 
-#### How does a user know where to access the Opt-Out Portal?
+#### How does a user know where to access the opt-out portal?
 
-Publishers, SSOs, or consent management platforms disclose links to the Opt-Out Portal in their login/consent flows, privacy policies, and other means.
+Publishers, SSOs, or consent management platforms disclose links to the [Transparency and Control Portal](https://transparentadvertising.eu) in their login and consent flows, privacy policies, and other means.
 
 #### Why do advertisers and data providers not need to integrate with the opt-out feed?
 
 Opt-outs relate to opting out of targeted advertising, which is handled through the publisher and DSP opt-out workflows. If the consumer wishes to disengage with a specific advertiser, they need to contact the advertiser directly.
-
-#### Will all integration partners in the UID2 infrastructure (SSPs, data providers, measurement providers) be automatically integrated with EUID? 
-
-No. EUID will function as its own identifier separate from UID2. As such, paperwork containing usage and access to UID2 does not automatically grant usage and access for EUID. New contracts are required to be signed for EUID.
 
 
 ## License
