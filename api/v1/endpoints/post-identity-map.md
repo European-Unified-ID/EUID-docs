@@ -58,9 +58,9 @@ Here's an encrypted identity mapping request format with placeholder values:
 
 ```sh
 echo '[Unencrypted-JSON-Request-Body]' \
-  | encrypt_request.py [Your-Client-Secret] \
-  | curl -X POST 'https://prod.uidapi.com/v2/identity/map' -H 'Authorization: Bearer [Your-Client-API-Key]' \
-  | decrypt_response.py [Your-Client-Secret] 
+  | encrypt_request.py [CLIENT_SECRET] \
+  | curl -X POST 'https://prod.uidapi.com/v2/identity/map' -H 'Authorization: Bearer [CLIENT_API_KEY]' \
+  | decrypt_response.py [CLIENT_SECRET] 
 ```
 
 Here's an encrypted identity mapping request example for email addresses:
