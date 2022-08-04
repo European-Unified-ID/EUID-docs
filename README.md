@@ -22,7 +22,7 @@ EUID is an open-source, standalone solution with its own unique namespace that b
 
 >IMPORTANT: Even though it builds on the UID2 framework, EUID is a separate identifier. 
 
-The following table summarizes the key differences.
+The following table summarizes the key differences between the two solutions.
 
 | Comparison Aspect | UID2 | EUID |
 | :--- | :--- | :--- |
@@ -36,23 +36,23 @@ The following table summarizes the key differences.
 
 - **First-Party Relationships:** EUID allows advertisers to easily activate their first-party data on publishers across the open internet.
 
-- **Non-Proprietary (Universal) Standard:** EUID is accessible to all constituents in the advertising ecosystem who abide by the code of conduct, and no individual company controls access. This includes DSPs, SSPs, data providers, measurement providers, and identity services. 
+- **Non-Proprietary (Universal) Standard:** EUID is accessible to all [participants](#participants) in the advertising ecosystem who abide by the code of conduct. No individual company controls access.
 
-- **Open Source:** EUID code will be transparent via an open-source framework.
+- **Open Source:** EUID code is transparent via an open-source framework.
 
-- **Interoperable:** EUID allows other identity solutions (commercial and/or proprietary) to integrate and provide EUIDs with their offering.
+- **Interoperable:** EUID allows other identity solutions (commercial and proprietary) to integrate and provide EUIDs with their offering.
 
-- **Secure and Encrypted Data:** EUID leverages multiple layers of security to secure PII and user data.
+- **Secure and Encrypted Data:** EUID leverages multiple layers of security to protect PII and user data.
 
-- **Consumer Control:** Consumers can opt out of EUID at any time through the [Transparency and Control Portal](https://transparentadvertising.eu). For details, see [Core Components](#core-components).
+- **Consumer Control:** Consumers can opt out of EUID at any time through the [Transparency and Control Portal](https://transparentadvertising.eu). See also [Core Components](#core-components).
 
 ### Technical Design Principles
 
-- **Accountability:** Access requires members to abide by a code of conduct governed by an independent body.
+- **Accountability:** Access requires all participanaats to abide by a code of conduct governed by an independent body.
 
 - **Distributed Integration:** Multiple certified integration paths provide options for publishers, advertisers, and data providers to generate EUIDs.
 
-- **Decentralized Storage:** Centralized location with PII-to-EUID mapping has been eliminated to block malicious actors.
+- **Decentralized Storage:** To block malicious actors, the frameworks provides no centralized storage of PII-to-EUID mappings.
 
 - **Lean Infrastructure:** Infrastructure is light and inexpensive to operate.
 
@@ -60,10 +60,12 @@ The following table summarizes the key differences.
 
 
 ## EUID Infrastructure
-TBd
+
+The EUID infrastructure includes the following key elements:
+
   - [EUID Types](#euid-types)
-  - [Participants](#participants)
   - [Core Components](#core-components)
+  - [Participants](#participants)
   - [Workflows](#workflows)
 
 ### EUID Types
