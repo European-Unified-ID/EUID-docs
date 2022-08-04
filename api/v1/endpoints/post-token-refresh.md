@@ -36,8 +36,8 @@ Here's a token refresh request format with placeholder values, which include the
 
 ```sh
 echo [refresh_token] \
-  | curl -X POST 'https://prod.uidapi.com/v2/token/refresh' -H 'Authorization: Bearer [Your-Client-API-Key]' \
-  | decrypt_response.py [refresh_response_key] --is-refresh
+  | curl -X POST 'https://prod.uidapi.com/v2/token/refresh' -H 'Authorization: Bearer [CLIENT_API_KEY]' \
+  | decrypt_response.py [REFRESH_RESPONSE_KEY] --is-refresh
 ```
 
 Here's a token refresh request example:
