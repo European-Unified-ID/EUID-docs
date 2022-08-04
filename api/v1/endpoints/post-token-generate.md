@@ -53,7 +53,7 @@ Here's an encrypted token generation request format with placeholder values:
 ```sh
 echo '[Unencrypted-JSON-Request-Body]' \
   | encrypt_request.py [CLIENT_SECRET] \
-  | curl -X POST 'https://prod.uidapi.com/v2/token/generate' -H 'Authorization: Bearer [Your-Client-API-Key]' \
+  | curl -X POST 'https://prod.uidapi.com/v2/token/generate' -H 'Authorization: Bearer [CLIENT_API_KEY]' \
   | decrypt_response.py [CLIENT_SECRET]
 ```
 
