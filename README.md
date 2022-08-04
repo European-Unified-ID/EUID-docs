@@ -3,18 +3,9 @@
 
 This page provides the following information about EUID:
 - [Introduction](#introduction)
-    - [EUID vs. UID2](#euid-vs-uid2)
-    - [Guiding Principles](#guiding-principles)
-    - [Technical Design Principles](#technical-design-principles)
 - [EUID Infrastructure](#euid-infrastructure)
-  - [EUID Types](#euid-types)
-  - [Participants](#participants)
-  - [Core Components](#core-components)
-  - [Workflows](#workflows)
 - [FAQs](#faqs)
 - [License](#license)
-
-
 
 For integration guides, supported SDKs, and endpoint reference, see [EUID API Documentation](/api/v1/README.md). See also [Getting Started](/api/README.md).
 
