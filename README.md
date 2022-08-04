@@ -107,7 +107,7 @@ The following table lists the key participants and their roles in the EUID workf
 | **Open Operators**  | Organizations that operate the service (via the APIs) and are accessible to all participants. Operators receive and store encryption keys and salts from the EUID Core System, salt and hash PII to return EUIDs, encrypt EUIDs to generate EUID tokens, and distribute EUID token decryption keys.<br/><br/>There may multiple operators that participants may choose to work with. Any participant can choose to become a closed operator and operate their own internal version of the service to generate and manage EUIDs.<br/><br/>Currently, The Trade Desk is the only open operator for EUID. | 
 | **Compliance Manager**  | An organization that audits EUID participants for compliance with stated rules and relays compliance information to the EUID administrators and EUID operators. | 
 | **DSPs**  | DSPs integrate with the EUID system to receive EUIDs from brands (as first-party data) and data providers (as third-party data) and leverage them to inform bidding on EUIDs in the bid stream. | 
-| **Data Providers**  | Organizations that collect user data and push it to DSPs and include advertisers, data on-boarders, measurement providers, identity graph providers, third-party data providers, and other organizations who push data to DSPs. | 
+| **Data Providers**  | Organizations that collect user data and push it to DSPs and include advertisers, data on-boarders, measurement providers, identity graph providers, third-party data providers, and other participants who push data to DSPs. | 
 | **Publishers**  | Organizations that propagate IDs to the bid stream via SSP and include identity providers, publishers, and SSOs. Publishers can choose to work with an SSO or independent ID provider who is interoperable with EUID. The provider may handle the EUID integration on their behalf. | 
 | **Consumers**  | Users who engage with publishers or publisher-related SSOs and identity providers. Users can consent to the creation of an EUID and manage their EUID consent and privacy settings in the [Transparency and Control Portal]([#opt-out-portal](https://transparentadvertising.eu)). | 
 
@@ -115,14 +115,18 @@ The following table lists the key participants and their roles in the EUID workf
 
 There are four key workflows in the EUID system:
 
-- [Buy-side workflow](#buy-side-workflow)
-- [Data provider workflow](#data-provider-workflow)
-- [Publisher workflow](#publisher-workflow)
-- [User trust workflow](#user-trust-workflow)
+| Workflow | Intended Participants | Intergation Guide |
+| :--- | :--- | :--- |
+| **Buy-side** | DSPs who transact on EUIDs in the bid stream. | [Publisher (with EUID SDK)](/../../publisher-client-side.md)<br/>[Publisher (Server-Only)](./custom-publisher-integration.md) |
+| **Data provider** | Organizations that collect user data and push it to DSPs. | [DSP](./dsp-guide.md) |
+| **Publisher** | Organizations that propagate IDs to the bid stream via SSPs. | [Advertiser and Data Provider](./advertiser-dataprovider-guide.md) |
+| **User trust** | Consumers who engage with publishers or publisher-related SSOs and identity providers. | N/A |
+
 
 This diagram summarizes all four workflows.
 
 ![The EUID Ecosystem](/images/macro_view.jpg)
+
 
 
 ## FAQs
