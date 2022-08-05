@@ -18,7 +18,7 @@ The goal for EUID is to enable deterministic identity for advertising opportunit
 
 ### EUID vs. UID2
 
-EUID is an open-source, standalone solution with its own unique namespace that builds on the [UID2 framework](https://github.com/UnifiedID2/uid2docs/blob/main/api/README.md). The main differences between UID2 and EUID result from more stringent EU data protection laws related to the consent-collection framework and data rights for data subjects and obligations between parties. Otherwise, EUID follows the same [guiding principles](#guiding-principles) as UID2.
+EUID is an open-source, standalone solution with its own unique namespace that builds on the [UID2 framework](https://github.com/UnifiedID2/uid2docs/blob/main/api/README.md). The main differences between UID2 and EUID result from more stringent EU data protection laws related to the consent-collection framework and data rights for data subjects and obligations between participants. Otherwise, EUID follows the same [guiding principles](#guiding-principles) as UID2.
 
 >IMPORTANT: Even though it builds on the UID2 framework, EUID is a separate identifier. 
 
@@ -29,39 +29,39 @@ The following table summarizes the key differences between the two solutions.
 | Open-sourced framework | Yes | Yes |
 | Interoperable | Yes | Yes |
 | PII used | Email addresses, phone numbers | Email addresses |
-| Consent | Based on local regulations like CPRA, CCPA | Driven by GDPR, TCF2.0 outcomes and local regulatory input |
+| Consent | Based on local regulations like CPRA, CCPA | Driven by GDPR, TCF2.0 outcomes, and local regulatory input |
 
 
 ### Guiding Principles
 
-- **First-Party Relationships:** EUID enables advertisers to easily activate their first-party data on publishers across the open internet.
+- **First-party relationships:** EUID enables advertisers to easily activate their first-party data on publisher websites across the open internet.
 
-- **Non-Proprietary (Universal) Standard:** EUID is accessible to all [participants](#participants) in the advertising ecosystem who abide by the code of conduct. No individual company controls access.
+- **Non-proprietary (universal) standard:** EUID is accessible to all [participants](#participants) in the advertising ecosystem who abide by the code of conduct. No individual organization controls access.
 
-- **Open Source:** EUID code is transparent via an open-source framework.
+- **Open source:** EUID code is transparent thanks to an open-source framework.
 
-- **Interoperable:** EUID allows other identity solutions (commercial and proprietary) to integrate and provide EUIDs with their offering.
+- **Interoperable:** EUID allows other identity solutions (commercial and proprietary) to integrate and provide EUIDs with their offerings.
 
-- **Secure and Encrypted Data:** EUID leverages multiple layers of security to protect PII and user data.
+- **Secure and encrypted data:** EUID leverages multiple layers of security to protect PII and other user data.
 
-- **Consumer Control:** Consumers can opt out of EUID at any time through the [Transparency and Control Portal](https://transparentadvertising.eu). See also [Core Components](#core-components).
+- **Consumer control:** Consumers can opt out of EUID at any time through the [Transparency and Control Portal](https://transparentadvertising.eu).
 
 ### Technical Design Principles
 
 - **Accountability:** Access requires all participants to abide by a code of conduct governed by an independent body.
 
-- **Distributed Integration:** Multiple certified integration paths provide options for publishers, advertisers, and data providers to generate EUIDs.
+- **Distributed integration:** Multiple certified integration paths provide options for publishers, advertisers, and data providers to generate EUIDs.
 
-- **Decentralized Storage:** To block malicious actors, the framework provides no centralized storage of PII-to-EUID mappings.
+- **Decentralized storage:** To block malicious actors, the framework provides no centralized storage of PII-to-EUID mappings.
 
-- **Lean Infrastructure:** Infrastructure is light and inexpensive to operate.
+- **Lean infrastructure:** Infrastructure is light and inexpensive to operate.
 
-- **Self-Reliant:** No reliance on external services for real-time processing of RTB data.
+- **Self-reliant:** No reliance on external services for real-time processing of RTB data.
 
 
 ## EUID Infrastructure
 
-The following sections explain and illustrate the key elements of EUID infrastructure:
+The following sections explain and illustrate the key elements of the EUID infrastructure:
 
   - [EUID Types](#euid-types)
   - [Core Components](#core-components)
@@ -79,7 +79,7 @@ There are two types of EUIDs, raw EUIDs and EUID tokens (also known as advertisi
 
 ### Core Components
 
-The core administrative EUID infrastructure consists of the following components, all of which are currently managed by The Trade Desk.
+The administrative EUID infrastructure consists of the following core components, all of which are currently managed by The Trade Desk.
 
 | Component | Description |
 | :--- | :--- |
