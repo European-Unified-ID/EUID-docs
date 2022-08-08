@@ -1,4 +1,4 @@
-# European Unified ID Overview (WIP)
+# European Unified ID Overview
 
 
 This page provides the following information about EUID:
@@ -98,7 +98,7 @@ The following table lists the key participants and their roles in the EUID [work
 | Participant | Role Description |
 | :--- | :--- |
 | **Core Administrator**  | An organization (currently, The Trade Desk) that manages the EUID Core Service and other [components](#core-components), for example, by distributing encryption keys and salts to EUID operators and sending user opt-outs requests to operators and DSPs. |  
-| **Operators**  | Organizations that operate the service (via the EUID APIs) and are accessible to all participants. Operators receive and store encryption keys and salts from the EUID Core Service, salt and hash PII to return EUIDs, encrypt EUIDs to generate EUID tokens, and distribute EUID token decryption keys.<br/><br/>There can be multiple operators that participants can choose to work with. Any participant can also choose to become a closed operator and operate their own internal version of the service to generate and manage EUIDs.<br/><br/>Currently, The Trade Desk is the only open operator for EUID. | 
+| **Operators**  | Organizations that operate the service (via the EUID APIs) and are accessible to all participants. Operators receive and store encryption keys and salts from the EUID Core Service, salt and hash PII to return EUIDs, encrypt EUIDs to generate EUID tokens, and distribute EUID token decryption keys.<br/><br/>There can be multiple operators that participants can choose to work with. Any participant can also choose to become a closed operator and operate their own internal version of the service to generate and manage EUIDs.<br/><br/>The Trade Desk serves as an open operator for EUID. | 
 | **Compliance Manager**  | An organization that audits EUID participants for compliance with stated rules and relays compliance information to the EUID administrators and EUID operators. | 
 | **DSPs**  | DSPs integrate with the EUID system to receive EUIDs from brands (as first-party data) and data providers (as third-party data) and leverage them to inform bidding on EUIDs in the bid stream. | 
 | **Data Providers**  | Organizations that collect user data and push it to DSPs, for example, advertisers, data on-boarders, measurement providers, identity graph providers, and third-party data providers. | 
