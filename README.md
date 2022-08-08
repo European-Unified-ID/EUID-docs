@@ -74,8 +74,8 @@ There are two types of EUIDs, raw EUIDs and EUID tokens (also known as advertisi
 
 | ID Type | Shared in Bid Stream? | Description |
 | :--- | :--- | :--- |
-| **Raw EUIDs** | Never | This is an unencrypted alphanumeric identifier created through the EUID APIs or SDKs with the user's verifiable PII, such as an email address, as input. Raw EUIDs are designed to be stored by advertisers, data providers, and DSPs.|
-| **EUID (Advertising) Token** | Shared | This is an encrypted form of a raw EUID. EUID tokens are generated from hashed or unhashed email addresses and are designed to be stored by publishers or publisher service providers. SSPs pass EUID tokens in bid stream and DSPs decrypt them at bid request time. |
+| **Raw EUIDs** | Never | This is an unencrypted alphanumeric identifier created through the EUID APIs or SDKs with the user's verifiable PII, such as an email address, as input. Raw EUIDs are designed to be stored by advertisers, data providers, and demand-side platforms (DSPs).|
+| **EUID (Advertising) Token** | Shared | This is an encrypted form of a raw EUID. EUID tokens are generated from hashed or unhashed email addresses and are designed to be stored by publishers or publisher service providers. Supply-side platforms (SSPs) pass EUID tokens in bid stream and DSPs decrypt them at bid request time. |
 
 ### Core Components
 
@@ -91,7 +91,7 @@ The administrative EUID infrastructure consists of the following core components
 
 ### Participants 
 
-With its transparent and interoperable approach, EUID provides a collaborative framework for many participants across the advertising ecosystem—advertisers, publishers, DSPs, SSPs, SSOs, CDPs, CMPs, identity providers, data providers, and measurement providers.  
+With its transparent and interoperable approach, EUID provides a collaborative framework for many participants across the advertising ecosystem—advertisers, publishers, DSPs, SSPs, single sign-on (SSO) providerss, customer data platforms (CDPs), consent management providers (CMPs), identity providers, data providers, and measurement providers.  
 
 The following table lists the key participants and their roles in the EUID [workflows](#workflows).
 
