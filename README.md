@@ -29,7 +29,7 @@ The following table summarizes the key differences between the two solutions.
 | Open-sourced framework | Yes | Yes |
 | Interoperable | Yes | Yes |
 | PII used | Email addresses, phone numbers | Email addresses |
-| Consent | Based on local regulations like California Privacy Rights Act (CPRA), California Consumer Privacy Act (CCPA) | Driven by GDPR, TCF2.0 outcomes, and local regulatory input |
+| Consent | Based on local regulations like California Privacy Rights Act (CPRA), California Consumer Privacy Act (CCPA) | Driven by General Data Protection Regulation (GDPR), Transparency and Consent Framework (TCF) 2.0 outcomes, and local regulatory input |
 
 
 ### Guiding Principles
@@ -74,8 +74,8 @@ There are two types of EUIDs, raw EUIDs and EUID tokens (also known as advertisi
 
 | ID Type | Shared in Bid Stream? | Description |
 | :--- | :--- | :--- |
-| **Raw EUIDs** | Never | This is an unencrypted alphanumeric identifier created through the EUID APIs or SDKs with the user's verifiable PII, such as an email address, as input. Raw EUIDs are designed to be stored by advertisers, data providers, and demand-side platforms (DSPs).|
-| **EUID (Advertising) Token** | Shared | This is an encrypted form of a raw EUID. EUID tokens are generated from hashed or unhashed email addresses and are designed to be stored by publishers or publisher service providers. Supply-side platforms (SSPs) pass EUID tokens in bid stream and DSPs decrypt them at bid request time. |
+| **Raw EUIDs** | Never | An unencrypted alphanumeric identifier created through the EUID APIs or SDKs with the user's verifiable PII, such as an email address, as input. Raw EUIDs are designed to be stored by advertisers, data providers, and demand-side platforms (DSPs).|
+| **EUID (Advertising) Token** | Shared | An encrypted form of a raw EUID. EUID tokens are generated from hashed or unhashed email addresses and are designed to be stored by publishers or publisher service providers. Supply-side platforms (SSPs) pass EUID tokens in bid stream and DSPs decrypt them at bid request time. |
 
 ### Core Components
 
@@ -84,7 +84,7 @@ The administrative EUID infrastructure consists of the following core components
 | Component | Description |
 | :--- | :--- |
 | **Core Service**  | A centralized service that stores salt secrets, encryption keys, and manages access to the distributed EUID system. | 
-| **Operator Service**  | TBD. Operator Service being the scalability level of infrastructure: more load can be handled by adding more operator service instances. All instances (public or private) are designed with protections to ensure keeping sensitive EUID data required to provide the services secure, regardless of who operates the service.  | 
+| **Operator Service**  | A service that enables the management and storage of encryption keys and salts from the EUID Core Service, hashing of users' PII, encryption and decryption of EUIDs. There can be mutiple instances of the service (public or private), which can be operated by multiple [participants](#participants), knowns as operators.<br/><br/>Publicly available instances of the Operator Service are run by open operators and are available to all relevant EUID [participants](#participants). Private instances are run by closed operators exclusively for their own use. All instances are designed with protections to keep sensitive EUID data secure, regardless of who operates the service.<br/><br/>NOTE: The Operator Service reflects the scalability level of the EUID infrastructure—adding more operator service instances increases the load.  | 
 | **Opt-out Service**  | A global service that manages user opt-out requests, for example, by routing them to the relevant EUID data holders. | 
 | **Transparency and Control Portal**  | A user-facing website, [https://transparentadvertising.eu](https://transparentadvertising.eu), that allows consumers to opt out of EUID at any time. | 
 
@@ -98,7 +98,7 @@ The following table lists the key participants and their roles in the EUID [work
 | Participant | Role Description |
 | :--- | :--- |
 | **Core Administrator**  | An organization (currently, The Trade Desk) that manages the EUID Core Service and other [components](#core-components), for example, by distributing encryption keys and salts to EUID operators and sending user opt-outs requests to operators and DSPs. |  
-| **Operators**  | Organizations that operate the service (via the EUID APIs) and are accessible to all participants. Operators receive and store encryption keys and salts from the EUID Core Service, salt and hash PII to return EUIDs, encrypt EUIDs to generate EUID tokens, and distribute EUID token decryption keys.<br/><br/>There can be multiple operators that participants can choose to work with. Any participant can also choose to become a closed operator and operate their own internal version of the service to generate and manage EUIDs.<br/><br/>The Trade Desk serves as an open operator for EUID. | 
+| **Operators**  | Organizations that operate the Operator Service (via the EUID APIs). Operators receive and store encryption keys and salts from the EUID Core Service, salt and hash PII to return EUIDs, encrypt EUIDs to generate EUID tokens, and distribute EUID token decryption keys.<br/><br/>There can be multiple operators that participants can choose to work with. Any participant can also choose to become a closed operator and operate their own internal version of the service to generate and manage EUIDs.<br/><br/>The Trade Desk serves as an open operator for EUID. | 
 | **Compliance Manager**  | An organization that audits EUID participants for compliance with stated rules and relays compliance information to the EUID administrators and EUID operators. | 
 | **DSPs**  | DSPs integrate with the EUID system to receive EUIDs from brands (as first-party data) and data providers (as third-party data) and leverage them to inform bidding on EUIDs in the bid stream. | 
 | **Data Providers**  | Organizations that collect user data and push it to DSPs, for example, advertisers, data on-boarders, measurement providers, identity graph providers, and third-party data providers. | 
