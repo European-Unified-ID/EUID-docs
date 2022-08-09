@@ -131,13 +131,10 @@ Here are the commonly asked questions regarding EUID.
 
 No. EUID functions as its own identifier separate from UID2. As such, paperwork containing usage and access to UID2 does not automatically grant usage and access for EUID. New contracts are required to be signed for EUID.
 
-#### How do companies interfacing with EUID tokens know which decryption key to apply?
-
-Metadata supplied with a EUID token discloses the timestamp of encryption, which informs which decryption key applies.
 
 #### Can a user opt out of targeted advertising tied to their EUID?
 
-Yes, through the [Transparency and Control Portal](https://transparentadvertising.eu), a user can opt out from being served targeted ads tied to their EUID. The request is distributed through the EUID Core Service and EUID Operators to all relevant participants. 
+Yes, through the [Transparency and Control Portal](https://transparentadvertising.eu), a user can opt out from being served targeted ads tied to their EUID. The request is distributed through the EUID Opt-out Service and EUID Operators to all relevant participants. 
 
 Some publishers and service providers have the option to limit access to their products based on a user’s participation in EUID and it is the publisher’s responsibility to communicate this as part of their value exchange dialog with the user.
 
