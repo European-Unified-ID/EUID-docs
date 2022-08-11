@@ -27,7 +27,7 @@ The following table summarizes the key differences between the two solutions.
 | Comparison Aspect | UID2 | EUID |
 | :--- | :--- | :--- |
 | Open-sourced framework | Yes | Yes |
-| Interoperable | Yes | Yes |
+| Interoperability | Yes | Yes |
 | PII used | Email addresses, phone numbers | Email addresses |
 | Consent | Based on local regulations like California Privacy Rights Act (CPRA), California Consumer Privacy Act (CCPA) | Driven by General Data Protection Regulation (GDPR), Transparency and Consent Framework (TCF) 2.0 outcomes, and local regulatory input |
 
