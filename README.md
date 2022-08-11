@@ -73,7 +73,7 @@ There are two types of EUIDs, raw EUIDs and EUID tokens (also known as advertisi
 | ID Type | Shared in Bid Stream? | Description |
 | :--- | :--- | :--- |
 | **Raw EUIDs** | Not shared | An unencrypted alphanumeric identifier created through the EUID APIs or SDKs with the user's verifiable PII, such as an email address, as input.<br/><br/>To prevent re-identification of the original PII, each raw EUID is generated using a random nonce, an arbitrary number that can be used only once. Raw EUIDs are designed to be stored by advertisers, data providers, and demand-side platforms (DSPs).|
-| **EUID (Advertising) Token** | Shared | An encrypted form of a raw EUID. EUID tokens are generated from hashed or unhashed email addresses that are then encrypted to ensure protection in the bid stream. EUID tokens are designed to be used by publishers or publisher service providers. Supply-side platforms (SSPs) pass EUID tokens in bid stream and DSPs decrypt them at bid request time. |
+| **EUID (Advertising) Token** | Shared | An encrypted form of a raw EUID. EUID tokens are generated from hashed or unhashed email addresses that are then encrypted to ensure protection in the bid stream.<br/><br/>EUID tokens are designed to be used by publishers or publisher service providers. Supply-side platforms (SSPs) pass EUID tokens in bid stream and DSPs decrypt them at bid request time. |
 
 
 
