@@ -11,7 +11,7 @@ For integration guides, supported SDKs, and endpoint reference, see [EUID API Do
 
 ## Introduction
 
-European Unified ID (EUID) is a deterministic identifier based on email addresses as the user's personal data. Built on the [UID2 framework](https://github.com/UnifiedID2/uid2docs/blob/main/api/README.md), EUID accounts for the user transparency and privacy controls specific to the market requirements in Europe and the UK, including the General Data Protection Regulation (GDPR) regulations and current consent framework limitations. 
+European Unified ID (EUID) is a deterministic identifier based on email addresses as the user's personal data. Built on the [UID2 framework](https://github.com/UnifiedID2/uid2docs/blob/main/api/README.md), EUID accounts for the user transparency and privacy controls specific to the market requirements in Europe and the UK. 
 
 The goal of EUID is to enable deterministic identity for advertising opportunities on the open internet with consumer transparency and controls in place. EUID enables logged-in experiences from publisher websites, mobile apps, and Connected TV (CTV) apps to monetize through programmatic workflows.  
 
