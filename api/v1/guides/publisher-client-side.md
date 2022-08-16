@@ -123,16 +123,16 @@ EUID tokens must be generated only on the server side after authentication. In o
 
 Yes. The [POST /token/refresh](../endpoints/post-token-refresh.md) can be called from the client side (for example, a browser or a mobile app) because it does not require using an API key.
 
-### How can I test that the PII sent and returned tokens match?
+### How can I test that the personal data sent and returned tokens match?
 
-You can use the [POST /token/validate](../endpoints/post-token-validate.md) endpoint to check whether the PII you are sending through [POST /token/generate](../endpoints/post-token-generate.md) is valid. 
+You can use the [POST /token/validate](../endpoints/post-token-validate.md) endpoint to check whether the personal data you are sending through [POST /token/generate](../endpoints/post-token-generate.md) is valid. 
 
 1. Send a [POST /token/generate](../endpoints/post-token-generate.md) request using one of the following values:
     - The `validate@email.com` as the `email` value.
     - The hash of `validate@email.com` as the `email_hash` value. 
 2. Store the returned `advertising_token` for use in the following step.
 3. Send a [POST /token/validate](../endpoints/post-token-validate.md) request using the `email` or `email_hash` value that you sent in step 1 and the `advertising_token` (saved in step 2) as the `token` property value. 
-    - If the response returns `true`, it indicates that the PII you sent as a request in step 1 matches the token you received in the response of step 1. 
+    - If the response returns `true`, it indicates that the personal data you sent as a request in step 1 matches the token you received in the response of step 1. 
     - If it returns `false`, it indicates that there may be an issue with the way you are sending email addresses or email address hashes.
 
 ### How can I test the refresh token logout workflow?
