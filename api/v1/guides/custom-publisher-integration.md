@@ -79,16 +79,16 @@ Yes. The [POST /token/refresh](../endpoints/post-token-refresh.md) can be called
 
 The EUID service encrypts tokens using random initialization vectors. The encrypted EUID is unique for a given user as they browse the internet. At every refresh, the token re-encrypts. This mechanism ensures that untrusted parties cannot track a user's identity.
 
-### How can I test that the PII sent and returned tokens match?
+### How can I test that the personal data sent and returned tokens match?
 
-You can use the [POST /token/validate](../endpoints/post-token-validate.md) endpoint to check whether the PII you are sending through [POST /token/generate](../endpoints/post-token-generate.md) is valid. 
+You can use the [POST /token/validate](../endpoints/post-token-validate.md) endpoint to check whether the personal data you are sending through [POST /token/generate](../endpoints/post-token-generate.md) is valid. 
 
 1. Send a [POST /token/generate](../endpoints/post-token-generate.md) request using one of the following values:
     - The `validate@email.com` as the `email` value.
     - The hash of `validate@email.com` as the `email_hash` value. 
 2. Store the returned `advertising_token` for use in the following step.
 3. Send a [POST /token/validate](../endpoints/post-token-validate.md) request using the `email` or `email_hash` value that you sent in step 1 and the `advertising_token` (saved in step 2) as the `token` property value. 
-    - If the response returns `true`, the PII that you sent as a request in step 1 match the token you received in the response of step 1. 
+    - If the response returns `true`, the personal data that you sent as a request in step 1 match the token you received in the response of step 1. 
     - If it returns `false`, there may be an issue with the way you are sending email addresses or email address hashes.
 
 ### How can I test the refresh token logout workflow?
