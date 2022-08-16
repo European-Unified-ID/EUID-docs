@@ -11,7 +11,7 @@ For integration guides, supported SDKs, and endpoint reference, see [EUID API Do
 
 ## Introduction
 
-European Unified ID (EUID) is a deterministic identifier based on email addresses as the user's personally identifiable information (PII). Built on the [UID2 framework](https://github.com/UnifiedID2/uid2docs/blob/main/api/README.md), EUID accounts for the user transparency and privacy controls specific to the market requirements in Europe and the UK, including the General Data Protection Regulation (GDPR) regulations and current consent framework limitations. 
+European Unified ID (EUID) is a deterministic identifier based on email addresses as the user's personal data. Built on the [UID2 framework](https://github.com/UnifiedID2/uid2docs/blob/main/api/README.md), EUID accounts for the user transparency and privacy controls specific to the market requirements in Europe and the UK, including the General Data Protection Regulation (GDPR) regulations and current consent framework limitations. 
 
 The goal of EUID is to enable deterministic identity for advertising opportunities on the open internet with consumer transparency and controls in place. EUID enables logged-in experiences from publisher websites, mobile apps, and Connected TV (CTV) apps to monetize through programmatic workflows.  
 
@@ -28,7 +28,7 @@ The following table summarizes the key differences between the two solutions.
 | :--- | :--- | :--- |
 | Open-sourced framework | Yes | Yes |
 | Interoperability | Yes | Yes |
-| PII used | Email addresses, phone numbers | Email addresses |
+| Personal data used | Email addresses, phone numbers | Email addresses |
 | Consent | Based on local regulations like California Privacy Rights Act (CPRA), California Consumer Privacy Act (CCPA) | Driven by General Data Protection Regulation (GDPR), Transparency and Consent Framework (TCF) 2.0 outcomes, and local regulatory input |
 
 
@@ -42,7 +42,7 @@ The following table summarizes the key differences between the two solutions.
 
 - **Interoperable:** EUID allows other identity solutions (commercial and proprietary) to integrate and provide EUIDs with their offerings.
 
-- **Secure and encrypted data:** EUID leverages multiple layers of security to protect PII and other user data.
+- **Secure and encrypted data:** EUID leverages multiple layers of security to protect personal and other user data.
 
 - **Consumer control:** Consumers can opt out of EUID at any time through the [Transparency and Control Portal](https://transparentadvertising.eu).
 
@@ -50,7 +50,7 @@ The following table summarizes the key differences between the two solutions.
 
 - **Distributed integration:** Multiple certified integration paths provide options for publishers, advertisers, and data providers to generate EUIDs.
 
-- **Decentralized storage:** To block malicious actors, the framework provides no centralized storage of PII-to-EUID mappings.
+- **Decentralized storage:** To block malicious actors, the framework provides no centralized storage of personal data mappings.
 
 - **Lean infrastructure:** Infrastructure is light and inexpensive to operate.
 
@@ -72,7 +72,7 @@ There are two types of EUIDs, raw EUIDs and EUID tokens (also known as advertisi
 
 | ID Type | Shared in Bid Stream? | Description |
 | :--- | :--- | :--- |
-| **Raw EUIDs** | Not shared | An unencrypted alphanumeric identifier created through the EUID APIs or SDKs with the user's verifiable PII, such as an email address, as input.<br/><br/>To prevent re-identification of the original PII, each raw EUID is generated using a random nonce, an arbitrary number that can be used only once. Raw EUIDs are designed to be stored by advertisers, data providers, and demand-side platforms (DSPs).|
+| **Raw EUIDs** | Not shared | An unencrypted alphanumeric identifier created through the EUID APIs or SDKs with the user's verifiable personal data, such as an email address, as input.<br/><br/>To prevent re-identification of the original personal data, each raw EUID is generated using a random nonce, an arbitrary number that can be used only once. Raw EUIDs are designed to be stored by advertisers, data providers, and demand-side platforms (DSPs).|
 | **EUID (Advertising) Token** | Shared | An encrypted form of a raw EUID. EUID tokens are generated from hashed or unhashed email addresses that are then encrypted to ensure protection in the bid stream.<br/><br/>EUID tokens are designed to be used by publishers or publisher service providers. Supply-side platforms (SSPs) pass EUID tokens in bid stream and DSPs decrypt them at bid request time. |
 
 
@@ -84,7 +84,7 @@ The administrative EUID infrastructure consists of the following core components
 | Component | Description |
 | :--- | :--- |
 | **Core Service**  | A centralized service that stores salt secrets, encryption keys, and manages access to the distributed EUID system. | 
-| **Operator Service**  | A service that enables the management and storage of encryption keys and salts from the EUID Core Service, hashing of users' PII, encryption and decryption of EUIDs. There can be multiple instances of the service (public or private) operated by multiple [participants](#participants), knowns as operators.<br/><br/>Publicly available instances of the Operator Service are run by open operators and are available to all relevant EUID [participants](#participants). Private instances are run by closed operators exclusively for their own use. All instances are designed with protections to keep sensitive EUID data secure, regardless of who operates the service.<br/><br/>NOTE: The Operator Service reflects the scalability level of the EUID infrastructure—adding more operator service instances increases the load.  | 
+| **Operator Service**  | A service that enables the management and storage of encryption keys and salts from the EUID Core Service, hashing of users' personal data, encryption and decryption of EUIDs. There can be multiple instances of the service (public or private) operated by multiple [participants](#participants), knowns as operators.<br/><br/>Publicly available instances of the Operator Service are run by open operators and are available to all relevant EUID [participants](#participants). Private instances are run by closed operators exclusively for their own use. All instances are designed with protections to keep sensitive EUID data secure, regardless of who operates the service.<br/><br/>NOTE: The Operator Service reflects the scalability level of the EUID infrastructure—adding more operator service instances increases the load.  | 
 | **Opt-out Service**  | A global service that manages user opt-out requests, for example, by routing them to the relevant EUID data holders. | 
 | **Transparency and Control Portal**  | A user-facing website, [https://transparentadvertising.eu](https://transparentadvertising.eu), that allows consumers to opt out of EUID at any time. | 
 
@@ -98,7 +98,7 @@ The following table lists the key participants and their roles in the EUID [work
 | Participant | Role Description |
 | :--- | :--- |
 | **Core Administrator**  | An organization (currently, The Trade Desk) that manages the EUID Core Service and other [components](#core-components), for example, by distributing encryption keys and salts to EUID operators and sending user opt-outs requests to operators and DSPs. |  
-| **Operators**  | Organizations that operate the Operator Service (via the EUID APIs). Operators receive and store encryption keys and salts from the EUID Core Service, salt and hash PII to return EUIDs, encrypt EUIDs to generate EUID tokens, and distribute EUID token decryption keys.<br/><br/>There can be multiple open operators with which participants can choose to work with. Open operators run public instances of the Operator Service, for example, The Trade Desk currently serves as an open operator for EUID available to all participants.<br/><br/>Any participant can also choose to become a closed operator and operate their own private instance to generate and manage EUIDs for their internal use. | 
+| **Operators**  | Organizations that operate the Operator Service (via the EUID APIs). Operators receive and store encryption keys and salts from the EUID Core Service, salt and hash personal data to return EUIDs, encrypt EUIDs to generate EUID tokens, and distribute EUID token decryption keys.<br/><br/>There can be multiple open operators with which participants can choose to work with. Open operators run public instances of the Operator Service, for example, The Trade Desk currently serves as an open operator for EUID available to all participants.<br/><br/>Any participant can also choose to become a closed operator and operate their own private instance to generate and manage EUIDs for their internal use. | 
 | **Compliance Manager**  | An organization that audits EUID participants for compliance with stated rules and relays compliance information to the EUID administrators and EUID operators. | 
 | **DSPs**  | DSPs integrate with the EUID system to receive EUIDs from brands (as first-party data) and data providers (as third-party data) and leverage them to inform bidding on EUIDs in the bid stream. | 
 | **Data Providers**  | Organizations that collect user data and push it to DSPs, for example, advertisers, data on-boarders, identity graph providers, and third-party data providers. | 
