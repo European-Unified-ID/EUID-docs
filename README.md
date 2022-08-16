@@ -18,7 +18,7 @@ The goal of EUID is to enable deterministic identity for advertising opportuniti
 
 ### EUID vs. UID2
 
-EUID is an open-source, standalone solution with its own unique namespace that builds on the [UID2 framework](https://github.com/UnifiedID2/uid2docs/blob/main/api/README.md). The main differences between UID2 and EUID result from more stringent EU data protection laws related to the consent-collection framework and data rights for data subjects and obligations between participants. Otherwise, EUID follows the same [guiding principles](#guiding-principles) as UID2.
+EUID is an open-source, standalone solution with its own unique namespace that builds on the [UID2 framework](https://github.com/UnifiedID2/uid2docs/blob/main/api/README.md). The main differences between UID2 and EUID result from more stringent European and UK data protection laws related to the consent-collection framework and data rights for data subjects and obligations between participants. Otherwise, EUID follows the same [guiding principles](#guiding-principles) as UID2.
 
 >IMPORTANT: Even though it builds on the UID2 framework, EUID is a separate identifier. 
 
@@ -84,7 +84,7 @@ The administrative EUID infrastructure consists of the following core components
 | Component | Description |
 | :--- | :--- |
 | **Core Service**  | A centralized service that stores salt secrets, encryption keys, and manages access to the distributed EUID system. | 
-| **Operator Service**  | A service that enables the management and storage of encryption keys and salts from the EUID Core Service, hashing of users' personal data, encryption and decryption of EUIDs. There can be multiple instances of the service (public or private) operated by multiple [participants](#participants), knowns as operators.<br/><br/>Publicly available instances of the Operator Service are run by open operators and are available to all relevant EUID [participants](#participants). Private instances are run by closed operators exclusively for their own use. All instances are designed with protections to keep sensitive EUID data secure, regardless of who operates the service.<br/><br/>NOTE: The Operator Service reflects the scalability level of the EUID infrastructure—adding more operator service instances increases the load.  | 
+| **Operator Service**  | A service that enables the management and storage of encryption keys and salts from the EUID Core Service, hashing of users' personal data, encryption and decryption of EUIDs. There can be multiple instances of the service (public or private) operated by multiple [participants](#participants), knowns as operators.<br/><br/>Publicly available instances of the Operator Service are run by open operators and are available to all relevant EUID [participants](#participants). Private instances are run by closed operators exclusively for their own use. All instances are designed with protections to keep critical EUID data secure, regardless of who operates the service.<br/><br/>NOTE: The Operator Service reflects the scalability level of the EUID infrastructure—adding more operator service instances increases the load.  | 
 | **Opt-out Service**  | A global service that manages user opt-out requests, for example, by routing them to the relevant EUID data holders. | 
 | **Transparency and Control Portal**  | A user-facing website, [https://transparentadvertising.eu](https://transparentadvertising.eu), that allows consumers to opt out of EUID at any time. | 
 
