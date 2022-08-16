@@ -1,4 +1,4 @@
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#0099F9', 'noteBorderColor':'#0099F9','actorTextColor': '#FFF', 'secondaryColor':'#ededed'}}}%%
+  %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#0099F9', 'noteBorderColor':'#0099F9','actorTextColor': '#FFF', 'secondaryColor':'#ededed'}}}%%
   sequenceDiagram
     participant U as User
     participant P as Publisher
@@ -11,7 +11,7 @@
     U->>P: 1-c. The user authenticates and authorizes the creation of an EUID.
     deactivate U
     activate P
-    P->>EUID: 1-d. The publisher sends the user's PII to the token generation service.
+    P->>EUID: 1-d. The publisher sends the user's personal data to the token generation service.
     deactivate P
     activate EUID
     EUID->>P: 1-e. The token generation service returns EUID tokens.
@@ -47,5 +47,5 @@
     P->>U: 4-b. The user's identity clears.
     deactivate P
 
-    <!-- Mermaid Live Editor Source: https://mermaid-js.github.io/mermaid-live-editor/edit#pako:eNqdVd9v2jAQ_ldOqVAeRlFX-tI89KFrkZCmKRrNnngx8QHWgp3ZDitD_O872wkphFTd1IeG89333Xc_7H2UK45REgEMBnshhU1gH9s1bjBOIF4wg_EQguEH04ItCjR0soe41GLD9O6LKpR2vlc3N_f3k3vnLpXFR6U56vq0PYxZbpV-wVfbBk4mExdlMFeSt5DxFXL3Fx8Oh8FgLgEM_qpQ5vgk2EqzjTMBlExbkYuSSQsZMAOZQd09St1RWi0KYdaXzp-z6ZNz8f9nqLcix67XbJYG4zeSCGqLGrIhGRP4PIJnY5nHhylHaYXdBd_s-uHhk3O5ZiN4WSNUlCFshRHWAIOySYroDdpRCEop6DpzQYsQ1Lrha1kwIQ1QW2DLigrJlK-ZXFFKS29VJUoQ0qKWaIFJDtrVznjCQq2ErGmoHWLLSEvW5upTzd-kyirCJEE5ORqP5ixKiz8Yksg1MiuUdPRM-hrW-BzPGY6_01aoC3Ck_FyqQckDhUskpg5Op2CVt1j1k0SuUKIO5CZ0rcucnjE7umByX41iDOR9sFRBW2lZT4j3Ml2qFvqSTt_PZVeka0soGyyVPurtVdKZvtsRPApOoy_kKuC8-ASde0sfXJspbBPIWVGEKpOHz4BR1SsP5qyt4vOpOe4DfYQ63jbz6qCakjk46hoXhiZ315V1hOkp2m0zjm3ONVZIu8Z_t249lRuP4DsuNdLWtiU77sH4ZGUbOUTVt7b90z3uLjKBun3UNX-YPAKvdxUk_gZRXyX1xH1sPt6d9LEr5pQWNYhaMyNjSzeGRQ6qskMPf5rT-QpcSOw_VmF8ad9t6Khj-Ng-9PT1buQfAviqViTqpKl3J02l29A43bDUavNPfc0c1KKFouvpWJS8QKYvFCWNhtEG9YYJTq_u3u9n5J_XeZTQJ8mlzs-juTyQZ1VyCnrmgt7MKFmywuAwortXzXYyjxKrK2yc6jex9jr8BZE5jHw -->
+    <!-- Mermaid Live Editor Source: https://mermaid-js.github.io/mermaid-live-editor/edit#pako:eNqdVU1vGjEQ_SujrdAeSlAacgmHHNIEKVJVoZLticuwHsDqYm9tLw1F_PeO7V22sBClVQ5ZxjNv3psPe5fkWlAySgB6vZ1U0o1gl7oVrSkdQTpHS2kfouE7Gonzgiyf7CAtjVyj2X7WhTbe98P19d3d-M67K-3oQRtBpj5tD1PMnTYv9OrawPF47KMs5VqJFjL9QML_pfv9vtebKQBLPytSOT1KXBpcexNAicbJXJaoHGSAFjJLpns08UeTal5Iuzp3_pQ9P3qX8H9KZiNz6npNp5No_MoSQW_IQNZn4wg-DeDJOgz48CxIOem20Te7ur__6F2ucAAvK4KKGcJGWuksIJQNKU5vyQ1i0ISDrjIfNI9BrRu9lgVKZYHbAhssKmJTvkK1ZEqLYNUlKZDKkVHkAJUA42tnQ8JCL6Wq03A75AZZS9ZyDVTzv6hixZgsKGdHG9C8RRv5myKJ3BA6qZVPjyrUsMYXdJrh8HvSCvUBPqk4lWpJiZjCE0ktlGSsVliAQIfgdDhz-gfLXZIiE2nY2L8uh8kJB584mvxXo50ijUuwXEtXGVXPSvCy3VQt9DnFobOLrlzfoFhAWGhzUH5RSWcObwbwIAUvgVTLiPMSCHr3Nn10beaxJZBjUcR6s0dggFz_KoB5a6v4dH4Om8EfsY43zeR6qKZkHo67JqTlGd52ZR1gLhTtphnMlnONFWnX-G_W7ULlhgP4RgtDvL9tyQ4bMTxa3kYOp7q0wJfnfNhdaQb1m2nq_HHyGLzeWlD0C2R9qdQT9775eHPSh76Yz7yyUdQKrUod3x2OBOjK9QP8MafTFThD7D9WYXhu813sqM_wvn240NfbQXgS4Itesqijpt4eNZXvRet1w8Lo9T_1NfNQ8xaKL6pDUfKC0JwpyiTpJ2sya5SC399d2M8kPLSzZMSfLJc7P0tmas-eVckXHj0Jya9nMlpgYamf8C2sp1uVJyNnKmqc6tex9tr_AUWfkLg -->
     
