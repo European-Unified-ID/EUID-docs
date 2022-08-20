@@ -120,7 +120,7 @@ The following table lists four key workflows in the EUID system and provides lin
 
 The following diagram summarizes all four workflows. For each workflow, the [participants](#participants), [core components](#core-components), [EUID types](#euid-types), and numbered steps are color-coded.
 
-![The EUID Ecosystem](/images/macro_view.jpg)
+![The EUID Ecosystem](/images/EUID-Workflow.svg)
 
 
 ## FAQs
