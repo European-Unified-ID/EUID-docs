@@ -18,7 +18,7 @@ The goal of EUID is to enable deterministic identity for advertising opportuniti
 
 ### EUID vs. UID2
 
-EUID is an open-source, standalone solution with its own unique namespace that builds on the [UID2 framework](https://github.com/UnifiedID2/uid2docs/blob/main/api/README.md). The main differences between UID2 and EUID result from more stringent European and UK data protection laws related to the consent-collection framework and data rights for data subjects and obligations between participants. Otherwise, EUID follows the same [guiding principles](#guiding-principles) as UID2.
+EUID is an open-source, standalone solution with its own unique namespace that builds on the [UID2 framework](https://github.com/UnifiedID2/uid2docs/blob/main/api/README.md). The main differences between UID2 and EUID result from more stringent European and UK data protection laws, which are related to the consent-collection framework, rights for data subjects, and obligations between participants. Otherwise, EUID follows the same [guiding principles](#guiding-principles) as UID2.
 
 >IMPORTANT: Even though it builds on the UID2 framework, EUID is a separate identifier. 
 
@@ -54,7 +54,7 @@ The following table summarizes the key differences between the two solutions.
 
 - **Lean infrastructure:** Infrastructure is light and inexpensive to operate.
 
-- **Self-reliant:** No reliance on external services for real-time processing of RTB data.
+- **Self-reliant:** No reliance on external services for real-time processing of real-time bidding (RTB) data.
 
 
 ## EUID Infrastructure
@@ -68,7 +68,7 @@ The following sections explain and illustrate the key elements of the EUID infra
 
 ### EUID Types
 
-There are two types of EUIDs, raw EUIDs and EUID tokens (also known as advertising tokens). The following table explains each type.
+There are two types of EUIDs: raw EUIDs and EUID tokens (also known as advertising tokens). The following table explains each type.
 
 | ID Type | Shared in Bid Stream? | Description |
 | :--- | :--- | :--- |
