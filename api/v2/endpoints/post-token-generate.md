@@ -29,7 +29,7 @@ You must include only one of the following parameters as a key-value pair in the
 | :--- | :--- | :--- | :--- |
 | `email` | string | Conditionally Required | The email address for which to generate tokens. | 
 | `email_hash` | string | Conditionally Required | The [base64-encoded SHA256](../../README.md#email-address-hash-encoding) hash of a [normalized](../../README.md#email-address-normalization) email address. |
-
+| `tcf_consent_string` | string | Required | The [Transparency and Consent String](https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework) from the end user whose identity is used to generate the token. |
 
 ### Request Examples
 
@@ -60,7 +60,7 @@ echo '[Unencrypted-JSON-Request-Body]' \
 Here's an encrypted token generation request example for an email hash:
 
 ```sh
-echo '{"email_hash": "tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ="}' \
+echo '{"email_hash": "tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ=", "tcf_consent_string": "CPhJRpMPhJRpMABAMBFRACBoALAAAEJAAIYgAKwAQAKgArABAAqAAA"}' \
   | encrypt_request.py DELPabG/hsJsZk4Xm9Xr10Wb8qoKarg4ochUdY9e+Ow= \
   | curl -X POST 'https://prod.uidapi.com/v2/token/generate' -H 'Authorization: Bearer YourTokenBV3tua4BXNw+HVUFpxLlGy8nWN6mtgMlIk=' \
   | decrypt_response.py DELPabG/hsJsZk4Xm9Xr10Wb8qoKarg4ochUdY9e+Ow=
@@ -112,6 +112,10 @@ The following table lists the `status` property values and their HTTP status cod
 | `unauthorized` | 401 | The request did not include a bearer token, included an invalid bearer token, or included a bearer token unauthorized to perform the requested operation. |
 
 If the `status` value is other than `success`, the `message` field provides additional information about the issue.
+| Status Value | Description |
+| :--- | :--- |
+| `success` | The token is successfully generated and returned in `body` field |
+| `insufficient_user_consent` | The `tcf_consent_string` parameter did not show sufficient consent to generate a token. |
 
 ## Test Identities
 
