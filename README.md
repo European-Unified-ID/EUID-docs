@@ -85,7 +85,7 @@ The administrative EUID infrastructure consists of the following core components
 | :--- | :--- |
 | **Core Service**  | A centralized service that stores salt secrets, encryption keys, and manages access to the distributed EUID system. | 
 | **Operator Service**  | A service that enables the management and storage of encryption keys and salts from the EUID Core Service, hashing of users' personal data, encryption and decryption of EUIDs. There can be multiple instances of the service (public or private) operated by multiple [participants](#participants), knowns as operators.<br/><br/>Publicly available instances of the Operator Service are run by open operators and are available to all relevant EUID [participants](#participants). Private instances are run by closed operators exclusively for their own use. All instances are designed with protections to keep critical EUID data secure, regardless of who operates the service.<br/><br/>NOTE: The Operator Service reflects the scalability level of the EUID infrastructure—adding more operator service instances increases the load.  | 
-| **Opt-out Service**  | A global service that manages user opt-out requests, for example, by routing them to the relevant EUID data holders. | 
+| **Opt-Out Service**  | A global service that manages user opt-out requests, for example, by routing them to the relevant EUID data holders. | 
 | **Transparency and Control Portal**  | A user-facing website, [https://transparentadvertising.eu](https://transparentadvertising.eu), that allows consumers to opt out of EUID at any time. | 
 
 
@@ -97,7 +97,7 @@ The following table lists the key participants and their roles in the EUID [work
 
 | Participant | Role Description |
 | :--- | :--- |
-| **Core Administrator**  | An organization (currently, The Trade Desk) that manages the EUID Core Service and other [components](#core-components), for example, by distributing encryption keys and salts to EUID operators and sending user opt-outs requests to operators and DSPs. |  
+| **Core Administrator**  | An organization (currently, The Trade Desk) that manages the EUID Core Service and other [components](#core-components), for example, by distributing encryption keys and salts to EUID operators and sending user opt-out requests to operators and DSPs. |  
 | **Operators**  | Organizations that operate the Operator Service (via the EUID APIs). Operators receive and store encryption keys and salts from the EUID Core Service, salt and hash personal data to return EUIDs, encrypt EUIDs to generate EUID tokens, and distribute EUID token decryption keys.<br/><br/>There can be multiple open operators with which participants can choose to work with. Open operators run public instances of the Operator Service, for example, The Trade Desk currently serves as an open operator for EUID available to all participants.<br/><br/>Any participant can also choose to become a closed operator and operate their own private instance to generate and manage EUIDs for their internal use. | 
 | **Compliance Manager**  | An organization that audits EUID participants for compliance with stated rules and relays compliance information to the EUID administrators and EUID operators. | 
 | **DSPs**  | DSPs integrate with the EUID system to receive EUIDs from brands (as first-party data) and data providers (as third-party data) and leverage them to inform bidding on EUIDs in the bid stream. | 
@@ -134,7 +134,7 @@ No. EUID functions as its own identifier separate from UID2. As such, paperwork 
 
 #### Can a user opt out of targeted advertising tied to their EUID?
 
-Yes, through the [Transparency and Control Portal](https://transparentadvertising.eu), a user can opt out from being served targeted ads tied to their EUID. The request is distributed through the EUID Opt-out Service and EUID Operators to all relevant participants. 
+Yes, through the [Transparency and Control Portal](https://transparentadvertising.eu), a user can opt out from being served targeted ads tied to their EUID. The request is distributed through the EUID Opt-Out Service and EUID Operators to all relevant participants. 
 
 Some publishers and service providers have the option to limit access to their products based on a user’s participation in EUID and it is the publisher’s responsibility to communicate this as part of their value exchange dialog with the user.
 
