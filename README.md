@@ -103,7 +103,7 @@ The following table lists the key participants and their roles in the EUID [work
 | **DSPs**  | DSPs integrate with the EUID system to receive EUIDs from brands (as first-party data) and data providers (as third-party data) and leverage them to inform bidding on EUIDs in the bid stream. | 
 | **Data Providers**  | Organizations that collect user data and push it to DSPs—for example, advertisers, data on-boarders, identity graph providers, and third-party data providers. | 
 | **Advertisers**  | Organizations that buy impressions across a range of publisher sites and use DSPs to decide which ad impressions to purchase and how much to bid on them. | 
-| **Publishers**  | Organizations that propagate EUIDs to the bid stream via SSPs—for example, identity providers, publishers, and SSO providers. Publishers can choose to work with an SSO or an independent ID provider that is interoperable with EUID. The latter can handle the EUID integration on behalf publishers. | 
+| **Publishers**  | Organizations that propagate EUIDs to the bid stream via SSPs—for example, identity providers, publishers, and SSO providers. Publishers can choose to work with an SSO provider or an independent ID provider that is interoperable with EUID. The latter can handle the EUID integration on behalf publishers. | 
 | **Consumers**  | Users who engage with publishers or their identity providers. Users can manage their EUID consent in the [Transparency and Control Portal]([#opt-out-portal](https://transparentadvertising.eu)). | 
 
 ## Workflows
