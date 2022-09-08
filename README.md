@@ -1,7 +1,7 @@
 # European Unified ID Overview
 
 
-This page provides the following information about EUID:
+This page provides the following information about European Unified ID (EUID) framework:
 - [Introduction](#introduction)
 - [EUID Infrastructure](#euid-infrastructure)
 - [FAQs](#faqs)
@@ -9,20 +9,20 @@ This page provides the following information about EUID:
 
 For integration guides, supported SDKs, and endpoint reference, see [EUID API Documentation](/api/v1/README.md). See also [Getting Started](/api/README.md).
 
-## Introduction
+## Introduction 
 
-European Unified ID (EUID) is a deterministic identifier based on email addresses as the user's personal data. Built on the [UID2 framework](https://github.com/UnifiedID2/uid2docs/blob/main/api/README.md), EUID offers the user transparency and privacy controls to meet the market requirements in Europe and the UK. 
+The European Unified ID (EUID) is a framework that enables deterministic identity for advertising opportunities on the open internet for many [participants](#participants) across the advertising ecosystem. The EUID framework enables logged-in experiences from publisher websites, mobile apps, and Connected TV (CTV) apps to monetize through programmatic workflows. Built on the [UID2 framework](https://github.com/UnifiedID2/uid2docs/blob/main/api/README.md), EUID offers the user transparency and privacy controls to meet the market requirements in Europe and the UK.
 
-The goal of EUID is to provide a collaborative framework and enable deterministic identity for advertising opportunities on the open internet for many [participants](#participants) across the advertising ecosystem. EUID enables logged-in experiences from publisher websites, mobile apps, and Connected TV (CTV) apps to monetize through programmatic workflows.
+>NOTE: The term "EUID" can refer to either the framework or an actual identifier. The UID2 framework [infrastructure](#euid-infrastructure) defines [two types](#euid-identifier-types) of identifiers: raw EUIDs and EUID tokens. Unless otherwise indicated, this page provides an overview of the EUID framework.
 
 
 ### EUID vs. UID2
 
 EUID is an open-source, standalone solution with its own unique namespace that builds on the [UID2 framework](https://github.com/UnifiedID2/uid2docs/blob/main/api/README.md). The main differences between UID2 and EUID result from more stringent European and UK data protection laws, which are related to the consent-collection framework, rights for data subjects, and obligations between participants. Otherwise, EUID follows the same [guiding principles](#guiding-principles) as UID2.
 
->IMPORTANT: Even though it builds on the UID2 framework, EUID is a separate identifier. 
+>IMPORTANT: Even though it builds on UID2, EUID is a separate framework. 
 
-The following table summarizes the key differences between the two solutions.
+The following table summarizes the key differences between the two frameworks.
 
 | Comparison Aspect | UID2 | EUID |
 | :--- | :--- | :--- |
@@ -34,52 +34,58 @@ The following table summarizes the key differences between the two solutions.
 
 ### Guiding Principles
 
-- **First-party relationships**: EUID enables advertisers to easily activate their first-party data on publisher websites across the open internet.
+The EUID framework has the following principles as its foundation:
 
-- **Non-proprietary (universal) standard**: EUID is accessible to all [participants](#participants) in the advertising ecosystem who abide by the code of conduct.
+- **First-party relationships**: EUID enables advertisers to activate their first-party data on publisher websites across the open internet.
 
-- **Open source**: EUID code is transparent thanks to an open-source framework.
+- **Non-proprietary (universal) standard**: All [participants](#participants) in the advertising ecosystem who abide by the code of conduct can access EUID.
 
-- **Interoperable**: The framework allows other identity solutions (commercial and proprietary) to integrate and provide EUIDs with their offerings.
+- **Open source**: The source code for the EUID [components](#components) is publicly available with established processes for accepting contributions from the community.
 
-- **Secure and encrypted data**: EUID leverages multiple layers of security to protect personal and other user data.
+- **Interoperable**: The framework allows other identity solutions (commercial and proprietary) to integrate and provide EUID tokens with their offerings.
+
+- **Secure and encrypted data**: EUID leverages multiple layers of security to protect user and other participant data.
 
 - **Consumer control**: Consumers can opt out of EUID at any time through the [Transparency and Control Portal](https://transparentadvertising.eu).
 
 ### Technical Design Principles
 
+The EUID framework is built on the following technical principles:
+
 - **Distributed integration**: Multiple certified integration paths provide options for publishers, advertisers, and data providers to generate EUIDs.
 
 - **Decentralized storage**: To block malicious actors, the framework provides no centralized storage of personal data mappings.
 
-- **Lean infrastructure**: Infrastructure is light and inexpensive to operate.
+- **Lean infrastructure**: The EUID system is light and inexpensive to operate.
 
-- **Self-reliant**: No reliance on external services for real-time processing of real-time bidding (RTB) data.
+- **Internet scale**: The EUID infrastructure can scale to address the continuously increasing needs of [participants](#participants) and to meet performance demands of specific geographic regions.
+
+- **Self-reliant**: EUID does not rely on external services for real-time processing of real-time bidding (RTB) data.
 
 
 ## EUID Infrastructure
 
 The following sections explain and illustrate the key elements of the EUID infrastructure:
 
-  - [EUID Types](#euid-types)
-  - [Core Components](#core-components)
+  - [EUID Types](#euid-identifier-types)
+  - [Core Components](#components)
   - [Participants](#participants)
   - [Workflows](#workflows)
 
-### EUID Types
+### EUID Identifier Types
 
-There are two types of EUIDs: raw EUIDs and EUID tokens (also known as advertising tokens). The following table explains each type.
+EUID is a deterministic identifier based on email addresses as the user's personal data. There are two types of EUIDs: raw EUIDs and EUID tokens (also known as advertising tokens). The following table explains each type.
 
 | ID Type | Shared in Bid Stream? | Description |
 | :--- | :--- | :--- |
 | **Raw EUIDs** | Not shared | An unencrypted alphanumeric identifier created through the EUID APIs or SDKs with the user's verifiable personal data, such as an email address, as input.<br/><br/>To prevent re-identification of the original personal data, each raw EUID is generated using a secret salt. Raw EUIDs are designed to be stored by advertisers, data providers, and demand-side platforms (DSPs).|
-| **EUID (Advertising) Token** | Shared | An encrypted form of a raw EUID. EUID tokens are generated from hashed or unhashed email addresses that are then encrypted to ensure protection in the bid stream.<br/><br/>EUID tokens are designed to be used by publishers or publisher service providers. Supply-side platforms (SSPs) pass EUID tokens in bid stream and DSPs decrypt them at bid request time. |
+| **EUID Token (Advertising Token)** | Shared | An encrypted form of a raw EUID. EUID tokens are generated from hashed or unhashed email addresses that are then encrypted to ensure protection in the bid stream.<br/><br/>EUID tokens are designed to be used by publishers or publisher service providers. Supply-side platforms (SSPs) pass EUID tokens in bid stream and DSPs decrypt them at bid request time. |
 
 
 
-### Core Components
+### Components
 
-The administrative EUID infrastructure consists of the following core components, all of which are currently managed by The Trade Desk.
+The EUID framework consists of the following components, all of which are currently managed by The Trade Desk.
 
 | Component | Description |
 | :--- | :--- |
@@ -97,7 +103,7 @@ The following table lists the key participants and their roles in the EUID [work
 
 | Participant | Role Description |
 | :--- | :--- |
-| **Core Administrator**  | An organization (currently, The Trade Desk) that manages the EUID Core Service and other [components](#core-components). For example, it distributes encryption keys and salts to EUID operators and sends user opt-out requests to operators and DSPs. |  
+| **Core Administrator**  | An organization (currently, The Trade Desk) that manages the EUID Core Service and other [components](#components). For example, it distributes encryption keys and salts to EUID operators and sends user opt-out requests to operators and DSPs. |  
 | **Operators**  | Organizations that operate the Operator Service (via the EUID APIs). Operators receive and store encryption keys and salts from the EUID Core Service, salt and hash personal data to return EUIDs, encrypt EUIDs to generate EUID tokens, and distribute EUID token decryption keys.<br/><br/>Open operators run public instances of the Operator Service. For example, The Trade Desk currently serves as an open operator for EUID, available to all participants. If other open operators are available, a participant can choose which operator to work with.<br/><br/>Any participant can also choose to become a closed operator and operate their own private instance to generate and manage EUIDs. | 
 | **Compliance Manager**  | An organization that audits EUID participants for compliance with stated rules and relays compliance information to the EUID administrators and EUID operators. | 
 | **DSPs**  | DSPs integrate with the EUID system to receive EUIDs from brands (as first-party data) and data providers (as third-party data) and leverage them to inform bidding on EUIDs in the bid stream. | 
@@ -118,7 +124,7 @@ The following table lists four key workflows in the EUID system and provides lin
 | **Opt-out** | Consumers who engage with publishers or publisher-related SSOs and identity providers. | N/A |
 
 
-The following diagram summarizes all four workflows. For each workflow, the [participants](#participants), [core components](#core-components), [EUID types](#euid-types), and numbered steps are color-coded.
+The following diagram summarizes all four workflows. For each workflow, the [participants](#participants), [components](#components), [EUID types](#euid-identifier-types), and numbered steps are color-coded.
 
 ![The EUID Ecosystem](/images/EUID-Workflow.svg)
 
