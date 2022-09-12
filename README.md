@@ -54,7 +54,7 @@ The EUID framework is built on the following technical principles:
 
 - **Distributed integration**: Multiple certified integration paths provide options for publishers, advertisers, and data providers to manage and exchange EUID tokens.
 
-- **Decentralized storage**: The framework does not have centralized storage for personal data mapping. All participants maintain only their own data.
+- **Decentralized storage**: The framework does not have centralized storage for personal data mappings. All participants maintain only their own data.
 
 - **Lean infrastructure**: The EUID system is light and inexpensive to operate.
 
@@ -118,7 +118,7 @@ The following table lists four key workflows in the EUID system and provides lin
 
 | Workflow | Intended Primary Participants | Integration Guide |
 | :--- | :--- | :--- |
-| **Buy-Side** | DSPs who transact on EUID tokenss in the bid stream. | [DSP](./api/v1/guides/dsp-guide.md) |
+| **Buy-Side** | DSPs who transact on EUID tokens in the bid stream. | [DSP](./api/v1/guides/dsp-guide.md) |
 | **Data Provider** | Organizations that collect user data and push it to DSPs. | [Advertiser and Data Provider](./api/v1/guides/advertiser-dataprovider-guide.md) |
 | **Supply-Side** | Organizations that propagate EUID tokens to the bid stream via SSPs.<br/> NOTE: Publishers can choose to leverage the [EUID SDK](./api/v1/sdks/client-side-identity.md) or complete their own custom, server-only integration. | [Publisher (with EUID SDK)](./api/v1/guides/publisher-client-side.md)<br/>[Publisher (Server-Only)](./api/v1/guides/custom-publisher-integration.md) |
 | **Opt-Out** | Consumers who engage with publishers or their SSO providers and other identity providers. | N/A |
