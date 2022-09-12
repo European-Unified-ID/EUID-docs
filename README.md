@@ -52,7 +52,7 @@ The EUID framework has the following principles as its foundation:
 
 The EUID framework is built on the following technical principles:
 
-- **Distributed integration**: Multiple certified integration paths provide options for publishers, advertisers, and data providers to manage and exchange EUIDs.
+- **Distributed integration**: Multiple certified integration paths provide options for publishers, advertisers, and data providers to manage and exchange EUID tokens.
 
 - **Decentralized storage**: The framework does not have centralized storage for personal data mapping. All participants maintain only their own data.
 
