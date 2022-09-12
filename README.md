@@ -140,7 +140,7 @@ No. EUID functions as its own framework, which is separate from UID2. As such, p
 
 #### Can users opt out of targeted advertising tied to their EUID?
 
-Yes. Through the [Transparency and Control Portal](https://transparentadvertising.eu), users can opt out from being served targeted ads tied to their EUID identity. EAch request is distributed through the EUID Opt-Out Service and EUID Operators to all relevant participants. 
+Yes. Through the [Transparency and Control Portal](https://transparentadvertising.eu), users can opt out from being served targeted ads tied to their EUID identity. Each request is distributed through the EUID Opt-Out Service and EUID Operators to all relevant participants. 
 
 Some publishers and service providers have the option to limit access to their products based on a user’s participation in the EUID framework, and it is the publisher’s responsibility to communicate this as part of their value exchange dialog with the user.
 
