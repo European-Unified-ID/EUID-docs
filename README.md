@@ -18,7 +18,7 @@ The European Unified ID (EUID) is a framework that enables deterministic identit
 
 ### EUID vs. UID2
 
-EUID is an open-source, standalone solution with its own unique namespace that builds on the [UID2 framework](https://github.com/UnifiedID2/uid2docs/blob/main/api/README.md). The main differences between UID2 and EUID result from more stringent European and UK data protection laws, which are related to the consent-collection framework, rights for data subjects, and obligations between participants. Otherwise, EUID follows the same [guiding principles](#guiding-principles) as UID2.
+EUID is an open-source, standalone solution with its own unique namespace that builds on the [UID2 framework](https://github.com/UnifiedID2/uid2docs/blob/main/api/README.md). The main differences between UID2 and EUID result from more stringent European and UK data protection laws, relating to consent practices, rights for data subjects, and obligations between participants. Otherwise, EUID follows the same [guiding principles](#guiding-principles) as UID2.
 
 >IMPORTANT: Even though it is built on the UID2 framework, EUID is a separate framework. 
 
@@ -29,7 +29,7 @@ The following table summarizes the key differences between the two frameworks.
 | Open-sourced framework | Yes | Yes |
 | Interoperability | Yes | Yes |
 | Personal data used | Email addresses, phone numbers | Email addresses |
-| Consent | Based on local regulations such as California Privacy Rights Act (CPRA) and California Consumer Privacy Act (CCPA) | Driven by General Data Protection Regulation (GDPR), Transparency and Consent Framework (TCF) 2.0 outcomes, and local regulatory input |
+| Consent | Based on local regulations such as the California Privacy Rights Act (CPRA) and the California Consumer Privacy Act (CCPA). | Driven by the General Data Protection Regulation (GDPR), the Transparency and Consent Framework (TCF) operated by IAB, and local regulatory guidance. |
 
 
 ### Guiding Principles
