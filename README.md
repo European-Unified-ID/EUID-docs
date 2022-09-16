@@ -4,6 +4,7 @@
 This page provides the following information about the European Unified ID (EUID) framework:
 - [Introduction](#introduction)
 - [EUID Infrastructure](#euid-infrastructure)
+- [EUID vs. UID2](#euid-vs-uid2)
 - [Frequently Asked Questions (FAQs)](#faqs)
 - [License](#license)
 
