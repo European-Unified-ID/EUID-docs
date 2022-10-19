@@ -12,7 +12,7 @@ This page provides the following information about the European Unified ID (EUID
 - [Frequently Asked Questions (FAQs)](#faqs)
 - [License](#license)
 
-For integration guides, supported SDKs, and endpoint reference, see [EUID API Documentation](/api/v1/README.md). See also [Getting Started](/api/README.md).
+For integration guides, supported SDKs, and endpoint reference, see [EUID API Documentation](/api/v2/README.md). See also [Getting Started](/api/README.md).
 
 ## Introduction 
 
