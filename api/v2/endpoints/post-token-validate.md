@@ -1,4 +1,4 @@
-[EUID API Documentation](../../README.md) > [v1](../README.md) > [Endpoints](./README.md) > POST /token/validate
+[EUID API Documentation](../../README.md) > [v2](../README.md) > [Endpoints](./README.md) > POST /token/validate
 
 # POST /token/validate
 Validate that an advertising token matches the specified hashed or unhashed email address or phone number. 
