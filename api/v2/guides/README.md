@@ -1,4 +1,4 @@
-[EUID API Documentation](../../README.md) > [v1](../README.md) > Integration Guides
+[EUID API Documentation](../../README.md) > [v2](../README.md) > Integration Guides
 
 # EUID Integration Guides
 
