@@ -1,4 +1,4 @@
-[EUID API Documentation](../../README.md) > [v1](../README.md) > Endpoints
+[EUID API Documentation](../../README.md) > [v2](../README.md) > Endpoints
 
 # EUID Endpoints
 
