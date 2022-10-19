@@ -1,4 +1,4 @@
-[EUID API Documentation](../../README.md) > [v1](../README.md) > [Integration Guides](README.md) > Advertiser/Data Provider Integration Guide
+[EUID API Documentation](../../README.md) > [v2](../README.md) > [Integration Guides](README.md) > Advertiser/Data Provider Integration Guide
 
 # Advertiser and Data Provider Integration Guide
 
