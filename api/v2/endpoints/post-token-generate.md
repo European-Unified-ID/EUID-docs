@@ -39,12 +39,14 @@ The following are unencrypted JSON request body examples for each parameter, one
 
 ```json
 {
-    "email": "username@example.com"
+    "email": "username@example.com",
+    "tcf_consent_string": "CPhJRpMPhJRpMABAMBFRACBoALAAAEJAAIYgAKwAQAKgArABAAqAAA"
 }
 ```
 ```json
 {
-    "email_hash": "tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ="
+    "email_hash": "tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ=",
+    "tcf_consent_string": "CPhJRpMPhJRpMABAMBFRACBoALAAAEJAAIYgAKwAQAKgArABAAqAAA"
 }
 ```
 
