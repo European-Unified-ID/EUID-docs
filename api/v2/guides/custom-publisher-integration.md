@@ -1,4 +1,4 @@
-[EUID API Documentation](../../README.md) > [v1](../README.md) > [Integration Guides](README.md) > Publisher Server-Only Integration Guide 
+[EUID API Documentation](../../README.md) > [v2](../README.md) > [Integration Guides](README.md) > Publisher Server-Only Integration Guide 
 
 # Publisher Server-Only Integration Guide
 
