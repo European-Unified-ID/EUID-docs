@@ -22,7 +22,7 @@ To get access to EUID, contact the appropriate team at The Trade Desk listed bel
 
 ## API Version
 
-The current version of EUID APIs is v1.
+The current version of EUID API is v2.
 
 ## Environment 
 
@@ -30,10 +30,10 @@ All EUID endpoints use the same base URL.
 
 | Environment | Base URL |
 | :--- | :--- |
-| Testing | ```https://integ.euid.eu/v1``` |
-| Production | ```https://prod.euid.eu/v1``` |
+| Testing | ```https://integ.euid.eu/v2``` |
+| Production | ```https://prod.euid.eu/v2``` |
 
-For example, https://integ.euid.eu/v1/token/generate
+For example, https://integ.euid.eu/v2/token/generate
 
 ## Authentication and Authorization
 
