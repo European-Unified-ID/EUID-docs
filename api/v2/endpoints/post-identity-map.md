@@ -59,7 +59,7 @@ Here's an encrypted identity mapping request format with placeholder values:
 ```sh
 echo '[Unencrypted-JSON-Request-Body]' \
   | encrypt_request.py [CLIENT_SECRET] \
-  | curl -X POST 'https://prod.euid.eu/v2/identity/map' -H 'Authorization: Bearer [CLIENT_API_KEY]' \
+  | curl -X POST 'https://prod.euid.eu/v2/identity/map' -H 'Authorization: Bearer [CLIENT_API_KEY]' -d @- \
   | decrypt_response.py [CLIENT_SECRET] 
 ```
 
@@ -68,7 +68,7 @@ Here's an encrypted identity mapping request example for email addresses:
 ```sh
 echo '{"email": ["user@example.com", "user2@example.com"]}' \
   | encrypt_request.py DELPabG/hsJsZk4Xm9Xr10Wb8qoKarg4ochUdY9e+Ow= \
-  | curl -X POST 'https://prod.euid.eu/v2/identity/map' -H 'Authorization: Bearer YourTokenBV3tua4BXNw+HVUFpxLlGy8nWN6mtgMlIk=' \
+  | curl -X POST 'https://prod.euid.eu/v2/identity/map' -H 'Authorization: Bearer YourTokenBV3tua4BXNw+HVUFpxLlGy8nWN6mtgMlIk=' -d @- \
   | decrypt_response.py DELPabG/hsJsZk4Xm9Xr10Wb8qoKarg4ochUdY9e+Ow= 
 ```
 
