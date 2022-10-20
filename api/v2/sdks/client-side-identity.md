@@ -13,7 +13,7 @@ For integration steps for content publishers, see [EUID SDK Integration Guide](.
 Include the following SDK script on the pages where you want to use EUID to manage identity or retrieve an advertising token for targeted advertising:
 
 ```html
-<script src="https://prod.uidapi.com/static/js/euid-sdk-1.0.0.js" type="text/javascript"></script> TBD
+<script src="https://prod.euid.eu/static/js/euid-sdk-1.0.0.js" type="text/javascript"></script> TBD
 ```
 
 ## Workflow Overview
@@ -142,7 +142,7 @@ The `opts` object supports the following properties.
 | :--- | :--- | :--- | :--- | :--- |
 | `callback` | `function(object): void` | Required | The function the SDK is to invoke after validating the passed identity. For details, see [Callback Function](#callback-function).| N/A |
 | `identity` | object | Optional | The `body` property value from a successful [POST /token/generate](../endpoints/post-token-generate.md) or [POST /token/refresh](../endpoints/post-token-refresh.md) call that has been run on the server to generate an identity. To use the identity from a [first-party cookie](#euid-cookie-format), leave this property empty. | N/A |
-| `baseUrl` | string | Optional | The custom base URL of the EUID operator to use when invoking the [POST /token/refresh](../endpoints/post-token-refresh.md) endpoint, for example, `https://my.operator.com`.  | `https://prod.uidapi.com ` |
+| `baseUrl` | string | Optional | The custom base URL of the EUID operator to use when invoking the [POST /token/refresh](../endpoints/post-token-refresh.md) endpoint, for example, `https://my.operator.com`.  | `https://prod.euid.eu ` |
 | `refreshRetryPeriod` | number | Optional | The number of seconds after which to retry refreshing tokens if intermittent errors occur. | 5 |
 | `cookieDomain` | string | Optional | The domain name string to apply to the [EUID cookie](#euid-cookie-format). | `undefined` |
 | `cookiePath` | string | Optional | The path string to apply to the [EUID cookie](#euid-cookie-format). | `/` |
