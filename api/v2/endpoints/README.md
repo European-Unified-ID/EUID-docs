@@ -8,7 +8,7 @@ All EUID endpoints require a client secret for encrypting API requests (except [
 
 | Endpoint | Description | Request Encryption |  Response Decryption |
 | :--- | :--- | :--- | :--- |
-| [POST /token/generate](./post-token-generate.md) | Generate an EUID token from an email address or email address hash. | Required | Required |
+| [POST /token/generate](./post-token-generate.md) | Opt in the user to EUID-based targeted advertising and generate a EUID token from their provided email address. | Required | Required |
 | [POST /token/validate](./post-token-validate.md) | Validate that an advertising token (EUID) matches the specified email address or email address hash. | Required | Required |
 | [POST /token/refresh](./post-token-refresh.md) | Generate a new token for a user for their refresh token from the [POST /token/generate](./post-token-generate.md) response. | N/A | Required |
 
