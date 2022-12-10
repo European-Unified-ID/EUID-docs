@@ -1,7 +1,9 @@
 [EUID API Documentation](../../README.md) > [v2](../README.md) > [Endpoints](./README.md) > POST /token/generate
 
 # POST /token/generate
-Generate an EUID token from a hashed or unhashed email address.
+Opt in the user to EUID-based targeted advertising and generate a EUID token from their provided email address. 
+
+>IMPORTANT: Be sure to call this endpoint only when you have obtained legal basis to convert the user’s personal information to EUID tokens for targeted advertising. This endpoint does not check for opt-out records. To check for opt-out requests, use the [POST /token/refresh](./post-token-refresh.md) endpoint.
 
 The following integration workflows use this endpoint:
 * [Publisher EUID SDK Integration Guide](../guides/publisher-client-side.md)
@@ -23,7 +25,7 @@ Here's what you need to know about this endpoint requests:
 
 ###  Unencrypted JSON Body Parameters
 
-You must include only one of the following parameters as a key-value pair in the JSON body of a request when encrypting it.
+You must include either the `email` or `email_hash` parameter as a key-value pair in the JSON body of a request when encrypting it.
 
 | Body Parameter | Data Type | Attribute | Description | 
 | :--- | :--- | :--- | :--- |
@@ -113,10 +115,12 @@ The following table lists the `status` property values and their HTTP status cod
 | `client_error` | 400 | The request had missing or invalid parameters.|
 | `unauthorized` | 401 | The request did not include a bearer token, included an invalid bearer token, or included a bearer token unauthorized to perform the requested operation. |
 
+>NOTE: Since this endpoint does not check for opt-out records, it never returns the `optout` status.
+
 If the `status` value is other than `success`, the `message` field provides additional information about the issue.
 | Status Value | Description |
 | :--- | :--- |
-| `success` | The token is successfully generated and returned in `body` field |
+| `success` | The token is successfully generated and returned in `body` field. |
 | `insufficient_user_consent` | The `tcf_consent_string` parameter did not show sufficient consent to generate a token. |
 
 ## Test Identities
