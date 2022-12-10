@@ -143,3 +143,11 @@ You can use the `optout@email.com` email address to test your token refresh work
     - The `optout@email.com` as the `email` value.
     - The hash of `optout@email.com` as the `email_hash` value. 
 2. Wait until the SDK's [background auto-refresh](../sdks/client-side-identity.md#background-token-auto-refresh) attempts to refresh the advertising token (this can take several hours) and observe the refresh attempt fail with the `OPTOUT` status. At this point the SDK also clears the first-party cookie.
+
+### Should /token/generate return the “optout” status and generate no tokens if I pass optout@email.com in the request payload? 
+
+The [POST /token/generate](../endpoints/post-token-generate.md) endpoint does not check for opt-out records and returns the `success` status with valid advertising and user tokens in response to valid requests.
+
+>IMPORTANT: Be sure to call this endpoint only when you have obtained legal basis to convert the user's personal information to EUID tokens. [POST /token/generate](../endpoints/post-token-generate.md) calls automatically opt in users associated with the provided personal information to EUID-based targeted advertising. 
+
+To check for opt-out requests, use the [POST /token/refresh](../endpoints/post-token-refresh.md) endpoint.
