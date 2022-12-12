@@ -112,7 +112,7 @@ The following table lists the `status` property values and their HTTP status cod
 | Status | HTTP Status Code | Description |
 | :--- | :--- | :--- |
 | `success` | 200 | The request was successful. The response will be encrypted.<br/><br/>IMPORTANT: This status may be returned without a generated token.<br/>For example, when the `tcf_consent_string` parameter value does not contain [sufficient information](https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20Consent%20string%20and%20vendor%20list%20formats%20v2.md#what-information-is-stored-in-a-tc-string) to generate a token, an `insufficient_user_consent` message is returned. |
-| `client_error` | 400 | The request had missing or invalid parameters.|
+| `client_error` | 400 | The request had missing or invalid parameters, including a missing or invalid `tcf_consent_string` value. |
 | `unauthorized` | 401 | The request did not include a bearer token, included an invalid bearer token, or included a bearer token unauthorized to perform the requested operation. |
 
 >NOTE: Since this endpoint does not check for opt-out records, it never returns the `optout` status.
