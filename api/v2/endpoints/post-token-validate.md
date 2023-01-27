@@ -7,7 +7,7 @@ Validate that an advertising token matches the specified hashed or unhashed emai
 
 ## Request Format 
 
-```POST '{environment}/v1/token/validate'```
+```POST '{environment}/v2/token/validate'```
 
 >IMPORTANT: You must encrypt all request using your secret. For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../encryption-decryption.md).
 

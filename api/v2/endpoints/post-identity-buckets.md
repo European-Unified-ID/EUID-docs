@@ -6,7 +6,7 @@ Monitor rotated salt buckets. This endpoint is intended for use by [Advertisers 
 
 ## Request Format
 
-```POST '{environment}/v1/identity/buckets'```
+```POST '{environment}/v2/identity/buckets'```
 
 >IMPORTANT: You must encrypt all request using your secret. For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../encryption-decryption.md).
 

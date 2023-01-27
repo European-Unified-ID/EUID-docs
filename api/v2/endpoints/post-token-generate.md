@@ -11,7 +11,7 @@ The following integration workflows use this endpoint:
 
 ## Request Format 
 
-```POST '{environment}/v1/token/generate'```
+```POST '{environment}/v2/token/generate'```
 
 Here's what you need to know about this endpoint requests:
 - To ensure that the API key used to access the service remains secret, EUID tokens must be generated only on the server side after authentication. 
