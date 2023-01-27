@@ -11,14 +11,13 @@ The following integration workflows use this endpoint:
 
 ## Request Format 
 
-```POST '{environment}/v1/token/refresh'```
+```POST '{environment}/v2/token/refresh'```
 
 Here's what you need to know about this endpoint:
 
 - No encryption is required for token refresh requests.
 - Responses are encrypted only if the HTTP status code is 200. Otherwise, responses are not encrypted.
 - To decrypt responses, you need to use the `refresh_response_key` value returned in the [POST /token/generate](./post-token-generate.md) or `POST /token/refresh` response from which the refresh token in the request is returned.
-- If you send a refresh token from a v1 `token/generate` response in the request, the response will not be encrypted.
 
 ### Path Parameters
 
