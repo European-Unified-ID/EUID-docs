@@ -13,7 +13,7 @@ The following describes the integration workflow for DSP to support EUID as part
 1. [Honor user opt-outs](#honor-user-opt-outs)
 2. [Decrypt EUID tokens to use in RTB](#decrypt-euid-tokens-for-rtb-use)
 
-![DSP Flow](./dsp-guide-flow-mermaid.svg)
+![DSP Flow](images/dsp-guide-flow-mermaid.svg)
 
 ### Honor User Opt-Outs
 
@@ -40,7 +40,7 @@ Leverage the provided [RTB SDK](../sdks/dsp-client-rtb-sdk.md) to decrypt incomi
 
 The following diagram illustrates opt-out logic.
 
-![DSP Opt-Out Check](./dsp-guide-optout-check-mermaid.svg)
+![DSP Opt-Out Check](images/dsp-guide-optout-check-mermaid.svg)
 
 If the `established_timestamp` value is less than the `optout_timestamp` value, the user opted out and the EUID should not be used for RTB. In these cases, it is up to the DSP whether they would like to send an alternate ID for bidding or not bid.
 

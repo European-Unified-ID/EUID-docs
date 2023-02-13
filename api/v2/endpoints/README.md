@@ -2,7 +2,7 @@
 
 # EUID Endpoints
 
-All EUID endpoints require a client secret for encrypting API requests (except [POST /token/refresh](./post-token-refresh.md) requests) and decrypting responses. For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../encryption-decryption.md).
+All EUID endpoints require a client secret for encrypting API requests (except [POST /token/refresh](./post-token-refresh.md) requests) and decrypting responses. For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../ref-info/encryption-decryption.md).
 
 ## Identity Tokens
 
