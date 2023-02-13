@@ -11,7 +11,7 @@ This guide covers integration steps for organizations that collect user data and
 
 The following diagram outlines the steps data collectors need to complete to map personal data to EUID identifiers for audience-building and targeting. personal data refers to a user's normalized email address or SHA256-hashed and normalized email address.
 
-![Advertiser Flow](./advertiser-flow-mermaid.svg)
+![Advertiser Flow](images/advertiser-flow-mermaid.svg)
 
 ### Retrieve a EUID for personal data using the identity map endpoints
 

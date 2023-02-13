@@ -12,7 +12,7 @@ The guide outlines the [basic steps](#integration-steps) that you need to consid
 
 The following diagram outlines the steps required for a user to establish a EUID token with a publisher and how the EUID token integrates with the RTB bid stream.
  
-![Custom Publisher Flow](./custom-publisher-flow-mermaid.svg)
+![Custom Publisher Flow](images/custom-publisher-flow-mermaid.svg)
 
 The following sections provide additional details for each step in the diagram:
  

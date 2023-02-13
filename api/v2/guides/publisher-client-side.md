@@ -17,7 +17,7 @@ For custom integration scenarios for app developers and CTV broadcasters without
 
 The following diagram outlines the steps required for a user to establish a EUID token with a publisher and how the EUID token integrates with the RTB bid stream.
 
-![Publisher Flow](./publisher-flow-mermaid.svg)
+![Publisher Flow](images/publisher-flow-mermaid.svg)
 
 The following sections provide additional details for each step in the diagram:
  
