@@ -10,3 +10,4 @@ The following guides provide integration instructions based on the needs and req
 | [Publisher (Server-Only)](./custom-publisher-integration.md) | This integration guide for publishers covers custom integration scenarios for app developers and CTV broadcasters, without utilizing the EUID SDK. |
 | [DSP](./dsp-guide.md) | This integration guide for DSPs covers handling EUIDs for bidding and honoring user opt-outs. |
 | [Advertiser and Data Provider](./advertiser-dataprovider-guide.md) | This integration guide for advertisers and data partners covers integration workflows for mapping identity for audience-building and targeting. |
+| [Operator - AWS Marketplace](./operator-guide-aws-marketplace.md) | Instructions for setting up an operator service for AWS Marketplace. |
