@@ -10,6 +10,7 @@ This guide includes the following information:
   -  [Prerequisites](#prerequisites)
   -  [Resources Created](#resources-created)
   -  [Customization Options](#customization-options)
+  -  [VPC Chart](#vpc-chart)
 - [Deployment](#deployment)
 - [Checking EUID Operator Status](#checking-euid-operator-status)
 - [Creating a Load Balancer](#creating-a-load-balancer)
@@ -123,6 +124,9 @@ Here's what you can customize during or after the [deployment](#deployment):
 - Root volume size (8G Minimal)
 - SSH key: This is the SSH key that you use to access the EUID Operator EC2 instances.
 - Instance type: m5.2xlarge, m5.4xlarge, and so on. If no customization m5.2xlarge is default and recommended.
+
+## VPC Chart
+![VPC Chart](VPC-chart-AWS-VPC-Chart-EUID.png) 
 
 ## Deployment
 
