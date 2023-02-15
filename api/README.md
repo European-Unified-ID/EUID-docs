@@ -48,7 +48,7 @@ To authenticate to the EUID endpoints, you need the following:
 
 If you send unhashed email addresses to the EUID Operator Service, the service normalizes the email addresses and then hashes them. If you want to hash the email addresses yourself before sending them, you must normalize them before you hash them.
 
-> IMPORTANT: Normalization before hashing ensures that the generated EUID value will always be the same, so that the data can be matched. If you do not normalize before hashing, this might result in an invalid EUID token that cannot be used for targeted advertising.
+> IMPORTANT: Normalization before hashing ensures that the generated EUID value will always be the same, so that the data can be matched. If you do not normalize before hashing, this might result in a different EUID, reducing the effectiveness of targeted advertising.
 
 To normalize an email address, complete the following steps:
 
