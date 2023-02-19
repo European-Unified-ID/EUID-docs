@@ -1,18 +1,18 @@
-[EUID API Documentation](../../README.md) > [v2](../README.md) > [Integration Guides](README.md) > Publisher Server-Only Integration Guide 
+[EUID API Documentation](../../README.md) > [v2](../README.md) > [Integration Guides](README.md) > Publisher Integration Guide, Server-Only (Without SDK)
 
-# Publisher Server-Only Integration Guide
+# Publisher Integration Guide, Server-Only (Without SDK)
 
 This guide is intended for app developers and CTV broadcasters who would like to generate identity tokens utilizing EUID for the RTB bid stream, while integrating directly with EUID rather than EUID-enabled single-sign-on or identity providers. 
 
-The guide outlines the [basic steps](#integration-steps) that you need to consider for your custom integration. For example, you need to decide how to implement user login and logout, how to manage EUID identity information and use it for targeted advertising, how to refresh tokens, deal with missing identities, and handle user opt-outs. See also [FAQs](#faqs).
+The guide outlines the [basic steps](#integration-steps) that you need to consider if you're building an integration without using an SDK. For example, you need to decide how to implement user login and logout, how to manage EUID identity information and use it for targeted advertising, how to refresh tokens, deal with missing identities, and handle user opt-outs. See also [FAQs](#faqs).
 
->TIP: To facilitate the process of establishing client identity using EUID and retrieving advertising tokens, consider using the [Client-Side Identity JavaScript SDK](../sdks/client-side-identity.md). For details, see [Publisher EUID SDK Integration Guide](./publisher-client-side.md).
+>TIP: To facilitate the process of establishing client identity using EUID and retrieving advertising tokens, consider using the [Client-Side JavaScript SDK](../sdks/client-side-identity.md). For details, see [Client-Side JavaScript SDK Integration Guide](./publisher-client-side.md).
 
 ## Integration Steps
 
 The following diagram outlines the steps required for a user to establish a EUID token with a publisher and how the EUID token integrates with the RTB bid stream.
  
-![Custom Publisher Flow](images/custom-publisher-flow-mermaid.svg)
+![Publisher Flow Without SDK](images/custom-publisher-flow-mermaid.svg)
 
 The following sections provide additional details for each step in the diagram:
  
@@ -33,7 +33,7 @@ After authentication in step 1-c, which forces the user to accept the rules of e
 
 ### Bid Using EUID Tokens
 
-You need to consider how you want to manage EUID identity information and use it for targeted advertising, for example, to pass the returned advertising token to SSPs.
+You need to consider how you want to manage EUID identity information and use it for targeted advertising&#8212;for example, to pass the returned advertising token to SSPs.
 
 | Step | Endpoint | Description |
 | :--- | :--- | :--- |

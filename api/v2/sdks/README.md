@@ -6,5 +6,5 @@ The following SDKs are available for EUID integration.
 
 | SDK | Description |
 | :--- | :--- |
-| [EUID SDK](./client-side-identity.md) | Client-Side Identity JavaScript SDK that facilitates the process of establishing client identity using EUID and retrieving advertising tokens for publishers. |
-| [RTB SDK](./dsp-client-rtb-sdk.md) | Is intended for DSPs (or anyone processing RTB requests) who want access enclosed EUID.|
+| [Client-Side JavaScript SDK](./client-side-identity.md) | Client-Side JavaScript SDK that facilitates the process of establishing client identity using EUID and retrieving advertising tokens for publishers. |
+| [Server-Side SDK Guide for RTB](./dsp-client-rtb-sdk.md) | An SDK intended for DSPs (or anyone processing RTB requests) who want access enclosed EUID. |
