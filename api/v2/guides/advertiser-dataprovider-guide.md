@@ -57,7 +57,7 @@ Not necessarily. After you remap emails associated with a particular bucket ID, 
 ### How often should UIDs be refreshed for incremental updates?
 The recommended cadence for updating audiences is daily.
 
-Even though each salt bucket is updated roughly once a year, individual bucket updates are spread over the year. This means that about 1/365th of all buckets is rotated daily. If fidelity is critical, consider calling the [POST /identity/buckets](../endpoints/post-identity-buckets.md) endpoint more frequently, for example, hourly.
+Even though each salt bucket is updated roughly once a year, individual bucket updates are spread over the year. This means that about 1/365th of all buckets is rotated daily. If fidelity is critical, consider calling the [POST /identity/buckets](../endpoints/post-identity-buckets.md) endpoint more frequently&#8212;for example, hourly.
 
 
 ### How should I generate the SHA256 of personal data for mapping?
@@ -71,4 +71,4 @@ Yes. Not storing email address or hash mappings may increase processing time dra
 ### How should I handle user optouts?
 When a user opts out of EUID-based targeted advertising through the [Transparency and Control Portal](https://www.transparentadvertising.eu/), the optout signal is sent to DSPs and publishers, which handle optouts at bid time. As an advertiser or data provider, you do not need to check for EUID optout in this scenario.
 
-If a user opts out through your website, you should follow your internal procedures for handling the optout, for example, you might choose not to generate a EUID for that user.
+If a user opts out through your website, you should follow your internal procedures for handling the optout. For example, you might choose not to generate a EUID for that user.

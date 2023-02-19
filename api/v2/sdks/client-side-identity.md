@@ -1,9 +1,9 @@
-[EUID API Documentation](../../README.md) > [v2](../README.md) > [SDKs](./README.md) > Client-Side Identity
+[EUID API Documentation](../../README.md) > [v2](../README.md) > [SDKs](./README.md) > Client-Side JavaScript SDK
 
-# EUID Client-Side Identity JavaScript SDK
+# Client-Side JavaScript SDK
 
-The EUID SDK is intended to facilitate the process of establishing client identity using EUID and retrieving advertising tokens. The following sections describe the high-level [workflow](#workflow-overview) for establishing EUID identity, provide the SDK [API reference](#api-reference), and explain the [EUID cookie format](#euid-cookie-format).
-For integration steps for content publishers, see [EUID SDK Integration Guide](../guides/publisher-client-side.md). 
+The Client-Side JavaScript SDK is intended to facilitate the process of establishing client identity using EUID and retrieving advertising tokens. The following sections describe the high-level [workflow](#workflow-overview) for establishing EUID identity, provide the SDK [API reference](#api-reference), and explain the [EUID cookie format](#euid-cookie-format).
+For integration steps for content publishers, see [Client-Side JavaScript SDK Integration Guide](../guides/publisher-client-side.md). 
 
 >NOTE: Within this documentation, the term "identity" refers to a package of EUID tokens, including the advertising token.
 
@@ -31,7 +31,7 @@ The high-level client-side workflow for establishing EUID identity using the SDK
 	- If the advertising token is available, use it to initiate requests for targeted advertising.
 	- If not, either use untargeted advertising or redirect the user to the EUID login with the consent form.
 
-For intended web integration steps, see [Publisher Integration Guide (Standard)](../guides/publisher-client-side.md).
+For intended web integration steps, see [Client-Side JavaScript SDK Integration Guide](../guides/publisher-client-side.md).
 
 ### Workflow States and Transitions
 
@@ -41,13 +41,13 @@ The following table outlines the four main states in which the SDK can be, based
 | :--- | :--- | :---| :---| :---|
 | Initialization | `undefined`| `undefined`| Initial state until the callback is invoked. | N/A |
 | Identity Is Available | available |`false` | A valid identity has been successfully established or refreshed. You can use the advertising token in targeted advertising.  |`ESTABLISHED` or `REFRESHED` |
-| Identity Is Temporarily Unavailable |`undefined` | `false`| The identity (advertising token) has expired, and automatic refresh failed. [Background auto-refresh](#background-token-auto-refresh) attempts will continue until the refresh token expires or the user opts out.</br>You can do either of the following:</br>- Use untargeted advertising.</br>- Redirect the user to the EUID login with a consent form.</br>NOTE: Identity may be successfully refreshed after some time, for example, if the EUID service is temporarily unavailable.| `EXPIRED` |
+| Identity Is Temporarily Unavailable |`undefined` | `false`| The identity (advertising token) has expired, and automatic refresh failed. [Background auto-refresh](#background-token-auto-refresh) attempts will continue until the refresh token expires or the user opts out.</br>You can do either of the following:</br>- Use untargeted advertising.</br>- Redirect the user to the EUID login with a consent form.</br>NOTE: Identity may be successfully refreshed after some time&#8212;for example, if the EUID service is temporarily unavailable.| `EXPIRED` |
 | Identity Is Not Available  | `undefined`| `false`| The identity is not available and cannot be refreshed. The SDK clears the first-party cookie.</br>To use EUID-based targeted advertising again,  you need to redirect the user to the EUID login with a consent form. | `INVALID`, `NO_IDENTITY`, `REFRESH_EXPIRED`, or `OPTOUT` |
 
 
 The following diagram illustrates the four states, including the respective identity [status values](#identity-status-values), and possible transitions between them. The SDK invokes the [callback function](#callback-function) on each transition.
 
-![Client-Side Identity JavaScript SDK Workflow](images/euid-js-sdk-workflow.svg)
+![Client-Side JavaScript SDK Workflow](images/euid-js-sdk-workflow.svg)
 
 
 ### Background Token Auto-Refresh
@@ -56,19 +56,17 @@ As part of the SDK [initialization](#initopts-object-void), a token auto-refresh
 
 Here's what you need to know about the token auto-refresh:
 
-
 - Only one token refresh call can be active at a time. 
 - An unsuccessful [POST /token/refresh](../endpoints/post-token-refresh.md) response due to the user's optout or the refresh token expiration suspends  the background auto-refresh process and requires a new login ([isLoginRequired()](#isloginrequired-boolean) returns `true`). In all other cases, auto-refresh attempts will continue in the background.
 - The [callback function](#callback-function) specified during the SDK initialization is invoked under the following circustances:
 	- After each successful refresh attempt.
 	- After an initial failure to refresh an expired advertising token.
-	- When identity has become invalid, for example, because the user has opted out.</br>NOTE: The callback is *not* invoked when identify is temporarily unavailable and the auto-refresh keeps failing. In this case, the SDK continues using the existing advertising token.
+	- When identity has become invalid&#8212;for example, because the user has opted out.</br>NOTE: The callback is *not* invoked when identify is temporarily unavailable and the auto-refresh keeps failing. In this case, the SDK continues using the existing advertising token.
 - A [disconnect()](#disconnect-void) call cancels the active timer. 
-
 
 ## API Reference
 
->IMPORTANT: All interactions with the EUID SDK are done through the global `__euid` object, which is a member of the `EUID` class. All of following APIs are members of the `EUID` class. 
+>IMPORTANT: All interactions with the Client-Side JavaScript SDK are done through the global `__euid` object, which is a member of the `EUID` class. All of following APIs are members of the `EUID` class. 
 
 - [constructor()](#constructor)
 - [init()](#initopts-object-void)
@@ -142,9 +140,9 @@ The `opts` object supports the following properties.
 | :--- | :--- | :--- | :--- | :--- |
 | `callback` | `function(object): void` | Required | The function the SDK is to invoke after validating the passed identity. For details, see [Callback Function](#callback-function).| N/A |
 | `identity` | object | Optional | The `body` property value from a successful [POST /token/generate](../endpoints/post-token-generate.md) or [POST /token/refresh](../endpoints/post-token-refresh.md) call that has been run on the server to generate an identity. To use the identity from a [first-party cookie](#euid-cookie-format), leave this property empty. | N/A |
-| `baseUrl` | string | Optional | The custom base URL of the EUID operator to use when invoking the [POST /token/refresh](../endpoints/post-token-refresh.md) endpoint, for example, `https://my.operator.com`.  | `https://prod.euid.eu ` |
+| `baseUrl` | string | Optional | The base URL of the EUID operator to use when invoking the [POST /token/refresh](../endpoints/post-token-refresh.md) endpoint.<br/>For example: `https://my.operator.fr`.  | `https://prod.euid.eu ` |
 | `refreshRetryPeriod` | number | Optional | The number of seconds after which to retry refreshing tokens if intermittent errors occur. | 5 |
-| `cookieDomain` | string | Optional | The domain name string to apply to the [EUID cookie](#euid-cookie-format). | `undefined` |
+| `cookieDomain` | string | Optional | The domain name string to apply to the [EUID cookie](#euid-cookie-format).<br/>For example, if the `baseUrl` is `https://my.operator.fr`, the `cookieDomain` value might be `operator.fr`.| `undefined` |
 | `cookiePath` | string | Optional | The path string to apply to the [EUID cookie](#euid-cookie-format). | `/` |
 
 
@@ -203,7 +201,7 @@ The `getAdvertisingToken()` function allows you to get access to the advertising
 
 - The [callback function](#callback-function) has not been called yet, which means the SDK initialization is not complete.
 - The SDK initialization is complete, but there is no valid identity to use.
-- The SDK initialization is complete, but the auto-refresh has cleared the identity, for example, because the user has opted out.
+- The SDK initialization is complete, but the auto-refresh has cleared the identity&#8212;for example, because the user has opted out.
 
 If the identity is not available, to determine the best course of action, use the [isLoginRequired()](#isloginrequired-boolean) function.
 
@@ -227,7 +225,7 @@ This function can be called before or after the [init()](#initopts-object-void) 
 </script>
 ```
 
->TIP: You can use this function to be notified of the completion of the EUID SDK initialization from a component that may not be the one that called `init()`.
+>TIP: You can use this function to be notified of the completion of the Client-Side JavaScript SDK initialization from a component that might not be the one that called `init()`.
 
 ### isLoginRequired(): boolean
 

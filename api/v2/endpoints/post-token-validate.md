@@ -23,7 +23,7 @@ Validate that an advertising token matches the specified hashed or unhashed emai
 
 - You must include only one of the following parameters: `email` or `email_hash`. 
 - Include the required body parameters as key-value pairs in the JSON body of a request when encrypting it.
-- To test identities, use the `validate@email.com` email address. For details, see the FAQs sections in the [EUID SDK Integration Guide](../guides/publisher-client-side.md) and [Server-Only Integration Guide](../guides/custom-publisher-integration.md) for publishers.
+- To test identities, use the `validate@email.com` email address. For details, see the FAQs sections in the [Client-Side JavaScript SDK Integration Guide](../guides/publisher-client-side.md) and [Publisher Integration Guide, Server-Only (Without SDK)](../guides/custom-publisher-integration.md) for publishers.
 
 | Body Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
@@ -86,7 +86,7 @@ A successful decrypted response returns a boolean value that indicates the valid
 
 | Property | Data Type | Description |
 | :--- | :--- | :--- |
-| `body` | boolean | A value of `true` indicates that the email address or email address hash specified in the request is the same as the one used to generate the advertising token.<br/><br/>A value of `false` indicates any of the following:<br/>- The request included an invalid advertising token.<br/>-  The email address or email address hash specified in the request is either different from the one used to generate the advertising token or is not for the testing email `validate@email.com`. |
+| `body` | boolean | A value of `true` indicates that the email address or email address hash specified in the request is the same as the one used to generate the advertising token.<br/>A value of `false` indicates any of the following:<br/>- The request included an invalid advertising token.<br/>-  The email address or email address hash specified in the request is either different from the one used to generate the advertising token or is not for the testing email `validate@email.com`. |
 
 ### Response Status Codes
 
