@@ -1,4 +1,4 @@
-[EUID API Documentation](../../README.md) > [v2](../README.md) > [Endpoints](./README.md) > POST /token/validate
+[EUID API Documentation](../../README.md) > [v2](../README.md) > [Endpoints](README.md) > POST /token/validate
 
 # POST /token/validate
 Validate that an advertising token matches the specified hashed or unhashed email address or phone number. 
@@ -27,7 +27,7 @@ Validate that an advertising token matches the specified hashed or unhashed emai
 
 | Body Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
-| `token` | string | Required | The advertising token returned by the [POST /token/generate](./post-token-generate.md) response. |
+| `token` | string | Required | The advertising token returned by the [POST /token/generate](post-token-generate.md) response. |
 | `email` | string | Conditionally Required |  The email address for token validation. |
 | `email_hash` | string | Conditionally Required | The [base64-encoded SHA256](../../README.md#email-address-hash-encoding) hash of a [normalized](../../README.md#email-address-normalization) email address for token validation. |
 

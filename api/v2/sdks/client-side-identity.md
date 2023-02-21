@@ -1,4 +1,4 @@
-[EUID API Documentation](../../README.md) > [v2](../README.md) > [SDKs](./README.md) > Client-Side JavaScript SDK
+[EUID API Documentation](../../README.md) > [v2](../README.md) > [SDKs](README.md) > Client-Side JavaScript SDK
 
 # Client-Side JavaScript SDK
 

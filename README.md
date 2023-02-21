@@ -122,15 +122,15 @@ The following table lists four key workflows in the EUID system and provides lin
 
 | Workflow | Intended Primary Participants | Integration Guide |
 | :--- | :--- | :--- |
-| **Buy-Side** | DSPs who transact on EUID tokens in the bid stream. | [DSP](./api/v2/guides/dsp-guide.md) |
-| **Data Provider** | Organizations that collect user data and push it to DSPs. | [Advertiser and Third-Party Data Provider](./api/v2/guides/advertiser-dataprovider-guide.md) |
-| **Supply-Side** | Organizations that propagate EUID tokens to the bid stream via SSPs.<br/> NOTE: Publishers can choose to leverage the [Client-Side JavaScript SDK](./api/v2/sdks/client-side-identity.md) or complete their own server-only integration without using an SDK. | [Client-Side JavaScript SDK Integration Guide](./api/v2/guides/publisher-client-side.md)<br/>[Publisher Integration Guide, Server-Only (Without SDK)](./api/v2/guides/custom-publisher-integration.md) |
+| **Buy-Side** | DSPs who transact on EUID tokens in the bid stream. | [DSP](api/v2/guides/dsp-guide.md) |
+| **Data Provider** | Organizations that collect user data and push it to DSPs. | [Advertiser and Third-Party Data Provider](api/v2/guides/advertiser-dataprovider-guide.md) |
+| **Supply-Side** | Organizations that propagate EUID tokens to the bid stream via SSPs.<br/> NOTE: Publishers can choose to leverage the [Client-Side JavaScript SDK](api/v2/sdks/client-side-identity.md) or complete their own server-only integration without using an SDK. | [Client-Side JavaScript SDK Integration Guide](api/v2/guides/publisher-client-side.md)<br/>[Publisher Integration Guide, Server-Only (Without SDK)](api/v2/guides/custom-publisher-integration.md) |
 | **Opt-Out** | Consumers who engage with publishers or their SSO providers and other identity providers. | N/A |
 
 
 The following diagram summarizes all four workflows. For each workflow, the [participants](#participants), [components](#components), [EUID identifier types](#euid-identifier-types), and numbered steps are color-coded.
 
-![The EUID Ecosystem](/images/EUID-workflows.jpg)
+![The EUID Ecosystem](images/EUID-workflows.jpg)
 
 
 ## FAQs

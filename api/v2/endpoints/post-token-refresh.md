@@ -1,7 +1,7 @@
-[EUID API Documentation](../../README.md) > [v2](../README.md) > [Endpoints](./README.md) > POST /token/refresh
+[EUID API Documentation](../../README.md) > [v2](../README.md) > [Endpoints](README.md) > POST /token/refresh
 
 # POST /token/refresh
-Generate a new token for a user by specifying their refresh token issued by using the [POST /token/generate](./post-token-generate.md) endpoint.
+Generate a new token for a user by specifying their refresh token issued by using the [POST /token/generate](post-token-generate.md) endpoint.
 
 >NOTE: This endpoint can be called from the client side (for example, a browser or a mobile app) because it does not require using an API key.
 
@@ -17,7 +17,7 @@ Here's what you need to know about this endpoint:
 
 - No encryption is required for token refresh requests.
 - Responses are encrypted only if the HTTP status code is 200. Otherwise, responses are not encrypted.
-- To decrypt responses, you need to use the `refresh_response_key` value returned in the [POST /token/generate](./post-token-generate.md) or `POST /token/refresh` response from which the refresh token in the request is returned.
+- To decrypt responses, you need to use the `refresh_response_key` value returned in the [POST /token/generate](post-token-generate.md) or `POST /token/refresh` response from which the refresh token in the request is returned.
 
 ### Path Parameters
 
@@ -27,11 +27,11 @@ Here's what you need to know about this endpoint:
 
 #### Testing Notes
 
-Using the `optout@email.com` email address in a [POST /token/generate](./post-token-generate.md) request always generates an identity response with a `refresh_token` that results in a logout response when used with the `POST /token/refresh` endpoint.
+Using the `optout@email.com` email address in a [POST /token/generate](post-token-generate.md) request always generates an identity response with a `refresh_token` that results in a logout response when used with the `POST /token/refresh` endpoint.
 
 ### Request Example
 
-Here's a token refresh request format with placeholder values, which include the `refresh_token` and `refresh_response_key` values returned by a [POST /token/generate](./post-token-generate.md) request:
+Here's a token refresh request format with placeholder values, which include the `refresh_token` and `refresh_response_key` values returned by a [POST /token/generate](post-token-generate.md) request:
 
 ```sh
 echo [refresh_token] \
@@ -89,7 +89,7 @@ The [Client-Side JavaScript SDK](../sdks/client-side-identity.md) uses this endp
 | `identity_expires` | double | The UNIX timestamp (in milliseconds) that indicates when the advertising token expires. |
 | `refresh_from` | double | The UNIX timestamp (in milliseconds) that indicates when the [Client-Side JavaScript SDK](../sdks/client-side-identity.md) will start refreshing the advertising token.</br>TIP: If you are not using the SDK, consider refreshing the advertising token from this timestamp, too. |
 | `refresh_expires` | double | The UNIX timestamp (in milliseconds) that indicates when the refresh token expires. |
-| `refresh_response_key` | string | A key to be used in a new [POST /token/refresh](./post-token-refresh.md) request for response decryption. |
+| `refresh_response_key` | string | A key to be used in a new [POST /token/refresh](post-token-refresh.md) request for response decryption. |
 
 
 ### Response Status Codes
