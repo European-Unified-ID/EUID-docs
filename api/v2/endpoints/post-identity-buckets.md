@@ -1,4 +1,4 @@
-[EUID API Documentation](../../README.md) > [v2](../README.md) > [Endpoints](README.md) > POST /identity/buckets
+[EUID Overview](../../../README.md) > [Getting Started](../../getting-started.md) > [v2](../summary-doc-v2.md) > [Endpoints](summary-endpoints.md) > POST /identity/buckets
 
 # POST /identity/buckets
 

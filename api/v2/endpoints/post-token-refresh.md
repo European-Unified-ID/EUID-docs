@@ -1,4 +1,4 @@
-[EUID API Documentation](../../README.md) > [v2](../README.md) > [Endpoints](README.md) > POST /token/refresh
+[EUID Overview](../../../README.md) > [Getting Started](../../getting-started.md) > [v2](../summary-doc-v2.md) > [Endpoints](summary-endpoints.md) > POST /token/refresh
 
 # POST /token/refresh
 Generate a new token for a user by specifying their refresh token issued by using the [POST /token/generate](post-token-generate.md) endpoint.

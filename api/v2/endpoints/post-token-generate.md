@@ -1,4 +1,4 @@
-[EUID API Documentation](../../README.md) > [v2](../README.md) > [Endpoints](README.md) > POST /token/generate
+[EUID Overview](../../../README.md) > [Getting Started](../../getting-started.md) > [v2](../summary-doc-v2.md) > [Endpoints](summary-endpoints.md) > POST /token/generate
 
 # POST /token/generate
 Opt in the user to EUID-based targeted advertising and generate a EUID token from their provided email address. 
@@ -30,7 +30,7 @@ You must include either the `email` or `email_hash` parameter as a key-value pai
 | Body Parameter | Data Type | Attribute | Description | 
 | :--- | :--- | :--- | :--- |
 | `email` | string | Conditionally Required | The email address for which to generate tokens. | 
-| `email_hash` | string | Conditionally Required | The [base64-encoded SHA256](../../README.md#email-address-hash-encoding) hash of a [normalized](../../README.md#email-address-normalization) email address. |
+| `email_hash` | string | Conditionally Required | The [base64-encoded SHA256](../../getting-started.md#email-address-hash-encoding) hash of a [normalized](../../getting-started.md#email-address-normalization) email address. |
 | `tcf_consent_string` | string | Required | The [Transparency and Consent String](https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework) from the end user whose identity is used to generate the token. |
 
 ### Request Examples

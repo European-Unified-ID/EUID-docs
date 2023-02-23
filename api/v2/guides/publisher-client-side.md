@@ -1,4 +1,4 @@
-[EUID API Documentation](../../README.md) > [v2](../README.md) > [Integration Guides](README.md) > Client-Side JavaScript SDK Integration Guide
+[EUID Overview](../../../README.md) > [Getting Started](../../getting-started.md) > [v2](../summary-doc-v2.md) > [Integration Guides](summary-guides.md) > Client-Side JavaScript SDK Integration Guide
 
 # Client-Side JavaScript SDK Integration Guide
 

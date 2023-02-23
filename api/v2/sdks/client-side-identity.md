@@ -1,4 +1,4 @@
-[EUID API Documentation](../../README.md) > [v2](../README.md) > [SDKs](README.md) > Client-Side JavaScript SDK
+[EUID Overview](../../../README.md) > [Getting Started](../../getting-started.md) > [v2](../summary-doc-v2.md) > [SDKs](summary-sdks.md) > Client-Side JavaScript SDK
 
 # Client-Side JavaScript SDK
 
@@ -94,7 +94,7 @@ Here's what you need to know about this function:
 - Since the SDK relies on [first-party cookies](#euid-cookie-format) to store the passed EUID identity information for the session, subsequent `init()` calls on different page loads may have the `identity` property empty.
 - To tune specific behaviors, initialization calls may include optional configuration [parameters](#parameters).
 
-The following is a template of an `init()` call with the the server-side generated identity included.
+The following is a template of an `init()` call with the server-side generated identity included.
 
 ```html
 <script>

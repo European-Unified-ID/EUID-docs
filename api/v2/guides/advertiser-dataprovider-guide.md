@@ -1,4 +1,4 @@
-[EUID API Documentation](../../README.md) > [v2](../README.md) > [Integration Guides](README.md) > Advertiser/Data Provider Integration Guide
+[EUID Overview](../../../README.md) > [Getting Started](../../getting-started.md) > [v2](../summary-doc-v2.md) > [Integration Guides](summary-guides.md) > Advertiser/Data Provider Integration Guide
 
 # Advertiser and Data Provider Integration Guide
 
@@ -61,7 +61,7 @@ Even though each salt bucket is updated roughly once a year, individual bucket u
 
 
 ### How should I generate the SHA256 of personal data for mapping?
-The system should follow the [email normalization rules](../../README.md#email-address-normalization) and hash without salting.
+The system should follow the [email normalization rules](../../getting-started.md#email-address-normalization) and hash without salting.
 
 ### Should I store large volumes of email address or email address hash mappings? 
 Yes. Not storing email address or hash mappings may increase processing time drastically when you have to map millions of addresses. Recalculating only those mappings that actually need to be updated, however, reduces the total processing time because only about 1/365th of EUIDs need to be updated daily.
