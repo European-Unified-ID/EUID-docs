@@ -101,7 +101,7 @@ The [Client-Side JavaScript SDK](../sdks/client-side-identity.md) uses this endp
 | `advertising_token` | string | An encrypted advertising (EUID) token for the user. |
 | `refresh_token` | string | An encrypted token that can be exchanged with the EUID Service for the latest set of identity tokens. |
 | `identity_expires` | double | The UNIX timestamp (in milliseconds) that indicates when the advertising token expires. |
-| `refresh_from` | double | The UNIX timestamp (in milliseconds) that indicates when the [Client-Side JavaScript SDK](../sdks/client-side-identity.md) will start refreshing the advertising token.</br>TIP: If you are not using the SDK, consider refreshing the advertising token from this timestamp, too. |
+| `refresh_from` | double | The UNIX timestamp (in milliseconds) that indicates when the [Client-Side JavaScript SDK](../sdks/client-side-identity.md) will start refreshing the advertising token.<br/>TIP: If you are not using the SDK, consider refreshing the advertising token from this timestamp, too. |
 | `refresh_expires` | double | The UNIX timestamp (in milliseconds) that indicates when the refresh token expires. |
 | `refresh_response_key` | string | A key to be used in a [POST /token/refresh](post-token-refresh.md) request for response decryption. |
 
