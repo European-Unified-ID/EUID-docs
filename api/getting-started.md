@@ -1,5 +1,7 @@
+[EUID Overview](../README.md) 
+
 # Getting Started with EUID
-For EUID definition, forms, guiding principles, components, differences between UID2 and EUID, and other conceptual details, see [European Unified ID Overview](../README.md). For integration guides, supported SDKs, and endpoint reference, see [EUID API Documentation](v2/README.md).
+For EUID definition, forms, guiding principles, components, differences between UID2 and EUID, and other conceptual details, see [European Unified ID Overview](../README.md). For integration guides, supported SDKs, and endpoint reference, see [EUID API Documentation](v2/summary-doc-v2.md).
 
 This page provides the following information required for you to get started with the EUID API:
 * [Contact Info](#contact-info)

@@ -12,18 +12,18 @@ This page provides the following information about the European Unified ID (EUID
 - [Frequently Asked Questions (FAQs)](#faqs)
 - [License](#license)
 
-For integration guides, supported SDKs, and endpoint reference, see [EUID API Documentation](/api/v2/README.md). See also [Getting Started](/api/README.md).
+For integration guides, supported SDKs, and endpoint reference, see [EUID API Documentation](/api/v2/summary-doc-v2.md). See also [Getting Started](/api/getting-started.md).
 
 ## Introduction 
 
-The European Unified ID (EUID) is a framework that enables deterministic identity for advertising opportunities on the open internet for many [participants](#participants) across the advertising ecosystem. The EUID framework enables logged-in experiences from publisher websites, mobile apps, and Connected TV (CTV) apps to monetize through programmatic workflows. Built on the [UID2 framework](https://github.com/UnifiedID2/uid2docs/blob/main/api/README.md), EUID offers the user transparency and privacy controls designed to meet market requirements in Europe and the UK.
+The European Unified ID (EUID) is a framework that enables deterministic identity for advertising opportunities on the open internet for many [participants](#participants) across the advertising ecosystem. The EUID framework enables logged-in experiences from publisher websites, mobile apps, and Connected TV (CTV) apps to monetize through programmatic workflows. Built on the [UID2 framework](https://github.com/IABTechLab/uid2docs/blob/main/README.md), EUID offers the user transparency and privacy controls designed to meet market requirements in Europe and the UK.
 
 >NOTE: The term "EUID" can refer to either the framework or an actual identifier. Unless otherwise indicated, this page provides an overview of the EUID framework.
 
 
 ### EUID vs. UID2
 
-EUID is an open-source, standalone solution with its own unique namespace that builds on the [UID2 framework](https://github.com/UnifiedID2/uid2docs/blob/main/api/README.md). The main differences between UID2 and EUID result from more stringent European and UK data protection laws, relating to consent practices, rights for data subjects, and obligations between participants. Otherwise, EUID follows the same [guiding principles](#guiding-principles) as UID2.
+EUID is an open-source, standalone solution with its own unique namespace that builds on the [UID2 framework](https://github.com/IABTechLab/uid2docs/blob/main/README.md). The main differences between UID2 and EUID result from more stringent European and UK data protection laws, relating to consent practices, rights for data subjects, and obligations between participants. Otherwise, EUID follows the same [guiding principles](#guiding-principles) as UID2.
 
 >IMPORTANT: Even though it is built on the UID2 framework, EUID is a separate framework. 
 
