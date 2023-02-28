@@ -1,4 +1,4 @@
-[EUID API Documentation](../../README.md) > [v2](../README.md) > [Endpoints](./README.md) > POST /identity/map
+[EUID Overview](../../../README.md) > [Getting Started](../../getting-started.md) > [v2](../summary-doc-v2.md) > [Endpoints](summary-endpoints.md) > POST /identity/map
 
 # POST /identity/map
 
@@ -11,13 +11,13 @@ Here's what you need to know:
 - The maximum request size is 1MB. 
 - To map a large number of email addresses or email address hashes, send them in *sequential* batches with a maximum batch size of 5,000 items per batch.
 - Unless you are using a private operator, do not send batches in parallel. In other words, use a single HTTP connection and map PII consecutively.
-- Be sure to store mappings of email addresses or email address hashes.<br>Not storing mappings may increase processing time drastically when you have to map millions of emails addresses. Recalculating only those mappings that actually need to be updated, however, reduces the total processing time because only about 1/365th of EUIDs need to be updated daily. See also [Advertiser/Data Provider Integration Guide and FAQs](../guides/advertiser-dataprovider-guide.md).
+- Be sure to store mappings of email addresses or email address hashes.<br/>Not storing mappings may increase processing time drastically when you have to map millions of emails addresses. Recalculating only those mappings that actually need to be updated, however, reduces the total processing time because only about 1/365th of EUIDs need to be updated daily. See also [Advertiser/Data Provider Integration Guide and FAQs](../guides/advertiser-dataprovider-guide.md).
 
 ## Request Format
 
-```POST '{environment}/v1/identity/map'```
+```POST '{environment}/v2/identity/map'```
 
->IMPORTANT: You must encrypt all request using your secret. For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../encryption-decryption.md).
+>IMPORTANT: You must encrypt all request using your secret. For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../ref-info/encryption-decryption.md).
 
 ### Path Parameters
 
@@ -32,7 +32,7 @@ Here's what you need to know:
 | Body Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
 | `email` | string array | Conditionally Required | The list of email addresses to be mapped. |
-| `email_hash` | string array | Conditionally Required | The list of [base64-encoded SHA256](../../README.md#email-address-hash-encoding) hashes of [normalized](../../README.md#email-address-normalization) email addresses. |
+| `email_hash` | string array | Conditionally Required | The list of [base64-encoded SHA256](../../getting-started.md#email-address-hash-encoding) hashes of [normalized](../../getting-started.md#email-address-normalization) email addresses. |
 
 
 ### Request Examples
@@ -75,7 +75,7 @@ echo '{"email": ["user@example.com", "user2@example.com"]}' \
   | decrypt_response.py DELPabG/hsJsZk4Xm9Xr10Wb8qoKarg4ochUdY9e+Ow= 
 ```
 
-For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../encryption-decryption.md).
+For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../ref-info/encryption-decryption.md).
 
 ## Decrypted JSON Response Format
 

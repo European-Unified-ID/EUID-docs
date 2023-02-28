@@ -12,7 +12,7 @@
     loop 3. Monitor for salt bucket rotations related to your stored EUIDs.
        DP->>EUID: 3-a. Monitor salt bucket rotations using the bucket service.
        EUID->>DP: 3-b. Return salt buckets rotated since a given timestamp.
-       DP->>EUID: 3-c. Compare the rotated salt buckets to stored EUID salt buckets.<br>If rotated, resend personal data to identity mapping service for a new EUID.
+       DP->>EUID: 3-c. Compare the rotated salt buckets to stored EUID salt buckets.<br/>If rotated, resend personal data to identity mapping service for a new EUID.
        EUID->>DP: 3-d. Store the EUID and salt bucket returned from the identity mapping service.
     end
 

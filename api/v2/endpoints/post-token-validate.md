@@ -1,4 +1,4 @@
-[EUID API Documentation](../../README.md) > [v2](../README.md) > [Endpoints](./README.md) > POST /token/validate
+[EUID Overview](../../../README.md) > [Getting Started](../../getting-started.md) > [v2](../summary-doc-v2.md) > [Endpoints](summary-endpoints.md) > POST /token/validate
 
 # POST /token/validate
 Validate that an advertising token matches the specified hashed or unhashed email address or phone number. 
@@ -7,9 +7,9 @@ Validate that an advertising token matches the specified hashed or unhashed emai
 
 ## Request Format 
 
-```POST '{environment}/v1/token/validate'```
+```POST '{environment}/v2/token/validate'```
 
->IMPORTANT: You must encrypt all request using your secret. For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../encryption-decryption.md).
+>IMPORTANT: You must encrypt all request using your secret. For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../ref-info/encryption-decryption.md).
 
 
 ### Path Parameters
@@ -23,13 +23,13 @@ Validate that an advertising token matches the specified hashed or unhashed emai
 
 - You must include only one of the following parameters: `email` or `email_hash`. 
 - Include the required body parameters as key-value pairs in the JSON body of a request when encrypting it.
-- To test identities, use the `validate@email.com` email address. For details, see the FAQs sections in the [EUID SDK Integration Guide](../guides/publisher-client-side.md) and [Server-Only Integration Guide](../guides/custom-publisher-integration.md) for publishers.
+- To test identities, use the `validate@email.com` email address. For details, see the FAQs sections in the [Client-Side JavaScript SDK Integration Guide](../guides/publisher-client-side.md) and [Publisher Integration Guide, Server-Only (Without SDK)](../guides/custom-publisher-integration.md) for publishers.
 
 | Body Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
-| `token` | string | Required | The advertising token returned by the [POST /token/generate](./post-token-generate.md) response. |
+| `token` | string | Required | The advertising token returned by the [POST /token/generate](post-token-generate.md) response. |
 | `email` | string | Conditionally Required |  The email address for token validation. |
-| `email_hash` | string | Conditionally Required | The [base64-encoded SHA256](../../README.md#email-address-hash-encoding) hash of a [normalized](../../README.md#email-address-normalization) email address for token validation. |
+| `email_hash` | string | Conditionally Required | The [base64-encoded SHA256](../../getting-started.md#email-address-hash-encoding) hash of a [normalized](../../getting-started.md#email-address-normalization) email address for token validation. |
 
 
 ### Request Examples
@@ -66,7 +66,7 @@ echo '{"token": "AdvertisingTokenmZ4dZgeuXXl6DhoXqbRXQbHlHhA96leN94U1uavZVspwKXl
   | decrypt_response.py DELPabG/hsJsZk4Xm9Xr10Wb8qoKarg4ochUdY9e+Ow= 
 ```
 
-For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../encryption-decryption.md).
+For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../ref-info/encryption-decryption.md).
 
 ## Decrypted JSON Response Format
 
@@ -86,7 +86,7 @@ A successful decrypted response returns a boolean value that indicates the valid
 
 | Property | Data Type | Description |
 | :--- | :--- | :--- |
-| `body` | boolean | A value of `true` indicates that the email address or email address hash specified in the request is the same as the one used to generate the advertising token.<br/><br/>A value of `false` indicates any of the following:<br/>- The request included an invalid advertising token.<br/>-  The email address or email address hash specified in the request is either different from the one used to generate the advertising token or is not for the testing email `validate@email.com`. |
+| `body` | boolean | A value of `true` indicates that the email address or email address hash specified in the request is the same as the one used to generate the advertising token.<br/>A value of `false` indicates any of the following:<br/>- The request included an invalid advertising token.<br/>-  The email address or email address hash specified in the request is either different from the one used to generate the advertising token or is not for the testing email `validate@email.com`. |
 
 ### Response Status Codes
 

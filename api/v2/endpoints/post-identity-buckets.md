@@ -1,4 +1,4 @@
-[EUID API Documentation](../../README.md) > [v2](../README.md) > [Endpoints](./README.md) > POST /identity/buckets
+[EUID Overview](../../../README.md) > [Getting Started](../../getting-started.md) > [v2](../summary-doc-v2.md) > [Endpoints](summary-endpoints.md) > POST /identity/buckets
 
 # POST /identity/buckets
 
@@ -6,9 +6,9 @@ Monitor rotated salt buckets. This endpoint is intended for use by [Advertisers 
 
 ## Request Format
 
-```POST '{environment}/v1/identity/buckets'```
+```POST '{environment}/v2/identity/buckets'```
 
->IMPORTANT: You must encrypt all request using your secret. For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../encryption-decryption.md).
+>IMPORTANT: You must encrypt all request using your secret. For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../ref-info/encryption-decryption.md).
 
 ### Path Parameters
 
@@ -51,7 +51,7 @@ echo '{"since_timestamp": "2022-06-01T13:00:00"}' \
   | decrypt_response.py DELPabG/hsJsZk4Xm9Xr10Wb8qoKarg4ochUdY9e+Ow= 
 ```
 
-For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../encryption-decryption.md).
+For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../ref-info/encryption-decryption.md).
 
 ## Decrypted JSON Response Format
 

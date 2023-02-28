@@ -1,5 +1,7 @@
+[EUID Overview](../README.md) 
+
 # Getting Started with EUID
-For EUID definition, forms, guiding principles, components, differences between UID2 and EUID, and other conceptual details, see [European Unified ID Overview](../README.md). For integration guides, supported SDKs, and endpoint reference, see [EUID API Documentation](./v2/README.md).
+For EUID definition, forms, guiding principles, components, differences between UID2 and EUID, and other conceptual details, see [European Unified ID Overview](../README.md). For integration guides, supported SDKs, and endpoint reference, see [EUID API Documentation](v2/summary-doc-v2.md).
 
 This page provides the following information required for you to get started with the EUID API:
 * [Contact Info](#contact-info)
@@ -17,8 +19,8 @@ To get access to EUID, contact the appropriate team at The Trade Desk listed bel
 
 | Your Role | Contact Email |
 | :--- | :--- |
-| App Developer<br>Publisher | EUIDpublishers@thetradedesk.com |
-| Agency<br>Brand<br>CDP<br>Data Provider<br>DSP<br>SSP | EUIDpartners@thetradedesk.com |
+| App Developer<br/>Publisher | EUIDpublishers@thetradedesk.com |
+| Agency<br/>Brand<br/>CDP<br/>Data Provider<br/>DSP<br/>SSP | EUIDpartners@thetradedesk.com |
 
 ## API Version
 
@@ -41,12 +43,14 @@ To authenticate to the EUID endpoints, you need the following:
 
 - A client API key, which is to be included as a bearer token in the request's authorization header. 
   <br/>```Authorization: Bearer YourTokenBV3tua4BXNw+HVUFpxLlGy8nWN6mtgMlIk=```
-- A client secret for encrypting API requests and decrypting API responses for all endpoints, except [POST /token/refresh](./v2/endpoints/post-token-refresh.md). <br/>For details and Python examples, see [Encrypting Requests and Decrypting Responses](./v2/encryption-decryption.md).
+- A client secret for encrypting API requests and decrypting API responses for all endpoints, except [POST /token/refresh](v2/endpoints/post-token-refresh.md). <br/>For details and Python examples, see [Encrypting Requests and Decrypting Responses](v2/ref-info/encryption-decryption.md).
 
 
 ## Email Address Normalization
 
-The EUID Operator Service normalizes unhashed email addresses automatically. If you want to send hashed email addresses, you must normalize them before they are hashed.
+If you send unhashed email addresses to the EUID Operator Service, the service normalizes the email addresses and then hashes them. If you want to hash the email addresses yourself before sending them, you must normalize them before you hash them.
+
+> IMPORTANT: Normalization before hashing ensures that the generated EUID value will always be the same, so that the data can be matched. If you do not normalize before hashing, this might result in a different EUID, reducing the effectiveness of targeted advertising.
 
 To normalize an email address, complete the following steps:
 

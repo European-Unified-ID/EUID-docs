@@ -1,15 +1,21 @@
-[EUID API Documentation](../../README.md) > [v2](../README.md) > [SDKs](./README.md) > RTB SDK
+[EUID Overview](../../../README.md) > [Getting Started](../../getting-started.md) > [v2](../summary-doc-v2.md) > SDKs](./summary-sdks.md) >  Server-Side SDK Guide for RTB
 
-# RTB SDK Client
+# Server-Side SDK Guide for RTB
 
-The EUID RTB SDK facilitates decrypting EUID tokens to access the raw EUID. 
+You can use EUID server-side SDKs for RTB, to facilitate decrypting the EUID tokens to access the raw EUID. 
 
 The following functions define the information that you'll need to configure or can retrieve from the library. The parameters and property names defined below are pseudocode. Actual parameters and property names vary by language but will be similar to the information outlined below.
 
-Libraries are currently available in the following languages. More languages are in development. 
+Libraries are currently available in the following languages. More languages are in development.
 
-+ C# 
-+ C++
+>NOTE: The libraries below are for EUID as well as UID2.
+
+| Language | Link to SDK |
+| :--- | :--- |
+| C#  | [UID2 Client for .NET](https://github.com/IABTechLab/uid2-client-net/blob/master/README.md) |
+| C++ | [UID2 Client for C++](https://github.com/IABTechLab/uid2-client-cpp11/blob/master/README.md) |
+| Java | [UID2 Java SDK](https://github.com/IABTechLab/uid2-client-java/blob/master/README.md) |
+| Python | [UID2 Client for Python](https://github.com/IABTechLab/uid2-client-python/blob/master/README.md) |
 
 ## Initialization
 
@@ -18,10 +24,9 @@ The initialization function configures the parameters necessary for the SDK to a
 | Parameter | Description | Recommended Value |
 | :--- | :--- | :--- |
 | `endpoint` | The endpoint for EUID service. | N/A |
-| `authKey` | The authentication token that belongs to the client. For access to EUID, see [Contact Info](../../README.md#contact-info). | N/A |
+| `authKey` | The authentication token that belongs to the client. For access to EUID, see [Contact Info](../../getting-started.md#contact-info). | N/A |
 | `refreshIntervalMs` | Refresh cadence (in milliseconds) for fetching the decryption keys.| 5 minutes (`300,000` milliseconds) |
 | `retryIntervalMs` | Retry cadence (in millisecond) for retrying the request when encountering an error.  | 30 seconds (`30,000` milliseconds)|
-
 
 ## Interface 
 

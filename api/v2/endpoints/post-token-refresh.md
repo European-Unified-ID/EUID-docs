@@ -1,24 +1,23 @@
-[EUID API Documentation](../../README.md) > [v2](../README.md) > [Endpoints](./README.md) > POST /token/refresh
+[EUID Overview](../../../README.md) > [Getting Started](../../getting-started.md) > [v2](../summary-doc-v2.md) > [Endpoints](summary-endpoints.md) > POST /token/refresh
 
 # POST /token/refresh
-Generate a new token for a user by specifying their refresh token issued by using the [POST /token/generate](./post-token-generate.md) endpoint.
+Generate a new token for a user by specifying their refresh token issued by using the [POST /token/generate](post-token-generate.md) endpoint.
 
 >NOTE: This endpoint can be called from the client side (for example, a browser or a mobile app) because it does not require using an API key.
 
 The following integration workflows use this endpoint:
-* [Publisher EUID SDK Integration Guide](../guides/publisher-client-side.md)
-* [Publisher Server-Only Integration Guide](../guides/custom-publisher-integration.md)
+* [Client-Side JavaScript SDK Integration Guide](../guides/publisher-client-side.md)
+* [Publisher Integration Guide, Server-Only (Without SDK)](../guides/custom-publisher-integration.md)
 
 ## Request Format 
 
-```POST '{environment}/v1/token/refresh'```
+```POST '{environment}/v2/token/refresh'```
 
 Here's what you need to know about this endpoint:
 
 - No encryption is required for token refresh requests.
 - Responses are encrypted only if the HTTP status code is 200. Otherwise, responses are not encrypted.
-- To decrypt responses, you need to use the `refresh_response_key` value returned in the [POST /token/generate](./post-token-generate.md) or `POST /token/refresh` response from which the refresh token in the request is returned.
-- If you send a refresh token from a v1 `token/generate` response in the request, the response will not be encrypted.
+- To decrypt responses, you need to use the `refresh_response_key` value returned in the [POST /token/generate](post-token-generate.md) or `POST /token/refresh` response from which the refresh token in the request is returned.
 
 ### Path Parameters
 
@@ -28,11 +27,11 @@ Here's what you need to know about this endpoint:
 
 #### Testing Notes
 
-Using the `optout@email.com` email address in a [POST /token/generate](./post-token-generate.md) request always generates an identity response with a `refresh_token` that results in a logout response when used with the `POST /token/refresh` endpoint.
+Using the `optout@email.com` email address in a [POST /token/generate](post-token-generate.md) request always generates an identity response with a `refresh_token` that results in a logout response when used with the `POST /token/refresh` endpoint.
 
 ### Request Example
 
-Here's a token refresh request format with placeholder values, which include the `refresh_token` and `refresh_response_key` values returned by a [POST /token/generate](./post-token-generate.md) request:
+Here's a token refresh request format with placeholder values, which include the `refresh_token` and `refresh_response_key` values returned by a [POST /token/generate](post-token-generate.md) request:
 
 ```sh
 echo [refresh_token] \
@@ -48,7 +47,7 @@ echo AAAAAQLMcnV+YE6/xoPDZBJvJtWyPyhF9QTV4242kFdT+DE/OfKsQ3IEkgCqD5jmP9HuR4O3PNS
   | decrypt_response.py wR5t6HKMfJ2r4J7fEGX9Gw== --is-refresh
 ```
 
-For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../encryption-decryption.md).
+For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../ref-info/encryption-decryption.md).
 
 ## Decrypted JSON Response Format
 
@@ -79,7 +78,7 @@ If a user opted out before the refresh request, the following response will be r
     "status": "optout"
 }
 ```
-The [Client-Side Identity JavaScript SDK](../sdks/client-side-identity.md) uses this endpoint response payloads to establish and manage the user identity during a user session lifecycle.
+The [Client-Side JavaScript SDK](../sdks/client-side-identity.md) uses this endpoint response payloads to establish and manage the user identity during a user session lifecycle.
 
 ### Response Body Properties
 
@@ -88,9 +87,9 @@ The [Client-Side Identity JavaScript SDK](../sdks/client-side-identity.md) uses 
 | `advertising_token` | string | An encrypted advertising (EUID) token for the user. |
 | `refresh_token` | string | An encrypted token that can be exchanged with the EUID Service for the latest set of identity tokens. |
 | `identity_expires` | double | The UNIX timestamp (in milliseconds) that indicates when the advertising token expires. |
-| `refresh_from` | double | The UNIX timestamp (in milliseconds) that indicates when the [Client-Side Identity JavaScript SDK](../sdks/client-side-identity.md) will start refreshing the advertising token.</br>TIP: If you are not using the SDK, consider refreshing the advertising token from this timestamp, too. |
+| `refresh_from` | double | The UNIX timestamp (in milliseconds) that indicates when the [Client-Side JavaScript SDK](../sdks/client-side-identity.md) will start refreshing the advertising token.<br/>TIP: If you are not using the SDK, consider refreshing the advertising token from this timestamp, too. |
 | `refresh_expires` | double | The UNIX timestamp (in milliseconds) that indicates when the refresh token expires. |
-| `refresh_response_key` | string | A key to be used in a new [POST /token/refresh](./post-token-refresh.md) request for response decryption. |
+| `refresh_response_key` | string | A key to be used in a new [POST /token/refresh](post-token-refresh.md) request for response decryption. |
 
 
 ### Response Status Codes
