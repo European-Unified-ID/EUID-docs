@@ -10,6 +10,7 @@ This guide includes the following information:
   -  [Prerequisites](#prerequisites)
   -  [Resources Created](#resources-created)
   -  [Customization Options](#customization-options)
+  -  [Security Group Policy](#security-group-policy)
   -  [VPC Chart](#vpc-chart)
 - [Deployment](#deployment)
 - [Checking EUID Operator Status](#checking-euid-operator-status)
@@ -100,21 +101,25 @@ To subscribe and deploy EUID Operators on AWS, you must complete the following s
 ```
 
 ### Resources Created
+The following table lists all resources that are created during the [deployment](#deployment) and indicates which of them are always created and which depend on the `CreateVPC` condition in the CloudFormation template.
 
-The following table lists all resources that are created during the [deployment](#deployment).
+| Name | Type | Description | Created |
+|:------|:------|:-------------|:--------------|
+| `KMSKey` | `AWS::KMS::Key` | The key for secret encryption (for configuration strings). | Always |
+| `SSMKeyAlias` | `AWS::KMS::Alias` | An alias that provides an easy way to access the KMS key. | Always |
+| `TokenSecret` | `AWS::SecretsManager::Secret` | An encrypted configuration that includes the operator key. | Always |
+| `WorkerRole` | `AWS::IAM::Role` | The IAM role that your EUID Operators run as. Roles provide access to configuration keys. | Always |
+| `WorkerInstanceProfile` | `AWS::IAM::InstanceProfile` | The instance profile with Worker Role to attach to Operator EC2 instances. | Always |
+| `VPC` | `AWS::EC2::VPC` | Virtual Private Cloud (VPC) is a virtual private network that hosts private operators. You can customize and use an existing one as well. See also [VPC Chart](#vpc-chart).| Conditionally |
+| `Subnet1` | `AWS::EC2::Subnet` | The first subnet of newly created VPC. | Conditionally |
+| `Subnet2` | `AWS::EC2::Subnet` | The second subnet of newly created VPC. | Conditionally |
+| `RouteTable` | `AWS::EC2::RouteTable` | The Routing Table of the newly created VPC and subnets. | Conditionally |
+| `InternetGateway` | `AWS::EC2::InternetGateway` | The Internet Gateway that allows operators to communicate with the EUID Core Service and download security updates. | Conditionally|
+| `AttachGateway` | `AWS::EC2::VPCGatewayAttachment` | Associates Internet Gateway with the VPC. | Conditionally |
+| `SecurityGroup` | `AWS::EC2::SecurityGroup` | A security group policy that provides rules for operator instances. See also [Security Group Policy](#security-group-policy).| Always |
+| `LaunchTemplate` | `AWS::EC2::LaunchTemplate` | A launch template with all configurations in place. You can spawn new EUID Operator instances from it. | Always |
+| `AutoScalingGroup` | `AWS::AutoScaling::AutoScalingGroup` | An auto-scaling group (ASG) to which the launch template is attached. You can update the desired number of instances with it later. | Always |
 
-| Resource | Description |
-| :--- |:--- |
-| CloudFormation Stack | A logical representation of all the resources created. This helps you deploy and rollback resources as a group. |
-| KMS Key | The key for secret encryption (for configuration strings). |
-| Configuration as Secret | A secret named `euid-operator-config-key` created in the Secret Manager. |
-| Worker Role | The IAM role that your EUID Operators run as. |
-| Worker Instance Profile | The Instance Profile that your EUID Operators run as. Worker Role is preferred. |
-| Virtual Private Cloud (VPC) and subnets | The virtual network that EUID Operators run in. You can customize and use existing ones as well. |
-| Security Group | A security group providing minimal access for EUID Operator to serve. It automatically refers to the used VPC. |
-| Launch Template | A launch template with all configurations in place. You can spawn new EUID Operator instances from it. |
-| Auto Scaling Group (ASG) | An ASG to which the launch template attached. You can update the desired number of instances with it later. |
-| EUID Operator instances | The EC2 instances that start running after the ASG is created.|
 
 ### Customization Options
 
@@ -124,6 +129,16 @@ Here's what you can customize during or after the [deployment](#deployment):
 - Root volume size (8G Minimal)
 - SSH key: This is the SSH key that you use to access the EUID Operator EC2 instances.
 - Instance type: m5.2xlarge, m5.4xlarge, and so on. If no customization m5.2xlarge is default and recommended.
+
+### Security Group Policy
+
+>NOTE: To avoid passing certificates associated with your domain into enclave, inbound HTTP is allowed instead of HTTPS. This also avoids the cost of a secure layer, if used in a private network internal to your organization. 
+
+| Port Number | Direction | Protocol | Description |
+| ----------- | --------- | -------- | ------ |
+| 80 | Inbound | HTTP | Serves all EUID APIs, including the healthcheck endpoint `/opt/healthcheck`. |
+| 9080 | Inbound | HTTP | Serves prometheus metrics `/metrics`. |
+| 443 | Outbound | HTTPS | Calls the EUID Core Service; updates opt-out data and key store. |
 
 ## VPC Chart
 ![VPC Chart](VPC-chart-AWS-VPC-Chart-EUID.png) 
