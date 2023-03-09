@@ -95,7 +95,7 @@ The EUID framework consists of the following components, all of which are curren
 | Component | Description |
 | :--- | :--- |
 | **Core Service**  | A centralized service that stores salt secrets and encryption keys and manages access to the distributed EUID system. | 
-| **Operator Service**  | A service that enables the management and storage of encryption keys and salts from the EUID Core Service, hashing of users' personal data, encryption of raw EUIDs, and decryption of EUID tokens. There can be multiple instances of the service (public or private) operated by multiple [participants](#participants), known as operators.<br/>Open operators run publicly available instances of the Operator Service and make them available to all relevant EUID [participants](#participants). There might also be closed operators that run private instances of the Operator Service exclusively for their own use. All instances are designed with protections to keep critical EUID data secure and interoperable, regardless of who operates the service.  | 
+| **Operator Service**  | A service that enables the management and storage of encryption keys and salts from the EUID Core Service, hashing of users' personal data, encryption of raw EUIDs, and decryption of EUID tokens. There can be multiple instances of the service (public or private) operated by multiple [participants](#participants), known as operators.<br/>Open operators run publicly available instances of the Operator Service and make them available to all relevant EUID [participants](#participants). There might also be private operators that run private instances of the Operator Service exclusively for their own use. All instances are designed with protections to keep critical EUID data secure and interoperable, regardless of who operates the service.  | 
 | **Opt-Out Service**  | A global service that manages and stores user opt-out requests and disseminates them to publishers, operator service instances, and DSPs. | 
 | **Transparency and Control Portal**  | A user-facing website, [https://transparentadvertising.eu](https://transparentadvertising.eu), that allows consumers to opt out of EUID at any time. | 
 
@@ -109,7 +109,7 @@ The following table lists the key participants and their roles in the EUID [work
 | Participant | Role Description |
 | :--- | :--- |
 | **Core Administrator**  | An organization (currently, The Trade Desk) that manages the EUID Core Service and other [components](#components). For example, it distributes encryption keys and salts to EUID operators and sends user opt-out requests to operators and DSPs. |  
-| **Operators**  | Organizations that operate the Operator Service (via the EUID APIs). Operators receive and store encryption keys and salts from the EUID Core Service, salt and hash personal data to return UID2 tokens, encrypt raw UID2s to generate UID2 tokens, and distribute EUID token decryption keys.<br/>Open operators run public instances of the Operator Service. For example, The Trade Desk currently serves as an open operator for the EUID framework, available to all participants. If other open operators are available, a participant can choose which operator to work with.<br/>Any participant can also choose to become a closed operator to generate and manage EUIDs. | 
+| **Operators**  | Organizations that operate the Operator Service (via the EUID APIs). Operators receive and store encryption keys and salts from the EUID Core Service, salt and hash personal data to return UID2 tokens, encrypt raw UID2s to generate UID2 tokens, and distribute EUID token decryption keys.<br/>Open operators run public instances of the Operator Service. For example, The Trade Desk currently serves as an open operator for the EUID framework, available to all participants. If other open operators are available, a participant can choose which operator to work with.<br/>Any participant can also choose to become a private operator to generate and manage EUIDs. | 
 | **DSPs**  | DSPs integrate with the EUID system to receive EUIDs from advertisers (as first-party data) and third-party data providers (as third-party data) and leverage them to inform bidding on EUIDs in the bid stream. | 
 | **Data Providers**  | Organizations that collect user data and push it to DSPs—for example, advertisers, identity graph providers, and third-party data providers. | 
 | **Advertisers**  | Organizations that buy impressions across a range of publisher sites and use DSPs to decide which ad impressions to purchase and how much to bid on them. | 
@@ -132,29 +132,9 @@ The following diagram summarizes all four workflows. For each workflow, the [par
 
 ![The EUID Ecosystem](images/EUID-workflows.jpg)
 
-
 ## FAQs
 
-Here are some commonly asked questions regarding the EUID framework.
-
-#### Will all integration partners in the UID2 infrastructure (SSPs, third-party data providers, measurement providers) be automatically integrated with EUID? 
-
-No. EUID functions as its own framework, which is separate from UID2. As such, paperwork relating to the usage and access to the UID2 framework does not automatically grant usage and access to the EUID framework. New contracts are required to be signed for EUID.
-
-
-#### Can users opt out of targeted advertising tied to their EUID?
-
-Yes. Through the [Transparency and Control Portal](https://transparentadvertising.eu), users can opt out from being served targeted ads tied to their EUID identity. Each request is distributed through the EUID Opt-Out Service and EUID Operators to all relevant participants. 
-
-Some publishers and service providers have the option to limit access to their products based on a user’s participation in the EUID framework, and it is the publisher’s responsibility to communicate this as part of their value exchange dialog with the user.
-
-#### How does a user know where to access the opt-out portal?
-
-Publishers, SSO providers, or consent management platforms disclose links to the [Transparency and Control Portal](https://transparentadvertising.eu) in their login flows, consent flows, privacy policies, or by other means.
-
-#### Why do advertisers and third-party data providers not need to integrate with the opt-out feed?
-
-Opt-outs relate to opting out of targeted advertising, which is handled through the publisher and DSP opt-out [workflows](#workflows). To disengage from a specific advertiser, a consumer must contact the advertiser directly.
+See [Frequently Asked Questions](api/v2/getting-started/gs-faqs.md).
 
 ## License
 All work and artifacts are licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt).
