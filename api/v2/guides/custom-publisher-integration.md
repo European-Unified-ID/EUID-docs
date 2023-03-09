@@ -4,6 +4,18 @@
 
 This guide is intended for app developers and CTV broadcasters who would like to generate identity tokens utilizing EUID for the RTB bid stream, while integrating directly with EUID rather than EUID-enabled single-sign-on or identity providers. 
 
+It includes the following sections:
+
+- [Introduction](#introduction)
+- [Integration Steps ](#integration-steps)
+  - [Establish Identity: User Login](#establish-identity-user-login)
+  - [Bid Using EUID Tokens](#bid-using-euid-tokens)
+  - [Refresh Tokens](#refresh-tokens)
+  - [Clear Identity: User Logout](#clear-identity-user-logout)
+- [FAQs](#faqs)
+
+## Introduction
+
 The guide outlines the [basic steps](#integration-steps) that you need to consider if you're building an integration without using an SDK. For example, you need to decide how to implement user login and logout, how to manage EUID identity information and use it for targeted advertising, how to refresh tokens, deal with missing identities, and handle user opt-outs. See also [FAQs](#faqs).
 
 >TIP: To facilitate the process of establishing client identity using EUID and retrieving advertising tokens, consider using the [Client-Side JavaScript SDK](../sdks/client-side-identity.md). For details, see [Client-Side JavaScript SDK Integration Guide](publisher-client-side.md).
@@ -61,50 +73,6 @@ Leverage the refresh endpoint to retrieve the latest version of EUID tokens. The
 
 ## FAQs
 
-### Do I need to decrypt tokens?
-No, publishers do not need to decrypt tokens.
+For a list of frequently asked questions for the publisher audience, see [FAQs for Publishers Not Using an SDK](../getting-started/gs-faqs.md#faqs-for-publishers-not-using-an-sdk).
 
-### How will I be notified of user opt-out?
-The token refresh process handles user opt-outs. The [POST /token/refresh](../endpoints/post-token-refresh.md) returns empty identity and the optout status for the user. To resume using EUID-based targeted advertising, the user needs to log in again to re-establish the EUID identity.
-
-### Where should I make token generation calls, from the server or client side?
-
-EUID tokens must be generated only on the server side after authentication. In other words, to ensure that the API key used to access the service remains secret, the [POST /token/generate](../endpoints/post-token-generate.md) endpoint must be called only from the server side.
-
-### Can I make token refresh calls from the client side?
-
-Yes. The [POST /token/refresh](../endpoints/post-token-refresh.md) can be called from the client side (for example, a browser or a mobile app) because it does not require using an API key.
-
-### What is the uniqueness and rotation policy for EUID token?
-
-The EUID service encrypts tokens using random initialization vectors. The encrypted EUID is unique for a given user as they browse the internet. At every refresh, the token re-encrypts. This mechanism ensures that untrusted parties cannot track a user's identity.
-
-### How can I test that the personal data sent and returned tokens match?
-
-You can use the [POST /token/validate](../endpoints/post-token-validate.md) endpoint to check whether the personal data you are sending through [POST /token/generate](../endpoints/post-token-generate.md) is valid. 
-
-1. Send a [POST /token/generate](../endpoints/post-token-generate.md) request using one of the following values:
-    - The `validate@email.com` as the `email` value.
-    - The hash of `validate@email.com` as the `email_hash` value. 
-2. Store the returned `advertising_token` for use in the following step.
-3. Send a [POST /token/validate](../endpoints/post-token-validate.md) request using the `email` or `email_hash` value that you sent in step 1 and the `advertising_token` (saved in step 2) as the `token` property value. 
-    - If the response returns `true`, the personal data that you sent as a request in step 1 match the token you received in the response of step 1. 
-    - If it returns `false`, there may be an issue with the way you are sending email addresses or email address hashes.
-
-### How can I test the refresh token logout workflow?
-
-You can use the `optout@email.com` email address to test your token refresh workflow. Using this email address in a request always generates an identity response with a `refresh_token` that results in a logout response.
-
-1. Send a [POST /token/generate](../endpoints/post-token-generate.md) request using one of the following values:
-    - The `optout@email.com` as the `email` value.
-    - The hash of `optout@email.com` as the `email_hash` value. 
-2. Store the returned `refresh_token` for use in the following step.
-3. Send a [POST /token/refresh](../endpoints/post-token-refresh.md) request with the `refresh_token` (saved in step 2) as the `token` value.<br/>The body response should be empty, and the `status` value should be set to `optout` because the `optout@email.com` email always results in a logged out user.
-
-### Should /token/generate return the “optout” status and generate no tokens if I pass optout@email.com in the request payload? 
-
-The [POST /token/generate](../endpoints/post-token-generate.md) endpoint does not check for opt-out records and returns the `success` status with valid advertising and user tokens in response to valid requests.
-
->IMPORTANT: Be sure to call this endpoint only when you have obtained legal basis to convert the user's personal information to EUID tokens. [POST /token/generate](../endpoints/post-token-generate.md) calls automatically opt in users associated with the provided personal information to EUID-based targeted advertising. 
-
-To check for opt-out requests, use the [POST /token/refresh](../endpoints/post-token-refresh.md) endpoint.
+For a full list, see [Frequently Asked Questions](../getting-started/gs-faqs.md).

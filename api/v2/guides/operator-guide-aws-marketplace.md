@@ -2,7 +2,7 @@
 
 # EUID Operator: AWS Marketplace Integration Guide
 
-The EUID Operator is the API server in the EUID ecosystem. To protect Personally Identifiable Information (PII) from unauthorized access, the EUID Operator solution is enhanced with AWS Nitro Enclave technology.
+The EUID Operator is the API server in the EUID ecosystem. To protect personal data from unauthorized access, the EUID Operator solution is enhanced with AWS Nitro Enclave technology.
 
 This guide includes the following information:
 

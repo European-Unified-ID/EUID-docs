@@ -21,7 +21,7 @@ The following diagram outlines the steps data collectors need to complete to map
 | 1-b | [POST /identity/map](../endpoints/post-identity-map.md) | The returned `advertising_id` (EUID) can be used to target audiences on relevant DSPs.<br/>The response returns a user's EUID and the corresponding salt `bucket_id`. The salt assigned to the bucket rotates annually, which impacts the generated EUID. For details on how to check for salt bucket rotation, see [Monitor for salt bucket rotations](#monitor-for-salt-bucket-rotations-related-to-your-stored-euids).<br/>We recommend storing a user's EUID and `bucket_id` in a mapping table for ease of maintenance. For guidance on incremental updates, see [Use an incremental process to continuously update EUIDs](#use-an-incremental-process-to-continuously-update-euids). |
 
 ### Send EUID to a DSP to build an audience
-Send the `advertising_id` (EUID) from the [preceding step](#retrieve-a-euid-for-pii-using-the-identity-map-endpoints) to a DSP while building your audiences. Each DSP has a unique integration process for building audiences. Please follow the integration guidance provided by the DSP for sending EUIDs to build an audience.
+Send the `advertising_id` (EUID) from the [preceding step](#retrieve-a-euid-for-personal-data-using-the-identity-map-endpoints) to a DSP while building your audiences. Each DSP has a unique integration process for building audiences. Please follow the integration guidance provided by the DSP for sending EUIDs to build an audience.
 
 ### Monitor for salt bucket rotations related to your stored EUIDs
 An EUID is an identifier for a user at a particular moment in time, which means that a user's EUID will rotate at least once a year. 
@@ -41,16 +41,16 @@ Even though each salt bucket is updated roughly once a year, individual bucket u
 
 Continuously update and maintain EUID-based audiences utilizing the preceding steps.
 
-The response from the [EUID retrieval step](#retrieve-a-euid-for-pii-using-the-identity-map-endpoints) contains mapping information. Cache the mapping between personal data (`identifier`),  EUID (`advertising_id`), and salt bucket (`bucket_id`), along with a last updated timestamp.
+The response from the [EUID retrieval step](#retrieve-a-euid-for-personal-data-using-the-identity-map-endpoints) contains mapping information. Cache the mapping between personal data (`identifier`),  EUID (`advertising_id`), and salt bucket (`bucket_id`), along with a last updated timestamp.
 
-Using the results from the [preceding salt bucket rotation step](#monitor-for-salt-bucket-rotations-related-to-your-stored-euids), remap EUIDs with rotated salt buckets by [retrieving EUIDs using the identity map endpoints](#retrieve-a-euid-for-pii-using-the-identity-map-endpoints). To update the EUIDs in audiences, [send EUID to a DSP](#send-euid-to-a-dsp-to-build-an-audience).
+Using the results from the [preceding salt bucket rotation step](#monitor-for-salt-bucket-rotations-related-to-your-stored-euids), remap EUIDs with rotated salt buckets by [retrieving EUIDs using the identity map endpoints](#retrieve-a-euid-for-personal-data-using-the-identity-map-endpoints). To update the EUIDs in audiences, [send EUID to a DSP](#send-euid-to-a-dsp-to-build-an-audience).
 
 ## FAQs
 ### How do I know when to refresh the EUID due to salt bucket rotation?
 Metadata supplied with the EUID generation request indicates the salt bucket used for generating the EUID. Salt buckets persist and correspond to the underlying personal data used to generate a EUID. Use the  [POST /identity/buckets](../endpoints/post-identity-buckets.md) endpoint to return which salt buckets rotated since a given timestamp. The returned rotated salt buckets inform you which EUIDs to refresh.
 
 ### Do refreshed emails get assigned to the same bucket with which they were previously associated?
-Not necessarily. After you remap emails associated with a particular bucket ID, the emails might be assigned to a different bucket ID. To check the bucket ID, [call the mapping function](#retrieve-a-euid-for-pii-using-the-identity-map-endpoints) and save the returned EUID and bucket ID again.
+Not necessarily. After you remap emails associated with a particular bucket ID, the emails might be assigned to a different bucket ID. To check the bucket ID, [call the mapping function](#retrieve-a-euid-for-personal-data-using-the-identity-map-endpoints) and save the returned EUID and bucket ID again.
 
 >IMPORTANT: When mapping and remapping emails, be sure not to make any assumptions of the number of buckets, their specific rotation dates, or to which bucket an email gets assigned. 
 
