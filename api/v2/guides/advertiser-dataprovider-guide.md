@@ -5,6 +5,10 @@
 This guide covers integration steps for organizations that collect user data and push it to DSPs. Data collectors include advertisers, data on-boarders, measurement providers, identity graph providers, third-party data providers, and other organizations who send data to DSPs. The guide includes the following sections:
 
 * [Integration Steps](#integration-steps)
+   - [Retrieve an EUID for personal data using the identity map endpoints](#retrieve-an-euid-for-personal-data-using-the-identity-map-endpoints)
+   - [Send EUID to a DSP to build an audience](#send-euid-to-a-dsp-to-build-an-audience)
+   - [Monitor for salt bucket rotations related to your stored EUIDs](#monitor-for-salt-bucket-rotations-related-to-your-stored-euids)
+   - [Use an incremental process to continuously update EUIDs](#use-an-incremental-process-to-continuously-update-euids)
 * [FAQs](#faqs)
 
 ## Integration Steps
@@ -13,7 +17,7 @@ The following diagram outlines the steps data collectors need to complete to map
 
 ![Advertiser Flow](images/advertiser-flow-mermaid.svg)
 
-### Retrieve a EUID for personal data using the identity map endpoints
+### Retrieve an EUID for personal data using the identity map endpoints
 
 | Step | Endpoint | Description |
 | --- | --- | --- |
@@ -46,29 +50,7 @@ The response from the [EUID retrieval step](#retrieve-a-euid-for-personal-data-u
 Using the results from the [preceding salt bucket rotation step](#monitor-for-salt-bucket-rotations-related-to-your-stored-euids), remap EUIDs with rotated salt buckets by [retrieving EUIDs using the identity map endpoints](#retrieve-a-euid-for-personal-data-using-the-identity-map-endpoints). To update the EUIDs in audiences, [send EUID to a DSP](#send-euid-to-a-dsp-to-build-an-audience).
 
 ## FAQs
-### How do I know when to refresh the EUID due to salt bucket rotation?
-Metadata supplied with the EUID generation request indicates the salt bucket used for generating the EUID. Salt buckets persist and correspond to the underlying personal data used to generate a EUID. Use the  [POST /identity/buckets](../endpoints/post-identity-buckets.md) endpoint to return which salt buckets rotated since a given timestamp. The returned rotated salt buckets inform you which EUIDs to refresh.
 
-### Do refreshed emails get assigned to the same bucket with which they were previously associated?
-Not necessarily. After you remap emails associated with a particular bucket ID, the emails might be assigned to a different bucket ID. To check the bucket ID, [call the mapping function](#retrieve-a-euid-for-personal-data-using-the-identity-map-endpoints) and save the returned EUID and bucket ID again.
+For a list of frequently asked questions for advertisers and data providers using the EUID framework, see [FAQs for Advertisers and Data Providers](../getting-started/gs-faqs.md#faqs-for-advertisers-and-data-providers).
 
->IMPORTANT: When mapping and remapping emails, be sure not to make any assumptions of the number of buckets, their specific rotation dates, or to which bucket an email gets assigned. 
-
-### How often should UIDs be refreshed for incremental updates?
-The recommended cadence for updating audiences is daily.
-
-Even though each salt bucket is updated roughly once a year, individual bucket updates are spread over the year. This means that about 1/365th of all buckets is rotated daily. If fidelity is critical, consider calling the [POST /identity/buckets](../endpoints/post-identity-buckets.md) endpoint more frequently&#8212;for example, hourly.
-
-
-### How should I generate the SHA256 of personal data for mapping?
-The system should follow the [email normalization rules](../../getting-started.md#email-address-normalization) and hash without salting.
-
-### Should I store large volumes of email address or email address hash mappings? 
-Yes. Not storing email address or hash mappings may increase processing time drastically when you have to map millions of addresses. Recalculating only those mappings that actually need to be updated, however, reduces the total processing time because only about 1/365th of EUIDs need to be updated daily.
-
->IMPORTANT: Unless you are using a private operator, you must map email addresses or hashes consecutively, using a single HTTP connection, in batches of  5,000 emails at a time. In other words, do your mapping without creating multiple parallel connections. 
-
-### How should I handle user optouts?
-When a user opts out of EUID-based targeted advertising through the [Transparency and Control Portal](https://www.transparentadvertising.eu/), the optout signal is sent to DSPs and publishers, which handle optouts at bid time. As an advertiser or data provider, you do not need to check for EUID optout in this scenario.
-
-If a user opts out through your website, you should follow your internal procedures for handling the optout. For example, you might choose not to generate a EUID for that user.
+For a full list, see [Frequently Asked Questions](../getting-started/gs-faqs.md).
