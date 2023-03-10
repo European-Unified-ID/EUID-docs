@@ -25,8 +25,6 @@ Frequently asked questions for EUID are broken into the following categories:
    - [How can I test that the personal data sent and the returned token match up?](#how-can-i-test-that-the-personal-data-sent-and-the-returned-token-match-up-without-sdk)
    - [How can I test the refresh token logout workflow?](#how-can-i-test-the-refresh-token-logout-workflow-without-sdk)
    - [Should /token/generate return the “optout” status and generate no tokens if I pass optout@email.com in the request payload?](#should-tokengenerate-return-the-optout-status-and-generate-no-tokens-if-i-pass-optoutemailcom-in-the-request-payload-without-sdk)
-
-
 - [FAQs for Advertisers and Data Providers](#faqs-for-advertisers-and-data-providers)
    - [How do I know when to refresh the EUID due to salt bucket rotation?](#how-do-i-know-when-to-refresh-the-euid-due-to-salt-bucket-rotation)
    - [Do refreshed emails get assigned to the same bucket with which they were previously associated?](#do-refreshed-emails-get-assigned-to-the-same-bucket-with-which-they-were-previously-associated)
@@ -34,11 +32,23 @@ Frequently asked questions for EUID are broken into the following categories:
    - [How should I generate the SHA256 of personal data for mapping?](#how-should-i-generate-the-sha256-of-personal-data-for-mapping)
    - [Should I store large volumes of email addresses or their hash mappings? ](#should-i-store-large-volumes-of-email-addresses-or-their-hash-mappings)
    - [How should I handle user optouts?](#how-should-i-handle-user-optouts)
+- [FAQs for Demand-Side Platforms (DSPs)](#faqs-for-demand-side-platforms-dsps)
+   - [How do I know which decryption key to apply to an EUID?](#how-do-i-know-which-decryption-key-to-apply-to-an-euid)
+   - [Where do I get the decryption keys?](#where-do-i-get-the-decryption-keys)
+   - [How do I know if/when the salt bucket has rotated?](#how-do-i-know-ifwhen-the-salt-bucket-has-rotated)
+   - [Should the DSP be concerned with latency?](#should-the-dsp-be-concerned-with-latency)
+   - [How should the DSP maintain proper frequency capping with EUID?](#how-should-the-dsp-maintain-proper-frequency-capping-with-euid)
+   - [Will all user opt-out traffic be sent to the DSP?](#will-all-user-opt-out-traffic-be-sent-to-the-dsp)
+   - [Is the DSP expected to handle opt-out signals only for the EUID that they already store?](#is-the-dsp-expected-to-handle-opt-out-signals-only-for-the-euid-that-they-already-store)
+   - [How long should the DSP keep the opt-out list?](#how-long-should-the-dsp-keep-the-opt-out-list)
+   - [Is the EUID of an opted-out user sent to the opt-out endpoint in an encrypted form?](#is-the-euid-of-an-opted-out-user-sent-to-the-opt-out-endpoint-in-an-encrypted-form)
+   - [What request type do opt-outs use? ](#what-request-type-do-opt-outs-use)
+   - [How strict are the requirements for honoring opt-outs? ](#how-strict-are-the-requirements-for-honoring-opt-outs)
+   - [How many decryption keys may be present in memory at any point?](#how-many-decryption-keys-may-be-present-in-memory-at-any-point)
 
 ## FAQs -- General
 
 Here are some frequently asked questions regarding the EUID framework.
-<!-- (gwh note: section is taken from top-level README.md) -->
 
 ### Will all integration partners in the UID2 infrastructure (SSPs, third-party data providers, measurement providers) be automatically integrated with EUID?
 <!-- FAQ_01 -->
@@ -60,8 +70,7 @@ Opt-outs relate to opting out of targeted advertising, which is handled through 
 
 ## FAQs for Publishers Using an SDK
 
-Here are some frequently asked questions for publishers using the UID2 framework, when a client-side SDK is in use.
-<!-- (gwh note: section is taken from publisher-client-side.md) -->
+Here are some frequently asked questions for publishers using the EUID framework, when a client-side SDK is in use.
 
 ### How will I be notified of user opt-out? (With SDK)
 <!-- FAQ_05 -->
@@ -89,7 +98,7 @@ You can use the [POST /token/validate](../endpoints/post-token-validate.md) endp
 
 ### How can I test the refresh token logout workflow? (With SDK)
 <!-- FAQ_09 -->
-You can use the `optout@email.com` email address to test your token refresh workflow. Using this email addrees in a request always generates an identity response with a `refresh_token` that results in a logout response.
+You can use the `optout@email.com` email address to test your token refresh workflow. Using this email address in a request always generates an identity response with a `refresh_token` that results in a logout response.
 
 1. Send a [POST /token/generate](../endpoints/post-token-generate.md) request using one of the following values:
     - The `optout@email.com` as the `email` value.
@@ -105,8 +114,7 @@ The [POST /token/generate](../endpoints/post-token-generate.md) endpoint does no
 To check for opt-out requests, use the [POST /token/refresh](../endpoints/post-token-refresh.md) endpoint.
 
 ## FAQs for Publishers Not Using an SDK
-Here are some frequently asked questions for publishers using the UID2 framework, when the publisher is not using a client-side SDK.
-<!-- (gwh note: section is taken from custom-publisher-integration.md) -->
+Here are some frequently asked questions for publishers using the EUID framework, when the publisher is not using a client-side SDK.
 
 ### Do I need to decrypt tokens?
 <!-- FAQ_11 -->
@@ -192,3 +200,54 @@ Yes. Not storing email address or hash mappings may increase processing time dra
 When a user opts out of EUID-based targeted advertising through the [Transparency and Control Portal](https://www.transparentadvertising.eu/), the optout signal is sent to DSPs and publishers, which handle optouts at bid time. As an advertiser or data provider, you do not need to check for EUID optout in this scenario.
 
 If a user opts out through your website, you should follow your internal procedures for handling the optout. For example, you might choose not to generate a EUID for that user.
+
+## FAQs for Demand-Side Platforms (DSPs)
+Here are some frequently asked questions for DSPs.
+
+### How do I know which decryption key to apply to an EUID?
+<!-- FAQ_25 DSP -->
+The provided [Server-Side SDK Guide for RTB](../sdks/dsp-client-rtb-sdk.md) updates decryption keys automatically. Metadata supplied with the EUID token discloses the IDs of the decryption keys to use. 
+
+### Where do I get the decryption keys?
+<!-- FAQ_26 DSP -->
+You can use the [Server-Side SDK Guide for RTB](../sdks/dsp-client-rtb-sdk.md) library to communicate with the EUID service and fetch the latest keys. To make sure that the keys remain up-to-date, it is recommended to fetch them periodically&#8212;for example, once every hour. 
+
+### How do I know if/when the salt bucket has rotated?
+<!-- FAQ_27 DSP -->
+The DSP is not privy to when the EUID salt bucket rotates. This is similar to a DSP being unaware if users cleared their cookies. Salt bucket rotation has no significant impact on the DSP.  
+
+### Should the DSP be concerned with latency?
+<!-- FAQ_28 DSP -->
+The EUID service does not introduce latency into the bidding process. Any latency experienced can be attributed to the network, not the EUID service.
+
+### How should the DSP maintain proper frequency capping with EUID?
+<!-- FAQ_29 DSP -->
+The EUID has the same chance as a cookie of becoming stale. Hence, the DSP can adapt the same infrastructure currently used for cookie or deviceID-based frequency capping for EUID. For details, see this [FAQ](../guides/advertiser-dataprovider-guide.md#how-do-i-know-when-to-refresh-the-euid-due-to-salt-bucket-rotation) on salt bucket rotation. 
+
+### Will all user opt-out traffic be sent to the DSP?
+<!-- FAQ_30 DSP -->
+Yes, all opt-outs from the EUID [Transparency and Control Portal](https://transparentadvertising.eu/) will hit the opt-out endpoint that the DSP must configure to [honor user opt-outs](#honor-user-opt-outs).
+
+### Is the DSP expected to handle opt-out signals only for the EUID that they already store?
+<!-- FAQ_31 DSP -->
+In some cases a DSP may receive an EUID token for a newly-stored EUID where the token is generated before the opt-out timestamp. The DSP is not allowed to bid on such tokens. It is therefore recommended to store all opt-out signals regardless of whether the corresponding EUID is currently stored by the DSP or not. For details, see the diagram in [Bidding Opt-Out Logic](#bidding-opt-out-logic).
+
+### How long should the DSP keep the opt-out list?
+<!-- FAQ_32 DSP -->
+At least for 30 days.
+
+### Is the EUID of an opted-out user sent to the opt-out endpoint in an encrypted form?
+<!-- FAQ_33 DSP -->
+No. It is sent as an unencrypted (raw) EUID.
+
+### What request type do opt-outs use? 
+<!-- FAQ_34 DSP -->
+Typically GET requests, but different DSPs may use different types.
+
+### How strict are the requirements for honoring opt-outs? 
+<!-- FAQ_35 DSP -->
+Opt-outs must be always respected. It may take some time for an opt-out request to propagate through the system during which time it is expected that some bids may not honor the opt-out.
+
+### How many decryption keys may be present in memory at any point?
+<!-- FAQ_36 DSP -->
+There may be thousands of decryption keys present in the system at any given point.
