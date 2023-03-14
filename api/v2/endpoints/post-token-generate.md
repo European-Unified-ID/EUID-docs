@@ -32,6 +32,7 @@ You must include either the `email` or `email_hash` parameter as a key-value pai
 | `email` | string | Conditionally Required | The email address for which to generate tokens. | 
 | `email_hash` | string | Conditionally Required | The [base64-encoded SHA256](../../getting-started.md#email-address-hash-encoding) hash of a [normalized](../../getting-started.md#email-address-normalization) email address. |
 | `tcf_consent_string` | string | Required | The [Transparency and Consent String](https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework) from the end user whose identity is used to generate the token. |
+| `policy` | number | Optional | The token generation policy ID. See [Token Generation Policy](#token-generation-policy). |
 
 ### Request Examples
 
@@ -91,6 +92,15 @@ A successful decrypted response returns the user's advertising and refresh token
     "status": "success"
 }
 ```
+
+Here is an example response when the policy respects user opt-out.
+
+```json
+{
+    "status": "optout"
+}
+```
+
 The [Client-Side JavaScript SDK](../sdks/client-side-identity.md) uses this endpoint response payloads to establish and manage the user identity during a user session lifecycle.
 
 
@@ -125,3 +135,12 @@ If the `status` value is other than `success`, the `message` field provides addi
 | :--- | :--- | :--- | :--- |
 | Email | `validate@email.com` | Test that the `advertising_token` you've cached matches the `advertising_token` for the specified email address. | [POST /token/validate](post-token-validate.md) |
 | Email | `optout@email.com` | Using this email for the request always generates an identity response with a `refresh_token` that results in a logout response. | [POST /token/refresh](post-token-refresh.md) |
+
+# Token Generation Policy
+
+Token generation policy let the caller decide when to generate a token. It is passed as an **integer ID** in the request body (with key 'policy') If the parameter is omitted, policy with ID = 0 will be applied.
+
+| ID | Description |
+| :--- | :--- |
+| 0 | Always generate a token. |
+| 1 | Generate token only when the user has not opted out. |
