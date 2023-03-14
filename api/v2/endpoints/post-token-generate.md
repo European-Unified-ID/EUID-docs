@@ -5,10 +5,6 @@ Opt in the user to EUID-based targeted advertising and generate a EUID token fro
 
 >IMPORTANT: Be sure to call this endpoint only when you have obtained legal basis to convert the user’s personal information to EUID tokens for targeted advertising. This endpoint does not check for opt-out records. To check for opt-out requests, use the [POST /token/refresh](post-token-refresh.md) endpoint.
 
-The following integration workflows use this endpoint:
-* [Client-Side JavaScript SDK Integration Guide](../guides/publisher-client-side.md)
-* [Publisher Integration Guide, Server-Only (Without SDK)](../guides/custom-publisher-integration.md)
-
 ## Request Format 
 
 ```POST '{environment}/v2/token/generate'```
@@ -72,10 +68,16 @@ echo '{"email_hash": "tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ=", "tcf_consen
 ```
 For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../ref-info/encryption-decryption.md).
 
-
 ## Decrypted JSON Response Format 
 
 >NOTE: The responses are encrypted only if the HTTP status code is 200. Otherwise, the response is not encrypted.
+
+This section includes the following sample responses:
+
+* [Successful Response](#successful-response)
+* [Optout](#optout)
+
+#### Successful Response
 
 A successful decrypted response returns the user's advertising and refresh tokens for the specified email address or email address hash. 
 
@@ -93,16 +95,15 @@ A successful decrypted response returns the user's advertising and refresh token
 }
 ```
 
-Here is an example response when the policy respects user opt-out.
+#### Optout
+
+Here is an example response when the `policy` parameter is included in the request, with a value of `1`, and the user opts out. In all other scenarios, if the user opts out, the tokens are returned (see [Successful Response](#successful-response) above). 
 
 ```json
 {
     "status": "optout"
 }
 ```
-
-The [Client-Side JavaScript SDK](../sdks/client-side-identity.md) uses this endpoint response payloads to establish and manage the user identity during a user session lifecycle.
-
 
 ### Response Body Properties
 
