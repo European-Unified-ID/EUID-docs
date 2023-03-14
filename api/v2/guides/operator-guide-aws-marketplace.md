@@ -204,7 +204,7 @@ To find the EC2 instances, complete the following steps:
 3. Inside the selected ASG, go to the **Instance management** tab where you can find the ID of the available EC2 instances (by default it starts only one instance).
 4. To test operator status, in your browser, go to [http://\<public-dns-of-your-instance\>/ops/healthcheck](http://<public-domain-name>/ops/healthcheck). `OK` indicates good status.
 
-<!-- ![Stack Creation Resources](stack-creation-resources.png) -->
+![Stack Creation Resources](images/stack-creation-resources.png)
 
 ## Creating a Load Balancer
 
