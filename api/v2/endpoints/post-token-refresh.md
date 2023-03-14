@@ -53,7 +53,17 @@ For details and Python script examples, see [Encrypting Requests and Decrypting 
 
 >NOTE: The responses are encrypted only if the HTTP status code is 200. Otherwise, the response is not encrypted.
 
-A decrypted successful response returns new identity tokens issued for the user or indicates that the user has opted out. 
+This section includes the following sample responses:
+
+* [Successful Response With Tokens](#successful-response-with-tokens)
+* [Optout](#optout)
+* [Error Response](#error-response)
+
+#### Successful Response With Tokens
+
+>NOTE: The responses are encrypted only if the HTTP status code is 200. Otherwise, the response is not encrypted.
+
+A decrypted successful response returns new identity tokens issued for the user, or indicates that the user has opted out. The following example returns the identity tokens.
 
 ```json
 {
@@ -78,6 +88,18 @@ If a user opted out before the refresh request, the following response will be r
     "status": "optout"
 }
 ```
+
+#### Error Response
+
+An error response might look like the following:
+
+```json
+{
+  "status": "client_error",
+  "message": "Client Error"
+}
+```
+
 The [Client-Side JavaScript SDK](../sdks/client-side-identity.md) uses this endpoint response payloads to establish and manage the user identity during a user session lifecycle.
 
 ### Response Body Properties
