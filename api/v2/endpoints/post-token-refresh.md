@@ -3,11 +3,9 @@
 # POST /token/refresh
 Generate a new token for a user by specifying their refresh token issued by using the [POST /token/generate](post-token-generate.md) endpoint.
 
->NOTE: This endpoint can be called from the client side (for example, a browser or a mobile app) because it does not require using an API key.
+Used by: This endpoint is used mainly by publishers.
 
-The following integration workflows use this endpoint:
-* [Client-Side JavaScript SDK Integration Guide](../guides/publisher-client-side.md)
-* [Publisher Integration Guide, Server-Only (Without SDK)](../guides/custom-publisher-integration.md)
+>NOTE: This endpoint can be called from the client side (for example, a browser or a mobile app) because it does not require using an API key.
 
 ## Request Format 
 
@@ -61,8 +59,6 @@ This section includes the following sample responses:
 
 #### Successful Response With Tokens
 
->NOTE: The responses are encrypted only if the HTTP status code is 200. Otherwise, the response is not encrypted.
-
 A decrypted successful response returns new identity tokens issued for the user, or indicates that the user has opted out. The following example returns the identity tokens.
 
 ```json
@@ -81,11 +77,11 @@ A decrypted successful response returns new identity tokens issued for the user,
 
 #### Optout
 
-If a user opted out before the refresh request, the following response will be returned:
+If a user opted out before the refresh request, the following response is returned:
 
 ```json
 {
-    "status": "optout"
+  "status": "optout"
 }
 ```
 
@@ -99,8 +95,6 @@ An error response might look like the following:
   "message": "Client Error"
 }
 ```
-
-The [Client-Side JavaScript SDK](../sdks/client-side-identity.md) uses this endpoint response payloads to establish and manage the user identity during a user session lifecycle.
 
 ### Response Body Properties
 

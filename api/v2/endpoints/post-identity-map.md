@@ -4,6 +4,8 @@
 
 Map multiple email addresses or email address hashes to their EUIDs and salt bucket IDs. This endpoint is intended for use by [Advertisers and Data Providers](../guides/advertiser-dataprovider-guide.md).
 
+Used by: This endpoint is used mainly by advertisers and third-party data providers.
+
 ## Batch Size and Request Parallelization Requirements
 
 Here's what you need to know:
