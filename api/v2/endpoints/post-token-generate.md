@@ -5,7 +5,7 @@ Opt in the user to EUID-based targeted advertising and generate a EUID token fro
 
 Used by: This endpoint is used mainly by publishers.
 
->IMPORTANT: Be sure to call this endpoint only when you have obtained legal basis to convert the user’s personal information to EUID tokens for targeted advertising. This endpoint does not check for opt-out records. To check for opt-out requests, use the [POST /token/refresh](post-token-refresh.md) endpoint.
+>IMPORTANT: Be sure to call this endpoint only when you have obtained legal basis to convert the user’s personal information to EUID tokens for targeted advertising. By default, this endpoint does not check for opt-out records. To check if the user has opted out, use the optional `policy` request parameter with a value of `1`.
 
 ## Request Format 
 
@@ -99,7 +99,7 @@ A successful decrypted response returns the user's advertising and refresh token
 
 #### Optout
 
-Here is an example response when the `policy` parameter is included in the request, with a value of `1`, and the user opts out. In all other scenarios, if the user opts out, the tokens are returned (see [Successful Response](#successful-response) above). 
+Here is an example response when the `policy` parameter is included in the request, with a value of `1`, and the user has opted out. In all other scenarios, if the user has opted out, the tokens are returned (see [Successful Response](#successful-response) above). 
 
 ```json
 {
@@ -127,8 +127,6 @@ The following table lists the `status` property values and their HTTP status cod
 | `success` | 200 | The request was successful. The response will be encrypted.<br/>IMPORTANT: This status may be returned without a generated token.<br/>For example, when the `tcf_consent_string` parameter value does not contain [sufficient information](https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20Consent%20string%20and%20vendor%20list%20formats%20v2.md#what-information-is-stored-in-a-tc-string) to generate a token, an `insufficient_user_consent` message is returned. |
 | `client_error` | 400 | The request had missing or invalid parameters, including a missing or invalid `tcf_consent_string` value. |
 | `unauthorized` | 401 | The request did not include a bearer token, included an invalid bearer token, or included a bearer token unauthorized to perform the requested operation. |
-
->NOTE: Since this endpoint does not check for opt-out records, it never returns the `optout` status.
 
 If the `status` value is other than `success`, the `message` field provides additional information about the issue.
 

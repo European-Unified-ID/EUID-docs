@@ -2,9 +2,9 @@
 
 # POST /identity/map
 
-Map multiple email addresses or email address hashes to their EUIDs and salt bucket IDs. This endpoint is intended for use by [Advertisers and Data Providers](../guides/advertiser-dataprovider-guide.md).
+Map multiple email addresses or email address hashes to their EUIDs and salt bucket IDs.
 
-Used by: This endpoint is used mainly by advertisers and third-party data providers.
+Used by: This endpoint is used mainly by advertisers and data providers. For details, see [Advertiser/Data Provider Integration Guide](../guides/advertiser-dataprovider-guide.md).
 
 ## Batch Size and Request Parallelization Requirements
 
