@@ -32,7 +32,7 @@ By subscribing to the EUID Operator on AWS Marketplace product, you gain access 
 
 To subscribe and deploy EUID Operators on AWS, you must complete the following steps:
 
-1. Register your organization as a EUID Operator.
+1. Register your organization as an EUID Operator.
 2. Create an AWS account with an IAM role that has the [minimal privileges](#minimal-iam-role-privileges).
 
 #### Minimal IAM Role Privileges
@@ -101,6 +101,7 @@ To subscribe and deploy EUID Operators on AWS, you must complete the following s
 ```
 
 ### Resources Created
+
 The following table lists all resources that are created during the [deployment](#deployment) and indicates which of them are always created and which depend on the `CreateVPC` condition in the CloudFormation template.
 
 | Name | Type | Description | Created |
@@ -141,7 +142,10 @@ Here's what you can customize during or after the [deployment](#deployment):
 | 443 | Outbound | HTTPS | Calls the EUID Core Service; updates opt-out data and key store. |
 
 ## VPC Chart
-![VPC Chart](images/VPC-chart-AWS-VPC-Chart-EUID.png) 
+
+The following diagram illustrates the virtual private cloud that hosts private operators.
+
+![EUID Operator VPC Chart](images/VPC-chart-AWS-VPC-Chart-EUID.png) 
 
 ## Deployment
 
