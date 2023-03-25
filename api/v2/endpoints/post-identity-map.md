@@ -83,7 +83,7 @@ For details and Python script examples, see [Encrypting Requests and Decrypting 
 
 >NOTE: The responses are encrypted only if the HTTP status code is 200. Otherwise, the response is not encrypted.
 
-A successful decrypted response returns the EUIDs and salt bucket IDs for the specified email addresses email address hashes.
+A successful decrypted response returns the EUIDs and salt bucket IDs for the specified email addresses or email address hashes.
 
 ```json
 {
