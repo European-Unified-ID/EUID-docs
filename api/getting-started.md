@@ -32,8 +32,8 @@ All EUID endpoints use the same base URL.
 
 | Environment | Base URL |
 | :--- | :--- |
-| Testing | ```https://integ.euid.eu/v2``` |
-| Production | ```https://prod.euid.eu/v2``` |
+| Testing | `https://integ.euid.eu/v2` |
+| Production | `https://prod.euid.eu/v2` |
 
 For example, https://integ.euid.eu/v2/token/generate
 
@@ -42,7 +42,7 @@ For example, https://integ.euid.eu/v2/token/generate
 To authenticate to the EUID endpoints, you need the following:
 
 - A client API key, which is to be included as a bearer token in the request's authorization header. 
-  <br/>```Authorization: Bearer YourTokenBV3tua4BXNw+HVUFpxLlGy8nWN6mtgMlIk=```
+  <br/>`Authorization: Bearer YourTokenBV3tua4BXNw+HVUFpxLlGy8nWN6mtgMlIk=`
 - A client secret for encrypting API requests and decrypting API responses for all endpoints, except [POST /token/refresh](v2/endpoints/post-token-refresh.md). <br/>For details and Python examples, see [Encrypting Requests and Decrypting Responses](v2/getting-started/gs-encryption-decryption.md).
 
 
