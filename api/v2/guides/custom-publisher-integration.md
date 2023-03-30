@@ -2,7 +2,7 @@
 
 # Publisher Integration Guide, Server-Only (Without SDK)
 
-This guide is intended for app developers and CTV broadcasters who would like to generate identity tokens utilizing EUID for the RTB bid stream, while integrating directly with EUID rather than EUID-enabled single-sign-on or identity providers. 
+This guide is for publishers who would like to generate identity tokens utilizing EUID for the RTB bid stream, while integrating directly with EUID rather than EUID-enabled single-sign-on or identity providers. 
 
 It includes the following sections:
 
