@@ -31,7 +31,7 @@ The high-level request-response workflow for the EUID APIs includes the followin
 
 Python example scripts for [encrypting requests](#example-encryption-script) and [decrypting responses](#example-decryption-script) can help with automating steps 2-4 and 6-10 and serve as a reference of how to implement these steps in your application.
 
-The individual EUID [endpoints](../endpoints/summary-endpoints.md) explain the respective JSON body format requirements and parameters, include call examples, and show decrypted responses. The following sections provide examples of the encryption and descriptions scripts in Python, field layout requirements as well as request and response examples. 
+The individual EUID [endpoints](../endpoints/summary-endpoints.md) explain the respective JSON body format requirements and parameters, include call examples, and show decrypted responses. The following sections provide examples of the encryption and decryption scripts in Python, field layout requirements as well as request and response examples. 
 
 ## Encrypting Requests
 
