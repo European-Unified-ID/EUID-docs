@@ -20,7 +20,7 @@ Here are some frequently asked questions regarding the EUID framework.
 
 #### Will all integration partners in the UID2 infrastructure (SSPs, third-party data providers, measurement providers) be automatically integrated with EUID?
 <!-- FAQ_01 -->
-No. EUID das its own framework, which is separate from UID2. As such, paperwork relating to the usage and access to the UID2 framework does not automatically grant usage and access to the EUID framework. New contracts are required to be signed for EUID.
+No. EUID has its own framework, which is separate from UID2. As such, paperwork relating to the usage and access to the UID2 framework does not automatically grant usage and access to the EUID framework. New contracts are required to be signed for EUID.
 
 #### Can users opt out of targeted advertising tied to their EUID?
 <!-- FAQ_02 -->
