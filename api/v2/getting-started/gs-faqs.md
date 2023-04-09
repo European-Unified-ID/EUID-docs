@@ -240,4 +240,4 @@ There may be thousands of decryption keys present in the system at any given poi
 
 #### How do SDK errors impact the DSP's ability to respond to a bid?
 <!-- FAQ_37 DSP-client-v1 -->
-If there is an error, the SDK will not decrypt the EUID advertising token into a raw UID2.
+If there is an error, the SDK will not decrypt the EUID advertising token into a raw EUID.
