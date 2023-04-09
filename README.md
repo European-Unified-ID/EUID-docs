@@ -1,7 +1,9 @@
 # European Unified ID Overview
 
+This page provides overview information about the European Unified ID (EUID) framework.
 
-This page provides the following information about the European Unified ID (EUID) framework:
+It includes the following:
+
 - [Introduction](#introduction)
 - [EUID vs. UID2](#euid-vs-uid2)
 - [EUID Infrastructure](#euid-infrastructure)
@@ -20,7 +22,6 @@ The European Unified ID (EUID) is a framework that enables deterministic identit
 
 >NOTE: The term "EUID" can refer to either the framework or an actual identifier. Unless otherwise indicated, this page provides an overview of the EUID framework.
 
-
 ### EUID vs. UID2
 
 EUID is an open-source, standalone solution with its own unique namespace that builds on the [UID2 framework](https://github.com/IABTechLab/uid2docs/blob/main/README.md). The main differences between UID2 and EUID result from more stringent European and UK data protection laws, relating to consent practices, rights for data subjects, and obligations between participants. Otherwise, EUID follows the same [guiding principles](#guiding-principles) as UID2.
@@ -35,7 +36,6 @@ The following table summarizes the key differences between the two frameworks.
 | Interoperability | Yes | Yes |
 | Personal data used | Email addresses, phone numbers | Email addresses |
 | Consent | Based on local regulations such as the California Privacy Rights Act (CPRA) and the California Consumer Privacy Act (CCPA). | Driven by the General Data Protection Regulation (GDPR), the Transparency and Consent Framework (TCF) operated by IAB, and local regulatory guidance. |
-
 
 ### Guiding Principles
 
@@ -66,7 +66,6 @@ The EUID framework is built on the following technical principles:
 - **Internet scale**: The EUID infrastructure can scale to address the continuously increasing needs of [participants](#participants) and to meet performance demands of specific geographic regions.
 
 - **Self-reliant**: EUID does not rely on external services for the processing of real-time bidding (RTB) data.
-
 
 ## EUID Infrastructure
 
