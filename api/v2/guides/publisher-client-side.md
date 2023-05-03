@@ -2,7 +2,7 @@
 
 # Client-Side JavaScript SDK Integration Guide
 
-This guide is for publishers with web assets who would like to generate identity tokens utilizing EUID for the RTB bid stream, while integrating directly with EUID rather than EUID-enabled single-sign-on or identity providers. 
+This guide is for publishers with web assets who want to generate identity tokens utilizing EUID for the RTB bid stream, while integrating directly with EUID rather than EUID-enabled single-sign-on or identity providers. 
 
 It includes the following sections:
 

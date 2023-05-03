@@ -46,7 +46,7 @@ The following diagram illustrates opt-out logic.
 
 ![DSP Opt-Out Check](images/dsp-guide-optout-check-mermaid.svg)
 
-If the `established_timestamp` value is less than the `optout_timestamp` value, the user opted out and the EUID should not be used for RTB. In these cases, it is up to the DSP whether they would like to send an alternate ID for bidding or not bid.
+If the `established_timestamp` value is less than the `optout_timestamp` value, the user opted out and the EUID should not be used for RTB. In these cases, it is up to the DSP whether they want to send an alternate ID for bidding or not bid.
 
 The logic for the <b>check opt-out</b> step is the following:
 
