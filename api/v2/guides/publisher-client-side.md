@@ -1,6 +1,6 @@
-[EUID Overview](../../../README.md) > [Getting Started](../../getting-started.md) > [v2](../summary-doc-v2.md) > [Integration Guides](summary-guides.md) > Client-Side JavaScript SDK Integration Guide
+[EUID Overview](../../../README.md) > [Getting Started](../../getting-started.md) > [v2](../summary-doc-v2.md) > [Integration Guides](summary-guides.md) > SDK for JavaScript Integration Guide
 
-# Client-Side JavaScript SDK Integration Guide
+# SDK for JavaScript Integration Guide
 
 This guide is for publishers with web assets who want to generate identity tokens utilizing EUID for the RTB bid stream, while integrating directly with EUID rather than EUID-enabled single-sign-on or identity providers. 
 
@@ -18,11 +18,11 @@ It includes the following sections:
 
 This guide outlines the [basic steps](#integration-steps) that you need to consider for your integration. For example, you need to decide how to implement user login and logout, how to manage EUID identity information and use it for targeted advertising, how to refresh tokens, deal with missing identities, and handle user opt-outs. See also [FAQs](#faqs).
 
-To facilitate the process of establishing client identity using EUID and retrieving advertising tokens, the web integration steps provided in this guide rely on the [Client-Side JavaScript SDK](../sdks/client-side-identity.md).
+To facilitate the process of establishing client identity using EUID and retrieving advertising tokens, the web integration steps provided in this guide rely on the [SDK for JavaScript](../sdks/client-side-identity.md).
 
->IMPORTANT: The SDK currently stores tokens in first-party cookies. Since implementation details like this may change in the future, to avoid potential issues, be sure to rely on the [EClient-Side JavaScript SDK APIs](../sdks/client-side-identity.md#api-reference) for your identity management.
+>IMPORTANT: The SDK currently stores tokens in first-party cookies. Since implementation details like this may change in the future, to avoid potential issues, be sure to rely on the [SDK for JavaScript](../sdks/client-side-identity.md#api-reference) for your identity management.
 
-For integration scenarios for publishers that do not use the [Client-Side JavaScript SDK](../sdks/client-side-identity.md), see [Publisher Integration Guide, Server-Only (Without SDK)](custom-publisher-integration.md). 
+For integration scenarios for publishers that do not use the [SDK for JavaScript](../sdks/client-side-identity.md), see [Publisher Integration Guide, Server-Only (Without SDK)](custom-publisher-integration.md). 
 
 ## Integration Steps 
 
@@ -45,7 +45,7 @@ After authentication in step 1-c, which forces the user to accept the rules of e
 | :--- | :--- | :--- |
 | 1-d | [POST /token/generate](../endpoints/post-token-generate.md) | After the user authenticates and authorizes the creation of a EUID, use the [POST /token/generate](../endpoints/post-token-generate.md) endpoint to generate a EUID token using the provided normalized email address or phone number of the user. |
 | 1-e | [POST /token/generate](../endpoints/post-token-generate.md) | Return a EUID token generated from the user's email address, phone number, or the respective hash. |
-| 1-f | [Client-Side JavaScript SDK](../sdks/client-side-identity.md) | Send the returned EUID token from step 1-e to the SDK in the `identity` property of its [init() function](../sdks/client-side-identity.md#initopts-object-void) and specify a [callback function](../sdks/client-side-identity.md#callback-function) as shown below. The mechanism ensures that EUID tokens are available for the user for targeting advertising until they log out. |
+| 1-f | [SDK for JavaScript](../sdks/client-side-identity.md) | Send the returned EUID token from step 1-e to the SDK in the `identity` property of its [init() function](../sdks/client-side-identity.md#initopts-object-void) and specify a [callback function](../sdks/client-side-identity.md#callback-function) as shown below. The mechanism ensures that EUID tokens are available for the user for targeting advertising until they log out. |
 
 
 ```html
@@ -82,7 +82,7 @@ Based on the status and availability of a valid identity, the SDK sets up the ba
 
 | Step | Endpoint/SDK | Description |
 | :--- | :--- | :--- |
-| 2-a | [Client-Side JavaScript SDK](../sdks/client-side-identity.md) | Get the current user's advertising token by using the [getAdvertisingToken() function](../sdks/client-side-identity.md#getadvertisingtoken-string) as shown below. |
+| 2-a | [SDK for JavaScript](../sdks/client-side-identity.md) | Get the current user's advertising token by using the [getAdvertisingToken() function](../sdks/client-side-identity.md#getadvertisingtoken-string) as shown below. |
 
 
 ```html
@@ -99,8 +99,8 @@ As part of its initialization, the SDK sets up a [token auto-refresh](../sdks/cl
 
 | Step | Endpoint/SDK | Description |
 | :--- | :--- | :--- |
-| 3-a | [Client-Side JavaScript SDK](../sdks/client-side-identity.md) | The SDK automatically refreshes EUID tokens in the background. No manual action is required. |
-| 3-b | [Client-Side JavaScript SDK](../sdks/client-side-identity.md) | If the user hasn't opted out, the [POST /token/refresh](../endpoints/post-token-refresh.md) automatically returns new identity tokens. |
+| 3-a | [SDK for JavaScript](../sdks/client-side-identity.md) | The SDK automatically refreshes EUID tokens in the background. No manual action is required. |
+| 3-b | [SDK for JavaScript](../sdks/client-side-identity.md) | If the user hasn't opted out, the [POST /token/refresh](../endpoints/post-token-refresh.md) automatically returns new identity tokens. |
 
 
 ### Clear Identity: User Logout
@@ -110,7 +110,7 @@ The client lifecycle is complete when the user decides to log out from the publi
 | Step | Endpoint/SDK | Description |
 | :--- | :--- | :--- |
 | 4-a | N/A | The user logs out from the publisher's asset. |
-| 4-b | [Client-Side JavaScript SDK](../sdks/client-side-identity.md) | Clear the EUID identity from the first-party cookie and disconnect the client lifecycle by using the [disconnect() function](../sdks/client-side-identity.md#disconnect-void) as shown below.|
+| 4-b | [SDK for JavaScript](../sdks/client-side-identity.md) | Clear the EUID identity from the first-party cookie and disconnect the client lifecycle by using the [disconnect() function](../sdks/client-side-identity.md#disconnect-void) as shown below.|
 
 ```html
 <script>

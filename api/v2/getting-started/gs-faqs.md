@@ -44,7 +44,7 @@ Here are some frequently asked questions for publishers using the EUID framework
 
 #### How will I be notified of user opt-out? (With SDK)
 <!-- FAQ_05 -->
-The [Client-Side JavaScript SDK](../sdks/client-side-identity.md) background token auto-refresh process handles user opt-outs. If the user opts out, when the SDK attempts token refresh, it learns about the optout, clears the session (including the cookie), and invokes the callback with the `OPTOUT` status. The token generate process also checks for user opt-out status.
+The [SDK for JavaScript](../sdks/client-side-identity.md) background token auto-refresh process handles user opt-outs. If the user opts out, when the SDK attempts token refresh, it learns about the optout, clears the session (including the cookie), and invokes the callback with the `OPTOUT` status. The token generate process also checks for user opt-out status.
 
 #### Where should I make token generation calls, from the server or client side? (With SDK)
 <!-- FAQ_06 -->

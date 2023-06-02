@@ -5,7 +5,7 @@ Opt in the user to EUID-based targeted advertising and generate a EUID token fro
 
 Used by: This endpoint is used mainly by publishers.
 
->IMPORTANT: Be sure to call this endpoint only when you have obtained legal basis to convert the user’s personal information to EUID tokens for targeted advertising. By default, this endpoint does not check for opt-out records. To check if the user has opted out, use the optional `policy` request parameter with a value of `1`.
+>IMPORTANT: Be sure to call this endpoint only when you have obtained legal basis to convert the user’s personal data to EUID tokens for targeted advertising. By default, this endpoint does not check for opt-out records. To check if the user has opted out, use the optional `policy` request parameter with a value of `1`.
 
 ## Request Format 
 
@@ -114,7 +114,7 @@ Here is an example response when the `policy` parameter is included in the reque
 | `advertising_token` | string | An encrypted advertising (EUID) token for the user. |
 | `refresh_token` | string | An encrypted token that can be exchanged with the EUID Service for the latest set of identity tokens. |
 | `identity_expires` | double | The UNIX timestamp (in milliseconds) that indicates when the advertising token expires. |
-| `refresh_from` | double | The UNIX timestamp (in milliseconds) that indicates when the [Client-Side JavaScript SDK](../sdks/client-side-identity.md) will start refreshing the advertising token.<br/>TIP: If you are not using the SDK, consider refreshing the advertising token from this timestamp, too. |
+| `refresh_from` | double | The UNIX timestamp (in milliseconds) that indicates when the [SDK for JavaScript](../sdks/client-side-identity.md) will start refreshing the advertising token.<br/>TIP: If you are not using the SDK, consider refreshing the advertising token from this timestamp, too. |
 | `refresh_expires` | double | The UNIX timestamp (in milliseconds) that indicates when the refresh token expires. |
 | `refresh_response_key` | string | A key to be used in a [POST /token/refresh](post-token-refresh.md) request for response decryption. |
 
