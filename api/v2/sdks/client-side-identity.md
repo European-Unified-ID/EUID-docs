@@ -1,9 +1,9 @@
-[EUID Overview](../../../README.md) > [Getting Started](../../getting-started.md) > [v2](../summary-doc-v2.md) > [SDKs](summary-sdks.md) > Client-Side JavaScript SDK
+[EUID Overview](../../../README.md) > [Getting Started](../../getting-started.md) > [v2](../summary-doc-v2.md) > [SDKs](summary-sdks.md) > SDK for JavaScript
 
-# Client-Side JavaScript SDK
+# SDK for JavaScript
 
-The Client-Side JavaScript SDK is intended to facilitate the process of establishing client identity using EUID and retrieving advertising tokens. The following sections describe the high-level [workflow](#workflow-overview) for establishing EUID identity, provide the SDK [API reference](#api-reference), and explain the [EUID cookie format](#euid-cookie-format).
-For integration steps for content publishers, see [Client-Side JavaScript SDK Integration Guide](../guides/publisher-client-side.md). 
+The SDK for JavaScript is intended to facilitate the process of establishing client identity using EUID and retrieving advertising tokens. The following sections describe the high-level [workflow](#workflow-overview) for establishing EUID identity, provide the SDK [API reference](#api-reference), and explain the [EUID cookie format](#euid-cookie-format).
+For integration steps for content publishers, see [SDK for JavaScript Integration Guide](../guides/publisher-client-side.md). 
 
 >NOTE: Within this documentation, the term "identity" refers to a package of EUID tokens, including the advertising token.
 
@@ -31,7 +31,7 @@ The high-level client-side workflow for establishing EUID identity using the SDK
 	- If the advertising token is available, use it to initiate requests for targeted advertising.
 	- If not, either use untargeted advertising or redirect the user to the EUID login with the consent form.
 
-For intended web integration steps, see [Client-Side JavaScript SDK Integration Guide](../guides/publisher-client-side.md).
+For intended web integration steps, see [SDK for JavaScript Integration Guide](../guides/publisher-client-side.md).
 
 ### Workflow States and Transitions
 
@@ -47,7 +47,7 @@ The following table outlines the four main states in which the SDK can be, based
 
 The following diagram illustrates the four states, including the respective identity [status values](#identity-status-values), and possible transitions between them. The SDK invokes the [callback function](#callback-function) on each transition.
 
-![Client-Side JavaScript SDK Workflow](images/euid-js-sdk-workflow.svg)
+![SDK for JavaScript Workflow](images/euid-js-sdk-workflow.svg)
 
 
 ### Background Token Auto-Refresh
@@ -66,7 +66,7 @@ Here's what you need to know about the token auto-refresh:
 
 ## API Reference
 
->IMPORTANT: All interactions with the Client-Side JavaScript SDK are done through the global `__euid` object, which is a member of the `EUID` class. All of following APIs are members of the `EUID` class. 
+>IMPORTANT: All interactions with the SDK for JavaScript are done through the global `__euid` object, which is a member of the `EUID` class. All of following APIs are members of the `EUID` class. 
 
 - [constructor()](#constructor)
 - [init()](#initopts-object-void)
@@ -225,7 +225,7 @@ This function can be called before or after the [init()](#initopts-object-void) 
 </script>
 ```
 
->TIP: You can use this function to be notified of the completion of the Client-Side JavaScript SDK initialization from a component that might not be the one that called `init()`.
+>TIP: You can use this function to be notified of the completion of the SDK for JavaScript initialization from a component that might not be the one that called `init()`.
 
 ### isLoginRequired(): boolean
 

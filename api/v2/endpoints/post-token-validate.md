@@ -25,7 +25,7 @@ Used by: This endpoint is used mainly by publishers.
 
 - You must include only one of the following parameters: `email` or `email_hash`. 
 - Include the required body parameters as key-value pairs in the JSON body of a request when encrypting it.
-- To test identities, use the `validate@email.com` email address. For details, see the FAQs sections in the [Client-Side JavaScript SDK Integration Guide](../guides/publisher-client-side.md) and [Publisher Integration Guide, Server-Only (Without SDK)](../guides/custom-publisher-integration.md) for publishers.
+- To test identities, use the `validate@email.com` email address. For details, see the FAQs sections in the [SDK for JavaScript Integration Guide](../guides/publisher-client-side.md) and [Publisher Integration Guide, Server-Only (Without SDK)](../guides/custom-publisher-integration.md) for publishers.
 
 | Body Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |

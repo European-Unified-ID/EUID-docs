@@ -27,7 +27,7 @@ The following are the options available for publishers to integrate with UID2:
 
 This document provides details for the last option.
 
->TIP: To facilitate the process of establishing client identity using EUID and retrieving advertising tokens, consider using the [Client-Side JavaScript SDK](../sdks/client-side-identity.md). For details, see [Client-Side JavaScript SDK Integration Guide](publisher-client-side.md).
+>TIP: To facilitate the process of establishing client identity using EUID and retrieving advertising tokens, consider using the [SDK for JavaScript](../sdks/client-side-identity.md). For details, see [SDK for JavaScript Integration Guide](publisher-client-side.md).
 
 ## Integration Steps
 
