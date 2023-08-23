@@ -1,4 +1,4 @@
-[EUID Overview](../../../README.md) > [Getting Started](../../getting-started.md) > [v2](../summary-doc-v2.md) > [Integration Guides](summary-guides.md) > Client-Side JavaScript SDK Integration Guide
+[EUID Overview](../../../README.md) > [Getting Started -- Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > [Integration Guides](summary-guides.md) > Client-Side JavaScript SDK Integration Guide
 
 # Client-Side JavaScript SDK Integration Guide
 
