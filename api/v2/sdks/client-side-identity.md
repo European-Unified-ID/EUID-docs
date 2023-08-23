@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 [EUID Overview](../../../README.md) > [Getting Started -- Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > [SDKs](summary-sdks.md) > Client-Side JavaScript SDK
-=======
-[EUID Overview](../../../README.md) > [Getting Started](../../getting-started.md) > [v2](../summary-doc-v2.md) > [SDKs](summary-sdks.md) > SDK for JavaScript
->>>>>>> main
 
 # SDK for JavaScript
 
