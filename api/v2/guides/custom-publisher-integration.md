@@ -2,7 +2,7 @@
 
 # Publisher Integration Guide, Server-Only (Without SDK)
 
-This guide is for publishers who would like to generate identity tokens utilizing EUID for the RTB bid stream, while integrating directly with EUID rather than EUID-enabled single-sign-on or identity providers. 
+This guide is for publishers who want to generate identity tokens using EUID for the RTB bid stream, while integrating directly with EUID rather than EUID-enabled single-sign-on or identity providers. 
 
 It includes the following sections:
 
@@ -18,7 +18,16 @@ It includes the following sections:
 
 The guide outlines the [basic steps](#integration-steps) that you need to consider if you're building an integration without using an SDK. For example, you need to decide how to implement user login and logout, how to manage EUID identity information and use it for targeted advertising, how to refresh tokens, deal with missing identities, and handle user opt-outs. See also [FAQs](#faqs).
 
->TIP: To facilitate the process of establishing client identity using EUID and retrieving advertising tokens, consider using the [Client-Side JavaScript SDK](../sdks/client-side-identity.md). For details, see [Client-Side JavaScript SDK Integration Guide](publisher-client-side.md).
+The following are the options available for publishers to integrate with UID2:
+
+- Client JavaScript SDK, with EUID SDK for Java on the server.
+- Client JavaScript SDK, with custom server code.
+- Server-only integration, with EUID SDK for Java on server.
+- Server-only integration, with custom server code.
+
+This document provides details for the last option.
+
+>TIP: To facilitate the process of establishing client identity using EUID and retrieving advertising tokens, consider using the [SDK for JavaScript](../sdks/client-side-identity.md). For details, see [SDK for JavaScript Integration Guide](publisher-client-side.md).
 
 ## Integration Steps
 
