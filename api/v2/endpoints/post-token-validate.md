@@ -1,4 +1,4 @@
-[EUID Overview](../../../README.md) > [Getting Started](../../getting-started.md) > [v2](../summary-doc-v2.md) > [Endpoints](summary-endpoints.md) > POST /token/validate
+[EUID Overview](../../../README.md) > [Getting Started -- Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > [Endpoints](summary-endpoints.md) > POST /token/validate
 
 # POST /token/validate
 Validate that an advertising token matches the specified hashed or unhashed email address or phone number. 
@@ -31,7 +31,7 @@ Used by: This endpoint is used mainly by publishers.
 | :--- | :--- | :--- | :--- |
 | `token` | string | Required | The advertising token returned by the [POST /token/generate](post-token-generate.md) response. |
 | `email` | string | Conditionally Required |  The email address for token validation. |
-| `email_hash` | string | Conditionally Required | The [base64-encoded SHA256](../../getting-started.md#email-address-hash-encoding) hash of a [normalized](../../getting-started.md#email-address-normalization) email address for token validation. |
+| `email_hash` | string | Conditionally Required | The [base64-encoded SHA256](../getting-started/gs-normalization-encoding.md#email-address-hash-encoding) hash of a [normalized](../getting-started/gs-normalization-encoding.md#email-address-normalization) email address for token validation. |
 
 
 ### Request Examples
@@ -101,3 +101,14 @@ The following table lists the `status` property values and their HTTP status cod
 | `unauthorized` | 401 | The request did not include a bearer token, included an invalid bearer token, or included a bearer token unauthorized to perform the requested operation. |
 
 If the `status` value is other than `success`, the `message` field provides additional information about the issue.
+
+##  Using POST /token/validate to Test
+
+You can use this endpoint to test whether the personal data you are sending through [POST /token/generate](../endpoints/post-token-generate.md) is valid. Follow these steps.
+
+1. Depending on whether the personal data is a hashed or unhashed email address, send a [POST /token/generate](../endpoints/post-token-generate.md) request using one of the valid options listed in the [Unencrypted JSON Body Parameters](#unencrypted-json-body-parameters) table&#8212;`email` or `email_hash`&#8212;with the corresponding value as listed in the table.
+
+2. Store the returned `advertising_token` value for use in the next step.
+3. Send a `POST /token/validate` request using the `email` or `email_hash` value that you sent in Step 1, with the `advertising_token` that you saved in Step 2 as the `token` property value. 
+    - A response of `true` indicates that the personal data you sent as a request in Step 1 matches the token you received in the response of Step 1. 
+    - A response of `false` indicates that there might be an issue with the way you are sending email addresses or their hashes.

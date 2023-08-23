@@ -1,4 +1,4 @@
-[EUID API Documentation](../../../README.md) > [Getting Started](../../getting-started.md) > [v2](../summary-doc-v2.md) > [Integration Guides](README.md) > AWS Marketplace Integration Guide
+[EUID Overview](../../../README.md) > [Getting Started -- Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > [Integration Guides](README.md) > AWS Marketplace Integration Guide
 
 # EUID Operator: AWS Marketplace Integration Guide
 

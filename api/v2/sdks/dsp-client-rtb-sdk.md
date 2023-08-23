@@ -1,4 +1,4 @@
-[EUID Overview](../../../README.md) > [Getting Started](../../getting-started.md) > [v2](../summary-doc-v2.md) > SDKs](./summary-sdks.md) > Server-Side SDK Guide
+[EUID Overview](../../../README.md) > [Getting Started -- Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > SDKs](./summary-sdks.md) > Server-Side SDK Guide
 
 # Server-Side SDK Guide
 
@@ -35,7 +35,7 @@ The initialization function configures the parameters necessary for the SDK to a
 | Parameter | Description | Recommended Value |
 | :--- | :--- | :--- |
 | `endpoint` | The endpoint for the EUID service. | N/A |
-| `authKey` | The authentication token that belongs to the client. For access to EUID, see [Contact Info](../../getting-started.md#contact-info). | N/A |
+| `authKey` | The authentication token that belongs to the client. For access to EUID, see [Contact Info](../getting-started/gs-account-setup.md#contact-info). | N/A |
 | `refreshIntervalMs` | The refresh cadence, in milliseconds, for fetching the decryption keys.| `300,000` milliseconds (5 minutes) |
 | `retryIntervalMs` | The retry cadence, in millisecond, for retrying the request if there is an error.  | `30,000` milliseconds (30 seconds) |
 
