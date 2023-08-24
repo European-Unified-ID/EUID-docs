@@ -35,10 +35,10 @@ To normalize an email address, complete the following steps:
 
 ## Email Address Hash Encoding
 
-Email hashes are base64-encoded SHA256 hashes of a normalized email address.
+Email hashes are Base64-encoded SHA-256 hashes of a normalized email address.
 
 | Type | Example | Comments and Usage |
 | :--- | :--- | :--- |
 | Normalized email address | `user@example.com` | N/A |
-| SHA256 of email address | `b4c9a289323b21a01c3e940f150eb9b8c542587f1abfd8f0e1cc1ffc5e475514` | This 64-character string is a hex-encoded representation of 32-byte SHA256.|
-| base64-encoded SHA256 of email address | `tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ=` | This 44-character string is a base64-encoded representation of 32-byte SHA256.<br/>Use this encoding for `email_hash` values sent in the request body. |
+| SHA-256 of email address | `b4c9a289323b21a01c3e940f150eb9b8c542587f1abfd8f0e1cc1ffc5e475514` | This 64-character string is a hex-encoded representation of 32-byte SHA-256.|
+| Base64-encoded SHA-256 of email address | `tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ=` | This 44-character string is a base64-encoded representation of 32-byte SHA-256.<br/>Use this encoding for `email_hash` values sent in the request body. |

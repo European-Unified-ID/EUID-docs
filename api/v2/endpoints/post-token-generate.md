@@ -5,7 +5,7 @@ Opt in the user to EUID-based targeted advertising and generate a EUID token fro
 
 Used by: This endpoint is used mainly by publishers.
 
->IMPORTANT: Be sure to call this endpoint only when you have obtained legal basis to convert the user’s personal data to EUID tokens for targeted advertising. By default, this endpoint does not check for opt-out records. To check if the user has opted out, use the optional `policy` request parameter with a value of `1`.
+>IMPORTANT: Be sure to call this endpoint only when you have obtained legal basis to convert the user’s personal data to EUID tokens for targeted advertising. The required `policy` parameter checks whether the user has opted out.
 
 ## Request Format 
 
@@ -19,18 +19,20 @@ Here's what you need to know about this endpoint requests:
 
 | Path Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
-| `{environment}` | string | Required | Testing environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu` |
+| `{environment}` | string | Required | Testing environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu`<br/>For a full list, including regional operators, see [Environments](../getting-started/gs-environments.md). |
 
-###  Unencrypted JSON Body Parameters
+>NOTE: The integration environment and the production environment require different API keys.
+
+### Unencrypted JSON Body Parameters
 
 You must include either the `email` or `email_hash` parameter as a key-value pair in the JSON body of a request when encrypting it.
 
 | Body Parameter | Data Type | Attribute | Description | 
 | :--- | :--- | :--- | :--- |
 | `email` | string | Conditionally Required | The email address for which to generate tokens. | 
-| `email_hash` | string | Conditionally Required | The [base64-encoded SHA256](../getting-started/gs-normalization-encoding.md#email-address-hash-encoding) hash of a [normalized](../getting-started/gs-normalization-encoding.md#email-address-normalization) email address. |
+| `email_hash` | string | Conditionally Required | The [Base64-encoded SHA-256](../getting-started/gs-normalization-encoding.md#email-address-hash-encoding) hash of a [normalized](../getting-started/gs-normalization-encoding.md#email-address-normalization) email address. |
 | `tcf_consent_string` | string | Required | The [Transparency and Consent String](https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework) from the end user whose identity is used to generate the token. |
-| `policy` | number | Optional | The token generation policy ID. See [Token Generation Policy](#token-generation-policy). |
+| `policy` | number | Required | The token generation policy ID checks whether the user has opted out. Include this parameter with a value of `1`.|
 
 ### Request Examples
 
@@ -41,12 +43,14 @@ The following are unencrypted JSON request body examples for each parameter, one
 ```json
 {
     "email": "username@example.com",
+    "policy": 1,
     "tcf_consent_string": "CPhJRpMPhJRpMABAMBFRACBoALAAAEJAAIYgAKwAQAKgArABAAqAAA"
 }
 ```
 ```json
 {
     "email_hash": "tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ=",
+    "policy": 1,
     "tcf_consent_string": "CPhJRpMPhJRpMABAMBFRACBoALAAAEJAAIYgAKwAQAKgArABAAqAAA"
 }
 ```
@@ -99,7 +103,7 @@ A successful decrypted response returns the user's advertising and refresh token
 
 #### Optout
 
-Here is an example response when the `policy` parameter is included in the request, with a value of `1`, and the user has opted out. In all other scenarios, if the user has opted out, the tokens are returned (see [Successful Response](#successful-response) above). 
+Here is an example response when the the user has opted out.
 
 ```json
 {
@@ -114,7 +118,7 @@ Here is an example response when the `policy` parameter is included in the reque
 | `advertising_token` | string | An encrypted advertising (EUID) token for the user. |
 | `refresh_token` | string | An encrypted token that can be exchanged with the EUID Service for the latest set of identity tokens. |
 | `identity_expires` | double | The UNIX timestamp (in milliseconds) that indicates when the advertising token expires. |
-| `refresh_from` | double | The UNIX timestamp (in milliseconds) that indicates when the [SDK for JavaScript](../sdks/client-side-identity.md) will start refreshing the advertising token.<br/>TIP: If you are not using the SDK, consider refreshing the advertising token from this timestamp, too. |
+| `refresh_from` | double | The UNIX timestamp (in milliseconds) that indicates when the SDK for JavaScript (see [SDK for JavaScript Reference Guide](../sdks/client-side-identity.md)) will start refreshing the EUID token.<br/>TIP: If you are not using the SDK, consider refreshing the EUID token from this timestamp, too. |
 | `refresh_expires` | double | The UNIX timestamp (in milliseconds) that indicates when the refresh token expires. |
 | `refresh_response_key` | string | A key to be used in a [POST /token/refresh](post-token-refresh.md) request for response decryption. |
 
@@ -125,23 +129,15 @@ The following table lists the `status` property values and their HTTP status cod
 | Status | HTTP Status Code | Description |
 | :--- | :--- | :--- |
 | `success` | 200 | The request was successful. The response will be encrypted.<br/>IMPORTANT: This status may be returned without a generated token.<br/>For example, when the `tcf_consent_string` parameter value does not contain [sufficient information](https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20Consent%20string%20and%20vendor%20list%20formats%20v2.md#what-information-is-stored-in-a-tc-string) to generate a token, an `insufficient_user_consent` message is returned. |
+| `optout` | 200 | The request was successful. Could not generate token because the user has opted out. |
 | `client_error` | 400 | The request had missing or invalid parameters, including a missing or invalid `tcf_consent_string` value. |
 | `unauthorized` | 401 | The request did not include a bearer token, included an invalid bearer token, or included a bearer token unauthorized to perform the requested operation. |
 
-If the `status` value is other than `success`, the `message` field provides additional information about the issue.
+If the `status` value is anything other than `success`, the `message` field provides additional information about the issue.
 
 ## Test Identities
 
 | Type | Identity | Purpose | Next Endpoint |
 | :--- | :--- | :--- | :--- |
 | Email | `validate@email.com` | Test that the `advertising_token` you've cached matches the `advertising_token` for the specified email address. | [POST /token/validate](post-token-validate.md) |
-| Email | `optout@email.com` | Using this email for the request always generates an identity response with a `refresh_token` that results in a logout response. | [POST /token/refresh](post-token-refresh.md) |
-
-## Token Generation Policy
-
-Token generation policy let the caller decide when to generate a token. It is passed as an **integer ID** in the request body (with key 'policy') If the parameter is omitted, policy with ID = 0 will be applied.
-
-| ID | Description |
-| :--- | :--- |
-| 0 | Always generate a token. |
-| 1 | Generate token only when the user has not opted out. |
+| Email | `optout@email.com` | Using this email for the request always generates an identity response with a `refresh_token` that results in an optout response. | [POST /token/refresh](post-token-refresh.md) |

@@ -1,7 +1,8 @@
 [EUID Overview](../../../README.md) > [Getting Started -- Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > [Endpoints](summary-endpoints.md) > POST /token/refresh
 
 # POST /token/refresh
-Generate a new token for a user by specifying their refresh token issued by using the [POST /token/generate](post-token-generate.md) endpoint.
+
+Generate a new EUID token by sending the corresponding unexpired refresh token, returned by the [POST /token/generate](post-token-generate.md) endpoint.
 
 Used by: This endpoint is used mainly by publishers.
 
@@ -14,14 +15,17 @@ Used by: This endpoint is used mainly by publishers.
 Here's what you need to know about this endpoint:
 
 - No encryption is required for token refresh requests.
-- Responses are encrypted only if the HTTP status code is 200. Otherwise, responses are not encrypted.
-- To decrypt responses, you need to use the `refresh_response_key` value returned in the [POST /token/generate](post-token-generate.md) or `POST /token/refresh` response from which the refresh token in the request is returned.
+- If the request is successful, with an HTTP status code of 200, a new EUID token or opt-out information is returned.
+- Successful responses, whether the response includes a new token or opt-out information, are encrypted. Error responses are not encrypted.
+- To decrypt responses, use the most recent `refresh_response_key` value for this token. The `refresh_response_key` value is returned in the response to the [POST /token/generate](post-token-generate.md) and `POST /token/refresh` operations. Each time a token is refreshed, a new `refresh_response_key` is returned. Be sure to use the most recent one to decrypt the current response.
 
 ### Path Parameters
 
 | Path Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
-| `{environment}` | string | Required | Testing environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu` |
+| `{environment}` | string | Required | Testing environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu`<br/>For a full list, including regional operators, see [Environments](../getting-started/gs-environments.md). |
+
+>NOTE: The integration environment and the production environment require different API keys.
 
 #### Testing Notes
 
@@ -49,17 +53,19 @@ For details and Python script examples, see [Encrypting Requests and Decrypting 
 
 ## Decrypted JSON Response Format
 
->NOTE: The responses are encrypted only if the HTTP status code is 200. Otherwise, the response is not encrypted.
+A decrypted successful response includes a new EUID token (`advertising_token`) and associated values for the user, or indicates that the user has opted out. 
+
+>NOTE: The responses are encrypted only if the HTTP status code is 200. Error responses are not encrypted
 
 This section includes the following sample responses:
 
 * [Successful Response With Tokens](#successful-response-with-tokens)
-* [Optout](#optout)
+* [Successful Response With Opt-Out](#successful-response-with-opt-out)
 * [Error Response](#error-response)
 
 #### Successful Response With Tokens
 
-A decrypted successful response returns new identity tokens issued for the user, or indicates that the user has opted out. The following example returns the identity tokens.
+If all values are valid and the user has not opted out, the response is successful and a new EUID token is returned, with associated values. The following example shows a decrypted successful response with tokens:
 
 ```json
 {
@@ -75,9 +81,9 @@ A decrypted successful response returns new identity tokens issued for the user,
 }
 ```
 
-#### Optout
+#### Successful Response With Opt-Out
 
-If a user opted out before the refresh request, the following response is returned:
+If the user has opted out, the response is successful but a new EUID token is not returned. The following example shows a decrypted opt-out response:
 
 ```json
 {
@@ -100,10 +106,10 @@ An error response might look like the following:
 
 | Property | Data Type | Description |
 | :--- | :--- | :--- |
-| `advertising_token` | string | An encrypted advertising (EUID) token for the user. |
+| `advertising_token` | string | The EUID token (also known as advertising token) for the user. |
 | `refresh_token` | string | An encrypted token that can be exchanged with the EUID Service for the latest set of identity tokens. |
-| `identity_expires` | double | The UNIX timestamp (in milliseconds) that indicates when the advertising token expires. |
-| `refresh_from` | double | The UNIX timestamp (in milliseconds) that indicates when the [SDK for JavaScript](../sdks/client-side-identity.md) will start refreshing the advertising token.<br/>TIP: If you are not using the SDK, consider refreshing the advertising token from this timestamp, too. |
+| `identity_expires` | double | The UNIX timestamp (in milliseconds) that indicates when the EUID token expires. |
+| `refresh_from` | double | The UNIX timestamp (in milliseconds) that indicates when the [SDK for JavaScript](../sdks/client-side-identity.md) will start refreshing the EUID token.<br/>TIP: If you are not using the SDK, consider refreshing the EUID token from this timestamp, too. |
 | `refresh_expires` | double | The UNIX timestamp (in milliseconds) that indicates when the refresh token expires. |
 | `refresh_response_key` | string | A key to be used in a new [POST /token/refresh](post-token-refresh.md) request for response decryption. |
 
@@ -114,10 +120,11 @@ The following table lists the `status` property values and their HTTP status cod
 
 | Status | HTTP Status Code | Description |
 | :--- | :--- | :--- |
-| `success` | 200 | The request was successful. The response will be encrypted. |
-| `optout` | 200 | The user opted out. This status is returned only for authorized requests. |
+| `success` | 200 | The request was successful and a new EUID token, with associated values, is returned in the response. The response is encrypted. |
+| `optout` | 200 | The user opted out. This status is returned only for authorized requests. The response is encrypted. |
 | `client_error` | 400 | The request had missing or invalid parameters.|
-| `invalid_token` | 400 | The request had an invalid identity token specified. This status is returned only for authorized requests. |
+| `invalid_token` | 400 | The `refresh_token` value specified in the request was invalid. This status is returned only for authorized requests. |
+| `expired_token` | 400 | The `refresh_token` value specified in the request was an expired token. |
 | `unauthorized` | 401 | The request did not include a bearer token, included an invalid bearer token, or included a bearer token unauthorized to perform the requested operation. |
 
-If the `status` value is other than `success` or `optout`, the `message` field provides additional information about the issue.
+If the `status` value is anything other than `success` or `optout`, the `message` field provides additional information about the issue.
