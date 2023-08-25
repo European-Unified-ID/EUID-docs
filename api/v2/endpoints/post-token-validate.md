@@ -86,7 +86,7 @@ A successful decrypted response returns a boolean value that indicates the valid
 
 | Property | Data Type | Description |
 | :--- | :--- | :--- |
-| `body` | boolean | A value of `true` indicates that the email address or email address hash specified in the request is the same as the one used to generate the advertising token.<br/>A value of `false` indicates any of the following:<br/>- The request included an invalid advertising token.<br/>- The email address or email address respective hash specified in the request is not one of the two valid values specified in the [Unencrypted JSON Body Parameters](#unencrypted-json-body-parameters) table. |
+| `body` | boolean | A value of `true` indicates that the email address or email address hash specified in the request is the same as the one used to generate the advertising token.<br/>A value of `false` indicates any of the following:<br/>- The request included an invalid advertising token.<br/>- The email address or email address hash specified in the request is not one of the two valid values specified in the [Unencrypted JSON Body Parameters](#unencrypted-json-body-parameters) table. |
 
 ### Response Status Codes
 
