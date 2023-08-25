@@ -2,7 +2,7 @@
 
 # POST /identity/map
 
-Map multiple email addresses or email address hashes to their EUIDs and salt bucket IDs.
+Map multiple email addresses or email address hashes to their raw EUIDs and salt bucket IDs.
 
 Used by: This endpoint is used mainly by advertisers and data providers. For details, see [Advertiser/Data Provider Integration Guide](../guides/advertiser-dataprovider-guide.md).
 
@@ -13,7 +13,7 @@ Here's what you need to know:
 - The maximum request size is 1MB. 
 - To map a large number of email addresses or email address hashes, send them in *sequential* batches with a maximum batch size of 5,000 items per batch.
 - Unless you are using a private operator, do not send batches in parallel. In other words, use a single HTTP connection and map personal data consecutively.
-- Be sure to store mappings of email addresses or email address hashes.<br/>Not storing mappings may increase processing time drastically when you have to map millions of emails addresses. Recalculating only those mappings that actually need to be updated, however, reduces the total processing time because only about 1/365th of EUIDs need to be updated daily. See also [Advertiser/Data Provider Integration Guide and FAQs](../guides/advertiser-dataprovider-guide.md).
+- Be sure to store mappings of email addresses or email address hashes.<br/>Not storing mappings may increase processing time drastically when you have to map millions of emails addresses. Recalculating only those mappings that actually need to be updated, however, reduces the total processing time because only about 1/365th of raw EUIDs need to be updated daily. See also [Advertiser/Data Provider Integration Guide](../guides/advertiser-dataprovider-guide.md) and [FAQs for Advertisers and Data Providers](../getting-started/gs-faqs.md#faqs-for-advertisers-and-data-providers).
 
 ## Request Format
 
@@ -25,7 +25,9 @@ Here's what you need to know:
 
 | Path Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
-| `{environment}` | string | Required | Testing environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu` |
+| `{environment}` | string | Required | Testing environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu`<br/>For a full list, including regional operators, see [Environments](../getting-started/gs-environments.md). |
+
+>NOTE: The integration environment and the production environment require different API keys.
 
 ###  Unencrypted JSON Body Parameters
 
@@ -34,7 +36,8 @@ Here's what you need to know:
 | Body Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
 | `email` | string array | Conditionally Required | The list of email addresses to be mapped. |
-| `email_hash` | string array | Conditionally Required | The list of [base64-encoded SHA256](../getting-started/gs-normalization-encoding.md#email-address-hash-encoding) hashes of [normalized](../getting-started/gs-normalization-encoding.md#email-address-normalization) email addresses. |
+| `email_hash` | string array | Conditionally Required | The list of [Base64-encoded SHA-256](../getting-started/gs-normalization-encoding.md#email-address-hash-encoding) hashes of [normalized](../getting-started/gs-normalization-encoding.md#email-address-normalization) email addresses. |
+| `policy` | integer | Required | The token generation policy ID checks whether the user has opted out. Include this parameter with a value of `1`.|
 
 
 ### Request Examples
@@ -46,7 +49,8 @@ The following are unencrypted JSON request body examples for each parameter, one
     "email":[
         "user@example.com",
         "user2@example.com"
-    ]  
+    ],
+    "policy":1 
 }
 ```
 ```json
@@ -54,10 +58,10 @@ The following are unencrypted JSON request body examples for each parameter, one
     "email_hash":[
         "eVvLS/Vg+YZ6+z3i0NOpSXYyQAfEXqCZ7BTpAjFUBUc=",
         "tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ="
-    ]    
+    ],
+    "policy":1    
 }
 ```
-
 
 Here's an encrypted identity mapping request format with placeholder values:
 
@@ -83,7 +87,7 @@ For details and Python script examples, see [Encrypting Requests and Decrypting 
 
 >NOTE: The responses are encrypted only if the HTTP status code is 200. Otherwise, the response is not encrypted.
 
-A successful decrypted response returns the EUIDs and salt bucket IDs for the specified email addresses or email address hashes.
+A successful decrypted response returns the raw EUIDs and salt bucket IDs for the specified email addresses or email address hashes.
 
 ```json
 {
@@ -123,4 +127,4 @@ The following table lists the `status` property values and their HTTP status cod
 | `client_error` | 400 | The request had missing or invalid parameters.|
 | `unauthorized` | 401 | The request did not include a bearer token, included an invalid bearer token, or included a bearer token unauthorized to perform the requested operation. |
 
-If the `status` value is other than `success`, the `message` field provides additional information about the issue.
+If the `status` value is anything other than `success`, the `message` field provides additional information about the issue.

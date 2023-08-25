@@ -101,7 +101,7 @@ Here are some frequently asked questions for advertisers and data providers usin
    - [How do I know when to refresh the EUID due to salt bucket rotation?](#how-do-i-know-when-to-refresh-the-euid-due-to-salt-bucket-rotation)
    - [Do refreshed emails get assigned to the same bucket with which they were previously associated?](#do-refreshed-emails-get-assigned-to-the-same-bucket-with-which-they-were-previously-associated)
    - [How often should EUIDs be refreshed for incremental updates?](#how-often-should-euids-be-refreshed-for-incremental-updates)
-   - [How should I generate the SHA256 of personal data for mapping?](#how-should-i-generate-the-sha256-of-personal-data-for-mapping)
+   - [How should I generate the SHA-256 of personal data for mapping?](#how-should-i-generate-the-sha-256-of-personal-data-for-mapping)
    - [Should I store large volumes of email addresses or their hash mappings? ](#should-i-store-large-volumes-of-email-addresses-or-their-hash-mappings)
    - [How should I handle user optouts?](#how-should-i-handle-user-optouts)
 
@@ -121,9 +121,9 @@ The recommended cadence for updating audiences is daily.
 
 Even though each salt bucket is updated roughly once a year, individual bucket updates are spread over the year. This means that about 1/365th of all buckets are rotated daily. If fidelity is critical, consider calling the [POST /identity/buckets](../endpoints/post-identity-buckets.md) endpoint more frequently&#8212;for example, hourly.
 
-#### How should I generate the SHA256 of personal data for mapping?
+#### How should I generate the SHA-256 of personal data for mapping?
 <!-- FAQ_22 ADP -->
-The system should follow the [email normalization rules](../../getting-started.md#email-address-normalization) and hash without salting.
+The system should follow the [email normalization rules](../getting-started/gs-normalization-encoding.md#email-address-normalization) and hash without salting.
 
 #### Should I store large volumes of email addresses or their hash mappings?
 <!-- FAQ_23 ADP -->

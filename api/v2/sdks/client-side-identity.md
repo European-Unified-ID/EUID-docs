@@ -1,12 +1,11 @@
-[EUID Overview](../../../README.md) > [Getting Started -- Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > [SDKs](summary-sdks.md) > Client-Side JavaScript SDK
+[EUID Overview](../../../README.md) > [Getting Started -- Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > [SDKs](summary-sdks.md) > SDK for JavaScript Reference Guide
 
-# SDK for JavaScript
+# SDK for JavaScript Reference Guide
 
 The SDK for JavaScript is intended to facilitate the process of establishing client identity using EUID and retrieving advertising tokens. The following sections describe the high-level [workflow](#workflow-overview) for establishing EUID identity, provide the SDK [API reference](#api-reference), and explain the [EUID cookie format](#euid-cookie-format).
 For integration steps for content publishers, see [SDK for JavaScript Integration Guide](../guides/publisher-client-side.md). 
 
 >NOTE: Within this documentation, the term "identity" refers to a package of EUID tokens, including the advertising token.
-
 
 ## Include the SDK Script
 
@@ -44,11 +43,9 @@ The following table outlines the four main states in which the SDK can be, based
 | Identity Is Temporarily Unavailable |`undefined` | `false`| The identity (advertising token) has expired, and automatic refresh failed. [Background auto-refresh](#background-token-auto-refresh) attempts will continue until the refresh token expires or the user opts out.<br/>You can do either of the following:<br/>- Use untargeted advertising.<br/>- Redirect the user to the EUID login with a consent form.<br/>NOTE: Identity may be successfully refreshed after some time&#8212;for example, if the EUID service is temporarily unavailable.| `EXPIRED` |
 | Identity Is Not Available  | `undefined`| `false`| The identity is not available and cannot be refreshed. The SDK clears the first-party cookie.<br/>To use EUID-based targeted advertising again,  you need to redirect the user to the EUID login with a consent form. | `INVALID`, `NO_IDENTITY`, `REFRESH_EXPIRED`, or `OPTOUT` |
 
-
 The following diagram illustrates the four states, including the respective identity [status values](#identity-status-values), and possible transitions between them. The SDK invokes the [callback function](#callback-function) on each transition.
 
 ![SDK for JavaScript Workflow](images/euid-js-sdk-workflow.svg)
-
 
 ### Background Token Auto-Refresh
 
@@ -145,7 +142,6 @@ The `opts` object supports the following properties.
 | `cookieDomain` | string | Optional | The domain name string to apply to the [EUID cookie](#euid-cookie-format).<br/>For example, if the `baseUrl` is `https://my.operator.fr`, the `cookieDomain` value might be `operator.fr`.| `undefined` |
 | `cookiePath` | string | Optional | The path string to apply to the [EUID cookie](#euid-cookie-format). | `/` |
 
-
 #### Errors
 
 The `init()` function can throw the following errors.
@@ -216,7 +212,6 @@ This function can be called before or after the [init()](#initopts-object-void) 
 
 >NOTE: If the `getAdvertisingTokenAsync()` function is called *after* the initialization is complete, the promise is settled immediately based on the current state.
 
-
 ```html
 <script>
   __euid.getAdvertisingTokenAsync()
@@ -224,7 +219,6 @@ This function can be called before or after the [init()](#initopts-object-void) 
     .catch(err => { /* advertising token not available */ });
 </script>
 ```
-
 >TIP: You can use this function to be notified of the completion of the SDK for JavaScript initialization from a component that might not be the one that called `init()`.
 
 ### isLoginRequired(): boolean
@@ -246,7 +240,6 @@ The function can also provide additional context for handling missing identities
 | `true` | The identity is not available, and the EUID login is required. This value indicates any of the following:<br/>- The user has opted out.<br/>- The refresh token has expired.<br/>- A first-party cookie is not available and no server-generated identity has been supplied. |
 | `false` | No login is required. This value indicates either of the following:<br/>- The identity is present and valid.<br/>- The identity has expired, and the token was not refreshed due to an intermittent error. The identity may be restored after a successful auto-refresh attempt. |
 | `undefined` | The SDK initialization is not complete yet. |
-
 
 ### disconnect(): void
 
@@ -301,5 +294,3 @@ The following is an example of the EUID cookie structure:
 }
 ```
 >IMPORTANT: The contents of the `private` object are explicitly unspecified and left for the SDK to interpret. Do not make any assumptions about the structure, semantics, or compatibility of this object. Any updates to the cookie must retain its structure.
-
-

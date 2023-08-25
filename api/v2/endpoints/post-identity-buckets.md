@@ -16,7 +16,9 @@ Used by: This endpoint is used mainly by advertisers and data providers. For det
 
 | Path Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
-| `{environment}` | string | Required | Testing environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu` |
+| `{environment}` | string | Required | Testing environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu`<br/>For a full list, including regional operators, see [Environments](../getting-started/gs-environments.md). |
+
+>NOTE: The integration environment and the production environment require different API keys.
 
 ### Unencrypted JSON Body Parameters
 
@@ -97,4 +99,4 @@ The following table lists the `status` property values and their HTTP status cod
 | `client_error` | 400 | The request had missing or invalid parameters. |
 | `unauthorized` | 401 | The request did not include a bearer token, included an invalid bearer token, or included a bearer token unauthorized to perform the requested operation. |
 
-If the `status` value is other than `success`, the `message` field provides additional information about the issue.
+If the `status` value is anything other than `success`, the `message` field provides additional information about the issue.

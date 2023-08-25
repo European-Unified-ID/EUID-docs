@@ -18,7 +18,7 @@ It includes the following sections:
 
 The guide outlines the [basic steps](#integration-steps) that you need to consider if you're building an integration without using an SDK. For example, you need to decide how to implement user login and logout, how to manage EUID identity information and use it for targeted advertising, how to refresh tokens, deal with missing identities, and handle user opt-outs. See also [FAQs](#faqs).
 
-The following are the options available for publishers to integrate with UID2:
+The following are the options available for publishers to integrate with EUID:
 
 - Client JavaScript SDK, with EUID SDK for Java on the server.
 - Client JavaScript SDK, with custom server code.
@@ -44,12 +44,12 @@ The following sections provide additional details for each step in the diagram:
 
 ### Establish Identity: User Login
 
-After authentication in step 1-c, which forces the user to accept the rules of engagement and allows the publisher to validate their email address or phone number, a EUID token must be generated on the server side. The following table details the token generation steps.
+After authentication in step 1-c, which forces the user to accept the rules of engagement and allows the publisher to validate their email address, a EUID token must be generated on the server side. The following table details the token generation steps.
 
 | Step | Endpoint | Description |
 | :--- | :--- | :--- |
-| 1-d | [POST /token/generate](../endpoints/post-token-generate.md) | There are two ways for publishers to establish identity with EUID:<br/>- Integrate with a EUID-enabled single-sign-on provider.<br/>- Use the [POST /token/generate](../endpoints/post-token-generate.md) endpoint to generate a EUID token using the provided normalized email address or phone number of the user. |
-| 1-e | [POST /token/generate](../endpoints/post-token-generate.md) | Return a EUID token generated from the user's email address, phone number, or the respective hash. |
+| 1-d | [POST /token/generate](../endpoints/post-token-generate.md) | There are two ways for publishers to establish identity with EUID:<br/>- Integrate with a EUID-enabled single-sign-on provider.<br/>- Use the [POST /token/generate](../endpoints/post-token-generate.md) endpoint to generate a EUID token using the provided normalized email address or email address hash of the user. |
+| 1-e | [POST /token/generate](../endpoints/post-token-generate.md) | Return a EUID token generated from the user's email address or email address hash. |
 | 1-f | N/A | Place the returned `advertising_token` and `refresh_token` in a store tied to a user. You may consider client-side storage like a first-party cookie or server-side storage. |
 
 ### Bid Using EUID Tokens
