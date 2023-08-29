@@ -25,7 +25,7 @@ Here's what you need to know about this endpoint requests:
 
 ### Unencrypted JSON Body Parameters
 
-Include only **one** of the two conditional parameters (`email` or `email_hash`) as a key-value pair in the JSON body of a request when encrypting it.
+>IMPORTANT: You must include only **one** of the following two conditional parameters, plus the required `policy` parameter with a value of `1`, as key-value pairs in the JSON body of the request when encrypting it.
 
 | Body Parameter | Data Type | Attribute | Description | 
 | :--- | :--- | :--- | :--- |
