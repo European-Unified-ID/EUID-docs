@@ -5,7 +5,7 @@ Requests an EUID token generated from the email address provided by a user with 
 
 Used by: This endpoint is used mainly by publishers.
 
->IMPORTANT: Be sure to call this endpoint only when you have obtained legal basis to convert the user’s personal data to EUID tokens for targeted advertising. The required `policy` parameter checks whether the user has opted out.
+>IMPORTANT: Be sure to call this endpoint only when you have obtained legal basis to convert the user’s personal data to EUID tokens for targeted advertising. The `policy` parameter, required with a value of `1`, checks whether the user has opted out.
 
 ## Request Format 
 
