@@ -1,7 +1,7 @@
 [EUID Overview](../../../README.md) > [Getting Started -- Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > [Endpoints](summary-endpoints.md) > POST /token/generate
 
 # POST /token/generate
-Opt in the user to EUID-based targeted advertising and generate a EUID token from their provided email address. 
+Requests an EUID token generated from the email address provided by a user with their authorization for EUID-based targeted advertising. If the email is valid, and the user has not opted out of EUID, this operation returns an EUID token and associated values.
 
 Used by: This endpoint is used mainly by publishers.
 
@@ -25,7 +25,7 @@ Here's what you need to know about this endpoint requests:
 
 ### Unencrypted JSON Body Parameters
 
-You must include either the `email` or `email_hash` parameter as a key-value pair in the JSON body of a request when encrypting it.
+Include only **one** of the two conditional parameters (`email` or `email_hash`) as a key-value pair in the JSON body of a request when encrypting it.
 
 | Body Parameter | Data Type | Attribute | Description | 
 | :--- | :--- | :--- | :--- |
