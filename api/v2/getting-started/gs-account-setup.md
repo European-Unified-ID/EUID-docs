@@ -8,13 +8,8 @@ This page provides the following information required for you to get started wit
 
 ## Contact Info
 
-To get access to EUID, contact the appropriate team at The Trade Desk listed below. 
-
-| Your Role | Contact Email |
-| :--- | :--- |
-| App Developer<br/>Publisher | EUIDpublishers@thetradedesk.com |
-| Agency<br/>Brand<br/>CDP<br/>Data Provider<br/>DSP<br/>SSP | EUIDpartners@thetradedesk.com |
+To get access to EUID, ask your contact at The Trade Desk.
 
 ## API Versions
 
-The current version of EUID API is v2.
+The current version of the EUID API is v2.
