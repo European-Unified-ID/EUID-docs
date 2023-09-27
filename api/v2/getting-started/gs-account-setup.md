@@ -8,7 +8,12 @@ This page provides the following information required for you to get started wit
 
 ## Contact Info
 
-To get access to EUID, ask your contact at The Trade Desk.
+To get access to the EUID framework, contact the appropriate team at The Trade Desk listed below. 
+
+| Your Role | Contact Email |
+| :--- | :--- |
+| Publisher, App Developer | [dl-EUID-publishers@thetradedesk.com](mailto:dl-EUID-publishers@thetradedesk.com) |
+| Agency, Brand, DSP, SSP, CDP, Data Provider | [dl-EUID-partners@thetradedesk.com](mailto:dl-EUID-partners@thetradedesk.com) |
 
 ## API Versions
 
