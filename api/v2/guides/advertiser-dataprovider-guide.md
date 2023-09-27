@@ -55,5 +55,3 @@ To keep your EUID-based audience information accurate and up to date, follow the
 ## FAQs
 
 For a list of frequently asked questions for advertisers and data providers using the EUID framework, see [FAQs for Advertisers and Data Providers](../getting-started/gs-faqs.md#faqs-for-advertisers-and-data-providers).
-
-For a full list, see [Frequently Asked Questions](../getting-started/gs-faqs.md).

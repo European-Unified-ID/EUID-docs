@@ -9,7 +9,7 @@ This page includes:
 - [FAQs -- General](#faqs----general)
 - [FAQs for Publishers](#faqs-for-publishers)
 - [FAQs for Advertisers and Data Providers](#faqs-for-advertisers-and-data-providers)
-- [FAQs for Demand-Side Platforms (DSPs)](#faqs-for-demand-side-platforms-dsps)
+- [FAQs for DSPs](#faqs-for-dsps)
 
 ## FAQs -- General
 
@@ -137,7 +137,7 @@ When a user opts out of EUID-based targeted advertising through the [Transparenc
 
 If a user opts out through your website, you should follow your internal procedures for handling the optout. For example, you might choose not to generate a EUID for that user.
 
-## FAQs for Demand-Side Platforms (DSPs)
+## FAQs for DSPs
 
 Here are some frequently asked questions for DSPs.
 
@@ -185,7 +185,7 @@ In some cases a DSP may receive an EUID token for a newly-stored EUID where the 
 
 #### How long should the DSP keep the opt-out list?
 <!-- FAQ_32 DSP -->
-At least for 30 days.
+We recommend that you keep the opt-out information indefinitely.
 
 #### Is the EUID of an opted-out user sent to the opt-out endpoint in an encrypted form?
 <!-- FAQ_33 DSP -->
