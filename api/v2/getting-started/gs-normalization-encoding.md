@@ -2,11 +2,11 @@
 
 # Normalization and Encoding
 
-This page provides information about normalizing and encoding personal information. It's important that, in working with EUID, normalizing and encoding are performed correctly.
+This page provides information about normalizing and encoding personal data. It's important that, in working with EUID, normalizing and encoding are performed correctly.
 
 It includes the following sections:
 - [Introduction](#introduction)
-- [Types of Personal Information](#types-of-personal-information)
+- [Types of Personal Data](#types-of-personal-data)
 - [Email Address Normalization](#email-address-normalization)
 - [Email Address Hash Encoding](#email-address-hash-encoding)
 
@@ -15,8 +15,8 @@ When you're taking user information such as email addresses, and following the s
 
 >Note: Raw EUIDs, and their associated EUID tokens, are case sensitive. When working with EUID, it's important to pass all IDs and tokens without changing the case. Mismatched IDs can cause ID parsing or token decryption errors.
 
-## Types of Personal Information
-EUID supports the following type of personal information:
+## Types of Personal Data
+EUID supports the following type of personal data:
 - Email address
 
 ## Email Address Normalization

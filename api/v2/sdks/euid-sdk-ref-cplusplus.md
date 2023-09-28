@@ -1,32 +1,46 @@
-[EUID Overview](../../../README.md) > [Getting Started -- Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > SDKs](./summary-sdks.md) > Server-Side SDK Guide
+[EUID Overview](../../../README.md) > [Getting Started -- Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > SDKs](./summary-sdks.md) > EUID SDK for C++ (Server-Side) Reference Guide
 
-# Server-Side SDK Guide
+# EUID SDK for C++ (Server-Side) Reference Guide
 
-You can use EUID server-side SDKs to facilitate decrypting EUID advertising tokens to access the raw EUID. 
+You can use the EUID SDK for C++ (Server-Side) to facilitate decrypting of EUID tokens to access the raw EUID. 
 
 This guide includes the following information:
 
 - [Overview](#overview)
+- [Functionality](#functionality)
+- [Version](#version)
+- [GitHub Repository/Binary](#github-repositorybinary)
 - [Initialization](#initialization)
 - [Interface](#interface)
   - [Response Content](#response-content)
   - [Response Statuses](#response-statuses)
-* [FAQs](#faqs)
+- [FAQs](#faqs)
 
 ## Overview
 
-The following functions define the information that you'll need to configure or can retrieve from the library. The parameters and property names defined below are pseudocode. Actual parameters and property names vary by language but will be similar to the information outlined below.
+The functions outlined here define the information that you'll need to configure or can retrieve from the library. The parameters and property names defined below are pseudocode. Actual parameters and property names vary by language but will be similar to the information outlined here.
 
-Libraries are currently available in the following languages. More languages are in development.
+## Functionality
 
->NOTE: The libraries below are for EUID as well as UID2.
+This SDK simplifies integration with EUID for any DSPs who are using C++ for their server-side coding. The following table shows the functions it supports.
 
-| Language | Link to SDK Repo |
-| :--- | :--- |
-| C#  | [UID2 SDK for .NET](https://github.com/IABTechLab/uid2-client-net/blob/master/README.md) |
-| C++ | [UID2 SDK for C++](https://github.com/IABTechLab/uid2-client-cpp11/blob/master/README.md) |
-| Java | [UID2 SDK for Java](https://github.com/IABTechLab/uid2-client-java/blob/master/README.md) |
-| Python | [UID2 SDK for Python](https://github.com/IABTechLab/uid2-client-python/blob/master/README.md) |
+| Encrypt Raw EUID to EUID Token | Decrypt EUID Token | Generate EUID Token from Personal Data | Refresh EUID Token |
+| :--- | :--- | :--- | :--- |
+| Supported | Supported | Not supported | Not supported |
+
+## Version
+
+The SDK requires C++ version 11.
+
+## GitHub Repository/Binary
+
+This SDK is in the following open-source GitHub repository:
+
+- [EUID SDK for C++](https://github.com/IABTechLab/uid2-client-cpp11/blob/master/README.md).
+
+Release tags are available in the following GitHub location, but you must build your own binaries:
+
+- https://github.com/IABTechLab/uid2-client-cpp11/tags
 
 ## Initialization
 
@@ -36,8 +50,6 @@ The initialization function configures the parameters necessary for the SDK to a
 | :--- | :--- | :--- |
 | `endpoint` | The endpoint for the EUID service. | N/A |
 | `authKey` | The authentication token that belongs to the client. For access to EUID, see [Contact Info](../getting-started/gs-account-setup.md#contact-info). | N/A |
-| `refreshIntervalMs` | The refresh cadence, in milliseconds, for fetching the decryption keys.| `300,000` milliseconds (5 minutes) |
-| `retryIntervalMs` | The retry cadence, in millisecond, for retrying the request if there is an error.  | `30,000` milliseconds (30 seconds) |
 
 ## Interface 
 
@@ -47,17 +59,22 @@ The interface allows you to decrypt EUID advertising tokens and return the corre
 
 If you're a DSP, for bidding, call the interface to decrypt an EUID advertising token and return the EUID. For details on the bidding logic for handling user opt-outs, see [DSP Integration Guide](../guides/dsp-guide.md).
 
-```java
+The following example calls the decrypt method in C++: (**GWH_JN do we need to update the below code?**)
+
+```cpp
+#include <uid2/uid2client.h>
 public Response Decrypt(String encryptedToken)
 ```
+
+### Response Content
 
 Available information returned through the SDK is outlined in the following table.
 
 | Property | Description |
 | :--- | :--- |
 | `Status` | The decryption result status. For a list of possible values and definitions, see [Response Statuses](#response-statuses). |
-| `EUID` | The raw EUID for the corresponding EUID advertising token. |
-| `Established` | The timestamp when a user first established the EUID with the publisher. |
+| `UID2` | The raw EUID for the corresponding EUID advertising token. (**GWH_JN do we need to update?**)|
+| `Established` | The timestamp indicating when a user first established the EUID with the publisher. |
 
 ### Response Statuses
 
@@ -69,7 +86,7 @@ Available information returned through the SDK is outlined in the following tabl
 | `InvalidPayload` | The incoming EUID advertising token is not a valid payload. |
 | `ExpiredToken` | The incoming EUID advertising token has expired. |
 | `KeysNotSynced` | The client has failed to synchronize keys from the EUID service. |
-| `VersionNotSupported` | The client library does not support the version of the encrypted token. |
+| `VersionNotSupported` |  The client library does not support the version of the encrypted token. |
 
 ## FAQs
 
