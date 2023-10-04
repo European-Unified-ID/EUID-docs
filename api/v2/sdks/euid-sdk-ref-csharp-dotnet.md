@@ -60,7 +60,7 @@ The interface allows you to decrypt EUID advertising tokens and return the corre
 
 If you're a DSP, for bidding, call the interface to decrypt an EUID advertising token and return the EUID. For details on the bidding logic for handling user opt-outs, see [DSP Integration Guide](../guides/dsp-guide.md).
 
-The following example calls the decrypt method in C#:(**GWH_JN do we need to update the below code?**)
+The following is the decrypt method in C#:(**GWH_JN do we need to update the below code?**)
 
 ```cs
 using UID2.Client.IUID2Client

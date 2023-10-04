@@ -59,7 +59,7 @@ The interface allows you to decrypt EUID advertising tokens and return the corre
 
 If you're a DSP, for bidding, call the interface to decrypt an EUID advertising token and return the EUID. For details on the bidding logic for handling user opt-outs, see [DSP Integration Guide](../guides/dsp-guide.md).
 
-The following example calls the decrypt method in C++: (**GWH_JN do we need to update the below code?**)
+The following is the decrypt method in C++: (**GWH_JN do we need to update the below code?**)
 
 ```cpp
 #include <uid2/uid2client.h>
@@ -68,13 +68,13 @@ public Response Decrypt(String encryptedToken)
 
 ### Response Content
 
-Available information returned through the SDK is outlined in the following table.
+Available information returned through the SDK is outlined in the following table. (**GWH_JN mods in the below table**)
 
-| Property | Description |
+| Member Function | Description |
 | :--- | :--- |
-| `Status` | The decryption result status. For a list of possible values and definitions, see [Response Statuses](#response-statuses). |
-| `UID2` | The raw EUID for the corresponding EUID advertising token. (**GWH_JN do we need to update?**)|
-| `Established` | The timestamp indicating when a user first established the EUID with the publisher. |
+| `GetStatus()` | The decryption result status. For a list of possible values and definitions, see [Response Statuses](#response-statuses). |
+| `GetUid()` | The raw EUID for the corresponding EUID advertising token. |
+| `GetEstablished()` | The timestamp indicating when a user first established the EUID with the publisher. |
 
 ### Response Statuses
 
