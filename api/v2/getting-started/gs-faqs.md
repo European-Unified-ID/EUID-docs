@@ -56,7 +56,7 @@ No, publishers do not need to decrypt EUID tokens.
 #### How will I be notified of user opt-out?
 
 If the user has opted out, the API response notifies you in either of these cases:
-- When you generate the EUID token by a call to the [POST /token/generate](../endpoints/post-token-generate.md) endpoint, either directly or via one of the EUID SDKs, using the required `policy` parameter with a value of `1`.
+- When you generate the EUID token by a call to the [POST /token/generate](../endpoints/post-token-generate.md) endpoint, either directly or via one of the EUID SDKs, using the required `optout_check` parameter with a value of `1`.
 - When you refresh the EUID token by a call to the [POST /token/refresh](../endpoints/post-token-refresh.md) endpoint, either directly or via one of the EUID SDKs.
 
 #### Where should I make token generation calls, from the server or client side?

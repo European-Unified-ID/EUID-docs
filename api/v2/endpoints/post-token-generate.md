@@ -5,7 +5,7 @@ Requests an EUID token generated from the email address provided by a user with 
 
 Used by: This endpoint is used mainly by publishers.
 
->IMPORTANT: Be sure to call this endpoint only when you have obtained legal basis to convert the user’s personal data to EUID tokens for targeted advertising. The `policy` parameter, required with a value of `1`, checks whether the user has opted out.
+>IMPORTANT: Be sure to call this endpoint only when you have obtained legal basis to convert the user’s personal data to EUID tokens for targeted advertising. The `optout_check` parameter, required with a value of `1`, checks whether the user has opted out.
 
 ## Request Format 
 
@@ -25,14 +25,14 @@ Here's what you need to know about this endpoint requests:
 
 ### Unencrypted JSON Body Parameters
 
->IMPORTANT: You must include only **one** of the following two conditional parameters, plus the required `policy` parameter with a value of `1`, as key-value pairs in the JSON body of the request when encrypting it.
+>IMPORTANT: You must include only **one** of the following two conditional parameters, plus the required `optout_check` parameter with a value of `1`, as key-value pairs in the JSON body of the request when encrypting it.
 
 | Body Parameter | Data Type | Attribute | Description | 
 | :--- | :--- | :--- | :--- |
 | `email` | string | Conditionally Required | The email address for which to generate tokens. | 
 | `email_hash` | string | Conditionally Required | The [Base64-encoded SHA-256](../getting-started/gs-normalization-encoding.md#email-address-hash-encoding) hash of a [normalized](../getting-started/gs-normalization-encoding.md#email-address-normalization) email address. |
 | `tcf_consent_string` | string | Required | The [Transparency and Consent String](https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework) from the end user whose identity is used to generate the token. |
-| `policy` | number | Required | The token generation policy ID checks whether the user has opted out. Include this parameter with a value of `1`.|
+| `optout_check` | number | Required | Checks whether the user has opted out. Include this parameter with a value of `1`.|
 
 ### Request Examples
 
@@ -43,14 +43,14 @@ The following are unencrypted JSON request body examples for each parameter, one
 ```json
 {
     "email": "username@example.com",
-    "policy": 1,
+    "optout_check": 1,
     "tcf_consent_string": "CPhJRpMPhJRpMABAMBFRACBoALAAAEJAAIYgAKwAQAKgArABAAqAAA"
 }
 ```
 ```json
 {
     "email_hash": "tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ=",
-    "policy": 1,
+    "optout_check": 1,
     "tcf_consent_string": "CPhJRpMPhJRpMABAMBFRACBoALAAAEJAAIYgAKwAQAKgArABAAqAAA"
 }
 ```
