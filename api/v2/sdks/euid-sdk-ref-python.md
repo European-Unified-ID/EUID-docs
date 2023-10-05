@@ -63,23 +63,26 @@ The interface allows you to decrypt EUID advertising tokens and return the corre
 
 If you're a DSP, for bidding, call the interface to decrypt an EUID advertising token and return the EUID. For details on the bidding logic for handling user opt-outs, see [DSP Integration Guide](../guides/dsp-guide.md).
 
-The following is the decrypt method in Python:(**GWH_JN do we need to update the below code?**)
+The following is the decrypt method in Python:
 
 ```python
-from uid2_client import Uid2ClientFactory
-client = Uid2ClientFactory.create(base_url, auth_key, secret_key)
-decrypt_result = client.decrypt(ad_token)
+from uid2_client import EuidClientFactory
+ 
+client = EuidClientFactory.create('https://prod.uidapi.com', 'my-auth-token', 'my-secret-key')
+client.refresh_keys() # Note that refresh_keys() should be called once after create(), and then once per hour
+decrypted_token = client.decrypt(advertising_token)
 ```
 
 ### Response Content
 
 Available information returned through the SDK is outlined in the following table.
 
-| Property | Description |
+| Method | Description |
 | :--- | :--- |
-| `Status` | The decryption result status. For a list of possible values and definitions, see [Response Statuses](#response-statuses). |
-| `UID2` | The raw EUID for the corresponding EUID advertising token. (**GWH_JN do we need to update?**)|
-| `Established` | The timestamp indicating when a user first established the EUID with the publisher. |
+| `uid2` | The raw EUID for the corresponding EUID advertising token. |
+| `established` | The timestamp indicating when a user first established the EUID with the publisher. |
+
+>NOTE: If there is a decryption failure, an `EncryptionError` exception is raised.
 
 ### Response Statuses
 
@@ -95,7 +98,7 @@ Available information returned through the SDK is outlined in the following tabl
 
 ## Usage for Publishers
 
-1. Create an instance of Uid2PublisherClient:(**GWH_JN do we need to update these mentions of UID2?**)
+1. Create an instance of Uid2PublisherClient:
 
    `client = Uid2PublisherClient(UID2_BASE_URL, UID2_API_KEY, UID2_SECRET_KEY)`
 

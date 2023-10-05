@@ -60,11 +60,14 @@ The interface allows you to decrypt EUID advertising tokens and return the corre
 
 If you're a DSP, for bidding, call the interface to decrypt an EUID advertising token and return the EUID. For details on the bidding logic for handling user opt-outs, see [DSP Integration Guide](../guides/dsp-guide.md).
 
-The following is the decrypt method in C#:(**GWH_JN do we need to update the below code?**)
+The following is the decrypt method in C#:
 
 ```cs
 using UID2.Client.IUID2Client
-DecryptionResponse Decrypt(string token)
+ 
+var client = EUIDClientFactory.Create(_baseUrl, _authKey, _secretKey);
+client.Refresh(); //Note that Refresh() should be called once after create(), and then once per hour
+var result = client.Decrypt(_advertisingToken);
 ```
 
 ### Response Content
@@ -74,7 +77,7 @@ Available information returned through the SDK is outlined in the following tabl
 | Property | Description |
 | :--- | :--- |
 | `Status` | The decryption result status. For a list of possible values and definitions, see [Response Statuses](#response-statuses). |
-| `UID2` | The raw EUID for the corresponding EUID advertising token. (**GWH_JN do we need to update?**)|
+| `Uid` | The raw EUID for the corresponding EUID advertising token.|
 | `Established` | The timestamp indicating when a user first established the EUID with the publisher. |
 
 ### Response Statuses

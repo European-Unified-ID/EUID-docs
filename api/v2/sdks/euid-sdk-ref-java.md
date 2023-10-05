@@ -62,22 +62,25 @@ The interface allows you to decrypt EUID advertising tokens and return the corre
 
 If you're a DSP, for bidding, call the interface to decrypt a EUID advertising token and return the EUID. For details on the bidding logic for handling user opt-outs, see [DSP Integration Guide](../guides/dsp-guide.md).
 
-The following is the decrypt method in Java:(**GWH_JN do we need to update the below code?**)
+The following is the decrypt method in Java:
 
 ```java
 import com.uid2.client.IUID2Client
-DecryptionResponse decrypt(String token)
+ 
+IUID2Client client = EUIDClientFactory.create(TEST_ENDPOINT, TEST_API_KEY, TEST_SECRET_KEY);
+client.refresh(); //Note that refresh() should be called once after create(), and then once per hour
+DecryptionResponse result = client.decrypt(TEST_TOKEN);
 ```
 
 ### Response Content
 
 Available information returned through the SDK is outlined in the following table.
 
-| Property | Description |
+| Function | Description |
 | :--- | :--- |
-| `Status` | The decryption result status. For a list of possible values and definitions, see [Response Statuses](#response-statuses). |
-| `UID2` | The raw EUID for the corresponding EUID advertising token. (**GWH_JN do we need to update?**)|
-| `Established` | The timestamp indicating when a user first established the EUID with the publisher. |
+| `GetStatus()` | The decryption result status. For a list of possible values and definitions, see [Response Statuses](#response-statuses). |
+| `GetUid()` | The raw EUID for the corresponding EUID advertising token. |
+| `GetEstablished()` | The timestamp indicating when a user first established the EUID with the publisher. |
 
 ### Response Statuses
 
