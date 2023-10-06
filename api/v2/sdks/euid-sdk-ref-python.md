@@ -77,7 +77,7 @@ decrypted_token = client.decrypt(advertising_token)
 
 Available information returned through the SDK is outlined in the following table.
 
-| Method | Description |
+| Instance Variable | Description |
 | :--- | :--- |
 | `uid2` | The raw EUID for the corresponding EUID advertising token. |
 | `established` | The timestamp indicating when a user first established the EUID with the publisher. |
