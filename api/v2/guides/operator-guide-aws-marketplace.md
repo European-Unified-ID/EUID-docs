@@ -1,12 +1,12 @@
-[EUID Overview](../../../README.md) > [Getting Started -- Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > [Integration Guides](README.md) > AWS Marketplace Integration Guide
+[EUID Overview](../../../README.md) > [Getting Started -- Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > [Integration Guides](README.md) > EUID Private Operator for AWS Integration Guide
 
-# EUID Operator: AWS Marketplace Integration Guide
+# EUID Private Operator for AWS Integration Guide
 
 The EUID Operator is the API server in the EUID ecosystem. For a Private Operator service running in AWS Marketplace, the EUID Operator solution is enhanced with [AWS Nitro](https://aws.amazon.com/ec2/nitro/) Enclave technology. This is an additional security measure to protect EUID information from unauthorized access.
 
 This guide includes the following information:
 
-- [EUID Operator on AWS Marketplace Product](#euid-operator-on-aws-marketplace-product)
+- [EUID Private Operator for AWS Product](#euid-private-operator-for-aws-product)
   -  [Prerequisites](#prerequisites)
   -  [Resources Created](#resources-created)
   -  [Customization Options](#customization-options)
@@ -18,9 +18,9 @@ This guide includes the following information:
 - [Upgrading the EUID Operator](#upgrading-the-euid-operator)
 - [Technical Support](#technical-support)
 
-## EUID Operator on AWS Marketplace Product
+## EUID Private Operator for AWS Product
 
->NOTE: [European Unified ID Operator on AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-hhxu72nnzzmnm) is a free product. The cost displayed on the product page is an estimated cost for the necessary infrastructure.
+>NOTE: [European Unified ID Private Operator for AWS](https://aws.amazon.com/marketplace/pp/prodview-hhxu72nnzzmnm) is a free product. The cost displayed on the product page is an estimated cost for the necessary infrastructure.
 
 By subscribing to the European Unified ID Operator on AWS Marketplace product, you gain access to the following:
 
