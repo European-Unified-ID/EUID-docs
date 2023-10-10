@@ -31,13 +31,13 @@ Here's what you need to know:
 
 ###  Unencrypted JSON Body Parameters
 
->IMPORTANT: You must include only **one** of the following two conditional parameters, plus the required `policy` parameter with a value of `1`, as key-value pairs in the JSON body of the request when encrypting it.
+>IMPORTANT: You must include only **one** of the following two conditional parameters, plus the required `optout_check` parameter with a value of `1`, as key-value pairs in the JSON body of the request when encrypting it.
 
 | Body Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
 | `email` | string array | Conditionally Required | The list of email addresses to be mapped. |
 | `email_hash` | string array | Conditionally Required | The list of [Base64-encoded SHA-256](../getting-started/gs-normalization-encoding.md#email-address-hash-encoding) hashes of [normalized](../getting-started/gs-normalization-encoding.md#email-address-normalization) email addresses. |
-| `policy` | integer | Required | The token generation policy ID checks whether the user has opted out. Include this parameter with a value of `1`.|
+| `optout_check` | integer | Required | Checks whether the user has opted out. Include this parameter with a value of `1`.|
 
 
 ### Request Examples
@@ -50,7 +50,7 @@ The following are unencrypted JSON request body examples for each parameter, one
         "user@example.com",
         "user2@example.com"
     ],
-    "policy":1 
+    "optout_check":1 
 }
 ```
 ```json
@@ -59,7 +59,7 @@ The following are unencrypted JSON request body examples for each parameter, one
         "eVvLS/Vg+YZ6+z3i0NOpSXYyQAfEXqCZ7BTpAjFUBUc=",
         "tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ="
     ],
-    "policy":1    
+    "optout_check":1    
 }
 ```
 
