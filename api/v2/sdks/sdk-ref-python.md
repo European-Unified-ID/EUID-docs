@@ -108,7 +108,7 @@ Available information returned through the SDK is outlined in the following tabl
 
    >IMPORTANT: Be sure to call this function only when you have obtained legal basis to convert the user’s personal data to EUID tokens for targeted advertising.
 
-   >`do_not_generate_tokens_for_opted_out()` applies `policy=1` in the [POST /token/generate](../endpoints/post-token-generate.md#token-generation-policy) call. Without this, `policy` is omitted to maintain backwards compatibility.
+   >`do_not_generate_tokens_for_opted_out()` applies `optout_check=1` in the [POST /token/generate](../endpoints/post-token-generate.md) call. Without this, `optout_check` is omitted to maintain backwards compatibility.
 
 ### Standard Integration
 
