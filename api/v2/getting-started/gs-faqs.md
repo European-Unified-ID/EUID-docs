@@ -109,6 +109,8 @@ Here are some frequently asked questions for advertisers and data providers usin
 <!-- FAQ_19 ADP -->
 Metadata supplied with the EUID generation request indicates the salt bucket used for generating the EUID. Salt buckets persist and correspond to the underlying personal data used to generate a EUID. Use the  [POST /identity/buckets](../endpoints/post-identity-buckets.md) endpoint to return which salt buckets rotated since a given timestamp. The returned rotated salt buckets inform you which EUIDs to refresh.
 
+>NOTE: We do not make any promises about when the rotation takes place. To stay as up-to-date as possible, we recommend doing the checks once per hour.
+
 #### Do refreshed emails get assigned to the same bucket with which they were previously associated?
 <!-- FAQ_20 ADP -->
 Not necessarily. After you remap emails associated with a particular bucket ID, the emails might be assigned to a different bucket ID. To check the bucket ID, [call the mapping function](../guides/advertiser-dataprovider-guide.md#retrieve-a-raw-euid-for-personal-data-using-the-identity-map-endpoints) and save the returned EUID and bucket ID again.
