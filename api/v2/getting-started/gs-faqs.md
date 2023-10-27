@@ -69,26 +69,26 @@ Yes. The [POST /token/refresh](../endpoints/post-token-refresh.md) can be called
 
 #### How can I test the refresh token workflow?
 <!-- FAQ_17 -->
-You can use the `optout@email.com` email address to test your token refresh workflow. Using this email address in a request always generates an identity response with a `refresh_token` that results in a logout response.
+You can use the `refresh-optout@example.com` email address to test your token refresh workflow. Using this email address in a request always generates an identity response with a `refresh_token` that results in a logout response.
 
 The procedure is a little different depending on whether or not you are using an SDK.
 
 ##### With SDK:
 
 1. Send a [POST /token/generate](../endpoints/post-token-generate.md) request using one of the following values:
-    - The `optout@email.com` as the `email` value.
-    - The hash of `optout@email.com` as the `email_hash` value. 
+    - The `refresh-optout@example.com` as the `email` value.
+    - The hash of `refresh-optout@example.com` as the `email_hash` value. 
 2. Wait until the SDK's [background auto-refresh](../sdks/client-side-identity.md#background-token-auto-refresh) attempts to refresh the advertising token (this can take several hours) and observe the refresh attempt fail with the OPTOUT status. At this point the SDK also clears the first-party cookie.
 
 ##### Without SDK:
 
 1. Send a [POST /token/generate](../endpoints/post-token-generate.md) request using one of the following values:
-    - The `optout@email.com` as the `email` value.
-    - The hash of `optout@email.com` as the `email_hash` value. 
+    - The `refresh-optout@example.com` as the `email` value.
+    - The hash of `refresh-optout@example.com` as the `email_hash` value. 
 2. Store the returned `refresh_token` for use in the following step.
 3. Send a [POST /token/refresh](../endpoints/post-token-refresh.md) request with the `refresh_token` (saved in step 2) as the `token` value.
 
-   The body response should be empty, and the `status` value should be set to `optout` because the `optout@email.com` email always results in a logged out user.
+   The body response should be empty, and the `status` value should be set to `optout` because the `refresh-optout@example.com` email always results in a logged out user.
 
 #### What is the uniqueness and rotation policy for EUID tokens?
 
