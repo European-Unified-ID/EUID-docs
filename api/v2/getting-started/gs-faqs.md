@@ -25,7 +25,7 @@ No. EUID has its own framework, which is separate from UID2. As such, paperwork 
 
 #### Can users opt out of targeted advertising tied to their EUID?
 <!-- FAQ_02 -->
-Yes. Through the [Transparency and Control Portal](https://transparentadvertising.eu), users can opt out from being served targeted ads tied to their EUID identity. Each request is distributed through the EUID Opt-Out Service and EUID Operators to all relevant participants. 
+Yes. Through the [Transparency and Control Portal](https://transparentadvertising.eu), users can opt out from being served targeted ads tied to their EUID identity. Each request is distributed through the EUID Opt-Out Service, and EUID Operators make the opt-out information available to all relevant participants. 
 
 #### How does a user know where to access the opt-out portal?
 <!-- FAQ_03 -->
@@ -103,7 +103,7 @@ Here are some frequently asked questions for advertisers and data providers usin
    - [How often should EUIDs be refreshed for incremental updates?](#how-often-should-euids-be-refreshed-for-incremental-updates)
    - [How should I generate the SHA-256 of personal data for mapping?](#how-should-i-generate-the-sha-256-of-personal-data-for-mapping)
    - [Should I store large volumes of email addresses or their hash mappings? ](#should-i-store-large-volumes-of-email-addresses-or-their-hash-mappings)
-   - [How should I handle user optouts?](#how-should-i-handle-user-optouts)
+   - [How should I handle user opt-outs?](#how-should-i-handle-user-opt-outs)
 
 #### How do I know when to refresh the EUID due to salt bucket rotation?
 <!-- FAQ_19 ADP -->
@@ -133,11 +133,11 @@ Yes. Not storing email address or hash mappings may increase processing time dra
 
 >IMPORTANT: Unless you are using a private operator, you must map email addresses or hashes consecutively, using a single HTTP connection, in batches of  5,000 emails at a time. In other words, do your mapping without creating multiple parallel connections. 
 
-#### How should I handle user optouts?
+#### How should I handle user opt-outs?
 <!-- FAQ_24 ADP -->
-When a user opts out of EUID-based targeted advertising through the [Transparency and Control Portal](https://www.transparentadvertising.eu/), the optout signal is sent to DSPs and publishers, which handle optouts at bid time. As an advertiser or data provider, you do not need to check for EUID optout in this scenario.
+When a user opts out of EUID-based targeted advertising through the [Transparency and Control Portal](https://www.transparentadvertising.eu/), the optout signal is sent to DSPs and publishers, which handle optouts at bid time. We recommend that advertisers and data providers regularly check whether a user has opted out, via the [POST /identity/map](../endpoints/post-identity-map.md) endpoint.
 
-If a user opts out through your website, you should follow your internal procedures for handling the optout. For example, you might choose not to generate a EUID for that user.
+If a user opts out through your website, you should follow your internal procedures for handling the optout. For example, you might choose not to generate an EUID for that user.
 
 ## FAQs for DSPs
 
