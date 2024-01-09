@@ -135,9 +135,9 @@ Yes. Not storing email address or hash mappings may increase processing time dra
 
 #### How should I handle user opt-outs?
 <!-- FAQ_24 ADP -->
-When a user opts out of EUID-based targeted advertising through the [Transparency and Control Portal](https://www.transparentadvertising.eu/), the optout signal is sent to DSPs and publishers, which handle optouts at bid time. We recommend that advertisers and data providers regularly check whether a user has opted out, via the [POST /identity/map](../endpoints/post-identity-map.md) endpoint.
+When a user opts out of EUID-based targeted advertising through the [Transparency and Control Portal](https://www.transparentadvertising.eu/), the opt-out signal is sent to DSPs and publishers, who handle opt-outs at bid time. We recommend that advertisers and data providers regularly check whether a user has opted out, via the [POST /identity/map](../endpoints/post-identity-map.md) endpoint.
 
-If a user opts out through your website, you should follow your internal procedures for handling the optout. For example, you might choose not to generate an EUID for that user.
+If a user opts out through your website, you should follow your internal procedures for handling the opt-out. For example, you might choose not to generate an EUID for that user.
 
 ## FAQs for DSPs
 
