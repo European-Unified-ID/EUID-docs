@@ -71,8 +71,6 @@ When you download the Prebid.js package, add the EUID module by checking the box
 
 When you've added Prebid.js to your site and confirmed that it's working properly, you're ready to configure the EUID module.
 
-(**GWH_SW or MC: In the below I changed uid2IdSystem to euidIdSystem please confirm (or correct).**)
-
 >TIP: To make sure that the EUID module is installed, find the string `euidIdSystem` in the [`pbjs.installedModules` array](https://docs.prebid.org/dev-docs/publisher-api-reference/installedModules.html).
 
 ### Configure the EUID Module
@@ -95,8 +93,6 @@ Notes:
 
 The following code snippet demonstrates the different ways that you can configure the EUID module.
 
-(**GWH_SW or MC: In the below I changed values please confirm (or correct).**)
-
 ```js
 const baseConfig = {
   userSync: {
@@ -113,8 +109,6 @@ const baseConfig = {
   }
 };
 ```
-
-(**GWH_SW or MC: In the below I changed params.uid2ApiBase to params.euidApiBase but please confirm (or correct). Plus one other instance of same (line 221).**)
 
 >NOTE: This example assumes that you're using the EUID production environment. During integration testing, use the EUID integration environment by setting `params.euidApiBase` to `'https://operator-integ.uidapi.com'`. Tokens from the EUID integration environment are not valid for passing to the bid stream. For the integration environment, you will have different **subscription ID** and **public key** values.
 
@@ -156,7 +150,7 @@ If the EUID token has expired and cannot be refreshed, you must configure the EU
 ```js
 const params = {}; 
  
-if (!pbjs.getUserIds().euid) { 
+if (!pbjs.getUserIds().euid || pbjs.getUserIds().euid.optout) {
   // There is no token that can be used or refreshed. 
   // The EUID module must be configured with personal data to generate a new token. 
   params.email = getUserEmail(); 
@@ -176,9 +170,13 @@ pbjs.setConfig({
 
 ## Checking the Integration
 
-(**GWH_SW or MC: In the below I changed pbjs.getUserIds().uid2 to pbjs.getUserIds().euid and uid2Token to euidToken please confirm (or correct).**)
+To check that the EUID module has successfully generated an EUID token, call `pbjs.getUserIds().euid`. There are two possible response value scenarios:
 
-To check that the EUID module has successfully generated an EUID token, call `pbjs.getUserIds().euid`. If a value is returned, a valid EUID token still exists in the EUID module.
+- Response value `pbjs.getUserIds().euid`: A valid EUID token still exists in the EUID module.
+- Response value `pbjs.getUserIds().euid.optout`: The user has opted out. The `.euid` exists but it does not have the form of a token response, and cannot be used for targeted advertising.
+
+(**GWH_SS please review the above update.**)
+
 
 If there are problems with the integration, here are some steps you can take:
 

@@ -268,8 +268,6 @@ In planning your Prebid implementation, consider the following:
 
 - If you provide a new token that doesn't match the original token used to generate any refreshed tokens, the module discards all stored tokens and uses the new token instead, and keeps it refreshed.
 
-(**GWH_SW or MC: In the below I changed params.uid2ApiBase to params.euidApiBase but please confirm (or correct).**)
-
 - During integration testing, set `params.euidApiBase` to `"https://operator-integ.uidapi.com"`. You must set this value to the same environment (production or integration) that you use for generating tokens.
 
 ## Storing the EUID Token in the Browser
@@ -298,8 +296,6 @@ The cookie size can be significant, which could be a problem. However, if local 
 ## Determining Whether the Module Has a Valid Token
 
 You can do a check to determine whether the Prebid.js module has a valid token or you need to provide a new one.
-
-(**GWH_SW or MC: In the below I changed pbjs.getUserIds().uid2 to pbjs.getUserIds().euid and uid2Token to euidToken please confirm (or correct).**)
 
 To do this, check the value returned by `pbjs.getUserIds().euid`, as shown in the following example:
 
