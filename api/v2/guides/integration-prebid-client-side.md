@@ -27,10 +27,11 @@ This guide includes the following information:
 - [Storing the EUID Token in the Browser](#storing-the-euid-token-in-the-browser)
 - [When to Pass Personal Data to the EUID Module](#when-to-pass-personal-data-to-the-euid-module)
 - [Checking the Integration](#checking-the-integration)
-- [Optional: Reduce Latency by Setting the API Base URL for the Production Environment](#optional-reduce-latency-by-setting-the-api-base-url-for-the-production-environment)
  -->
 
 ## Prebid.js Version
+
+(**GWH_MC note "8.21.0 was the version for UID2 client-side integration support, EUID will be a different version." -- version TBD.**)
 
 This implementation requires Prebid.js version 8.21.0 or later. For version information, see [https://github.com/prebid/Prebid.js/releases](https://github.com/prebid/Prebid.js/releases).
 
@@ -40,7 +41,7 @@ If you need to use an earlier version of Prebid.js, use the implementation solut
 
 An example of the EUID Prebid.js client-side integration is available at the following links:
 
-(**GWH_SW or MC: I change UID2 to EUID in the naming below but the path is untouched. Is there/will there be an integration for EUID?**)
+(**GWH_SW or MC: I change UID2 to EUID in the naming below but the path is untouched. Update when it's determined whether there be an integration for EUID**)
 
 - Code: [Example Prebid.js EUID Integration](https://github.com/IABTechLab/uid2docs/tree/main/static/examples/cstg-prebid-example)
 - Running site: [EUID Prebid.js Client-Side Integration Example](https://unifiedid.com/examples/cstg-prebid-example/)
@@ -67,7 +68,7 @@ When account setup is complete, you'll receive a public key and subscription ID.
 <!-- GWH "Add Prebid.js to Your Site" section is identical for client side and server side. -->
 To add Prebid.js to your site, follow the instructions in [Getting Started for Developers](https://docs.prebid.org/dev-docs/getting-started.html) in the Prebid.js documentation. 
 
-When you download the Prebid.js package, add the EUID module by checking the box next to the module named **Unified ID 2.0**, listed under the section **User ID Modules**.
+When you download the Prebid.js package, add the EUID module by checking the box next to the module named **European Unified ID**, listed under the section **User ID Modules**.
 
 When you've added Prebid.js to your site and confirmed that it's working properly, you're ready to configure the EUID module.
 
@@ -110,13 +111,13 @@ const baseConfig = {
 };
 ```
 
->NOTE: This example assumes that you're using the EUID production environment. During integration testing, use the EUID integration environment by setting `params.euidApiBase` to `'https://operator-integ.uidapi.com'`. Tokens from the EUID integration environment are not valid for passing to the bid stream. For the integration environment, you will have different **subscription ID** and **public key** values.
+>NOTE: This example assumes that you're using the EUID production environment. During integration testing, use the EUID integration environment by setting `params.euidApiBase` to `'https://integ.euid.eu/'`. Tokens from the EUID integration environment are not valid for passing to the bid stream. For the integration environment, you will have different **subscription ID** and **public key** values.
 
 ## Storing the EUID Token in the Browser
 <!-- GWH same section in integration-prebid.md, integration-prebid-client-side.md, and integration-prebid-client-side.md. Ensure consistency -->
 By default, the EUID module stores data using local storage. To use a cookie instead, set `params.storage` to `cookie`, as shown in the following example.
 
-For details, see [Unified ID 2.0 Configuration](https://docs.prebid.org/dev-docs/modules/userid-submodules/unified2.html#unified-id-20-configuration) in the Prebid documentation.
+For details, see [European Unified ID Configuration](https://docs.prebid.org/dev-docs/modules/userid-submodules/euid.html#european-unified-id-configuration) in the Prebid documentation.
 
 ```js
 pbjs.setConfig({ 
@@ -172,7 +173,7 @@ pbjs.setConfig({
 
 To check that the EUID module has successfully generated an EUID token, call `pbjs.getUserIds().euid`. There are two possible response value scenarios:
 
-- Response value `pbjs.getUserIds().euid`: A valid EUID token still exists in the EUID module.
+- Response value `pbjs.getUserIds().euid`: A valid EUID token exists in the EUID module.
 - Response value `pbjs.getUserIds().euid.optout`: The user has opted out. The `.euid` exists but it does not have the form of a token response, and cannot be used for targeted advertising.
 
 (**GWH_SS please review the above update.**)
@@ -194,26 +195,4 @@ An example of a tool for validating and debugging Prebid.js configuration is Pro
 - Chrome web store download location: [Professor Prebid](https://chromewebstore.google.com/detail/professor-prebid/kdnllijdimhbledmfdbljampcdphcbdc)
 - Documentation on prebid.org: [Professor Prebid User Guide](https://docs.prebid.org/tools/professor-prebid.html)
 
-## Optional: Reduce Latency by Setting the API Base URL for the Production Environment
-
-(**GWH_SW or MC: Where is the default EUID server and what should we say in place of "in the USA" if anything?**)
-
-By default, the EUID module makes API calls to an EUID server in the USA. Depending on where your users are based, you might consider choosing a server closer to your users to reduce latency.
-
-To specify a different EUID server when you're configuring the EUID module, set the optional params.euidApiBase parameter, as shown in the following example:
-
-```js
-pbjs.setConfig({ 
-  userSync: { 
-    userIds: [{ 
-      name: 'euid', 
-      params: { 
-        euidApiBase: baseUrl, 
-        // ... 
-      } 
-    }] 
-  } 
-}); 
-```
-
-For the list of possible base URLs, see [Environments](../getting-started/gs-environments.md).
+<!-- Reduce Latency by Setting the API Base URL for the Production Environment not applicable for EUID -->

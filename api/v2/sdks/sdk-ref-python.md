@@ -68,7 +68,7 @@ The following is the decrypt method in Python:
 ```python
 from uid2_client import EuidClientFactory
  
-client = EuidClientFactory.create('https://prod.uidapi.com', 'my-auth-token', 'my-secret-key')
+client = EuidClientFactory.create('https://prod.euid.eu', 'my-auth-token', 'my-secret-key')
 client.refresh_keys() # Note that refresh_keys() should be called once after create(), and then once per hour
 decrypted_token = client.decrypt(advertising_token)
 ```

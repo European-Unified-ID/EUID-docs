@@ -41,6 +41,8 @@ The Prebid EUID module handles storing, providing, and optionally refreshing EUI
 
 >CAUTION: EUID is not designed to be used where GDPR applies. The module checks the consent data that's passed in, and does not operate if the `gdprApplies` flag is set to `true`.
 
+(**GWH_MC TBD how GDPR works for EUID. Discussed w/KL and posted query.**)
+
 ## Generating the EUID Token
 
 Depending on access to personal data, there are two methods to generate EUID tokens for use with Prebid.js, as shown in the following table.
@@ -60,7 +62,7 @@ The Prebid.js EUID module can automatically refresh the EUID tokens. If you pref
 <!-- GWH same section in integration-prebid.md, integration-prebid-client-side.md, and integration-prebid-client-side.md. Ensure consistency -->
 By default, the EUID module stores data using local storage. To use a cookie instead, set `params.storage` to `cookie`, as shown in the following example.
 
-For details, see [Unified ID 2.0 Configuration](https://docs.prebid.org/dev-docs/modules/userid-submodules/unified2.html#unified-id-20-configuration) in the Prebid documentation.
+For details, see [European Unified ID Configuration](https://docs.prebid.org/dev-docs/modules/userid-submodules/euid.html#european-unified-id-configuration) in the Prebid documentation.
 
 ```js
 pbjs.setConfig({ 
