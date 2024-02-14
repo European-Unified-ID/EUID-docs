@@ -103,7 +103,7 @@ const baseConfig = {
       params: {
         serverPublicKey: publicKey,
         subscriptionId: subscriptionId,
-        // Choose only one of the following: email, emailHash, phone, or phoneHash
+        // Choose only one of the following: email or emailHash
         email: 'user@example.com', // Normalized or non-normalized, unhashed email address
         // emailHash: 'eVvLS/Vg+YZ6+z3i0NOpSXYyQAfEXqCZ7BTpAjFUBUc=', // Normalized and hashed email address
       }
