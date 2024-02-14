@@ -16,7 +16,6 @@ This guide is an overview of integration options for publishers who want to inte
 It includes the following sections:
 
 - [Introduction](#introduction)
-- [EUID User ID Submodule](#euid-user-id-submodule)
 - [Generating the EUID Token](#generating-the-euid-token)
 - [Refreshing the EUID Token](#refreshing-the-euid-token)
 - [Storing the EUID Token in the Browser](#storing-the-euid-token-in-the-browser)
@@ -34,10 +33,6 @@ EUID provides a Prebid.js module that supports the following:
 - [Passing the EUID token to the bid stream](#passing-the-euid-token-to-the-bid-stream)
 
 For additional flexibility, EUID also provides alternative methods for some of the features and complementary products, such as a JavaScript SDK.
-
-## EUID User ID Submodule
-
-The Prebid EUID module handles storing, providing, and optionally refreshing EUID tokens.
 
 ## Generating the EUID Token
 

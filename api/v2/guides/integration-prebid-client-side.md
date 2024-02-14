@@ -31,7 +31,7 @@ This guide includes the following information:
 
 ## Prebid.js Version
 
-This implementation requires a specific, recent version of Prebid.js. The specific version information will be available shortly.
+This implementation requires a recent version of Prebid.js. Information on the specific version will be available shortly.
 
 <!-- GWH_TBD This implementation requires Prebid.js version 8.21.0 or later. For version information, see [https://github.com/prebid/Prebid.js/releases](https://github.com/prebid/Prebid.js/releases). -->
 
@@ -39,8 +39,7 @@ If you need to use an earlier version of Prebid.js, use the implementation solut
 
 <!-- ## Integration Example -->
 
-<!-- GWH_TBD re integration examples.
-This implementation requires Prebid.js version 8.21.0 or later. For version information, see [https://github.com/prebid/Prebid.js/releases](https://github.com/prebid/Prebid.js/releases). -->
+<!-- GWH_TBD re integration examples. -->
 
 <!-- An example of the EUID Prebid.js client-side integration is available at the following links:
 
