@@ -174,7 +174,7 @@ pbjs.setConfig({
 To check that the EUID module has successfully generated an EUID token, call `pbjs.getUserIds().euid`. There are two possible response value scenarios:
 
 - Response value `pbjs.getUserIds().euid`: A valid EUID token exists in the EUID module.
-- Response value `pbjs.getUserIds().euid.optout`: The user has opted out. The `.euid` exists but it does not have the form of a token response, and cannot be used for targeted advertising.
+- Response value `pbjs.getUserIds().euid.optout`: The user has opted out. The `.euid` object exists but it does not have the form of a token response, and cannot be used for targeted advertising.
 
 If there are problems with the integration, here are some steps you can take:
 
