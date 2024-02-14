@@ -55,7 +55,7 @@ Determine which method is best for you, and then follow the applicable integrati
 The Prebid.js EUID module can automatically refresh the EUID tokens. If you prefer to implement manual refresh outside Prebid.js, see [Refreshing a EUID Token](integration-prebid-server-side.md#refreshing-an-euid-token) in the Server-Side Integration Guide. The client-side integration solution includes automated token refresh.
 
 ## Storing the EUID Token in the Browser
-<!-- GWH same section in integration-prebid.md, integration-prebid-client-side.md, and integration-prebid-client-side.md. Ensure consistency -->
+
 By default, the EUID module stores data using local storage. To use a cookie instead, set `params.storage` to `cookie`, as shown in the following example.
 
 For details, see [European Unified ID Configuration](https://docs.prebid.org/dev-docs/modules/userid-submodules/euid.html#european-unified-id-configuration) in the Prebid documentation.

@@ -31,20 +31,21 @@ This guide includes the following information:
 
 ## Prebid.js Version
 
-(**GWH_MC note "8.21.0 was the version for UID2 client-side integration support, EUID will be a different version." -- version TBD.**)
+This implementation requires a specific, recent version of Prebid.js. The specific version information will be available shortly.
 
-This implementation requires Prebid.js version 8.21.0 or later. For version information, see [https://github.com/prebid/Prebid.js/releases](https://github.com/prebid/Prebid.js/releases).
+<!-- GWH_TBD This implementation requires Prebid.js version 8.21.0 or later. For version information, see [https://github.com/prebid/Prebid.js/releases](https://github.com/prebid/Prebid.js/releases). -->
 
 If you need to use an earlier version of Prebid.js, use the implementation solution presented in the [EUID Server-Side Integration Guide for Prebid.js](integration-prebid-server-side.md) instead.
 
-## Integration Example
+<!-- ## Integration Example -->
 
-An example of the EUID Prebid.js client-side integration is available at the following links:
+<!-- GWH_TBD re integration examples.
+This implementation requires Prebid.js version 8.21.0 or later. For version information, see [https://github.com/prebid/Prebid.js/releases](https://github.com/prebid/Prebid.js/releases). -->
 
-(**GWH_SW or MC: I change UID2 to EUID in the naming below but the path is untouched. Update when it's determined whether there be an integration for EUID**)
+<!-- An example of the EUID Prebid.js client-side integration is available at the following links:
 
 - Code: [Example Prebid.js EUID Integration](https://github.com/IABTechLab/uid2docs/tree/main/static/examples/cstg-prebid-example)
-- Running site: [EUID Prebid.js Client-Side Integration Example](https://unifiedid.com/examples/cstg-prebid-example/)
+- Running site: [EUID Prebid.js Client-Side Integration Example](https://unifiedid.com/examples/cstg-prebid-example/) -->
 
 ## Integration Overview: High-Level Steps
 
@@ -65,7 +66,7 @@ Complete the EUID account setup by following the steps described in the [Account
 When account setup is complete, you'll receive a public key and subscription ID. These values are unique to you, and you'll use them to configure the EUID module. For details, see [Subscription ID and Public Key](../getting-started/gs-credentials.md#subscription-id-and-public-key).
 
 ### Add Prebid.js to Your Site
-<!-- GWH "Add Prebid.js to Your Site" section is identical for client side and server side. -->
+
 To add Prebid.js to your site, follow the instructions in [Getting Started for Developers](https://docs.prebid.org/dev-docs/getting-started.html) in the Prebid.js documentation. 
 
 When you download the Prebid.js package, add the EUID module by checking the box next to the module named **European Unified ID**, listed under the section **User ID Modules**.
@@ -114,7 +115,7 @@ const baseConfig = {
 >NOTE: This example assumes that you're using the EUID production environment. During integration testing, use the EUID integration environment by setting `params.euidApiBase` to `'https://integ.euid.eu/'`. Tokens from the EUID integration environment are not valid for passing to the bid stream. For the integration environment, you will have different **subscription ID** and **public key** values.
 
 ## Storing the EUID Token in the Browser
-<!-- GWH same section in integration-prebid.md, integration-prebid-client-side.md, and integration-prebid-client-side.md. Ensure consistency -->
+
 By default, the EUID module stores data using local storage. To use a cookie instead, set `params.storage` to `cookie`, as shown in the following example.
 
 For details, see [European Unified ID Configuration](https://docs.prebid.org/dev-docs/modules/userid-submodules/euid.html#european-unified-id-configuration) in the Prebid documentation.

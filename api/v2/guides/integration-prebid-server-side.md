@@ -71,7 +71,7 @@ Complete the EUID account setup by following the steps described in the [Account
 When account setup is complete, you'll receive your unique API key and client secret. These values are unique to you and it's important to keep them secure. For details, see [API Key and Client Secret](../getting-started/gs-credentials.md#api-key-and-client-secret).
 
 ## Add Prebid.js to Your Site
-<!-- GWH "Add Prebid.js to Your Site" section is identical for client side and server side. -->
+
 To add Prebid.js to your site, follow the instructions in [Getting Started for Developers](https://docs.prebid.org/dev-docs/getting-started.html) in the Prebid.js documentation. 
 
 When you download the Prebid.js package, add the EUID module by checking the box next to the module named **European Unified ID**, listed under the section **User ID Modules**.
@@ -258,7 +258,7 @@ In planning your Prebid implementation, consider the following:
 - During integration testing, set `params.euidApiBase` to `"https://integ.euid.eu/"`. You must set this value to the same environment (production or integration) that you use for generating tokens.
 
 ## Storing the EUID Token in the Browser
-<!-- GWH same section in integration-prebid.md, integration-prebid-client-side.md, and integration-prebid-client-side.md. Ensure consistency -->
+
 By default, the EUID module stores data using local storage. To use a cookie instead, set `params.storage` to `cookie`, as shown in the following example.
 
 For details, see [European Unified ID Configuration](https://docs.prebid.org/dev-docs/modules/userid-submodules/euid.html#european-unified-id-configuration) in the Prebid documentation.
