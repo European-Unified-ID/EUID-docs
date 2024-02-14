@@ -4,8 +4,8 @@
 
 You can use the EUID SDK for Python (Server-Side) to facilitate:
 
-- Generating UID2 advertising tokens
-- Refreshing UID2 advertising tokens
+- Generating EUID advertising tokens
+- Refreshing EUID advertising tokens
 
 This guide includes the following information:
 

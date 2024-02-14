@@ -39,10 +39,6 @@ For additional flexibility, EUID also provides alternative methods for some of t
 
 The Prebid EUID module handles storing, providing, and optionally refreshing EUID tokens.
 
->CAUTION: EUID is not designed to be used where GDPR applies. The module checks the consent data that's passed in, and does not operate if the `gdprApplies` flag is set to `true`.
-
-(**GWH_MC TBD how GDPR works for EUID. Discussed w/KL and posted query.**)
-
 ## Generating the EUID Token
 
 Depending on access to personal data, there are two methods to generate EUID tokens for use with Prebid.js, as shown in the following table.
