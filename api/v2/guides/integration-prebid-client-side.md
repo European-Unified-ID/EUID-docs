@@ -125,9 +125,8 @@ pbjs.setConfig({
     userIds: [{ 
       name: 'euid', 
       params: { 
-
-                 //default value is ‘localStorage’ 
-        storage: ‘cookie’  
+        //default value is 'localStorage' 
+        storage: 'cookie'  
       } 
     }] 
   } 
@@ -151,7 +150,7 @@ If the EUID token has expired and cannot be refreshed, you must configure the EU
 ```js
 const params = {}; 
  
-if (!pbjs.getUserIds().euid || pbjs.getUserIds().euid.optout) {
+if (!pbjs.getUserIds().euid) {
   // There is no token that can be used or refreshed. 
   // The EUID module must be configured with personal data to generate a new token. 
   params.email = getUserEmail(); 

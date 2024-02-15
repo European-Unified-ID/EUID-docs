@@ -269,9 +269,8 @@ pbjs.setConfig({
     userIds: [{ 
       name: 'euid', 
       params: { 
-
-                 //default value is ‘localStorage’ 
-        storage: ‘cookie’  
+        //default value is 'localStorage' 
+        storage: 'cookie'
       } 
     }] 
   } 
@@ -338,7 +337,7 @@ In this table, CR = client refresh mode, SO = server-only mode, and N/A = not ap
 | params.euidToken | CR: Optional<br/>SO: N/A | Object | The initial EUID token. This should be the `body` element of the decrypted response from a call to the `/token/generate` or `/token/refresh` endpoint. | See [Sample Token](#sample-token) |
 | params.euidCookie | CR: Optional<br/>SO: N/A  | String | The name of a cookie that holds the initial EUID token, set by the server. The cookie should contain JSON in the same format as the euidToken param. If `euidToken` is supplied, this parameter is ignored. | See [Sample Token](#sample-token) |
 | params.euidApiBase | CR: Optional<br/>SO: Optional | String | Overrides the default EUID API endpoint. For valid values, see [Environments](../getting-started/gs-environments.md). | `"https://prod.euid.eu"` (the default)|
-| params.storage | CR: Optional<br/>SO: Optional | String | Specify the module internal storage method: `cookie` or `localStorage`. We recommend that you do not provide this parameter. Instead, allow the module to use the default. | `localStorage` (the default) |
+| params.storage | CR: Optional<br/>SO: Optional | String | Specify the module internal storage method: `cookie` or `localStorage`. We recommend that you do not provide this parameter. Instead, allow the module to use the default. | `"localStorage"` (the default) |
 
 ### Configuration Parameter Examples: Value
 

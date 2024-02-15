@@ -2,44 +2,46 @@
 
 # Encrypting Requests and Decrypting Responses
 
-All EUID [endpoints](../endpoints/summary-endpoints.md) require request [encryption](#encrypting-requests) and respective response [decryption](#decrypting-responses). 
+>NOTE: If you're a publisher and are implementing EUID on the client side, encryption and decryption is managed automatically by your implementation, such as Prebid.js (see [EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md))<!--  or the JavaScript SDK (see [Client-Side Integration Guide for JavaScript](../guides/publisher-client-side.md)) -->.
 
->NOTE: [POST /token/refresh](../endpoints/post-token-refresh.md) requests do not require encryption.
+For almost all EUID [endpoints](../endpoints/summary-endpoints.md), requests sent to the endpoint must be [encrypted](#encrypting-requests) and responses from the endpoint must be [decrypted](#decrypting-responses).
+
+The only exception is that requests to the [POST /token/refresh](../endpoints/post-token-refresh.md) endpoint do not need to be encrypted.
 
 Here's what you need to know about encrypting EUID API requests and decrypting respective responses:
 
-- To use the APIs, in addition to your client API key, you need your client secret
-- You can write your own custom scripts or use the Python scripts provided in the following sections.
+- To use the APIs, in addition to your client API key, you need your client secret.
+- You can write your own custom code or use the Python scripts provided in the following sections.
 - Request and response use AES/GCM/NoPadding encryption algorithm with 96-bit initialization vector and 128-bit authentication tag.
-- The raw, unencrypted JSON body of the request is wrapped in a binary [Unencrypted Request Data Envelope](#unencrypted-request-data-envelope) which then gets encrypted and formatted according to the [Encrypted Request Envelope](#encrypted-request-envelope).
-- Response JSON body is wrapped in a binary [Unencrypted Response Data Envelope](#unencrypted-response-data-envelope) which is encrypted and formatted according to the [Encrypted Response Envelope](#encrypted-response-envelope).
+- The raw, unencrypted JSON body of the request is wrapped in a binary [unencrypted request data envelope](#unencrypted-request-data-envelope) which then gets encrypted and formatted according to the [Encrypted Request Envelope](#encrypted-request-envelope).
+- The response JSON body is wrapped in a binary [unencrypted request data envelope](#unencrypted-response-data-envelope) which is encrypted and formatted according to the [Encrypted Response Envelope](#encrypted-response-envelope).
 
 ## Workflow
 
 The high-level request-response workflow for the EUID APIs includes the following steps:
 
 1. Prepare the request body with input parameters in the JSON format.
-2. Wrap the request JSON in an [Unencrypted Request Data Envelope](#unencrypted-request-data-envelope).
+2. Wrap the request JSON in an [unencrypted request data envelope](#unencrypted-request-data-envelope).
 3. Encrypt the envelope using AES/GCM/NoPadding algorithm and your secret key.
 4. Assemble the [Encrypted Request Envelope](#encrypted-request-envelope).
 5. Send the encrypted request and receive the encrypted response.
 6. Parse the [Encrypted Response Envelope](#encrypted-response-envelope).
 7. Decrypt the data in the response envelope.
 8. Parse the resulting [Unencrypted Response Data Envelope](#unencrypted-response-data-envelope).
-9. (Optional, recommended) Ensure the nonce the in the response envelope matches the nonce in the request envelope.
+9. (Optional, recommended) Ensure that the nonce in the response envelope matches the nonce in the request envelope.
 10. Extract the response JSON object from the unencrypted envelope.
 
-Python example scripts for [encrypting requests](#example-encryption-script) and [decrypting responses](#example-decryption-script) can help with automating steps 2-4 and 6-10 and serve as a reference of how to implement these steps in your application.
+A code example for [encrypting requests](#example-encryption-script) and [decrypting responses](#example-decryption-script) can help with automating steps 2-4 and 6-10 and serves as a reference of how to implement these steps in your application.
 
-The individual EUID [endpoints](../endpoints/summary-endpoints.md) explain the respective JSON body format requirements and parameters, include call examples, and show decrypted responses. The following sections provide examples of the encryption and decryption scripts in Python, field layout requirements as well as request and response examples. 
+Documentation for the individual EUID [endpoints](../endpoints/summary-endpoints.md) explains the respective JSON body format requirements and parameters, includes call examples, and shows decrypted responses. The following sections provide examples of the encryption and decryption scripts in Python, field layout requirements, and request and response examples. 
 
 ## Encrypting Requests
 
-You have the option of writing your own script for encrypting requests or using the provided [Python example script](#example-encryption-script). If you choose to write your own script, be sure to follow the field layout requirements listed in [Unencrypted Request Data Envelope](#unencrypted-request-data-envelope) and [Encrypted Request Envelope](#encrypted-request-envelope).
+You have the option of writing your own code for encrypting requests, using an EUID SDK or the provided Python [example encryption script](#example-encryption-script). If you choose to write your own code, be sure to follow the field layout requirements listed in [Unencrypted Request Data Envelope](#unencrypted-request-data-envelope) and [Encrypted Request Envelope](#encrypted-request-envelope).
 
 ### Unencrypted Request Data Envelope
 
-The following table describes the field layout for request encryption scripts.
+The following table describes the field layout for request encryption code.
 
 | Offset (Bytes) | Size (Bytes) | Description |
 | :--- | :--- | :--- |
@@ -49,13 +51,13 @@ The following table describes the field layout for request encryption scripts.
 
 ### Encrypted Request Envelope
 
-The following table describes the field layout for request encryption scripts.
+The following table describes the field layout for request encryption code.
 
 | Offset (Bytes) | Size (Bytes) | Description |
 | :--- | :--- | :--- |
-| 0 | 1 | The version of the envelope format. Must be always `1`. |
+| 0 | 1 | The version of the envelope format. Must be `1`. |
 | 1 | 12 | 96-bit initialization vector (IV), which is used to randomize data encryption. |
-| 13 | N | Payload ([Unencrypted Request Data Envelope](#unencrypted-request-data-envelope)) encrypted using the AES/GCM/NoPadding algorithm. |
+| 13 | N | Payload ([unencrypted request data envelope](#unencrypted-request-data-envelope)) encrypted using the AES/GCM/NoPadding algorithm. |
 | 13 + N | 16 | 128-bit GCM authentication tag used to verify data integrity. |
 
 ### Example Encryption Script
@@ -110,9 +112,9 @@ echo '{"email": "test@example.com"}' \
 
 ## Decrypting Responses
 
-You have the option of writing your own script for decrypting responses or using the provided [Python example script](#example-decryption-script). If you choose to write your own script, be sure to follow the field layout requirements listed in [Encrypted Response Envelope](#encrypted-response-envelope) and [Unencrypted Response Data Envelope](#unencrypted-response-data-envelope).
+You have the option of writing your own script for decrypting responses or using the provided Python [example encryption script](#example-decryption-script). If you choose to write your own script, be sure to follow the field layout requirements listed in [Encrypted Response Envelope](#encrypted-response-envelope) and [Unencrypted Response Data Envelope](#unencrypted-response-data-envelope).
 
->NOTE: Response is encrypted only if the service returns HTTP status code 200.
+>NOTE: The response is encrypted only if the service returns HTTP status code 200.
 
 ### Encrypted Response Envelope
 
@@ -131,7 +133,7 @@ The following table describes the field layout for response decryption scripts.
 | Offset (Bytes) | Size (Bytes) | Description |
 | :--- | :--- | :--- |
 | 0 | 8 | The UNIX timestamp (in milliseconds). Must be int64 big endian. |
-| 8 | 8 | Nonce. For the response to be considered valid, this should match the nonce in the [Unencrypted Request Data Envelope](#unencrypted-request-data-envelope). |
+| 8 | 8 | Nonce. For the response to be considered valid, this should match the nonce in the [unencrypted request data envelope](#unencrypted-request-data-envelope). |
 | 16 | N | Payload, which is a response JSON document serialized in UTF-8 encoding. |
 
 ### Example Decryption Script
@@ -141,7 +143,7 @@ Here's an example Python script (`decrypt_response.py`) for decrypting responses
 - The client secret
 - (Optional) `--is-refresh` to indicate that the response is for a [POST /token/refresh](../endpoints/post-token-refresh.md) request
 
->IMPORTANT: To decrypt responses, you need to use the `refresh_response_key` value returned in the [POST /token/generate](../endpoints/post-token-generate.md) or [POST /token/refresh](../endpoints/post-token-refresh.md) response from which the refresh token in the request is returned.
+>IMPORTANT: To decrypt responses, use the most recent `refresh_response_key` value for this token. The `refresh_response_key` value is returned in the response to the [POST /token/generate](../endpoints/post-token-generate.md) or [POST /token/refresh](../endpoints/post-token-refresh.md) operations. Each time a token is refreshed, a new `refresh_response_key` is returned. Be sure to use the most recent one to decrypt the current response.
 
 ```py
 import base64
@@ -183,7 +185,7 @@ except:
 ```
 ### Response Example
 
-For example, a decrypted response to the [POST /token/generate](../endpoints/post-token-generate.md) request for an email address in the [preceding example](#request-example), may look like this:
+For example, a decrypted response to the [POST /token/generate](../endpoints/post-token-generate.md) request for an email address in the [preceding example](#request-example), might look like this:
 
 ```json
 {
