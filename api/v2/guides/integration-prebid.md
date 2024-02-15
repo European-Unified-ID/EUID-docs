@@ -11,7 +11,7 @@ sidebar_position: 04
 
 # EUID Integration Overview for Prebid.js
 
-This guide is an overview of integration options for publishers who want to integrate with EUID and generate EUID tokens<!-- [EUID tokens](../ref-info/glossary-uid.md#gl-euid-token) --> (advertising tokens) to be passed by Prebid.js in the RTB bid stream.
+This guide is an overview of integration options for publishers who want to integrate with EUID and generate EUID tokens<!-- EUID tokens was glossary link --> (advertising tokens) to be passed by Prebid.js in the RTB bid stream.
 <!-- 
 It includes the following sections:
 

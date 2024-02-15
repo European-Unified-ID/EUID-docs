@@ -11,7 +11,7 @@ sidebar_position: 04
 
 # EUID Client-Side Integration Guide for Prebid.js
 
-This guide is for publishers who have access to personal data<!-- [personal data](../ref-info/glossary-uid.md#gl-personal-data) --> (email address) on the client side and want to integrate with EUID and generate EUID tokens<!-- [EUID tokens](../ref-info/glossary-uid.md#gl-euid-token) --> (advertising tokens) to be passed by Prebid.js in the RTB bid stream.
+This guide is for publishers who have access to personal data<!-- personal data was glossary link --> (email address) on the client side and want to integrate with EUID and generate EUID tokens<!-- EUID tokens was glossary link --> (advertising tokens) to be passed by Prebid.js in the RTB bid stream.
 
 To integrate with EUID using Prebid.js, you'll need to make changes to the HTML and JavaScript on your site. No server-side work is required if you follow this guide.
 
