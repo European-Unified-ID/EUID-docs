@@ -1,11 +1,11 @@
-[EUID Overview](../../../README.md) > [v2](../summary-doc-v2.md) > Getting Started -- Summary
+[EUID Overview](../../../README.md) > [v2](../summary-doc-v2.md) > Getting Started: Summary
 
-# Getting Started -- Summary
+# Getting Started: Summary
 
 The following documents are available to help you get started with EUID:
 
 - [Account Setup](gs-account-setup.md)
-- [API Keys](gs-api-keys.md)
+- [API Credentials](gs-credentials.md)
 - [Authentication and Authorization](gs-auth.md)
 - [Environments](gs-environments.md)
 - [API and SDK Reference Resources](gs-api-using.md)
