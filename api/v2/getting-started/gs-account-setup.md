@@ -1,4 +1,4 @@
-[EUID Overview](../../../README.md) > [v2](../summary-doc-v2.md) > [Getting Started -- Summary](gs-summary.md) > Account Setup
+[EUID Overview](../../../README.md) > [v2](../summary-doc-v2.md) > [Getting Started: Summary](gs-summary.md) > Account Setup
 
 # Account Setup
 
@@ -37,6 +37,6 @@ If you're a publisher, and you determine that you want to implement EUID so that
 
 When you've signed a contract for participating in EUID, you'll be issued with [EUID credentials](gs-credentials.md) and other information for getting up and running with EUID.
 
-## API Versions
+## API Version
 
 The current version of the EUID API is v2.

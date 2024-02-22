@@ -1,4 +1,4 @@
-[EUID Overview](../../../README.md) > [Getting Started -- Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > SDKs](./summary-sdks.md) > EUID SDK for C# / .NET (Server-Side) Reference Guide
+[EUID Overview](../../../README.md) > [Getting Started: Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > SDKs](./summary-sdks.md) > EUID SDK for C# / .NET (Server-Side) Reference Guide
 
 # EUID SDK for C# / .NET (Server-Side) Reference Guide
 
