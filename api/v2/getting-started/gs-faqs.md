@@ -112,11 +112,10 @@ There are many ways to approach EUID implementation. Here is one example of a co
     "ext":{
       "eids":[
         {
-          "source":"uidapi.com",
+          "source":"euid.eu",
           "uids":[
             {
-              "id":"AgAAAHcy2ka1tSweERARV/wgwM+zM5wK98b9XItZGVgHaU23Eh0XOmAixO6VBcMd3k2ir/TGHLf7O7kQGLyeRPC5/VBSPmugOblMlzgy0B1ZfHQ7ccVurbyzgL1ZZOZ5cBvPDrvfR9MsKqPgWvrIKRkKVTYyUkG5YRAc++xRKfbL/ZSYxQ==",
-              "rtiPartner":"UID2"
+              "id":"E3AAAAGnjHikWAL4FRzBh6p+4iKvCFFi3RieJhBg2kCXNT1AjMKev/jreXLPVb2u2IRT7AtZRqpwjFlibf4xaAmJCsdOed9S15igcJiHZ3PR1gOjCmL2HRvN5wMvnvE4CVYCwbLSXjzb6nCqSWL2xPkwMMjZGE7U4S4Xt+jMzQ2uu0vxqfIp5rzAboap5XLrCPHyq6hOQ5dnWZyaEi5TcvBzNIQ="
             }
           ]
         }
@@ -125,8 +124,6 @@ There are many ways to approach EUID implementation. Here is one example of a co
   }
 }
 ```
-
-(**GWH_SW query re token code**)
 
 ## FAQs for Advertisers and Data Providers
 
