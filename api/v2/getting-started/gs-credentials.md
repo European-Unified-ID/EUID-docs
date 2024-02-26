@@ -12,15 +12,26 @@ This page provides information about the different types of credentials you'll n
 
 ## Overview
 
-Each EUID <a href="../../../README.md#participants">participant</a> gets a set of unique credentials, as shown in the following table.
+Each EUID <a href="../../../README.md#participants">participant</a> gets a set of unique credentials. The set of credentials you get is determined by how you are participating in EUID, as shown in the following table.
 
 | Audience | Credentials | Integration |
 | :--- | :--- | :--- |
 | Participants using a server-side endpoint | Both of the following:<ul><li>API key, also called a client key</li><li>Client secret, a value known only to the participant and the EUID service</li></ul> | Any integration using one of these endpoints: <ul><li>[POST&nbsp;/identity/map](../endpoints/post-identity-map.md)</li><li>[POST&nbsp;/identity/buckets](../endpoints/post-identity-buckets.md)</li><li>[POST&nbsp;/token/generate](../endpoints/post-token-generate.md)</li></ul> |
+| Participants using a client-side implementation  | Both of the following: <ul><li>Subscription ID</li><li>Public key</li></ul> | Integrations using [EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md).<!-- Integrations using one of these: <ul><li>[EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md)</li><li>Client-Side Integration Guide for JavaScript (link removed for EUID)</li></ul> --> |
 
 If you're using the integration environment as well as the production environment, you'll get a separate set of credentials for each environment.
 
+<!-- It includes:
+
+* [API Key and Client Secret](#api-key-and-client-secret)
+  * [Security of API Key and Client Secret](#security-of-api-key-and-client-secret)
+* [Subscription ID and Public Key](#subscription-id-and-public-key)
+* [Refreshing Credentials](#refreshing-credentials)
+ -->
+
 ## API Key and Client Secret
+
+If you're using a server-side implementation (see [EUID Server-Side Integration Guide for Prebid.js](../guides/integration-prebid-server-side.md)<!--  or Server-Side Integration Guide for JavaScript (link removed for EUID) -->), the API key and client secret allow you to connect to the[Operator Service and call API endpoints. These values identify you to the service.
 
 Here is some information about API keys and client secrets:
 - One EUID participant can have multiple keys.
@@ -41,6 +52,22 @@ Security of keys and client secrets is very important. Follow these guidelines:
 - Establish a process for replacing the key and secret with new values if the existing ones are compromised.
 
 It's best to refresh your API key and client secret on a regular cadence&#8212;for example, yearly&#8212;to help reduce the risk of your credentials being compromised.
+
+## Subscription ID and Public Key
+
+If you're using a client-side implementation (see [EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md)<!--  or Client-Side Integration Guide for JavaScript (link removed for EUID) -->), you'll receive the following credentials:
+- **Subscription ID**: This value identifies your site to the EUID service.
+- **Public key**: This value is used for encryption.
+
+When you're implementing EUID on the client side, by using <!-- the EUID JavaScript SDK or  -->Prebid, provide the values to <!-- the SDK or to  -->Prebid as part of configuration.
+
+Notes:
+
+- Unlike the API key and client secret, the Subscription ID and public key do not have to be kept secure.
+
+- The values are valid for a specific [environment](gs-environments.md). If you're using both the integration and production environments, you'll get a set of credentials for each environment.
+
+- Subscription ID and public key credentials can be used only to generate client-side tokens. If you need any additional roles<!--(see API Permissions (link removed for EUID) -->, request API Key and Client Secret for those roles. <!-- (**GWH_KT added last bullet to this GS article based on work on Publisher Options page. Review please.**) -->
 
 ## Refreshing Credentials
 
