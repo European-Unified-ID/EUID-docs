@@ -105,7 +105,7 @@ There are many ways to approach EUID implementation. Here is one example of a co
     "ext":{
       "eids":[
         {
-          "source":"uidapi.com",
+          "source":"euid.eu",
           "uids":[
             {
               "id":"AgAAAHcy2ka1tSweERARV/wgwM+zM5wK98b9XItZGVgHaU23Eh0XOmAixO6VBcMd3k2ir/TGHLf7O7kQGLyeRPC5/VBSPmugOblMlzgy0B1ZfHQ7ccVurbyzgL1ZZOZ5cBvPDrvfR9MsKqPgWvrIKRkKVTYyUkG5YRAc++xRKfbL/ZSYxQ==",
