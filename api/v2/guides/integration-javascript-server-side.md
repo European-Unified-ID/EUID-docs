@@ -115,13 +115,13 @@ After authentication in step 1-c, which forces the user to accept the rules of e
 <TabItem value='ts' label='TypeScript'>
 
 ```tsx
-  import { EventType, Uid2CallbackPayload } from "./uid2CallbackManager";
+  import { EventType, CallbackPayload } from "./callbackManager";
 
   window.__euid = window.__euid || {};
   window.__euid.callbacks = window.__euid.callbacks || [];
 
   // Step 1-f
-  window.__euid.callbacks.push((eventType: EventType, payload: Uid2CallbackPayload) => {
+  window.__euid.callbacks.push((eventType: EventType, payload: CallbackPayload) => {
     if (eventType === 'SdkLoaded') {
       __euid.init({
         identity : {
@@ -137,7 +137,7 @@ After authentication in step 1-c, which forces the user to accept the rules of e
   });
 
   // Step 1-g
-  window.__euid.callbacks.push((eventType: EventType, payload: Uid2CallbackPayload) => {
+  window.__euid.callbacks.push((eventType: EventType, payload: CallbackPayload) => {
     if (eventType !== 'SdkLoaded') {
       if (payload.identity) {
         const advertisingToken = payload.identity.advertising_token;
