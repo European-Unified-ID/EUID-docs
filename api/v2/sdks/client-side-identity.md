@@ -1,4 +1,4 @@
-[EUID Overview](../../../README.md) > [Getting Started -- Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > [SDKs](summary-sdks.md) > SDK for JavaScript Reference Guide
+[EUID Overview](../../../README.md) > [Getting Started: Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > [SDKs](summary-sdks.md) > SDK for JavaScript Reference Guide
 
 # SDK for JavaScript Reference Guide
 

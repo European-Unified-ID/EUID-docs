@@ -1,4 +1,4 @@
-[EUID Overview](../../../README.md) > [Getting Started -- Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > Integration Guides
+[EUID Overview](../../../README.md) > [Getting Started: Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > Integration Guides
 
 # EUID Integration Guides: Summary
 
@@ -16,7 +16,7 @@ Integrations fall into these categories:
 The following resources are available for publisher integrations.
 
 <!-- :::tip
-For a detailed summary of web integration options, see [Web Integration Overview](../guides/integration-options-publisher-web.md).
+For a detailed summary of web integration options, see Web Integration Overview ../guides/integration-options-publisher-web.md.
 ::: -->
 
 | Integration Guide | Content Description |
