@@ -1,9 +1,4 @@
-<!-- ---
-title: API Permissions
-description: Information about EUID API permissions
-hide_table_of_contents: false
-sidebar_position: 07
---- -->
+[EUID Overview](../../../README.md) > [v2](../summary-doc-v2.md) > [Getting Started: Summary](gs-summary.md) > API Permissions
 
 # API Permissions
 
@@ -11,9 +6,7 @@ The EUID ecosystem includes several different API permissions that allow access 
 
 For each EUID participant that has API Key and Client Secret, the permissions are linked to the participant's API credentials (see [Account Setup](gs-account-setup.md) and [EUID Credentials](gs-credentials.md)).
 
-<!-- :::note -->
-If you're a publisher and are implementing EUID on the client side, API permissions do not apply to you. Instead, you'll receive a different set of credentials that are specifically for generating a client-side token request. For details, see [Subscription ID and Public Key](gs-credentials.md#subscription-id-and-public-key).
-<!-- ::: -->
+>NOTE: If you're a publisher and are implementing EUID on the client side, API permissions do not apply to you. Instead, you'll receive a different set of credentials that are specifically for generating a client-side token request. For details, see [Subscription ID and Public Key](gs-credentials.md#subscription-id-and-public-key).
 
 A participant can have one or several sets of API credentials with associated permissions. In cases where you have more than one API permission, you have the option to have a separate set of credentials for each permission or have a single set of credentials for all permissions. We recommend having a separate set of credentials for each permission. 
 
@@ -21,7 +14,6 @@ The following table lists the key permissions, the types of participants that co
 
 | Name | Participant Type | Permissions |
 | :--- | :--- | :--- |
-| Generator | Publishers | Permission to call the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md), [POST&nbsp;/token/validate](../endpoints/post-token-validate.md), and [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoints, to generate EUID tokens from [DII](../ref-info/glossary-uid.md#gl-dii) and to refresh them, using one of these integration methods:<ul><li>A Prebid integration</li><li>The EUID SDK for JavaScript</li><li>An integration that directly calls the applicable API endpoints for retrieving and managing EUID tokens.</li></ul> |
+| Generator | Publishers | Permission to call the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md), [POST&nbsp;/token/validate](../endpoints/post-token-validate.md), and [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoints, to generate EUID tokens from personal data and to refresh them, using one of these integration methods:<ul><li>A Prebid integration</li><li>The EUID SDK for JavaScript</li><li>An integration that directly calls the applicable API endpoints for retrieving and managing EUID tokens.</li></ul> |
 | Bidder | DSPs | Permission to decrypt EUID tokens coming in from the bid stream from publishers into raw EUIDs for bidding purposes. |
-| Sharer | Any participant type that takes part in EUID sharing. For details, see [EUID Sharing: Overview](../sharing/sharing-overview.md). | Permission to do both of the following:<ul><li>Encrypt raw EUIDs into EUID tokens for sharing with another authorized sharing participant, using a EUID SDK or Snowflake</li><li>Decrypt EUID tokens received from another authorized sharing participant into raw EUIDs.</li></ul> |
-| Mapper | Advertisers<br/>Data Providers | Permission to use the [POST&nbsp;/identity/buckets](../endpoints/post-identity-buckets.md) endpoint to monitor rotated salt buckets and to use the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint to map multiple email addresses, phone numbers, or their respective hashes to their raw EUIDs and salt bucket IDs. |
+| Mapper | Advertisers<br/>Data Providers | Permission to use the [POST&nbsp;/identity/buckets](../endpoints/post-identity-buckets.md) endpoint to monitor rotated salt buckets and to use the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint to map multiple email addresses or their respective hashes to their raw EUIDs and salt bucket IDs. |

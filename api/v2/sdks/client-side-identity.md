@@ -1,11 +1,6 @@
-<!-- ---
-title: EUID SDK for JavaScript
-description: Reference information about the JavaScript client-side SDK.
-hide_table_of_contents: false
-sidebar_position: 02
---- -->
+[EUID Overview](../../../README.md) > [Getting Started: Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > [SDKs](summary-sdks.md) > SDK for JavaScript Reference Guide
 
-# EUID SDK for JavaScript Reference Guide
+# SDK for JavaScript Reference Guide
 
 Use this SDK to facilitate the process of establishing client identity using EUID and retrieving advertising tokens. The following sections describe the high-level [workflow](#workflow-overview) for establishing EUID identity, provide the SDK [API reference](#api-reference), and explain the EUID [storage format](#euid-storage-format).
 

@@ -1,4 +1,4 @@
-[EUID Overview](../../../README.md) > [Getting Started -- Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > [Integration Guides](summary-guides.md) > DSP Integration Guide
+[EUID Overview](../../../README.md) > [Getting Started: Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > [Integration Guides](summary-guides.md) > DSP Integration Guide
 
 # DSP Integration Guide
 
