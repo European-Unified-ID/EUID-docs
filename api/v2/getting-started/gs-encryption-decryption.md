@@ -81,9 +81,7 @@ The following table describes the field layout for request encryption code.
 
 You have the option of writing your own code for decrypting responses, using an EUID SDK, or using one of the provided code examples (see [Encryption and Decryption Code Examples](#encryption-and-decryption-code-examples)). If you choose to write your own code, be sure to follow the field layout requirements listed in [Encrypted Response Envelope](#encrypted-response-envelope) and [Unencrypted Response Data Envelope](#unencrypted-response-data-envelope).
 
-:::note
-The response is encrypted only if the service returns HTTP status code 200.
-:::
+>NOTE: The response is encrypted only if the service returns HTTP status code 200.
 
 ### Encrypted Response Envelope
 
