@@ -1,4 +1,4 @@
-[EUID Overview](../../../README.md) > [v2](../summary-doc-v2.md) > [Getting Started: Summary](gs-summary.md) > API and SDK Reference Resources
+[EUID Overview](../../../README.md) > [EUID API Documentation](../summary-doc-v2.md) > [Getting Started: Summary](gs-summary.md) > API and SDK Reference Resources
 
 # API and SDK Reference Resources
 
