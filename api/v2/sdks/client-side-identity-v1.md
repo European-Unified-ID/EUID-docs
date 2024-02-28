@@ -1,6 +1,8 @@
-[EUID Overview](../../../README.md) > [Getting Started -- Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > [SDKs](summary-sdks.md) > SDK for JavaScript Reference Guide
+[EUID Overview](../../../README.md) > [Getting Started: Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > [SDKs](summary-sdks.md) > [SDK for JavaScript Reference Guide](./client-side-identity.md) > SDK for JavaScript Reference Guide (1.x)
 
-# SDK for JavaScript Reference Guide
+# SDK for JavaScript Reference Guide (1.x)
+
+>NOTE: This documentation is for earlier versions of the EUID SDK for JavaScript. If you're using an earlier version, we recommend upgrading. See [EUID SDK for JavaScript Reference Guide](./client-side-identity.md), which includes a migration guide.
 
 The SDK for JavaScript is intended to facilitate the process of establishing client identity using EUID and retrieving advertising tokens. The following sections describe the high-level [workflow](#workflow-overview) for establishing EUID identity, provide the SDK [API reference](#api-reference), and explain the [EUID cookie format](#euid-cookie-format).
 For integration steps for content publishers, see [SDK for JavaScript Integration Guide](../guides/publisher-client-side.md). 
