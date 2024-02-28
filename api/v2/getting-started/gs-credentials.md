@@ -17,7 +17,7 @@ Each EUID <a href="../../../README.md#participants">participant</a> gets a set o
 | Audience | Credentials | Integration |
 | :--- | :--- | :--- |
 | Participants using a server-side endpoint | Both of the following:<ul><li>API key, also called a client key</li><li>Client secret, a value known only to the participant and the EUID service</li></ul> | Any integration using one of these endpoints: <ul><li>[POST&nbsp;/identity/map](../endpoints/post-identity-map.md)</li><li>[POST&nbsp;/identity/buckets](../endpoints/post-identity-buckets.md)</li><li>[POST&nbsp;/token/generate](../endpoints/post-token-generate.md)</li></ul> |
-| Participants using a client-side implementation | Both of the following: <ul><li>Subscription ID</li><li>Public key</li></ul> | Integrations using [EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md).<!-- Integrations using one of these: <ul><li>[EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md)</li><li>Client-Side Integration Guide for JavaScript (link removed for EUID)</li></ul> --> |
+| Participants using a client-side implementation | Both of the following: <ul><li>Subscription ID</li><li>Public key</li></ul> | Integrations using one of these: <ul><li>[EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md)</li><li>[Client-Side Integration Guide for JavaScript](../guides/publisher-client-side.md)</li></ul> |
 
 If you're using the integration environment as well as the production environment, you'll get a separate set of credentials for each environment.
 
@@ -31,11 +31,11 @@ If you're using the integration environment as well as the production environmen
 
 ## API Key and Client Secret
 
-If you're using a server-side implementation (see [EUID Server-Side Integration Guide for Prebid.js](../guides/integration-prebid-server-side.md)<!-- or Server-Side Integration Guide for JavaScript (link removed for EUID) -->), the API key and client secret allow you to connect to the[Operator Service and call API endpoints. These values identify you to the service.
+If you're using a server-side implementation (see [EUID Server-Side Integration Guide for Prebid.js](../guides/integration-prebid-server-side.md) or [Server-Side Integration Guide for JavaScript](../guides/integration-javascript-server-side.md), the API key and client secret allow you to connect to the[Operator Service and call API endpoints. These values identify you to the service.
 
 Here is some information about API keys and client secrets:
 - One EUID participant can have multiple keys.
-- Each key has a set of permissions<!-- (link removed for EUID) --> that determine the endpoints you can use it on.
+- Each key has a set of [permissions](gs-permissions.md) that determine the endpoints you can use it on.
 - Each key has a corresponding client secret.
 - Most API endpoints require both API key and client secret for authentication. For details, see [Authentication and Authorization](gs-auth.md).
 - If you're using the integration environment as well as the production environment, you'll receive separate API keys for each environment.
@@ -55,11 +55,11 @@ It's best to refresh your API key and client secret on a regular cadence&#8212;f
 
 ## Subscription ID and Public Key
 
-If you're using a client-side implementation (see [EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md)<!-- or Client-Side Integration Guide for JavaScript (link removed for EUID) -->), you'll receive the following credentials:
+If you're using a client-side implementation (see [EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md) or [Client-Side Integration Guide for JavaScript](../guides/publisher-client-side.md)), you'll receive the following credentials:
 - **Subscription ID**: This value identifies your site to the EUID service.
 - **Public key**: This value is used for encryption.
 
-When you're implementing EUID on the client side, by using <!-- the EUID JavaScript SDK or -->Prebid, provide the values to <!-- the SDK or to -->Prebid as part of configuration.
+When you're implementing EUID on the client side, by using the EUID JavaScript SDK or Prebid, provide the values to the SDK or to Prebid as part of configuration.
 
 Notes:
 
