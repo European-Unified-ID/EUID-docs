@@ -1,4 +1,11 @@
-[EUID Overview](../../../README.md) > [Getting Started: Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > [Integration Guides](summary-guides.md) > Client-Side Integration Guide for JavaScript
+---
+title: Client-Side Integration Guide for JavaScript
+sidebar_label: Client-Side Integration, JavaScript
+pagination_label: Client-Side Integration Guide for JavaScript
+description: Information about integrating with UID2 SDK for JavaScript as part of your UID2 client-side integration.
+hide_table_of_contents: false
+sidebar_position: 04
+---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -9,7 +16,7 @@ This guide is for publishers who want to integrate with UID2 and generate [UID2 
 
 This guide does not apply to publishers who want to use a [private operator](../ref-info/glossary-uid.md#gl-private-operator), or who want to generate tokens server-side. Those publishers should follow the [Server-Side Integration Guide for JavaScript](integration-javascript-server-side.md).
 
-UID2 provides an EUID SDK for JavaScript (see [UID2 SDK for JavaScript Reference Guide](../sdks/client-side-identity.md)) with the following features:
+UID2 provides a UID2 SDK for JavaScript (see [UID2 SDK for JavaScript Reference Guide](../sdks/client-side-identity.md)) with the following features:
 
 - UID2 token generation
 - Automatic refreshing of UID2 tokens
@@ -43,6 +50,7 @@ For an example website, see this example:
 - Running site: [Client-Side Integration Example, UID2 JavaScript SDK](https://cstg-integ.uidapi.com/)
 
 <!-- (Source code for running site: https://github.com/IABTechLab/uid2-web-integrations) -->
+  
 
 ## Complete UID2 Account Setup
 
@@ -50,7 +58,9 @@ Complete the UID2 account setup by following the steps described in the [Account
 
 When account setup is complete, you'll receive a **public key** and **subscription ID**. These values are unique to you, and you'll use them to configure the UID2 module.
 
->TIP: Only root-level domains are required for account setup. For example, if you're going to use UID2 SDK for JavaScript on example.com, shop.example.com, and example.org, you only need to provide the domain names example.com and example.org.
+:::tip
+Only root-level domains are required for account setup. For example, if you're going to use UID2 SDK for JavaScript on example.com, shop.example.com, and example.org, you only need to provide the domain names example.com and example.org.
+:::
 
 ## Add UID2 SDK For JavaScript to Your Site
 
@@ -82,7 +92,7 @@ window.__uid2.callbacks.push((eventType, payload) => {
       break;
  
     case "IdentityUpdated":
-      // The IdentityUpdated event happens when an EUID token is generated or refreshed.
+      // The IdentityUpdated event happens when a UID2 token is generated or refreshed.
       // payload.identity contains the resulting latest identity.
       break;
   }
@@ -102,11 +112,13 @@ __uid2.init({
   baseUrl: "https://operator-integ.uidapi.com",
 });
 ```
->NOTE: Tokens from the UID2 integration environment are not valid for passing to the bid stream. For the integration environment, you will have different **subscription ID** and **public key** values.
+:::note
+Tokens from the UID2 integration environment are not valid for passing to the bid stream. For the integration environment, you will have different **subscription ID** and **public key** values.
+:::
 
 ### Optional: Reduce Latency by Setting the API Base URL for the Production Environment
 
-By default, in the production environment, the JS SDK makes API calls to an EUID server in the USA. Depending on where your users are based, you might consider choosing a server closer to your users in order to reduce latency.
+By default, in the production environment, the JS SDK makes API calls to a UID2 server in the USA. Depending on where your users are based, you might consider choosing a server closer to your users in order to reduce latency.
 
 For example, a publisher in Singapore can set the base URL to `https://sg.prod.uidapi.com`. This is still the UID2 production environment, but the servers are in Singapore.
 
@@ -141,7 +153,7 @@ To configure the SDK, call one of the following methods, with an object containi
 The following sections include coding examples for each scenario.
 
 Once it's configured, the UID2 SDK takes care of the following:
-- Generates an EUID token for the user.
+- Generates a UID2 token for the user.
 - Stores the token in the user's browser.
 - Automatically refreshes the token as required while your site is open in the user's browser.
 
@@ -248,7 +260,9 @@ In this scenario:
 
 After calling one of the methods listed in [Configure the UID2 SDK for JavaScript](#configure-the-uid2-sdk-for-javascript) successfully, an [identity](../ref-info/glossary-uid.md#gl-identity) is generated and stored in local storage, under the key `UID2-sdk-identity`. The SDK refreshes the UID2 token periodically.
 
->WARNING: The format of the object stored in local storage could change without notice. We recommend that you do **not** read and update the object in local storage directly. 
+:::danger
+The format of the object stored in local storage could change without notice. We recommend that you do **not** read and update the object in local storage directly. 
+:::
 
 ## Example Integration Code and When to Pass DII to the UID2 SDK
 
@@ -320,7 +334,7 @@ window.__uid2.callbacks.push(async (eventType, payload) => {
       break;
  
     case "IdentityUpdated":
-      // The IdentityUpdated event happens when an EUID token is generated or refreshed.
+      // The IdentityUpdated event happens when a UID2 token is generated or refreshed.
       // See previous comment for an example of how the payload looks.
       var advertising_token_to_use = payload.identity.advertising_token;
       break;
