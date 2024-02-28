@@ -1,4 +1,4 @@
-[EUID Overview](../../../README.md) > [v2](../summary-doc-v2.md) > Getting Started: Summary
+[EUID Overview](../../../README.md) > [EUID API Documentation](../summary-doc-v2.md) > Getting Started: Summary
 
 # Getting Started: Summary
 

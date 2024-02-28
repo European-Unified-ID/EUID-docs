@@ -1,4 +1,4 @@
-[EUID Overview](../../../README.md) > [v2](../summary-doc-v2.md) > [Getting Started: Summary](gs-summary.md) > Encrypting Requests and Decrypting Responses
+[EUID Overview](../../../README.md) > [EUID API Documentation](../summary-doc-v2.md) > [Getting Started: Summary](gs-summary.md) > Encrypting Requests and Decrypting Responses
 
 # Encrypting Requests and Decrypting Responses
 
