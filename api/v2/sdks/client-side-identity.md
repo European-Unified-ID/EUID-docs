@@ -10,7 +10,7 @@ If you're using Prebid.js with the EUID Identity Module, or with another product
 
 This page describes version 3 of the EUID SDK for JavaScript. If you are maintaining an integration using an earlier version, do one of the following:
 - Upgrade your integration, using the [migration guide](#migration-guide) (recommended).
-- Refer to the documentation for [earlier versions of the SDK](./client-side-identity-v1.md).
+- Refer to the documentation for [earlier versions of the SDK](./client-side-identity-v2.md).
 
 Related information:
 - For integration steps for content publishers, see:
