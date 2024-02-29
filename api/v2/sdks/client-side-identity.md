@@ -15,7 +15,6 @@ Related information:
 - For example applications with associated documentation, see:
   - The EUID Google Secure Signals with SDK v3 example:
     - [Code and docs](https://github.com/IABTechLab/uid2-web-integrations/tree/main/examples/google-esp-integration/with_sdk_v3) and running site: [Client-Side EUID SDK Integration Example](https://secure-signals-jssdk-integ.uidapi.com/).
-  - The example of JavaScript client-side integration: [Code](https://github.com/IABTechLab/uid2-web-integrations/tree/main/examples/cstg) and running site ([Client-Side Integration Example, EUID JavaScript SDK](https://cstg-integ.uidapi.com/)).
 
 ## Functionality
 
