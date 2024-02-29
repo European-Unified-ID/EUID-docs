@@ -1,4 +1,4 @@
-[EUID Overview](../../../README.md) > [Getting Started: Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > [Integration Guides](README.md) > EUID Server-Side Integration Guide for Prebid.js
+[EUID Overview](../../../README.md) > [Getting Started: Summary](../getting-started/gs-summary.md) > [EUID API Documentation](../summary-doc-v2.md) > [EUID Integration Guides: Summary](summary-guides.md) > EUID Server-Side Integration Guide for Prebid.js
 
 <!-- ---
 title: EUID Server-Side Integration Guide for Prebid.js
