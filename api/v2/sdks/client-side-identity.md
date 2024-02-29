@@ -4,9 +4,7 @@
 
 Use this SDK to facilitate the process of establishing client identity using EUID and retrieving advertising tokens. The following sections describe the high-level [workflow](#workflow-overview) for establishing EUID identity, provide the SDK [API reference](#api-reference), and explain the EUID [storage format](#euid-storage-format).
 
-<!-- :::tip -->
-If you're using Prebid.js with the EUID Identity Module, or with another product that has EUID support, you probably don't need to use the SDK at all. The Prebid.js module manages everything. For details, see [EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md).
-<!-- ::: -->
+>NOTE: If you're using Prebid.js with the EUID Identity Module, or with another product that has EUID support, you probably don't need to use the SDK at all. The Prebid.js module manages everything. For details, see [EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md).
 
 This page describes version 3 of the EUID SDK for JavaScript. If you are maintaining an integration using an earlier version, do one of the following:
 - Upgrade your integration, using the [migration guide](#migration-guide) (recommended).
@@ -133,9 +131,7 @@ You can register functions to receive events from the EUID SDK using the [Array 
 - `InitCompleted` is raised when `init()` has finished and the SDK is ready for use. If an identity was provided in the `init` call, or the SDK was able to load a previously-provided identity, the identity is included in the payload.
 - `IdentityUpdated` is raised whenever there is a new identity available, or the existing identity is no longer available.
 
-<!-- :::tip -->
-You can provide as many callback functions as you want, and register them from anywhere. This allows you to split your code up in a way that makes sense for your site.
-<!-- ::: -->
+>NOTE: You can provide as many callback functions as you want, and register them from anywhere. This allows you to split your code up in a way that makes sense for your site.
 
 #### Callback Function Signature
 
@@ -233,9 +229,7 @@ At any time after `init` has completed, you can call [`setIdentity`](#setidentit
 
 ## API Reference
 
-<!-- :::info -->
-All interactions with the EUID SDK for JavaScript are done through the global `__euid` object, which is an instance of the `EUID` class. All of the following JavaScript functions are members of the `EUID` class. 
-<!-- ::: -->
+>NOTE: All interactions with the EUID SDK for JavaScript are done through the global `__euid` object, which is an instance of the `EUID` class. All of the following JavaScript functions are members of the `EUID` class. 
 
 - [constructor()](#constructor)
 - [init()](#initopts-object-void)
@@ -252,9 +246,7 @@ All interactions with the EUID SDK for JavaScript are done through the global `_
 
 Constructs a EUID object. This is not intended to be used directly: when the SDK loads, it automatically initializes an instance of the EUID class and stores it as the global __euid object. Advanced integrations may make use of this constructor directly, but must take care to avoid having multiple active instances of the SDK running. This is not a supported use case.
 
-<!-- :::tip -->
-Instead of calling this function, just use the global `__euid` object.
-<!-- ::: -->
+>NOTE: Instead of calling this function, just use the global `__euid` object.
 
 ### init(opts: object): void
 
@@ -370,13 +362,9 @@ This function can be called before or after the [init()](#initopts-object-void) 
 
 You can use this function to be notified of the completion of the Client-Side JavaScript SDK initialization if you only want to receive the identity available once `init` is complete, and you do not want to continue receiving updates to the identity.
 
-<!-- :::info -->
-If the `getAdvertisingTokenAsync()` function is called *after* the initialization is complete, the promise is settled immediately based on the current state.
-<!-- ::: -->
+>NOTE: If the `getAdvertisingTokenAsync()` function is called *after* the initialization is complete, the promise is settled immediately based on the current state.
 
-<!-- :::tip -->
-It might be easier to use the [callback function](#callback-function) to be notified whenever the identity changes.
-<!-- ::: -->
+>NOTE: It might be easier to use the [callback function](#callback-function) to be notified whenever the identity changes.
 
 ```html
 <script>
@@ -419,9 +407,7 @@ When an unauthenticated user is present, or a user wants to log out of targeted 
 
 After this function is executed, the [getAdvertisingToken()](#getadvertisingtoken-string) function returns `undefined` and the [isLoginRequired()](#isloginrequired-boolean) function returns `true`.
 
-<!-- :::danger -->
-If you need to provide a `cookieDomain` or `cookiePath` for the SDK to access the correct cookie, and `init` has not been completed, the SDK cannot clear the cookie. In this case, no error is raised.
-<!-- ::: -->
+>WARNING: If you need to provide a `cookieDomain` or `cookiePath` for the SDK to access the correct cookie, and `init` has not been completed, the SDK cannot clear the cookie. In this case, no error is raised.
 
 ### abort(): void
 	
@@ -439,9 +425,7 @@ Use this function to provide a new identity to the EUID SDK. Any existing refres
 
 `setIdentity` throws an error if it is called before `init` has completed.
 
-<!-- :::tip -->
-`setIdentity()` is useful if your page is a single-page app that might not have the identity available when it first loads. This allows you to call `init` (and load any stored identity) on page load, and then provide an identity later if there was no stored identity.
-<!-- ::: -->
+>NOTE: `setIdentity()` is useful if your page is a single-page app that might not have the identity available when it first loads. This allows you to call `init` (and load any stored identity) on page load, and then provide an identity later if there was no stored identity.
 
 ### getIdentity(): Identity | null
 
@@ -486,9 +470,7 @@ The following is an example of the EUID cookie structure:
    }
 }
 ```
-<!-- :::danger -->
-The contents of the `private` object are explicitly unspecified and are left for the SDK to interpret. Do not make any assumptions about the structure, semantics, or compatibility of this object. Any updates to the cookie must retain its structure.
-<!-- ::: -->
+>WARNING: The contents of the `private` object are explicitly unspecified and are left for the SDK to interpret. Do not make any assumptions about the structure, semantics, or compatibility of this object. Any updates to the cookie must retain its structure.
 
 ## Migration Guide
 
