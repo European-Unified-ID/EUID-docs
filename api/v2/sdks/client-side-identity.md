@@ -14,7 +14,7 @@ Related information:
 - For integration steps for content publishers, see [SDK for JavaScript Integration Guide](../guides/publisher-client-side.md). 
 - For example applications with associated documentation, see:
   - The EUID Google Secure Signals with SDK v3 example:
-    - [Code and docs](https://github.com/IABTechLab/uid2-web-integrations/tree/main/examples/google-esp-integration/with_sdk_v3) and running site: [Client-Side EUID SDK Integration Example](https://secure-signals-jssdk-integ.uidapi.com/).
+    - [Code and docs](https://github.com/IABTechLab/uid2-web-integrations/tree/main/examples/google-secure-signals-integration/with_sdk_v3) and running site: [Client-Side EUID SDK Integration Example](https://secure-signals-jssdk-integ.uidapi.com/).
 
 ## Functionality
 
