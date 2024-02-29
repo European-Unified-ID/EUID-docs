@@ -55,7 +55,7 @@ The following code snippet provides an overview of the code you will need to add
 
 For a more detailed code snippet, see [Example Integration Code and When to Pass Personal Data to the EUID SDK](#example-integration-code-and-when-to-pass-personal-data-to-the-euid-sdk).
 
-For the `EUID_JS_SDK_URL` value, see [SDK for JavaScript Version](#uid2-sdk-for-javascript-version).
+For the `EUID_JS_SDK_URL` value, see [SDK for JavaScript Version](#sdk-for-javascript-version).
 
 ```js
 <script async src="{{ EUID_JS_SDK_URL }}"></script>
@@ -130,8 +130,8 @@ You'll have one set of these values for your publisher testing environment, and 
 
 To configure the SDK, call one of the following methods, with an object containing the **public key** and **subscription ID** that you received during account setup, as well as the user's hashed or unhashed personal data (email address):
 
-*  `__uid2.setIdentityFromEmail`
-*  `__uid2.setIdentityFromEmailHash`
+*  `__euid.setIdentityFromEmail`
+*  `__euid.setIdentityFromEmailHash`
 
 The following sections include coding examples for each scenario.
 
@@ -157,14 +157,12 @@ If the SDK is configured multiples times, it uses the most recent configuration 
 
 For an example of how to generate an email hash in JavaScript, see [Example Code: Hashing and Base-64 Encoding](#example-code-hashing-and-base-64-encoding).
 
-(**GWH_AY for updated code example to exclude phone**)
-
 ### Format Example: Email, Unhashed
 
 The following example configures the EUID SDK with an email address.
 
 ```js
-await __uid2.setIdentityFromEmail(
+await __euid.setIdentityFromEmail(
     "test@example.com",
     {
         subscriptionId: subscriptionId,
@@ -183,7 +181,7 @@ In this scenario:
 The following example configures the EUID SDK with a hashed email address.
 
 ```js
-await __uid2.setIdentityFromEmailHash(
+await __euid.setIdentityFromEmailHash(
     'eVvLS/Vg+YZ6+z3i0NOpSXYyQAfEXqCZ7BTpAjFUBUc=',
     {
         subscriptionId: subscriptionId,
@@ -198,7 +196,7 @@ In this scenario:
 
 ## Token Storage and Refresh
 
-After calling one of the methods listed in [Configure the SDK for JavaScript](#configure-the-euid-sdk-for-javascript) successfully, an identity is generated and stored in local storage, under the key `UID2-sdk-identity`. The SDK refreshes the EUID token periodically.
+After calling one of the methods listed in [Configure the SDK for JavaScript](#configure-the-euid-sdk-for-javascript) successfully, an identity is generated and stored in local storage, under the key `EUID-sdk-identity`. The SDK refreshes the EUID token periodically.
 
 >WARNING: The format of the object stored in local storage could change without notice. We recommend that you do **not** read and update the object in local storage directly. 
 
@@ -259,7 +257,7 @@ window.__uid2.callbacks.push(async (eventType, payload) => {
           if (__uid2.isLoginRequired()) {
             // Call one of the setIdentityFrom functions to generate a new EUID token.
             // Add any retry logic around this call as required.
-            await __uid2.setIdentityFromEmailHash(
+            await __euid.setIdentityFromEmailHash(
                 emailHash,
                 clientSideConfig
           );
@@ -296,8 +294,6 @@ If there was a problem generating the token, find the request in the **Network**
 ## Example Code: Hashing and Base-64 Encoding
 
 The following code example demonstrates how to generate an email hash in JavaScript.
-
-(**GWH_AY for updated code example to exclude phone**)
 
 ```js
 async function hash(value) {
