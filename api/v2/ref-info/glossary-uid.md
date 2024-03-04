@@ -290,8 +290,8 @@
 <dd>For details, see <a href="../../../README.md#participants">participants</a>.</dd>
 
 <dt class="jump-anchor" id="gl-personal-data">personal data</dt>
-<dd>In general, personal data is information that directly identifies an individual, including name, email address, or phone number.</dd>
-<dd>EUID supports email address, and translates the personal data to a value that can be used for the purpose of targeted advertising but cannot be traced back to the original value.</dd>
+<dd>In general, personal data is information that relates to an identified or identifiable individual, including name, email address, or phone number.</dd>
+<dd>EUID supports email address, and translates the personal data to a value that can be used for the purpose of targeted advertising but cannot by itself be traced back to the original value.</dd>
 
 <dt class="jump-anchor" id="gl-private-operator">Private Operator</dt>
 <dd>A Private <a href="#gl-operator">Operator</a> is an entity that runs a private instance of the Operator Service. The Private Operator generates and manages EUIDs for itself, using its own resources (such as hardware) in a secure environment.</dd>
@@ -328,7 +328,7 @@
 <dl>
 
 <dt class="jump-anchor" id="gl-salt">Salt</dt>
-<dd>A string of characters that is used in the process of transforming an email address<!--  or phone number --> into a secure, opaque value that cannot be traced back to the original value.</dd>
+<dd>A string of characters that is used in the process of transforming an email address<!--  or phone number --> into a secure, opaque value that cannot by itself be traced back to the original value.</dd>
 <dd>The EUID service uses salt as part of the process, along with hashing and encryption, to secure the original value. Salt is added to the input value before hashing.</dd>
 
 <dt class="jump-anchor" id="gl-salted-hash">Salted hash</dt>
