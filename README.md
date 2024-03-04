@@ -14,7 +14,7 @@ It includes the following:
 - [Frequently Asked Questions (FAQs)](#faqs)
 - [License](#license)
 
-For integration guides, supported SDKs, and endpoint reference, see [EUID API Documentation](/api/v2/summary-doc-v2.md). For general information about getting started, see [Getting Started: Summary](api/v2/getting-started/gs-summary.md).
+For [integration guides](api/v2/guides/summary-guides.md), [supported SDKs](api/v2/sdks/summary-sdks.md), and [endpoint reference](api/v2/endpoints/summary-endpoints.md), see [EUID API Documentation](/api/v2/summary-doc-v2.md). For general information about getting started, see [Getting Started: Summary](api/v2/getting-started/gs-summary.md).
 
 ## Introduction 
 
