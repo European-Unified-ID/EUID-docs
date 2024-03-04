@@ -1,4 +1,4 @@
-[EUID Overview](../../../README.md) > [Getting Started: Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > [Integration Guides](summary-guides.md) > Publisher Integration Guide, Server-Only (Without SDK)
+[EUID Overview](../../../README.md) > [Getting Started: Summary](../getting-started/gs-summary.md) > [EUID API Documentation](../summary-doc-v2.md) > [EUID Integration Guides: Summary](summary-guides.md) > Publisher Integration Guide, Server-Only (Without SDK)
 
 # Publisher Integration Guide, Server-Only (Without SDK)
 

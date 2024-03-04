@@ -1,4 +1,4 @@
-[EUID Overview](../../../README.md) > [Getting Started: Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > [Integration Guides](README.md) > EUID Client-Side Integration Guide for Prebid.js
+[EUID Overview](../../../README.md) > [Getting Started: Summary](../getting-started/gs-summary.md) > [EUID API Documentation](../summary-doc-v2.md) > [EUID Integration Guides: Summary](summary-guides.md) > EUID Client-Side Integration Guide for Prebid.js
 
 <!-- ---
 title: EUID Client-Side Integration Guide for Prebid.js
@@ -31,9 +31,7 @@ This guide includes the following information:
 
 ## Prebid.js Version
 
-This implementation requires a recent version of Prebid.js. Information on the specific version will be available shortly.
-
-<!-- GWH_TBD This implementation requires Prebid.js version 8.21.0 or later. For version information, see [https://github.com/prebid/Prebid.js/releases](https://github.com/prebid/Prebid.js/releases). -->
+This implementation requires Prebid.js version 8.38.0 or later. For version information, see [https://github.com/prebid/Prebid.js/releases](https://github.com/prebid/Prebid.js/releases).
 
 If you need to use an earlier version of Prebid.js, use the implementation solution presented in the [EUID Server-Side Integration Guide for Prebid.js](integration-prebid-server-side.md) instead.
 
