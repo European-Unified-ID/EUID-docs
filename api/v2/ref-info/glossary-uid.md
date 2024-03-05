@@ -101,7 +101,7 @@
 
 <dt class="jump-anchor" id="gl-api-key">API key</dt>
 <dd>Each EUID <a href="../../../README.md#participants">participant</a> using a server-side implementation has an API key (client key) and also a secret value associated with the key, called the client secret (API secret). The client secret is known only to the participant and the EUID service.</dd>
-<dd>For details, see <a href="/docs/getting-started/gs-credentials.md">EUID Credentials</a>.</dd>
+<dd>For details, see <a href="../getting-started/gs-credentials.md">EUID Credentials</a>.</dd>
 
 <dt class="jump-anchor" id="gl-api-secret">API secret</dt>
 <dd>See <a href="#gl-client-secret">client secret</a>.</dd>
@@ -130,7 +130,7 @@
 
 <dt class="jump-anchor" id="gl-client-secret">Client secret</dt>
 <dd>Each EUID <a href="../../../README.md#participants">participant</a> using a server-side implementation has an API key (client key) and also a secret value associated with the key, called the client secret (API secret). The client secret is known only to the participant and the EUID service.</dd>
-<dd>For details, see <a href="/docs/getting-started/gs-credentials.md">EUID Credentials</a>.</dd>
+<dd>For details, see <a href="../getting-started/gs-credentials.md">EUID Credentials</a>.</dd>
 
 <dt class="jump-anchor" id="gl-closed-operator">Closed Operator</dt>
 <dd>Closed Operator is another term for a <a href="#gl-private-operator">Private Operator</a>.</dd>
