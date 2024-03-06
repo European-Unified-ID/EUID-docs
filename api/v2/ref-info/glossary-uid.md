@@ -154,7 +154,7 @@
 
 <!-- <dt class="jump-anchor" id="gl-dii">Directly identifying information (DII)</dt>
 <dd>Directly identifying information, or DII, is information that directly identifies an individual, including name, email address, or phone number.</dd>
-<dd>EUID supports email address, and translates the DII to a value that can be used for the purpose of targeted advertising but cannot be traced back to the original value.</dd> -->
+<dd>EUID supports email address, and translates the DII to a value that can be used for the purpose of targeted advertising but cannot by itself be traced back to the original value.</dd> -->
 
 </dl>
 

@@ -34,6 +34,8 @@ EUID provides a Prebid.js module that supports the following:
 
 For additional flexibility, EUID also provides alternative methods for some of the features and complementary products, such as a JavaScript SDK.
 
+>CAUTION: EUID is designed to be used only where GDPR applies. The module checks the consent data that's passed in, and operates only if the `gdprApplies` flag is set to `true`.
+
 ## Generating the EUID Token
 
 Depending on access to personal data, there are two methods to generate EUID tokens for use with Prebid.js, as shown in the following table.
