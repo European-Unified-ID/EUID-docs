@@ -44,7 +44,7 @@ The following sections provide additional details for each step in the diagram:
 
 ### Establish Identity: User Login
 
-After authentication in step 1-c, which forces the user to accept the rules of engagement and allows the publisher to validate their email address,  token must be generated on the server side. The following table details the token generation steps.
+After authentication in step 1-c, which forces the user to accept the rules of engagement and allows the publisher to validate their email address, an EUID token must be generated on the server side. The following table details the token generation steps.
 
 | Step | Endpoint | Description |
 | :--- | :--- | :--- |
