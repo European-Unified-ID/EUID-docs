@@ -30,7 +30,6 @@
 <li><a href="#gl-core-service">Core Service</a></li>
 <li><a href="#gl-data-provider">Data provider</a></li>
 <li><a href="#gl-demand-side-platform">Demand-side platform</a></li>
-<li><a href="#gl-dii">Directly identifying information (DII)</a></li>
 <li><a href="#gl-docker">Docker</a></li>
 <li><a href="#gl-docker-build">Docker Build</a></li>
 
@@ -151,10 +150,6 @@
 
 <dt class="jump-anchor" id="gl-demand-side-platform">Demand-side platform (DSP)</dt>
 <dd>A demand-side platform (DSP) provides services to companies that want to buy digital advertising, such as advertisers, brands, and media agencies.</dd>
-
-<!-- <dt class="jump-anchor" id="gl-dii">Directly identifying information (DII)</dt>
-<dd>Directly identifying information, or DII, is information that directly identifies an individual, including name, email address, or phone number.</dd>
-<dd>EUID supports email address, and translates the DII to a value that can be used for the purpose of targeted advertising but cannot by itself be traced back to the original value.</dd> -->
 
 </dl>
 

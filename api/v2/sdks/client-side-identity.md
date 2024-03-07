@@ -75,7 +75,7 @@ Here's what you need to know about the token auto-refresh:
 
 ### constructor()
 
-Constructs a EUID object.
+Constructs an EUID object.
 
 >TIP: Instead of calling this function, you can just use the global `__euid` object. 
 
@@ -223,7 +223,7 @@ This function can be called before or after the [init()](#initopts-object-void) 
 
 ### isLoginRequired(): boolean
 
-Specifies whether a EUID login ([POST /token/generate](../endpoints/post-token-generate.md) call) is required. 
+Specifies whether an EUID login ([POST /token/generate](../endpoints/post-token-generate.md) call) is required. 
 
 The function can also provide additional context for handling missing identities, as shown in [Workflow States and Transitions](#workflow-states-and-transitions).
 

@@ -49,7 +49,7 @@ Determine which method is best for you, and then follow the applicable integrati
 
 ## Refreshing the EUID Token
 
-The Prebid.js EUID module can automatically refresh the EUID tokens. If you prefer to implement manual refresh outside Prebid.js, see [Refreshing a EUID Token](integration-prebid-server-side.md#refreshing-an-euid-token) in the Server-Side Integration Guide. The client-side integration solution includes automated token refresh.
+The Prebid.js EUID module can automatically refresh the EUID tokens. If you prefer to implement manual refresh outside Prebid.js, see [Refreshing an EUID Token](integration-prebid-server-side.md#refreshing-an-euid-token) in the Server-Side Integration Guide. The client-side integration solution includes automated token refresh.
 
 ## Storing the EUID Token in the Browser
 
