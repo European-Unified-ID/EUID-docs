@@ -11,16 +11,20 @@ This page describes version 3 of the EUID SDK for JavaScript. If you are maintai
 - Refer to the documentation for [earlier versions of the SDK](./client-side-identity-v2.md).
 
 Related information:
-- For integration steps for content publishers, see [SDK for JavaScript Integration Guide](../guides/publisher-client-side.md). 
-- For example applications with associated documentation, see:
+
+For integration steps for content publishers, see:
+  -  [SDK for JavaScript Integration Guide](../guides/publisher-client-side.md). 
+
+For example applications with associated documentation, see:
   - The EUID Google Secure Signals with SDK v3 example:
-    - [Code and docs](https://github.com/IABTechLab/uid2-web-integrations/tree/main/examples/google-secure-signals-integration/with_sdk_v3) and running site: [Client-Side EUID SDK Integration Example](https://secure-signals-jssdk-integ.uidapi.com/).
+    - [Code and docs](https://github.com/IABTechLab/uid2-web-integrations/tree/main/examples/google-secure-signals-integration/with_sdk_v3)
+    - Running site: [Client-Side EUID SDK Integration Example](https://secure-signals-jssdk-integ.uidapi.com/).
 
 ## Functionality
 
 This SDK simplifies development for publishers who want to build their own customized EUID integration. The following table shows the functions it supports.
 
-| Encrypt Raw EUID to EUID Token | Decrypt EUID Token | Generate EUID Token from DII | Refresh EUID Token |
+| Encrypt Raw EUID to EUID Token | Decrypt EUID Token | Generate EUID Token from Personal Data | Refresh EUID Token |
 | :--- | :--- | :--- | :--- |
 | Not supported | Not supported | Not supported | Supported |
 
