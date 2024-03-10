@@ -15,7 +15,7 @@ To get access to the EUID framework, contact the appropriate team at The Trade D
 | Your Role | Contact Email |
 | :--- | :--- |
 | Publisher, App Developer | [dl-EUID-publishers@thetradedesk.com](mailto:dl-EUID-publishers@thetradedesk.com) |
-| Agency, Brand, DSP, SSP, CDP, Data Provider | [dl-EUID-partners@thetradedesk.com](mailto:dl-EUID-partners@thetradedesk.com) |
+| Agency, Brand, DSP, SSP, customer data platform (CDP), Data Provider | [dl-EUID-partners@thetradedesk.com](mailto:dl-EUID-partners@thetradedesk.com) |
 
 ## Account Setup Details
 

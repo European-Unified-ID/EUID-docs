@@ -247,7 +247,7 @@ At any time after `init` has completed, you can call [`setIdentity`](#setidentit
 
 ### constructor()
 
-Constructs a EUID object. This is not intended to be used directly: when the SDK loads, it automatically initializes an instance of the EUID class and stores it as the global __euid object. Advanced integrations may make use of this constructor directly, but must take care to avoid having multiple active instances of the SDK running. This is not a supported use case.
+Constructs an EUID object. This is not intended to be used directly: when the SDK loads, it automatically initializes an instance of the EUID class and stores it as the global __euid object. Advanced integrations may make use of this constructor directly, but must take care to avoid having multiple active instances of the SDK running. This is not a supported use case.
 
 >NOTE: Instead of calling this function, just use the global `__euid` object.
 
@@ -380,7 +380,9 @@ You can use this function to be notified of the completion of the Client-Side Ja
 
 ### isLoginRequired(): boolean
 
-Specifies whether a EUID login ([POST&nbsp;/token/generate](../endpoints/post-token-generate.md) call) is required. 
+Specifies whether an EUID login ([POST /token/generate](../endpoints/post-token-generate.md) call) is required. 
+
+The function can also provide additional context for handling missing identities, as shown in [Workflow States and Transitions](#workflow-states-and-transitions).
 
 ```html
 <script>
