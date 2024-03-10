@@ -1,6 +1,6 @@
-[EUID Overview](../../../README.md) > [Getting Started: Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > [SDKs](summary-sdks.md) > [SDK for JavaScript Reference Guide](./client-side-identity.md) > SDK for JavaScript Reference Guide (1.x)
+[EUID Overview](../../../README.md) > [Getting Started: Summary](../getting-started/gs-summary.md) > [v2](../summary-doc-v2.md) > [SDKs](summary-sdks.md) > [SDK for JavaScript Reference Guide](./client-side-identity.md) > SDK for JavaScript Reference Guide (2.x and earlier versions)
 
-# SDK for JavaScript Reference Guide (1.x)
+# SDK for JavaScript Reference Guide (2.x and earlier versions)
 
 >NOTE: This documentation is for earlier versions of the EUID SDK for JavaScript. If you're using an earlier version, we recommend upgrading. See [EUID SDK for JavaScript Reference Guide](./client-side-identity.md), which includes a migration guide.
 
