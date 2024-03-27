@@ -31,7 +31,7 @@ This guide includes the following information:
 
 ## Prebid.js Version
 
-This implementation requires Prebid.js version 8.38.0 or later. For version information, see [https://github.com/prebid/Prebid.js/releases](https://github.com/prebid/Prebid.js/releases).
+This implementation requires Prebid.js version 8.42.0 or later. For version information, see [https://github.com/prebid/Prebid.js/releases](https://github.com/prebid/Prebid.js/releases).
 
 If you need to use an earlier version of Prebid.js, use the implementation solution presented in the [EUID Server-Side Integration Guide for Prebid.js](integration-prebid-server-side.md) instead.
 
