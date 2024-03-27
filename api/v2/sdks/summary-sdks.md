@@ -13,7 +13,7 @@ This page includes:
 
 The following table summarizes the functionality available with each SDK.
 
-| UID2 SDK for... | Client-Side or Server-Side | Encrypt Raw UID2 to UID2 Token | Decrypt UID2 Token | Generate UID2 Token from DII | Refresh UID2 Token | Generate Raw UID2 from DII&ast; |
+| EUID SDK for... | Client-Side or Server-Side | Encrypt Raw EUID to EUID Token | Decrypt EUID Token | Generate EUID Token from Personal Data | Refresh EUID Token | Generate Raw EUID from Personal Data |
 | :--- | :--- |  :--- | :--- | :--- | :--- | :--- |
 |JavaScript | Client| &#8212; | &#8212; | &#9989; | &#9989; | &#8212; |
 |Java | Server | &#9989; | &#9989; | &#9989; | &#9989; | &#9989; |
