@@ -276,7 +276,7 @@
 <dd>An entity that fulfils a key role in EUID. Participants include the following: Core Administrator, Operator, DSP, data provider, advertiser, publisher, consumer.</dd>
 <dd>For details, see <a href="../../../README.md#participants">participants</a>.</dd>
 
-<dt class="jump-anchor" id="gl-personal-data">personal data</dt>
+<dt class="jump-anchor" id="gl-personal-data">Personal data</dt>
 <dd>In general, personal data is information that relates to an identified or identifiable individual, including name, email address, or phone number.</dd>
 <dd>EUID supports email address, and translates the personal data to a value that can be used for the purpose of targeted advertising but cannot by itself be traced back to the original value.</dd>
 
