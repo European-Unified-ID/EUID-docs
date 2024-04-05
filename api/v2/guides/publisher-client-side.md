@@ -25,13 +25,13 @@ Support for client-side token generation is available in version 3.2 and above o
 
 The URL for the SDK is:
 
-- [https://cdn.prod.uidapi.com/uid2-sdk-3.2.0.js](https://cdn.prod.uidapi.com/uid2-sdk-3.2.0.js)
+- [https://cdn.prod.uidapi.com/uid2-sdk-3.3.0.js](https://cdn.prod.euid.eu/euid-sdk-3.3.0.js)
 
 In the following code examples, the placeholder `{{ EUID_JS_SDK_URL }}` refers to this URL.
 
 If you want to use a debug build of the SDK, use the following URL instead:
 
-- [https://cdn.integ.uidapi.com/uid2-sdk-3.2.0.js](https://cdn.integ.uidapi.com/uid2-sdk-3.2.0.js)
+- [https://cdn.integ.uidapi.com/uid2-sdk-3.3.0.js](https://cdn.integ.uidapi.com/uid2-sdk-3.3.0.js)
 
 ## Sample Implementation Website
 
@@ -63,13 +63,13 @@ For the `EUID_JS_SDK_URL` value, see [SDK for JavaScript Version](#sdk-for-javas
 <script>
  
 // When the EUID SDK is executed, it looks for these callbacks and invokes them.
-window.__uid2 = window.__uid2 || {};
-window.__uid2.callbacks = window.__uid2.callbacks || [];
-window.__uid2.callbacks.push((eventType, payload) => {
+window.__euid = window.__euid || {};
+window.__euid.callbacks = window.__euid.callbacks || [];
+window.__euid.callbacks.push((eventType, payload) => {
   switch (eventType) {
     case "SdkLoaded":
       // The SdkLoaded event occurs just once.
-      __uid2.init({});
+      __euid.init({});
       break;
  
     case "InitCompleted":
@@ -95,7 +95,7 @@ For more information about the SDK, see [SDK for JavaScript Reference Guide](../
 By default, the SDK is configured to work with the EUID production environment `https://prod.uidapi.com`. If you want to use the EUID integration environment instead, provide the following URL in your call to `init`:
 
 ```js
-__uid2.init({
+__euid.init({
   baseUrl: "https://operator-integ.uidapi.com",
 });
 ```
@@ -114,7 +114,7 @@ A publisher can also set the base URL to `https://global.prod.uidapi.com`. This 
 To specify a different EUID server, you can change it in the `init` call:
 
 ```js
-__uid2.init({
+__euid.init({
   baseUrl: "https://global.prod.uidapi.com",
 });
 ```
@@ -207,7 +207,7 @@ When this is the first page load with no identity, to start the token generation
 In some cases, the user's personal data is not available on page load, and getting the personal data has some associated cost. For example, an API call might be required to fetch the personal data, or the user has to be prompted to provide it.
 
 You can potentially avoid that cost by checking for an existing token that you can use or refresh. To do this, call
-[__uid2.isLoginRequired](../sdks/client-side-identity#isloginrequired-boolean) which returns a Boolean value. If it returns `true`, this means that the EUID SDK cannot create a new advertising token with the existing resource and personal data is required to generate a brand new EUID token.
+[__euid.isLoginRequired](../sdks/client-side-identity#isloginrequired-boolean) which returns a Boolean value. If it returns `true`, this means that the EUID SDK cannot create a new advertising token with the existing resource and personal data is required to generate a brand new EUID token.
 
 The following code snippet demonstrates how you might integrate with the SDK for JavaScript for the two scenarios above&#8212;starting with no token as well as reusing/refreshing any existing EUID token if found. 
 
@@ -226,13 +226,13 @@ const clientSideConfig = {
 const emailHash = "tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ=";
 
 // When the EUID SDK is executed, it looks for these callbacks and invokes them.
-window.__uid2 = window.__uid2 || {};
-window.__uid2.callbacks = window.__uid2.callbacks || [];
-window.__uid2.callbacks.push(async (eventType, payload) => {
+window.__euid = window.__euid || {};
+window.__euid.callbacks = window.__euid.callbacks || [];
+window.__euid.callbacks.push(async (eventType, payload) => {
   switch (eventType) {
     case "SdkLoaded":
       // The SdkLoaded event occurs just once.
-      __uid2.init({});
+      __euid.init({});
       break;
  
     case "InitCompleted":
@@ -254,7 +254,7 @@ window.__uid2.callbacks.push(async (eventType, payload) => {
         // }
         var advertising_token_to_use = payload.identity.advertising_token;
       } else {
-          if (__uid2.isLoginRequired()) {
+          if (__euid.isLoginRequired()) {
             // Call one of the setIdentityFrom functions to generate a new EUID token.
             // Add any retry logic around this call as required.
             await __euid.setIdentityFromEmailHash(

@@ -64,13 +64,13 @@ After authentication in step 1-c, which forces the user to accept the rules of e
 #### Example: JavaScript
 
 ```js
-  window.__uid2 = window.__uid2 || {};
-  window.__uid2.callbacks = window.__uid2.callbacks || [];
+  window.__euid = window.__euid || {};
+  window.__euid.callbacks = window.__euid.callbacks || [];
 
   // Step 1-f
-  window.__uid2.callbacks.push((eventType, payload) => {
+  window.__euid.callbacks.push((eventType, payload) => {
     if (eventType === 'SdkLoaded') {
-      __uid2.init({
+      __euid.init({
         identity : {
           "advertising_token": "AgmZ4dZgeuXXl6DhoXqbRXQbHlHhA96leN94U1uavZVspwKXlfWETZ3b/besPFFvJxNLLySg4QEYHUAiyUrNncgnm7ppu0mi6wU2CW6hssiuEkKfstbo9XWgRUbWNTM+ewMzXXM8G9j8Q=",
           "refresh_token": "Mr2F8AAAF2cskumF8AAAF2cskumF8AAAADXwFq/90PYmajV0IPrvo51Biqh7/M+JOuhfBY8KGUn//GsmZr9nf+jIWMUO4diOA92kCTF69JdP71Ooo+yF3V5yy70UDP6punSEGmhf5XSKFzjQssCtlHnKrJwqFGKpJkYA==",
@@ -84,7 +84,7 @@ After authentication in step 1-c, which forces the user to accept the rules of e
   });
 
   // Step 1-g
-  window.__uid2.callbacks.push((eventType, payload) => {
+  window.__euid.callbacks.push((eventType, payload) => {
     if (eventType !== 'SdkLoaded') {
       if (payload.identity) {
         const advertisingToken = payload.identity.advertising_token;
@@ -101,13 +101,13 @@ After authentication in step 1-c, which forces the user to accept the rules of e
 ```tsx
   import { EventType, Uid2CallbackPayload } from "./uid2CallbackManager";
 
-  window.__uid2 = window.__uid2 || {};
-  window.__uid2.callbacks = window.__uid2.callbacks || [];
+  window.__euid = window.__euid || {};
+  window.__euid.callbacks = window.__euid.callbacks || [];
 
   // Step 1-f
-  window.__uid2.callbacks.push((eventType: EventType, payload: Uid2CallbackPayload) => {
+  window.__euid.callbacks.push((eventType: EventType, payload: Uid2CallbackPayload) => {
     if (eventType === 'SdkLoaded') {
-      __uid2.init({
+      __euid.init({
         identity : {
           "advertising_token": "AgmZ4dZgeuXXl6DhoXqbRXQbHlHhA96leN94U1uavZVspwKXlfWETZ3b/besPFFvJxNLLySg4QEYHUAiyUrNncgnm7ppu0mi6wU2CW6hssiuEkKfstbo9XWgRUbWNTM+ewMzXXM8G9j8Q=",
           "refresh_token": "Mr2F8AAAF2cskumF8AAAF2cskumF8AAAADXwFq/90PYmajV0IPrvo51Biqh7/M+JOuhfBY8KGUn//GsmZr9nf+jIWMUO4diOA92kCTF69JdP71Ooo+yF3V5yy70UDP6punSEGmhf5XSKFzjQssCtlHnKrJwqFGKpJkYA==",
@@ -121,7 +121,7 @@ After authentication in step 1-c, which forces the user to accept the rules of e
   });
 
   // Step 1-g
-  window.__uid2.callbacks.push((eventType: EventType, payload: Uid2CallbackPayload) => {
+  window.__euid.callbacks.push((eventType: EventType, payload: Uid2CallbackPayload) => {
     if (eventType !== 'SdkLoaded') {
       if (payload.identity) {
         const advertisingToken = payload.identity.advertising_token;
@@ -157,13 +157,13 @@ The bidding step is shown in the following table.
 
 ```html
 <script>
-  let advertisingToken = __uid2.getAdvertisingToken();
+  let advertisingToken = __euid.getAdvertisingToken();
 </script>
 ```
 
 >NOTE: You need to consider how you pass the returned advertising token to SSPs. With some other approaches to client-side EUID implementation, such as using `Prebid.js` (see [EUID Integration Overview for Prebid.js](integration-prebid.md)) or Google Ad Manager Secure Signals (see [Google Ad Manager Secure Signals Integration Guide](google-ss-integration.md)), the implementation includes functions that manage passing the returned advertising token. If you're using the EUID SDK for JavaScript you'll need to manage this yourself.
 
-<>TIP: Instead of calling `__uid2.getAdvertisingToken()`, you can use the `advertising_token` property of the identity passed to the callback that you set up for step 1-g. The callback will be called every time the identity changes.
+<>TIP: Instead of calling `__euid.getAdvertisingToken()`, you can use the `advertising_token` property of the identity passed to the callback that you set up for step 1-g. The callback will be called every time the identity changes.
 
 ### Refresh Tokens
 
@@ -187,7 +187,7 @@ The client lifecycle is complete when the user decides to log out from the publi
 
 ```html
 <script>
-  __uid2.disconnect();
+  __euid.disconnect();
 </script>
 ```
 
