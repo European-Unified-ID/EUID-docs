@@ -31,20 +31,16 @@ This guide includes the following information:
 
 ## Prebid.js Version
 
-This implementation requires a recent version of Prebid.js. Information on the specific version will be available shortly.
-
-<!-- GWH_TBD This implementation requires Prebid.js version 8.21.0 or later. For version information, see [https://github.com/prebid/Prebid.js/releases](https://github.com/prebid/Prebid.js/releases). -->
+This implementation requires Prebid.js version 8.42.0 or later. For version information, see [https://github.com/prebid/Prebid.js/releases](https://github.com/prebid/Prebid.js/releases).
 
 If you need to use an earlier version of Prebid.js, use the implementation solution presented in the [EUID Server-Side Integration Guide for Prebid.js](integration-prebid-server-side.md) instead.
 
-<!-- ## Integration Example -->
+## Integration Example
 
-<!-- GWH_TBD re integration examples. -->
+An example of the EUID Prebid.js client-side integration is available at the following links:
 
-<!-- An example of the EUID Prebid.js client-side integration is available at the following links:
-
-- Code: [Example Prebid.js EUID Integration](https://github.com/IABTechLab/uid2docs/tree/main/static/examples/cstg-prebid-example)
-- Running site: [EUID Prebid.js Client-Side Integration Example](https://unifiedid.com/examples/cstg-prebid-example/) -->
+- Code: [Example Prebid.js EUID Integration](https://github.com/IABTechLab/uid2docs/tree/main/static/examples/euid-cstg-prebid-example)
+- Running site: [EUID Prebid.js Client-Side Integration Example](https://unifiedid.com/examples/euid-cstg-prebid-example/)
 
 ## Integration Overview: High-Level Steps
 

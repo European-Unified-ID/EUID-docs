@@ -34,6 +34,8 @@ EUID provides a Prebid.js module that supports the following:
 
 For additional flexibility, EUID also provides alternative methods for some of the features and complementary products, such as a JavaScript SDK.
 
+>CAUTION: EUID is designed to be used only where GDPR applies. The module checks the consent data that's passed in, and operates only if the `gdprApplies` flag is set to `true`.
+
 ## Generating the EUID Token
 
 Depending on access to personal data, there are two methods to generate EUID tokens for use with Prebid.js, as shown in the following table.
@@ -47,7 +49,7 @@ Determine which method is best for you, and then follow the applicable integrati
 
 ## Refreshing the EUID Token
 
-The Prebid.js EUID module can automatically refresh the EUID tokens. If you prefer to implement manual refresh outside Prebid.js, see [Refreshing a EUID Token](integration-prebid-server-side.md#refreshing-an-euid-token) in the Server-Side Integration Guide. The client-side integration solution includes automated token refresh.
+The Prebid.js EUID module can automatically refresh the EUID tokens. If you prefer to implement manual refresh outside Prebid.js, see [Refreshing an EUID Token](integration-prebid-server-side.md#refreshing-an-euid-token) in the Server-Side Integration Guide. The client-side integration solution includes automated token refresh.
 
 ## Storing the EUID Token in the Browser
 

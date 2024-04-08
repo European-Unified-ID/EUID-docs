@@ -6,16 +6,16 @@ This guide is intended for publishers with web assets who want to generate ident
 
 For technical details about the SDK, see [EUID SDK for JavaScript Reference Guide](../sdks/client-side-identity.md).
 
-<!-- It includes the following sections:
+It includes the following sections:
 
-- [Sample Implementation Website](#sample-implementation-website)
+<!-- - [Sample Implementation Website](#sample-implementation-website) -->
 - [Introduction](#introduction)
-- [Integration Steps ](#integration-steps)
+- [Integration Steps](#integration-steps)
   - [Establish Identity: User Login](#establish-identity-user-login)
   - [Bid Using EUID Tokens](#bid-using-euid-tokens)
   - [Refresh Tokens](#refresh-tokens)
   - [Clear Identity: User Logout](#clear-identity-user-logout)
-- [FAQs](#faqs) -->
+- [FAQs](#faqs)
 
 <!-- ## Sample Implementation Website
 
@@ -37,7 +37,7 @@ For integration scenarios for publishers that do not use the EUID SDK for JavaSc
 
 >NOTE: If you are using Google Ad Manager and want to use the secure signals feature, first follow the steps in this guide and then follow the additional steps in the [Google Ad Manager Secure Signals Integration Guide](google-ss-integration.md).
 
-## Integration Steps 
+## Integration Steps
 
 The following diagram outlines the steps required for establishing a user's EUID token with a publisher and how the EUID token integrates with the RTB bid stream.
 
