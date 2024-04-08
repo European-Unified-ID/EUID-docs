@@ -14,7 +14,7 @@ export default function Home(): JSX.Element {
   const componentData = {
     title: translate({
       id: "homepage.metaTitle",
-      message: "EUID: an open-source identity solution for Europe",
+      message: "About",
       description: "The homepage meta title",
     }),
     description: translate({

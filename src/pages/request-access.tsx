@@ -105,12 +105,14 @@ export default function RequestDemo(): JSX.Element {
         label.classList.add(styles[inputTypeClassName]);
       }
     });
-    submitButton.onclick = function () {
-      pushGtmEvent({
-        event: "form_submit",
-        form_id: formId,
+    if (submitButton) {
+      submitButton.addEventListener("click", function () {
+        pushGtmEvent({
+          event: "form_submit",
+          form_id: formId,
+        });
       });
-    };
+    }
   }, [formRef]);
 
   React.useEffect(() => {
