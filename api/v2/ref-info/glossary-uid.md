@@ -58,7 +58,7 @@
 <li><a href="#gl-private-operator-service">Private Operator Service</a></li>
 <li><a href="#gl-public-key">Public key</a></li>
 <li><a href="#gl-public-operator">Public Operator</a></li>
-<li><a href="#gl-raw-uid2">Raw EUID</a></li>
+<li><a href="#gl-raw-euid">Raw EUID</a></li>
 <li><a href="#gl-refresh-token">Refresh token</a></li>
 
 </ul>
@@ -166,7 +166,7 @@
 <dd>The European Unified ID (EUID) framework enables deterministic identity for advertising opportunities on the open internet for many <a href="../../../README.md#participants">participants</a> across the advertising ecosystem. It enables logged-in experiences from publisher websites, mobile apps, and Connected TV (CTV) apps to monetize through programmatic workflows. Built as an open-source, standalone solution with its own unique namespace, the framework focuses on transparency and privacy.</dd>
 
 <dt class="jump-anchor" id="gl-euid-identifier">EUID identifier</dt>
-<dd>There are two European Unified ID (EUID) identifier types: <a href="#gl-raw-uid2">raw EUIDs</a> and <a href="#gl-euid-token">EUID tokens</a> (also known as advertising tokens).</dd>
+<dd>There are two European Unified ID (EUID) identifier types: <a href="#gl-raw-euid">raw EUIDs</a> and <a href="#gl-euid-token">EUID tokens</a> (also known as advertising tokens).</dd>
 <dd>For details, see <a href="../../../README.md#euid-identifier-types">EUID Identifier Types</a>.</dd>
 
 <!-- <dt class="jump-anchor" id="gl-euid-portal">EUID Portal</dt>
@@ -178,14 +178,14 @@
 <dd>The term "EUID service" is also used to mean the EUID <a href="#gl-operator-service">Operator Service</a>.</dd>
 
 <dt class="jump-anchor" id="gl-euid-token">EUID token (advertising token)</dt>
-<dd>A European Unified ID (EUID) token, also called an advertising token, is an encrypted form of a <a href="#gl-raw-uid2">raw EUID</a>.</dd>
+<dd>A European Unified ID (EUID) token, also called an advertising token, is an encrypted form of a <a href="#gl-raw-euid">raw EUID</a>.</dd>
 <dd>EUID tokens are generated from hashed or unhashed email addresses<!--  or phone numbers --> that are converted to raw EUIDs and then encrypted. The EUID token is a unique value; no two EUID tokens are the same. EUID tokens are case sensitive.</dd>
 <dd>The token has a limited life, but can be refreshed in the background using the <a href="#gl-refresh-token">refresh token</a>.</dd>
 <dd>Publishers send EUID tokens in the bid stream.</dd>
 <dd>For details, see <a href="../../../README.md#euid-identifier-types">EUID Identifier Types</a>.</dd>
 
 <dt class="jump-anchor" id="gl-unified-id-20">European Unified ID (EUID)</dt>
-<dd>The term EUID can be used to mean the <a href="#gl-euid-framework">EUID framework</a>, the <a href="#gl-euid-service">EUID service</a>, a <a href="#gl-raw-uid2">raw EUID</a>, or a <a href="#gl-euid-token">EUID token</a> (advertising token).</dd>
+<dd>The term EUID can be used to mean the <a href="#gl-euid-framework">EUID framework</a>, the <a href="#gl-euid-service">EUID service</a>, a <a href="#gl-raw-euid">raw EUID</a>, or a <a href="#gl-euid-token">EUID token</a> (advertising token).</dd>
 
 </dl>
 
