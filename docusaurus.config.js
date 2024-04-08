@@ -6,7 +6,7 @@ const darkCodeTheme = require("prism-react-renderer").themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "EUID: an open-source identity solution for Europe",
+  title: "European Unified ID",
   tagline:
     "European Unified ID (EUID) uses encrypted email data to provide a privacy-conscious and accurate identity standard for the digital advertising ecosystem.",
   favicon: "img/favicon.ico",
