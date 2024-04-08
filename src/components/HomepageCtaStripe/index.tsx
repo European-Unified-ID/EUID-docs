@@ -40,7 +40,7 @@ export default function HomepageCtaStripe(): JSX.Element {
         <div className={styles.ctasWrapper}>
           <Link
             to="/request-access"
-            className="button button--nav"
+            className="button button--lemon"
             onClick={() => pushGtmEvent(pageViewData)}
           >
             <Translate id="homepage.ctaStripe1Text">Request access</Translate>
