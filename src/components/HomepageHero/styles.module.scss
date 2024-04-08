@@ -1,0 +1,70 @@
+.homepageHero {
+  display: flex;
+  min-height: 60vh;
+  align-items: flex-end;
+  padding: 3.125rem 0;
+  position: relative;
+  overflow: hidden;
+
+  @media only screen and (min-width: 600px) {
+    align-items: center;
+  }
+  
+
+  @media only screen and (min-width: 996px) {
+    padding: 8.25rem 20px;
+    height: auto;
+    --ifm-heading-margin-bottom: 3rem;
+    --ifm-spacing-horizontal: 0.4rem;
+  }
+
+}
+
+.homepageHeroContent {
+  position: relative;
+  z-index: 10;
+
+  h1, p, span {
+    text-shadow: 0px 4px 54px #00F;
+  }
+
+  h1 {
+    margin: 1.5rem 0;
+
+    @media only screen and (min-width: 996px) {
+      margin-bottom: 3.125rem;
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.heroBg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+  bottom: 0;
+  height: auto;
+  width: 80vw;
+
+  @media only screen and (min-width: 996px) {
+    width: 55vw;
+    height: auto;
+  }
+}
+
+.heroMobileBg {
+  @media screen and (min-width: 996px) {
+   display: none;
+  }
+}
+
+.heroDesktopBg {
+  display: none;
+  @media screen and (min-width: 996px) {
+   display: block;
+  }
+}
