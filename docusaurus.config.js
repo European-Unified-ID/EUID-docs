@@ -66,8 +66,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
-      image: "img/EUID-Social-Card.jpg",
+      image: "img/social-sharing-default-card.png",
       colorMode: {
         defaultMode: "light",
       },
