@@ -87,7 +87,7 @@ const config = {
             position: "left",
           },
           {
-            to: "https://github.com/European-Unified-ID/EUID-docs",
+            to: "https://github.com/European-Unified-ID/EUID-docs/blob/main/README.md",
             label: "Documentation",
             position: "left",
           },
@@ -182,7 +182,7 @@ const config = {
               // },
               {
                 label: "European Unified ID GitHub",
-                href: "https://github.com/European-Unified-ID/EUID-docs",
+                href: "https://github.com/European-Unified-ID/EUID-docs/blob/main/README.md",
               },
               {
                 type: "doc",

@@ -33,7 +33,7 @@ const PartnerList: PartnerItem[] = [
       id: "homepage.partnersPublishersHeading",
       message: "Publishers",
     }),
-    url: "https://github.com/European-Unified-ID/EUID-docs",
+    url: "https://github.com/European-Unified-ID/EUID-docs/blob/main/README.md",
     Svg: require("@site/static/img/documents-icon.svg").default,
     animationData: documentsAnimation,
     description: translate({
@@ -47,7 +47,7 @@ const PartnerList: PartnerItem[] = [
       id: "homepage.partnersAdvertisersHeading",
       message: "Advertisers",
     }),
-    url: "https://github.com/European-Unified-ID/EUID-docs",
+    url: "https://github.com/European-Unified-ID/EUID-docs/blob/main/README.md",
     Svg: require("@site/static/img/chart-icon.svg").default,
     animationData: chartIconAnimation,
     description: translate({
@@ -61,7 +61,7 @@ const PartnerList: PartnerItem[] = [
       id: "homepage.partnersDspsHeading",
       message: "Demand-side platforms",
     }),
-    url: "https://github.com/European-Unified-ID/EUID-docs",
+    url: "https://github.com/European-Unified-ID/EUID-docs/blob/main/README.md",
     Svg: require("@site/static/img/flowchart-icon.svg").default,
     animationData: flowchartAnimation,
     description: translate({
@@ -75,7 +75,7 @@ const PartnerList: PartnerItem[] = [
       id: "homepage.partnersDataProvidersHeading",
       message: "Data providers",
     }),
-    url: "https://github.com/European-Unified-ID/EUID-docs",
+    url: "https://github.com/European-Unified-ID/EUID-docs/blob/main/README.md",
     Svg: require("@site/static/img/cloud-upload-icon.svg").default,
     animationData: uploadAnimation,
     description: translate({
