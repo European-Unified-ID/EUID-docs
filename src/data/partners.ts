@@ -54,6 +54,10 @@ export const partnersData: PartnersDataType = [
     logo: "mumsnet-logo.png",
   },
   {
+    name: "Nestle",
+    logo: "nestle-logo.png",
+  },
+  {
     name: "Primsa",
     logo: "prisma-logo.png",
   },
