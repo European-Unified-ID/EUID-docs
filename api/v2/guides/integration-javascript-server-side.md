@@ -163,7 +163,7 @@ The bidding step is shown in the following table.
 
 >NOTE: You need to consider how you pass the returned advertising token to SSPs. With some other approaches to client-side EUID implementation, such as using `Prebid.js` (see [EUID Integration Overview for Prebid.js](integration-prebid.md)) or Google Ad Manager Secure Signals (see [Google Ad Manager Secure Signals Integration Guide](google-ss-integration.md)), the implementation includes functions that manage passing the returned advertising token. If you're using the EUID SDK for JavaScript you'll need to manage this yourself.
 
-<>TIP: Instead of calling `__euid.getAdvertisingToken()`, you can use the `advertising_token` property of the identity passed to the callback that you set up for step 1-g. The callback will be called every time the identity changes.
+>TIP: Instead of calling `__euid.getAdvertisingToken()`, you can use the `advertising_token` property of the identity passed to the callback that you set up for step 1-g. The callback will be called every time the identity changes.
 
 ### Refresh Tokens
 
