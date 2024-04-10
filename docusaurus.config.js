@@ -181,13 +181,17 @@ const config = {
               //   to: "/docs/intro",
               // },
               {
-                label: "European Unified ID GitHub",
+                label: "EUID GitHub",
                 href: "https://github.com/European-Unified-ID/EUID-docs/blob/main/README.md",
               },
               {
                 type: "doc",
                 label: "Prebid",
                 to: "https://docs.prebid.org/dev-docs/modules/userid-submodules/euid.html",
+              },
+              {
+                label: "UID2",
+                href: "https://unifiedid.com/",
               },
             ],
           },
