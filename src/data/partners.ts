@@ -58,6 +58,10 @@ export const partnersData: PartnersDataType = [
     logo: "prisma-logo.png",
   },
   {
+    name: "Purina",
+    logo: "purina.png",
+  },
+  {
     name: "Rakuten",
     logo: "rakuten_logo.svg",
   },
