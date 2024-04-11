@@ -1,11 +1,8 @@
 [EUID Overview](../../../README.md) > [Getting Started: Summary](../getting-started/gs-summary.md) > [EUID API Documentation](../summary-doc-v2.md) > [SDKs](./summary-sdks.md) > EUID SDK for C# / .NET (Server-Side) Reference Guide
 
-# EUID SDK for C# / .NET (Server-Side) Reference Guide
+# EUID SDK for C# / .NET Reference Guide
 
-You can use the EUID SDK for C# / .NET on the server side to facilitate the following:
-
-- Encrypting raw EUIDs to create EUID tokens.
-- Decrypting EUID tokens to access the raw EUIDs.
+You can use the EUID SDK for C# / .NET on the server side to facilitate decrypting of EUID tokens to access the raw EUID. 
 
 This guide includes the following information:
 
@@ -40,7 +37,7 @@ For details, see [API Permissions](../getting-started/gs-permissions.md).
 
 ## Version
 
-The library uses .NET Standard 2.1. unit tests. The sample app uses .NET 5.0.
+This documentation is for the UID2 .NET SDK version 5.6.0 and above. The SDK is built for .NET Standard 2.0.
 
 ## GitHub Repository/Binary
 
