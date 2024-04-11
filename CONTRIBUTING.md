@@ -41,4 +41,4 @@ This command generates static content in all supported languages into the `build
 
 ## Deployment
 
-Whenever the `main` branch is updated, it triggers the [Deploy to GitHub Pages](https://github.com/IABTechLab/uid2docs/actions/workflows/deploy.yml) workflow, which automatically builds the site and updates the deployment.
+Whenever the `main` branch is updated, it triggers the [Deploy to GitHub Pages](https://github.com/European-Unified-ID/EUID-docs/blob/main/.github/workflows/deploy.yml) workflow, which automatically builds the site and updates the deployment.

@@ -54,7 +54,14 @@ const config = {
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: false,
+        docs: {
+          sidebarPath: require.resolve("./sidebars.js"),
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          editUrl:
+            "https://github.com/European-Unified-ID/EUID-docs/blob/main/",
+          showLastUpdateTime: true,
+        },
         blog: false,
         theme: {
           customCss: require.resolve("./src/css/custom.scss"),
@@ -79,7 +86,6 @@ const config = {
           srcDark: "/img/logo-white.svg",
         },
         items: [
-          //uncomment once docs are added
           {
             to: "/request-access",
             label: "Request access",
@@ -91,6 +97,7 @@ const config = {
             label: "Documentation",
             position: "left",
           },
+          // @TODO uncomment once docs are added
           // {
           //   type: "doc",
           //   docId: "overviews/overview-publishers",
@@ -155,31 +162,6 @@ const config = {
         links: [
           {
             items: [
-              // {
-              //   type: "doc",
-              //   label: "Publishers",
-              //   to: "/docs/overviews/overview-publishers",
-              // },
-              // {
-              //   type: "doc",
-              //   label: "Advertisers",
-              //   to: "/docs/overviews/overview-advertisers",
-              // },
-              // {
-              //   type: "doc",
-              //   label: "DSPs",
-              //   to: "/docs/overviews/overview-dsps",
-              // },
-              // {
-              //   type: "doc",
-              //   label: "Data Providers",
-              //   to: "/docs/overviews/overview-data-providers",
-              // },
-              // {
-              //   type: "doc",
-              //   label: "UID2 Overview",
-              //   to: "/docs/intro",
-              // },
               {
                 label: "EUID GitHub",
                 href: "https://github.com/European-Unified-ID/EUID-docs/blob/main/README.md",
