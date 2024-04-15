@@ -23,7 +23,7 @@ export default function HomepageConsumerBenefit(): JSX.Element {
     subheading: translate({
       id: "homepage.benefitsCopy",
       message:
-        "EUID was created with consumer privacy and the regulatory requirements of the region as a top priority. User can opt out of using their EUID universally by visiting the opt-out portal. Participants are required to honor user opt-out requests made through the portal.",
+        "EUID was created with consumer privacy and the regulatory requirements of the region as a top priority. Users can opt out of using their EUID universally by visiting the opt-out portal. Participants are required to honor user opt-out requests made through the portal.",
     }),
   };
 
@@ -45,34 +45,6 @@ export default function HomepageConsumerBenefit(): JSX.Element {
             Manage my EUID
           </Translate>
         </Link>
-
-        {/* <div className={styles.contentContainer}>
-          <h2 className="text-white type-delta">
-            <Translate id="homepage.benefitsTitle">
-              European Unified ID Benefits
-            </Translate>
-          </h2>
-          <Link
-            to="https://www.transparentadvertising.eu/"
-            rel="noopener noreferrer"
-            className={clsx("button button--nav", styles.ctaButton)}
-            onClick={() => pushGtmEvent(pageViewData)}
-          >
-            <Translate id="homepage.benefitsButtonLabel">
-              Manage my EUID
-            </Translate>
-            <OutboundArrow />
-          </Link>
-        </div>
-        <p>
-          <Translate id="homepage.benefitsCopy">
-            EUID was created with consumer privacy and the regulatory
-            requirements of the region as a top priority. Users can opt out of
-            using their EUID universally by visiting the opt-out portal.
-            Participants are required to honor users’ opt-out requests made
-            through the portal.
-          </Translate>
-        </p> */}
       </div>
     </section>
   );
