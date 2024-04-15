@@ -12,8 +12,6 @@ This guide includes the following information:
 - [GitHub Repository/Binary](#github-repositorybinary)
 - [Initialization](#initialization)
 - [Interface](#interface)
-  - [Encryption Response Content](#encryption-response-content)
-  - [Encryption Response Statuses](#encryption-response-statuses)
   - [Decryption Response Content](#decryption-response-content)
   - [Decryption Response Statuses](#decryption-response-statuses)
 - [Usage for DSPs](#usage-for-dsps)
@@ -37,7 +35,7 @@ For details, see [API Permissions](../getting-started/gs-permissions.md).
 
 ## Version
 
-This documentation is for the UID2 .NET SDK version 5.6.0 and above. The SDK is built for .NET Standard 2.0.
+This documentation is for the UID2/EUID .NET SDK version 5.6.0 and above. The SDK is built for .NET Standard 2.0.
 
 ## GitHub Repository/Binary
 
@@ -67,35 +65,15 @@ The `BidstreamClient` class allows you to decrypt EUID tokens into raw EUIDs.
 
 For details on the bidding logic for handling user opt-outs, see [DSP Integration Guide](../guides/dsp-guide.md).
 
-The `SharingClient` class allows you to encrypt raw EUIDs into EUID tokens and decrypt EUID tokens into raw EUIDs.
+Notes:
 
->NOTE: When you use an SDK, you do not need to store or manage decryption keys.
+- The `SharingClient` class is part of the SDK but is not currently available for use in EUID.
 
-### Encryption Response Content
-
-When encrypting with the `SharingClient`, the SDK returns the following information:
-
-| Property | Description |
-| :--- | :--- |
-| `Status` | The encryption result status. For a list of possible values and definitions, see [Encryption Response Statuses](#encryption-response-statuses). |
-| `EncryptedData` | The encrypted EUID token. |
-
-### Encryption Response Statuses
-
-| Value | Description |
-| :--- | :--- |
-| `Success` | The raw EUID was successfully encrypted and an EUID token was returned. |
-| `NotAuthorizedForKey` | The requester does not have authorization to use the encryption key. |
-| `NotAuthorizedForMasterKey` | The requester does not have authorization to use the master key. |
-| `NotInitialized` | The client library is waiting to be initialized. |
-| `KeysNotSynced` | The client has failed to synchronize keys from the EUID service. |
-| `KeyInactive` | The encryption key is not active. |
-| `EncryptionFailure` | A generic encryption failure occurred. |
-<!-- `TokenDecryptFailure` intentionally omitted. Does not seem to be used by SharingClient. -->
+- When you use an SDK, you do not need to store or manage decryption keys.
 
 ### Decryption Response Content
 
-Whether decrypting with the `BidstreamClient` or the `SharingClient`, the SDK returns the following information:
+When decrypting with the `SharingClient`, the SDK returns the following information:
 
 | Property | Description |
 | :--- | :--- |
@@ -122,7 +100,7 @@ The following instructions provide an example of how you can decode bid stream t
 1. Create a `BidstreamClient`:
 
 ```cs
-var client = new BidstreamClient(UID2_BASE_URL, UID2_API_KEY, UID2_SECRET_KEY);
+var client = new BidstreamClient(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY);
 ```
 
 2. Refresh once at startup, and then periodically (recommended refresh interval is hourly):
