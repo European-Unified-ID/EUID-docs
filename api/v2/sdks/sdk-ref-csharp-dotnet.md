@@ -73,7 +73,7 @@ Notes:
 
 ### Decryption Response Content
 
-When decrypting with the `SharingClient`, the SDK returns the following information:
+When decrypting with the `BidstreamClient`, the SDK returns the following information:
 
 | Property | Description |
 | :--- | :--- |
