@@ -93,41 +93,35 @@ const config = {
             position: "left",
           },
           {
-            to: "https://github.com/European-Unified-ID/EUID-docs/blob/main/README.md",
+            type: "doc",
+            docId: "overviews/overview-publishers",
+            label: "Publishers",
+            position: "left",
+          },
+          {
+            type: "doc",
+            docId: "overviews/overview-advertisers",
+            label: "Advertisers",
+            position: "left",
+          },
+          {
+            type: "doc",
+            docId: "overviews/overview-dsps",
+            label: "DSPs",
+            position: "left",
+          },
+          {
+            type: "doc",
+            docId: "overviews/overview-data-providers",
+            label: "Data Providers",
+            position: "left",
+          },
+          {
+            type: "doc",
+            docId: "intro",
             label: "Documentation",
             position: "left",
           },
-          // @TODO uncomment once docs are added
-          // {
-          //   type: "doc",
-          //   docId: "overviews/overview-publishers",
-          //   label: "Publishers",
-          //   position: "left",
-          // },
-          // {
-          //   type: "doc",
-          //   docId: "overviews/overview-advertisers",
-          //   label: "Advertisers",
-          //   position: "left",
-          // },
-          // {
-          //   type: "doc",
-          //   docId: "overviews/overview-dsps",
-          //   label: "DSPs",
-          //   position: "left",
-          // },
-          // {
-          //   type: "doc",
-          //   docId: "overviews/overview-data-providers",
-          //   label: "Data Providers",
-          //   position: "left",
-          // },
-          // {
-          //   type: "doc",
-          //   docId: "intro",
-          //   label: "Documentation",
-          //   position: "left",
-          // },
 
           {
             type: "search",
