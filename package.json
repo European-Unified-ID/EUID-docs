@@ -1,5 +1,5 @@
 {
-  "name": "uid-2-test-ts",
+  "name": "euid-docusaurus",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -59,6 +59,6 @@
     ]
   },
   "engines": {
-    "node": ">=18.19"
+    "node": ">=20.12.2"
   }
 }
