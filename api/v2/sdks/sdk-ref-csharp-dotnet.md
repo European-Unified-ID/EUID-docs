@@ -1,24 +1,21 @@
 [EUID Overview](../../../README.md) > [Getting Started: Summary](../getting-started/gs-summary.md) > [EUID API Documentation](../summary-doc-v2.md) > [SDKs](./summary-sdks.md) > EUID SDK for C# / .NET (Server-Side) Reference Guide
 
-# EUID SDK for C# / .NET (Server-Side) Reference Guide
+# EUID SDK for C# / .NET Reference Guide
 
-You can use the EUID SDK for C# / .NET (Server-Side) to facilitate decrypting of EUID tokens to access the raw EUID. 
+You can use the EUID SDK for C# / .NET on the server side to facilitate decrypting of EUID tokens to access the raw EUID. 
 
 This guide includes the following information:
 
-- [Overview](#overview)
 - [Functionality](#functionality)
+- [API Permissions](#api-permissions)
 - [Version](#version)
 - [GitHub Repository/Binary](#github-repositorybinary)
 - [Initialization](#initialization)
 - [Interface](#interface)
-  - [Response Content](#response-content)
-  - [Response Statuses](#response-statuses)
+  - [Decryption Response Content](#decryption-response-content)
+  - [Decryption Response Statuses](#decryption-response-statuses)
+- [Usage for DSPs](#usage-for-dsps)
 - [FAQs](#faqs)
-
-## Overview
-
-The functions outlined here define the information that you'll need to configure or can retrieve from the library. The parameters and property names defined below are pseudocode. Actual parameters and property names vary by language but will be similar to the information outlined here.
 
 ## Functionality
 
@@ -28,12 +25,19 @@ This SDK simplifies integration with EUID for any DSPs who are using C# / .NET f
 | :--- | :--- | :--- | :--- |
 | Supported | Supported | Not supported | Not supported |
 
+## API Permissions
+
+To use this SDK, you'll need to complete the EUID account setup by following the steps described in the [Account Setup](../getting-started/gs-account-setup.md) page.
+
+You'll be granted permission to use specific functions offered by the SDK, and given credentials for that access. Bear in mind that there might be functions in the SDK that you don't have permission to use.
+
+For details, see [API Permissions](../getting-started/gs-permissions.md).
+
 ## Version
 
-The library uses .NET Standard 2.1. unit tests. The sample app uses .NET 5.0.
+This documentation is for the UID2/EUID .NET SDK version 5.6.0 and above. The SDK is built for .NET Standard 2.0.
 
 ## GitHub Repository/Binary
-
 
 This SDK is in the following open-source GitHub repository:
 
@@ -45,52 +49,82 @@ The binary is published in this location:
 
 ## Initialization
 
-The initialization function configures the parameters necessary for the SDK to authenticate with the EUID service. It also allows you to configure retry intervals in the event of errors.
+DSPs should create an instance of the `BidstreamClient` class.
 
-| Parameter | Description | Recommended Value |
-| :--- | :--- | :--- |
-| `endpoint` | The endpoint for the EUID service. | N/A |
-| `authKey` | The authentication token that belongs to the client. For access to EUID, see [Contact Info](../getting-started/gs-account-setup.md#contact-info). | N/A |
+You will need to provide the values necessary for the SDK to authenticate with the EUID service.
 
-## Interface 
+| Parameter | Description |
+| :--- | :--- |
+| `endpoint` | The endpoint for the EUID service. See [Environments](../getting-started/gs-environments). | 
+| `authKey` | The API key. See [EUID Credentials](../getting-started/gs-credentials). |
+| `secretKey` | The client secret. See [EUID Credentials](../getting-started/gs-credentials). |
 
-The interface allows you to decrypt EUID advertising tokens and return the corresponding raw EUID. 
+## Interface
 
->NOTE: When you use an SDK, you do not need to store or manage decryption keys.
+The `BidstreamClient` class allows you to decrypt EUID tokens into raw EUIDs.
 
-If you're a DSP, for bidding, call the interface to decrypt an EUID advertising token and return the EUID. For details on the bidding logic for handling user opt-outs, see [DSP Integration Guide](../guides/dsp-guide.md).
+For details on the bidding logic for handling user opt-outs, see [DSP Integration Guide](../guides/dsp-guide.md).
 
-The following is the decrypt method in C#:
+Notes:
 
-```cs
-using UID2.Client.IUID2Client
- 
-var client = EUIDClientFactory.Create(_baseUrl, _authKey, _secretKey);
-client.Refresh(); //Note that Refresh() should be called once after create(), and then once per hour
-var result = client.Decrypt(_advertisingToken);
-```
+- The `SharingClient` class is part of the SDK but is not currently available for use in EUID.
 
-### Response Content
+- When you use an SDK, you do not need to store or manage decryption keys.
 
-Available information returned through the SDK is outlined in the following table.
+### Decryption Response Content
+
+When decrypting with the `BidstreamClient`, the SDK returns the following information:
 
 | Property | Description |
 | :--- | :--- |
-| `Status` | The decryption result status. For a list of possible values and definitions, see [Response Statuses](#response-statuses). |
-| `Uid` | The raw EUID for the corresponding EUID advertising token.|
+| `Status` | The decryption result status. For a list of possible values and definitions, see [Decryption Response Statuses](#decryption-response-statuses). |
+| `Uid` | The raw EUID for the corresponding EUID token. |
 | `Established` | The timestamp indicating when a user first established the EUID with the publisher. |
 
-### Response Statuses
+### Decryption Response Statuses
 
 | Value | Description |
 | :--- | :--- |
-| `Success` | The EUID advertising token was decrypted successfully and a raw EUID was returned. |
-| `NotAuthorizedForKey` | The requester does not have authorization to decrypt this EUID advertising token.|
+| `Success` | The EUID token was decrypted successfully and a raw EUID was returned. |
+| `NotAuthorizedForKey` | The requester does not have authorization to decrypt this EUID token.|
 | `NotInitialized` | The client library is waiting to be initialized. |
-| `InvalidPayload` | The incoming EUID advertising token is not a valid payload. |
-| `ExpiredToken` | The incoming EUID advertising token has expired. |
+| `InvalidPayload` | The incoming EUID token is not a valid payload. |
+| `ExpiredToken` | The incoming EUID token has expired. |
 | `KeysNotSynced` | The client has failed to synchronize keys from the EUID service. |
 | `VersionNotSupported` |  The client library does not support the version of the encrypted token. |
+
+## Usage for DSPs
+
+The following instructions provide an example of how you can decode bid stream tokens using the EUID SDK for .NET as a DSP.
+
+1. Create a `BidstreamClient`:
+
+```cs
+var client = new BidstreamClient(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY);
+```
+
+2. Refresh once at startup, and then periodically (recommended refresh interval is hourly):
+
+```cs
+client.Refresh();
+```
+
+3. Decrypt a token into a raw EUID. Pass the token, and the domain name of the site where the bid originated from. The domain name must be all lower case, without spaces and without subdomain. For example, for `Subdomain.DOMAIN.com` , pass `domain.com` instead:
+
+```cs
+var decrypted = client.DecryptTokenIntoRawUid(uidToken, domain);
+// If decryption succeeded, use the raw EUID.
+if (decrypted.Success) 
+{
+    // Use decrypted.Uid.
+} 
+else 
+{
+    // Check decrypted.Status for the failure reason.
+}
+```
+
+For a full example, see the `ExampleBidStreamClient` method in [SampleApp/Program.cs](https://github.com/IABTechLab/uid2-client-net/blob/main/src/SampleApp/Program.cs).
 
 ## FAQs
 
