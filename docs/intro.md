@@ -9,22 +9,6 @@ import Link from '@docusaurus/Link';
 
 # European Unified ID Overview
 
-This page provides overview information about the European Unified ID (EUID) framework.
-
-It includes the following:
-
-- [Introduction](#introduction)
-- [EUID vs. UID2](#euid-vs-uid2)
-- [EUID Infrastructure](#euid-infrastructure)
-  - [EUID Identifier Types](#euid-identifier-types)
-  - [Components](#components)
-  - [Participants](#participants)
-  - [Workflows](#workflows)
-- [Frequently Asked Questions (FAQs)](#faqs)
-- [License](#license)
-
-## Introduction 
-
 The European Unified ID (EUID) is a framework that enables deterministic identity for advertising opportunities on the open internet for many [participants](#participants) across the advertising ecosystem. The EUID framework enables logged-in experiences from publisher websites, mobile apps, and Connected TV (CTV) apps to monetize through programmatic workflows. Built on the [UID2 framework](https://unifiedid.com/docs/intro), EUID offers the user transparency and privacy controls designed to meet market requirements in Europe and the UK.
 
 >NOTE: The term "EUID" can refer to either the framework or an actual identifier. Unless otherwise indicated, this page provides an overview of the EUID framework.
