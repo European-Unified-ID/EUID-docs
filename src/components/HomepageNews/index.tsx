@@ -37,6 +37,16 @@ const ArticleList: ArticleItem[] = [
     url: "https://the-media-leader.fr/tf1-pub-sassocie-a-the-trade-desk/",
     date: "March 20, 2024",
   },
+  {
+    title: "Le Media Plus",
+    url: "https://www.lemediaplus.com/m6-publicite-annonce-ses-partenariats-avec-liveramp-the-trade-desk-et-id5-autour-de-leurs-solutions-alternatives-aux-cookies-tiers/",
+    date: "March 28, 2024",
+  },
+  {
+    title: "Engage.it",
+    url: "https://www.engage.it/programmatic/italiaonline-ancora-piu-cookieless-grazie-alladozione-di-euid-.aspx",
+    date: "April 10, 2024",
+  },
 ];
 
 function ArticleCard({ title, url, date }: ArticleItem) {
