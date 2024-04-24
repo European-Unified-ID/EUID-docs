@@ -22,7 +22,7 @@ It includes the following sections:
 <!-- - [Sample Implementation Website](#sample-implementation-website) -->
 - [Introduction](#introduction)
 - [Integration Steps](#integration-steps)
-  - [Establish Identity: User Login](#establish-identity-user-login)
+  - [Establish identity: capture user data](#establish-identity-capture-user-data)
   - [Bid Using EUID Tokens](#bid-using-euid-tokens)
   - [Refresh Tokens](#refresh-tokens)
   - [Clear Identity: User Logout](#clear-identity-user-logout)
@@ -56,12 +56,12 @@ The following diagram outlines the steps required for establishing a user's EUID
 
 The following sections provide additional details for each step in the diagram:
  
- 1. [Establish identity: User Login](#establish-identity-user-login)
+ 1. [Establish identity: capture user data](#establish-identity-capture-user-data)
  2. [Bid Using EUID Tokens](#bid-using-euid-tokens)
  3. [Refresh Tokens](#refresh-tokens)
  4. [Clear Identity: User Logout](#clear-identity-user-logout)
 
-### Establish Identity: User Login
+### Establish Identity: Capture User Data
 
 After authentication in step 1-c, which forces the user to accept the rules of engagement and allows the publisher to validate the user's email address, an EUID token must be generated on the server side. The following table details the token generation steps.
 

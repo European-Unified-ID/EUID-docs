@@ -17,7 +17,7 @@ It includes the following sections:
 
 - [Introduction](#introduction)
 - [Integration Steps ](#integration-steps)
-  - [Establish Identity: User Login](#establish-identity-user-login)
+  - [Establish identity: capture user data](#establish-identity-capture-user-data)
   - [Bid Using EUID Tokens](#bid-using-euid-tokens)
   - [Refresh Tokens](#refresh-tokens)
   - [Clear Identity: User Logout](#clear-identity-user-logout)
@@ -46,12 +46,12 @@ The following diagram outlines the steps required for a user to establish an EUI
 
 The following sections provide additional details for each step in the diagram:
  
- 1. [Establish identity: user login](#establish-identity-user-login)
+ 1. [Establish identity: user login](#establish-identity-capture-user-data)
  2. [Bid using EUID tokens](#bid-using-euid-tokens)
  3. [Refresh tokens](#refresh-tokens)
  4. [Clear Identity: user logout](#clear-identity-user-logout)
 
-### Establish Identity: User Login
+### Establish Identity: Capture User Data
 
 After authentication in step 1-c, which forces the user to accept the rules of engagement and allows the publisher to validate their email address, an EUID token must be generated on the server side. The following table details the token generation steps.
 
@@ -67,7 +67,7 @@ You need to consider how you want to manage EUID identity information and use it
 
 | Step | Endpoint | Description |
 | :--- | :--- | :--- |
-| 2-a | N/A| Send the `advertising_token` from step [1-e](#establish-identity) to the SSP for bidding. Send the value as is. |
+| 2-a | N/A| Send the `advertising_token` from step [1-e](#establish-identity-capture-user-data) to the SSP for bidding. Send the value as is. |
 
 ### Refresh Tokens
 
@@ -76,7 +76,7 @@ Leverage the refresh endpoint to retrieve the latest version of EUID tokens. The
 | Step | Endpoint | Description |
 | :--- | :--- | :--- |
 | 3-a |N/A | When a user returns to an asset and becomes active again, refresh the identity token before sending it to the SSP. | 
-| 3-b | [POST /token/refresh](../endpoints/post-token-refresh.md)  | Send the `refresh_token` obtained in step [1-e](#establish-identity) as a query parameter. |
+| 3-b | [POST /token/refresh](../endpoints/post-token-refresh.md)  | Send the `refresh_token` obtained in step [1-e](#establish-identity-capture-user-data) as a query parameter. |
 | 3-c | [POST /token/refresh](../endpoints/post-token-refresh.md) | The EUID service issues a new identity token for users that haven't opted out. |
 | 3-d | N/A| Place the returned `advertising_token` and `refresh_token` in a store tied to a user. You may consider client-side storage like a first-party cookie or server-side storage. |
 

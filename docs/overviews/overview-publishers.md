@@ -97,7 +97,7 @@ For a detailed summary of web integration options, see [Web Integration Overview
 
 ### Prebid Integrations
 
-The following resources are available for publishers integrating with Google Ad Manager.
+The following resources are available for publishers integrating with Prebid.
 
 | Integration Type| Documentation | Content Description |
 | :--- | :--- | :--- |

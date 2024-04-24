@@ -59,7 +59,7 @@ The high-level request-response workflow for the EUID APIs includes the followin
 9. (Optional, recommended) Ensure that the nonce in the response envelope matches the nonce in the request envelope.
 10. Extract the response JSON object from the unencrypted envelope.
 
-A code example for [encrypting requests](#example-encryption-script) and [decrypting responses](#example-decryption-script) can help with automating steps 2-4 and 6-10 and serves as a reference of how to implement these steps in your application.
+A code example for [encrypting requests and decrypting responses](#encryption-and-decryption-code-examples) can help with automating steps 2-10 and serves as a reference of how to implement these steps in your application.
 
 Documentation for the individual EUID [endpoints](../endpoints/summary-endpoints.md) explains the respective JSON body format requirements and parameters, includes call examples, and shows decrypted responses. The following sections provide examples of the encryption and decryption scripts in Python, field layout requirements, and request and response examples. 
 

@@ -26,8 +26,8 @@ EUID provides an SDK for JavaScript (see [SDK for JavaScript Reference Guide](..
 You'll need to complete the following steps:
 
 1. [Complete EUID account setup](#complete-euid-account-setup)
-2. [Add SDK for JavaScript to your site](#add-euid-sdk-for-javascript-to-your-site)
-3. [Configure the SDK for JavaScript](#configure-the-euid-sdk-for-javascript)
+2. [Add SDK for JavaScript to your site](#add-sdk-for-javascript-to-your-site)
+3. [Configure the SDK for JavaScript](#configure-the-sdk-for-javascript)
 4. [Check that the token was successfully generated](#check-that-the-token-was-successfully-generated)
 
 ## SDK for JavaScript Version
@@ -212,7 +212,7 @@ In this scenario:
 
 ## Token Storage and Refresh
 
-After calling one of the methods listed in [Configure the SDK for JavaScript](#configure-the-euid-sdk-for-javascript) successfully, an identity is generated and stored in local storage, under the key `EUID-sdk-identity`. The SDK refreshes the EUID token periodically.
+After calling one of the methods listed in [Configure the SDK for JavaScript](#configure-the-sdk-for-javascript) successfully, an identity is generated and stored in local storage, under the key `EUID-sdk-identity`. The SDK refreshes the EUID token periodically.
 
 >WARNING: The format of the object stored in local storage could change without notice. We recommend that you do **not** read and update the object in local storage directly. 
 

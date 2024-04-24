@@ -236,7 +236,7 @@ Yes, all opt-outs from the EUID [Transparency and Control Portal](https://transp
 
 #### Is the DSP expected to handle opt-out signals only for the EUID that they already store?
 
-In some cases a DSP may receive an EUID token for a newly-stored EUID where the token is generated before the opt-out timestamp. The DSP is not allowed to bid on such tokens. It is therefore recommended to store all opt-out signals regardless of whether the corresponding EUID is currently stored by the DSP or not. For details, see the diagram in [Bidding Opt-Out Logic](#bidding-opt-out-logic).
+In some cases a DSP may receive an EUID token for a newly-stored EUID where the token is generated before the opt-out timestamp. The DSP is not allowed to bid on such tokens. It is therefore recommended to store all opt-out signals regardless of whether the corresponding EUID is currently stored by the DSP or not. For details, see the diagram in [Bidding Opt-Out Logic](../guides/dsp-guide.md#bidding-opt-out-logic).
 
 #### How long should the DSP keep the opt-out list?
 
