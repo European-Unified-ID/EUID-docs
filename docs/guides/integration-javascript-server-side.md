@@ -7,6 +7,8 @@ hide_table_of_contents: false
 sidebar_position: 02
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 import Link from '@docusaurus/Link';
 
 # Server-Side Integration Guide for JavaScript
@@ -70,7 +72,8 @@ After authentication in step 1-c, which forces the user to accept the rules of e
 | 1-f | EUID SDK for JavaScript | The SDK sends the returned EUID token from step 1-e to the SDK in the `identity` property of its [init() function](../sdks/client-side-identity.md#initopts-object-void). |
 | 1-g | EUID SDK for JavaScript | Provide the SDK a callback function that will receive identity updates from the SDK and use them to initiate targeted advertising. |
 
-#### Example: JavaScript
+<Tabs>
+<TabItem value='js' label='JavaScript'>
 
 ```js
   window.__euid = window.__euid || {};
@@ -105,7 +108,8 @@ After authentication in step 1-c, which forces the user to accept the rules of e
   });
 ```
 
-#### Example: TypeScript
+</TabItem>
+<TabItem value='ts' label='TypeScript'>
 
 ```tsx
   import { EventType, CallbackPayload } from "./CallbackManager";
@@ -141,6 +145,9 @@ After authentication in step 1-c, which forces the user to accept the rules of e
     }
   });
 ```
+
+</TabItem>
+</Tabs>
 
 The SDK invokes the specified [callback function](../sdks/client-side-identity.md#callback-function) (which indicates the identity availability) and makes the established identity available client-side for bidding. 
 

@@ -5,11 +5,15 @@ hide_table_of_contents: false
 sidebar_position: 11
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 import Link from '@docusaurus/Link';
 
 # Encrypting Requests and Decrypting Responses
 
->NOTE: If you're a publisher and are implementing EUID on the client side, encryption and decryption is managed automatically by your implementation, such as Prebid.js (see [EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md)) or the JavaScript SDK (see [Client-Side Integration Guide for JavaScript](../guides/publisher-client-side.md)).
+:::note
+If you're a publisher and are implementing EUID on the client side, encryption and decryption is managed automatically by your implementation, such as Prebid.js (see [EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md)) or the JavaScript SDK (see [Client-Side Integration Guide for JavaScript](../guides/publisher-client-side.md)).
+:::
 
 This guide includes the following sections:
 
@@ -88,7 +92,9 @@ The following table describes the field layout for request encryption code.
 
 You have the option of writing your own code for decrypting responses, using an EUID SDK, or using one of the provided code examples (see [Encryption and Decryption Code Examples](#encryption-and-decryption-code-examples)). If you choose to write your own code, be sure to follow the field layout requirements listed in [Encrypted Response Envelope](#encrypted-response-envelope) and [Unencrypted Response Data Envelope](#unencrypted-response-data-envelope).
 
->NOTE: The response is encrypted only if the service returns HTTP status code 200.
+:::note
+The response is encrypted only if the service returns HTTP status code 200.
+:::
 
 ### Encrypted Response Envelope
 
@@ -139,13 +145,10 @@ For the [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint,
 
 ### Prerequisites and Notes
 
-Before using the code example, check the prerequisites and notes for the language you're using:
+Before using the code example, check the prerequisites and notes for the language you're using.
 
-- [Prerequisites and Notes: Python](#prerequisites-and-notes-python)
-- [Prerequisites and Notes: Java](#prerequisites-and-notes-java)
-- [Prerequisites and Notes: C#](#prerequisites-and-notes-c)
-
-#### Prerequisites and Notes: Python
+<Tabs groupId="language-selection">
+<TabItem value='py' label='Python'>
 
 The following code example encrypts requests and decrypts responses using Python. The required parameters are shown at the top of the code example, or by running `python3 uid2_request.py`.
 
@@ -156,7 +159,8 @@ pip install pycryptodomex
 pip install requests
 ```
 
-#### Prerequisites and Notes: Java
+</TabItem>
+<TabItem value='java' label='Java'>
 
 The following code example encrypts requests and decrypts responses using Java. The required parameters are shown at the top of the main function, or by building and running the following:
 
@@ -217,21 +221,23 @@ If you are using Maven, you can use the following minimal `pom.xml`, and run `mv
   </build>
 </project>
 ```
-#### Prerequisites and Notes: C#
+
+</TabItem>
+<TabItem value='cs' label='C#'>
 
 The following code example encrypts requests and decrypts responses using C#. The required parameters are shown at the top of the file, or by building and running `.\uid2_request`.
 
 This file requires .NET 7.0. You can use an earlier version if required, but it must be .NET Core 3.0 or later. To change the version, replace the [top-level statements](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/top-level-statements) with a Main method and the [using declarations](https://learn.microsoft.com/en-us/cpp/cpp/using-declaration?view=msvc-170) with [using statements](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-8.0/using).
 
+</TabItem>
+</Tabs>
+
 ### Code Example
 
-Choose the code example you want to use. Remember to review the [Prerequisites and Notes](#prerequisites-and-notes). The following code examples are available:
+Choose the code example you want to use. Remember to review the [Prerequisites and Notes](#prerequisites-and-notes).
 
-- [Code Example: Python](#code-example-python)
-- [Code Example: Java](#code-example-java)
-- [Code Example: C#](#code-example-c)
-
-#### Code Example: Python
+<Tabs groupId="language-selection">
+<TabItem value='py' label='Python'>
 
 ```py title="uid2_request.py"
 """
@@ -330,7 +336,8 @@ else:
 
 ```
 
-#### Code Example: Java
+</TabItem>
+<TabItem value='java' label='Java'>
 
 ```java title="Uid2Request.java"
 package org.example;
@@ -457,8 +464,10 @@ public class Uid2Request {
   }
 }
 ```
-<!-- </TabItem> -->
-<!-- <TabItem value='cs' label='C#'> -->
+
+</TabItem>
+<TabItem value='cs' label='C#'>
+
 
 ```cs title="uid2_request.cs"
 using System.Buffers.Binary;
@@ -589,3 +598,6 @@ else
     Console.WriteLine(JsonSerializer.Serialize(jDoc, new JsonSerializerOptions { WriteIndented = true }));
 }
 ```
+
+</TabItem>
+</Tabs>

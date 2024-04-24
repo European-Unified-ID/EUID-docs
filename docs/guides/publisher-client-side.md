@@ -7,6 +7,8 @@ hide_table_of_contents: false
 sidebar_position: 04
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 import Link from '@docusaurus/Link';
 
 # Client-Side Integration Guide for JavaScript
@@ -166,7 +168,8 @@ If the SDK is configured multiples times, it uses the most recent configuration 
 
 For an example of how to generate an email hash in JavaScript, see [Example Code: Hashing and Base-64 Encoding](#example-code-hashing-and-base-64-encoding).
 
-### Format Example: Email, Unhashed
+<Tabs>
+<TabItem value='example_email_unhashed' label='Email, Unhashed'>
 
 The following example configures the EUID SDK with an email address.
 
@@ -185,7 +188,8 @@ In this scenario:
 - No normalization or hashing is required by the publisher.
 - The EUID SDK normalizes and hashes the email address before sending the encrypted hash to the EUID service.
 
-### Format Example: Email, Normalized and Hashed
+</TabItem>
+<TabItem value='example_email_hash' label='Email, Normalized and Hashed'>
 
 The following example configures the EUID SDK with a hashed email address.
 
@@ -202,6 +206,9 @@ await __euid.setIdentityFromEmailHash(
 In this scenario:
 - **The publisher is responsible for normalizing and hashing the email address**. For details, see [Normalization and Encoding](../getting-started/gs-normalization-encoding.md).
 - The EUID SDK encrypts the hash before sending it to the EUID service.
+
+</TabItem>
+</Tabs>
 
 ## Token Storage and Refresh
 
