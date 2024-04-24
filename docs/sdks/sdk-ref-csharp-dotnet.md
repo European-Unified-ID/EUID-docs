@@ -5,6 +5,8 @@ hide_table_of_contents: false
 sidebar_position: 08
 ---
 
+import Link from '@docusaurus/Link';
+
 # EUID SDK for C# / .NET (Server-Side) Reference Guide
 
 You can use the EUID SDK for C# / .NET (Server-Side) to facilitate decrypting of EUID tokens to access the raw EUID. 

@@ -7,6 +7,8 @@ hide_table_of_contents: false
 sidebar_position: 17
 ---
 
+import Link from '@docusaurus/Link';
+
 # EUID Private Operator for AWS Integration Guide
 
 The EUID Operator is the API server in the EUID ecosystem. For a Private Operator service running in AWS Marketplace, the EUID Operator solution is enhanced with [AWS Nitro](https://aws.amazon.com/ec2/nitro/) Enclave technology. This is an additional security measure to protect EUID information from unauthorized access.

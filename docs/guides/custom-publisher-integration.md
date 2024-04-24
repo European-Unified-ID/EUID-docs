@@ -7,6 +7,8 @@ hide_table_of_contents: false
 sidebar_position: 03
 ---
 
+import Link from '@docusaurus/Link';
+
 # Publisher Integration Guide, Server-Only (Without SDK)
 
 This guide is for publishers who want to generate identity tokens using EUID for the RTB bid stream, while integrating directly with EUID rather than EUID-enabled single-sign-on or identity providers. 

@@ -5,6 +5,8 @@ hide_table_of_contents: false
 sidebar_position: 02
 ---
 
+import Link from '@docusaurus/Link';
+
 # POST /token/generate
 Requests an EUID token generated from the email address provided by a user with their authorization for EUID-based targeted advertising. If the email is valid, and the user has not opted out of EUID, this operation returns an EUID token and associated values.
 

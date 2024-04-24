@@ -8,6 +8,8 @@ banner_title: EUID Overview for Data Providers
 banner_description: An identity solution for the future.
 ---
 
+import Link from '@docusaurus/Link';
+
 As a data and measurement provider, you can reduce identity fragmentation by adopting European Unified ID (EUID) to connect data with a more durable, omnichannel, and cross-device identifier to fulfil your customer use cases.
 
 This solution is for you if you're offering data or related services for online or offline advertising, such as a provider of the following:

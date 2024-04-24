@@ -6,6 +6,8 @@ hide_table_of_contents: false
 sidebar_position: 07
 ---
 
+import Link from '@docusaurus/Link';
+
 # Advertiser/Data Provider Integration Guide
 
 This guide covers integration steps for organizations that collect user data and push it to other EUID participants. Data collectors include advertisers, data on-boarders, measurement providers, identity graph providers, third-party data providers, and any other organizations that send data to other participants.

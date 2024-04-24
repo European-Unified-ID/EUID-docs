@@ -7,6 +7,8 @@ hide_table_of_contents: false
 sidebar_position: 04
 ---
 
+import Link from '@docusaurus/Link';
+
 # EUID Integration Overview for JavaScript
 
 This guide is an overview of integration options for publishers who want to integrate with EUID and generate EUID tokens (advertising tokens) using the SDK for JavaScript.

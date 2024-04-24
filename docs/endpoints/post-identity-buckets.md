@@ -5,6 +5,8 @@ hide_table_of_contents: false
 sidebar_position: 07
 ---
 
+import Link from '@docusaurus/Link';
+
 # POST /identity/buckets
 
 Monitor rotated salt buckets.

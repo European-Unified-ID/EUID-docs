@@ -5,6 +5,8 @@ hide_table_of_contents: false
 sidebar_position: 03
 ---
 
+import Link from '@docusaurus/Link';
+
 # POST /token/validate
 Validate that an advertising token matches the specified hashed or unhashed email address. 
 

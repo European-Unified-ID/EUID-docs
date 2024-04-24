@@ -5,6 +5,8 @@ hide_table_of_contents: false
 sidebar_position: 01
 ---
 
+import Link from '@docusaurus/Link';
+
 # EUID Endpoints
 
 All EUID endpoints require a client secret for encrypting API requests (except [POST /token/refresh](post-token-refresh.md) requests) and decrypting responses. For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).

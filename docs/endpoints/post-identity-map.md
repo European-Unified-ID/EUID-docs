@@ -5,6 +5,8 @@ hide_table_of_contents: false
 sidebar_position: 08
 ---
 
+import Link from '@docusaurus/Link';
+
 # POST /identity/map
 
 Map multiple email addresses or email address hashes to their raw EUIDs and salt bucket IDs. You can also use this endpoint to check for updates to opt-out information.

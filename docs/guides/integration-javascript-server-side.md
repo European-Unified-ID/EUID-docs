@@ -7,6 +7,8 @@ hide_table_of_contents: false
 sidebar_position: 02
 ---
 
+import Link from '@docusaurus/Link';
+
 # Server-Side Integration Guide for JavaScript
 
 This guide is intended for publishers with web assets who want to generate identity tokens using EUID for the RTB bid stream, while integrating directly with EUID rather than EUID-enabled single-sign-on or identity providers. This requires server-side changes such as generating EUID tokens on the server side and passing them to the publisher's web pages. If you want to integrate with EUID via only client-side JavaScript changes, refer to [Client-Side Integration Guide for JavaScript](publisher-client-side.md) instead. 
@@ -42,7 +44,7 @@ To facilitate the process of establishing client identity using EUID and retriev
 
 For integration scenarios for publishers that do not use the EUID SDK for JavaScript, see [Publisher Integration Guide, Server-Only](custom-publisher-integration.md). 
 
->NOTE: If you are using Google Ad Manager and want to use the secure signals feature, first follow the steps in this guide and then follow the additional steps in the [Google Ad Manager Secure Signals Integration Guide](google-ss-integration.md).
+<!-- >NOTE: If you are using Google Ad Manager and want to use the secure signals feature, first follow the steps in this guide and then follow the additional steps in the [Google Ad Manager Secure Signals Integration Guide](google-ss-integration.md). -->
 
 ## Integration Steps
 
@@ -168,7 +170,7 @@ The bidding step is shown in the following table.
 </script>
 ```
 
->NOTE: You need to consider how you pass the returned advertising token to SSPs. With some other approaches to client-side EUID implementation, such as using `Prebid.js` (see [EUID Integration Overview for Prebid.js](integration-prebid.md)) or Google Ad Manager Secure Signals (see [Google Ad Manager Secure Signals Integration Guide](google-ss-integration.md)), the implementation includes functions that manage passing the returned advertising token. If you're using the EUID SDK for JavaScript you'll need to manage this yourself.
+>NOTE: You need to consider how you pass the returned advertising token to SSPs. With some other approaches to client-side EUID implementation, such as using `Prebid.js` (see [EUID Integration Overview for Prebid.js](integration-prebid.md))<!--  or Google Ad Manager Secure Signals (see [Google Ad Manager Secure Signals Integration Guide](google-ss-integration.md)) -->, the implementation includes functions that manage passing the returned advertising token. If you're using the EUID SDK for JavaScript you'll need to manage this yourself.
 
 >TIP: Instead of calling `__euid.getAdvertisingToken()`, you can use the `advertising_token` property of the identity passed to the callback that you set up for step 1-g. The callback will be called every time the identity changes.
 

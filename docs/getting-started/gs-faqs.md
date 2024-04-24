@@ -5,6 +5,8 @@ hide_table_of_contents: false
 sidebar_position: 20
 ---
 
+import Link from '@docusaurus/Link';
+
 # Frequently Asked Questions
 
 Frequently asked questions for EUID are grouped into general categories by audience.

@@ -8,6 +8,8 @@ banner_title: EUID Overview for DSPs
 banner_description: Enable data strategies with a more durable identifier.
 ---
 
+import Link from '@docusaurus/Link';
+
 As a demand-side platform (DSP, media-buying platform), you can facilitate identity strategies that leverage European Unified ID (EUID) to facilitate the following:
 
 - First-party data activation for advertisers
@@ -74,10 +76,10 @@ The following documentation resources are available for DSPs to implement EUID.
 
 | Type| Documentation | Content Description |
 | :--- | :--- | :--- |
-|EUID SDK for Java | [EUID SDK for Java Reference Guide](../sdks/euid-sdk-ref-java.md) | An SDK for anyone using Java server-side and who wants to decrypt EUID advertising tokens to access the raw EUID.|
-|EUID SDK for Python | [EUID SDK for Python Reference Guide](../sdks/euid-sdk-ref-python.md) | An SDK for anyone using Python server-side and who wants to decrypt EUID advertising tokens to access the raw EUID.|
-|EUID SDK for C# / .NET | [EUID SDK for C# / .NET Reference Guide](../sdks/euid-sdk-ref-csharp-dotnet.md) | An SDK for anyone using .NET server-side and who wants to decrypt EUID advertising tokens to access the raw EUID.|
-|EUID SDK for C++ | [EUID SDK for C++ Reference Guide](../sdks/euid-sdk-ref-cplusplus.md) | An SDK for anyone using C++ server-side and who wants to decrypt EUID advertising tokens to access the raw EUID.|
+|EUID SDK for Java | [EUID SDK for Java Reference Guide](../sdks/sdk-ref-java.md) | An SDK for anyone using Java server-side and who wants to decrypt EUID advertising tokens to access the raw EUID.|
+|EUID SDK for Python | [EUID SDK for Python Reference Guide](../sdks/sdk-ref-python.md) | An SDK for anyone using Python server-side and who wants to decrypt EUID advertising tokens to access the raw EUID.|
+|EUID SDK for C# / .NET | [EUID SDK for C# / .NET Reference Guide](../sdks/sdk-ref-csharp-dotnet.md) | An SDK for anyone using .NET server-side and who wants to decrypt EUID advertising tokens to access the raw EUID.|
+|EUID SDK for C++ | [EUID SDK for C++ Reference Guide](../sdks/sdk-ref-cplusplus.md) | An SDK for anyone using C++ server-side and who wants to decrypt EUID advertising tokens to access the raw EUID.|
 | Integration Guide | [DSP Integration Guide](../guides/dsp-guide.md) | This integration guide for DSPs covers handling EUIDs for bidding and honoring user opt-outs. |
 
 <!-- ## Integration Requirements

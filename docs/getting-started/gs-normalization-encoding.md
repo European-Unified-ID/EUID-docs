@@ -5,6 +5,8 @@ hide_table_of_contents: false
 sidebar_position: 13
 ---
 
+import Link from '@docusaurus/Link';
+
 # Normalization and Encoding
 
 This page provides information about normalizing and encoding personal data. It's important that, in working with EUID, normalizing and encoding are performed correctly.

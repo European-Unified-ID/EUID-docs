@@ -5,6 +5,8 @@ hide_table_of_contents: false
 sidebar_position: 01
 ---
 
+import Link from '@docusaurus/Link';
+
 # European Unified ID Overview
 
 This page provides overview information about the European Unified ID (EUID) framework.
@@ -20,8 +22,6 @@ It includes the following:
   - [Workflows](#workflows)
 - [Frequently Asked Questions (FAQs)](#faqs)
 - [License](#license)
-
-For [integration guides](api/v2/guides/summary-guides.md), [supported SDKs](api/v2/sdks/summary-sdks.md), and [endpoint reference](api/v2/endpoints/summary-endpoints.md), see [EUID API Documentation](/api/v2/summary-doc-v2.md). For general information about getting started, see [Getting Started: Summary](api/v2/getting-started/gs-summary.md).
 
 ## Introduction 
 
@@ -125,9 +125,9 @@ The following table lists four key workflows in the EUID system and provides lin
 
 | Workflow | Intended Primary Participants | Integration Guide |
 | :--- | :--- | :--- |
-| **Buy-Side** | DSPs who transact on EUID tokens in the bid stream. | [DSP](api/v2/guides/dsp-guide.md) |
-| **Data Provider** | Organizations that collect user data and push it to other EUID participants. | [Advertiser and Third-Party Data Provider](api/v2/guides/advertiser-dataprovider-guide.md) |
-| **Supply-Side** | Organizations that propagate EUID tokens to the bid stream via SSPs.<br/> NOTE: Publishers can choose to leverage the [SDK for JavaScript](api/v2/sdks/client-side-identity.md) or complete their own server-only integration without using an SDK. | [SDK for JavaScript Integration Guide](api/v2/guides/publisher-client-side.md)<br/>[Publisher Integration Guide, Server-Only (Without SDK)](api/v2/guides/custom-publisher-integration.md) |
+| **Buy-Side** | DSPs who transact on EUID tokens in the bid stream. | [DSP](guides/dsp-guide.md) |
+| **Data Provider** | Organizations that collect user data and push it to other EUID participants. | [Advertiser and Third-Party Data Provider](guides/advertiser-dataprovider-guide.md) |
+| **Supply-Side** | Organizations that propagate EUID tokens to the bid stream via SSPs.<br/> NOTE: Publishers can choose to leverage the [SDK for JavaScript](sdks/client-side-identity.md) or complete their own server-only integration without using an SDK. | [SDK for JavaScript Integration Guide](guides/publisher-client-side.md)<br/>[Publisher Integration Guide, Server-Only (Without SDK)](guides/custom-publisher-integration.md) |
 | **Opt-Out** | Consumers who engage with publishers or their SSO providers and other identity providers. | N/A |
 
 The following diagram summarizes all four workflows. For each workflow, the [participants](#participants), [components](#components), [EUID identifier types](#euid-identifier-types), and numbered steps are color-coded.
@@ -136,7 +136,7 @@ The following diagram summarizes all four workflows. For each workflow, the [par
 
 ## FAQs
 
-See [Frequently Asked Questions](api/v2/getting-started/gs-faqs.md).
+See [Frequently Asked Questions](getting-started/gs-faqs.md).
 
 ## License
 All work and artifacts are licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt).
