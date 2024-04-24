@@ -5,6 +5,8 @@ hide_table_of_contents: false
 sidebar_position: 02
 ---
 
+import Link from '@docusaurus/Link';
+
 # SDK for JavaScript Reference Guide
 
 Use this SDK to facilitate the process of establishing client identity using EUID and retrieving advertising tokens. The following sections describe the high-level [workflow](#workflow-overview) for establishing EUID identity, provide the SDK [API reference](#api-reference), and explain the EUID [storage format](#euid-storage-format).

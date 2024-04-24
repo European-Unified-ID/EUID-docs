@@ -5,6 +5,8 @@ hide_table_of_contents: false
 sidebar_position: 04
 ---
 
+import Link from '@docusaurus/Link';
+
 # EUID SDK for Java (Server-Side) Reference Guide
 
 You can use the EUID SDK for Java (server-side) to facilitate the following:

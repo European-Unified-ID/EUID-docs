@@ -5,6 +5,8 @@ hide_table_of_contents: false
 sidebar_position: 02
 ---
 
+import Link from '@docusaurus/Link';
+
 # User Opt-Out
 
 Many different publishers and advertisers use EUID. Different publishers might have different opt-out processes for their individual sites; however, EUID as a whole has very specific opt-out processes that all EUID participants are expected to honor.

@@ -5,6 +5,8 @@ hide_table_of_contents: false
 sidebar_position: 07
 ---
 
+import Link from '@docusaurus/Link';
+
 # API Permissions
 
 The EUID ecosystem includes several different API permissions that allow access to complete specific activities. This approach is part of the overall secure design of EUID.

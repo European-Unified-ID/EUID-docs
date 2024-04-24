@@ -7,6 +7,8 @@ hide_table_of_contents: false
 sidebar_position: 04
 ---
 
+import Link from '@docusaurus/Link';
+
 <!-- ---
 title: EUID Client-Side Integration Guide for Prebid.js
 sidebar_label: Client-Side Integration for Prebid.js

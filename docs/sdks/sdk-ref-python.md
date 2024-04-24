@@ -5,6 +5,8 @@ hide_table_of_contents: false
 sidebar_position: 06
 ---
 
+import Link from '@docusaurus/Link';
+
 # EUID SDK for Python (Server-Side) Reference Guide
 
 You can use the EUID SDK for Python (Server-Side) to facilitate:

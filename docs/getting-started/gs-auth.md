@@ -5,6 +5,8 @@ hide_table_of_contents: false
 sidebar_position: 05
 ---
 
+import Link from '@docusaurus/Link';
+
 To authenticate to the EUID endpoints in a server-side implementation, you need the following:
 
 - A client [API key](gs-credentials.md#api-key-and-client-secret). The API key is included as a bearer token in the request's Authorization header. For example:<br/>

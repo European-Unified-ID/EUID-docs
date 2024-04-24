@@ -7,6 +7,8 @@ hide_table_of_contents: false
 sidebar_position: 04
 ---
 
+import Link from '@docusaurus/Link';
+
 # Client-Side Integration Guide for JavaScript
 
 This guide is for publishers who want to integrate with EUID and generate EUID tokens (advertising tokens) using only JavaScript client-side changes on their website with minimum effort.

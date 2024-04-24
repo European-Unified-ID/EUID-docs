@@ -5,6 +5,8 @@ hide_table_of_contents: false
 sidebar_position: 04
 ---
 
+import Link from '@docusaurus/Link';
+
 # POST /token/refresh
 
 Generate a new EUID token by sending the corresponding unexpired refresh token, returned by the [POST /token/generate](post-token-generate.md) endpoint.

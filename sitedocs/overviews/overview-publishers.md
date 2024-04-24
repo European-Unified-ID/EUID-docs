@@ -92,7 +92,6 @@ For a detailed summary of web integration options, see [Web Integration Overview
 | Prebid.js Server-Side Integration | [EUID Server-Side Integration Guide for Prebid.js](../guides/integration-prebid-server-side.md) | A guide for publishers who want to integrate with EUID and generate EUID tokens to be passed by Prebid.js in the RTB bid stream, but want to generate tokens server-side: for example, publishers who are using a Private Operator. |
 | JavaScript SDK | [SDK for JavaScript Integration Guide](../guides/publisher-client-side.md) | A publisher guide covering standard web integration scenarios that use the EUID SDK for JavaScript and require tokens to be generated on the server side and passed to the publisher web pages. |
 | Server-Side Integration | [Publisher Integration Guide, Server-Only](../guides/custom-publisher-integration.md) | A guide for publishers who do not use the [EUID SDK for JavaScript](../sdks/client-side-identity.md). |
-| Publisher/SSP Integration with GAM | [Google Ad Manager Secure Signals Integration Guide](../guides/google-ss-integration.md) | A guide covering the additional steps needed for publishers using EUID with the Google Ad Manager Secure Signals feature (previously known as Encrypted Signals for Publishers, ESP). |
 
 ### Prebid Integrations
 

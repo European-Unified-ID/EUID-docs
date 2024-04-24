@@ -5,6 +5,8 @@ hide_table_of_contents: false
 sidebar_position: 03
 ---
 
+import Link from '@docusaurus/Link';
+
 # EUID Credentials
 
 This page provides information about the different types of credentials you'll need to participate in EUID. It includes:

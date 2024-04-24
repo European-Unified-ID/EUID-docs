@@ -8,6 +8,8 @@ banner_title: EUID Overview for DSPs
 banner_description: Enable data strategies with a more durable identifier.
 ---
 
+import Link from '@docusaurus/Link';
+
 As a demand-side platform (DSP, media-buying platform), you can facilitate identity strategies that leverage European Unified ID (EUID) to facilitate the following:
 
 - First-party data activation for advertisers
