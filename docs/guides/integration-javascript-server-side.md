@@ -46,8 +46,6 @@ To facilitate the process of establishing client identity using EUID and retriev
 
 For integration scenarios for publishers that do not use the EUID SDK for JavaScript, see [Publisher Integration Guide, Server-Only](custom-publisher-integration.md). 
 
-<!-- >NOTE: If you are using Google Ad Manager and want to use the secure signals feature, first follow the steps in this guide and then follow the additional steps in the [Google Ad Manager Secure Signals Integration Guide](google-ss-integration.md). -->
-
 ## Integration Steps
 
 The following diagram outlines the steps required for establishing a user's EUID token with a publisher and how the EUID token integrates with the RTB bid stream.

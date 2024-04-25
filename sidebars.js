@@ -70,44 +70,84 @@ const sidebars = {
           link: {
             type: 'generated-index',
           },
-          collapsed: true,
+          collapsed: false,
 
           items: [
-
           {
             type: 'category',
             label: 'Web',
             link: {
-              type: 'generated-index',
+              type: 'doc',
+              id: 'guides/integration-options-publisher-web',
             },
             collapsed: true,
             items: [
-              'guides/integration-prebid',
-              'guides/publisher-client-side',
-              'guides/integration-prebid-client-side',
-              'guides/integration-prebid-server-side',
-              'guides/integration-javascript',
-              'guides/publisher-client-side',
-              'guides/integration-javascript-server-side',
+              {
+                type: 'category',
+                label: 'Prebid',
+                link: {
+                  type: 'doc',
+                  id: 'guides/integration-prebid',
+                },
+                collapsed: true,
+                items: [
+                  'guides/integration-prebid-client-side',
+                  'guides/integration-prebid-server-side',
+                ],
+              },
+
+              {
+                type: 'category',
+                label: 'JavaScript',
+                link: {
+                  type: 'doc',
+                  id: 'guides/integration-javascript',
+                },
+                collapsed: true,
+                items: [
+                  'guides/publisher-client-side',
+                  'guides/integration-javascript-server-side',
+                ],
+              },
               'guides/custom-publisher-integration',
-                    ],
+            ],
           },
 
           {
             type: 'category',
             label: 'Prebid',
             link: {
-              type: 'generated-index',
+              type: 'doc',
+              id: 'guides/integration-prebid',
             },
             collapsed: true,
             items: [
-              'guides/integration-prebid',
               'guides/integration-prebid-client-side',
               'guides/integration-prebid-server-side',
             ],
           },
-          ],
+
+        ],
         },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         {
           type: 'category',
@@ -151,6 +191,18 @@ const sidebars = {
         'endpoints/post-token-refresh',
         'endpoints/post-identity-buckets',
         'endpoints/post-identity-map',
+      ],
+    },
+
+    {
+      type: 'category',
+      label: 'Reference Information',
+      link: {
+        type: 'generated-index',
+      },
+      collapsed: true,
+      items: [
+        'ref-info/ref-operators-public-private',
       ],
     },
 

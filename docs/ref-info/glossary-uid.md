@@ -331,11 +331,6 @@ import Link from '@docusaurus/Link';
 <dt><MdxJumpAnchor id="gl-secret">Secret</MdxJumpAnchor></dt>
 <dd>See <a href="#gl-client-secret">client secret</a>.</dd>
 
-<!-- <dt><MdxJumpAnchor id="gl-secure-signals">Secure signals</MdxJumpAnchor></dt>
-<dd>A feature of Google Ad Manager. The secure signals feature (previously known as Encrypted Signals for Publishers, abbreviated to ESP) allows publishers to securely share signals with trusted third-party buying partners. It allows publishers to pass "encrypted" user IDs to bidders that are approved by Google, via <a href="https://admanager.google.com/home/">Google Ad Manager</a> and the <a href="https://support.google.com/admanager/answer/6321605?hl=en">Google Ad Manager Ad Exchange (AdX)</a>.</dd>
-<dd>For details, see <a href="https://blog.google/products/admanager/new-ways-for-publishers-to-manage-first-party-data/">Share secure signals with your trusted partners</a> (second section) and <a href="https://support.google.com/admanager/answer/10488752?hl=en">Share secure signals with bidders</a>, both from Google.</dd>
-<dd>For details about EUID support of the Google secure signals feature, see <a href="../guides/google-ss-integration">Google Ad Manager Secure Signals Integration Guide</a>.</dd> -->
-
 <dt><MdxJumpAnchor id="gl-sha-256">SHA-256</MdxJumpAnchor></dt>
 <dd>SHA-256 is the secure hashing algorithm that EUID uses.</dd>
 <dd>SHA-256 is part of the SHA-2 family of algorithms developed by the National Institute of Standards and Technology (NIST) and the National Security Agency (NSA) to succeed SHA-1. Each algorithm is named according to the number of bits in the output, so SHA-256 has 256 bits.</dd>
