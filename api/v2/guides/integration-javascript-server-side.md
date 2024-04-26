@@ -41,7 +41,7 @@ For integration scenarios for publishers that do not use the EUID SDK for JavaSc
 
 The following diagram outlines the steps required for establishing a user's EUID token with a publisher and how the EUID token integrates with the RTB bid stream.
 
-![Publisher Flow Without SDK](images/custom-publisher-flow-mermaid.svg)
+![Publisher Flow](images/custom-publisher-integration-mermaid.svg)
 
 The following sections provide additional details for each step in the diagram:
  
@@ -90,7 +90,7 @@ After authentication in step 1-c, which forces the user to accept the rules of e
         const advertisingToken = payload.identity.advertising_token;
         // Pass advertising_token to your advertising system to use
       } else {
-        // No identity is available for targeted advertising - trigger a login flow if you want to use EUID for targeted advertising
+        // No identity is available. Trigger a workflow for obtaining email address if you want to use EUID for targeted advertising.
       }
     }
   });
@@ -127,7 +127,7 @@ After authentication in step 1-c, which forces the user to accept the rules of e
         const advertisingToken = payload.identity.advertising_token;
         // Pass advertising_token to your advertising system to use
       } else {
-        // No identity is available for targeted advertising - trigger a login flow if you want to use EUID for targeted advertising
+        // No identity is available. Trigger a workflow for obtaining email address if you want to use EUID for targeted advertising.
       }
     }
   });

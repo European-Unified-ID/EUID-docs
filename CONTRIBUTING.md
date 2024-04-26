@@ -37,7 +37,7 @@ This command generates static content into the `build` directory and can be serv
 npm run build && npm run serve
 ```
 
-This command generates static content in all supported languages into the `build` directory and serves it to `http://localhost:3006/`.
+This command generates static content in all supported languages into the `build` directory and serves it to `http://localhost:3007/`.
 
 ## Deployment
 
