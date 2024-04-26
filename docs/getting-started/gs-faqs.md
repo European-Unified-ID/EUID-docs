@@ -25,7 +25,6 @@ Here are some frequently asked questions regarding the EUID framework.
    - [Will all integration partners in the UID2 infrastructure (SSPs, third-party data providers, measurement providers) be automatically integrated with EUID?](#will-all-integration-partners-in-the-uid2-infrastructure-ssps-third-party-data-providers-measurement-providers-be-automatically-integrated-with-euid)
    - [Can users opt out of targeted advertising tied to their EUID?](#can-users-opt-out-of-targeted-advertising-tied-to-their-euid)
    - [When I send personal data to EUID, does EUID store the information?](#when-i-send-personal-data-to-euid-does-euid-store-the-information)
-   - [How does a user know where to access the opt-out portal?](#how-does-a-user-know-where-to-access-the-opt-out-portal)
 
 #### Will all integration partners in the UID2 infrastructure (SSPs, third-party data providers, measurement providers) be automatically integrated with EUID?
 
@@ -40,10 +39,6 @@ Yes. Through the [Transparency and Control Portal](https://transparentadvertisin
 No, EUID does not store any personal information. In addition, in almost all cases, EUID doesn't store any values at all once the [POST /token/generate](../endpoints/post-token-generate.md), [POST /token/refresh](../endpoints/post-token-refresh.md), or [POST /identity/map](../endpoints/post-identity-map.md) call is complete.
 
 A necessary exception is the case where a user has opted out. In this scenario, EUID stores a hashed, opaque value to indicate the opted-out user. The stored value cannot be reverse engineered back to the original value of the personal data, but can be used to identify future requests for an EUID generated from the same personal data, which are therefore denied.
-
-#### How does a user know where to access the opt-out portal?
-
-Publishers, SSO providers, or consent management platforms disclose links to the [Transparency and Control Portal](https://transparentadvertising.eu) in their login flows, consent flows, privacy policies, or by other means.
 
 ## FAQs for Publishers
 

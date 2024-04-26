@@ -36,7 +36,7 @@ For an example application, see the UID2 Google Secure Signals with SDK v3 examp
 
 ## Introduction
 
-This guide outlines the basic steps that you need to consider if you are building an integration without using an SDK. For example, you need to decide how to implement user login and logout, how to manage EUID identity information and use it for targeted advertising, and how to refresh tokens, deal with missing identities, and handle user opt-outs.
+This guide outlines the basic steps that you need to consider if you are building an integration without using an SDK. For example, you need to decide how to implement user authentication and data capture, how to manage EUID identity information and use it for targeted advertising, and how to refresh tokens, deal with missing identities, and handle user opt-outs.
 
 For a workflow diagram, see [Integration Steps](#integration-steps). See also [FAQs](#faqs).
 
@@ -50,7 +50,7 @@ For integration scenarios for publishers that do not use the EUID SDK for JavaSc
 
 The following diagram outlines the steps required for establishing a user's EUID token with a publisher and how the EUID token integrates with the RTB bid stream.
 
-![Publisher Flow Without SDK](images/custom-publisher-flow-mermaid.svg)
+![Publisher Flow Without SDK](images/custom-publisher-integration-mermaid.svg)
 
 The following sections provide additional details for each step in the diagram:
  
@@ -100,7 +100,7 @@ After authentication in step 1-c, which forces the user to accept the rules of e
         const advertisingToken = payload.identity.advertising_token;
         // Pass advertising_token to your advertising system to use
       } else {
-        // No identity is available for targeted advertising - trigger a login flow if you want to use EUID for targeted advertising
+        // No identity is available. Trigger a workflow for obtaining email address if you want to use EUID for targeted advertising.
       }
     }
   });
@@ -138,7 +138,7 @@ After authentication in step 1-c, which forces the user to accept the rules of e
         const advertisingToken = payload.identity.advertising_token;
         // Pass advertising_token to your advertising system to use
       } else {
-        // No identity is available for targeted advertising - trigger a login flow if you want to use EUID for targeted advertising
+        // No identity is available. Trigger a workflow for obtaining email address if you want to use EUID for targeted advertising.
       }
     }
   });

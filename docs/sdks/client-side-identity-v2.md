@@ -37,7 +37,7 @@ The high-level client-side workflow for establishing EUID identity using the SDK
 	- If the identity is unavailable, the SDK takes the appropriate action based on whether identity is refreshable or not. For details, see [Workflow States and Transitions](#workflow-states-and-transitions).
 4. Handle the identity based on its state:
 	- If the advertising token is available, use it to initiate requests for targeted advertising.
-	- If not, either use untargeted advertising or redirect the user to the EUID login with the consent form.
+	- If the advertising token is not available, either use untargeted advertising or redirect the user to the data capture with the consent form.
 
 For intended web integration steps, see [SDK for JavaScript Integration Guide](../guides/publisher-client-side.md).
 
@@ -48,9 +48,9 @@ The following table outlines the four main states in which the SDK can be, based
 | State | Advertising Token | Login Required | Description| Identity Status Value |
 | :--- | :--- | :---| :---| :---|
 | Initialization | `undefined`| `undefined`| Initial state until the callback is invoked. | N/A |
-| Identity Is Available | available |`false` | A valid identity has been successfully established or refreshed. You can use the advertising token in targeted advertising.  |`ESTABLISHED` or `REFRESHED` |
-| Identity Is Temporarily Unavailable |`undefined` | `false`| The identity (advertising token) has expired, and automatic refresh failed. [Background auto-refresh](#background-token-auto-refresh) attempts will continue until the refresh token expires or the user opts out.<br/>You can do either of the following:<br/>- Use untargeted advertising.<br/>- Redirect the user to the EUID login with a consent form.<br/>NOTE: Identity may be successfully refreshed after some time&#8212;for example, if the EUID service is temporarily unavailable.| `EXPIRED` |
-| Identity Is Not Available  | `undefined`| `false`| The identity is not available and cannot be refreshed. The SDK clears the first-party cookie.<br/>To use EUID-based targeted advertising again,  you need to redirect the user to the EUID login with a consent form. | `INVALID`, `NO_IDENTITY`, `REFRESH_EXPIRED`, or `OPTOUT` |
+| Identity Is Available | available |`false` | A valid identity has been successfully established or refreshed. You can use the advertising token in targeted advertising. |`ESTABLISHED` or `REFRESHED` |
+| Identity Is Temporarily Unavailable |`undefined` | `false`| The identity (advertising token) has expired, and automatic refresh failed. [Background auto-refresh](#background-token-auto-refresh) attempts will continue until the refresh token expires or the user opts out.<br/>You can do either of the following:<br/>- Redirect the user, asking for the email.<br/>- Use untargeted advertising.<br/>NOTE: Identity may be successfully refreshed after some time&#8212;for example, if the EUID service is temporarily unavailable.| `EXPIRED` |
+| Identity Is Not Available  | `undefined`| `false`| The identity is not available and cannot be refreshed. The SDK clears the first-party cookie.<br/>To use EUID-based targeted advertising again, you must obtain the email from the consumer. | `INVALID`, `NO_IDENTITY`, `REFRESH_EXPIRED`, or `OPTOUT` |
 
 The following diagram illustrates the four states, including the respective identity [status values](#identity-status-values), and possible transitions between them. The SDK invokes the [callback function](#callback-function) on each transition.
 
@@ -232,7 +232,7 @@ This function can be called before or after the [init()](#initopts-object-void) 
 
 ### isLoginRequired(): boolean
 
-Specifies whether a EUID login ([POST /token/generate](../endpoints/post-token-generate.md) call) is required. 
+Specifies whether an EUID [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) call is required.
 
 The function can also provide additional context for handling missing identities, as shown in [Workflow States and Transitions](#workflow-states-and-transitions).
 
@@ -246,8 +246,8 @@ The function can also provide additional context for handling missing identities
 
 | Value | Description |
 | :--- | :--- |
-| `true` | The identity is not available, and the EUID login is required. This value indicates any of the following:<br/>- The user has opted out.<br/>- The refresh token has expired.<br/>- A first-party cookie is not available and no server-generated identity has been supplied. |
-| `false` | No login is required. This value indicates either of the following:<br/>- The identity is present and valid.<br/>- The identity has expired, and the token was not refreshed due to an intermittent error. The identity may be restored after a successful auto-refresh attempt. |
+| `true` | The identity is not available. This value indicates any of the following:<br/>- The user has opted out.<br/>- The refresh token has expired.<br/>- A first-party cookie is not available and no server-generated identity has been supplied. |
+| `false` | This value indicates either of the following:<br/>- The identity is present and valid.<br/>- The identity has expired, and the token was not refreshed due to an intermittent error. The identity may be restored after a successful auto-refresh attempt. |
 | `undefined` | The SDK initialization is not complete yet. |
 
 ### disconnect(): void

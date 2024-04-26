@@ -123,7 +123,7 @@ The high-level client-side workflow for establishing EUID identity using the SDK
 	 The `identity` property on the event payload either contains the new identity, or is null if a valid identity is not available.
 5. Handle the identity based on its state:
 	- If the advertising token is available, use it to initiate requests for targeted advertising.
-	- If the advertising token is not available, either use untargeted advertising or redirect the user to your EUID login with the consent form.
+	- If the advertising token is not available, either use untargeted advertising or redirect the user to the data capture with the consent form.
 
 For more detailed web integration steps, see [SDK for JavasScript Integration Guide](../guides/publisher-client-side.md).
 
@@ -134,7 +134,7 @@ As part of the SDK [initialization](#initopts-object-void), a token auto-refresh
 Here's what you need to know about the token auto-refresh:
 
 - Only one token refresh call can be active at a time. 
-- If the [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) response is unsuccessful because the user has opted out, or because the refresh token has expired, this suspends the background auto-refresh process and requires a new login. In all other cases, auto-refresh attempts continue in the background.
+- If the [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) response is unsuccessful because the user has opted out, or because the refresh token has expired, this suspends the background auto-refresh process. To use EUID-based targeted advertising again, you must obtain the email from the consumer.. In all other cases, auto-refresh attempts continue in the background.
 - All [callback functions](#callback-function) provided using the [Array Push Pattern](#array-push-pattern) are invoked in the following cases:
 	- After each successful refresh attempt.
 	- When identity has become invalid&#8212;for example, because the user has opted out.<br/>NOTE: The callback is *not* invoked when identity is temporarily unavailable and the auto-refresh keeps failing. In this case, the SDK continues using the existing advertising token as long as it hasn't expired.
@@ -393,7 +393,7 @@ You can use this function to be notified of the completion of the Client-Side Ja
 
 ### isLoginRequired(): boolean
 
-Specifies whether an EUID login ([POST&nbsp;/token/generate](../endpoints/post-token-generate.md) call) is required.
+Specifies whether an EUID [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) call is required.
 
 ```html
 <script>
@@ -405,8 +405,8 @@ Specifies whether an EUID login ([POST&nbsp;/token/generate](../endpoints/post-t
 
 | Value | Description |
 | :--- | :--- |
-| `true` | The identity is not available, and the EUID login is required. This value indicates any of the following:<ul><li>The user has opted out.</li><li>The refresh token has expired.</li><li>A first-party cookie is not available and no server-generated identity has been supplied.</li></ul> |
-| `false` | No login is required. This value indicates one of the following:<ul><li>The identity is present and valid.</li><li>The identity has expired (but the refresh token has not expired), and the token was not refreshed due to an intermittent error. The identity might be restored after a successful auto-refresh attempt.</li></ul> |
+| `true` | The identity is not available. This value indicates any of the following:<ul><li>The user has opted out.</li><li>The refresh token has expired.</li><li>A first-party cookie is not available and no server-generated identity has been supplied.</li></ul> |
+| `false` | This value indicates one of the following:<ul><li>The identity is present and valid.</li><li>The identity has expired (but the refresh token has not expired), and the token was not refreshed due to an intermittent error. The identity might be restored after a successful auto-refresh attempt.</li></ul> |
 | `undefined` | The SDK initialization is not yet complete. |
 
 ### disconnect(): void

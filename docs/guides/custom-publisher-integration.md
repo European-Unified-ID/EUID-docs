@@ -25,7 +25,15 @@ It includes the following sections:
 
 ## Introduction
 
-The guide outlines the [basic steps](#integration-steps) that you need to consider if you're building an integration without using an SDK. For example, you need to decide how to implement user login and logout, how to manage EUID identity information and use it for targeted advertising, how to refresh tokens, deal with missing identities, and handle user opt-outs. See also [FAQs](#faqs).
+The guide outlines the [basic steps](#integration-steps) that you need to consider if you're building an integration without using a client-side or server-side SDK. For example, you need to decide how to do the following:
+
+- Implement opportunities to capture email: for example, promotional exchanges, sign-ups and subscriptions, or marketing form fills.
+- Manage EUID identity information and use it for targeted advertising
+- Refresh EUID tokens
+- Deal with missing identities
+- Manage user opt-outs
+
+See also [FAQs](#faqs).
 
 The following are the options available for publishers to integrate with EUID:
 
@@ -42,11 +50,11 @@ This document provides details for the last option.
 
 The following diagram outlines the steps required for a user to establish an EUID token with a publisher and how the EUID token integrates with the RTB bid stream.
  
-![Publisher Flow Without SDK](images/custom-publisher-flow-mermaid.svg)
+![Publisher Flow Without SDK](images/custom-publisher-integration-mermaid.svg)
 
 The following sections provide additional details for each step in the diagram:
  
- 1. [Establish identity: user login](#establish-identity-capture-user-data)
+ 1. [Establish identity: capture user data](#establish-identity-capture-user-data)
  2. [Bid using EUID tokens](#bid-using-euid-tokens)
  3. [Refresh tokens](#refresh-tokens)
  4. [Clear Identity: user logout](#clear-identity-user-logout)
