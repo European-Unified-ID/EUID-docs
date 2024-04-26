@@ -19,7 +19,7 @@ On this page, you'll find a high-level overview of integration steps and integra
 * [Integration Options: Client Side](#integration-options-client-side)
 * [Integration Options: Server Side](#integration-options-server-side)
 * [Options to Generate/Refresh EUID Token](#options-to-generaterefresh-euid-token)
-* [Options to Pass the EUID Token into the Bid Stream](#options-to-pass-the-euid-token-into-the-bid-stream)
+* [Pass the Token into the Bid Stream](#options-to-pass-the-token-into-the-bid-stream)
 * [Client-Side or Server-Side Integration?](#client-side-or-server-side-integration)
 * [Integration Using Prebid](#integration-using-prebid)
 * [IntegrationDetails](#integration-details)
@@ -37,7 +37,7 @@ At a high level, to integrate with EUID, you'll implement these three key activi
 
 1. [Generate the EUID token](#generate-the-euid-token)
 1. [Refresh the EUID token as needed](#refresh-the-euid-token)
-1. [Pass the EUID token into the bid stream](#pass-the-euid-token-into-the-bid-stream)
+1. [Pass the token into the bid stream](#pass-the-token-into-the-bid-stream)
 
 There are many ways you can accomplish these key steps. The simplest and fastest implementation is a full client-side implementation using Prebid.js 8.21.0 or later.
 
@@ -53,8 +53,8 @@ To accomplish all steps, you can combine solutions. For example, you could use t
 | [Prebid.js server-side (7.53.0 or later)](integration-prebid-server-side.md) | &#8212; | &#9989; | &#9989; |
 | [EUID SDK for JavaScript, client-side](publisher-client-side.md) | &#9989; | &#9989; | &#8212; |
 | [EUID SDK for JavaScript, server-side](integration-javascript-server-side.md) | &#9989; | &#9989; | &#8212; |
-| [EUID SDK for Java](../sdks/euid-sdk-ref-java.md) | &#9989; | &#9989; | &#8212; |
-| [EUID SDK for Python](../sdks/euid-sdk-ref-python.md) | &#9989; | &#9989; | &#8212; |
+| [EUID SDK for Java](../sdks/sdk-ref-java.md) | &#9989; | &#9989; | &#8212; |
+| [EUID SDK for Python](../sdks/sdk-ref-python.md) | &#9989; | &#9989; | &#8212; |
 | [Direct integration (API endpoints)](custom-publisher-integration.md) | &#9989; | &#9989; | &#8212; |
 
 <!-- &#9989; = Supported | &#8212; = Not Supported -->
@@ -65,7 +65,7 @@ To choose your implementation and get started, follow these steps:
    - [Client-Side Integration Options](#client-side-integration-options)
    - [Server-Side Integration Options](#server-side-integration-options)
 1. Review the options to [refresh the EUID token](#refresh-the-euid-token).
-1. Review the options to [pass the token into the bid stream](#pass-the-euid-token-into-the-bid-stream).
+1. Review the options to [pass the token into the bid stream](#pass-the-token-into-the-bid-stream).
 1. Choose the option that's best for you, and then click through to the implementation documentation.
 
 ## Generate the EUID Token
@@ -98,7 +98,7 @@ The following table summarizes the options for publishers who want to generate t
 
 Generating the EUID token on the server side has the following advantages:
 
-- You can keep your <Link href="../ref-info/glossary-uid#gl-dii">directly identifying information (DII)</Link> entirely on the server side.
+- You can keep your <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> entirely on the server side.
 - If your development resources are back-end developers, you might prefer a server-side integration.
 - For server-side Prebid integration, there is no requirement to update to the latest Prebid version, as long as your version is 7.53.0 or later.
 
@@ -107,8 +107,8 @@ The following table summarizes the options for publishers who want to generate t
 | Option | Documentation |
 | :--- | :--- |
 | EUID SDK for JavaScript, server-side implementation | [Server-Side Integration Guide for JavaScript](integration-javascript-server-side.md) |
-| EUID SDK for Java | - [Publisher Integration Guide, Server-Only](custom-publisher-integration.md)<br/>- [EUID SDK for Java](../sdks/euid-sdk-ref-java.md) |
-| EUID SDK for Python | - [Publisher Integration Guide, Server-Only](custom-publisher-integration.md)<br/>- [EUID SDK for Python](../sdks/euid-sdk-ref-python.md)  |
+| EUID SDK for Java | - [Publisher Integration Guide, Server-Only](custom-publisher-integration.md)<br/>- [EUID SDK for Java](../sdks/sdk-ref-java.md) |
+| EUID SDK for Python | - [Publisher Integration Guide, Server-Only](custom-publisher-integration.md)<br/>- [EUID SDK for Python](../sdks/sdk-ref-python.md)  |
 | Direct integration (API endpoints) | [Publisher Integration Guide, Server-Only](custom-publisher-integration.md) |
 
 ## Refresh the EUID Token
@@ -125,11 +125,11 @@ The following table shows the integration options that support refreshing the EU
 | Prebid.js server-side implementation (7.53.0 or later) | [EUID Server-Side Integration Guide for Prebid.js](integration-prebid-server-side.md) |
 | EUID SDK for JavaScript, client-side implementation | [Client-Side Integration Guide for JavaScript](publisher-client-side.md) |
 | EUID SDK for JavaScript, server-side implementation | [Server-Side Integration Guide for JavaScript](integration-javascript-server-side.md) |
-| EUID SDK for Java | - [Publisher Integration Guide, Server-Only](custom-publisher-integration.md)<br/>- [EUID SDK for Java](../sdks/euid-sdk-ref-java.md) |
-| EUID SDK for Python | - [Publisher Integration Guide, Server-Only](custom-publisher-integration.md)<br/>- [EUID SDK for Python](../sdks/euid-sdk-ref-python.md)  |
+| EUID SDK for Java | - [Publisher Integration Guide, Server-Only](custom-publisher-integration.md)<br/>- [EUID SDK for Java](../sdks/sdk-ref-java.md) |
+| EUID SDK for Python | - [Publisher Integration Guide, Server-Only](custom-publisher-integration.md)<br/>- [EUID SDK for Python](../sdks/sdk-ref-python.md)  |
 | Direct integration (API endpoints) | [Publisher Integration Guide, Server-Only](custom-publisher-integration.md) |
 
-## Pass the EUID Token Into the Bid Stream
+## Pass the Token Into the Bid Stream
 
 Publishers use EUIDs by encrypting personal data into EUID tokens and then sending the EUID tokens into the bid stream.
 

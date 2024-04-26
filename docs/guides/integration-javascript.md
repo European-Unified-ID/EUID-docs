@@ -55,7 +55,7 @@ The cookie size can be significant, which could be a problem. However, if local 
 
 The JavaScript SDK manages generating, refreshing, and storing the EUID token, but it does not manage passing the token to the bid stream.
 
-You can pass the token into the bid stream using any option you choose&#8212;for example, Prebid.js. For some suggestions, see [Pass the EUID Token Into the Bid Stream](integration-options-publisher-web.md#pass-the-euid-token-into-the-bid-stream) in the *Web Integration Overview*.
+You can pass the token into the bid stream using any option you choose&#8212;for example, Prebid.js. For some suggestions, see [Pass the Token Into the Bid Stream](integration-options-publisher-web.md#pass-the-token-into-the-bid-stream) in the *Web Integration Overview*.
 
 ## JavaScript Integration Overview: High-Level Steps
 

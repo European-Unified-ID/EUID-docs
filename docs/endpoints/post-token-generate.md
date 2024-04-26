@@ -1,6 +1,6 @@
 ---
 title: POST /token/generate
-description: Generate an EUID token (advertising token) from DII. 
+description: Generate an EUID token (advertising token) from personal data. 
 hide_table_of_contents: false
 sidebar_position: 02
 ---

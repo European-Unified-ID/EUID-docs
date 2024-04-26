@@ -1,6 +1,6 @@
 ---
 title: POST /identity/map
-description: Map DII to raw EUIDs and salt bucket IDs.
+description: Map personal data to raw EUIDs and salt bucket IDs.
 hide_table_of_contents: false
 sidebar_position: 08
 ---

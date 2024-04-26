@@ -22,7 +22,7 @@ Here are some of the intended benefits of participating in EUID as a private Ope
 - You can plan to minimize network hops with a service that can provide regional proximity.
 - You can implement processes and policies that you control, as opposed to taking part in a shared service.
 
-For more information, see [The EUID Operator](../ref-info/ref-operators-public-private.md).
+For details, see [The EUID Operator](../ref-info/ref-operators-public-private.md).
 
 ## Hosting Options for Private Operators
 

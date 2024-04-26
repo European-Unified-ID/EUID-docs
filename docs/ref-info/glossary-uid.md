@@ -61,6 +61,7 @@ import Link from '@docusaurus/Link';
 <li><a href="#gl-opt-out">Opt-out</a></li>
 <li><a href="#gl-opt-out-service">Opt-Out Service</a></li>
 <li><a href="#gl-participant">Participant</a></li>
+<li><a href="#gl-personal-data">Personal data</a></li>
 <li><a href="#gl-private-operator">Private Operator</a></li>
 <li><a href="#gl-private-operator-service">Private Operator Service</a></li>
 <li><a href="#gl-public-key">Public key</a></li>
