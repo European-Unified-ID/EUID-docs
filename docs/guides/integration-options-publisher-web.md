@@ -70,7 +70,10 @@ To choose your implementation and get started, follow these steps:
 
 ## Generate the EUID Token
 
-There are two main paths that you can choose to generate an EUID token: you can choose to initiate the EUID token generate request on the client side (in the user's browser) or on the server side.
+There are two main paths that you can choose to generate an EUID token&#8212;you can choose to initiate the EUID token generate request:
+
+- On the client side (in the user's browser): see [Client-Side Integration Options](#client-side-integration-options).
+- On the server side: see [Server-Side Integration Options](#server-side-integration-options).
 
 Each option has different advantages. We recommend client-side integration using Prebid.js 8.21.0 or later as the easiest and fastest integration option.
 
