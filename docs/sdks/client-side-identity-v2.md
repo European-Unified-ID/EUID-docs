@@ -6,6 +6,7 @@ sidebar_position: 02
 ---
 
 import Link from '@docusaurus/Link';
+import ChartSvg from './images/euid-js-sdk-workflow.svg';
 
 # SDK for JavaScript Reference Guide (2.x and earlier versions)
 
@@ -54,7 +55,7 @@ The following table outlines the four main states in which the SDK can be, based
 
 The following diagram illustrates the four states, including the respective identity [status values](#identity-status-values), and possible transitions between them. The SDK invokes the [callback function](#callback-function) on each transition.
 
-![SDK for JavaScript Workflow](images/euid-js-sdk-workflow.svg)
+<ChartSvg />
 
 ### Background Token Auto-Refresh
 

@@ -19,7 +19,7 @@ This page provides information about the different types of credentials you'll n
 
 ## Overview
 
-Each EUID <a href="../../../README.md#participants">participant</a> gets a set of unique credentials. The set of credentials you get is determined by how you are participating in EUID, as shown in the following table.
+Each EUID <a href="../intro#participants">participant</a> gets a set of unique credentials. The set of credentials you get is determined by how you are participating in EUID, as shown in the following table.
 
 | Audience | Credentials | Integration |
 | :--- | :--- | :--- |

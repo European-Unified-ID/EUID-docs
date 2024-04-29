@@ -107,7 +107,7 @@ import Link from '@docusaurus/Link';
 <dd>Advertising token is another term for a <a href="#gl-euid-token">EUID token</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-api-key">API key</MdxJumpAnchor></dt>
-<dd>Each EUID <a href="../../../README.md#participants">participant</a> using a server-side implementation has an API key (client key) and also a secret value associated with the key, called the client secret (API secret). The client secret is known only to the participant and the EUID service.</dd>
+<dd>Each EUID <a href="/docs/intro#participants">participant</a> using a server-side implementation has an API key (client key) and also a secret value associated with the key, called the client secret (API secret). The client secret is known only to the participant and the EUID service.</dd>
 <dd>For details, see <a href="../getting-started/gs-credentials.md">EUID Credentials</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-api-secret">API secret</MdxJumpAnchor></dt>
@@ -136,7 +136,7 @@ import Link from '@docusaurus/Link';
 <dd>See <a href="#gl-api-key">API key</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-client-secret">Client secret</MdxJumpAnchor></dt>
-<dd>Each EUID <a href="../../../README.md#participants">participant</a> using a server-side implementation has an API key (client key) and also a secret value associated with the key, called the client secret (API secret). The client secret is known only to the participant and the EUID service.</dd>
+<dd>Each EUID <a href="../intro#participants">participant</a> using a server-side implementation has an API key (client key) and also a secret value associated with the key, called the client secret (API secret). The client secret is known only to the participant and the EUID service.</dd>
 <dd>For details, see <a href="../getting-started/gs-credentials.md">EUID Credentials</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-closed-operator">Closed Operator</MdxJumpAnchor></dt>
@@ -144,7 +144,7 @@ import Link from '@docusaurus/Link';
 
 <dt><MdxJumpAnchor id="gl-core-service">Core Service</MdxJumpAnchor></dt>
 <dd>The EUID Core Service is a centralized service that manages access to <a href="#gl-salt">salts</a>, encryption keys, and other relevant data in the EUID ecosystem.</dd>
-<dd>For an overview of all the EUID services, see <a href="../../../README.md#components">Components</a>.</dd>
+<dd>For an overview of all the EUID services, see <a href="../intro#components">Components</a>.</dd>
 
 </dl>
 
@@ -154,7 +154,7 @@ import Link from '@docusaurus/Link';
 
 <dt><MdxJumpAnchor id="gl-data-provider">Data provider</MdxJumpAnchor></dt>
 <dd>In the context of EUID, a data provider is any entity that provides data and measurement services relating to advertising, such as a data partner, measurement partner, or offline measurement provider.</dd>
-<dd>For details, see <a href="../../../README.md#participants">participant</a> (Data Providers).</dd>
+<dd>For details, see <a href="../intro#participants">participant</a> (Data Providers).</dd>
 
 <dt><MdxJumpAnchor id="gl-demand-side-platform">Demand-side platform (DSP)</MdxJumpAnchor></dt>
 <dd>A demand-side platform (DSP) provides services to companies that want to buy digital advertising, such as advertisers, brands, and media agencies.</dd>
@@ -171,11 +171,11 @@ import Link from '@docusaurus/Link';
 <dd>In an enclave, the operator image must be a very specific, predefined version, and additional constraints are applied to ensure security.</dd>
 
 <dt><MdxJumpAnchor id="gl-euid-framework">EUID framework</MdxJumpAnchor></dt>
-<dd>The European Unified ID (EUID) framework enables deterministic identity for advertising opportunities on the open internet for many <a href="../../../README.md#participants">participants</a> across the advertising ecosystem. It enables logged-in experiences from publisher websites, mobile apps, and Connected TV (CTV) apps to monetize through programmatic workflows. Built as an open-source, standalone solution with its own unique namespace, the framework focuses on transparency and privacy.</dd>
+<dd>The European Unified ID (EUID) framework enables deterministic identity for advertising opportunities on the open internet for many <a href="../intro#participants">participants</a> across the advertising ecosystem. It enables logged-in experiences from publisher websites, mobile apps, and Connected TV (CTV) apps to monetize through programmatic workflows. Built as an open-source, standalone solution with its own unique namespace, the framework focuses on transparency and privacy.</dd>
 
 <dt><MdxJumpAnchor id="gl-euid-identifier">EUID identifier</MdxJumpAnchor></dt>
 <dd>There are two European Unified ID (EUID) identifier types: <a href="#gl-raw-euid">raw EUIDs</a> and <a href="#gl-euid-token">EUID tokens</a> (also known as advertising tokens).</dd>
-<dd>For details, see <a href="../../../README.md#euid-identifier-types">EUID Identifier Types</a>.</dd>
+<dd>For details, see <a href="../intro#euid-identifier-types">EUID Identifier Types</a>.</dd>
 
 <!-- <dt><MdxJumpAnchor id="gl-euid-portal">EUID Portal</MdxJumpAnchor></dt>
 <dd>The EUID Portal is a separate user interface that allows EUID participants to manage their accounts.</dd>
@@ -190,7 +190,7 @@ import Link from '@docusaurus/Link';
 <dd>EUID tokens are generated from hashed or unhashed email addresses<!--  or phone numbers --> that are converted to raw EUIDs and then encrypted. The EUID token is a unique value; no two EUID tokens are the same. EUID tokens are case sensitive.</dd>
 <dd>The token has a limited life, but can be refreshed in the background using the <a href="#gl-refresh-token">refresh token</a>.</dd>
 <dd>Publishers send EUID tokens in the bid stream.</dd>
-<dd>For details, see <a href="../../../README.md#euid-identifier-types">EUID Identifier Types</a>.</dd>
+<dd>For details, see <a href="../intro#euid-identifier-types">EUID Identifier Types</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-unified-id-20">European Unified ID (EUID)</MdxJumpAnchor></dt>
 <dd>The term EUID can be used to mean the <a href="#gl-euid-framework">EUID framework</a>, the <a href="#gl-euid-service">EUID service</a>, a <a href="#gl-raw-euid">raw EUID</a>, or a <a href="#gl-euid-token">EUID token</a> (advertising token).</dd>
@@ -256,7 +256,7 @@ import Link from '@docusaurus/Link';
 <dd>An Operator is an organization or entity that runs the EUID <a href="#gl-operator-service">Operator Service</a>. The EUID Operator is the API server in the EUID ecosystem.</dd>
 <dd>Operators perform multiple functions, such as receiving encryption keys and salts from the EUID Core Service, salting and hashing personal data to return raw EUIDs, and encrypting raw EUIDs to generate EUID tokens.</dd>
 <dd>A participant can also choose to become a <a href="#gl-private-operator">Private Operator</a> to access EUID APIs and to generate raw EUIDs and EUID tokens from within a private infrastructure.</dd>
-<dd>For details, see <a href="../../../README.md#participants">participants</a><!--  and <a href="../ref-info/ref-operators-public-private">The EUID Operator</a> -->.</dd>
+<dd>For details, see <a href="../intro#participants">participants</a><!--  and <a href="../ref-info/ref-operators-public-private">The EUID Operator</a> -->.</dd>
 
 <dt><MdxJumpAnchor id="gl-operator-key">Operator key</MdxJumpAnchor></dt>
 <dd>Each EUID Private Operator has an operator key that allows the private Operator Service to connect to the Core Service and Opt-Out Service and call some endpoints on it.</dd>
@@ -264,15 +264,15 @@ import Link from '@docusaurus/Link';
 
 <dt><MdxJumpAnchor id="gl-operator-service">Operator Service</MdxJumpAnchor></dt>
 <dd>A service that enables all functions of the <a href="#gl-operator">Operator</a>.</dd>
-<dd>For an overview of all the EUID services, see <a href="../../../README.md#components">Components</a>.</dd>
+<dd>For an overview of all the EUID services, see <a href="../intro#components">Components</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-opt-out">Opt-out</MdxJumpAnchor></dt>
 <dd>An end user who participates in the EUID ecosystem can opt out at any time by going to the <a href="https://www.transparentadvertising.eu/">Transparency and Control Portal</a>.</dd>
-<dd>For details, see <a href="../../../README.md#components">Components</a>.</dd>
+<dd>For details, see <a href="../intro#components">Components</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-opt-out-service">Opt-Out Service</MdxJumpAnchor></dt>
 <dd>The Opt-Out Service is a global EUID service that manages and stores user opt-out requests.</dd>
-<dd>For an overview of all the EUID services, see <a href="../../../README.md#components">Components</a>.</dd>
+<dd>For an overview of all the EUID services, see <a href="../intro#components">Components</a>.</dd>
 
 </dl>
 
@@ -282,7 +282,7 @@ import Link from '@docusaurus/Link';
 
 <dt><MdxJumpAnchor id="gl-participant">Participant</MdxJumpAnchor></dt>
 <dd>An entity that fulfils a key role in EUID. Participants include the following: Core Administrator, Operator, DSP, data provider, advertiser, publisher, consumer.</dd>
-<dd>For details, see <a href="../../../README.md#participants">participants</a>.</dd>
+<dd>For details, see <a href="../intro#participants">participants</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-personal-data">Personal data</MdxJumpAnchor></dt>
 <dd>In general, personal data is information that relates to an identified or identifiable individual, including name, email address, or phone number.</dd>
@@ -310,7 +310,7 @@ import Link from '@docusaurus/Link';
 
 <dt><MdxJumpAnchor id="gl-raw-euid">Raw EUID</MdxJumpAnchor></dt>
 <dd>An unencrypted alphanumeric identifier created through the EUID APIs or SDKs with the user's <a href="#gl-personal-data">personal data</a> (email address<!--  or phone number -->) as input. The raw EUID is encrypted to create an <a href="#gl-euid-token">EUID token</a>. The raw EUID is a unique value; no two raw EUIDs are the same. Raw EUIDs, and their associated EUID tokens, are case sensitive.</dd>
-<dd>For details, see <a href="../../../README.md#euid-identifier-types">EUID Identifier Types</a>.</dd>
+<dd>For details, see <a href="../intro#euid-identifier-types">EUID Identifier Types</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-refresh-token">Refresh token</MdxJumpAnchor></dt>
 <dd>A refresh token is an opaque string that is issued along with the <a href="#gl-euid-token">EUID token</a>. It is used to refresh the EUID token, which has a limited life.</dd>
