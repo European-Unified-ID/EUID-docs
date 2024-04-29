@@ -143,7 +143,7 @@ const config = {
             href: "/request-access",
             label: "Request access",
             position: "right",
-            className: "desktop-only",
+            className: "desktop-only navbar__item navbar__link",
           },
         ],
       },
