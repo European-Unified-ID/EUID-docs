@@ -50,7 +50,7 @@ For integration scenarios for publishers that do not use the EUID SDK for JavaSc
 
 The following diagram outlines the steps required for establishing a user's EUID token with a publisher and how the EUID token integrates with the RTB bid stream.
 
-![Publisher Flow Without SDK](images/custom-publisher-integration-mermaid.svg)
+![Publisher Flow](images/custom-publisher-integration-mermaid.svg)
 
 The following sections provide additional details for each step in the diagram:
  
