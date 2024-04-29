@@ -5,21 +5,10 @@ import Translate from "@docusaurus/Translate";
 import HeroDesktopBg from "@site/static/img/hero-desktop.svg";
 import HeroMobileBg from "@site/static/img/hero-mobile.svg";
 import styles from "./styles.module.scss";
-import { useColorMode } from "@docusaurus/theme-common";
+import { useForcedDarkTheme } from "@site/src/utils/useForcedDarkTheme";
+
 export default function HomepageHero(): JSX.Element {
-  const { setColorMode, colorMode } = useColorMode();
-
-  //quick fix for updating color mode on page load breaking after theme upgrade
-  React.useEffect(() => {
-    const originalTheme = colorMode;
-
-    // The second parameter exists, it's just not on the type :(
-    setColorMode("dark", { persist: false });
-
-    return () => {
-      setColorMode(originalTheme);
-    };
-  }, []);
+  useForcedDarkTheme();
 
   return (
     <header className={clsx("bg-deep-sea text-white", styles.homepageHero)}>
