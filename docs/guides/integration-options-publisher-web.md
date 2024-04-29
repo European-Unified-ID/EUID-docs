@@ -39,7 +39,7 @@ At a high level, to integrate with EUID, you'll implement these three key activi
 1. [Refresh the EUID token as needed](#refresh-the-euid-token)
 1. [Pass the token into the bid stream](#pass-the-token-into-the-bid-stream)
 
-There are many ways you can accomplish these key steps. The simplest and fastest implementation is a full client-side implementation using Prebid.js 8.21.0 or later.
+There are many ways you can accomplish these key steps. Generally, the simplest and fastest implementation is a full client-side implementation using Prebid.js 8.21.0 or later.
 
 ## Integration Options Summary
 
@@ -83,7 +83,7 @@ For all integration options, you can choose to store the EUID token in local sto
 Generating the EUID token on the client side has the following advantages:
 
 - The code runs on the client side, on the consumer's web page, and no server-side coding is required.
-- There is a Prebid integration that handles all functions for you&#8212;token generation, token refresh, and passing the token into the bid stream. If you use Prebid 8.21.0 or later, this is the simplest and fastest implementation option.
+- There is a Prebid integration that handles all functions for you&#8212;token generation, token refresh, and passing the token into the bid stream. If you use Prebid 8.21.0 or later, this is generally the simplest and fastest implementation option.
 
 If you choose a client-side integration, you'll need to provide a list of your top-level domains, for security purposes, as part of account setup. For details, see [Client-Side Implementation for Publishers](../getting-started/gs-account-setup.md#client-side-implementation-for-publishers) on the Account Setup page.
 
