@@ -108,7 +108,7 @@ import Link from '@docusaurus/Link';
 
 <dt><MdxJumpAnchor id="gl-api-key">API key</MdxJumpAnchor></dt>
 <dd>Each EUID <a href="/docs/intro#participants">participant</a> using a server-side implementation has an API key (client key) and also a secret value associated with the key, called the client secret (API secret). The client secret is known only to the participant and the EUID service.</dd>
-<dd>For details, see <a href="../getting-started/gs-credentials.md">EUID Credentials</a>.</dd>
+<dd>For details, see <a href="../getting-started/gs-credentials">EUID Credentials</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-api-secret">API secret</MdxJumpAnchor></dt>
 <dd>See <a href="#gl-client-secret">client secret</a>.</dd>
@@ -124,7 +124,7 @@ import Link from '@docusaurus/Link';
 <dl>
 
 <dt><MdxJumpAnchor id="gl-bearer-token">Bearer token</MdxJumpAnchor></dt>
-<dd>A bearer token is a special string that identifies the client. For authentication, some EUID endpoints require the <a href="#gl-client-key">client key</a> to be specified as a bearer token in the Authorization header of the request: for example, <a href="../endpoints/post-token-generate.md">POST&nbsp;/token/generate</a>.</dd>
+<dd>A bearer token is a special string that identifies the client. For authentication, some EUID endpoints require the <a href="#gl-client-key">client key</a> to be specified as a bearer token in the Authorization header of the request: for example, <a href="../endpoints/post-token-generate">POST&nbsp;/token/generate</a>.</dd>
 
 </dl>
 
@@ -137,7 +137,7 @@ import Link from '@docusaurus/Link';
 
 <dt><MdxJumpAnchor id="gl-client-secret">Client secret</MdxJumpAnchor></dt>
 <dd>Each EUID <a href="../intro#participants">participant</a> using a server-side implementation has an API key (client key) and also a secret value associated with the key, called the client secret (API secret). The client secret is known only to the participant and the EUID service.</dd>
-<dd>For details, see <a href="../getting-started/gs-credentials.md">EUID Credentials</a>.</dd>
+<dd>For details, see <a href="../getting-started/gs-credentials">EUID Credentials</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-closed-operator">Closed Operator</MdxJumpAnchor></dt>
 <dd>Closed Operator is another term for a <a href="#gl-private-operator">Private Operator</a>.</dd>
@@ -222,7 +222,7 @@ import Link from '@docusaurus/Link';
 <dl>
 
 <dt><MdxJumpAnchor id="gl-identity">Identity</MdxJumpAnchor></dt>
-<dd>In the context of EUID, the term "identity" refers to a package of values that includes the EUID token, the refresh token, and associated values such as timestamps. This set of values is returned in the response from the <a href="../endpoints/post-token-generate.md">POST&nbsp;/token/generate</a> endpoint and also from the <a href="../endpoints/post-token-refresh.md">POST&nbsp;/token/refresh</a> endpoint.</dd>
+<dd>In the context of EUID, the term "identity" refers to a package of values that includes the EUID token, the refresh token, and associated values such as timestamps. This set of values is returned in the response from the <a href="../endpoints/post-token-generate">POST&nbsp;/token/generate</a> endpoint and also from the <a href="../endpoints/post-token-refresh">POST&nbsp;/token/refresh</a> endpoint.</dd>
 
 </dl>
 
@@ -241,7 +241,7 @@ import Link from '@docusaurus/Link';
 
 <dt><MdxJumpAnchor id="gl-normalize">Normalize</MdxJumpAnchor></dt>
 <dd>To normalize a data set means to bring it to a standard condition or state.</dd>
-<dd>EUID includes specific normalization rules. For details, see <a href="../getting-started/gs-normalization-encoding.md#email-address-normalization">Email Address Normalization</a><!--  and <a href="../getting-started/gs-normalization-encoding#phone-number-normalization">Phone Number Normalization</a> -->.</dd>
+<dd>EUID includes specific normalization rules. For details, see <a href="../getting-started/gs-normalization-encoding#email-address-normalization">Email Address Normalization</a><!--  and <a href="../getting-started/gs-normalization-encoding#phone-number-normalization">Phone Number Normalization</a> -->.</dd>
 
 </dl>
 
@@ -296,7 +296,7 @@ import Link from '@docusaurus/Link';
 <dd>A private instance of the Operator Service, run by a <a href="#gl-private-operator">Private Operator</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-public-key">Public key</MdxJumpAnchor></dt>
-<dd>For server-side publisher integrations, the public key is one of the two values issued to publishers as their EUID credentials. For details, see <a href="../getting-started/gs-credentials.md#subscription-id-and-public-key">Subscription ID and Public Key</a>.</dd>
+<dd>For server-side publisher integrations, the public key is one of the two values issued to publishers as their EUID credentials. For details, see <a href="../getting-started/gs-credentials#subscription-id-and-public-key">Subscription ID and Public Key</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-public-operator">Public Operator</MdxJumpAnchor></dt>
 <dd>A Public <a href="#gl-operator">Operator</a> is an entity that runs a public instance of the EUID Operator Service. For example, The Trade Desk currently serves as a Public Operator for the EUID framework, available to all participants.</dd>
@@ -346,7 +346,7 @@ import Link from '@docusaurus/Link';
 <dd>For details, see <a href="../sharing/sharing-overview">EUID Sharing: Overview</a>.</dd> -->
 
 <dt><MdxJumpAnchor id="gl-subscription-id">Subscription ID</MdxJumpAnchor></dt>
-<dd>For server-side publisher integrations, the subscription ID is one of the two values issued to publishers as their EUID credentials. For details, see <a href="../getting-started/gs-credentials.md#subscription-id-and-public-key">Subscription ID and Public Key</a>.</dd>
+<dd>For server-side publisher integrations, the subscription ID is one of the two values issued to publishers as their EUID credentials. For details, see <a href="../getting-started/gs-credentials#subscription-id-and-public-key">Subscription ID and Public Key</a>.</dd>
 
 </dl>
 
