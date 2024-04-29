@@ -104,6 +104,19 @@
       border: 1px solid var(--c-gray-400);
     }
   }
+
+  &__items {
+    &--right {
+      > :last-child {
+        padding-right: 0.6875rem;
+      }
+
+      > * {
+        margin-right: calc(1rem * var(--space-x-reverse));
+        margin-left: calc(1rem * calc(1 - var(--space-x-reverse)));
+      }
+    }
+  }
 }
 
 .dropdown {
