@@ -7,6 +7,8 @@ banner_title: EUID Overview for Private Operators
 banner_description: Own the process of generating EUIDs from personal data in a private environment.
 ---
 
+import Link from '@docusaurus/Link';
+
 Private Operators of EUID send first-party [personal data](../ref-info/glossary-uid.md#gl-personal-data) to a secure environment for translation, and control the destinations for those identifiers. A participant that chooses to become a private Operator (previously known as closed Operator) can generate and manage EUIDs, running a EUID Operator service in a private environment.
 
 Learn about what the EUID framework offers to private Operators, including benefits, hosting options, documentation and other resources, and how to get started.
@@ -20,7 +22,7 @@ Here are some of the intended benefits of participating in EUID as a private Ope
 - You can plan to minimize network hops with a service that can provide regional proximity.
 - You can implement processes and policies that you control, as opposed to taking part in a shared service.
 
-For more information, see [The EUID Operator](../ref-info/ref-operators-public-private.md).
+For details, see [The EUID Operator](../ref-info/ref-operators-public-private.md).
 
 ## Hosting Options for Private Operators
 

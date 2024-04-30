@@ -6,8 +6,9 @@ sidebar_position: 04
 use_banner: true
 banner_title: EUID Overview for Advertisers
 banner_description: Upgrade campaign activation with European Unified ID.
-displayed_sidebar: sidebarAdvertisers
 ---
+
+import Link from '@docusaurus/Link';
 
 As an advertiser, you can upgrade your first-party data tactics with European Unified ID (EUID) to deliver omnichannel campaigns across devices with one identifier, for more durable identity strategies and better addressability.
 
