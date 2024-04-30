@@ -38,6 +38,7 @@ The EUID service sends the following data within seconds of a user's opt-out, wh
 | `identity` | The EUID for the user who opted out. |
 | `timestamp` | The time when the user opted out. |
 
+The DSP must respond to the opt-out data with a 200 response code.
 
 The following example  illustrates a webhook configured to receive the EUID and a corresponding timestamp:
 
