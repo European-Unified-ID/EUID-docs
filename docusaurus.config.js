@@ -195,17 +195,12 @@ const config = {
         darkTheme: darkCodeTheme,
         additionalLanguages: ["csharp", "java"],
       },
-      //will update this once we have the actual values
-      // algolia: {
-      //   // N.b. per Algolia, these are public values - once we get them, we can commit them to the open source repo.
-      //   appId: "GRNBXN1TTS", //prod
-      //   apiKey: "97e7dc35be9559b65f0d03c0c9684272", //prod
-      //   indexName: "unifiedid", //prod
-
-      //   // appId: "TESTINGXSOWQK10AP", //staging
-      //   // apiKey: "58f35480017be37aca9f762323a0b4d1", //staging
-      //   // indexName: "UID2", //staging
-      // },
+      algolia: {
+      // N.B. per Algolia, these are public values - once we get them, we can commit them to the open source repo.
+      appId: "7AS88HZE0W", //prod
+      apiKey: "a2570205a9dee84db0870157430e3d8a", //prod
+      indexName: "euid", //prod
+      },
     }),
 };
 
