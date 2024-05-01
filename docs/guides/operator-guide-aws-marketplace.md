@@ -151,7 +151,7 @@ Here's what you can customize during or after the [deployment](#deployment):
 
 The following diagram illustrates the virtual private cloud that hosts private operators.
 
-![EUID Operator VPC Chart](images/VPC-chart-AWS-VPC-Chart-EUID.png)
+![EUID Operator VPC Chart](images/aws-vpc-chart-euid.png)
 
 ## Deployment
 
@@ -173,7 +173,7 @@ It takes several minutes for the stack to be created. When you see an Auto Scali
 
 The following images show the **Specify stack details** page in the Create stack wizard ([deployment](#deployment) step 5). The table that follows provides a parameter value reference.
 
-![Application Configuration](images/cloudformation-step-2.png) 
+![Application Configuration](images/cloudformation-step-2-euid.png) 
 
 Lower part of the page:
 
