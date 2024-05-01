@@ -196,10 +196,13 @@ const config = {
         additionalLanguages: ["csharp", "java"],
       },
       algolia: {
-      // N.B. per Algolia, these are public values - once we get them, we can commit them to the open source repo.
-      appId: "7AS88HZE0W", //prod
-      apiKey: "a2570205a9dee84db0870157430e3d8a", //prod
-      indexName: "euid", //prod
+        // N.B. per Algolia, these are public values - once we get them, we can commit them to the open source repo.
+        appId: "7AS88HZE0W", //prod
+        apiKey: "a2570205a9dee84db0870157430e3d8a", //prod
+        indexName: "euid", //prod
+        //enabling due to possible indexing issue that needs to be corrected on the Algolia side
+        //https://docusaurus.io/docs/search#algolia-no-search-results
+        contextualSearch: false,
       },
     }),
 };
