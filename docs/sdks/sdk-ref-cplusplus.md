@@ -11,7 +11,7 @@ import Link from '@docusaurus/Link';
 
 You can use the EUID SDK for C++ (Server-Side) to facilitate decrypting of EUID tokens to access the raw EUID. 
 
-This guide includes the following information:
+<!-- This guide includes the following information:
 
 - [Overview](#overview)
 - [Functionality](#functionality)
@@ -21,7 +21,7 @@ This guide includes the following information:
 - [Interface](#interface)
   - [Response Content](#response-content)
   - [Response Statuses](#response-statuses)
-- [FAQs](#faqs)
+- [FAQs](#faqs) -->
 
 ## Overview
 
