@@ -39,7 +39,7 @@ The following steps are an example of how an advertiser can integrate with EUID:
 
    Server-side: The advertiser stores the EUID in a mapping table, DMP, data lake, or other server-side application.
 
-<!-- ![Data Provider Workflow](images/UID2AdvertiserAndThirdPartyDataProviderWorkflow.jpg) -->
+![Data Provider Workflow](images/EUIDAdvertiserAndThirdPartyDataProviderWorkflow.svg)
 
 ## Getting Started
 

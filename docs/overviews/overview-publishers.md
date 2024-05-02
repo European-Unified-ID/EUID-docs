@@ -49,7 +49,7 @@ The following steps provide a high-level outline of the workflow intended for or
 
 <!-- The publisher requests updated EUID tokens using a refresh token. When applicable, the refresh token includes a user’s opt-out request. -->
 
-<!-- ![Publisher Workflow](images/UID2PublisherAndSSPWorkflow.jpg) -->
+![Publisher Workflow](images/EUIDPublisherAndSSPWorkflow.svg)
 
 ## Getting Started
 

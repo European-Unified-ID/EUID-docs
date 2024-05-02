@@ -48,7 +48,7 @@ The following steps occur for each bid/ad impression:
    - Matches the raw EUID to an audience segment. 
 4. The DSP sends a bid response to the bid stream with the EUID token.
 
-<!-- ![Buy-Side Workflow](images/UID2BuySIdeDSPWorkflow.jpg) -->
+![Buy-Side Workflow](images/EUIDBuySIdeDSPWorkflow.svg)
 
 ## Getting Started
 
