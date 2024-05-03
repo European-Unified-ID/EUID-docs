@@ -14,9 +14,8 @@ You can use the EUID SDK for Java (server-side) to facilitate the following:
 - Generating EUID advertising tokens
 - Refreshing EUID advertising tokens
 
-This guide includes the following information:
+<!-- This guide includes the following information:
 
-- [Overview](#overview)
 - [Functionality](#functionality)
 - [Version](#version)
 - [GitHub Repository/Binary](#github-repositorybinary)
@@ -24,11 +23,7 @@ This guide includes the following information:
 - [Interface](#interface)
   - [Response Content](#response-content)
   - [Response Statuses](#response-statuses)
-* [FAQs](#faqs)
-
-## Overview
-
-The functions outlined here define the information that you'll need to configure or can retrieve from the library. The parameters and property names defined below are pseudocode. Actual parameters and property names vary by language but will be similar to the information outlined here.
+* [FAQs](#faqs) -->
 
 ## Functionality
 
@@ -54,6 +49,24 @@ The binary is published on the Maven repository:
 
 ## Initialization
 
+The initialization step depends on the role, as shown in the following table.
+
+| Role                           | Create Instance of Class | Link to Instructions                              |
+|:-------------------------------| :--- |:--------------------------------------------------|
+| Publisher                      | `PublisherUid2Client` | [Usage for Publishers](#usage-for-publishers)     |
+| Advertisers and Data Providers | `IdentityMapClient` | [Usage for Advertisers and Data Providers](#usage-for-advertisers-and-data-providers)     |
+| DSP                            | `BidstreamClient` | [Usage for DSPs](#usage-for-dsps)                 |
+
+You will need to provide the values necessary for the SDK to authenticate with the EUID service.
+
+| Parameter | Description                                                                                | 
+| :--- |:-------------------------------------------------------------------------------------------|
+| `baseUrl/uid2BaseUrl` | The endpoint for the EUID service. See [Environments](../getting-started/gs-environments). | 
+| `clientApiKey` | The API key. See [EUID Credentials](../getting-started/gs-credentials).                    | 
+| `base64SecretKey` | The client secret. See [EUID Credentials](../getting-started/gs-credentials).              |
+
+(**GWH__JN the below table is from the EUID version. The one above is copied from UID2. The legacy EUID version is so different that I'm including it to double-check what the EUID doc should say.**)
+
 The initialization function configures the parameters necessary for the SDK to authenticate with the EUID service. It also allows you to configure retry intervals in the event of errors.
 
 | Parameter | Description | Recommended Value |
@@ -61,7 +74,21 @@ The initialization function configures the parameters necessary for the SDK to a
 | `endpoint` | The endpoint for the EUID service. | N/A |
 | `authKey` | The authentication token that belongs to the client. For access to EUID, see [Contact Info](../getting-started/gs-account-setup.md#contact-info). | N/A |
 
-## Interface 
+### Interface (GWH__JN section copied from UID2)
+
+(**GWH__JN not sure what we need out of this section and the next which is legacy for EUID. Will EUID folks use the`SharingClient` class? And that "decrypt method" piece is not in the UID2 doc for Java SDK. I left the "Usage for Sharers" section out, but not sure about these encryption and decryption examples, whether they should be in.**)
+
+The `BidstreamClient` class allows you to decrypt EUID tokens into raw EUIDs.
+
+For details on the bidding logic for handling user opt-outs, see [DSP Integration Guide](../guides/dsp-guide.md).
+
+The `SharingClient` class allows you to encrypt raw UID2s into UID2 tokens and decrypt UID2 tokens into raw UID2s.
+
+:::note
+When you use an SDK, you do not need to store or manage decryption keys.
+:::
+
+## Interface (GWH__JN section existed in EUID)
 
 The interface allows you to decrypt EUID advertising tokens and return the corresponding raw EUID. 
 
@@ -78,8 +105,7 @@ IUID2Client client = EUIDClientFactory.create(TEST_ENDPOINT, TEST_API_KEY, TEST_
 client.refresh(); //Note that refresh() should be called once after create(), and then once per hour
 DecryptionResponse result = client.decrypt(TEST_TOKEN);
 ```
-
-### Response Content
+### Response Content (GWH__JN section existed in EUID)
 
 Available information returned through the SDK is outlined in the following table.
 
@@ -89,7 +115,7 @@ Available information returned through the SDK is outlined in the following tabl
 | `GetUid()` | The raw EUID for the corresponding EUID advertising token. |
 | `GetEstablished()` | The timestamp indicating when a user first established the EUID with the publisher. |
 
-### Response Statuses
+### Response Statuses (GWH__JN section existed in EUID)
 
 | Value | Description |
 | :--- | :--- |
@@ -100,6 +126,245 @@ Available information returned through the SDK is outlined in the following tabl
 | `ExpiredToken` | The incoming EUID advertising token has expired. |
 | `KeysNotSynced` | The client has failed to synchronize keys from the EUID service. |
 | `VersionNotSupported` |  The client library does not support the version of the encrypted token. |
+
+## Usage for Publishers (GWH__JN section copied from UID2)
+
+As a publisher, there are two ways to use the EUID SDK for Java: 
+1. [**Basic Usage**](#basic-usage) is for publishers who want to use this SDK's HTTP implementation (synchronous [OkHttp](https://square.github.io/okhttp/)).
+2. [**Advanced Usage**](#advanced-usage) is for publishers who prefer to use their own HTTP library. 
+
+For an example application that demonstrates both Basic and Advanced usage, see [Java UID2 Integration Example](https://github.com/UnifiedID2/uid2-examples/tree/main/publisher/uid2-java-test-site#readme). (**GWH__JN is there an integration example for EUID? If no, should we maybe have one, or genericize this one?**)
+
+### Basic Usage (GWH__JN section copied from UID2)
+
+If you're using the SDK's HTTP implementation, follow these steps.
+
+1. Create an instance of `PublisherUid2Client` as an instance variable:
+
+   ```java
+   private final PublisherUid2Client publisherUid2Client = new PublisherUid2Client(UID2_BASE_URL, UID2_API_KEY, UID2_SECRET_KEY);
+   ```
+
+2. Call a function that takes the user's email addressas input and generates a `TokenGenerateResponse` object. The following example uses an email address:
+   ```java
+   TokenGenerateResponse tokenGenerateResponse = publisherUid2Client.generateTokenResponse(TokenGenerateInput.fromEmail(emailAddress).doNotGenerateTokensForOptedOut());
+   ```
+
+   :::important
+   - Be sure to call the POST&nbsp;/token/generate endpoint only when you have obtained legal basis to convert the user’s <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to EUID tokens for targeted advertising.
+
+   - Always apply `doNotGenerateTokensForOptedOut()`. This applies a parameter similar to setting `optout_check=1` in the call to the POST&nbsp;/token/generate endpoint (see [Unencrypted JSON Body Parameters](../endpoints/post-token-generate.md#unencrypted-json-body-parameters)).
+   :::
+
+#### Client-Server Integration
+
+If you're using client-server integration (see [Server-Side Integration Guide for JavaScript](../guides/integration-javascript-server-side.md)), follow this step:
+
+* Send this identity as a JSON string back to the client (to use in the [identity field](../sdks/client-side-identity.md#initopts-object-void)), using the following:
+
+   ```java
+   tokenGenerateResponse.getIdentityJsonString()
+   ```
+
+   :::note
+   If the user has opted out, this method returns `null`, so be sure to handle that case.
+   :::
+
+#### Server-Only Integration
+
+If you're using server-only integration (see [Publisher Integration Guide, Server-Only](../guides/custom-publisher-integration.md)), follow these steps:
+
+1. Store this identity as a JSON string in the user's session, using the `tokenGenerateResponse.getIdentityJsonString()` function.
+
+   If the user has opted out, this method returns `null`, so be sure to handle that case.
+
+2. To retrieve the user's EUID token, use the following:
+
+   ```java
+   IdentityTokens identity = tokenGenerateResponse.getIdentity();
+   if (identity != null) { String advertisingToken = identity.getAdvertisingToken(); }
+   ```
+3. When the user accesses another page, or on a timer, determine whether a refresh is needed:
+   1. Retrieve the identity JSON string from the user's session, and then call the following function that takes the identity information as input and generates an `IdentityTokens` object:
+
+      ```java
+      IdentityTokens identity = IdentityTokens.fromJsonString(identityJsonString);
+      ```
+   2. Determine if the identity can be refreshed (that is, the refresh token hasn't expired):
+
+      ```java
+      if (identity == null || !identity.isRefreshable()) { we must no longer use this identity (for example, remove this identity from the user's session) }
+      ```
+   3. Determine if a refresh is needed:
+
+      ```java
+      if (identity.isDueForRefresh()) {..}
+      ```
+4. If needed, refresh the token and associated values:
+ 
+   ```java
+   TokenRefreshResponse tokenRefreshResponse = publisherUid2Client.refreshToken(identity);
+   ```
+ 
+5. Store `tokenRefreshResponse.getIdentityJsonString()` in the user's session.
+
+   If the user has opted out, this method returns `null`, indicating that the user's identity should be removed from the session. To confirm optout, you can use the `tokenRefreshResponse.isOptout()` function.
+
+### Advanced Usage (GWH__JN section copied from UID2)
+
+1. Create an instance of `PublisherUid2Helper` as an instance variable:
+
+    ```java
+    private final PublisherUid2Helper publisherUid2Helper = new PublisherUid2Helper(UID2_SECRET_KEY);
+    ```
+2. Call a function that takes the user's email address as input and creates a secure request data envelope. See [Encrypting requests](../getting-started/gs-encryption-decryption.md#encrypting-requests). The following example uses an email address:
+
+    ```java
+    EnvelopeV2 envelope = publisherUid2Helper.createEnvelopeForTokenGenerateRequest(TokenGenerateInput.fromEmail(emailAddress).doNotGenerateTokensForOptedOut());
+    ```
+3. Using an HTTP client library of your choice, post this envelope to the [POST&nbsp;token/generate](../endpoints/post-token-generate.md) endpoint, including headers and body:
+   1. Headers: Depending on your HTTP library, this might look something like the following: 
+    
+      `.putHeader("Authorization", "Bearer " + UID2_API_KEY)` 
+      `.putHeader("X-UID2-Client-Version", PublisherUid2Helper.getVersionHeader())`
+   2. Body: `envelope.getEnvelope()`
+   :::important
+   - Be sure to call the POST&nbsp;/token/generate endpoint only when you have obtained legal basis to convert the user’s <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to EUID tokens for targeted advertising.
+
+   - Always apply `doNotGenerateTokensForOptedOut()`. This applies a parameter similar to setting `optout_check=1` in the call to the POST&nbsp;/token/generate endpoint (see [Unencrypted JSON Body Parameters](../endpoints/post-token-generate.md#unencrypted-json-body-parameters)).
+   :::
+
+4. If the HTTP response status code is _not_ 200, see [Response Status Codes](../endpoints/post-token-generate.md#response-status-codes) to determine next steps. Otherwise, convert the EUID identity response content into a `TokenGenerateResponse` object:
+
+   ```java
+   TokenGenerateResponse tokenGenerateResponse = publisherUid2Helper.createTokenGenerateResponse({response body}, envelope);
+   ```
+
+#### Client-Server Integration
+
+If you're using client-server integration (see [Server-Side Integration Guide for JavaScript](../guides/integration-javascript-server-side.md)), follow this step:
+
+* Send this identity as a JSON string back to the client (to use in the [identity field](../sdks/client-side-identity.md#initopts-object-void)) using the following:
+
+    ```java
+    tokenGenerateResponse.getIdentityJsonString()
+    ```
+
+    :::caution
+    This method returns null if the user has opted out, so be sure to handle that case.
+    :::
+
+#### Server-Only Integration
+
+If you're using server-only integration (see [Publisher Integration Guide, Server-Only](../guides/custom-publisher-integration.md)):
+
+1. Store this identity as a JSON string in the user's session, using: `tokenGenerateResponse.getIdentityJsonString()`.
+
+   This method returns null if the user has opted out, so be sure to handle that case.
+2. To retrieve the user's EUID token, use:
+
+   ```java
+   IdentityTokens identity = tokenGenerateResponse.getIdentity();
+   if (identity != null) { String advertisingToken = identity.getAdvertisingToken(); }
+   ```
+
+3. When the user accesses another page, or on a timer, determine whether a refresh is needed:
+   1. Retrieve the identity JSON string from the user's session, and then call the following function that generates an `IdentityTokens` object:
+   
+       ```java
+       IdentityTokens identity = IdentityTokens.fromJsonString(identityJsonString);
+       ```
+   2. Determine whether the identity can be refreshed (that is, the refresh token hasn't expired): 
+    
+      ```java
+      if (identity == null || !identity.isRefreshable()) { we must no longer use this identity (for example, remove this identity from the user's session) }
+      ```
+   3. Determine whether a refresh is needed:
+   
+      ```java
+      if (identity.isDueForRefresh()) {..}
+      ```
+4. If a refresh is needed, call the [POST token/refresh](../endpoints/post-token-refresh.md) endpoint, with the following:
+   1. Headers: Depending on your HTTP library, this might look something like the following:
+    
+      `.putHeader("Authorization", "Bearer " + UID2_API_KEY)` 
+      `.putHeader("X-UID2-Client-Version", PublisherUid2Helper.getVersionHeader())`. 
+   2. Body: `identity.getRefreshToken()`
+5. If the refresh HTTP response status code is 200:
+
+   ```java
+   TokenRefreshResponse tokenRefreshResponse = PublisherUid2Helper.createTokenRefreshResponse({response body}, identity);
+   ```
+6. Store `tokenRefreshResponse.getIdentityJsonString()` in the user's session.
+
+   If the user has opted out, this method returns null, indicating that the user's identity should be removed from the session. To confirm optout, you can use the `tokenRefreshResponse.isOptout()` function.
+
+## Usage for Advertisers and Data Providers (GWH__JN section copied from UID2)
+
+1. Create an instance of IdentityMapClient as an instance variable.
+   ```java
+   final private IdentityMapClient identityMapClient = new IdentityMapClient(UID2_BASE_URL, UID2_API_KEY, UID2_SECRET_KEY);
+   ```
+
+2. Call a function that takes email addresses as input and generates an IdentityMapResponse object. The following example uses email addresses:
+   ```java
+   IdentityMapResponse identityMapResponse = identityMapClient.generateIdentityMap(IdentityMapInput.fromEmails(Arrays.asList("email1@example.com", "email2@example.com")));
+   ```
+
+>Note: The SDK hashes input values before sending them. This ensures that raw email addresses do not leave your server.
+
+3. Retrieve the mapped and unmapped results as follows:
+   ```java
+   Map<String, IdentityMapResponse.MappedIdentity> mappedIdentities = identityMapResponse.getMappedIdentities();
+   Map<String, IdentityMapResponse.UnmappedIdentity> unmappedIdentities = identityMapResponse.getUnmappedIdentities();`
+   ```
+
+4. Iterate through the mapped and unmapped results, or do a lookup. The following example does a lookup:
+   ```java
+   IdentityMapResponse.MappedIdentity mappedIdentity = mappedIdentities.get("email1@example.com");
+   if (mappedIdentity != null) {
+        String rawUid = mappedIdentity.getRawUid();
+   } else {
+        IdentityMapResponse.UnmappedIdentity unmappedIdentity = unmappedIdentities.get("email1@example.com");
+        String reason = unmappedIdentity.getReason();
+   }
+   ```
+
+## Usage for DSPs (GWH__JN section copied from UID2)
+
+The following instructions provide an example of how a DSP can decode bid stream tokens using the SDK for Java.
+
+1. Create a `BidstreamClient`:
+
+```java
+Bidstream client = new BidstreamClient(UID2_BASE_URL, UID2_API_KEY, UID2_SECRET_KEY);
+```
+
+2. Refresh once at startup, and then periodically (recommended refresh interval is hourly):
+
+```java
+client.refresh();
+```
+
+3. Decrypt a token into a raw EUID. Pass the token, and then do one of the following:
+* If the bid request originated from a publisher's website, pass the domain name. The domain name must be all lower case, without spaces and without subdomain. For example, for `Subdomain.DOMAIN.com`, pass `domain.com` instead.
+* If the bid request originated from a mobile app, pass the [app name](../ref-info/glossary-uid.md#gl-app-name).
+* Otherwise, pass `null`.
+
+```java
+DecryptionResponse decrypted = client.decryptTokenIntoRawUid(uidToken, domainOrAppName); 
+//If decryption succeeded, use the raw EUID.
+if (decrypted.isSuccess()) 
+{
+    //Use decrypted.getUid()
+}
+else 
+{
+    // Check decrypted.getStatus() for the failure reason.
+}
+```
+
+For a full example, see the `ExampleBidStreamClient` method in [test/IntegrationExamples.java](https://github.com/IABTechLab/uid2-client-java/blob/main/src/test/java/com/uid2/client/test/IntegrationExamples.java).
 
 ## FAQs
 
