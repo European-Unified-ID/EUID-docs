@@ -41,11 +41,11 @@ The SDK requires Java version 1.8 or later.
 
 This SDK is in the following open-source GitHub repository:
 
-- [EUID SDK for Java](https://github.com/IABTechLab/uid2-client-java/blob/master/README.md)
+- [EUID SDK for Java](https://github.com/IABTechLab/uid2-client-java/blob/master/README.md) (**GWH__JN01 for discussion**)
 
 The binary is published on the Maven repository:
 
-- [https://central.sonatype.com/artifact/com.uid2/uid2-client](https://central.sonatype.com/artifact/com.uid2/uid2-client)
+- [https://central.sonatype.com/artifact/com.uid2/uid2-client](https://central.sonatype.com/artifact/com.uid2/uid2-client) (**GWH__JN02 for discussion**)
 
 ## Initialization
 
@@ -53,42 +53,34 @@ The initialization step depends on the role, as shown in the following table.
 
 | Role                           | Create Instance of Class | Link to Instructions                              |
 |:-------------------------------| :--- |:--------------------------------------------------|
-| Publisher                      | `PublisherUid2Client` | [Usage for Publishers](#usage-for-publishers)     |
+| Publisher                      | `PublisherUid2Client` | [Usage for Publishers](#usage-for-publishers) (**GWH__JN03 for clarification re capitalization**)    |
 | Advertisers and Data Providers | `IdentityMapClient` | [Usage for Advertisers and Data Providers](#usage-for-advertisers-and-data-providers)     |
 | DSP                            | `BidstreamClient` | [Usage for DSPs](#usage-for-dsps)                 |
+| Sharer (not currently supported for EUID) | `SharingClient` | Not applicable |
 
 You will need to provide the values necessary for the SDK to authenticate with the EUID service.
 
 | Parameter | Description                                                                                | 
 | :--- |:-------------------------------------------------------------------------------------------|
-| `baseUrl/uid2BaseUrl` | The endpoint for the EUID service. See [Environments](../getting-started/gs-environments). | 
+| `baseUrl/uid2BaseUrl`(**GWH__JN04 for clarification re capitalization**)  | The endpoint for the EUID service. See [Environments](../getting-started/gs-environments). | 
 | `clientApiKey` | The API key. See [EUID Credentials](../getting-started/gs-credentials).                    | 
 | `base64SecretKey` | The client secret. See [EUID Credentials](../getting-started/gs-credentials).              |
 
-(**GWH__JN the below table is from the EUID version. The one above is copied from UID2. The legacy EUID version is so different that I'm including it to double-check what the EUID doc should say.**)
+(**GWH__JN05 need to resolve UID2 value -- for all and I can replace.**)
 
-The initialization function configures the parameters necessary for the SDK to authenticate with the EUID service. It also allows you to configure retry intervals in the event of errors.
-
-| Parameter | Description | Recommended Value |
-| :--- | :--- | :--- |
-| `endpoint` | The endpoint for the EUID service. | N/A |
-| `authKey` | The authentication token that belongs to the client. For access to EUID, see [Contact Info](../getting-started/gs-account-setup.md#contact-info). | N/A |
-
-### Interface (GWH__JN section copied from UID2)
-
-(**GWH__JN not sure what we need out of this section and the next which is legacy for EUID. Will EUID folks use the`SharingClient` class? And that "decrypt method" piece is not in the UID2 doc for Java SDK. I left the "Usage for Sharers" section out, but not sure about these encryption and decryption examples, whether they should be in.**)
+### Interface (GWH__JN06 section copied from UID2)
 
 The `BidstreamClient` class allows you to decrypt EUID tokens into raw EUIDs.
 
 For details on the bidding logic for handling user opt-outs, see [DSP Integration Guide](../guides/dsp-guide.md).
 
-The `SharingClient` class allows you to encrypt raw UID2s into UID2 tokens and decrypt UID2 tokens into raw UID2s.
+The `SharingClient` class allows you to encrypt raw EUIDs into EUID tokens and decrypt UID2 tokens into raw UID2s (not currently supported).
 
 :::note
 When you use an SDK, you do not need to store or manage decryption keys.
 :::
 
-## Interface (GWH__JN section existed in EUID)
+## Interface (GWH__JN07 section existed in EUID)
 
 The interface allows you to decrypt EUID advertising tokens and return the corresponding raw EUID. 
 
@@ -98,6 +90,8 @@ If you're a DSP, for bidding, call the interface to decrypt an EUID advertising 
 
 The following is the decrypt method in Java:
 
+(**GWH__JN08 for clarification re capitalization in the below**)
+
 ```java
 import com.uid2.client.IUID2Client
  
@@ -105,7 +99,7 @@ IUID2Client client = EUIDClientFactory.create(TEST_ENDPOINT, TEST_API_KEY, TEST_
 client.refresh(); //Note that refresh() should be called once after create(), and then once per hour
 DecryptionResponse result = client.decrypt(TEST_TOKEN);
 ```
-### Response Content (GWH__JN section existed in EUID)
+### Response Content (GWH__JN09 section existed in EUID)
 
 Available information returned through the SDK is outlined in the following table.
 
@@ -115,7 +109,7 @@ Available information returned through the SDK is outlined in the following tabl
 | `GetUid()` | The raw EUID for the corresponding EUID advertising token. |
 | `GetEstablished()` | The timestamp indicating when a user first established the EUID with the publisher. |
 
-### Response Statuses (GWH__JN section existed in EUID)
+### Response Statuses (GWH__JN10 section existed in EUID)
 
 | Value | Description |
 | :--- | :--- |
@@ -127,15 +121,15 @@ Available information returned through the SDK is outlined in the following tabl
 | `KeysNotSynced` | The client has failed to synchronize keys from the EUID service. |
 | `VersionNotSupported` |  The client library does not support the version of the encrypted token. |
 
-## Usage for Publishers (GWH__JN section copied from UID2)
+## Usage for Publishers (GWH__JN11 section copied from UID2)
 
 As a publisher, there are two ways to use the EUID SDK for Java: 
 1. [**Basic Usage**](#basic-usage) is for publishers who want to use this SDK's HTTP implementation (synchronous [OkHttp](https://square.github.io/okhttp/)).
 2. [**Advanced Usage**](#advanced-usage) is for publishers who prefer to use their own HTTP library. 
 
-For an example application that demonstrates both Basic and Advanced usage, see [Java UID2 Integration Example](https://github.com/UnifiedID2/uid2-examples/tree/main/publisher/uid2-java-test-site#readme). (**GWH__JN is there an integration example for EUID? If no, should we maybe have one, or genericize this one?**)
+For an example application that demonstrates both Basic and Advanced usage, see [Java UID2 Integration Example](https://github.com/UnifiedID2/uid2-examples/tree/main/publisher/uid2-java-test-site#readme). (**GWH__JN12 is there an integration example for EUID? If no, should we maybe have one, or genericize this one?**)
 
-### Basic Usage (GWH__JN section copied from UID2)
+### Basic Usage (GWH__JN13 section copied from UID2)
 
 If you're using the SDK's HTTP implementation, follow these steps.
 
@@ -210,7 +204,7 @@ If you're using server-only integration (see [Publisher Integration Guide, Serve
 
    If the user has opted out, this method returns `null`, indicating that the user's identity should be removed from the session. To confirm optout, you can use the `tokenRefreshResponse.isOptout()` function.
 
-### Advanced Usage (GWH__JN section copied from UID2)
+### Advanced Usage (GWH__JN14 section copied from UID2)
 
 1. Create an instance of `PublisherUid2Helper` as an instance variable:
 
@@ -299,7 +293,7 @@ If you're using server-only integration (see [Publisher Integration Guide, Serve
 
    If the user has opted out, this method returns null, indicating that the user's identity should be removed from the session. To confirm optout, you can use the `tokenRefreshResponse.isOptout()` function.
 
-## Usage for Advertisers and Data Providers (GWH__JN section copied from UID2)
+## Usage for Advertisers and Data Providers (GWH__JN15 section copied from UID2)
 
 1. Create an instance of IdentityMapClient as an instance variable.
    ```java
@@ -330,7 +324,7 @@ If you're using server-only integration (see [Publisher Integration Guide, Serve
    }
    ```
 
-## Usage for DSPs (GWH__JN section copied from UID2)
+## Usage for DSPs (GWH__JN16 section copied from UID2)
 
 The following instructions provide an example of how a DSP can decode bid stream tokens using the SDK for Java.
 
