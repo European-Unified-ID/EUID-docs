@@ -7,31 +7,48 @@ sidebar_position: 04
 
 import Link from '@docusaurus/Link';
 
-# EUID SDK for Java (Server-Side) Reference Guide
+# EUID SDK for Java Reference Guide
 
-You can use the EUID SDK for Java (server-side) to facilitate the following:
+You can use the EUID SDK for Java on the server side to facilitate the following:
 
 - Generating EUID advertising tokens
 - Refreshing EUID advertising tokens
+- Encrypting raw EUIDs to create EUID tokens for sharing
+- Decrypting EUID tokens to access the raw EUIDs
+
+::note
+This SDK is valid for UID2 and EUID. Some of the code naming and URLs are labelled as UID2. These apply equally to EUID.
+:::
 
 <!-- This guide includes the following information:
 
 - [Functionality](#functionality)
+- [API Permissions](#api-permissions)
 - [Version](#version)
 - [GitHub Repository/Binary](#github-repositorybinary)
 - [Initialization](#initialization)
 - [Interface](#interface)
   - [Response Content](#response-content)
   - [Response Statuses](#response-statuses)
-* [FAQs](#faqs) -->
+* [FAQs](#faqs)
+- [Usage for Publishers](#usage-for-publishers) 
+ -->
 
 ## Functionality
 
-This SDK simplifies integration with EUID for any publishers or DSPs who are using Java for their server-side coding. The following table shows the functions it supports.
+This SDK simplifies integration with EUID for any publishers and DSPs who are using Java for their server-side coding. The following table shows the functions it supports.
 
 | Encrypt Raw EUID to EUID Token | Decrypt EUID Token | Generate EUID Token from Personal Data | Refresh EUID Token |
 | :--- | :--- | :--- | :--- |
 | Supported | Supported | Supported | Supported |
+
+## API Permissions
+
+To use this SDK, you'll need to complete the EUID account setup by following the steps described in the [Account Setup](../getting-started/gs-account-setup.md) page.
+
+You'll be granted permission to use specific functions offered by the SDK, and given credentials for that access. Bear in mind that there might be functions in the SDK that you don't have permission to use. For example, publishers get a specific API permission to generate and refresh tokens, but the SDK might support other activities, such as sharing, which require a different API permission.
+
+For details, see [API Permissions](../getting-started/gs-permissions.md).
 
 ## Version
 
@@ -41,11 +58,13 @@ The SDK requires Java version 1.8 or later.
 
 This SDK is in the following open-source GitHub repository:
 
-- [EUID SDK for Java](https://github.com/IABTechLab/uid2-client-java/blob/master/README.md) (**GWH__JN01 for discussion**)
+- [SDK for Java](https://github.com/IABTechLab/uid2-client-java/blob/master/README.md)
+
+  The SDK, and some of its technical components, are named UID2. These are equally applicable for EUID.
 
 The binary is published on the Maven repository:
 
-- [https://central.sonatype.com/artifact/com.uid2/uid2-client](https://central.sonatype.com/artifact/com.uid2/uid2-client) (**GWH__JN02 for discussion**)
+- [https://central.sonatype.com/artifact/com.uid2/uid2-client](https://central.sonatype.com/artifact/com.uid2/uid2-client)
 
 ## Initialization
 
@@ -53,7 +72,7 @@ The initialization step depends on the role, as shown in the following table.
 
 | Role                           | Create Instance of Class | Link to Instructions                              |
 |:-------------------------------| :--- |:--------------------------------------------------|
-| Publisher                      | `PublisherUid2Client` | [Usage for Publishers](#usage-for-publishers) (**GWH__JN03 for clarification re capitalization**)    |
+| Publisher                      | `PublisherUid2Client` | [Usage for Publishers](#usage-for-publishers)     |
 | Advertisers and Data Providers | `IdentityMapClient` | [Usage for Advertisers and Data Providers](#usage-for-advertisers-and-data-providers)     |
 | DSP                            | `BidstreamClient` | [Usage for DSPs](#usage-for-dsps)                 |
 | Sharer (not currently supported for EUID) | `SharingClient` | Not applicable |
@@ -62,74 +81,78 @@ You will need to provide the values necessary for the SDK to authenticate with t
 
 | Parameter | Description                                                                                | 
 | :--- |:-------------------------------------------------------------------------------------------|
-| `baseUrl/uid2BaseUrl`(**GWH__JN04 for clarification re capitalization**)  | The endpoint for the EUID service. See [Environments](../getting-started/gs-environments). | 
+| `baseUrl/uid2BaseUrl` | The endpoint for the EUID service. See [Environments](../getting-started/gs-environments). | 
 | `clientApiKey` | The API key. See [EUID Credentials](../getting-started/gs-credentials).                    | 
-| `base64SecretKey` | The client secret. See [EUID Credentials](../getting-started/gs-credentials).              |
+| `base64SecretKey` | The client secret. See [EUID Credentials](../getting-started/gs-credentials).              | 
 
-(**GWH__JN05 need to resolve UID2 value -- for all and I can replace.**)
-
-### Interface (GWH__JN06 section copied from UID2)
+### Interface
 
 The `BidstreamClient` class allows you to decrypt EUID tokens into raw EUIDs.
 
 For details on the bidding logic for handling user opt-outs, see [DSP Integration Guide](../guides/dsp-guide.md).
 
-The `SharingClient` class allows you to encrypt raw EUIDs into EUID tokens and decrypt UID2 tokens into raw UID2s (not currently supported).
+The `SharingClient` class allows you to encrypt raw EUIDs into EUID tokens and decrypt EUID tokens into raw EUIDs.
 
 :::note
 When you use an SDK, you do not need to store or manage decryption keys.
 :::
 
-## Interface (GWH__JN07 section existed in EUID)
+### Encryption Response Content
 
-The interface allows you to decrypt EUID advertising tokens and return the corresponding raw EUID. 
+When encrypting with the `SharingClient` class, the SDK returns the information shown in the following table.
 
->NOTE: When you use an SDK, you do not need to store or manage decryption keys.
+| Method               | Description                                                                                                                                     |
+|:---------------------|:------------------------------------------------------------------------------------------------------------------------------------------------|
+| `getStatus()`        | The encryption result status. For a list of possible values and definitions, see [Encryption Response Statuses](#encryption-response-statuses). |
+| `getEncryptedData()` | The encrypted EUID token.                                                                                                                       |
 
-If you're a DSP, for bidding, call the interface to decrypt an EUID advertising token and return the EUID. For details on the bidding logic for handling user opt-outs, see [DSP Integration Guide](../guides/dsp-guide.md).
+### Encryption Response Statuses
 
-The following is the decrypt method in Java:
+Encryption response codes, and their meanings, are shown in the following table.
 
-(**GWH__JN08 for clarification re capitalization in the below**)
+| Value                           | Description
+|:--------------------------------|:-----------------------------------------------------------------------|
+| `SUCCESS`                       | The raw EUID was successfully encrypted and an EUID token was returned. |
+| `NOT_AUTHORIZED_FOR_KEY`        | The requester does not have authorization to use the encryption key.   |
+| `NOT_AUTHORIZED_FOR_MASTER_KEY` | The requester does not have authorization to use the master key.       |
+| `NOT_INITIALIZED`               | The client library is waiting to be initialized.                       |
+| `KEYS_NOT_SYNCED`               | The client has failed to synchronize keys from the EUID service.       |
+| `ENCRYPTION_FAILURE`            | A generic encryption failure occurred.                                 |
 
-```java
-import com.uid2.client.IUID2Client
- 
-IUID2Client client = EUIDClientFactory.create(TEST_ENDPOINT, TEST_API_KEY, TEST_SECRET_KEY);
-client.refresh(); //Note that refresh() should be called once after create(), and then once per hour
-DecryptionResponse result = client.decrypt(TEST_TOKEN);
-```
-### Response Content (GWH__JN09 section existed in EUID)
+### Decryption Response Content
 
-Available information returned through the SDK is outlined in the following table.
+Whether decrypting with the `BidstreamClient` class or the `SharingClient` class, the SDK returns the information shown in the following table.
 
-| Function | Description |
-| :--- | :--- |
-| `GetStatus()` | The decryption result status. For a list of possible values and definitions, see [Response Statuses](#response-statuses). |
-| `GetUid()` | The raw EUID for the corresponding EUID advertising token. |
-| `GetEstablished()` | The timestamp indicating when a user first established the EUID with the publisher. |
+| Methods            | Description                                                                                                                                     |
+|:-------------------|:------------------------------------------------------------------------------------------------------------------------------------------------|
+| `getStatus()`      | The decryption result status. For a list of possible values and definitions, see [Decryption Response Statuses](#decryption-response-statuses). |
+| `getSiteId()`      | The raw EUID for the corresponding EUID token.                                                                                                  |
+| `getEstablished()` | The timestamp indicating when a user first established the EUID with the publisher.                                                             |
 
-### Response Statuses (GWH__JN10 section existed in EUID)
+### Decryption Response Statuses
 
-| Value | Description |
-| :--- | :--- |
-| `Success` | The EUID advertising token was decrypted successfully and a raw EUID was returned. |
-| `NotAuthorizedForKey` | The requester does not have authorization to decrypt this EUID advertising token.|
-| `NotInitialized` | The client library is waiting to be initialized. |
-| `InvalidPayload` | The incoming EUID advertising token is not a valid payload. |
-| `ExpiredToken` | The incoming EUID advertising token has expired. |
-| `KeysNotSynced` | The client has failed to synchronize keys from the EUID service. |
-| `VersionNotSupported` |  The client library does not support the version of the encrypted token. |
+Decryption response codes, and their meanings, are shown in the following table.
 
-## Usage for Publishers (GWH__JN11 section copied from UID2)
+| Value                      | Description                                                             |
+|:---------------------------|:------------------------------------------------------------------------|
+| `SUCCESS`                  | The EUID token was decrypted successfully and a raw EUID was returned.  |
+| `NOT_AUTHORIZED_FOR_KEY`   | The requester does not have authorization to decrypt this EUID token.   |
+| `NOT_INITIALIZED`          | The client library is waiting to be initialized.                        |
+| `INVALID_PAYLOAD`          | The incoming EUID token is not a valid payload.                         |
+| `EXPIRED_TOKEN`            | The incoming EUID token has expired.                                    |
+| `KEYS_NOT_SYNCED`          | The client has failed to synchronize keys from the EUID service.        |
+| `VERSION_NOT_SUPPORTED`    | The client library does not support the version of the encrypted token. |
+| `INVALID_TOKEN_LIFETIME`   | The token has an invalid timestamp.                                     |
+
+## Usage for Publishers
 
 As a publisher, there are two ways to use the EUID SDK for Java: 
 1. [**Basic Usage**](#basic-usage) is for publishers who want to use this SDK's HTTP implementation (synchronous [OkHttp](https://square.github.io/okhttp/)).
 2. [**Advanced Usage**](#advanced-usage) is for publishers who prefer to use their own HTTP library. 
 
-For an example application that demonstrates both Basic and Advanced usage, see [Java UID2 Integration Example](https://github.com/UnifiedID2/uid2-examples/tree/main/publisher/uid2-java-test-site#readme). (**GWH__JN12 is there an integration example for EUID? If no, should we maybe have one, or genericize this one?**)
+For an example application that demonstrates both Basic and Advanced usage, see [Java Integration Example](https://github.com/UnifiedID2/uid2-examples/tree/main/publisher/uid2-java-test-site#readme).
 
-### Basic Usage (GWH__JN13 section copied from UID2)
+### Basic Usage
 
 If you're using the SDK's HTTP implementation, follow these steps.
 
@@ -139,7 +162,7 @@ If you're using the SDK's HTTP implementation, follow these steps.
    private final PublisherUid2Client publisherUid2Client = new PublisherUid2Client(UID2_BASE_URL, UID2_API_KEY, UID2_SECRET_KEY);
    ```
 
-2. Call a function that takes the user's email addressas input and generates a `TokenGenerateResponse` object. The following example uses an email address:
+2. Call a function that takes the user's email address or phone number as input and generates a `TokenGenerateResponse` object. The following example uses an email address:
    ```java
    TokenGenerateResponse tokenGenerateResponse = publisherUid2Client.generateTokenResponse(TokenGenerateInput.fromEmail(emailAddress).doNotGenerateTokensForOptedOut());
    ```
@@ -204,22 +227,22 @@ If you're using server-only integration (see [Publisher Integration Guide, Serve
 
    If the user has opted out, this method returns `null`, indicating that the user's identity should be removed from the session. To confirm optout, you can use the `tokenRefreshResponse.isOptout()` function.
 
-### Advanced Usage (GWH__JN14 section copied from UID2)
+### Advanced Usage
 
 1. Create an instance of `PublisherUid2Helper` as an instance variable:
 
     ```java
     private final PublisherUid2Helper publisherUid2Helper = new PublisherUid2Helper(UID2_SECRET_KEY);
     ```
-2. Call a function that takes the user's email address as input and creates a secure request data envelope. See [Encrypting requests](../getting-started/gs-encryption-decryption.md#encrypting-requests). The following example uses an email address:
+2. Call a function that takes the user's email address or phone number as input and creates a secure request data envelope. See [Encrypting requests](../getting-started/gs-encryption-decryption.md#encrypting-requests). The following example uses an email address:
 
     ```java
     EnvelopeV2 envelope = publisherUid2Helper.createEnvelopeForTokenGenerateRequest(TokenGenerateInput.fromEmail(emailAddress).doNotGenerateTokensForOptedOut());
     ```
 3. Using an HTTP client library of your choice, post this envelope to the [POST&nbsp;token/generate](../endpoints/post-token-generate.md) endpoint, including headers and body:
-   1. Headers: Depending on your HTTP library, this might look something like the following: 
+   1. Headers: Depending on your HTTP library, this might look something like the following:  
     
-      `.putHeader("Authorization", "Bearer " + UID2_API_KEY)` 
+      `.putHeader("Authorization", "Bearer " + UID2_API_KEY)`  
       `.putHeader("X-UID2-Client-Version", PublisherUid2Helper.getVersionHeader())`
    2. Body: `envelope.getEnvelope()`
    :::important
@@ -281,7 +304,7 @@ If you're using server-only integration (see [Publisher Integration Guide, Serve
 4. If a refresh is needed, call the [POST token/refresh](../endpoints/post-token-refresh.md) endpoint, with the following:
    1. Headers: Depending on your HTTP library, this might look something like the following:
     
-      `.putHeader("Authorization", "Bearer " + UID2_API_KEY)` 
+      `.putHeader("Authorization", "Bearer " + UID2_API_KEY)`  
       `.putHeader("X-UID2-Client-Version", PublisherUid2Helper.getVersionHeader())`. 
    2. Body: `identity.getRefreshToken()`
 5. If the refresh HTTP response status code is 200:
@@ -293,19 +316,18 @@ If you're using server-only integration (see [Publisher Integration Guide, Serve
 
    If the user has opted out, this method returns null, indicating that the user's identity should be removed from the session. To confirm optout, you can use the `tokenRefreshResponse.isOptout()` function.
 
-## Usage for Advertisers and Data Providers (GWH__JN15 section copied from UID2)
-
+## Usage for Advertisers and Data Providers
 1. Create an instance of IdentityMapClient as an instance variable.
    ```java
    final private IdentityMapClient identityMapClient = new IdentityMapClient(UID2_BASE_URL, UID2_API_KEY, UID2_SECRET_KEY);
    ```
 
-2. Call a function that takes email addresses as input and generates an IdentityMapResponse object. The following example uses email addresses:
+2. Call a function that takes email addresses or phone numbers as input and generates an IdentityMapResponse object. The following example uses email addresses:
    ```java
    IdentityMapResponse identityMapResponse = identityMapClient.generateIdentityMap(IdentityMapInput.fromEmails(Arrays.asList("email1@example.com", "email2@example.com")));
    ```
 
->Note: The SDK hashes input values before sending them. This ensures that raw email addresses do not leave your server.
+>Note: The SDK hashes input values before sending them. This ensures that raw email addresses and phone numbers do not leave your server.
 
 3. Retrieve the mapped and unmapped results as follows:
    ```java
@@ -324,9 +346,9 @@ If you're using server-only integration (see [Publisher Integration Guide, Serve
    }
    ```
 
-## Usage for DSPs (GWH__JN16 section copied from UID2)
+## Usage for DSPs
 
-The following instructions provide an example of how a DSP can decode bid stream tokens using the SDK for Java.
+The following instructions provide an example of how a DSP can decode bid stream tokens using the EUID SDK for Java.
 
 1. Create a `BidstreamClient`:
 
@@ -342,7 +364,7 @@ client.refresh();
 
 3. Decrypt a token into a raw EUID. Pass the token, and then do one of the following:
 * If the bid request originated from a publisher's website, pass the domain name. The domain name must be all lower case, without spaces and without subdomain. For example, for `Subdomain.DOMAIN.com`, pass `domain.com` instead.
-* If the bid request originated from a mobile app, pass the [app name](../ref-info/glossary-uid.md#gl-app-name).
+<!-- * If the bid request originated from a mobile app, pass the [app name](../ref-info/glossary-uid.md#gl-app-name). -->
 * Otherwise, pass `null`.
 
 ```java
