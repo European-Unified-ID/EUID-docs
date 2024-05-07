@@ -13,8 +13,8 @@ You can use the EUID SDK for Java on the server side to facilitate the following
 
 - Generating EUID advertising tokens
 - Refreshing EUID advertising tokens
-- Encrypting raw EUIDs to create EUID tokens for sharing
-- Decrypting EUID tokens to access the raw EUIDs
+<!-- - Encrypting raw EUIDs to create EUID tokens for sharing
+- Decrypting EUID tokens to access the raw EUIDs -->
 
 ::note
 This SDK is valid for UID2 and EUID. Some of the code naming and URLs are labelled as UID2. These apply equally to EUID.
@@ -36,7 +36,7 @@ This SDK is valid for UID2 and EUID. Some of the code naming and URLs are labell
 
 ## Functionality
 
-This SDK simplifies integration with EUID for any publishers and DSPs who are using Java for their server-side coding. The following table shows the functions it supports.
+This SDK simplifies integration with EUID for any publishers or DSPs who are using Java for their server-side coding. The following table shows the functions it supports.
 
 | Encrypt Raw EUID to EUID Token | Decrypt EUID Token | Generate EUID Token from Personal Data | Refresh EUID Token |
 | :--- | :--- | :--- | :--- |
@@ -46,7 +46,7 @@ This SDK simplifies integration with EUID for any publishers and DSPs who are us
 
 To use this SDK, you'll need to complete the EUID account setup by following the steps described in the [Account Setup](../getting-started/gs-account-setup.md) page.
 
-You'll be granted permission to use specific functions offered by the SDK, and given credentials for that access. Bear in mind that there might be functions in the SDK that you don't have permission to use. For example, publishers get a specific API permission to generate and refresh tokens, but the SDK might support other activities, such as sharing, which require a different API permission.
+You'll be granted permission to use specific functions offered by the SDK, and given credentials for that access. Bear in mind that there might be functions in the SDK that you don't have permission to use. For example, publishers get a specific API permission to generate and refresh tokens, but the SDK might support other activities that require a different API permission.
 
 For details, see [API Permissions](../getting-started/gs-permissions.md).
 
@@ -60,7 +60,7 @@ This SDK is in the following open-source GitHub repository:
 
 - [SDK for Java](https://github.com/IABTechLab/uid2-client-java/blob/master/README.md)
 
-  The SDK, and some of its technical components, are named UID2. These are equally applicable for EUID.
+  The SDK, and some of its technical components, are named UID2, but are are equally applicable for EUID.
 
 The binary is published on the Maven repository:
 
@@ -121,7 +121,7 @@ Encryption response codes, and their meanings, are shown in the following table.
 
 ### Decryption Response Content
 
-Whether decrypting with the `BidstreamClient` class or the `SharingClient` class, the SDK returns the information shown in the following table.
+Whether decrypting with the `BidstreamClient` class<!--  or the `SharingClient` class -->, the SDK returns the information shown in the following table.
 
 | Methods            | Description                                                                                                                                     |
 |:-------------------|:------------------------------------------------------------------------------------------------------------------------------------------------|
