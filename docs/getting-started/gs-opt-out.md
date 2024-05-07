@@ -58,6 +58,4 @@ The following steps provide a high-level outline of the workflow intended for us
 
 This workflow allows users to consent to the creation of EUID identifiers and manage their EUID consent and privacy settings through the Transparency and Control Portal.
 
-<!-- (**GWH_KL TBD re workflow**)
-
-![User Trust Workflow](images/UID2GlobalOptoutWorkflow.png) -->
+![User Trust Workflow](images/EUIDGlobalOptoutWorkflow.svg)
