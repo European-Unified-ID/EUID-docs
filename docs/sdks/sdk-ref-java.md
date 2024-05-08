@@ -13,10 +13,10 @@ You can use the EUID SDK for Java on the server side to facilitate the following
 
 - Generating EUID advertising tokens
 - Refreshing EUID advertising tokens
-<!-- - Encrypting raw EUIDs to create EUID tokens for sharing
-- Decrypting EUID tokens to access the raw EUIDs -->
 
-::note
+
+
+:::note
 This SDK is valid for UID2 and EUID. Some of the code naming and URLs are labelled as UID2. These apply equally to EUID.
 :::
 
