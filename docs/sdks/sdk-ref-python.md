@@ -13,23 +13,25 @@ You can use the EUID SDK for Python (Server-Side) to facilitate:
 
 - Generating EUID advertising tokens
 - Refreshing EUID advertising tokens
+- Decrypting EUID tokens to access the raw EUIDs
+
+:::note
+This SDK is valid for UID2 and EUID. Some of the code naming and URLs are labelled as UID2. These apply equally to EUID.
+:::
 
 This guide includes the following information:
-
-- [Overview](#overview)
+<!--
 - [Functionality](#functionality)
 - [Version](#version)
 - [GitHub Repository/Package](#github-repositorypackage)
 - [Initialization](#initialization)
 - [Interface](#interface)
-  - [Response Content](#response-content)
-  - [Response Statuses](#response-statuses)
-- [FAQs](#faqs)
+  - [Decryption Response Content](#decryption-response-content)
+  - [Decryption Response Statuses](#decryption-response-statuses)
 - [Usage for Publishers](#usage-for-publishers)
-
-## Overview
-
-The functions outlined here define the information that you'll need to configure or can retrieve from the library. The parameters and property names defined below are pseudocode. Actual parameters and property names vary by language but will be similar to the information outlined here.
+- [Usage for DSPs](#usage-for-dsps)
+- [FAQs](#faqs)
+-->
 
 ## Functionality
 
@@ -38,6 +40,14 @@ This SDK simplifies integration with EUID for any DSPs who are using Python for 
 | Encrypt Raw EUID to EUID Token | Decrypt EUID Token | Generate EUID Token from Personal Data | Refresh EUID Token |
 | :--- | :--- | :--- | :--- |
 | Supported | Supported | Supported | Supported |
+
+## API Permissions
+
+To use this SDK, you'll need to complete the EUID account setup by following the steps described in the [Account Setup](../getting-started/gs-account-setup.md) page.
+
+You'll be granted permission to use specific functions offered by the SDK, and given credentials for that access. Bear in mind that there might be functions in the SDK that you don't have permission to use. For example, publishers get a specific API permission to generate and refresh tokens, but the SDK might support other activities that require a different API permission.
+
+For details, see [API Permissions](../getting-started/gs-permissions.md).
 
 ## Version
 
@@ -55,77 +65,93 @@ The package is published in this location:
 
 ## Initialization
 
-The initialization function configures the parameters necessary for the SDK to authenticate with the EUID service. It also allows you to configure retry intervals in the event of errors.
+The initialization step depends on the role, as shown in the following table.
 
-| Parameter | Description | Recommended Value |
-| :--- | :--- | :--- |
-| `endpoint` | The endpoint for the EUID service. | N/A |
-| `authKey` | The authentication token that belongs to the client. For access to EUID, see [Contact Info](../getting-started/gs-account-setup.md#contact-info). | N/A |
+| Role                                      | Create Instance of Class | Link to Instructions                                                                  |
+|:------------------------------------------|:-------------------------|:--------------------------------------------------------------------------------------|
+| Publisher                                 | `Uid2PublisherClient`    | [Usage for Publishers](#usage-for-publishers)                                         |
+| DSP                                       | `BidstreamClient`        | [Usage for DSPs](#usage-for-dsps)                                                     |
+| Sharer (not currently supported for EUID) | `SharingClient`          | Not applicable                                                                        |
 
-## Interface 
+You will need to provide the values necessary for the SDK to authenticate with the EUID service.
 
-The interface allows you to decrypt EUID advertising tokens and return the corresponding raw EUID. 
+| Parameter    | Description                                                                                |
+|:-------------|:-------------------------------------------------------------------------------------------|
+| `base_url`   | The endpoint for the EUID service. See [Environments](../getting-started/gs-environments). |
+| `auth_key`   | The API key. See [EUID Credentials](../getting-started/gs-credentials).                    |
+| `secret_key` | The client secret. See [EUID Credentials](../getting-started/gs-credentials).              |
 
->NOTE: When you use an SDK, you do not need to store or manage decryption keys.
+## Interface
+The `BidstreamClient` class allows you to decrypt EUID tokens into raw EUIDs.
 
-If you're a DSP, for bidding, call the interface to decrypt an EUID advertising token and return the EUID. For details on the bidding logic for handling user opt-outs, see [DSP Integration Guide](../guides/dsp-guide.md).
+For details on the bidding logic for handling user opt-outs, see [DSP Integration Guide](../guides/dsp-guide.md).
 
-The following is the decrypt method in Python:
+:::note
+When you use an SDK, you do not need to store or manage decryption keys.
+:::
 
-```python
-from uid2_client import EuidClientFactory
- 
-client = EuidClientFactory.create('https://prod.euid.eu', 'my-auth-token', 'my-secret-key')
-client.refresh_keys() # Note that refresh_keys() should be called once after create(), and then once per hour
-decrypted_token = client.decrypt(advertising_token)
-```
+### Decryption Response Content
 
-### Response Content
+Whether decrypting with the `BidstreamClient` class<!--  or the `SharingClient` class -->, the SDK returns the information shown in the following table.
 
-Available information returned through the SDK is outlined in the following table.
+| Methods       | Description                                                                                                                                     |
+|:--------------|:------------------------------------------------------------------------------------------------------------------------------------------------|
+| `status`      | The decryption result status. For a list of possible values and definitions, see [Decryption Response Statuses](#decryption-response-statuses). |
+| `uid`         | The raw EUID for the corresponding EUID token.                                                                                                  |
+| `established` | The timestamp indicating when a user first established the EUID with the publisher.                                                             |
 
-| Instance Variable | Description |
-| :--- | :--- |
-| `uid2` | The raw EUID for the corresponding EUID advertising token. |
-| `established` | The timestamp indicating when a user first established the EUID with the publisher. |
 
->NOTE: If there is a decryption failure, an `EncryptionError` exception is raised.
+### Decryption Response Statuses
 
-### Response Statuses
+Decryption response codes, and their meanings, are shown in the following table.
 
-| Value | Description |
-| :--- | :--- |
-| `Success` | The EUID advertising token was decrypted successfully and a raw EUID was returned. |
-| `NotAuthorizedForKey` | The requester does not have authorization to decrypt this EUID advertising token.|
-| `NotInitialized` | The client library is waiting to be initialized. |
-| `InvalidPayload` | The incoming EUID advertising token is not a valid payload. |
-| `ExpiredToken` | The incoming EUID advertising token has expired. |
-| `KeysNotSynced` | The client has failed to synchronize keys from the EUID service. |
-| `VersionNotSupported` |  The client library does not support the version of the encrypted token. |
+| Value                      | Description                                                             |
+|:---------------------------|:------------------------------------------------------------------------|
+| `SUCCESS`                  | The EUID token was decrypted successfully and a raw EUID was returned.  |
+| `NOT_AUTHORIZED_FOR_KEY`   | The requester does not have authorization to decrypt this EUID token.   |
+| `NOT_INITIALIZED`          | The client library is waiting to be initialized.                        |
+| `INVALID_PAYLOAD`          | The incoming EUID token is not a valid payload.                         |
+| `EXPIRED_TOKEN`            | The incoming EUID token has expired.                                    |
+| `KEYS_NOT_SYNCED`          | The client has failed to synchronize keys from the EUID service.        |
+| `VERSION_NOT_SUPPORTED`    | The client library does not support the version of the encrypted token. |
+| `DOMAIN_NAME_CHECK_FAILED` | The domain name doesn't match the domain of the encrypted token.        |
+| `INVALID_TOKEN_LIFETIME`   | The token has an invalid timestamp.                                     |
+
 
 ## Usage for Publishers
 
 1. Create an instance of Uid2PublisherClient:
 
-   `client = Uid2PublisherClient(UID2_BASE_URL, UID2_API_KEY, UID2_SECRET_KEY)`
+   ```py
+   client = Uid2PublisherClient(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY)
+   ```
 
 2. Call a function that takes the user's email address as input and generates a `TokenGenerateResponse` object. The following example uses an email address:
 
-   `token_generate_response = client.generate_token(TokenGenerateInput.from_email(emailAddress).do_not_generate_tokens_for_opted_out())`
+   ```py
+   token_generate_response = client.generate_token(TokenGenerateInput.from_email(emailAddress).do_not_generate_tokens_for_opted_out())
+   ```
 
-   >IMPORTANT: Be sure to call this function only when you have obtained legal basis to convert the user’s personal data to EUID tokens for targeted advertising.
+   :::important
+   - Be sure to call the POST&nbsp;/token/generate endpoint only when you have obtained legal basis to convert the user’s <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to EUID tokens for targeted advertising.
 
-   >`do_not_generate_tokens_for_opted_out()` applies `optout_check=1` in the [POST /token/generate](../endpoints/post-token-generate.md) call. Without this, `optout_check` is omitted to maintain backwards compatibility.
+   - Always apply `do_not_generate_tokens_for_opted_out()`. This applies a parameter similar to setting `optout_check=1` in the call to the POST&nbsp;/token/generate endpoint (see [Unencrypted JSON Body Parameters](../endpoints/post-token-generate.md#unencrypted-json-body-parameters)).
+   :::
 
-### Standard Integration
 
-If you're using standard integration (client and server) (see [EUID SDK for JavaScript Integration Guide](../guides/publisher-client-side.md)), follow this step:
+#### Client-Server Integration
+
+If you're using client-server integration (see [EUID SDK for JavaScript Integration Guide](../guides/publisher-client-side.md)), follow this step:
 
 * Send this identity as a JSON string back to the client (to use in the [identity field](../sdks/client-side-identity.md#initopts-object-void)) using the following:
 
-  `token_generate_response.get_identity_json_string()` 
-  
-  Note: If the user has opted out, this method returns None, so be sure to handle that case.
+  ```py
+  token_generate_response.get_identity_json_string()
+  ```
+
+  :::note
+  If the user has opted out, this method returns None, so be sure to handle that case.
+  :::
 
 ### Server-Only Integration
 
@@ -158,6 +184,38 @@ If you're using server-only integration (see [Publisher Integration Guide, Serve
 5. Store `token_refresh_response.get_identity_json_string()` in the user's session.
 
    If the user has opted out, this method returns `None`, indicating that the user's identity should be removed from the session. To confirm optout, you can use the `token_refresh_response.is_optout()` function.
+
+## Usage for DSPs
+
+The following instructions provide an example of how a DSP can decode bid stream tokens using the EUID SDK for Python.
+
+1. Create a `BidstreamClient`:
+
+```py
+client = BidstreamClient(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY)
+```
+
+2. Refresh once at startup, and then periodically (recommended refresh interval is hourly):
+
+```py
+client.refresh()
+```
+
+3. Decrypt a token into a raw EUID. Pass the token, and then do one of the following:
+* If the bid request originated from a publisher's website, pass the domain name. The domain name must be all lower case, without spaces and without subdomain. For example, for `Subdomain.DOMAIN.com`, pass `domain.com` instead.
+* If the bid request originated from a mobile app, pass the [app name](../ref-info/glossary-uid.md#gl-app-name).
+* Otherwise, pass `null`.
+
+```py
+decrypted = client.decrypt_token_into_raw_uid(uid_token, domainOrAppName)
+# If decryption succeeded, use the raw EUID.
+if decrypted.success:
+    #  Use decrypted.uid
+else:
+   # Check decrypted.status for the failure reason.
+```
+
+For a full example, see the `sample_bidstream_client.py` in [examples/sample_bidstream_client.py](https://github.com/IABTechLab/uid2-client-python/blob/main/examples/sample_bidstream_client.py).
 
 ## FAQs
 
