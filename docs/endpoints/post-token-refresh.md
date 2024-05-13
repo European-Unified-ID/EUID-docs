@@ -117,9 +117,9 @@ An error response might look like the following:
 | :--- | :--- | :--- |
 | `advertising_token` | string | The EUID token (also known as advertising token) for the user. |
 | `refresh_token` | string | An encrypted token that can be exchanged with the EUID Service for the latest set of identity tokens. |
-| `identity_expires` | double | The UNIX timestamp (in milliseconds) that indicates when the EUID token expires. |
-| `refresh_from` | double | The UNIX timestamp (in milliseconds) that indicates when the [SDK for JavaScript](../sdks/client-side-identity.md) will start refreshing the EUID token.<br/>TIP: If you are not using the SDK, consider refreshing the EUID token from this timestamp, too. |
-| `refresh_expires` | double | The UNIX timestamp (in milliseconds) that indicates when the refresh token expires. |
+| `identity_expires` | number | The UNIX timestamp (in milliseconds) that indicates when the EUID token expires. |
+| `refresh_from` | number | The UNIX timestamp (in milliseconds) that indicates when the [SDK for JavaScript](../sdks/client-side-identity.md) will start refreshing the EUID token.<br/>TIP: If you are not using the SDK, consider refreshing the EUID token from this timestamp, too. |
+| `refresh_expires` | number | The UNIX timestamp (in milliseconds) that indicates when the refresh token expires. |
 | `refresh_response_key` | string | A key to be used in a new [POST /token/refresh](post-token-refresh.md) request for response decryption. |
 
 
