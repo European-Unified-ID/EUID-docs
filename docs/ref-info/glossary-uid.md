@@ -313,7 +313,8 @@ import Link from '@docusaurus/Link';
 <dl>
 
 <dt><MdxJumpAnchor id="gl-raw-euid">Raw EUID</MdxJumpAnchor></dt>
-<dd>An unencrypted alphanumeric identifier created through the EUID APIs or SDKs with the user's <a href="#gl-personal-data">personal data</a> (email address<!--  or phone number -->) as input. The raw EUID is encrypted to create an <a href="#gl-euid-token">EUID token</a>. The raw EUID is a unique value; no two raw EUIDs are the same. Raw EUIDs, and their associated EUID tokens, are case sensitive.</dd>
+<dd>An unencrypted alphanumeric identifier created through the EUID APIs or SDKs with the user's <a href="#gl-personal-data">personal data</a> (email address<!--  or phone number -->) as input. To prevent re-identification of the original personal data, the input value is hashed if it was not already hashed, then salted, and then hashed again to create the raw EUID. The process that creates the raw EUID is designed to create a secure, opaque value that can be stored by advertisers, third-party data providers, and demand-side platforms (DSPs).</dd>
+<dd>The raw EUID is encrypted to create an <a href="#gl-euid-token">EUID token</a>. The raw EUID is a unique value; no two raw EUIDs are the same. Raw EUIDs, and their associated EUID tokens, are case sensitive.</dd>
 <dd>For details, see <a href="../intro#euid-identifier-types">EUID Identifier Types</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-refresh-token">Refresh token</MdxJumpAnchor></dt>
