@@ -300,7 +300,7 @@ import Link from '@docusaurus/Link';
 <dd>A private instance of the Operator Service, run by a <a href="#gl-private-operator">Private Operator</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-public-key">Public key</MdxJumpAnchor></dt>
-<dd>For server-side publisher integrations, the public key is one of the two values issued to publishers as their EUID credentials. For details, see <a href="../getting-started/gs-credentials#subscription-id-and-public-key">Subscription ID and Public Key</a>.</dd>
+<dd>For client-side publisher integrations, the public key is one of the two values issued to publishers as their EUID credentials. For details, see <a href="../getting-started/gs-credentials#subscription-id-and-public-key">Subscription ID and Public Key</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-public-operator">Public Operator</MdxJumpAnchor></dt>
 <dd>A Public <a href="#gl-operator">Operator</a> is an entity that runs a public instance of the EUID Operator Service. For example, The Trade Desk currently serves as a Public Operator for the EUID framework, available to all participants.</dd>
@@ -350,7 +350,7 @@ import Link from '@docusaurus/Link';
 <dd>For details, see <a href="../sharing/sharing-overview">EUID Sharing: Overview</a>.</dd> -->
 
 <dt><MdxJumpAnchor id="gl-subscription-id">Subscription ID</MdxJumpAnchor></dt>
-<dd>For server-side publisher integrations, the subscription ID is one of the two values issued to publishers as their EUID credentials. For details, see <a href="../getting-started/gs-credentials#subscription-id-and-public-key">Subscription ID and Public Key</a>.</dd>
+<dd>For client-side publisher integrations, the subscription ID is one of the two values issued to publishers as their EUID credentials. For details, see <a href="../getting-started/gs-credentials#subscription-id-and-public-key">Subscription ID and Public Key</a>.</dd>
 
 </dl>
 
