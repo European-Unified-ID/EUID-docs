@@ -13,8 +13,7 @@ You can use the EUID SDK for Java on the server side to facilitate the following
 
 - Generating EUID advertising tokens
 - Refreshing EUID advertising tokens
-
-
+- Decrypting EUID tokens to access the raw EUIDs
 
 :::note
 This SDK is valid for UID2 and EUID. Some of the code naming and URLs are labelled as UID2. These apply equally to EUID.
@@ -40,7 +39,7 @@ This SDK simplifies integration with EUID for any publishers or DSPs who are usi
 
 | Encrypt Raw EUID to EUID Token | Decrypt EUID Token | Generate EUID Token from Personal Data | Refresh EUID Token |
 | :--- | :--- | :--- | :--- |
-| Supported | Supported | Supported | Supported |
+| Not Supported | Supported | Supported | Supported |
 
 ## API Permissions
 
@@ -60,7 +59,7 @@ This SDK is in the following open-source GitHub repository:
 
 - [SDK for Java](https://github.com/IABTechLab/uid2-client-java/blob/master/README.md)
 
-  The SDK, and some of its technical components, are named UID2, but are are equally applicable for EUID.
+  The SDK, and some of its technical components, are named UID2, but are equally applicable for EUID.
 
 The binary is published on the Maven repository:
 
