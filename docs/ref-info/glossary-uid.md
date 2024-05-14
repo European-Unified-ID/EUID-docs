@@ -114,8 +114,8 @@ import Link from '@docusaurus/Link';
 <dt><MdxJumpAnchor id="gl-api-secret">API secret</MdxJumpAnchor></dt>
 <dd>See <a href="#gl-client-secret">client secret</a>.</dd>
 
-<!-- <dt><MdxJumpAnchor id="gl-app-name">App name</MdxJumpAnchor></dt>
-<dd>The Android application ID, the iOS app store ID, or the iOS bundle identifier.</dd> -->
+<dt><MdxJumpAnchor id="gl-app-name">App name</MdxJumpAnchor></dt>
+<dd>In the context of mobile integrations, the app name is the Android application ID, the iOS app store ID, or the iOS bundle identifier.</dd>
 
 <dt><MdxJumpAnchor id="gl-authorization-header">Authorization header</MdxJumpAnchor></dt>
 <dd>The Authorization header is a way to authenticate the client to the EUID service.</dd>
