@@ -30,9 +30,9 @@ The following resources are available for publisher integrations.
 
 | Integration Guide | Content Description |
 | :--- | :--- |
-| [EUID Integration Overview for Prebid.js](integration-prebid.md) | An overview of options for publishers who want to integrate with EUID and generate EUID tokens to be passed by Prebid.js in the RTB bid stream. |
-| [EUID Client-Side Integration Guide for Prebid.js](integration-prebid-client-side.md) | An integration guide for publishers who want to integrate with EUID and want Prebid.js to manage token generation and automatic token refresh as well as passing the tokens into the RTB bid stream. This guide is for publishers who want to request EUID tokens client-side, which is the easiest implementation approach. |
-| [EUID Server-Side Integration Guide for Prebid.js](integration-prebid-server-side.md) | An integration guide for publishers who want to integrate with EUID and generate identity tokens to be passed by Prebid in the RTB bid stream. This guide is for publishers who are using a private operator or who want to generate tokens server-side. |
+| [EUID Integration Overview for Prebid.js](integration-prebid.md) | An overview of options for publishers who want to integrate with EUID and generate EUID tokens to be passed by Prebid.js in the RTB bidstream. |
+| [EUID Client-Side Integration Guide for Prebid.js](integration-prebid-client-side.md) | An integration guide for publishers who want to integrate with EUID and want Prebid.js to manage token generation and automatic token refresh as well as passing the tokens into the RTB bidstream. This guide is for publishers who want to request EUID tokens client-side, which is the easiest implementation approach. |
+| [EUID Server-Side Integration Guide for Prebid.js](integration-prebid-server-side.md) | An integration guide for publishers who want to integrate with EUID and generate identity tokens to be passed by Prebid in the RTB bidstream. This guide is for publishers who are using a private operator or who want to generate tokens server-side. |
 | [EUID Integration Overview for JavaScript](integration-javascript.md) | An overview of options for publishers who want to integrate with EUID using the JavaScript SDK. |
 | [Client-Side Integration Guide for JavaScript](publisher-client-side.md) | A guide for publishers who want to integrate with EUID using only client-side JavaScript changes, which is the easiest implementation approach.<br/>The EUID SDK for JavaScript manages token generation and token refresh automatically. |
 | [Server-Side Integration Guide for JavaScript](integration-javascript-server-side.md) | This integration guide for publishers covers standard web integration scenarios that use the EUID SDK for JavaScript and requires the token to be generated on the server side and passed to the publishers' web pages. |
@@ -44,9 +44,9 @@ The following resources are available for publisher Prebid integrations.
 
 | Integration Guide | Content Description |
 | :--- | :--- |
-| [EUID Integration Overview for Prebid.js](integration-prebid.md) | An overview of options for publishers who want to integrate with EUID and generate EUID tokens to be passed by Prebid.js in the RTB bid stream. |
-| [EUID Client-Side Integration Guide for Prebid.js](integration-prebid-client-side.md) | An integration guide for publishers who want to integrate with EUID and want Prebid.js to manage token generation and automatic token refresh as well as passing the tokens into the RTB bid stream. This guide is for publishers who want to request EUID tokens client-side, which is the easiest implementation approach. |
-| [EUID Server-Side Integration Guide for Prebid.js](integration-prebid-server-side.md) | An integration guide for publishers who want to integrate with EUID and generate identity tokens to be passed by Prebid in the RTB bid stream. This guide is for publishers who are using a private operator or who want to generate tokens server-side. |
+| [EUID Integration Overview for Prebid.js](integration-prebid.md) | An overview of options for publishers who want to integrate with EUID and generate EUID tokens to be passed by Prebid.js in the RTB bidstream. |
+| [EUID Client-Side Integration Guide for Prebid.js](integration-prebid-client-side.md) | An integration guide for publishers who want to integrate with EUID and want Prebid.js to manage token generation and automatic token refresh as well as passing the tokens into the RTB bidstream. This guide is for publishers who want to request EUID tokens client-side, which is the easiest implementation approach. |
+| [EUID Server-Side Integration Guide for Prebid.js](integration-prebid-server-side.md) | An integration guide for publishers who want to integrate with EUID and generate identity tokens to be passed by Prebid in the RTB bidstream. This guide is for publishers who are using a private operator or who want to generate tokens server-side. |
 
 ## Advertiser/Data Provider Integrations
 

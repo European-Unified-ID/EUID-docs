@@ -188,7 +188,7 @@ If you're using server-only integration (see [Publisher Integration Guide, Serve
 
 ## Usage for DSPs
 
-The following instructions provide an example of how a DSP can decode bid stream tokens using the EUID SDK for Python.
+The following instructions provide an example of how a DSP can decode bidstream tokens using the EUID SDK for Python.
 
 1. Create a `BidstreamClient`:
 

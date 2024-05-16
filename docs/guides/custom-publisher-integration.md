@@ -2,7 +2,7 @@
 title: Publisher Integration Guide, Server-Only
 sidebar_label: Server-Only
 pagination_label: Publisher Integration Guide, Server-Only
-description: Information about generating identity tokens using EUID for the RTB bid stream, while integrating directly with EUID rather than EUID-enabled single-sign-on or identity providers.
+description: Information about generating identity tokens using EUID for the RTB bidstream, while integrating directly with EUID rather than EUID-enabled single-sign-on or identity providers.
 hide_table_of_contents: false
 sidebar_position: 03
 ---
@@ -11,7 +11,7 @@ import Link from '@docusaurus/Link';
 
 # Publisher Integration Guide, Server-Only (Without SDK)
 
-This guide is for publishers who want to generate identity tokens using EUID for the RTB bid stream, while integrating directly with EUID rather than EUID-enabled single-sign-on or identity providers. 
+This guide is for publishers who want to generate identity tokens using EUID for the RTB bidstream, while integrating directly with EUID rather than EUID-enabled single-sign-on or identity providers. 
 
 It includes the following sections:
 
@@ -48,7 +48,7 @@ This document provides details for the last option.
 
 ## Integration Steps
 
-The following diagram outlines the steps required for a user to establish an EUID token with a publisher and how the EUID token integrates with the RTB bid stream.
+The following diagram outlines the steps required for a user to establish an EUID token with a publisher and how the EUID token integrates with the RTB bidstream.
  
 ![Publisher Flow](images/custom-publisher-integration-mermaid.svg)
 

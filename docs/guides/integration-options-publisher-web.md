@@ -9,7 +9,7 @@ import Link from '@docusaurus/Link';
 
 # Web Integration Overview
 
-As a publisher, there are many ways that you can integrate with EUID to generate identity tokens to be passed into the RTB bid stream in the context of your web pages.
+As a publisher, there are many ways that you can integrate with EUID to generate identity tokens to be passed into the RTB bidstream in the context of your web pages.
 
 On this page, you'll find a high-level overview of integration steps and integration options, with links to additional information for each option.
 
@@ -19,7 +19,7 @@ On this page, you'll find a high-level overview of integration steps and integra
 * [Integration Options: Client Side](#integration-options-client-side)
 * [Integration Options: Server Side](#integration-options-server-side)
 * [Options to Generate/Refresh EUID Token](#options-to-generaterefresh-euid-token)
-* [Pass the Token into the Bid Stream](#options-to-pass-the-token-into-the-bid-stream)
+* [Pass the Token into the Bidstream](#options-to-pass-the-token-into-the-bidstream)
 * [Client-Side or Server-Side Integration?](#client-side-or-server-side-integration)
 * [Integration Using Prebid](#integration-using-prebid)
 * [IntegrationDetails](#integration-details)
@@ -37,7 +37,7 @@ At a high level, to integrate with EUID, you'll implement these three key activi
 
 1. [Generate the EUID token](#generate-the-euid-token)
 1. [Refresh the EUID token as needed](#refresh-the-euid-token)
-1. [Pass the token into the bid stream](#pass-the-token-into-the-bid-stream)
+1. [Pass the token into the bidstream](#pass-the-token-into-the-bidstream)
 
 There are many ways you can accomplish these key steps. Generally, the simplest and fastest implementation is a full client-side implementation using Prebid.js 8.21.0 or later.
 
@@ -45,9 +45,9 @@ There are many ways you can accomplish these key steps. Generally, the simplest 
 
 The following table summarizes the solutions available for each integration step.
 
-To accomplish all steps, you can combine solutions. For example, you could use the EUID SDK for JavaScript, client-side, to generate and refresh the token, and Google Ad Manager Secure Signals to pass the token to the bid stream.
+To accomplish all steps, you can combine solutions. For example, you could use the EUID SDK for JavaScript, client-side, to generate and refresh the token, and Google Ad Manager Secure Signals to pass the token to the bidstream.
 
-| Integration Solution | Generate Token | Refresh Token |Pass Token to the Bid Stream |
+| Integration Solution | Generate Token | Refresh Token |Pass Token to the Bidstream |
 | :--- | :--- | :--- | :--- |
 | [Prebid.js client-side (8.42.0 or later)](integration-prebid-client-side.md) | &#9989; | &#9989; | &#9989; |
 | [Prebid.js server-side (7.53.0 or later)](integration-prebid-server-side.md) | &#8212; | &#9989; | &#9989; |
@@ -65,7 +65,7 @@ To choose your implementation and get started, follow these steps:
    - [Client-Side Integration Options](#client-side-integration-options)
    - [Server-Side Integration Options](#server-side-integration-options)
 1. Review the options to [refresh the EUID token](#refresh-the-euid-token).
-1. Review the options to [pass the token into the bid stream](#pass-the-token-into-the-bid-stream).
+1. Review the options to [pass the token into the bidstream](#pass-the-token-into-the-bidstream).
 1. Choose the option that's best for you, and then click through to the implementation documentation.
 
 ## Generate the EUID Token
@@ -86,7 +86,7 @@ For all integration options, you can choose to store the EUID token in local sto
 Generating the EUID token on the client side has the following advantages:
 
 - The code runs on the client side, on the consumer's web page, and no server-side coding is required.
-- There is a Prebid integration that handles all functions for you&#8212;token generation, token refresh, and passing the token into the bid stream. If you use Prebid 8.21.0 or later, this is generally the simplest and fastest implementation option.
+- There is a Prebid integration that handles all functions for you&#8212;token generation, token refresh, and passing the token into the bidstream. If you use Prebid 8.21.0 or later, this is generally the simplest and fastest implementation option.
 
 If you choose a client-side integration, you'll need to provide a list of your top-level domains, for security purposes, as part of account setup. For details, see [Client-Side Implementation for Publishers](../getting-started/gs-account-setup.md#client-side-implementation-for-publishers) on the Account Setup page.
 
@@ -132,11 +132,11 @@ The following table shows the integration options that support refreshing the EU
 | EUID SDK for Python | - [Publisher Integration Guide, Server-Only](custom-publisher-integration.md)<br/>- [EUID SDK for Python](../sdks/sdk-ref-python.md)  |
 | Direct integration (API endpoints) | [Publisher Integration Guide, Server-Only](custom-publisher-integration.md) |
 
-## Pass the Token Into the Bid Stream
+## Pass the Token Into the Bidstream
 
-Publishers use EUIDs by encrypting personal data into EUID tokens and then sending the EUID tokens into the bid stream.
+Publishers use EUIDs by encrypting personal data into EUID tokens and then sending the EUID tokens into the bidstream.
 
-The following table shows integration options that support passing EUID token into the bid stream.
+The following table shows integration options that support passing EUID token into the bidstream.
 
 | Option | Documentation |
 | :--- | :--- |
@@ -144,6 +144,6 @@ The following table shows integration options that support passing EUID token in
 | Prebid.js server-side implementation (7.53.0 or later) | [EUID Server-Side Integration Guide for Prebid.js](integration-prebid-server-side.md) |
 
 :::note
-As long as you generate the token and keep it refreshed, you can also use other options for passing the EUID token into the bid stream.
+As long as you generate the token and keep it refreshed, you can also use other options for passing the EUID token into the bidstream.
 :::
 

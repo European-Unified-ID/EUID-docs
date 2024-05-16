@@ -20,7 +20,7 @@ sidebar_position: 04
 
 # EUID Integration Overview for Prebid.js
 
-This guide is an overview of integration options for publishers who want to integrate with EUID and generate EUID tokens<!-- EUID tokens was glossary link --> (advertising tokens) to be passed by Prebid.js in the RTB bid stream.
+This guide is an overview of integration options for publishers who want to integrate with EUID and generate EUID tokens<!-- EUID tokens was glossary link --> (advertising tokens) to be passed by Prebid.js in the RTB bidstream.
 <!-- 
 It includes the following sections:
 
@@ -28,7 +28,7 @@ It includes the following sections:
 - [Generating the EUID Token](#generating-the-euid-token)
 - [Refreshing the EUID Token](#refreshing-the-euid-token)
 - [Storing the EUID Token in the Browser](#storing-the-euid-token-in-the-browser)
-- [Passing the EUID Token to the Bid Stream](#passing-the-euid-token-to-the-bid-stream)
+- [Passing the EUID Token to the Bidstream](#passing-the-euid-token-to-the-bidstream)
 - [Integration Overview: High-Level Steps](#integration-overview-high-level-steps)
 
  -->
@@ -39,7 +39,7 @@ EUID provides a Prebid.js module that supports the following:
 - [Generating the EUID token](#generating-the-euid-token)
 - [Refreshing the EUID token](#refreshing-the-euid-token)
 - [Storing the EUID token in the browser](#storing-the-euid-token-in-the-browser)
-- [Passing the EUID token to the bid stream](#passing-the-euid-token-to-the-bid-stream)
+- [Passing the EUID token to the bidstream](#passing-the-euid-token-to-the-bidstream)
 
 For additional flexibility, EUID also provides alternative methods for some of the features and complementary products, such as a JavaScript SDK.
 
@@ -82,7 +82,7 @@ pbjs.setConfig({
 
 The cookie size can be significant, which could be a problem. However, if local storage is not an option, this is one possible approach.
 
-## Passing the EUID Token to the Bid Stream
+## Passing the EUID Token to the Bidstream
 
 To configure the EUID module, call `pbjs.setConfig`. For details on supported parameters, refer to the guide that applies to your implementation:
 

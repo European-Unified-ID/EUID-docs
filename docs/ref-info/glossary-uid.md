@@ -193,7 +193,7 @@ import Link from '@docusaurus/Link';
 <dd>A European Unified ID (EUID) token, also called an advertising token, is an encrypted form of a <a href="#gl-raw-euid">raw EUID</a>.</dd>
 <dd>EUID tokens are generated from hashed or unhashed email addresses<!--  or phone numbers --> that are converted to raw EUIDs and then encrypted. The EUID token is a unique value; no two EUID tokens are the same. EUID tokens are case sensitive.</dd>
 <dd>The token has a limited life, but can be refreshed in the background using the <a href="#gl-refresh-token">refresh token</a>.</dd>
-<dd>Publishers send EUID tokens in the bid stream.</dd>
+<dd>Publishers send EUID tokens in the bidstream.</dd>
 <dd>For details, see <a href="../intro#euid-identifier-types">EUID Identifier Types</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-unified-id-20">European Unified ID (EUID)</MdxJumpAnchor></dt>
