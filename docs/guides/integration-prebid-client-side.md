@@ -20,7 +20,7 @@ sidebar_position: 04
 
 # EUID Client-Side Integration Guide for Prebid.js
 
-This guide is for publishers who have access to personal data<!-- personal data was glossary link --> (email address) on the client side and want to integrate with EUID and generate EUID tokens<!-- EUID tokens was glossary link --> (advertising tokens) to be passed by Prebid.js in the RTB bid stream.
+This guide is for publishers who have access to personal data<!-- personal data was glossary link --> (email address) on the client side and want to integrate with EUID and generate EUID tokens<!-- EUID tokens was glossary link --> (advertising tokens) to be passed by Prebid.js in the RTB bidstream.
 
 To integrate with EUID using Prebid.js, you'll need to make changes to the HTML and JavaScript on your site. No server-side work is required if you follow this guide.
 
@@ -116,7 +116,7 @@ const baseConfig = {
 };
 ```
 
->NOTE: This example assumes that you're using the EUID production environment. During integration testing, use the EUID integration environment by setting `params.euidApiBase` to `'https://integ.euid.eu/'`. Tokens from the EUID integration environment are not valid for passing to the bid stream. For the integration environment, you will have different **subscription ID** and **public key** values.
+>NOTE: This example assumes that you're using the EUID production environment. During integration testing, use the EUID integration environment by setting `params.euidApiBase` to `'https://integ.euid.eu/'`. Tokens from the EUID integration environment are not valid for passing to the bidstream. For the integration environment, you will have different **subscription ID** and **public key** values.
 
 ## Storing the EUID Token in the Browser
 

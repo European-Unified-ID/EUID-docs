@@ -13,7 +13,7 @@ import Link from '@docusaurus/Link';
 
 # Server-Side Integration Guide for JavaScript
 
-This guide is intended for publishers with web assets who want to generate identity tokens using EUID for the RTB bid stream, while integrating directly with EUID rather than EUID-enabled single-sign-on or identity providers. This requires server-side changes such as generating EUID tokens on the server side and passing them to the publisher's web pages. If you want to integrate with EUID via only client-side JavaScript changes, refer to [Client-Side Integration Guide for JavaScript](publisher-client-side.md) instead. 
+This guide is intended for publishers with web assets who want to generate identity tokens using EUID for the RTB bidstream, while integrating directly with EUID rather than EUID-enabled single-sign-on or identity providers. This requires server-side changes such as generating EUID tokens on the server side and passing them to the publisher's web pages. If you want to integrate with EUID via only client-side JavaScript changes, refer to [Client-Side Integration Guide for JavaScript](publisher-client-side.md) instead. 
 
 For technical details about the SDK, see [EUID SDK for JavaScript Reference Guide](../sdks/client-side-identity.md).
 
@@ -48,7 +48,7 @@ For integration scenarios for publishers that do not use the EUID SDK for JavaSc
 
 ## Integration Steps
 
-The following diagram outlines the steps required for establishing a user's EUID token with a publisher and how the EUID token integrates with the RTB bid stream.
+The following diagram outlines the steps required for establishing a user's EUID token with a publisher and how the EUID token integrates with the RTB bidstream.
 
 ![Publisher Flow](images/custom-publisher-integration-mermaid.svg)
 
@@ -167,7 +167,7 @@ The bidding step is shown in the following table.
 | :--- | :--- | :--- |
 | 2-a | EUID SDK for JavaScript | Gets the current user's advertising token by using the [getAdvertisingToken() function](../sdks/client-side-identity.md#getadvertisingtoken-string) as shown below. |
 
->NOTE: For an example of what an EUID token might look like in the bid stream, when it's sent from an SSP to a DSP, see [What does an EUID token look like in the bid stream?](../getting-started/gs-faqs.md#what-does-an-euid-token-look-like-in-the-bid-stream)
+>NOTE: For an example of what an EUID token might look like in the bidstream, when it's sent from an SSP to a DSP, see [What does an EUID token look like in the bidstream?](../getting-started/gs-faqs.md#what-does-an-euid-token-look-like-in-the-bidstream)
 
 ```html
 <script>

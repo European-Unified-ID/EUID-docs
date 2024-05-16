@@ -348,7 +348,7 @@ If you're using server-only integration (see [Publisher Integration Guide, Serve
 
 ## Usage for DSPs
 
-The following instructions provide an example of how a DSP can decode bid stream tokens using the EUID SDK for Java.
+The following instructions provide an example of how a DSP can decode bidstream tokens using the EUID SDK for Java.
 
 1. Create a `BidstreamClient`:
 

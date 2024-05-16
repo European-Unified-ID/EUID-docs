@@ -110,7 +110,7 @@ __euid.init({
   baseUrl: "https://operator-integ.uidapi.com",
 });
 ```
->NOTE: Tokens from the EUID integration environment are not valid for passing to the bid stream. For the integration environment, you will have different **subscription ID** and **public key** values.
+>NOTE: Tokens from the EUID integration environment are not valid for passing to the bidstream. For the integration environment, you will have different **subscription ID** and **public key** values.
 
 ### Optional: Reduce Latency by Setting the API Base URL for the Production Environment
 
@@ -218,7 +218,7 @@ After calling one of the methods listed in [Configure the SDK for JavaScript](#c
 
 ## Example Integration Code and When to Pass Personal Data to the EUID SDK
 
-When this is the first page load with no identity, to start the token generation call you'll need to call one of the `setIdentity` methods with personal data. Once an identity is generated, the advertising token (EUID token) that you would send to the bid stream will be available by waiting for the `IdentityUpdated` event from the SDK. For an example, see how the value for `advertising_token_to_use` is set in the following code snippet.
+When this is the first page load with no identity, to start the token generation call you'll need to call one of the `setIdentity` methods with personal data. Once an identity is generated, the advertising token (EUID token) that you would send to the bidstream will be available by waiting for the `IdentityUpdated` event from the SDK. For an example, see how the value for `advertising_token_to_use` is set in the following code snippet.
 
 In some cases, the user's personal data is not available on page load, and getting the personal data has some associated cost. For example, an API call might be required to fetch the personal data, or the user has to be prompted to provide it.
 

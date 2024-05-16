@@ -31,7 +31,7 @@ Here are just some of the intended benefits for DSPs using EUID. You can:
 
 ## Workflow for DSPs
 
-The following steps provide a high-level outline of the workflow intended for DSPs that transact on EUIDs in the bid stream.
+The following steps provide a high-level outline of the workflow intended for DSPs that transact on EUIDs in the bidstream.
 
 The following processes occur in the background:
 - The advertiser and/or data provider passes first-party and third-party audience segments to the DSP.
@@ -40,13 +40,13 @@ The following processes occur in the background:
 
 The following steps occur for each bid/ad impression:
 
-1. A bid request is passed into the bid stream with the EUID token.
-2. The DSP receives the bid request with the EUID token from the bid stream.
+1. A bid request is passed into the bidstream with the EUID token.
+2. The DSP receives the bid request with the EUID token from the bidstream.
 3. The DSP:
    - Decrypts the EUID token into a raw EUID.
    - Checks to see if the user opted out and, if so, does not bid.
    - Matches the raw EUID to an audience segment. 
-4. The DSP sends a bid response to the bid stream with the EUID token.
+4. The DSP sends a bid response to the bidstream with the EUID token.
 
 ![Buy-Side Workflow](images/EUIDBuySIdeDSPWorkflow.svg)
 
@@ -84,7 +84,7 @@ The following documentation resources are available for DSPs to implement EUID.
 
 <!-- ## Integration Requirements
 
-To integrate with EUID to receive EUIDs from brands (as first-party data) and data providers (as third-party data) and leverage them to inform bidding on EUIDs in the bid stream, the buy-side participants must meet the following requirements:
+To integrate with EUID to receive EUIDs from brands (as first-party data) and data providers (as third-party data) and leverage them to inform bidding on EUIDs in the bidstream, the buy-side participants must meet the following requirements:
 
 - Accept data in the form of EUIDs
 - Bid on data in the form of EUIDs
