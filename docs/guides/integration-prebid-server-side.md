@@ -266,6 +266,12 @@ In planning your Prebid implementation, consider the following:
 
 - During integration testing, set `params.euidApiBase` to `"https://integ.euid.eu/"`. You must set this value to the same environment (production or integration) that you use for generating tokens.
 
+- For a Prebid.js server-side integration, you can create a smaller Prebid.js build by disabling client-side integration functionality. To do this, pass the `--disable UID2_CSTG` flag:
+
+```
+    $ gulp build --modules=euidIdSystem --disable UID2_CSTG
+```
+
 ## Storing the EUID Token in the Browser
 
 By default, the EUID module stores data using local storage. To use a cookie instead, set `params.storage` to `cookie`, as shown in the following example.
