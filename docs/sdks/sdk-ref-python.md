@@ -70,7 +70,7 @@ The initialization step depends on the role, as shown in the following table.
 | Role                                      | Create Instance of Class | Link to Instructions                                                         |
 |:------------------------------------------|:-------------------------|:-----------------------------------------------------------------------------|
 | Publisher                                 | `Uid2PublisherClient`    | [Usage for Publishers](#usage-for-publishers)                                |
-| Advertisers/Data Providers                | `IdentityMapClient`      | [Usage for Advertisers/Data Providers](#usage-for-advertisersdata-providers) |
+| Advertiser/Data Provider                  | `IdentityMapClient`      | [Usage for Advertisers/Data Providers](#usage-for-advertisersdata-providers) |
 | DSP                                       | `BidstreamClient`        | [Usage for DSPs](#usage-for-dsps)                                            |
 | Sharer (not currently supported for EUID) | `SharingClient`          | Not applicable                                                               |
 
