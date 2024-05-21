@@ -37,9 +37,9 @@ This guide includes the following information:
 
 This SDK simplifies integration with EUID for any DSPs who are using Python for their server-side coding. The following table shows the functions it supports.
 
-| Encrypt Raw EUID to EUID Token | Decrypt EUID Token | Generate EUID Token from Personal Data | Refresh EUID Token |
-| :--- | :--- | :--- | :--- |
-| Supported | Supported | Supported | Supported |
+| Encrypt Raw EUID to EUID Token | Decrypt EUID Token | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to a Raw EUID |
+| :--- | :--- | :--- | :--- | :--- |
+| Supported | Supported | Supported | Supported | Supported |
 
 ## API Permissions
 
@@ -209,10 +209,10 @@ If you're using server-only integration (see [Publisher Integration Guide, Serve
    ```py
     mapped_identity = mapped_identities.get("email1@example.com")
     if mapped_identity is not None:
-    raw_uid = mapped_identity.get_raw_uid()
+        raw_uid = mapped_identity.get_raw_uid()
     else:
-    unmapped_identity = unmapped_identities.get("email1@example.com")
-    reason = unmapped_identity.get_reason()
+        unmapped_identity = unmapped_identities.get("email1@example.com")
+        reason = unmapped_identity.get_reason()
    ```
 
 ## Usage for DSPs
