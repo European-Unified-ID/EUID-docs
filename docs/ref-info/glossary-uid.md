@@ -32,6 +32,7 @@ import Link from '@docusaurus/Link';
 <li><a href="#gl-app-name">App name</a></li>
 <li><a href="#gl-authorization-header">Authorization header</a></li>
 <li><a href="#gl-bearer-token">Bearer token</a></li>
+<li><a href="#gl-bidstream">Bidstream</a></li>
 <li><a href="#gl-client-key">Client key</a></li>
 <li><a href="#gl-client-secret">Client secret</a></li>
 <li><a href="#gl-closed-operator">Closed Operator</a></li>
@@ -46,6 +47,7 @@ import Link from '@docusaurus/Link';
 <td>
 <ul>
 <li><a href="#gl-enclave">Enclave</a></li>
+<li><a href="#gl-euid-framework">EUID framework</a></li>
 <li><a href="#gl-first-level-hash">First-level hash</a></li>
 <li><a href="#gl-hash">Hash</a></li>
 <li><a href="#gl-identity">Identity</a></li>
@@ -90,6 +92,7 @@ import Link from '@docusaurus/Link';
 <li><a href="#gl-euid-service">EUID service</a></li>
 <li><a href="#gl-euid-token">EUID token (advertising token)</a></li>
 <li><a href="#gl-unified-id-20">European Unified ID</a></li>
+<li><a href="#gl-uid">UID</a></li>
 <li><a href="#gl-utc">UTC</a></li>
 </ul>
 </td>
@@ -130,6 +133,9 @@ import Link from '@docusaurus/Link';
 <dt><MdxJumpAnchor id="gl-bearer-token">Bearer token</MdxJumpAnchor></dt>
 <dd>A bearer token is a special string that identifies the client. For authentication, some EUID endpoints require the <a href="#gl-client-key">client key</a> to be specified as a bearer token in the Authorization header of the request: for example, <a href="../endpoints/post-token-generate">POST&nbsp;/token/generate</a>.</dd>
 
+<dt><MdxJumpAnchor id="gl-bidstream">Bidstream</MdxJumpAnchor></dt>
+<dd>To place a request for an ad to be placed in an advertising spot (bid request), the publisher sends different pieces of information, so that advertisers can bid on it, generally through an advertising exchange or DSP. The flow of bidding data is the bidstream.</dd>
+<dd>Bidstream data goes from publishers to other entities (depending on the publisher's configuration) and back to the publisher.</dd>
 </dl>
 
 ### C
@@ -176,6 +182,8 @@ import Link from '@docusaurus/Link';
 
 <dt><MdxJumpAnchor id="gl-euid-framework">EUID framework</MdxJumpAnchor></dt>
 <dd>The European Unified ID (EUID) framework enables deterministic identity for advertising opportunities on the open internet for many <a href="../intro#participants">participants</a> across the advertising ecosystem. It enables logged-in experiences from publisher websites, mobile apps, and Connected TV (CTV) apps to monetize through programmatic workflows. Built as an open-source, standalone solution with its own unique namespace, the framework focuses on transparency and privacy.</dd>
+<dd>EUID operates in the European region, including many European countries, such as France, Italy, and Spain, some non-European countries, such as Iceland, and some other regions, such as the Azores, Martinique, and the United Kingdom. It was designed with EU privacy law compliance in mind.</dd>
+<dd>There are many similarities between UID2 and EUID, but they are completely separate, and their tokens are not interchangeable.</dd>
 
 <dt><MdxJumpAnchor id="gl-euid-identifier">EUID identifier</MdxJumpAnchor></dt>
 <dd>There are two European Unified ID (EUID) identifier types: <a href="#gl-raw-euid">raw EUIDs</a> and <a href="#gl-euid-token">EUID tokens</a> (also known as advertising tokens).</dd>
@@ -313,8 +321,7 @@ import Link from '@docusaurus/Link';
 <dl>
 
 <dt><MdxJumpAnchor id="gl-raw-euid">Raw EUID</MdxJumpAnchor></dt>
-<dd>An unencrypted alphanumeric identifier created through the EUID APIs or SDKs with the user's <a href="#gl-personal-data">personal data</a> (email address<!--  or phone number -->) as input. To prevent re-identification of the original personal data, the input value is hashed if it was not already hashed, then salted, and then hashed again to create the raw EUID. The process that creates the raw EUID is designed to create a secure, opaque value that can be stored by advertisers, third-party data providers, and demand-side platforms (DSPs).</dd>
-<dd>The raw EUID is encrypted to create an <a href="#gl-euid-token">EUID token</a>. The raw EUID is a unique value; no two raw EUIDs are the same. Raw EUIDs, and their associated EUID tokens, are case sensitive.</dd>
+<dd>An unencrypted alphanumeric identifier created through the EUID APIs or SDKs with the user's <a href="#gl-personal-data">personal data</a> (email address<!--  or phone number -->) as input. The raw EUID is encrypted to create an <a href="#gl-euid-token">EUID token</a>. The raw EUID is a unique value; no two raw EUIDs are the same. Raw EUIDs, and their associated EUID tokens, are case sensitive.</dd>
 <dd>For details, see <a href="../intro#euid-identifier-types">EUID Identifier Types</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-refresh-token">Refresh token</MdxJumpAnchor></dt>
@@ -351,7 +358,7 @@ import Link from '@docusaurus/Link';
 <dd>For details, see <a href="../sharing/sharing-overview">EUID Sharing: Overview</a>.</dd> -->
 
 <dt><MdxJumpAnchor id="gl-subscription-id">Subscription ID</MdxJumpAnchor></dt>
-<dd>For client-side publisher integrations, the subscription ID is one of the two values issued to publishers as their EUID credentials. For details, see <a href="../getting-started/gs-credentials#subscription-id-and-public-key">Subscription ID and Public Key</a>.</dd>
+<dd>For client-side publisher integrations, the Subscription ID is one of the two values issued to publishers as their EUID credentials. For details, see <a href="../getting-started/gs-credentials#subscription-id-and-public-key">Subscription ID and Public Key</a>.</dd>
 
 </dl>
 
@@ -367,6 +374,17 @@ import Link from '@docusaurus/Link';
 ### U
 
 <dl>
+
+<dt><MdxJumpAnchor id="gl-uid">UID</MdxJumpAnchor></dt>
+<dd>UID is a general term used to encompass both <a href="#gl-uid2-framework">UID2</a> and <a href="#gl-euid">EUID</a>.</dd>
+<dd>Since there are code components that support both UID2 and EUID, such as the server-side SDKs, the term UID is used as an umbrella term.</dd>
+<dd>There are many similarities between UID2 and EUID, but they are completely separate, and their tokens are not interchangeable.</dd>
+
+<dt><MdxJumpAnchor id="gl-uid2-framework">UID2 framework</MdxJumpAnchor></dt>
+<dd>The Unified ID 2.0 (UID2) framework enables deterministic identity for advertising opportunities on the open internet for many participants across the advertising ecosystem. It enables logged-in experiences from publisher websites, mobile apps, and Connected TV (CTV) apps to monetize through programmatic workflows. Built as an open-source, standalone solution with its own unique namespace, the framework focuses on transparency and privacy.</dd>
+<dd>UID2 operates in North America, parts of Asia, and some other regions.</dd>
+<dd>There are many similarities between UID2 and EUID, but they are completely separate, and their tokens are not interchangeable.</dd>
+<dd>For details, see <a href="https://unifiedid.com/docs/intro">Unified ID 2.0 Overview</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-utc">UTC</MdxJumpAnchor></dt>
 <dd>UTC is an abbreviation for Coordinated Universal Time, also called Zulu time, which is the primary time standard in general use. UTC essentially equates to Greenwich Mean Time (GMT), but is more scientifically precise.</dd>
