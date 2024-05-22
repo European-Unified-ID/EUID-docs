@@ -13,7 +13,7 @@ import ChartSvg from './images/euid-js-sdk-workflow.svg';
 >NOTE: This documentation is for earlier versions of the EUID SDK for JavaScript. If you're using an earlier version, we recommend upgrading. See [EUID SDK for JavaScript Reference Guide](./client-side-identity.md), which includes a migration guide.
 
 The SDK for JavaScript is intended to facilitate the process of establishing client identity using EUID and retrieving advertising tokens. The following sections describe the high-level [workflow](#workflow-overview) for establishing EUID identity, provide the SDK [API reference](#api-reference), and explain the [EUID cookie format](#euid-cookie-format).
-For integration steps for content publishers, see [SDK for JavaScript Integration Guide](../guides/publisher-client-side.md). 
+For integration steps for content publishers, see [Client-Side Integration Guide for JavaScript](../guides/publisher-client-side.md). 
 
 >NOTE: Within this documentation, the term "identity" refers to a package of EUID tokens, including the advertising token.
 
@@ -40,7 +40,7 @@ The high-level client-side workflow for establishing EUID identity using the SDK
 	- If the advertising token is available, use it to initiate requests for targeted advertising.
 	- If the advertising token is not available, either use untargeted advertising or redirect the user to the data capture with the consent form.
 
-For intended web integration steps, see [SDK for JavaScript Integration Guide](../guides/publisher-client-side.md).
+For intended web integration steps, see [Client-Side Integration Guide for JavaScript](../guides/publisher-client-side.md).
 
 ### Workflow States and Transitions
 

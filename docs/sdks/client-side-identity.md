@@ -17,7 +17,9 @@ export const New = () => (
 
 Use this SDK to facilitate the process of establishing client identity using EUID and retrieving advertising tokens. The following sections describe the high-level [workflow](#workflow-overview) for establishing EUID identity, provide the SDK [API reference](#api-reference), and explain the EUID [storage format](#euid-storage-format).
 
->NOTE: If you're using Prebid.js with the EUID Identity Module, or with another product that has EUID support, you probably don't need to use the SDK at all. The Prebid.js module manages everything. For details, see [EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md).
+:::tip
+If you're using Prebid.js with the EUID Identity Module, or with another product that has EUID support, you probably don't need to use the SDK at all. The Prebid.js module manages everything. For details, see [EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md).
+:::
 
 This page describes version 3 of the EUID SDK for JavaScript. If you are maintaining an integration using an earlier version, do one of the following:
 - Upgrade your integration, using the [migration guide](#migration-guide) (recommended).
@@ -26,7 +28,7 @@ This page describes version 3 of the EUID SDK for JavaScript. If you are maintai
 Related information:
 
 For integration steps for content publishers, see:
-  -  [SDK for JavaScript Integration Guide](../guides/publisher-client-side.md). 
+  - [Client-Side Integration Guide for JavaScript](../guides/publisher-client-side.md). 
 
 For example applications with associated documentation, see:
   - The EUID Google Secure Signals with SDK v3 example:
@@ -125,7 +127,7 @@ The high-level client-side workflow for establishing EUID identity using the SDK
 	- If the advertising token is available, use it to initiate requests for targeted advertising.
 	- If the advertising token is not available, either use untargeted advertising or redirect the user to the data capture with the consent form.
 
-For more detailed web integration steps, see [SDK for JavasScript Integration Guide](../guides/publisher-client-side.md).
+For more detailed web integration steps, see [Client-Side Integration Guide for JavaScript](../guides/publisher-client-side.md).
 
 ### Background Token Auto-Refresh
 
@@ -134,7 +136,7 @@ As part of the SDK [initialization](#initopts-object-void), a token auto-refresh
 Here's what you need to know about the token auto-refresh:
 
 - Only one token refresh call can be active at a time. 
-- If the [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) response is unsuccessful because the user has opted out, or because the refresh token has expired, this suspends the background auto-refresh process. To use EUID-based targeted advertising again, you must obtain the email from the consumer.. In all other cases, auto-refresh attempts continue in the background.
+- If the [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) response is unsuccessful because the user has opted out, or because the refresh token has expired, this suspends the background auto-refresh process. To use EUID-based targeted advertising again, you must obtain the email from the consumer. In all other cases, auto-refresh attempts continue in the background.
 - All [callback functions](#callback-function) provided using the [Array Push Pattern](#array-push-pattern) are invoked in the following cases:
 	- After each successful refresh attempt.
 	- When identity has become invalid&#8212;for example, because the user has opted out.<br/>NOTE: The callback is *not* invoked when identity is temporarily unavailable and the auto-refresh keeps failing. In this case, the SDK continues using the existing advertising token as long as it hasn't expired.
@@ -147,7 +149,9 @@ You can register functions to receive events from the EUID SDK using the [Array 
 - `InitCompleted` is raised when `init()` has finished and the SDK is ready for use. If an identity was provided in the `init` call, or the SDK was able to load a previously-provided identity, the identity is included in the payload.
 - `IdentityUpdated` is raised whenever there is a new identity available, or the existing identity is no longer available.
 
->NOTE: You can provide as many callback functions as you want, and register them from anywhere. This allows you to split your code up in a way that makes sense for your site.
+:::tip
+You can provide as many callback functions as you want, and register them from anywhere. This allows you to split your code up in a way that makes sense for your site.
+:::
 
 #### Callback Function Signature
 
@@ -245,7 +249,9 @@ At any time after `init` has completed, you can call [`setIdentity`](#setidentit
 
 ## API Reference
 
->NOTE: All interactions with the EUID SDK for JavaScript are done through the global `__euid` object, which is an instance of the `EUID` class. All of the following JavaScript functions are members of the `EUID` class. 
+:::info
+All interactions with the EUID SDK for JavaScript are done through the global `__euid` object, which is an instance of the `EUID` class. All of the following JavaScript functions are members of the `EUID` class.
+:::
 
 - [constructor()](#constructor)
 - [init()](#initopts-object-void)
@@ -262,7 +268,9 @@ At any time after `init` has completed, you can call [`setIdentity`](#setidentit
 
 Constructs an EUID object. This is not intended to be used directly: when the SDK loads, it automatically initializes an instance of the EUID class and stores it as the global __euid object. Advanced integrations may make use of this constructor directly, but must take care to avoid having multiple active instances of the SDK running. This is not a supported use case.
 
->NOTE: Instead of calling this function, just use the global `__euid` object.
+:::tip
+Instead of calling this function, just use the global `__euid` object.
+:::
 
 ### init(opts: object): void
 
@@ -378,9 +386,13 @@ This function can be called before or after the [init()](#initopts-object-void) 
 
 You can use this function to be notified of the completion of the Client-Side JavaScript SDK initialization if you only want to receive the identity available once `init` is complete, and you do not want to continue receiving updates to the identity.
 
->NOTE: If the `getAdvertisingTokenAsync()` function is called *after* the initialization is complete, the promise is settled immediately based on the current state.
+:::info
+If the `getAdvertisingTokenAsync()` function is called *after* the initialization is complete, the promise is settled immediately based on the current state.
+:::
 
->NOTE: It might be easier to use the [callback function](#callback-function) to be notified whenever the identity changes.
+:::tip
+It might be easier to use the [callback function](#callback-function) to be notified whenever the identity changes.
+:::
 
 ```html
 <script>
@@ -423,7 +435,9 @@ When an unauthenticated user is present, or a user wants to log out of targeted 
 
 After this function is executed, the [getAdvertisingToken()](#getadvertisingtoken-string) function returns `undefined` and the [isLoginRequired()](#isloginrequired-boolean) function returns `true`.
 
->WARNING: If you need to provide a `cookieDomain` or `cookiePath` for the SDK to access the correct cookie, and `init` has not been completed, the SDK cannot clear the cookie. In this case, no error is raised.
+:::warning
+If you need to provide a `cookieDomain` or `cookiePath` for the SDK to access the correct cookie, and `init` has not been completed, the SDK cannot clear the cookie. In this case, no error is raised.
+:::
 
 ### abort(): void
 	
@@ -441,7 +455,9 @@ Use this function to provide a new identity to the EUID SDK. Any existing refres
 
 `setIdentity` throws an error if it is called before `init` has completed.
 
->NOTE: `setIdentity()` is useful if your page is a single-page app that might not have the identity available when it first loads. This allows you to call `init` (and load any stored identity) on page load, and then provide an identity later if there was no stored identity.
+:::tip
+`setIdentity()` is useful if your page is a single-page app that might not have the identity available when it first loads. This allows you to call `init` (and load any stored identity) on page load, and then provide an identity later if there was no stored identity.
+:::
 
 ### getIdentity(): Identity | null
 
@@ -486,7 +502,10 @@ The following is an example of the EUID cookie structure:
    }
 }
 ```
->WARNING: The contents of the `private` object are explicitly unspecified and are left for the SDK to interpret. Do not make any assumptions about the structure, semantics, or compatibility of this object. Any updates to the cookie must retain its structure.
+
+:::warning
+The contents of the `private` object are explicitly unspecified and are left for the SDK to interpret. Do not make any assumptions about the structure, semantics, or compatibility of this object. Any updates to the cookie must retain its structure.
+:::
 
 ## Migration Guide
 
