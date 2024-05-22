@@ -51,7 +51,7 @@ Here are some frequently asked questions for publishers using the EUID framework
   - [Can I make token refresh calls from the client side?](#can-i-make-token-refresh-calls-from-the-client-side)
   - [How can I test the refresh token workflow?](#how-can-i-test-the-refresh-token-workflow)
   - [What is the uniqueness and rotation policy for EUID tokens?](#what-is-the-uniqueness-and-rotation-policy-for-euid-tokens)
-  - [What does an EUID token look like in the bid stream?](#what-does-an-euid-token-look-like-in-the-bid-stream)
+  - [What does an EUID token look like in the bidstream?](#what-does-an-euid-token-look-like-in-the-bidstream)
 
 #### How can I test that the personal data sent and the returned token match up?
 
@@ -104,9 +104,9 @@ The procedure is a little different depending on whether or not you are using an
 
 The EUID service encrypts tokens using random initialization vectors. The encrypted EUID is unique for a given user as they browse the internet. At every refresh, the token re-encrypts. This mechanism ensures that untrusted parties cannot track a user's identity.
 
-#### What does an EUID token look like in the bid stream?
+#### What does an EUID token look like in the bidstream?
 
-There are many ways to approach EUID implementation. Here is one example of a code snippet showing how an EUID token is passed in the bid stream:
+There are many ways to approach EUID implementation. Here is one example of a code snippet showing how an EUID token is passed in the bidstream:
 
 ```js
 {

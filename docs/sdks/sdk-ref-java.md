@@ -13,8 +13,8 @@ You can use the EUID SDK for Java on the server side to facilitate the following
 
 - Generating EUID advertising tokens
 - Refreshing EUID advertising tokens
-
-
+- Decrypting EUID tokens to access the raw EUIDs
+- Mapping personal data to raw EUIDs
 
 :::note
 This SDK is valid for UID2 and EUID. Some of the code naming and URLs are labelled as UID2. These apply equally to EUID.
@@ -36,11 +36,11 @@ This SDK is valid for UID2 and EUID. Some of the code naming and URLs are labell
 
 ## Functionality
 
-This SDK simplifies integration with EUID for any publishers or DSPs who are using Java for their server-side coding. The following table shows the functions it supports.
+This SDK simplifies integration with EUID for any publishers, DSPs, advertisers, and data providers who are using Java for their server-side coding. The following table shows the functions it supports.
 
-| Encrypt Raw EUID to EUID Token | Decrypt EUID Token | Generate EUID Token from Personal Data | Refresh EUID Token |
-| :--- | :--- | :--- | :--- |
-| Supported | Supported | Supported | Supported |
+| Encrypt Raw EUID to EUID Token | Decrypt EUID Token | Generate EUID Token from Personal Data | Refresh EUID Token |  Map Personal Data to a Raw EUID |
+| :--- | :--- | :--- | :--- | :--- |
+| Not Supported | Supported | Supported | Supported | Supported |
 
 ## API Permissions
 
@@ -60,7 +60,7 @@ This SDK is in the following open-source GitHub repository:
 
 - [SDK for Java](https://github.com/IABTechLab/uid2-client-java/blob/master/README.md)
 
-  The SDK, and some of its technical components, are named UID2, but are are equally applicable for EUID.
+  The SDK, and some of its technical components, are named UID2, but are equally applicable for EUID.
 
 The binary is published on the Maven repository:
 
@@ -159,7 +159,7 @@ If you're using the SDK's HTTP implementation, follow these steps.
 1. Create an instance of `PublisherUid2Client` as an instance variable:
 
    ```java
-   private final PublisherUid2Client publisherUid2Client = new PublisherUid2Client(UID2_BASE_URL, UID2_API_KEY, UID2_SECRET_KEY);
+   private final PublisherUid2Client publisherUid2Client = new PublisherUid2Client(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY);
    ```
 
 2. Call a function that takes the user's email address <!-- or phone number  -->as input and generates a `TokenGenerateResponse` object. The following example uses an email address:
@@ -232,7 +232,7 @@ If you're using server-only integration (see [Publisher Integration Guide, Serve
 1. Create an instance of `PublisherUid2Helper` as an instance variable:
 
     ```java
-    private final PublisherUid2Helper publisherUid2Helper = new PublisherUid2Helper(UID2_SECRET_KEY);
+    private final PublisherUid2Helper publisherUid2Helper = new PublisherUid2Helper(EUID_SECRET_KEY);
     ```
 2. Call a function that takes the user's email address or phone number as input and creates a secure request data envelope. See [Encrypting requests](../getting-started/gs-encryption-decryption.md#encrypting-requests). The following example uses an email address:
 
@@ -242,7 +242,7 @@ If you're using server-only integration (see [Publisher Integration Guide, Serve
 3. Using an HTTP client library of your choice, post this envelope to the [POST&nbsp;token/generate](../endpoints/post-token-generate.md) endpoint, including headers and body:
    1. Headers: Depending on your HTTP library, this might look something like the following:  
     
-      `.putHeader("Authorization", "Bearer " + UID2_API_KEY)`  
+      `.putHeader("Authorization", "Bearer " + EUID_API_KEY)`  
       `.putHeader("X-UID2-Client-Version", PublisherUid2Helper.getVersionHeader())`
    2. Body: `envelope.getEnvelope()`
    :::important
@@ -304,7 +304,7 @@ If you're using server-only integration (see [Publisher Integration Guide, Serve
 4. If a refresh is needed, call the [POST token/refresh](../endpoints/post-token-refresh.md) endpoint, with the following:
    1. Headers: Depending on your HTTP library, this might look something like the following:
     
-      `.putHeader("Authorization", "Bearer " + UID2_API_KEY)`  
+      `.putHeader("Authorization", "Bearer " + EUID_API_KEY)`  
       `.putHeader("X-UID2-Client-Version", PublisherUid2Helper.getVersionHeader())`. 
    2. Body: `identity.getRefreshToken()`
 5. If the refresh HTTP response status code is 200:
@@ -319,7 +319,7 @@ If you're using server-only integration (see [Publisher Integration Guide, Serve
 ## Usage for Advertisers/Data Providers
 1. Create an instance of IdentityMapClient as an instance variable.
    ```java
-   final private IdentityMapClient identityMapClient = new IdentityMapClient(UID2_BASE_URL, UID2_API_KEY, UID2_SECRET_KEY);
+   final private IdentityMapClient identityMapClient = new IdentityMapClient(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY);
    ```
 
 2. Call a function that takes email addresses or phone numbers as input and generates an IdentityMapResponse object. The following example uses email addresses:
@@ -348,12 +348,12 @@ If you're using server-only integration (see [Publisher Integration Guide, Serve
 
 ## Usage for DSPs
 
-The following instructions provide an example of how a DSP can decode bid stream tokens using the EUID SDK for Java.
+The following instructions provide an example of how a DSP can decode bidstream tokens using the EUID SDK for Java.
 
 1. Create a `BidstreamClient`:
 
 ```java
-Bidstream client = new BidstreamClient(UID2_BASE_URL, UID2_API_KEY, UID2_SECRET_KEY);
+Bidstream client = new BidstreamClient(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY);
 ```
 
 2. Refresh once at startup, and then periodically (recommended refresh interval is hourly):

@@ -71,10 +71,10 @@ The following sections explain and illustrate the key elements of the EUID infra
 
 EUID is a deterministic identifier based on email addresses. There are two types of EUIDs: raw EUIDs and EUID tokens (also known as advertising tokens). The following table explains each type.
 
-| ID Type | Shared in Bid Stream? | Description |
+| ID Type | Shared in Bidstream? | Description |
 | :--- | :--- | :--- |
 | **Raw EUIDs** | No | An unencrypted alphanumeric identifier created through the EUID APIs or SDKs with the user's email address as input.<br/>To prevent re-identification of the original personal data, the input value is hashed if it was not already hashed, then salted, and then hashed again to create the raw EUID. The process that creates the raw EUID is designed to create a secure, opaque value that can be stored by advertisers, third-party data providers, and demand-side platforms (DSPs). |
-| **EUID Token (Advertising Token)** | Yes | An encrypted form of a raw EUID. EUID tokens are generated from hashed or unhashed email addresses that are converted to raw EUIDs and then encrypted to ensure protection in the bid stream.<br/>EUID tokens are designed to be used by publishers or publisher service providers. Supply-side platforms (SSPs) pass EUID tokens in the bid stream and DSPs decrypt them at bid request time. |
+| **EUID Token (Advertising Token)** | Yes | An encrypted form of a raw EUID. EUID tokens are generated from hashed or unhashed email addresses that are converted to raw EUIDs and then encrypted to ensure protection in the bidstream.<br/>EUID tokens are designed to be used by publishers or publisher service providers. Supply-side platforms (SSPs) pass EUID tokens in the bidstream and DSPs decrypt them at bid request time. |
 
 ### Components
 
@@ -97,10 +97,10 @@ The following table lists the key participants and their roles in the EUID [work
 | :--- | :--- |
 | **Core Administrator**  | An organization (currently, The Trade Desk) that manages the EUID Core Service and other [components](#components). For example, it distributes encryption keys and salts to EUID operators and sends user opt-out requests to operators and DSPs. |  
 | **Operators**  | Organizations that operate the Operator Service (via the EUID APIs). Operators receive and store encryption keys and salts from the EUID Core Service, salt and hash personal data to return EUID tokens, encrypt raw EUIDs to generate EUID tokens, and distribute EUID token decryption keys.<br/>Open operators run public instances of the Operator Service. For example, The Trade Desk currently serves as an open operator for the EUID framework, available to all participants. If other open operators are available, a participant can choose which operator to work with.<br/>Any participant can also choose to become a private operator to generate and manage EUIDs. | 
-| **DSPs**  | DSPs integrate with the EUID system to receive EUIDs from advertisers (as first-party data) and third-party data providers (as third-party data) and leverage them to inform bidding on EUIDs in the bid stream. | 
+| **DSPs**  | DSPs integrate with the EUID system to receive EUIDs from advertisers (as first-party data) and third-party data providers (as third-party data) and leverage them to inform bidding on EUIDs in the bidstream. | 
 | **Data Providers**  | Organizations that collect user data and push it to other EUID participants—for example, advertisers, identity graph providers, and third-party data providers. | 
 | **Advertisers**  | Organizations that buy impressions across a range of publisher sites and use DSPs to decide which ad impressions to purchase and how much to bid on them. | 
-| **Publishers**  | Organizations that propagate EUID tokens to the bid stream via SSPs—for example, identity providers, publishers, and SSO providers. Publishers can choose to work with an SSO provider or an independent ID provider that is interoperable with EUID. The latter can handle the EUID integration on behalf of publishers. | 
+| **Publishers**  | Organizations that propagate EUID tokens to the bidstream via SSPs—for example, identity providers, publishers, and SSO providers. Publishers can choose to work with an SSO provider or an independent ID provider that is interoperable with EUID. The latter can handle the EUID integration on behalf of publishers. | 
 | **Consumers**  | Users who engage with publishers or their identity providers. Users can opt out of EUID in the [EUID Transparency and Control Portal](https://transparentadvertising.eu). | 
 
 ## Workflows
@@ -109,9 +109,9 @@ The following table lists four key workflows in the EUID system and provides lin
 
 | Workflow | Intended Primary Participants | Integration Guide |
 | :--- | :--- | :--- |
-| **Buy-Side** | DSPs who transact on EUID tokens in the bid stream. | [DSP](guides/dsp-guide.md) |
+| **Buy-Side** | DSPs who transact on EUID tokens in the bidstream. | [DSP](guides/dsp-guide.md) |
 | **Data Provider** | Organizations that collect user data and push it to other EUID participants. | [Advertiser and Third-Party Data Provider](guides/advertiser-dataprovider-guide.md) |
-| **Supply-Side** | Organizations that propagate EUID tokens to the bid stream via SSPs.<br/> NOTE: Publishers can choose to leverage the [SDK for JavaScript](sdks/client-side-identity.md) or complete their own server-only integration without using an SDK. | [SDK for JavaScript Integration Guide](guides/publisher-client-side.md)<br/>[Publisher Integration Guide, Server-Only (Without SDK)](guides/custom-publisher-integration.md) |
+| **Supply-Side** | Organizations that propagate EUID tokens to the bidstream via SSPs.<br/> NOTE: Publishers can choose to leverage the [SDK for JavaScript](sdks/client-side-identity.md) or complete their own server-only integration without using an SDK. | [SDK for JavaScript Integration Guide](guides/publisher-client-side.md)<br/>[Publisher Integration Guide, Server-Only (Without SDK)](guides/custom-publisher-integration.md) |
 | **Opt-Out** | Consumers who engage with publishers or their SSO providers and other identity providers. | N/A |
 
 The following diagram summarizes all four workflows. For each workflow, the [participants](#participants), [components](#components), [EUID identifier types](#euid-identifier-types), and numbered steps are color-coded.

@@ -19,8 +19,9 @@ You can use the EUID SDK for Python (Server-Side) to facilitate:
 This SDK is valid for UID2 and EUID. Some of the code naming and URLs are labelled as UID2. These apply equally to EUID.
 :::
 
+<!-- 
 This guide includes the following information:
-<!--
+
 - [Functionality](#functionality)
 - [Version](#version)
 - [GitHub Repository/Package](#github-repositorypackage)
@@ -31,7 +32,7 @@ This guide includes the following information:
 - [Usage for Publishers](#usage-for-publishers)
 - [Usage for DSPs](#usage-for-dsps)
 - [FAQs](#faqs)
--->
+ -->
 
 ## Functionality
 
@@ -39,7 +40,7 @@ This SDK simplifies integration with EUID for any DSPs who are using Python for 
 
 | Encrypt Raw EUID to EUID Token | Decrypt EUID Token | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to a Raw EUID |
 | :--- | :--- | :--- | :--- | :--- |
-| Supported | Supported | Supported | Supported | Supported |
+| Not Supported | Supported | Supported | Supported | Supported |
 
 ## API Permissions
 
@@ -217,7 +218,7 @@ If you're using server-only integration (see [Publisher Integration Guide, Serve
 
 ## Usage for DSPs
 
-The following instructions provide an example of how a DSP can decode bid stream tokens using the EUID SDK for Python.
+The following instructions provide an example of how a DSP can decode bidstream tokens using the EUID SDK for Python.
 
 1. Create a `BidstreamClient`:
 

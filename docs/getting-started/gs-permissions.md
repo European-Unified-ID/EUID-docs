@@ -22,5 +22,5 @@ The following table lists the key permissions, the types of participants that co
 | Name | Participant Type | Permissions |
 | :--- | :--- | :--- |
 | Generator | Publishers | Permission to call the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md), [POST&nbsp;/token/validate](../endpoints/post-token-validate.md), and [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoints, to generate EUID tokens from personal data and to refresh them, using one of these integration methods:<ul><li>A Prebid integration</li><li>The EUID SDK for JavaScript</li><li>An integration that directly calls the applicable API endpoints for retrieving and managing EUID tokens.</li></ul> |
-| Bidder | DSPs | Permission to decrypt EUID tokens coming in from the bid stream from publishers into raw EUIDs for bidding purposes. |
+| Bidder | DSPs | Permission to decrypt EUID tokens coming in from the bidstream from publishers into raw EUIDs for bidding purposes. |
 | Mapper | Advertisers<br/>Data Providers | Permission to use the [POST&nbsp;/identity/buckets](../endpoints/post-identity-buckets.md) endpoint to monitor rotated salt buckets and to use the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint to map multiple email addresses or their respective hashes to their raw EUIDs and salt bucket IDs. |
