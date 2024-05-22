@@ -38,9 +38,9 @@ This guide includes the following information:
 
 This SDK simplifies integration with EUID for any DSPs who are using Python for their server-side coding. The following table shows the functions it supports.
 
-| Encrypt Raw EUID to EUID Token | Decrypt EUID Token | Generate EUID Token from Personal Data | Refresh EUID Token |
-| :--- | :--- | :--- | :--- |
-| Not Supported | Supported | Supported | Supported |
+| Encrypt Raw EUID to EUID Token | Decrypt EUID Token | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to a Raw EUID |
+| :--- | :--- | :--- | :--- | :--- |
+| Not Supported | Supported | Supported | Supported | Supported |
 
 ## API Permissions
 
@@ -68,11 +68,12 @@ The package is published in this location:
 
 The initialization step depends on the role, as shown in the following table.
 
-| Role                                      | Create Instance of Class | Link to Instructions                                                                  |
-|:------------------------------------------|:-------------------------|:--------------------------------------------------------------------------------------|
-| Publisher                                 | `Uid2PublisherClient`    | [Usage for Publishers](#usage-for-publishers)                                         |
-| DSP                                       | `BidstreamClient`        | [Usage for DSPs](#usage-for-dsps)                                                     |
-| Sharer (not currently supported for EUID) | `SharingClient`          | Not applicable                                                                        |
+| Role                                      | Create Instance of Class | Link to Instructions                                                         |
+|:------------------------------------------|:-------------------------|:-----------------------------------------------------------------------------|
+| Publisher                                 | `Uid2PublisherClient`    | [Usage for Publishers](#usage-for-publishers)                                |
+| Advertiser/Data Provider                  | `IdentityMapClient`      | [Usage for Advertisers/Data Providers](#usage-for-advertisersdata-providers) |
+| DSP                                       | `BidstreamClient`        | [Usage for DSPs](#usage-for-dsps)                                            |
+| Sharer (not currently supported for EUID) | `SharingClient`          | Not applicable                                                               |
 
 You will need to provide the values necessary for the SDK to authenticate with the EUID service.
 
@@ -185,6 +186,35 @@ If you're using server-only integration (see [Publisher Integration Guide, Serve
 5. Store `token_refresh_response.get_identity_json_string()` in the user's session.
 
    If the user has opted out, this method returns `None`, indicating that the user's identity should be removed from the session. To confirm optout, you can use the `token_refresh_response.is_optout()` function.
+
+## Usage for Advertisers/Data Providers
+1. Create an instance of `IdentityMapClient` as an instance variable.
+   ```py
+   client = IdentityMapClient(base_url, api_key, client_secret)
+   ```
+
+2. Call a function that takes email addresses as input and generates an `IdentityMapResponse` object. The following example uses email addresses:
+   ```py
+   identity_map_response = client.generate_identity_map(IdentityMapInput.from_emails(["email1@example.com", "email2@example.com"]))
+   ```
+
+>Note: The SDK hashes input values before sending them. This ensures that raw email addresses do not leave your server.
+
+3. Retrieve the mapped and unmapped results as follows:
+   ```py
+   mapped_identities = identity_map_response.mapped_identities
+   unmapped_identities = identity_map_response.unmapped_identities
+    ```
+
+4. Iterate through the mapped and unmapped results, or do a lookup. The following example does a lookup:
+   ```py
+    mapped_identity = mapped_identities.get("email1@example.com")
+    if mapped_identity is not None:
+        raw_uid = mapped_identity.get_raw_uid()
+    else:
+        unmapped_identity = unmapped_identities.get("email1@example.com")
+        reason = unmapped_identity.get_reason()
+   ```
 
 ## Usage for DSPs
 
