@@ -48,8 +48,8 @@ If you need to use an earlier version of Prebid.js, use the implementation solut
 
 An example of the EUID Prebid.js client-side integration is available at the following links:
 
-- Code: [Example Prebid.js EUID Integration](https://github.com/IABTechLab/uid2docs/tree/main/static/examples/euid-cstg-prebid-example)
-- Running site: [EUID Prebid.js Client-Side Integration Example](https://unifiedid.com/examples/euid-cstg-prebid-example/)
+- Code: [Example Prebid.js EUID Integration](https://github.com/European-Unified-ID/EUID-docs/tree/main/static/examples/cstg-prebid-example)
+- Running site: [EUID Prebid.js Client-Side Integration Example](https://euid.eu/examples/cstg-prebid-example/)
 
 ## Integration Overview: High-Level Steps
 

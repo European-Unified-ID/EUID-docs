@@ -47,10 +47,8 @@ If you want to use a debug build of the SDK, use the following URL instead:
 ## Sample Implementation Website
 
 For an example website, see this example:
-- Code: [Example Client-Side Integration for JavaScript](https://github.com/IABTechLab/uid2-web-integrations/tree/main/examples/cstg)
-- Running site: [SDK Integration Example](https://cstg-integ.uidapi.com/)
-
-<!-- (Source code for running site: https://github.com/IABTechLab/uid2-web-integrations) -->
+- Code: [Example Client-Side Integration for JavaScript](https://github.com/European-Unified-ID/EUID-docs/tree/main/static/examples/cstg-js-sdk-example)
+- Running site: [Client-Side Integration Example, EUID JavaScript SDK](https://euid.eu/examples/cstg-js-sdk-example/)
 
 ## Complete EUID Account Setup
 
