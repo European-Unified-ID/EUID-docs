@@ -12,14 +12,15 @@ import Link from '@docusaurus/Link';
 
 This guide covers integration steps for organizations that collect user data and push it to other EUID participants. Data collectors include advertisers, data on-boarders, measurement providers, identity graph providers, third-party data providers, and any other organizations that send data to other participants.
 
-It includes the following sections:
+<!-- It includes the following sections:
 
 * [Integration Steps](#integration-steps)
    - [Retrieve a raw EUID for personal data using the identity map endpoints](#retrieve-a-raw-euid-for-personal-data-using-the-identity-map-endpoints)
    - [Send raw EUID to a DSP to build an audience](#send-raw-euid-to-a-dsp-to-build-an-audience)
    - [Monitor for salt bucket rotations related to your stored raw EUIDs](#monitor-for-salt-bucket-rotations-related-to-your-stored-raw-euids)
    - [Use an incremental process to continuously update raw EUIDs](#use-an-incremental-process-to-continuously-update-raw-euids)
-* [FAQs](#faqs)
+   * [Check Opt-Out Status](#check-opt-out-status)
+* [FAQs](#faqs) -->
 
 ## Integration Steps
 
@@ -59,6 +60,14 @@ To keep your EUID-based audience information accurate and up to date, follow the
 1. The response from the [EUID retrieval step](#retrieve-a-raw-euid-for-personal-data-using-the-identity-map-endpoints) contains mapping information. Cache the mapping between personal data (`identifier`), raw EUID (`advertising_id`), and salt bucket (`bucket_id`), along with the most recent `last_updated` timestamp.
 
 2. Using the results from the [preceding salt bucket rotation step](#monitor-for-salt-bucket-rotations-related-to-your-stored-raw-euids), remap any raw EUID for which the salt buckets have been rotated by [retrieving raw EUIDs using the identity map endpoints](#retrieve-a-raw-euid-for-personal-data-using-the-identity-map-endpoints). To update the EUIDs in audiences, [send raw EUID to a DSP](#send-raw-euid-to-a-dsp-to-build-an-audience).
+
+## Check Opt-Out Status
+
+It's important to honor user opt-out status. Here are two ways you can check that you have the latest opt-out information:
+
+- The EUID Operator Service distributes opt-out information to advertisers and data providers via the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint.
+
+- Advertisers and data providers can check the opt-out status of raw EUIDs using the [POST&nbsp;/optout/status](../endpoints/post-optout-status.md) endpoint.
 
 ## FAQs
 

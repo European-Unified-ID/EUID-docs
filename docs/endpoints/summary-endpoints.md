@@ -25,3 +25,11 @@ All EUID endpoints require a client secret for encrypting API requests (except [
 | :--- | :--- | :--- | :--- |
 | [POST /identity/buckets](post-identity-buckets.md) | Monitor rotated salt buckets using their last updated timestamp. | Required | Required |
 | [POST /identity/map](post-identity-map.md) | Retrieve raw EUIDs and salt bucket IDs for one or more email addresses or email address hashes.  | Required | Required |
+
+## Opt-Out Status
+
+The following endpoint can be used by advertisers, third-party data providers, and DSPs. Publishers do not need to use this endpoint.
+
+| Endpoint | Description | Request Encryption | Response Decryption |
+| :--- | :--- | :--- | :--- |
+| [POST&nbsp;/optout/status](post-optout-status.md) | Checks the opt-out status of raw EUIDs. This endpoint takes a list of raw EUIDs as input, and returns the raw EUIDs that have opted out, as well as the time that the opt-out took place.  | Required | Required |
