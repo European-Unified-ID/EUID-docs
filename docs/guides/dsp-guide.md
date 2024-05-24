@@ -29,6 +29,14 @@ The following describes the integration workflow for DSP to support EUID as part
 
 ### Honor User Opt-Outs
 
+This section includes the following information for DSPs, who must honor user opt-out of EUID:
+
+- [Opt-Out Webhook](#opt-out-webhook)
+- [POST /optout/status Endpoint](#post-optoutstatus-endpoint)
+- [Bidding Opt-Out Logic](#bidding-opt-out-logic)
+
+#### Opt-Out Webhook
+
 To receive and honor user opt-outs from the EUID service, DSPs establish a pre-configured interface and provides it to the EUID service during onboarding. The EUID service sends the user's EUID and an opt-out timestamp to the pre-determined interface. Examples of interfaces include webhooks and API endpoints.
 
 The EUID service sends the following data within seconds of a user's opt-out, which the DSP records and uses the bidding logic defined in [Decrypt EUID Tokens for RTB Use](#decrypt-euid-tokens-for-rtb-use).
@@ -45,6 +53,11 @@ The following example  illustrates a webhook configured to receive the EUID and 
 ```html
 https://dsp.example.com/optout?user=%%identity%%&optouttime=%%timestamp%%
 ```
+
+#### POST /optout/status Endpoint
+
+DSPs can check the opt-out status of raw EUIDs using the [POST&nbsp;/optout/status](../endpoints/post-optout-status.md) endpoint.
+
 #### Bidding Opt-Out Logic
 
 Use the logic below during bidding (2-b) to honor a user's opt-out.
