@@ -105,7 +105,7 @@ By default, the SDK is configured to work with the EUID production environment `
 
 ```js
 __euid.init({
-  baseUrl: "https://operator-integ.uidapi.com",
+  baseUrl: "https://integ.euid.eu",
 });
 ```
 >NOTE: Tokens from the EUID integration environment are not valid for passing to the bidstream. For the integration environment, you will have different **subscription ID** and **public key** values.

@@ -37,7 +37,7 @@ You must encrypt all requests using your secret. For details, and code examples 
 
 | Path Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
-| `{environment}` | string | Required | Integration environment: `https://operator-integ.uidapi.com`.<br/>Production environment: `https://prod.uidapi.com`.<br/>For a full list, including regional operators, see [Environments](../getting-started/gs-environments.md). |
+| `{environment}` | string | Required | Integration environment: `https://integ.euid.eu`.<br/>Production environment: `https://prod.uidapi.com`.<br/>For a full list, including regional operators, see [Environments](../getting-started/gs-environments.md). |
 
 :::note
 The integration environment and the production environment require different <Link href="../ref-info/glossary-uid#gl-api-key">API keys</Link>.
@@ -68,10 +68,12 @@ The following is an example of an unencrypted JSON request body:
 The following is an encrypted opt-out status request example:
 
 ```json
-echo '{"advertising_ids": ["ufv1uGRovNiJNbJqiE/xzM+aKE7jP69MgspOZoEQ3xc="]}' | python3 uid2_request.py https://prod.uidapi.com/v2/optout/status [Your-Client-API-Key] [Your-Client-Secret]
+echo '{"advertising_ids": ["ufv1uGRovNiJNbJqiE/xzM+aKE7jP69MgspOZoEQ3xc="]}' | python3 uid2_request.py https://prod.euid.eu/v2/optout/status [Your-Client-API-Key] [Your-Client-Secret]
 ```
 
-(**GWH_AQ not sure if the above should change... the code, uid2_request.py, and the URL? Or they are the same?**)
+:::note
+Even though the script is named for UID2, it is applicable to EUID also.
+:::
 
 For details, and code examples in different programming languages, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
 

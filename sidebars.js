@@ -191,6 +191,7 @@ const sidebars = {
         'endpoints/post-token-refresh',
         'endpoints/post-identity-buckets',
         'endpoints/post-identity-map',
+        'endpoints/post-optout-status',
       ],
     },
 
