@@ -43,7 +43,7 @@ Here's what you need to know about this endpoint requests:
 
 ### Request Examples
 
->IMPORTANT: To ensure that the API key used to access the service remains secret, the `POST /token/generate` endpoint must be called from the server side, unlike the [POST /token/refresh](post-token-refresh.md), which does not require using an API key.
+>IMPORTANT: To ensure that the API key used to access the service remains secret, the `POST&nbsp;/token/generate` endpoint must be called from the server side, unlike the [POST&nbsp;/token/refresh](post-token-refresh.md), which does not require using an API key.
 
 The following are unencrypted JSON request body examples for each parameter, one of which you should include in your token generation requests:
 
@@ -127,7 +127,7 @@ Here is an example response when the user has opted out.
 | `identity_expires` | number | The UNIX timestamp (in milliseconds) that indicates when the advertising token expires. |
 | `refresh_from` | number | The UNIX timestamp (in milliseconds) that indicates when the SDK for JavaScript (see [SDK for JavaScript Reference Guide](../sdks/client-side-identity.md)) will start refreshing the EUID token.<br/>TIP: If you are not using the SDK, consider refreshing the EUID token from this timestamp, too. |
 | `refresh_expires` | number | The UNIX timestamp (in milliseconds) that indicates when the refresh token expires. |
-| `refresh_response_key` | string | A key to be used in a [POST /token/refresh](post-token-refresh.md) request for response decryption. |
+| `refresh_response_key` | string | A key to be used in a [POST&nbsp;/token/refresh](post-token-refresh.md) request for response decryption. |
 
 ### Response Status Codes
 
@@ -146,6 +146,6 @@ If the `status` value is anything other than `success`, the `message` field prov
 
 | Type  | Identity                     | Purpose                                                                                                                           | Next Endpoint                                  |
 |:------|:-----------------------------|:----------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------|
-| Email | `validate@example.com`       | Test that the `advertising_token` you've cached matches the `advertising_token` for the specified email address.                  | [POST /token/validate](post-token-validate.md) |
-| Email | `optout@example.com`         | Using this email for the request always generates an `optout` response.                                                           | [POST /token/generate](post-token-generate.md) |
-| Email | `refresh-optout@example.com` | Using this email for the request always generates an identity response with a `refresh_token` that results in an optout response. | [POST /token/refresh](post-token-refresh.md)   |
+| Email | `validate@example.com`       | Test that the `advertising_token` you've cached matches the `advertising_token` for the specified email address.                  | [POST&nbsp;/token/validate](post-token-validate.md) |
+| Email | `optout@example.com`         | Using this email for the request always generates an `optout` response.                                                           | [POST&nbsp;/token/generate](post-token-generate.md) |
+| Email | `refresh-optout@example.com` | Using this email for the request always generates an identity response with a `refresh_token` that results in an optout response. | [POST&nbsp;/token/refresh](post-token-refresh.md)   |
