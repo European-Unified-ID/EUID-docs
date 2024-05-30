@@ -36,7 +36,7 @@ Yes. Through the [Transparency and Control Portal](https://transparentadvertisin
 
 #### When I send personal data to EUID, does EUID store the information?
 
-No, EUID does not store any personal information. In addition, in almost all cases, EUID doesn't store any values at all once the [POST /token/generate](../endpoints/post-token-generate.md), [POST /token/refresh](../endpoints/post-token-refresh.md), or [POST /identity/map](../endpoints/post-identity-map.md) call is complete.
+No, EUID does not store any personal information. In addition, in almost all cases, EUID doesn't store any values at all once the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md), [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md), or [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) call is complete.
 
 A necessary exception is the case where a user has opted out. In this scenario, EUID stores a hashed, opaque value to indicate the opted-out user. The stored value cannot be reverse engineered back to the original value of the personal data, but can be used to identify future requests for an EUID generated from the same personal data, which are therefore denied.
 
@@ -55,9 +55,9 @@ Here are some frequently asked questions for publishers using the EUID framework
 
 #### How can I test that the personal data sent and the returned token match up?
 
-You can use the [POST /token/validate](../endpoints/post-token-validate.md) endpoint to check whether the personal data you are sending through [POST /token/generate](../endpoints/post-token-generate.md) is valid. `POST /token/validate` is used primarily for testing purposes. 
+You can use the [POST&nbsp;/token/validate](../endpoints/post-token-validate.md) endpoint to check whether the personal data you are sending through [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) is valid. `POST&nbsp;/token/validate` is used primarily for testing purposes. 
 
-For details, see [Using POST /token/validate to Test](../endpoints/post-token-validate.md#using-post-tokenvalidate-to-test).
+For details, see [Using POST&nbsp;/token/validate to Test](../endpoints/post-token-validate.md#using-post-tokenvalidate-to-test).
 
 #### Do I need to decrypt tokens?
 
@@ -66,16 +66,16 @@ No, publishers do not need to decrypt EUID tokens.
 #### How will I be notified of user opt-out?
 
 If the user has opted out, the API response notifies you in either of these cases:
-- When you generate the EUID token by a call to the [POST /token/generate](../endpoints/post-token-generate.md) endpoint, either directly or via one of the EUID SDKs, using the required `optout_check` parameter with a value of `1`.
-- When you refresh the EUID token by a call to the [POST /token/refresh](../endpoints/post-token-refresh.md) endpoint, either directly or via one of the EUID SDKs.
+- When you generate the EUID token by a call to the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint, either directly or via one of the EUID SDKs, using the required `optout_check` parameter with a value of `1`.
+- When you refresh the EUID token by a call to the [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint, either directly or via one of the EUID SDKs.
 
 #### Where should I make token generation calls, from the server or client side?
 
-EUID tokens must be generated only on the server side after authentication. In other words, to ensure that the API key used to access the service remains secret, the [POST /token/generate](../endpoints/post-token-generate.md) endpoint must be called only from the server side.
+EUID tokens must be generated only on the server side after authentication. In other words, to ensure that the API key used to access the service remains secret, the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint must be called only from the server side.
 
 #### Can I make token refresh calls from the client side?
 
-Yes. The [POST /token/refresh](../endpoints/post-token-refresh.md) can be called from the client side (for example, a browser or a mobile app) because it does not require using an API key.
+Yes. The [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) can be called from the client side (for example, a browser or a mobile app) because it does not require using an API key.
 
 #### How can I test the refresh token workflow?
 
@@ -85,18 +85,18 @@ The procedure is a little different depending on whether or not you are using an
 
 ##### With SDK:
 
-1. Send a [POST /token/generate](../endpoints/post-token-generate.md) request using one of the following values:
+1. Send a [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) request using one of the following values:
     - The `refresh-optout@example.com` as the `email` value.
     - The hash of `refresh-optout@example.com` as the `email_hash` value. 
 2. Wait until the SDK's [background auto-refresh](../sdks/client-side-identity.md#background-token-auto-refresh) attempts to refresh the advertising token (this can take several hours) and observe the refresh attempt fail with the OPTOUT status. At this point the SDK also clears the first-party cookie.
 
 ##### Without SDK:
 
-1. Send a [POST /token/generate](../endpoints/post-token-generate.md) request using one of the following values:
+1. Send a [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) request using one of the following values:
     - The `refresh-optout@example.com` as the `email` value.
     - The hash of `refresh-optout@example.com` as the `email_hash` value. 
 2. Store the returned `refresh_token` for use in the following step.
-3. Send a [POST /token/refresh](../endpoints/post-token-refresh.md) request with the `refresh_token` (saved in step 2) as the `token` value.
+3. Send a [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) request with the `refresh_token` (saved in step 2) as the `token` value.
 
    The body response should be empty, and the `status` value should be set to `optout` because the `refresh-optout@example.com` email always results in a logged out user.
 
@@ -141,7 +141,7 @@ Here are some frequently asked questions for advertisers and data providers usin
 
 #### How do I know when to refresh the EUID due to salt bucket rotation?
 
-Metadata supplied with the EUID generation request indicates the salt bucket used for generating the EUID. Salt buckets persist and correspond to the underlying personal data used to generate an EUID. Use the  [POST /identity/buckets](../endpoints/post-identity-buckets.md) endpoint to return which salt buckets rotated since a given timestamp. The returned rotated salt buckets inform you which EUIDs to refresh.
+Metadata supplied with the EUID generation request indicates the salt bucket used for generating the EUID. Salt buckets persist and correspond to the underlying personal data used to generate an EUID. Use the  [POST&nbsp;/identity/buckets](../endpoints/post-identity-buckets.md) endpoint to return which salt buckets rotated since a given timestamp. The returned rotated salt buckets inform you which EUIDs to refresh.
 
 >NOTE: We do not make any promises about when the rotation takes place. To stay as up-to-date as possible, we recommend doing the checks once per hour.
 
@@ -155,7 +155,7 @@ Not necessarily. After you remap emails associated with a particular bucket ID, 
 
 The recommended cadence for updating audiences is daily.
 
-Even though each salt bucket is updated roughly once a year, individual bucket updates are spread over the year. This means that about 1/365th of all buckets are rotated daily. If fidelity is critical, consider calling the [POST /identity/buckets](../endpoints/post-identity-buckets.md) endpoint more frequently&#8212;for example, hourly.
+Even though each salt bucket is updated roughly once a year, individual bucket updates are spread over the year. This means that about 1/365th of all buckets are rotated daily. If fidelity is critical, consider calling the [POST&nbsp;/identity/buckets](../endpoints/post-identity-buckets.md) endpoint more frequently&#8212;for example, hourly.
 
 #### How should I generate the SHA-256 of personal data for mapping?
 
@@ -169,7 +169,7 @@ Yes. Not storing email address or hash mappings may increase processing time dra
 
 #### How should I handle user opt-outs?
 
-When a user opts out of EUID-based targeted advertising through the [Transparency and Control Portal](https://www.transparentadvertising.eu/), the opt-out signal is sent to DSPs and publishers, who handle opt-outs at bid time. We recommend that advertisers and data providers regularly check whether a user has opted out, via the [POST /identity/map](../endpoints/post-identity-map.md) endpoint.
+When a user opts out of EUID-based targeted advertising through the [Transparency and Control Portal](https://www.transparentadvertising.eu/), the opt-out signal is sent to DSPs and publishers, who handle opt-outs at bid time. We recommend that advertisers and data providers regularly check whether a user has opted out, via the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint.
 
 Advertisers and data providers can also check the opt-out status of raw EUIDs using the [POST&nbsp;/optout/status](../endpoints/post-optout-status.md) endpoint.
 
@@ -177,7 +177,7 @@ If a user opts out through your website, you should follow your internal procedu
 
 #### Does the same personal data always result in the same raw EUID?
 
-In general yes, the process of generating a raw EUID from personal data is the same, and results in the same value, no matter who sent the request. If two EUID participants were to send the same email address to the [POST /identity/map](../endpoints/post-identity-map.md) endpoint at the same time, they would both get the same raw EUID in response.
+In general yes, the process of generating a raw EUID from personal data is the same, and results in the same value, no matter who sent the request. If two EUID participants were to send the same email address to the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint at the same time, they would both get the same raw EUID in response.
 
 However, there is a variable factor, which is the salt value that's used in generating the raw EUID. The salt values are rotated periodically. If the salt value changes between one request and another, those two requests result in two different raw EUID, even when the personal data is the same.
 

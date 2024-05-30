@@ -9,7 +9,7 @@ import Link from '@docusaurus/Link';
 
 # POST /token/refresh
 
-Generate a new EUID token by sending the corresponding unexpired refresh token, returned by the [POST /token/generate](post-token-generate.md) endpoint.
+Generate a new EUID token by sending the corresponding unexpired refresh token, returned by the [POST&nbsp;/token/generate](post-token-generate.md) endpoint.
 
 Used by: This endpoint is used mainly by publishers.
 
@@ -24,7 +24,7 @@ Here's what you need to know about this endpoint:
 - No encryption is required for token refresh requests.
 - If the request is successful, with an HTTP status code of 200, a new EUID token or opt-out information is returned.
 - Successful responses, whether the response includes a new token or opt-out information, are encrypted. Error responses are not encrypted.
-- To decrypt responses, use the most recent `refresh_response_key` value for this token. The `refresh_response_key` value is returned in the response to the [POST /token/generate](post-token-generate.md) and `POST /token/refresh` operations. Each time a token is refreshed, a new `refresh_response_key` is returned. Be sure to use the most recent one to decrypt the current response.
+- To decrypt responses, use the most recent `refresh_response_key` value for this token. The `refresh_response_key` value is returned in the response to the [POST&nbsp;/token/generate](post-token-generate.md) and `POST&nbsp;/token/refresh` operations. Each time a token is refreshed, a new `refresh_response_key` is returned. Be sure to use the most recent one to decrypt the current response.
 
 ### Path Parameters
 
@@ -36,11 +36,11 @@ Here's what you need to know about this endpoint:
 
 #### Testing Notes
 
-Using the `refresh-optout@example.com` email address in a [POST /token/generate](post-token-generate.md) request always generates an identity response with a `refresh_token` that results in a logout response when used with the `POST /token/refresh` endpoint.
+Using the `refresh-optout@example.com` email address in a [POST&nbsp;/token/generate](post-token-generate.md) request always generates an identity response with a `refresh_token` that results in a logout response when used with the `POST&nbsp;/token/refresh` endpoint.
 
 ### Request Example
 
-Here's a token refresh request format with placeholder values, which include the `refresh_token` and `refresh_response_key` values returned by a [POST /token/generate](post-token-generate.md) request:
+Here's a token refresh request format with placeholder values, which include the `refresh_token` and `refresh_response_key` values returned by a [POST&nbsp;/token/generate](post-token-generate.md) request:
 
 ```sh
 echo [refresh_token] \
@@ -120,7 +120,7 @@ An error response might look like the following:
 | `identity_expires` | number | The UNIX timestamp (in milliseconds) that indicates when the EUID token expires. |
 | `refresh_from` | number | The UNIX timestamp (in milliseconds) that indicates when the [SDK for JavaScript](../sdks/client-side-identity.md) will start refreshing the EUID token.<br/>TIP: If you are not using the SDK, consider refreshing the EUID token from this timestamp, too. |
 | `refresh_expires` | number | The UNIX timestamp (in milliseconds) that indicates when the refresh token expires. |
-| `refresh_response_key` | string | A key to be used in a new [POST /token/refresh](post-token-refresh.md) request for response decryption. |
+| `refresh_response_key` | string | A key to be used in a new [POST&nbsp;/token/refresh](post-token-refresh.md) request for response decryption. |
 
 
 ### Response Status Codes

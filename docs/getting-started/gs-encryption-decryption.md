@@ -34,7 +34,7 @@ This guide includes the following sections:
 
 For almost all EUID [endpoints](../endpoints/summary-endpoints.md), requests sent to the endpoint must be [encrypted](#encrypting-requests) and responses from the endpoint must be [decrypted](#decrypting-responses).
 
-The only exception is that requests to the [POST /token/refresh](../endpoints/post-token-refresh.md) endpoint do not need to be encrypted.
+The only exception is that requests to the [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint do not need to be encrypted.
 
 Here's what you need to know about encrypting EUID API requests and decrypting respective responses:
 

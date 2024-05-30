@@ -301,7 +301,7 @@ If you're using server-only integration (see [Publisher Integration Guide, Serve
       ```java
       if (identity.isDueForRefresh()) {..}
       ```
-4. If a refresh is needed, call the [POST token/refresh](../endpoints/post-token-refresh.md) endpoint, with the following:
+4. If a refresh is needed, call the [POST&nbsp;token/refresh](../endpoints/post-token-refresh.md) endpoint, with the following:
    1. Headers: Depending on your HTTP library, this might look something like the following:
     
       `.putHeader("Authorization", "Bearer " + EUID_API_KEY)`  

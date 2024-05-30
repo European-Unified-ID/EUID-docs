@@ -114,12 +114,12 @@ If the `status` value is anything other than `success`, the `message` field prov
 
 ## Using POST /token/validate to Test
 
-You can use this endpoint to test whether the personal data you are sending through [POST /token/generate](../endpoints/post-token-generate.md) is valid. Follow these steps.
+You can use this endpoint to test whether the personal data you are sending through [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) is valid. Follow these steps.
 
-1. Depending on whether the personal data is a hashed or unhashed email address, send a [POST /token/generate](../endpoints/post-token-generate.md) request using one of the valid options listed in the [Unencrypted JSON Body Parameters](#unencrypted-json-body-parameters) table&#8212;`email` or `email_hash`&#8212;with the corresponding value as listed in the table.
+1. Depending on whether the personal data is a hashed or unhashed email address, send a [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) request using one of the valid options listed in the [Unencrypted JSON Body Parameters](#unencrypted-json-body-parameters) table&#8212;`email` or `email_hash`&#8212;with the corresponding value as listed in the table.
 
 2. Store the returned `advertising_token` value for use in the next step.
-3. Send a `POST /token/validate` request using the `email` or `email_hash` value that you sent in Step 1, with the `advertising_token` that you saved in Step 2 as the `token` property value. 
-4. Check the response to the `POST /token/validate` request. The results indicate the success of your process, as follows: 
+3. Send a `POST&nbsp;/token/validate` request using the `email` or `email_hash` value that you sent in Step 1, with the `advertising_token` that you saved in Step 2 as the `token` property value. 
+4. Check the response to the `POST&nbsp;/token/validate` request. The results indicate the success of your process, as follows: 
     - A response of `true` indicates that the personal data you sent as a request in Step 1 matches the token you received in the response of Step 1. 
     - A response of `false` indicates that there might be an issue with the way you are sending email addresses or their hashes.
