@@ -147,7 +147,7 @@ Metadata supplied with the EUID generation request indicates the salt bucket use
 
 #### Do refreshed emails get assigned to the same bucket with which they were previously associated?
 
-Not necessarily. After you remap emails associated with a particular bucket ID, the emails might be assigned to a different bucket ID. To check the bucket ID, [call the mapping function](../guides/advertiser-dataprovider-guide.md#retrieve-a-raw-euid-for-personal-data-using-the-identity-map-endpoints) and save the returned EUID and bucket ID again.
+Not necessarily. After you remap emails associated with a particular bucket ID, the emails might be assigned to a different bucket ID. To check the bucket ID, [call the mapping function](../guides/advertiser-dataprovider-guide.md#1-retrieve-a-raw-euid-for-personal-data-using-the-identity-map-endpoint) and save the returned EUID and bucket ID again.
 
 >IMPORTANT: When mapping and remapping emails, be sure not to make any assumptions of the number of buckets, their specific rotation dates, or to which bucket an email gets assigned. 
 
@@ -181,7 +181,7 @@ In general yes, the process of generating a raw EUID from personal data is the s
 
 However, there is a variable factor, which is the salt value that's used in generating the raw EUID. The salt values are rotated periodically. If the salt value changes between one request and another, those two requests result in two different raw EUID, even when the personal data is the same.
 
-For more information, see [Monitor for salt bucket rotations related to your stored raw EUIDs](../guides/advertiser-dataprovider-guide.md#monitor-for-salt-bucket-rotations-related-to-your-stored-raw-euids) in the *Advertiser/Data Provider Integration Guide*.
+For more information, see [Monitor for salt bucket rotations related to your stored raw EUIDs](../guides/advertiser-dataprovider-guide.md#3-monitor-for-salt-bucket-rotations-related-to-your-stored-raw-euids) in the *Advertiser/Data Provider Integration Guide*.
 
 ## FAQs for DSPs
 
