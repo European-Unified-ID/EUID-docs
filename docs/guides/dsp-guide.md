@@ -32,7 +32,7 @@ The following describes the integration workflow for DSP to support EUID as part
 This section includes the following information for DSPs, who must honor user opt-out of EUID:
 
 - [Opt-Out Webhook](#opt-out-webhook)
-- [POST /optout/status Endpoint](#post-optoutstatus-endpoint)
+- [POST&nbsp;/optout/status Endpoint](#post-optoutstatus-endpoint)
 - [Bidding Opt-Out Logic](#bidding-opt-out-logic)
 
 #### Opt-Out Webhook

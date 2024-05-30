@@ -111,7 +111,7 @@ The following table lists four key workflows in the EUID system and provides lin
 | :--- | :--- | :--- |
 | **Buy-Side** | DSPs who transact on EUID tokens in the bidstream. | [DSP](guides/dsp-guide.md) |
 | **Data Provider** | Organizations that collect user data and push it to other EUID participants. | [Advertiser and Third-Party Data Provider](guides/advertiser-dataprovider-guide.md) |
-| **Supply-Side** | Organizations that propagate EUID tokens to the bidstream via SSPs.<br/> NOTE: Publishers can choose to leverage the [SDK for JavaScript](sdks/client-side-identity.md) or complete their own server-only integration without using an SDK. | [Client-Side Integration Guide for JavaScript](guides/publisher-client-side.md)<br/>[Publisher Integration Guide, Server-Only (Without SDK)](guides/custom-publisher-integration.md) |
+| **Supply-Side** | Organizations that propagate EUID tokens to the bidstream via SSPs.<br/> NOTE: Publishers can choose to leverage the [SDK for JavaScript](sdks/client-side-identity.md) or complete their own server-only integration without using an SDK. | [Client-Side Integration Guide for JavaScript](guides/publisher-client-side.md)<br/>[Publisher Integration Guide, Server-Only](guides/custom-publisher-integration.md) |
 | **Opt-Out** | Consumers who engage with publishers or their SSO providers and other identity providers. | N/A |
 
 The following diagram summarizes all four workflows. For each workflow, the [participants](#participants), [components](#components), [EUID identifier types](#euid-identifier-types), and numbered steps are color-coded.
