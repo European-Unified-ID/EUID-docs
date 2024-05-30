@@ -12,18 +12,24 @@ import Link from '@docusaurus/Link';
 
 This guide is for DSPs who transact on EUIDs in the bidstream.
 
-It includes the following sections:
+DSPs receive EUID tokens in bid requests, and decrypt the EUID tokens to arrive at raw EUIDs that they can use for bidding, using one of the server-side SDKs that support this function.
+
+For a summary of available server-side SDKs, see [SDKs: Summary](../sdks/summary-sdks.md).
+
+>NOTE: If your back end is written in a language not covered by one of the available server-side SDKs, ask your EUID contact in case there is additional information available to help you. If you're not sure who to ask, see [Contact Info](../getting-started/gs-account-setup.md#contact-info).
+
+<!-- It includes the following sections:
 
 * [Integration Steps](#integration-steps)
    - [Honor User Opt-Outs](#honor-user-opt-outs)
    - [Decrypt EUID Tokens for RTB Use](#decrypt-euid-tokens-for-rtb-use)
-* [FAQs](#faqs)
+* [FAQs](#faqs) -->
 
 ## Integration Steps 
 
 The following describes the integration workflow for DSP to support EUID as part of RTB, which consists of two major steps:
 1. [Honor user opt-outs](#honor-user-opt-outs)
-2. [Decrypt EUID tokens to use in RTB](#decrypt-euid-tokens-for-rtb-use)
+2. [Decrypt EUID Tokens for RTB Use](#decrypt-euid-tokens-for-rtb-use)
 
 ![DSP Flow](images/dsp-guide-flow-mermaid.svg)
 
@@ -37,7 +43,7 @@ This section includes the following information for DSPs, who must honor user op
 
 #### Opt-Out Webhook
 
-To receive and honor user opt-outs from the EUID service, DSPs establish a pre-configured interface and provides it to the EUID service during onboarding. The EUID service sends the user's EUID and an opt-out timestamp to the pre-determined interface. Examples of interfaces include webhooks and API endpoints.
+To receive and honor user opt-outs from the EUID service, the DSP establishes a pre-configured interface (an opt-out webhook/API endpoint) and provides it to the EUID service during onboarding. When a user opts out, the EUID service sends the user's raw EUID and the corresponding opt-out timestamp to the pre-configured interface.
 
 The EUID service sends the following data within seconds of a user's opt-out, which the DSP records and uses the bidding logic defined in [Decrypt EUID Tokens for RTB Use](#decrypt-euid-tokens-for-rtb-use).
 
@@ -48,7 +54,7 @@ The EUID service sends the following data within seconds of a user's opt-out, wh
 
 The DSP must respond to the opt-out data with a 200 response code.
 
-The following example  illustrates a webhook configured to receive the EUID and a corresponding timestamp:
+The following example illustrates a webhook configured to receive the raw EUID and the corresponding timestamp:
 
 ```html
 https://dsp.example.com/optout?user=%%identity%%&optouttime=%%timestamp%%
@@ -68,21 +74,15 @@ The following diagram illustrates opt-out logic.
 
 ![DSP Opt-Out Check](images/dsp-guide-optout-check-mermaid.svg)
 
-If the `established_timestamp` value is less than the `optout_timestamp` value, the user opted out and the EUID should not be used for RTB. In these cases, it is up to the DSP whether they want to send an alternate ID for bidding or not bid.
-
-The logic for the <b>check opt-out</b> step is the following:
-
-```java
-if (established_timestamp < optout_timestamp) {
-  // Opted out
-}
-```
+If the user has opted out, the EUID must not be used for RTB. In these cases, the DSP can choose to send an alternate ID for bidding or can choose not to bid.
 
 ### Decrypt EUID Tokens for RTB Use
 
+The following table provides details for Step 2 of the workflow diagram shown in [Integration Steps](#integration-steps).
+
 | Step | SDK | Description |
 | :--- | :--- | :--- |
-| 2-a | Server-side SDK (see [SDKs](../sdks/summary-sdks.md)) | Leverage the provided SDK to decrypt incoming EUID tokens. The response contains the `EUID` and the EUID creation time. |
+| 2-a | Server-side SDK (see [SDKs: Summary](../sdks/summary-sdks.md)) | Leverage the provided SDK to decrypt incoming EUID tokens. The response contains the `EUID` and the EUID creation time. |
 | 2-b | | DSPs are required to honor opt-out protocol for EUIDs. For details on configuring user opt-outs and honoring them during bidding, see [Honor user opt-outs](#honor-user-opt-outs). |
 
 ## FAQs
