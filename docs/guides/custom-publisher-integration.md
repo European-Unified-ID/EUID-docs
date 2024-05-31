@@ -11,7 +11,7 @@ import Link from '@docusaurus/Link';
 
 # Publisher Integration Guide, Server-Only
 
-This guide is for publishers who want to generate EUID tokens (advertising tokens) for the RTB bidstream, while integrating directly with EUID rather than EUID-enabled single-sign-on or identity providers. 
+This guide is for publishers who want to generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) for the RTB bidstream, while integrating directly with EUID rather than EUID-enabled single-sign-on or identity providers. 
 
 <!-- It includes the following sections:
 
