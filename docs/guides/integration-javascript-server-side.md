@@ -167,7 +167,9 @@ The bidding step is shown in the following table.
 | :--- | :--- | :--- |
 | 2-a | EUID SDK for JavaScript | Gets the current user's advertising token by using the [getAdvertisingToken() function](../sdks/client-side-identity.md#getadvertisingtoken-string) as shown below. |
 
->NOTE: For an example of what an EUID token might look like in the bidstream, when it's sent from an SSP to a DSP, see [What does an EUID token look like in the bidstream?](../getting-started/gs-faqs.md#what-does-an-euid-token-look-like-in-the-bidstream)
+:::note
+For an example of what an EUID token might look like in the bidstream, when it's sent from an SSP to a DSP, see [What does an EUID token look like in the bidstream?](../getting-started/gs-faqs.md#what-does-an-euid-token-look-like-in-the-bidstream).
+:::
 
 ```html
 <script>
@@ -175,7 +177,9 @@ The bidding step is shown in the following table.
 </script>
 ```
 
->NOTE: You need to consider how you pass the returned advertising token to SSPs. With some other approaches to client-side EUID implementation, such as using `Prebid.js` (see [EUID Integration Overview for Prebid.js](integration-prebid.md)), the implementation includes functions that manage passing the returned advertising token. If you're using the EUID SDK for JavaScript you'll need to manage this yourself.
+:::note
+You need to consider how you pass the returned advertising token to SSPs. With some other approaches to client-side EUID implementation, such as using `Prebid.js` (see [EUID Integration Overview for Prebid.js](integration-prebid.md)), the implementation includes functions that manage passing the returned advertising token. If you're using the EUID SDK for JavaScript you'll need to manage this yourself.
+:::
 
 >TIP: Instead of calling `__euid.getAdvertisingToken()`, you can use the `advertising_token` property of the identity passed to the callback that you set up for step 1-g. The callback will be called every time the identity changes.
 

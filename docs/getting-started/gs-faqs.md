@@ -143,7 +143,9 @@ Here are some frequently asked questions for advertisers and data providers usin
 
 Metadata supplied with the EUID generation request indicates the salt bucket used for generating the EUID. Salt buckets persist and correspond to the underlying personal data used to generate an EUID. Use the  [POST&nbsp;/identity/buckets](../endpoints/post-identity-buckets.md) endpoint to return which salt buckets rotated since a given timestamp. The returned rotated salt buckets inform you which EUIDs to refresh.
 
->NOTE: We do not make any promises about when the rotation takes place. To stay as up-to-date as possible, we recommend doing the checks once per hour.
+:::note
+We do not make any promises about when the rotation takes place. To stay as up-to-date as possible, we recommend doing the checks once per hour.
+:::
 
 #### Do refreshed emails get assigned to the same bucket with which they were previously associated?
 

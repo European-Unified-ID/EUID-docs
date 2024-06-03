@@ -141,7 +141,9 @@ This section includes an encryption and decryption code example in different pro
 
 For the [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint, the code takes the values for `refresh_token` and `refresh_response_key` that were obtained from a prior call to [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) or [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md).
 
->NOTE: For Windows, if you're using Windows Command Prompt instead of PowerShell, you must also remove the single quotes surrounding the JSON. For example, use `echo {"email": "test@example.com"}`.
+:::note
+For Windows, if you're using Windows Command Prompt instead of PowerShell, you must also remove the single quotes surrounding the JSON. For example, use `echo {"email": "test@example.com"}`.
+:::
 
 ### Prerequisites and Notes
 

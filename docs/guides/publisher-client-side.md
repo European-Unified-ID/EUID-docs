@@ -108,7 +108,10 @@ __euid.init({
   baseUrl: "https://integ.euid.eu",
 });
 ```
->NOTE: Tokens from the EUID integration environment are not valid for passing to the bidstream. For the integration environment, you will have different **subscription ID** and **public key** values.
+
+:::note
+Tokens from the EUID integration environment are not valid for passing to the bidstream. For the integration environment, you will have different **subscription ID** and **public key** values.
+:::
 
 ### Optional: Reduce Latency by Setting the API Base URL for the Production Environment
 

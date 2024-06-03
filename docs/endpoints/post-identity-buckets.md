@@ -25,7 +25,9 @@ Used by: This endpoint is used mainly by advertisers and data providers. For det
 | :--- | :--- | :--- | :--- |
 | `{environment}` | string | Required | Testing environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu`<br/>For a full list, including regional operators, see [Environments](../getting-started/gs-environments.md). |
 
->NOTE: The integration environment and the production environment require different API keys.
+:::note
+The integration environment and the production environment require different <Link href="../ref-info/glossary-uid#gl-api-key">API keys</Link>.
+:::
 
 ### Unencrypted JSON Body Parameters
 

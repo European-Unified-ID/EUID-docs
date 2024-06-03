@@ -32,7 +32,9 @@ The EUID Operator is the API server in the EUID ecosystem. For a Private Operato
 
 ## EUID Private Operator for AWS Product
 
->NOTE: [European Unified ID Private Operator for AWS](https://aws.amazon.com/marketplace/pp/prodview-hhxu72nnzzmnm) is a free product. The cost displayed on the product page is an estimated cost for the necessary infrastructure.
+:::note
+[European Unified ID Private Operator for AWS](https://aws.amazon.com/marketplace/pp/prodview-hhxu72nnzzmnm) is a free product. The cost displayed on the product page is an estimated cost for the necessary infrastructure.
+:::
 
 By subscribing to the European Unified ID Operator on AWS Marketplace product, you gain access to the following:
 
@@ -139,7 +141,9 @@ Here's what you can customize during or after the [deployment](#deployment):
 
 ### Security Group Policy
 
->NOTE: To avoid passing certificates associated with your domain into the enclave, inbound HTTP is allowed instead of HTTPS. This also avoids the cost of a secure layer, if used in a private network that is internal to your organization. 
+:::note
+To avoid passing certificates associated with your domain into the enclave, inbound HTTP is allowed instead of HTTPS. This also avoids the cost of a secure layer, if used in a private network that is internal to your organization.
+:::
 
 | Port Number | Direction | Protocol | Description |
 | ----------- | --------- | -------- | ------ |
