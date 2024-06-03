@@ -47,7 +47,7 @@ This guide provides information for the last two options.
 
 
 
->TIP: To facilitate the process of establishing client identity using EUID and retrieving EUID tokens, consider using the EUID SDK for JavaScript. For details, see [Server-Side Integration Guide for JavaScript](integration-javascript-server-side.md).
+>TIP: To facilitate the process of establishing client identity using EUID and retrieving EUID tokens, consider using the EUID SDK for JavaScript. For details, see [Client-Server Integration Guide for JavaScript](integration-javascript-server-side.md).
 
 ## Integration Steps
 

@@ -38,7 +38,7 @@ If you're using the integration environment as well as the production environmen
 
 ## API Key and Client Secret
 
-If you're using a server-side implementation (see [EUID Server-Side Integration Guide for Prebid.js](../guides/integration-prebid-server-side.md) or [Server-Side Integration Guide for JavaScript](../guides/integration-javascript-server-side.md), the API key and client secret allow you to connect to the[Operator Service and call API endpoints. These values identify you to the service.
+If you're using a client-server or server-side implementation (see [EUID Client-Server Integration Guide for Prebid.js](../guides/integration-prebid-server-side.md) or [Client-Server Integration Guide for JavaScript](../guides/integration-javascript-server-side.md), the API key and client secret allow you to connect to the[Operator Service and call API endpoints. These values identify you to the service.
 
 Here is some information about API keys and client secrets:
 - One EUID participant can have multiple keys.

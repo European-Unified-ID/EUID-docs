@@ -1,5 +1,5 @@
 ---
-title: EUID Server-Side Integration Guide for Prebid.js
+title: EUID Client-Server Integration Guide for Prebid.js
 sidebar_label: Server-Side Integration for Prebid.js
 pagination_label: EUID Server-Side Integration for Prebid.js
 description: Information about setting up a server-side Prebid.js integration.
@@ -11,7 +11,7 @@ import Link from '@docusaurus/Link';
 import AddPrebidjsToYourSite from '/docs/snippets/_prebid-add-prebidjs-to-your-site.mdx';
 import StoreEUIDTokenInBrowser from '/docs/snippets/_prebid-storing-euid-token-in-browser.mdx';
 
-# EUID Server-Side Integration Guide for Prebid.js
+# EUID Client-Server Integration Guide for Prebid.js
 <!-- 
 This guide includes the following information:
 

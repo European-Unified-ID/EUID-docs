@@ -16,7 +16,7 @@ This documentation is for earlier versions of the EUID SDK for JavaScript. If yo
 
 Use this SDK to facilitate the process of establishing client identity using EUID and retrieving advertising tokens. The following sections describe the high-level [workflow](#workflow-overview) for establishing EUID identity, provide the SDK [API reference](#api-reference), and explain the [EUID cookie format](#euid-cookie-format).
 
-For integration steps for content publishers, see [Server-Side Integration Guide for JavaScript](../guides/integration-javascript-server-side.md).
+For integration steps for content publishers, see [Client-Server Integration Guide for JavaScript](../guides/integration-javascript-server-side.md).
 
 <!-- This guide includes the following information:
 
@@ -96,7 +96,7 @@ The high-level client-side workflow for establishing EUID identity using the SDK
 	- If the advertising token is available, use it to initiate requests for targeted advertising.
 	- If the advertising token is not available, either use untargeted advertising or redirect the user to the data capture with the consent form.
 
-For web integration steps, see [Server-Side Integration Guide for JavaScript](../guides/integration-javascript-server-side.md).
+For web integration steps, see [Client-Server Integration Guide for JavaScript](../guides/integration-javascript-server-side.md).
 
 ### Workflow States and Transitions
 
