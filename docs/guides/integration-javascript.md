@@ -11,7 +11,7 @@ import Link from '@docusaurus/Link';
 
 # EUID Integration Overview for JavaScript
 
-This guide is an overview of integration options for publishers who want to integrate with EUID and generate EUID tokens (advertising tokens) using the SDK for JavaScript.
+This guide is an overview of integration options for publishers who want to integrate with EUID and generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) using the SDK for JavaScript.
 
 For a summary of all web options, including Prebid.js and additional SDK options, see [Web Integration Overview](integration-options-publisher-web.md).
 

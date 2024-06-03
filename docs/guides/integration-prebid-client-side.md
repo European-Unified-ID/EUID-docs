@@ -8,19 +8,12 @@ sidebar_position: 04
 ---
 
 import Link from '@docusaurus/Link';
-
-<!-- ---
-title: EUID Client-Side Integration Guide for Prebid.js
-sidebar_label: Client-Side Integration for Prebid.js
-pagination_label: EUID Client-Side Integration for Prebid.js
-description: Information about setting up a client-side Prebid.js integration.
-hide_table_of_contents: false
-sidebar_position: 04
---- -->
+import AddPrebidjsToYourSite from '/docs/snippets/_prebid-add-prebidjs-to-your-site.mdx';
+import StoreEUIDTokenInBrowser from '/docs/snippets/_prebid-storing-euid-token-in-browser.mdx';
 
 # EUID Client-Side Integration Guide for Prebid.js
 
-This guide is for publishers who have access to personal data<!-- personal data was glossary link --> (email address) on the client side and want to integrate with EUID and generate EUID tokens<!-- EUID tokens was glossary link --> (advertising tokens) to be passed by Prebid.js in the RTB bidstream.
+This guide is for publishers who have access to <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> (email address) on the client side and want to integrate with EUID and generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) to be passed by Prebid.js in the RTB bidstream.
 
 To integrate with EUID using Prebid.js, you'll need to make changes to the HTML and JavaScript on your site. No server-side work is required if you follow this guide.
 
@@ -64,24 +57,19 @@ You'll need to complete the following steps:
 
 Complete the EUID account setup by following the steps described in the [Account Setup](../getting-started/gs-account-setup.md) page. As part of the account setup process for a client-side implementation, you'll need to provide a list of domain names for the sites that you'll be using with Prebid.js.
 
->TIP: Only root-level domains are required for account setup. For example, if you're going to use EUID with Prebid.js on example.com, shop.example.com, and example.org, you only need to provide the domain names example.com and example.org.
+:::tip
+Only root-level domains are required for account setup. For example, if you're going to use EUID with Prebid.js on example.com, shop.example.com, and example.org, you only need to provide the domain names example.com and example.org.
+:::
 
-
-When account setup is complete, you'll receive a public key and subscription ID. These values are unique to you, and you'll use them to configure the EUID module. For details, see [Subscription ID and Public Key](../getting-started/gs-credentials.md#subscription-id-and-public-key).
+When account setup is complete, you'll receive a public key and Subscription ID. These values are unique to you, and you'll use them to configure the EUID module. For details, see [Subscription ID and Public Key](../getting-started/gs-credentials.md#subscription-id-and-public-key).
 
 ### Add Prebid.js to Your Site
 
-To add Prebid.js to your site, follow the instructions in [Getting Started for Developers](https://docs.prebid.org/dev-docs/getting-started.html) in the Prebid.js documentation. 
-
-When you download the Prebid.js package, add the EUID module by checking the box next to the module named **European Unified ID**, listed under the section **User ID Modules**.
-
-When you've added Prebid.js to your site and confirmed that it's working properly, you're ready to configure the EUID module.
-
->TIP: To make sure that the EUID module is installed, find the string `euidIdSystem` in the [`pbjs.installedModules` array](https://docs.prebid.org/dev-docs/publisher-api-reference/installedModules.html).
+<AddPrebidjsToYourSite />
 
 ### Configure the EUID Module
 
-To configure the EUID module, call `pbjs.setConfig` with an object containing the **public key** and **subscription ID** that you received during account setup, as well as the user's hashed or unhashed email address.
+To configure the EUID module, call `pbjs.setConfig` with an object containing the **public key** and **Subscription ID** that you received during account setup, as well as the user's hashed or unhashed email address.
 
 Once it's configured, the EUID module generates an EUID token for the user and stores it in the user's browser. The module automatically refreshes the token as needed as long as your site is open in the user's browser.
 
@@ -116,29 +104,13 @@ const baseConfig = {
 };
 ```
 
->NOTE: This example assumes that you're using the EUID production environment. During integration testing, use the EUID integration environment by setting `params.euidApiBase` to `'https://integ.euid.eu/'`. Tokens from the EUID integration environment are not valid for passing to the bidstream. For the integration environment, you will have different **subscription ID** and **public key** values.
+:::note
+This example assumes that you're using the EUID production environment. During integration testing, use the EUID integration environment by setting `params.euidApiBase` to `'https://integ.euid.eu/'`. Tokens from the EUID integration environment are not valid for passing to the bidstream. For the integration environment, you will have different **Subscription ID** and **public key** values.
+:::
 
 ## Storing the EUID Token in the Browser
 
-By default, the EUID module stores data using local storage. To use a cookie instead, set `params.storage` to `cookie`, as shown in the following example.
-
-For details, see [European Unified ID Configuration](https://docs.prebid.org/dev-docs/modules/userid-submodules/euid.html#european-unified-id-configuration) in the Prebid documentation.
-
-```js
-pbjs.setConfig({ 
-  userSync: { 
-    userIds: [{ 
-      name: 'euid', 
-      params: { 
-        // default value is 'localStorage' 
-        storage: 'cookie'  
-      } 
-    }] 
-  } 
-}); 
-```
-
-The cookie size can be significant, which could be a problem. However, if local storage is not an option, this is one possible approach.
+<StoreEUIDTokenInBrowser />
 
 ## When to Pass Personal Data to the EUID Module
 
@@ -146,7 +118,9 @@ When the EUID module is configured, it checks for an existing EUID token in the 
 
 If there is no existing token, or the token has expired and cannot be refreshed, the EUID module cannot generate a new token without personal data.
 
->TIP: Configure the EUID module with the user's personal data on each page load. This is the recommended approach.
+:::tip
+Configure the EUID module with the user's personal data on each page load. This is the recommended approach.
+:::
 
 In some cases, the user's personal data is not available on page load, and getting the personal data has some associated cost. For example, an API call might be required to fetch the personal data, or the user has to be prompted to provide the personal data.
 
@@ -175,17 +149,14 @@ pbjs.setConfig({
 
 ## Checking the Integration
 
-To check that the EUID module has successfully generated an EUID token, call `pbjs.getUserIds().euid`. There are two possible response value scenarios:
-
-- Response value `pbjs.getUserIds().euid`: A valid EUID token exists in the EUID module.
-- Response value `pbjs.getUserIds().euid.optout`: The user has opted out. The `.euid` object exists but it does not have the form of a token response, and cannot be used for targeted advertising.
+To check that the EUID module has successfully generated an EUID token, call `pbjs.getUserIds().euid`. If a value is returned, a valid EUID token exists in the EUID module.
 
 If there are problems with the integration, here are some steps you can take:
 
 - Check the browser console logs.
-- Check the values for **subscription ID** and **public key**:
+- Check the values for **Subscription ID** and **public key**:
   - Make sure they are exactly the same values that you received from the EUID team.
-  - Check that you have the correct values for the environment you're using. You'll have different **subscription ID** and **public key** values for each [environment](../getting-started/gs-environments.md).
+  - Check that you have the correct values for the environment you're using. You'll have different **Subscription ID** and **public key** values for each [environment](../getting-started/gs-environments.md).
 - Check that you provided the domain name of the site to the EUID team during account setup. If needed, to confirm, ask your EUID contact.
 - Use the browser developer tools to inspect the API calls to the EUID service.
 

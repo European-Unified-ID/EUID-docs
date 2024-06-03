@@ -5,22 +5,15 @@ pagination_label: EUID Integration Overview for Prebid.js
 description: Overview of options for integrating with Prebid.js as part of your EUID implementation.
 hide_table_of_contents: false
 sidebar_position: 04
+
 ---
 
 import Link from '@docusaurus/Link';
-
-<!-- ---
-title: EUID Integration Overview for Prebid.js
-sidebar_label: EUID Integration Overview for Prebid.js
-pagination_label: EUID Integration Overview for Prebid.js
-description: Overview of options for integrating with Prebid.js as part of your EUID implementation.
-hide_table_of_contents: false
-sidebar_position: 04
---- -->
+import StoreEUIDTokenInBrowser from '/docs/snippets/_prebid-storing-euid-token-in-browser.mdx';
 
 # EUID Integration Overview for Prebid.js
 
-This guide is an overview of integration options for publishers who want to integrate with EUID and generate EUID tokens<!-- EUID tokens was glossary link --> (advertising tokens) to be passed by Prebid.js in the RTB bidstream.
+This guide is an overview of integration options for publishers who want to integrate with EUID and generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) to be passed by Prebid.js in the RTB bidstream.
 <!-- 
 It includes the following sections:
 
@@ -43,7 +36,9 @@ EUID provides a Prebid.js module that supports the following:
 
 For additional flexibility, EUID also provides alternative methods for some of the features and complementary products, such as a JavaScript SDK.
 
->CAUTION: EUID is designed to be used only where GDPR applies. The module checks the consent data that's passed in, and operates only if the `gdprApplies` flag is set to `true`.
+:::caution
+EUID is designed to be used only where GDPR applies. The module checks the consent data that's passed in, and operates only if the `gdprApplies` flag is set to `true`.
+:::
 
 ## Generating the EUID Token
 
@@ -62,25 +57,7 @@ The Prebid.js EUID module can automatically refresh the EUID tokens. If you pref
 
 ## Storing the EUID Token in the Browser
 
-By default, the EUID module stores data using local storage. To use a cookie instead, set `params.storage` to `cookie`, as shown in the following example.
-
-For details, see [European Unified ID Configuration](https://docs.prebid.org/dev-docs/modules/userid-submodules/euid.html#european-unified-id-configuration) in the Prebid documentation.
-
-```js
-pbjs.setConfig({ 
-  userSync: { 
-    userIds: [{ 
-      name: 'euid', 
-      params: { 
-        // default value is 'localStorage' 
-        storage: 'cookie'
-      } 
-    }] 
-  } 
-}); 
-```
-
-The cookie size can be significant, which could be a problem. However, if local storage is not an option, this is one possible approach.
+<StoreEUIDTokenInBrowser />
 
 ## Passing the EUID Token to the Bidstream
 

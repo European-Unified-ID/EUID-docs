@@ -8,15 +8,8 @@ sidebar_position: 04
 ---
 
 import Link from '@docusaurus/Link';
-
-<!-- ---
-title: EUID Server-Side Integration Guide for Prebid.js
-sidebar_label: Server-Side Integration for Prebid.js
-pagination_label: EUID Server-Side Integration for Prebid.js
-description: Information about setting up a server-side Prebid.js integration.
-hide_table_of_contents: false
-sidebar_position: 04
---- -->
+import AddPrebidjsToYourSite from '/docs/snippets/_prebid-add-prebidjs-to-your-site.mdx';
+import StoreEUIDTokenInBrowser from '/docs/snippets/_prebid-storing-euid-token-in-browser.mdx';
 
 # EUID Server-Side Integration Guide for Prebid.js
 <!-- 
@@ -49,7 +42,7 @@ This guide includes the following information:
   - [Sample Token](#sample-token)
  -->
 
-This guide is for publishers who have access to personal data<!-- personal data was glossary link (email address) --> on the server side and want to integrate with EUID and generate EUID tokens<!-- EUID tokens was glossary link --> (advertising tokens) to be passed by Prebid.js in the RTB bidstream. 
+This guide is for publishers who have access to <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> on the server side and want to integrate with EUID and generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) to be passed by Prebid.js in the RTB bidstream. 
 
 To integrate with EUID using Prebid.js, you'll need to:
 
@@ -81,13 +74,7 @@ When account setup is complete, you'll receive your unique API key and client se
 
 ## Add Prebid.js to Your Site
 
-To add Prebid.js to your site, follow the instructions in [Getting Started for Developers](https://docs.prebid.org/dev-docs/getting-started.html) in the Prebid.js documentation. 
-
-When you download the Prebid.js package, add the EUID module by checking the box next to the module named **European Unified ID**, listed under the section **User ID Modules**.
-
-When you've added Prebid.js to your site and confirmed that it's working properly, you're ready to configure the EUID module.
-
->TIP: To make sure that the EUID module is installed, find the string `euidIdSystem` in the [`pbjs.installedModules` array](https://docs.prebid.org/dev-docs/publisher-api-reference/installedModules.html).
+<AddPrebidjsToYourSite />
 
 ## Configure the EUID Module
 
@@ -274,25 +261,7 @@ In planning your Prebid implementation, consider the following:
 
 ## Storing the EUID Token in the Browser
 
-By default, the EUID module stores data using local storage. To use a cookie instead, set `params.storage` to `cookie`, as shown in the following example.
-
-For details, see [European Unified ID Configuration](https://docs.prebid.org/dev-docs/modules/userid-submodules/euid.html#european-unified-id-configuration) in the Prebid documentation.
-
-```js
-pbjs.setConfig({ 
-  userSync: { 
-    userIds: [{ 
-      name: 'euid', 
-      params: { 
-        // default value is 'localStorage' 
-        storage: 'cookie'
-      } 
-    }] 
-  } 
-}); 
-```
-
-The cookie size can be significant, which could be a problem. However, if local storage is not an option, this is one possible approach.
+<StoreEUIDTokenInBrowser />
 
 ## Determining Whether the Module Has a Valid Token
 
@@ -321,7 +290,9 @@ if (!pbjs.getUserIds().euid) {
 }
 ```
 
->CAUTION: If you configure a user ID by calling `setConfig` (or any similar function) twice, you will need to call `refreshUserIds` for the user ID submodules, to reinitialize their ID values.
+:::caution
+If you configure a user ID by calling `setConfig` (or any similar function) twice, you will need to call `refreshUserIds` for the user ID submodules, to reinitialize their ID values.
+:::
 
 ## Checking the Integration
 

@@ -1,0 +1,22 @@
+<!-- GWH same section in integration-prebid.md, integration-prebid-client-side.md, 
+and integration-prebid-server-side.md. integration-javascript.md is different -->
+
+By default, the EUID module stores data using local storage. To use a cookie instead, set `params.storage` to `cookie`, as shown in the following example.
+
+For details, see [European Unified ID Configuration](https://docs.prebid.org/dev-docs/modules/userid-submodules/euid.html#european-unified-id-configuration) in the Prebid documentation.
+
+```js
+pbjs.setConfig({ 
+  userSync: { 
+    userIds: [{ 
+      name: 'euid', 
+      params: { 
+        // default value is 'localStorage' 
+        storage: 'cookie'  
+      } 
+    }] 
+  } 
+}); 
+```
+
+The cookie size can be significant, which could be a problem. However, if local storage is not an option, this is one possible approach.
