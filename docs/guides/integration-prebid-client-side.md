@@ -69,7 +69,7 @@ When account setup is complete, you'll receive a public key and Subscription ID.
 
 ### Configure the EUID Module
 
-To configure the EUID module, call `pbjs.setConfig` with an object containing the **public key** and **subscription ID** that you received during account setup, as well as the user's hashed or unhashed email address.
+To configure the EUID module, call `pbjs.setConfig` with an object containing the **public key** and **Subscription ID** that you received during account setup, as well as the user's hashed or unhashed email address.
 
 Once it's configured, the EUID module generates an EUID token for the user and stores it in the user's browser. The module automatically refreshes the token as needed as long as your site is open in the user's browser.
 
@@ -105,7 +105,7 @@ const baseConfig = {
 ```
 
 :::note
-This example assumes that you're using the EUID production environment. During integration testing, use the EUID integration environment by setting `params.euidApiBase` to `'https://integ.euid.eu/'`. Tokens from the EUID integration environment are not valid for passing to the bidstream. For the integration environment, you will have different **subscription ID** and **public key** values.
+This example assumes that you're using the EUID production environment. During integration testing, use the EUID integration environment by setting `params.euidApiBase` to `'https://integ.euid.eu/'`. Tokens from the EUID integration environment are not valid for passing to the bidstream. For the integration environment, you will have different **Subscription ID** and **public key** values.
 :::
 
 ## Storing the EUID Token in the Browser
@@ -149,17 +149,14 @@ pbjs.setConfig({
 
 ## Checking the Integration
 
-To check that the EUID module has successfully generated an EUID token, call `pbjs.getUserIds().euid`. There are two possible response value scenarios:
-
-- Response value `pbjs.getUserIds().euid`: A valid EUID token exists in the EUID module.
-- Response value `pbjs.getUserIds().euid.optout`: The user has opted out. The `.euid` object exists but it does not have the form of a token response, and cannot be used for targeted advertising.
+To check that the EUID module has successfully generated an EUID token, call `pbjs.getUserIds().euid`. If a value is returned, a valid EUID token exists in the EUID module.
 
 If there are problems with the integration, here are some steps you can take:
 
 - Check the browser console logs.
-- Check the values for **subscription ID** and **public key**:
+- Check the values for **Subscription ID** and **public key**:
   - Make sure they are exactly the same values that you received from the EUID team.
-  - Check that you have the correct values for the environment you're using. You'll have different **subscription ID** and **public key** values for each [environment](../getting-started/gs-environments.md).
+  - Check that you have the correct values for the environment you're using. You'll have different **Subscription ID** and **public key** values for each [environment](../getting-started/gs-environments.md).
 - Check that you provided the domain name of the site to the EUID team during account setup. If needed, to confirm, ask your EUID contact.
 - Use the browser developer tools to inspect the API calls to the EUID service.
 
