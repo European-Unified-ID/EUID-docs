@@ -9,16 +9,6 @@ import Link from '@docusaurus/Link';
 
 # EUID Credentials
 
-This page provides information about the different types of credentials you'll need to participate in EUID. It includes:
-
-* [Overview](#overview)
-* [API Key and Client Secret](#api-key-and-client-secret)
-  * [Security of API Key and Client Secret](#security-of-api-key-and-client-secret)
-* [Subscription ID and Public Key](#subscription-id-and-public-key)
-* [Refreshing Credentials](#refreshing-credentials)
-
-## Overview
-
 Each EUID <a href="../intro#participants">participant</a> gets a set of unique credentials. The set of credentials you get is determined by how you are participating in EUID, as shown in the following table.
 
 | Audience | Credentials | Integration |
@@ -27,14 +17,6 @@ Each EUID <a href="../intro#participants">participant</a> gets a set of unique c
 | Participants using a client-side implementation | Both of the following: <ul><li>Subscription ID</li><li>Public key</li></ul> | Integrations using one of these: <ul><li>[EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md)</li><li>[Client-Side Integration Guide for JavaScript](../guides/publisher-client-side.md)</li></ul> |
 
 If you're using the integration environment as well as the production environment, you'll get a separate set of credentials for each environment.
-
-<!-- It includes:
-
-* [API Key and Client Secret](#api-key-and-client-secret)
-  * [Security of API Key and Client Secret](#security-of-api-key-and-client-secret)
-* [Subscription ID and Public Key](#subscription-id-and-public-key)
-* [Refreshing Credentials](#refreshing-credentials)
- -->
 
 ## API Key and Client Secret
 

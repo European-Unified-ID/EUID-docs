@@ -12,35 +12,6 @@ import AddPrebidjsToYourSite from '/docs/snippets/_prebid-add-prebidjs-to-your-s
 import StoreEUIDTokenInBrowser from '/docs/snippets/_prebid-storing-euid-token-in-browser.mdx';
 
 # EUID Client-Server Integration Guide for Prebid.js
-<!-- 
-This guide includes the following information:
-
-- [Prebid.js Version](#prebidjs-version)
-- [EUID Prebid Module Page](#euid-prebid-module-page)
-- [Integration Overview: High-Level Steps](#integration-overview-high-level-steps)
-- [Complete EUID Account Setup](#complete-euid-account-setup)
-- [Add Prebid.js to Your Site](#add-prebidjs-to-your-site)
-- [Configure the EUID Module](#configure-the-euid-module)
-  - [Generating an EUID Token on the Server](#generating-an-euid-token-on-the-server)
-  - [Client Refresh Mode](#client-refresh-mode)
-    - [Client Refresh Mode Response Configuration Options](#client-refresh-mode-response-configuration-options)
-    - [Client Refresh Mode Cookie Example](#client-refresh-mode-cookie-example)
-    - [Configuration](#configuration)
-    - [Client Refresh Mode euidToken Example](#client-refresh-mode-euidtoken-example)
-  - [Server-Only Mode](#server-only-mode)
-    - [Server-Only Mode Cookie Example](#server-only-mode-cookie-example)
-    - [Server-Only Mode Value Example](#server-only-mode-value-example)
-- [Prebid Implementation Notes and Tips](#prebid-implementation-notes-and-tips)
-- [Storing the EUID Token in the Browser](#storing-the-euid-token-in-the-browser)
-- [When to Pass a New Token to the EUID Module](#when-to-pass-a-new-token-to-the-euid-module)
-  - [Passing a New Token: Client Refresh Mode](#passing-a-new-token-client-refresh-mode)
-  - [Passing a New Token: Server-Only Mode](#passing-a-new-token-server-only-mode)
-- [Determining Whether the Module Has a Valid Token](#determining-whether-the-module-has-a-valid-token)
-- [Checking the Integration](#checking-the-integration)
-- [Configuration Parameters for userSync](#configuration-parameters-for-usersync) 
-  - [Configuration Parameter Examples: Value](#configuration-parameter-examples-value)
-  - [Sample Token](#sample-token)
- -->
 
 This guide is for publishers who have access to <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> on the server side and want to integrate with EUID and generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) to be passed by Prebid.js in the RTB bidstream. 
 

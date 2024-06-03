@@ -9,14 +9,7 @@ import Link from '@docusaurus/Link';
 
 # Normalization and Encoding
 
-This page provides information about normalizing and encoding personal data. It's important that, in working with EUID, normalizing and encoding are performed correctly.
-
-It includes the following sections:
-- [Introduction](#introduction)
-- [Types of Personal Data](#types-of-personal-data)
-- [Email Address Normalization](#email-address-normalization)
-- [Email Address Hash Encoding](#email-address-hash-encoding)
-- [Normalization Examples for Email](#normalization-examples-for-email)
+This page provides information about normalizing and encoding <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>. It's important that, in working with EUID, normalizing and encoding are performed correctly.
 
 ## Introduction
 

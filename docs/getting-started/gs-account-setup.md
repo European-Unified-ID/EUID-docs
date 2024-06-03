@@ -9,11 +9,7 @@ import Link from '@docusaurus/Link';
 
 # Account Setup
 
-This page provides general information required for you to get your account set up with EUID:
-* [Contact Info](#contact-info)
-* [Account Setup Details](#account-setup-details)
-* [Credentials](#credentials)
-* [API Version](#api-version)
+This page provides general information required for you to get your account set up with EUID.
 
 ## Contact Info
 

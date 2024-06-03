@@ -11,15 +11,6 @@ import Link from '@docusaurus/Link';
 
 Many different publishers and advertisers use EUID. Different publishers might have different opt-out processes for their individual sites; however, EUID as a whole has very specific opt-out processes that all EUID participants are expected to honor.
 
-<!-- It includes:
-
-* [How Users Can Opt Out of EUID](#how-users-can-opt-out-of-euid)
-* [Results of Opting Out of EUID](#results-of-opting-out-of-euid)
-* [Difference Between Opting Out from a Single Participant and Opting Out of EUID](#difference-between-opting-out-from-a-single-participant-and-opting-out-of-euid)
-* [Opt-Out Is Final](#opt-out-is-final)
-* [Opt-Out Workflow](#opt-out-workflow)
- -->
-
 ## How Users Can Opt Out of EUID
 
 Within the EUID ecosystem, there are two types of opt out:

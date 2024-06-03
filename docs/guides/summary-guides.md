@@ -25,8 +25,9 @@ Integrations fall into these categories:
 
 The following resources are available for publisher integrations.
 
-<!-- >TIP: For a detailed summary of web integration options, see Web Integration Overview ../guides/integration-options-publisher-web.md.
--->
+:::tip
+For a detailed summary of web integration options, see [Web Integration Overview](../guides/integration-options-publisher-web.md).
+:::
 
 | Integration Guide | Content Description |
 | :--- | :--- |
