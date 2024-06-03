@@ -144,7 +144,9 @@ Here's what you need to know about the token auto-refresh:
 
 Constructs a EUID object.
 
->TIP: Instead of calling this function, you can just use the global `__euid` object. 
+:::tip
+Instead of calling this function, you can just use the global `__euid` object.
+:::
 
 ### init(opts: object): void
 
@@ -290,7 +292,10 @@ If the `getAdvertisingTokenAsync()` function is called *after* the initializatio
     .catch(err => { /* advertising token not available */ });
 </script>
 ```
->TIP: You can use this function to be notified of the completion of the SDK for JavaScript initialization from a component that might not be the one that called `init()`.
+
+:::tip
+You can use this function to be notified of the completion of the SDK for JavaScript initialization from a component that might not be the one that called `init()`.
+:::
 
 ### isLoginRequired(): boolean
 

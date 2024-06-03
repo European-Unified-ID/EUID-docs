@@ -47,7 +47,9 @@ This guide provides information for the last two options.
 
 
 
->TIP: To facilitate the process of establishing client identity using EUID and retrieving EUID tokens, consider using the EUID SDK for JavaScript. For details, see [Client-Server Integration Guide for JavaScript](integration-javascript-server-side.md).
+:::tip
+To facilitate the process of establishing client identity using EUID and retrieving EUID tokens, consider using the EUID SDK for JavaScript. For details, see [Client-Server Integration Guide for JavaScript](integration-javascript-server-side.md).
+:::
 
 ## Integration Steps
 
@@ -97,7 +99,9 @@ Use the `POST&nbsp;/token/refresh` endpoint to make sure you always have a valid
 | 3-c | [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) | The EUID service issues a new identity token for users that haven't opted out. |
 | 3-d | N/A| Place the returned `advertising_token` and `refresh_token` in a store tied to a user. You may consider client-side storage like a first-party cookie or server-side storage. |
 
->TIP: Refresh tokens starting from the `refresh_from` timestamp on the identity returned by the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) or [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) calls. 
+:::tip
+Refresh tokens starting from the `refresh_from` timestamp on the identity returned by the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) or [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) calls.
+:::
 
 ### Clear Identity: User Logout
 

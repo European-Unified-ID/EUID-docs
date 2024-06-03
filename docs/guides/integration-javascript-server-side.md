@@ -42,7 +42,9 @@ For a workflow diagram, see [Integration Steps](#integration-steps). See also [F
 
 To facilitate the process of establishing client identity using EUID and retrieving advertising tokens, the web integration steps provided in this guide rely on the EUID SDK for JavaScript. Here's an [example application](https://example-jssdk-integ.uidapi.com/) that illustrates the integration steps described in this guide and the usage of the SDK (currently only for email addresses). For the application documentation, see [SDK Integration Example](https://github.com/IABTechLab/uid2-examples/blob/main/publisher/standard/README.md).
 
->TIP: The first-party cookie and local storage implementation details might change in the future. To avoid potential issues, be sure to rely on the functionality documented in the [EUID SDK for JavaScript API Reference](../sdks/client-side-identity.md#api-reference) for your identity management.
+:::tip
+The first-party cookie and local storage implementation details might change in the future. To avoid potential issues, be sure to rely on the functionality documented in the [EUID SDK for JavaScript API Reference](../sdks/client-side-identity.md#api-reference) for your identity management.
+:::
 
 For integration scenarios for publishers that do not use the EUID SDK for JavaScript, see [Publisher Integration Guide, Server-Only](custom-publisher-integration.md). 
 
@@ -149,7 +151,9 @@ After authentication in step 1-c, which forces the user to accept the rules of e
 
 The SDK invokes the specified [callback function](../sdks/client-side-identity.md#callback-function) (which indicates the identity availability) and makes the established identity available client-side for bidding. 
 
->TIP: Depending on the structure of your code, it might be convenient to combine the callbacks for steps 1-f and 1-g into a single callback function.
+:::tip
+Depending on the structure of your code, it might be convenient to combine the callbacks for steps 1-f and 1-g into a single callback function.
+:::
 
 ### Bid Using EUID Tokens
 
@@ -181,7 +185,9 @@ For an example of what an EUID token might look like in the bidstream, when it's
 You need to consider how you pass the returned advertising token to SSPs. With some other approaches to client-side EUID implementation, such as using `Prebid.js` (see [EUID Integration Overview for Prebid.js](integration-prebid.md)), the implementation includes functions that manage passing the returned advertising token. If you're using the EUID SDK for JavaScript you'll need to manage this yourself.
 :::
 
->TIP: Instead of calling `__euid.getAdvertisingToken()`, you can use the `advertising_token` property of the identity passed to the callback that you set up for step 1-g. The callback will be called every time the identity changes.
+:::tip
+Instead of calling `__euid.getAdvertisingToken()`, you can use the `advertising_token` property of the identity passed to the callback that you set up for step 1-g. The callback will be called every time the identity changes.
+:::
 
 ### Refresh Tokens
 

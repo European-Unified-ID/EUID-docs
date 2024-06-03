@@ -258,7 +258,9 @@ Here's what you need to know about upgrading:
 - Information on the availability of new versions is provided on the [European Unified ID Operator on AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-hhxu72nnzzmnm) page.
 - To upgrade your EUID Operators, create a new CloudFormation stack. For details, see [Deployment](#deployment).
 
->TIP: For a smooth transition, create the new stack first. After the new stack is bootstrapped and ready to serve, delete the old stack. If you are using a load balancer, first get the new instances up and running and then convert the DNS name from the previous one to the new one.
+:::tip
+For a smooth transition, create the new stack first. After the new stack is bootstrapped and ready to serve, delete the old stack. If you are using a load balancer, first get the new instances up and running and then convert the DNS name from the previous one to the new one.
+:::
 
 ## Technical Support
 

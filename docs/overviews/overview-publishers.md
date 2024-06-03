@@ -83,9 +83,9 @@ The following resources are available for publishers to implement EUID:
 
 The following resources are available for publisher web integrations.
 
-<!-- :::tip
+:::tip
 For a detailed summary of web integration options, see [Web Integration Overview](../guides/integration-options-publisher-web.md).
-::: -->
+:::
 
 | Integration Type| Documentation | Content Description |
 | :--- | :--- | :--- |
