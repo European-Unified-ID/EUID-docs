@@ -15,7 +15,7 @@ import Link from '@docusaurus/Link';
 
 This guide is for publishers who want to integrate with EUID and generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) using only JavaScript client-side changes on their website with minimum effort.
 
-This guide does not apply to publishers who want to use a private operator, or who want to generate tokens server-side. Those publishers should follow the [Server-Side Integration Guide for JavaScript](integration-javascript-server-side.md).
+This guide does not apply to publishers who want to use a private operator, or who want to generate tokens server-side. Those publishers should follow the [Client-Server Integration Guide for JavaScript](integration-javascript-server-side.md).
 
 EUID provides an SDK for JavaScript (see [SDK for JavaScript Reference Guide](../sdks/client-side-identity.md)) with the following features:
 
