@@ -13,17 +13,6 @@ import Link from '@docusaurus/Link';
 
 This guide is for publishers who want to generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) for the RTB bidstream, while integrating directly with EUID rather than EUID-enabled single-sign-on or identity providers. 
 
-<!-- It includes the following sections:
-
-- [Introduction](#introduction)
-- [Integration Steps ](#integration-steps)
-  - [Establish Identity: Capture User Data](#establish-identity-capture-user-data)
-  - [Bid Using EUID Tokens](#bid-using-euid-tokens)
-  - [Refresh an EUID Token](#refresh-an-euid-token)
-  - [Clear Identity: User Logout](#clear-identity-user-logout)
-
-- [FAQs](#faqs) -->
-
 ## Introduction
 
 The guide outlines the [basic steps](#integration-steps) that you need to consider if you're building an integration without using a client-side or server-side SDK. For example, you need to decide how to do the following:

@@ -13,23 +13,6 @@ import Link from '@docusaurus/Link';
 
 The EUID Operator is the API server in the EUID ecosystem. For a Private Operator service running in AWS Marketplace, the EUID Operator solution is enhanced with [AWS Nitro](https://aws.amazon.com/ec2/nitro/) Enclave technology. This is an additional security measure to protect EUID information from unauthorized access.
 
-<!-- This guide includes the following information:
-
-- [EUID Private Operator for AWS Product](#euid-private-operator-for-aws-product)
-  -  [Prerequisites](#prerequisites)
-  -  [Resources Created](#resources-created)
-  -  [Customization Options](#customization-options)
-  -  [Security Group Policy](#security-group-policy)
-  -  [VPC Chart](#vpc-chart)
-- [Deployment](#deployment)
-  -  [Stack Details](#stack-details)
-  -  [Stack Configuration Options](#stack-configuration-options)
-- [Creating a Load Balancer](#creating-a-load-balancer)
-- [Checking EUID Operator Status](#checking-euid-operator-status)
-- [Private Operator Attestation Failure](#private-operator-attestation-failure)
-- [Upgrading the EUID Operator](#upgrading-the-euid-operator)
-- [Technical Support](#technical-support) -->
-
 ## EUID Private Operator for AWS Product
 
 >NOTE: [European Unified ID Private Operator for AWS](https://aws.amazon.com/marketplace/pp/prodview-hhxu72nnzzmnm) is a free product. The cost displayed on the product page is an estimated cost for the necessary infrastructure.

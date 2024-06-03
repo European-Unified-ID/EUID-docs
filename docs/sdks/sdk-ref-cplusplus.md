@@ -11,18 +11,6 @@ import Link from '@docusaurus/Link';
 
 You can use the EUID SDK for C++ (Server-Side) to facilitate decrypting of EUID tokens to access the raw EUID. 
 
-<!-- This guide includes the following information:
-
-- [Overview](#overview)
-- [Functionality](#functionality)
-- [Version](#version)
-- [GitHub Repository/Binary](#github-repositorybinary)
-- [Initialization](#initialization)
-- [Interface](#interface)
-  - [Response Content](#response-content)
-  - [Response Statuses](#response-statuses)
-- [FAQs](#faqs) -->
-
 ## Overview
 
 The functions outlined here define the information that you'll need to configure or can retrieve from the library. The parameters and property names defined below are pseudocode. Actual parameters and property names vary by language but will be similar to the information outlined here.

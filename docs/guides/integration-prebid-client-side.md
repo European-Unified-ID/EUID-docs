@@ -17,20 +17,6 @@ This guide is for publishers who have access to <Link href="../ref-info/glossary
 
 To integrate with EUID using Prebid.js, you'll need to make changes to the HTML and JavaScript on your site. No server-side work is required if you follow this guide.
 
-<!-- 
-This guide includes the following information:
-
-- [Prebid.js Version](#prebidjs-version)
-- [Integration Example](#integration-example)
-- [Integration Overview: High-Level Steps](#integration-overview-high-level-steps)
-   - [Complete EUID Account Setup](#complete-euid-account-setup)
-   - [Add Prebid.js to Your Site](#add-prebidjs-to-your-site)
-   - [Configure the EUID Module](#configure-the-euid-module)
-- [Storing the EUID Token in the Browser](#storing-the-euid-token-in-the-browser)
-- [When to Pass Personal Data to the EUID Module](#when-to-pass-personal-data-to-the-euid-module)
-- [Checking the Integration](#checking-the-integration)
- -->
-
 ## Prebid.js Version
 
 This implementation requires Prebid.js version 8.42.0 or later. For version information, see [https://github.com/prebid/Prebid.js/releases](https://github.com/prebid/Prebid.js/releases).

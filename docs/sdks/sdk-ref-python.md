@@ -19,21 +19,6 @@ You can use the EUID SDK for Python (Server-Side) to facilitate:
 This SDK is valid for UID2 and EUID. Some of the code naming and URLs are labelled as UID2. These apply equally to EUID.
 :::
 
-<!-- 
-This guide includes the following information:
-
-- [Functionality](#functionality)
-- [Version](#version)
-- [GitHub Repository/Package](#github-repositorypackage)
-- [Initialization](#initialization)
-- [Interface](#interface)
-  - [Decryption Response Content](#decryption-response-content)
-  - [Decryption Response Statuses](#decryption-response-statuses)
-- [Usage for Publishers](#usage-for-publishers)
-- [Usage for DSPs](#usage-for-dsps)
-- [FAQs](#faqs)
- -->
-
 ## Functionality
 
 This SDK simplifies integration with EUID for any DSPs who are using Python for their server-side coding. The following table shows the functions it supports.

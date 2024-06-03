@@ -13,24 +13,6 @@ As a publisher, there are many ways that you can integrate with EUID to generate
 
 On this page, you'll find a high-level overview of integration steps and integration options, with links to additional information for each option.
 
-<!-- It includes:
-
-* [Integration Steps: Summary](#integration-steps-summary)
-* [Integration Options: Client Side](#integration-options-client-side)
-* [Integration Options: Server Side](#integration-options-server-side)
-* [Options to Generate/Refresh EUID Token](#options-to-generaterefresh-euid-token)
-* [Pass the Token into the Bidstream](#options-to-pass-the-token-into-the-bidstream)
-* [Client-Side or Client-Server Integration?](#client-side-or-client-server-integration)
-* [Integration Using Prebid](#integration-using-prebid)
-* [IntegrationDetails](#integration-details)
-  * [Prebid.js 8.21.0 or Later](#prebidjs-8210-or-later)
-  * [EUID JavaScript SDK + Prebid.js 7.53.0 or later](#euid-sdk-for-javascript--prebidjs-7530-or-later)
-  * [EUID SDK for JavaScript](#euid-sdk-for-javascript)
-  * [EUID SDK for Java](#euid-sdk-for-java)
-  * [EUID SDK for Python](#euid-sdk-for-python)
-  * [Direct integration (API endpoints)](#direct-integration-api-endpoints)
- -->
-
 ## Key Integration Steps
 
 At a high level, to integrate with EUID, you'll implement these three key activities:

@@ -14,17 +14,7 @@ import StoreEUIDTokenInBrowser from '/docs/snippets/_prebid-storing-euid-token-i
 # EUID Integration Overview for Prebid.js
 
 This guide is an overview of integration options for publishers who want to integrate with EUID and generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) to be passed by Prebid.js in the RTB bidstream.
-<!-- 
-It includes the following sections:
 
-- [Introduction](#introduction)
-- [Generating the EUID Token](#generating-the-euid-token)
-- [Refreshing the EUID Token](#refreshing-the-euid-token)
-- [Storing the EUID Token in the Browser](#storing-the-euid-token-in-the-browser)
-- [Passing the EUID Token to the Bidstream](#passing-the-euid-token-to-the-bidstream)
-- [Integration Overview: High-Level Steps](#integration-overview-high-level-steps)
-
- -->
 ## Introduction
 
 EUID provides a Prebid.js module that supports the following:

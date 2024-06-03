@@ -18,29 +18,6 @@ Use this SDK to facilitate the process of establishing client identity using EUI
 
 For integration steps for content publishers, see [Client-Server Integration Guide for JavaScript](../guides/integration-javascript-server-side.md).
 
-<!-- This guide includes the following information:
-
-- [Functionality](#functionality)
-- [API Permissions](#api-permissions)
-- [SDK Version](#sdk-version)
-- [GitHub Repository/Binary](#github-repositorybinary)
-- [Terminology](#terminology)
-- [Include the SDK Script](#include-the-sdk-script)
-- [Workflow Overview](#workflow-overview)
-   - [Workflow States and Transitions](#workflow-states-and-transitions)
-   - [Background Token Auto-Refresh](#background-token-auto-refresh)
- - [API Reference](#api-reference)
-   - [constructor()](#constructor)
-   - [init()](#initopts-object-void)
-   - [getAdvertisingToken()](#getadvertisingtoken-string)
-   - [getAdvertisingTokenAsync()](#getadvertisingtokenasync-promise)
-   - [isLoginRequired()](#isloginrequired-boolean)
-   - [disconnect()](#disconnect-void)
-   - [abort()](#abort-void)
-- [EUID Cookie Format](#euid-cookie-format)
-  - [Properties](#properties)
-  - [Contents Structure](#contents-structure) -->
-
 ## Functionality
 
 This SDK simplifies integration with EUID for any publishers who want to support EUID. The following table shows the functions it supports.

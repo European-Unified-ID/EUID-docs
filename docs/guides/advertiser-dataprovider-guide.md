@@ -12,16 +12,6 @@ import Link from '@docusaurus/Link';
 
 This guide covers integration steps for organizations that collect user data and push it to other EUID participants. Data collectors include advertisers, data on-boarders, measurement providers, identity graph providers, third-party data providers, and any other organizations that send data to other participants.
 
-<!-- It includes the following sections:
-
-* [Integration Steps](#integration-steps)
-   - [1: Retrieve a raw EUID for personal data using the identity map endpoints](#1-retrieve-a-raw-euid-for-personal-data-using-the-identity-map-endpoint)
-   - [2: Send stored raw EUIDs to DSPs to create audiences](#2-send-stored-raw-euids-to-dsps-to-create-audiences)
-   - [3: Monitor for salt bucket rotations related to your stored raw EUIDs](#3-monitor-for-salt-bucket-rotations-related-to-your-stored-raw-euids)
-* [Use an incremental process to continuously update raw EUIDs](#use-an-incremental-process-to-continuously-update-raw-euids)
-* [Check Opt-Out Status](#check-opt-out-status)
-* [FAQs](#faqs) -->
-
 ## Integration Steps
 
 The following diagram outlines the steps that data collectors must complete to map <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to EUID identifiers for audience building and targeting.

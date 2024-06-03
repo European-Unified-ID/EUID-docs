@@ -17,17 +17,6 @@ This guide is intended for publishers with web assets who want to generate ident
 
 For technical details about the SDK, see [EUID SDK for JavaScript Reference Guide](../sdks/client-side-identity.md).
 
-It includes the following sections:
-
-<!-- - [Sample Implementation Website](#sample-implementation-website) -->
-- [Introduction](#introduction)
-- [Integration Steps](#integration-steps)
-  - [Establish identity: capture user data](#establish-identity-capture-user-data)
-  - [Bid Using EUID Tokens](#bid-using-euid-tokens)
-  - [Refresh Tokens](#refresh-tokens)
-  - [Clear Identity: User Logout](#clear-identity-user-logout)
-- [FAQs](#faqs)
-
 <!-- ## Sample Implementation Website
 
 For an example application, see the UID2 Google Secure Signals with SDK v3 example:
