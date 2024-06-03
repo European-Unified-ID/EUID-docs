@@ -20,7 +20,7 @@ On this page, you'll find a high-level overview of integration steps and integra
 * [Integration Options: Server Side](#integration-options-server-side)
 * [Options to Generate/Refresh EUID Token](#options-to-generaterefresh-euid-token)
 * [Pass the Token into the Bidstream](#options-to-pass-the-token-into-the-bidstream)
-* [Client-Side or Server-Side Integration?](#client-side-or-server-side-integration)
+* [Client-Side or Client-Server Integration?](#client-side-or-client-server-integration)
 * [Integration Using Prebid](#integration-using-prebid)
 * [IntegrationDetails](#integration-details)
   * [Prebid.js 8.21.0 or Later](#prebidjs-8210-or-later)

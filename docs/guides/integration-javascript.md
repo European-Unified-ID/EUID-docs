@@ -25,7 +25,7 @@ EUID provides an SDK for JavaScript that supports the following:
 
 For additional flexibility, EUID also provides alternative methods for some of the features and complementary products, such as a Prebid integration.
 
-## Client-Side or Server-Side Integration
+## Client-Side or Client-Server Integration
 
 The options for integrating with EUID using the SDK for JavaScript are summarized in the following table. Choose the option that's best for you.
 
@@ -38,7 +38,7 @@ The options for integrating with EUID using the SDK for JavaScript are summarize
 
 Depending on access to personal data, there are two methods to generate EUID tokens using the SDK for JavaScript: client-side or server-side.
 
-From the table in [Client-Side or Server-Side Integration](#client-side-or-server-side-integration), determine which option is best for you, and then follow the applicable integration guide.
+From the table in [Client-Side or Client-Server Integration](#client-side-or-client-server-integration), determine which option is best for you, and then follow the applicable integration guide.
 
 ## Refreshing the EUID Token
 
