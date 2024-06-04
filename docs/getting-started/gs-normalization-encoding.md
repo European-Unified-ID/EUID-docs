@@ -27,7 +27,9 @@ EUID supports the following type of personal data:
 
 If you send unhashed email addresses to the EUID Operator Service, the service normalizes the email addresses and then hashes them. If you want to hash the email addresses yourself before sending them, you must normalize them before you hash them.
 
-> IMPORTANT: Normalizing before hashing ensures that the generated EUID value will always be the same, so that the data can be matched. If you do not normalize before hashing, this might result in a different EUID, reducing the effectiveness of targeted advertising.
+:::important
+Normalizing before hashing ensures that the generated EUID value will always be the same, so that the data can be matched. If you do not normalize before hashing, this might result in a different EUID, reducing the effectiveness of targeted advertising.
+:::
 
 To normalize an email address, complete the following steps:
 
@@ -42,7 +44,9 @@ To normalize an email address, complete the following steps:
     
        For example, normalize `janedoe+home@gmail.com` to `janedoe@gmail.com`.
 
->IMPORTANT: Make sure that the normalized email is UTF-8, not another encoding system such as UTF-16.
+:::warning
+Make sure that the normalized email is UTF-8, not another encoding system such as UTF-16.
+:::
 
 For examples of various scenarios, see [Normalization Examples for Email](#normalization-examples-for-email).
 
@@ -56,7 +60,9 @@ An email hash is a Base64-encoded SHA-256 hash of a normalized email address. Th
 | SHA-256 hash of normalized email address | `b4c9a289323b21a01c3e940f150eb9b8c542587f1abfd8f0e1cc1ffc5e475514` | This 64-character string is a hex-encoded representation of the 32-byte SHA-256.|
 | Hex to Base64 SHA-256 encoding of normalized email address | `tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ=` | This 44-character string is a Base64-encoded representation of the 32-byte SHA-256.<br/>WARNING: The SHA-256 hash string in the example above is a hex-encoded representation of the hash value. You must Base64-encode the raw bytes of the hash or use a Base64 encoder that takes a hex-encoded value as input.<br/>Use this encoding for `email_hash` values sent in the request body. |
 
->WARNING: When applying Base64 encoding, be sure to Base64-encode the raw bytes of the hash or use a Base64 encoder that takes a hex-encoded value as input.
+:::important
+When applying Base64 encoding, be sure to Base64-encode the raw bytes of the hash or use a Base64 encoder that takes a hex-encoded value as input.
+:::
 
 For additional examples, see [Normalization Examples for Email](#normalization-examples-for-email).
 

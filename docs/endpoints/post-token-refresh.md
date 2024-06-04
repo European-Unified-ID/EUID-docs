@@ -13,7 +13,9 @@ Generate a new EUID token by sending the corresponding unexpired refresh token, 
 
 Used by: This endpoint is used mainly by publishers.
 
->NOTE: This endpoint can be called from the client side (for example, a browser or a mobile app) because it does not require using an API key.
+:::note
+This endpoint can be called from the client side (for example, a browser or a mobile app) because it does not require using an API key.
+:::
 
 ## Request Format 
 
@@ -32,7 +34,9 @@ Here's what you need to know about this endpoint:
 | :--- | :--- | :--- | :--- |
 | `{environment}` | string | Required | Testing environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu`<br/>For a full list, including regional operators, see [Environments](../getting-started/gs-environments.md). |
 
->NOTE: The integration environment and the production environment require different API keys.
+:::note
+The integration environment and the production environment require different <Link href="../ref-info/glossary-uid#gl-api-key">API keys</Link>.
+:::
 
 #### Testing Notes
 

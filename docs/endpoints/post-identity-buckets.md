@@ -17,7 +17,9 @@ Used by: This endpoint is used mainly by advertisers and data providers. For det
 
 `POST '{environment}/v2/identity/buckets'`
 
->IMPORTANT: You must encrypt all request using your secret. For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
+:::important
+You must encrypt all requests using your secret. For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
+:::
 
 ### Path Parameters
 
@@ -25,11 +27,15 @@ Used by: This endpoint is used mainly by advertisers and data providers. For det
 | :--- | :--- | :--- | :--- |
 | `{environment}` | string | Required | Testing environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu`<br/>For a full list, including regional operators, see [Environments](../getting-started/gs-environments.md). |
 
->NOTE: The integration environment and the production environment require different API keys.
+:::note
+The integration environment and the production environment require different <Link href="../ref-info/glossary-uid#gl-api-key">API keys</Link>.
+:::
 
 ### Unencrypted JSON Body Parameters
 
->IMPORTANT: You must include the following parameter as a key-value pair in the JSON body of a request when encrypting it.
+:::important
+You must include the following parameter as a key-value pair in the JSON body of a request when encrypting it.
+:::
 
 | Body Parameter | Data Type | Attribute | Description | Format |
 | :--- | :--- | :--- | :--- | :--- |

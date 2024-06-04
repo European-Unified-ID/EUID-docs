@@ -56,7 +56,9 @@ Complete the EUID account setup by following the steps described in the [Account
 
 When account setup is complete, you'll receive a **public key** and **subscription ID**. These values are unique to you, and you'll use them to configure the EUID module.
 
->TIP: Only root-level domains are required for account setup. For example, if you're going to use the EUID SDK for JavaScript on example.com, shop.example.com, and example.org, you only need to provide the domain names example.com and example.org.
+:::tip
+Only root-level domains are required for account setup. For example, if you're going to use the EUID SDK for JavaScript on example.com, shop.example.com, and example.org, you only need to provide the domain names example.com and example.org.
+:::
 
 ## Add SDK for JavaScript to Your Site
 
@@ -108,7 +110,10 @@ __euid.init({
   baseUrl: "https://integ.euid.eu",
 });
 ```
->NOTE: Tokens from the EUID integration environment are not valid for passing to the bidstream. For the integration environment, you will have different **subscription ID** and **public key** values.
+
+:::note
+Tokens from the EUID integration environment are not valid for passing to the bidstream. For the integration environment, you will have different **subscription ID** and **public key** values.
+:::
 
 ### Optional: Reduce Latency by Setting the API Base URL for the Production Environment
 
@@ -212,7 +217,9 @@ In this scenario:
 
 After calling one of the methods listed in [Configure the SDK for JavaScript](#configure-the-sdk-for-javascript) successfully, an identity is generated and stored in local storage, under the key `EUID-sdk-identity`. The SDK refreshes the EUID token periodically.
 
->WARNING: The format of the object stored in local storage could change without notice. We recommend that you do **not** read and update the object in local storage directly. 
+:::warning
+The format of the object stored in local storage could change without notice. We recommend that you do **not** read and update the object in local storage directly.
+:::
 
 ## Example Integration Code and When to Pass Personal Data to the EUID SDK
 

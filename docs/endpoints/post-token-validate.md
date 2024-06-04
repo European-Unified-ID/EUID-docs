@@ -12,14 +12,17 @@ Validate that an advertising token matches the specified hashed or unhashed emai
 
 Used by: This endpoint is used mainly by publishers.
 
->NOTE: This endpoint is intended primarily for testing and troubleshooting new integrations.
+:::note
+This endpoint is intended primarily for testing and troubleshooting new integrations.
+:::
 
 ## Request Format 
 
 `POST '{environment}/v2/token/validate'`
 
->IMPORTANT: You must encrypt all requests, using your secret key. For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
-
+:::important
+You must encrypt all requests, using your secret key. For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
+:::
 
 ### Path Parameters
 
@@ -27,7 +30,9 @@ Used by: This endpoint is used mainly by publishers.
 | :--- | :--- | :--- | :--- |
 | `{environment}` | string | Required | Testing environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu`<br/>For a full list, including regional operators, see [Environments](../getting-started/gs-environments.md). |
 
->NOTE: The integration environment and the production environment require different API keys.
+:::note
+The integration environment and the production environment require different <Link href="../ref-info/glossary-uid#gl-api-key">API keys</Link>.
+:::
 
 ### Unencrypted JSON Body Parameters
 
@@ -44,7 +49,9 @@ Used by: This endpoint is used mainly by publishers.
 
 The following are unencrypted JSON request body examples for each parameter, which you need to include in your token validation requests:
 
->NOTE: The advertising tokens in these examples are fictitious, for illustrative purposes only. The values provided are not real values.
+:::note
+The advertising tokens in these examples are fictitious, for illustrative purposes only. The values provided are not real values.
+:::
 
 ```json
 {

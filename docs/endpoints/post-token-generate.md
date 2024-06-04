@@ -12,7 +12,11 @@ Requests an EUID token generated from the email address provided by a user with 
 
 Used by: This endpoint is used mainly by publishers.
 
->IMPORTANT: Be sure to call this endpoint only when you have obtained legal basis to convert the user’s personal data to EUID tokens for targeted advertising. The `optout_check` parameter, required with a value of `1`, checks whether the user has opted out.
+:::important
+Be sure to call this endpoint only when you have obtained legal basis to convert the user’s personal data to EUID tokens for targeted advertising. The `optout_check` parameter, required with a value of `1`, checks whether the user has opted out.
+:::
+
+Rather than calling this endpoint directly, you could use one of the SDKs to manage it for you. For a summary of options, see [SDKs: Summary](../sdks/summary-sdks.md).
 
 ## Request Format 
 
@@ -28,11 +32,15 @@ Here's what you need to know about this endpoint requests:
 | :--- | :--- | :--- | :--- |
 | `{environment}` | string | Required | Testing environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu`<br/>For a full list, including regional operators, see [Environments](../getting-started/gs-environments.md). |
 
->NOTE: The integration environment and the production environment require different API keys.
+:::note
+The integration environment and the production environment require different <Link href="../ref-info/glossary-uid#gl-api-key">API keys</Link>.
+:::
 
 ### Unencrypted JSON Body Parameters
 
->IMPORTANT: You must include only **one** of the following two conditional parameters, plus the required `optout_check` parameter with a value of `1`, as key-value pairs in the JSON body of the request when encrypting it.
+:::important
+You must include only **one** of the following two conditional parameters, plus the required `optout_check` parameter with a value of `1`, as key-value pairs in the JSON body of the request when encrypting it.
+:::
 
 | Body Parameter | Data Type | Attribute | Description | 
 | :--- | :--- | :--- | :--- |
@@ -43,7 +51,9 @@ Here's what you need to know about this endpoint requests:
 
 ### Request Examples
 
->IMPORTANT: To ensure that the API key used to access the service remains secret, the `POST&nbsp;/token/generate` endpoint must be called from the server side, unlike the [POST&nbsp;/token/refresh](post-token-refresh.md), which does not require using an API key.
+:::important
+To ensure that the API key used to access the service remains secret, the `POST&nbsp;/token/generate` endpoint must be called from the server side, unlike the [POST&nbsp;/token/refresh](post-token-refresh.md), which does not require using an API key.
+:::
 
 The following are unencrypted JSON request body examples for each parameter, one of which you should include in your token generation requests:
 

@@ -183,7 +183,9 @@ If you're using server-only integration (see [Publisher Integration Guide, Serve
    identity_map_response = client.generate_identity_map(IdentityMapInput.from_emails(["email1@example.com", "email2@example.com"]))
    ```
 
->Note: The SDK hashes input values before sending them. This ensures that raw email addresses do not leave your server.
+:::note
+The SDK hashes input values before sending them. This ensures that raw email addresses do not leave your server.
+:::
 
 3. Retrieve the mapped and unmapped results as follows:
    ```py

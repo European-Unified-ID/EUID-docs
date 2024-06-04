@@ -15,7 +15,9 @@ The EUID Operator is the API server in the EUID ecosystem. For a Private Operato
 
 ## EUID Private Operator for AWS Product
 
->NOTE: [European Unified ID Private Operator for AWS](https://aws.amazon.com/marketplace/pp/prodview-hhxu72nnzzmnm) is a free product. The cost displayed on the product page is an estimated cost for the necessary infrastructure.
+:::note
+[European Unified ID Private Operator for AWS](https://aws.amazon.com/marketplace/pp/prodview-hhxu72nnzzmnm) is a free product. The cost displayed on the product page is an estimated cost for the necessary infrastructure.
+:::
 
 By subscribing to the European Unified ID Operator on AWS Marketplace product, you gain access to the following:
 
@@ -33,7 +35,7 @@ To subscribe and deploy one or more EUID Operators on AWS, complete the followin
 
 #### Minimal IAM Role Privileges
 
->IMPORTANT: To succeed in a one-click deployment, your AWS account must have the privileges to run the following actions:
+To succeed in a one-click deployment, your AWS account **must** have the privileges to run the following actions:
 
 ```json
 {
@@ -122,7 +124,9 @@ Here's what you can customize during or after the [deployment](#deployment):
 
 ### Security Group Policy
 
->NOTE: To avoid passing certificates associated with your domain into the enclave, inbound HTTP is allowed instead of HTTPS. This also avoids the cost of a secure layer, if used in a private network that is internal to your organization. 
+:::note
+To avoid passing certificates associated with your domain into the enclave, inbound HTTP is allowed instead of HTTPS. This also avoids the cost of a secure layer, if used in a private network that is internal to your organization.
+:::
 
 | Port Number | Direction | Protocol | Description |
 | ----------- | --------- | -------- | ------ |
@@ -237,7 +241,9 @@ Here's what you need to know about upgrading:
 - Information on the availability of new versions is provided on the [European Unified ID Operator on AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-hhxu72nnzzmnm) page.
 - To upgrade your EUID Operators, create a new CloudFormation stack. For details, see [Deployment](#deployment).
 
->TIP: For a smooth transition, create the new stack first. After the new stack is bootstrapped and ready to serve, delete the old stack. If you are using a load balancer, first get the new instances up and running and then convert the DNS name from the previous one to the new one.
+:::tip
+For a smooth transition, create the new stack first. After the new stack is bootstrapped and ready to serve, delete the old stack. If you are using a load balancer, first get the new instances up and running and then convert the DNS name from the previous one to the new one.
+:::
 
 ## Technical Support
 
