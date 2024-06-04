@@ -250,7 +250,7 @@ At any time after `init` has completed, you can call [`setIdentity`](#setidentit
 ## API Reference
 
 :::info
-All interactions with the EUID SDK for JavaScript are done through the global `__euid` object, which is an instance of the `EUID` class. All of the following JavaScript functions are members of the `EUID` class.
+All interactions with the EUID SDK for JavaScript are done through the global `__euid` object, which is an instance of the `EUID` class. All of the following JavaScript functions are members of the `EUID` class:
 :::
 
 - [constructor()](#constructor)

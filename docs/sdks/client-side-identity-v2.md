@@ -130,7 +130,7 @@ Here's what you need to know about the token auto-refresh:
 
 ## API Reference
 
-All interactions with the Client-Side JavaScript SDK are done through the global `__euid` object, which is a member of the `EUID` class. All of the following JavaScript functions are members of the `EUID` class. 
+All interactions with the Client-Side JavaScript SDK are done through the global `__euid` object, which is a member of the `EUID` class. All of the following JavaScript functions are members of the `EUID` class:
 
 - [constructor()](#constructor)
 - [init()](#initopts-object-void)
