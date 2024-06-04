@@ -18,7 +18,7 @@ Used by: This endpoint is used mainly by advertisers and data providers. For det
 `POST '{environment}/v2/identity/buckets'`
 
 :::important
-You must encrypt all request using your secret. For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
+You must encrypt all requests using your secret. For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
 :::
 
 ### Path Parameters
