@@ -20,7 +20,7 @@ All EUID endpoints use the same base URL.
 
 For example, https://integ.euid.eu/v2/token/generate
 
-NOTES:
+Notes:
 
 - All EUID endpoints use the same base URL.
 - The integration environment and the production environment require different <Link href="../ref-info/glossary-uid#gl-api-key">API keys</Link>.

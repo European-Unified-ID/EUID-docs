@@ -52,7 +52,7 @@ To subscribe and deploy one or more EUID Operators on AWS, complete the followin
 
 #### Minimal IAM Role Privileges
 
->IMPORTANT: To succeed in a one-click deployment, your AWS account must have the privileges to run the following actions:
+To succeed in a one-click deployment, your AWS account **must** have the privileges to run the following actions:
 
 ```json
 {

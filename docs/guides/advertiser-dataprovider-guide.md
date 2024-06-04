@@ -53,7 +53,9 @@ A raw EUID is an identifier for a user at a specific moment in time. The raw EUI
 
 Even though each salt bucket is updated approximately once a year, individual bucket updates are spread over the year. Approximately 1/365th of all salt buckets are rotated daily.
 
->IMPORTANT: To ensure that your integration has the current raw EUIDs, check salt bucket rotation for active users every day.
+:::important
+To ensure that your integration has the current raw EUIDs, check salt bucket rotation for active users every day.
+:::
 
 | Step | Endpoint | Description |
 | --- | --- | --- |
