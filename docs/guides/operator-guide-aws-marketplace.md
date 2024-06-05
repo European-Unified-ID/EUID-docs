@@ -8,12 +8,13 @@ sidebar_position: 17
 ---
 
 import Link from '@docusaurus/Link';
+import AttestFailure from '/docs/snippets/_private-operator-attest-failure.mdx';
 
 # EUID Private Operator for AWS Integration Guide
 
-The EUID Operator is the API server in the EUID ecosystem. For a Private Operator service running in AWS Marketplace, the EUID Operator solution is enhanced with [AWS Nitro](https://aws.amazon.com/ec2/nitro/) Enclave technology. This is an additional security measure to protect EUID information from unauthorized access.
+The EUID Operator is the API server in the EUID ecosystem. For a Private Operator service running in AWS Marketplace, the EUID Operator solution is enhanced with [AWS Nitro](https://aws.amazon.com/ec2/nitro/) Enclave technology. This is an additional security measure to help protect EUID information from unauthorized access.
 
-## EUID Private Operator for AWS Product
+## EUID Private Operator for AWS
 
 :::note
 [European Unified ID Private Operator for AWS](https://aws.amazon.com/marketplace/pp/prodview-hhxu72nnzzmnm) is a free product. The cost displayed on the product page is an estimated cost for the necessary infrastructure.
@@ -145,16 +146,16 @@ The following diagram illustrates the virtual private cloud that hosts private o
 To deploy European Unified ID Operator on AWS Marketplace, complete the following steps:
 
 1. Subscribe to [European Unified ID Operator on AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-hhxu72nnzzmnm). It might take several minutes before AWS completes your subscription.
-2. Click **Configuration**.
+2. Click **Configuration** and then specify configuration values.
 3. On the Configuration page, click **Launch** and then select the **Launch CloudFormation** action.
-4. In the Create stack wizard, specify the template and then click **Next**. The S3 path for the template file is automatically filled in.
+4. In the Create Stack wizard, specify the template and then click **Next**. The S3 path for the template file is automatically filled in.
 5. Fill in the [stack details](#stack-details) and then click **Next**.
 6. Configure the [stack options](#stack-configuration-options) and then click **Next**.
 7. Review the information you have entered, and make changes if needed.
 8. If you are prompted for permission to create IAM roles, select the **I acknowledge that AWS CloudFormation might create IAM resources** checkbox.
 9. Click **Create stack**.
 
-It takes several minutes for the stack to be created. When you see an Auto Scaling Group (ASG) created, you can select it and check the EC2 instances (by default, there is only one instance to start with).
+It takes several minutes for the stack to be created. When you see an Auto Scaling Group (ASG) created, you can select it and check the EC2 instances. By default, there is only one instance to start with.
 
 ### Stack Details
 
@@ -228,8 +229,6 @@ To check the EUID Operator status of your Load Balancer, complete the following 
 
 ## Private Operator Attestation Failure
 
-import AttestFailure from '/docs/snippets/_private-operator-attest-failure.mdx';
-
 <AttestFailure />
 
 ## Upgrading the EUID Operator
@@ -247,4 +246,4 @@ For a smooth transition, create the new stack first. After the new stack is boot
 
 ## Technical Support
 
-If you have trouble subscribing or deploying the product, contact us at [aws-mktpl-uid@thetradedesk.com](mailto:aws-mktpl-uid@thetradedesk.com).
+If you have trouble subscribing to the product, or deploying, contact us at [aws-mktpl-uid@thetradedesk.com](mailto:aws-mktpl-uid@thetradedesk.com).
