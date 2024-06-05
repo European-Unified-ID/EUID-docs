@@ -92,9 +92,9 @@ The following table summarizes the options for publishers who want to generate t
 | Option | Documentation |
 | :--- | :--- |
 | EUID SDK for JavaScript, client-server implementation | [Client-Server Integration Guide for JavaScript](integration-javascript-server-side.md) |
-| EUID SDK for Java | - [Publisher Integration Guide, Server-Only](custom-publisher-integration.md)<br/>- [EUID SDK for Java](../sdks/sdk-ref-java.md) |
-| EUID SDK for Python | - [Publisher Integration Guide, Server-Only](custom-publisher-integration.md)<br/>- [EUID SDK for Python](../sdks/sdk-ref-python.md)  |
-| Direct integration (API endpoints) | [Publisher Integration Guide, Server-Only](custom-publisher-integration.md) |
+| EUID SDK for Java | - [Publisher Integration Guide, Server-Side](custom-publisher-integration.md)<br/>- [EUID SDK for Java](../sdks/sdk-ref-java.md) |
+| EUID SDK for Python | - [Publisher Integration Guide, Server-Side](custom-publisher-integration.md)<br/>- [EUID SDK for Python](../sdks/sdk-ref-python.md)  |
+| Direct integration (API endpoints) | [Publisher Integration Guide, Server-Side](custom-publisher-integration.md) |
 
 ## Refresh the EUID Token
 
@@ -110,9 +110,9 @@ The following table shows the integration options that support refreshing the EU
 | Prebid.js server-side implementation (7.53.0 or later) | [EUID Client-Server Integration Guide for Prebid.js](integration-prebid-server-side.md) |
 | EUID SDK for JavaScript, client-side implementation | [Client-Side Integration Guide for JavaScript](publisher-client-side.md) |
 | EUID SDK for JavaScript, client-server implementation | [Client-Server Integration Guide for JavaScript](integration-javascript-server-side.md) |
-| EUID SDK for Java | - [Publisher Integration Guide, Server-Only](custom-publisher-integration.md)<br/>- [EUID SDK for Java](../sdks/sdk-ref-java.md) |
-| EUID SDK for Python | - [Publisher Integration Guide, Server-Only](custom-publisher-integration.md)<br/>- [EUID SDK for Python](../sdks/sdk-ref-python.md)  |
-| Direct integration (API endpoints) | [Publisher Integration Guide, Server-Only](custom-publisher-integration.md) |
+| EUID SDK for Java | - [Publisher Integration Guide, Server-Side](custom-publisher-integration.md)<br/>- [EUID SDK for Java](../sdks/sdk-ref-java.md) |
+| EUID SDK for Python | - [Publisher Integration Guide, Server-Side](custom-publisher-integration.md)<br/>- [EUID SDK for Python](../sdks/sdk-ref-python.md)  |
+| Direct integration (API endpoints) | [Publisher Integration Guide, Server-Side](custom-publisher-integration.md) |
 
 ## Pass the Token Into the Bidstream
 

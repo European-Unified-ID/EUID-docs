@@ -13,7 +13,9 @@ import StoreEUIDTokenInBrowser from '/docs/snippets/_prebid-storing-euid-token-i
 
 # EUID Client-Server Integration Guide for Prebid.js
 
-This guide is for publishers who have access to <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> on the server side and want to integrate with EUID and generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) to be passed by Prebid.js in the RTB bidstream. 
+This guide is for publishers who have access to <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> on the server side and want to integrate with EUID and generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) to be passed by Prebid.js in the RTB bidstream.
+
+This is called client-server integration because some integration steps are client-side and some are server-side.
 
 To integrate with EUID using Prebid.js, you'll need to:
 
@@ -224,7 +226,7 @@ In planning your Prebid implementation, consider the following:
 
 - During integration testing, set `params.euidApiBase` to `"https://integ.euid.eu/"`. You must set this value to the same environment (production or integration) that you use for generating tokens.
 
-- For a Prebid.js server-side integration, you can create a smaller Prebid.js build by disabling client-side integration functionality. To do this, pass the `--disable UID2_CSTG` flag:
+- For a Prebid.js client-server integration, you can create a smaller Prebid.js build by disabling client-side integration functionality. To do this, pass the `--disable UID2_CSTG` flag:
 
 ```
     $ gulp build --modules=euidIdSystem --disable UID2_CSTG

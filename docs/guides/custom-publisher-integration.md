@@ -1,7 +1,7 @@
 ---
-title: Publisher Integration Guide, Server-Only
-sidebar_label: Server-Only
-pagination_label: Publisher Integration Guide, Server-Only
+title: Publisher Integration Guide, Server-Side
+sidebar_label: Server-Side
+pagination_label: Publisher Integration Guide, Server-Side
 description: Information about generating identity tokens using EUID for the RTB bidstream, while integrating directly with EUID rather than EUID-enabled single-sign-on or identity providers.
 hide_table_of_contents: false
 sidebar_position: 03
@@ -9,9 +9,9 @@ sidebar_position: 03
 
 import Link from '@docusaurus/Link';
 
-# Publisher Integration Guide, Server-Only
+# Publisher Integration Guide, Server-Side
 
-This guide is for publishers who want to generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) for the RTB bidstream, while integrating directly with EUID rather than EUID-enabled single-sign-on or identity providers. 
+This guide is for publishers who want to generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) for the RTB bidstream, while integrating directly with EUID rather than EUID-enabled single-sign-on or identity providers, with all integration activity on the server side. 
 
 ## Introduction
 
@@ -29,8 +29,8 @@ The following are the options available for publishers to integrate with EUID:
 
 - Client EUID SDK for JavaScript (see [SDK for JavaScript Reference Guide](../sdks/client-side-identity.md)), with [EUID SDK for Java](../sdks/sdk-ref-java.md) on the server.
 - Client EUID SDK for JavaScript (see [SDK for JavaScript Reference Guide](../sdks/client-side-identity.md)), with custom server code.
-- Server-only integration, with [EUID SDK for Java](../sdks/sdk-ref-java.md) or [EUID SDK for Python](../sdks/sdk-ref-python.md) on the server.
-- Server-only integration, with custom server code.
+- Client-server integration, with [EUID SDK for Java](../sdks/sdk-ref-java.md) or [EUID SDK for Python](../sdks/sdk-ref-python.md) on the server.
+- Server-side integration, with custom server code.
 
 This guide provides information for the last two options.
 
