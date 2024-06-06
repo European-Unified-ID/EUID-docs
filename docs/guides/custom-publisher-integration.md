@@ -13,6 +13,18 @@ import Link from '@docusaurus/Link';
 
 This guide is for publishers who want to generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) for the RTB bidstream, while integrating directly with EUID rather than EUID-enabled single-sign-on or identity providers, with all integration activity on the server side. 
 
+The following options are available for publishers to integrate with EUID on the server side:
+
+- EUID SDK for Java (see [Usage for Publishers](../sdks/sdk-ref-java.md#usage-for-publishers) section)
+- EUID SDK for Python (see [Usage for Publishers](../sdks/sdk-ref-python.md#usage-for-publishers) section)
+- Custom server code
+
+For a complete summary of publisher integration options, see [Publisher Integrations](summary-guides.md#publisher-integrations).
+
+:::tip
+To facilitate the process of establishing client identity using EUID and retrieving EUID tokens, consider using the EUID SDK for JavaScript. For details, see [Client-Server Integration Guide for JavaScript](integration-javascript-server-side.md).
+:::
+
 ## Introduction
 
 The guide outlines the [basic steps](#integration-steps) that you need to consider if you're building an integration without using a client-side or server-side SDK. For example, you need to decide how to do the following:
@@ -24,21 +36,6 @@ The guide outlines the [basic steps](#integration-steps) that you need to consid
 - Manage user opt-outs
 
 See also [FAQs](#faqs).
-
-The following are the options available for publishers to integrate with EUID:
-
-- Client EUID SDK for JavaScript (see [SDK for JavaScript Reference Guide](../sdks/client-side-identity.md)), with [EUID SDK for Java](../sdks/sdk-ref-java.md) on the server.
-- Client EUID SDK for JavaScript (see [SDK for JavaScript Reference Guide](../sdks/client-side-identity.md)), with custom server code.
-- Client-server integration, with [EUID SDK for Java](../sdks/sdk-ref-java.md) or [EUID SDK for Python](../sdks/sdk-ref-python.md) on the server.
-- Server-side integration, with custom server code.
-
-This guide provides information for the last two options.
-
-
-
-:::tip
-To facilitate the process of establishing client identity using EUID and retrieving EUID tokens, consider using the EUID SDK for JavaScript. For details, see [Client-Server Integration Guide for JavaScript](integration-javascript-server-side.md).
-:::
 
 ## Integration Steps
 
@@ -58,6 +55,10 @@ The following sections provide additional details for each step in the diagram:
 ### Establish Identity: Capture User Data
 
 After authentication in step 1-c, which includes getting the user's consent and allows the publisher to validate the user's email address, the publisher can send a request to generate an EUID token, on the server side. The following table details the token generation steps.
+
+:::tip
+Rather than calling this endpoint directly, you could use one of the SDKs to manage it for you. For a summary of options, see [SDKs: Summary](../sdks/summary-sdks.md).
+:::
 
 | Step | Endpoint | Description |
 | :--- | :--- | :--- |
@@ -83,13 +84,13 @@ Use the `POST&nbsp;/token/refresh` endpoint to make sure you always have a valid
 
 | Step | Endpoint | Description |
 | :--- | :--- | :--- |
-| 3-a |N/A | When a user returns to an asset and becomes active again, refresh the identity token before sending it to the SSP. | 
+| 3-a |N/A | When a user returns to an asset and becomes active again, refresh the EUID token before sending it to the SSP. | 
 | 3-b | [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md)  | Send the `refresh_token` obtained in step [1-e](#establish-identity-capture-user-data) as a query parameter. |
 | 3-c | [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) | The EUID service issues a new identity token for users that haven't opted out. |
-| 3-d | N/A| Place the returned `advertising_token` and `refresh_token` in a store tied to a user. You may consider client-side storage like a first-party cookie or server-side storage. |
+| 3-d | N/A| Place the values returned by the `POST /token/refresh` endpoint, `advertising_token` and `refresh_token`, so that they are linked to the user. You might consider client-side storage, such as a first-party cookie, or server-side storage. |
 
 :::tip
-Refresh tokens starting from the `refresh_from` timestamp on the identity returned by the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) or [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) calls.
+Refresh tokens starting from the `refresh_from` timestamp, which is part of the identity returned by the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) or [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoints.
 :::
 
 ### Clear Identity: User Logout
