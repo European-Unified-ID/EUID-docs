@@ -36,7 +36,9 @@ Yes. Through the [Transparency and Control Portal](https://transparentadvertisin
 
 #### When I send personal data to EUID, does EUID store the information?
 
-No, EUID does not store any personal information. In addition, in almost all cases, EUID doesn't store any values at all once the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md), [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md), or [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) call is complete.
+No. None of the components of the <Link href="../ref-info/glossary-uid#gl-euid-service">EUID service</Link> store any personal information.
+
+In addition, in almost all cases, EUID doesn't store any values at all once the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md), [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md), or [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) call is complete.
 
 A necessary exception is the case where a user has opted out. In this scenario, EUID stores a hashed, opaque value to indicate the opted-out user. The stored value cannot be reverse engineered back to the original value of the personal data, but can be used to identify future requests for an EUID generated from the same personal data, which are therefore denied.
 
