@@ -337,4 +337,4 @@ The following table includes some additional commands that might help you manage
 
 ## Technical Support
 
-If you have trouble subscribing to the product, or deploying, contact us at [aws-mktpl-uid@thetradedesk.com](mailto:aws-mktpl-uid@thetradedesk.com).
+If you have trouble subscribing to the product, or deploying, [contact us](mailto:aws-mktpl-uid@thetradedesk.com).
