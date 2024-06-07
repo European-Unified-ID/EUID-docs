@@ -11,14 +11,7 @@ import Link from '@docusaurus/Link';
 
 Frequently asked questions for EUID are grouped into general categories by audience.
 
-This page includes:
-
-- [FAQs -- General](#faqs----general)
-- [FAQs for Publishers](#faqs-for-publishers)
-- [FAQs for Advertisers and Data Providers](#faqs-for-advertisers-and-data-providers)
-- [FAQs for DSPs](#faqs-for-dsps)
-
-## FAQs -- General
+## FAQs&#8212;General
 
 Here are some frequently asked questions regarding the EUID framework.
 
@@ -38,9 +31,7 @@ Yes. Through the [Transparency and Control Portal](https://transparentadvertisin
 
 No. None of the components of the <Link href="../ref-info/glossary-uid#gl-euid-service">EUID service</Link> store any personal information.
 
-In addition, in almost all cases, EUID doesn't store any values at all once the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md), [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md), or [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) call is complete.
-
-A necessary exception is the case where a user has opted out. In this scenario, EUID stores a hashed, opaque value to indicate the opted-out user. The stored value cannot be reverse engineered back to the original value of the personal data, but can be used to identify future requests for an EUID generated from the same personal data, which are therefore denied.
+In addition, in almost all cases, EUID doesn't store any values at all once the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md), [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md), or [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) call is complete. A necessary exception is the case where a user has opted out. In this scenario, EUID stores a hashed, opaque value to indicate the opted-out user. The stored value cannot be reverse engineered back to the original value of the personal data, but can be used to identify future requests for an EUID generated from the same personal data, which are therefore denied.
 
 ## FAQs for Publishers
 
@@ -49,7 +40,7 @@ Here are some frequently asked questions for publishers using the EUID framework
   - [How can I test that the personal data sent and the returned token match up?](#how-can-i-test-that-the-personal-data-sent-and-the-returned-token-match-up)
   - [Do I need to decrypt tokens?](#do-i-need-to-decrypt-tokens)
   - [How will I be notified of user opt-out?](#how-will-i-be-notified-of-user-opt-out)
-  - [Where should I make token generation calls&#8212;from the server or client side?](#where-should-i-make-token-generation-calls-from-the-server-or-client-side)
+  - [Where should I make token generation calls&#8212;from the server side or the client side?](#where-should-i-make-token-generation-callsfrom-the-server-side-or-the-client-side)
   - [Can I make token refresh calls from the client side?](#can-i-make-token-refresh-calls-from-the-client-side)
   - [How can I test the refresh token workflow?](#how-can-i-test-the-refresh-token-workflow)
   - [What is the uniqueness and rotation policy for EUID tokens?](#what-is-the-uniqueness-and-rotation-policy-for-euid-tokens)
@@ -57,7 +48,7 @@ Here are some frequently asked questions for publishers using the EUID framework
 
 #### How can I test that the personal data sent and the returned token match up?
 
-You can use the [POST&nbsp;/token/validate](../endpoints/post-token-validate.md) endpoint to check whether the personal data you are sending through [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) is valid. `POST&nbsp;/token/validate` is used primarily for testing purposes. 
+You can use the [POST&nbsp;/token/validate](../endpoints/post-token-validate.md) endpoint to check whether the personal data you are sending through [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) is valid. `POST /token/validate` is used primarily for testing purposes. 
 
 For details, see [Using POST&nbsp;/token/validate to Test](../endpoints/post-token-validate.md#using-post-tokenvalidate-to-test).
 
@@ -71,9 +62,12 @@ If the user has opted out, the API response notifies you in either of these case
 - When you generate the EUID token by a call to the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint, either directly or via one of the EUID SDKs, using the required `optout_check` parameter with a value of `1`.
 - When you refresh the EUID token by a call to the [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint, either directly or via one of the EUID SDKs.
 
-#### Where should I make token generation calls, from the server or client side?
+#### Where should I make token generation calls&#8212;from the server side or the client side?
 
-EUID tokens must be generated only on the server side after authentication. In other words, to ensure that the API key used to access the service remains secret, the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint must be called only from the server side.
+You can generate EUID tokens from either the client side or the server side. For more information, see:
+- Generating tokens from the client side using Prebid.js: [EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md).
+- Generating tokens from the server side using Prebid.js: [EUID Client-Server Integration Guide for Prebid.js](../guides/integration-prebid-server-side.md).
+- Other server-side options: [Publisher Integrations](../guides/summary-guides.md#publisher-integrations).
 
 #### Can I make token refresh calls from the client side?
 
@@ -143,7 +137,7 @@ Here are some frequently asked questions for advertisers and data providers usin
 
 #### How do I know when to refresh the EUID due to salt bucket rotation?
 
-Metadata supplied with the EUID generation request indicates the salt bucket used for generating the EUID. Salt buckets persist and correspond to the underlying personal data used to generate an EUID. Use the  [POST&nbsp;/identity/buckets](../endpoints/post-identity-buckets.md) endpoint to return which salt buckets rotated since a given timestamp. The returned rotated salt buckets inform you which EUIDs to refresh.
+Metadata supplied with the EUID generation request indicates the salt bucket used for generating the EUID. Salt buckets persist and correspond to the underlying personal data used to generate an EUID. Use the [POST&nbsp;/identity/buckets](../endpoints/post-identity-buckets.md) endpoint to return which salt buckets rotated since a given timestamp. The returned rotated salt buckets inform you which EUIDs to refresh.
 
 :::note
 We do not make any promises about when the rotation takes place. To stay as up-to-date as possible, we recommend doing the checks once per hour.
@@ -153,9 +147,9 @@ We do not make any promises about when the rotation takes place. To stay as up-t
 
 Not necessarily. After you remap emails associated with a particular bucket ID, the emails might be assigned to a different bucket ID. To check the bucket ID, [call the mapping function](../guides/advertiser-dataprovider-guide.md#1-retrieve-a-raw-euid-for-personal-data-using-the-identity-map-endpoint) and save the returned EUID and bucket ID again.
 
-:::important
-When mapping and remapping emails, be sure not to make any assumptions of the number of buckets, their specific rotation dates, or to which bucket an email gets assigned.
-::: 
+:::info
+When mapping and remapping emails, do not make any assumptions about the number of buckets, their rotation dates, or the specific bucket that an email gets assigned to.
+:::
 
 #### How often should EUIDs be refreshed for incremental updates?
 
@@ -187,7 +181,7 @@ If a user opts out through your website, you should follow your internal procedu
 
 In general yes, the process of generating a raw EUID from personal data is the same, and results in the same value, no matter who sent the request. If two EUID participants were to send the same email address to the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint at the same time, they would both get the same raw EUID in response.
 
-However, there is a variable factor, which is the salt value that's used in generating the raw EUID. The salt values are rotated periodically. If the salt value changes between one request and another, those two requests result in two different raw EUID, even when the personal data is the same.
+However, there is a variable factor, which is the [salt](../ref-info/glossary-uid.md#gl-salt) value that's used in generating the raw EUID. The salt values are rotated roughly once per year (for details, see [How often should EUIDs be refreshed for incremental updates?](#how-often-should-euids-be-refreshed-for-incremental-updates)). If the salt value changes between one request and another, those two requests result in two different raw EUIDs, even when the personal data is the same.
 
 For more information, see [Monitor for salt bucket rotations related to your stored raw EUIDs](../guides/advertiser-dataprovider-guide.md#3-monitor-for-salt-bucket-rotations-related-to-your-stored-raw-euids) in the *Advertiser/Data Provider Integration Guide*.
 
@@ -214,11 +208,11 @@ Here are some frequently asked questions for DSPs.
 #### How do I know which decryption key to apply to an EUID?
 
 
-Each of the server-side SDKs  (see [SDKs](../sdks/summary-sdks.md)) updates decryption keys automatically. Metadata supplied with the EUID token discloses the IDs of the decryption keys to use. 
+Each of the server-side SDKs (see [SDKs: Summary](../sdks/summary-sdks.md)) updates decryption keys automatically. Metadata supplied with the EUID token discloses the IDs of the decryption keys to use. 
 
 #### Where do I get the decryption keys?
 
-You can use one of the server-side SDKs (see [SDKs](../sdks/summary-sdks.md)) to communicate with the EUID service and fetch the latest keys. To make sure that the keys remain up-to-date, it is recommended to fetch them periodically&#8212;for example, once every hour. 
+You can use one of the server-side SDKs (see [SDKs: Summary](../sdks/summary-sdks.md)) to communicate with the EUID service and fetch the latest keys. To make sure that the keys remain up-to-date, it is recommended to fetch them periodically; for example, once every hour. 
 
 #### How many decryption keys may be present in memory at any point?
 
@@ -226,7 +220,7 @@ There may be thousands of decryption keys present in the system at any given poi
 
 #### How do I know if/when the salt bucket has rotated?
 
-The DSP is not privy to when the EUID salt bucket rotates. This is similar to a DSP being unaware if users cleared their cookies. Salt bucket rotation has no significant impact on the DSP.  
+The DSP is not privy to when the EUID salt bucket rotates. This is similar to a DSP being unaware if users cleared their cookies. Salt bucket rotation has no significant impact on the DSP.
 
 #### Should the DSP be concerned with latency?
 
@@ -238,7 +232,7 @@ The EUID has the same chance as a cookie of becoming stale. Hence, the DSP can a
 
 #### Will all user opt-out traffic be sent to the DSP?
 
-Yes, all opt-outs from the EUID [Transparency and Control Portal](https://transparentadvertising.eu/) will hit the opt-out endpoint that the DSP must configure to [honor user opt-outs](../guides/dsp-guide.md#honor-user-opt-outs).
+Yes, all opt-outs from the EUID [Transparency and Control Portal](https://transparentadvertising.eu/) hit the opt-out endpoint, which the DSP must configure to [honor user opt-outs](../guides/dsp-guide.md#honor-user-opt-outs).
 
 #### Is the DSP expected to handle opt-out signals only for the EUID that they already store?
 
@@ -272,4 +266,4 @@ DSPs can check the opt-out status of raw EUIDs using the [POST&nbsp;/optout/stat
 
 #### How do SDK errors impact the DSP's ability to respond to a bid?
 
-If there is an error, the SDK will not decrypt the EUID advertising token into a raw EUID.
+If there is an error, the SDK will not decrypt the EUID token into a raw EUID.

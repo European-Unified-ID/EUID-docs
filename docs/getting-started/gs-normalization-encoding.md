@@ -13,13 +13,15 @@ This page provides information about normalizing and encoding <Link href="../ref
 
 ## Introduction
 
-When you're taking user information such as email addresses, and following the steps to create a raw EUID and/or an EUID advertising token, it's very important that you follow the required steps. Whether you normalize the information or not, whether you hash it or not, follow the steps exactly. By doing so, you can ensure that the EUID value you create can be securely and anonymously matched up with other instances of online behavior by the same user.
+When you're taking user information such as an email address, and following the steps to create a raw EUID and/or an EUID advertising token, it's very important that you follow all the required steps. Whether you normalize the information or not, whether you hash it or not, follow the steps exactly. By doing so, you can ensure that the EUID value you create can be securely and anonymously matched up with other instances of online behavior by the same user.
 
-Important notes re EUID:
+:::important
 - Raw EUIDs, and their associated EUID tokens, are case sensitive. When working with EUID, it's important to pass all IDs and tokens without changing the case. Mismatched IDs can cause ID parsing or token decryption errors.
-- If you miss any of the required steps&#8212;for example, you hash without first normalizing&#8212;the result will not be the valid EUID value.<br/>For example, let's say a data provider wants to generate an EUID from `Jane.Saoirse@gmail.com`. This normalizes to `janesaoirse@gmail.com`, and the hashed and Base64-encoded value is `ku4mBX7Z3qJTXWyLFB1INzkyR2WZGW4ANSJUiW21iI8=`.<br/>The publisher, with the same email address, does not normalize. The hashed and Base64-encoded value for the un-normalized email, `Jane.Saoirse@gmail.com`, is `f8upG1hJazYKK8aEtAMq3j7loeAf5aA4lSq6qYOBR/w=`. These two different values result in two different EUIDs. The first, processed correctly, will match other instances generated from the same original data. The second, incorrectly processed, will not.<br/>In this scenario, because the EUID does not match other instances for the same user, the publisher misses the opportunity to benefit from targeted advertising.
+- If you miss any of the required steps&#8212;for example, you hash without first normalizing&#8212;the result will not be the correct valid EUID value for the input data.<br/>For example, let's say a data provider wants to generate an EUID from `JANESaoirse@gmail.com`. This normalizes to `janesaoirse@gmail.com`, and the hashed and Base64-encoded value is `ku4mBX7Z3qJTXWyLFB1INzkyR2WZGW4ANSJUiW21iI8=`.<br/>The publisher, with the same email address, by mistake does not normalize. The hashed and Base64-encoded value for the un-normalized email, `JANESaoirse@gmail.com`, is `f8upG1hJazYKK8aEtAMq3j7loeAf5aA4lSq6qYOBR/w=`. These two different values result in two different EUIDs. The first, processed correctly, matches other instances generated from the same original data. The second, incorrectly processed, does not.<br/>In this scenario, because the EUID does not match other instances for the same user, the publisher misses the opportunity to benefit from targeted advertising.
+:::
 
 ## Types of Personal Data
+
 EUID supports the following type of personal data:
 - Email address
 
