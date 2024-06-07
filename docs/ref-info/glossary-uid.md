@@ -27,6 +27,8 @@ import Link from '@docusaurus/Link';
 **C**
 <a href="#gl-client-key">Client key</a> | 
 <a href="#gl-client-secret">Client secret</a> | 
+<a href="#gl-client-server">Client-server integration</a> | 
+<a href="#gl-client-side">Client-side integration</a> | 
 <a href="#gl-closed-operator">Closed Operator</a> | 
 <a href="#gl-core-service">Core Service</a> | 
 
@@ -50,6 +52,7 @@ import Link from '@docusaurus/Link';
 
 **I**
 <a href="#gl-identity">Identity</a> | 
+<a href="#gl-integration-approaches">Integration approaches</a> 
 
 **J**
 <a href="#gl-json-web-token">JSON Web Token (JWT)</a> | 
@@ -81,6 +84,7 @@ import Link from '@docusaurus/Link';
 <a href="#gl-salt">Salt</a> | 
 <a href="#gl-salted-hash">Salted hash</a> | 
 <a href="#gl-secret">Secret</a> | 
+<a href="#gl-server-side">Server-side integration</a> | 
 <a href="#gl-sha-256">SHA-256</a> | 
 <a href="#gl-subscription-id">Subscription ID</a> | 
 
@@ -140,6 +144,17 @@ import Link from '@docusaurus/Link';
 <dt><MdxJumpAnchor id="gl-client-secret"><a href="#gl-client-secret">Client secret</a></MdxJumpAnchor></dt>
 <dd>Each EUID <a href="../intro#participants">participant</a> using a server-side implementation has an API key (client key) and also a secret value associated with the key, called the client secret (API secret). The client secret is known only to the participant and the EUID service.</dd>
 <dd>For details, see <a href="../getting-started/gs-credentials">EUID Credentials</a>.</dd>
+
+<dt><MdxJumpAnchor id="gl-client-server"><a href="#gl-client-server">Client-server integration</a></MdxJumpAnchor></dt>uptohere
+<dd>One of the EUID <a href="#gl-integration-approaches">integration approaches</a> is to integrate partially on the client side and partially on the server side (client-server).</dd>
+<dd>For example, in a client-server integration for a publisher, the EUID token is generated on the server side and refreshed on the client side.</dd>
+<dd>Examples of documentation for publisher client-server integrations: <a href="../guides/integration-prebid-server-side">EUID Client-Server Integration Guide for Prebid.js</a>, <a href="../guides/integration-javascript-server-side">Client-Server Integration Guide for JavaScript</a>.</dd>
+
+<dt><MdxJumpAnchor id="gl-client-side"><a href="#gl-client-side">Client-side integration</a></MdxJumpAnchor></dt>uptohere
+<dd>One of the EUID <a href="#gl-integration-approaches">integration approaches</a> is to integrate entirely on the client side.</dd>
+<dd>In a client-side integration, EUID tokens are generated and refreshed on the client side.</dd>
+<dd>For example, in a client-side integration, advertisers generate EUID tokens on the client side for tracking pixels, and publishers generate EUID tokens on the client side for bidstream use, as well as refreshing the tokens.</dd>
+<dd>Examples of documentation for publisher client-side integrations: <a href="../guides/integration-prebid-client-side">EUID Client-Side Integration Guide for Prebid.js</a>, <a href="../guides/publisher-client-side">Client-Side Integration Guide for JavaScript</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-closed-operator"><a href="#gl-closed-operator">Closed Operator</a></MdxJumpAnchor></dt>
 <dd>Closed Operator is another term for a <a href="#gl-private-operator">Private Operator</a>.</dd>
@@ -223,6 +238,9 @@ import Link from '@docusaurus/Link';
 
 <dt><MdxJumpAnchor id="gl-identity"><a href="#gl-identity">Identity</a></MdxJumpAnchor></dt>
 <dd>In the context of EUID, the term "identity" refers to a package of values that includes the EUID token, the refresh token, and associated values such as timestamps. This set of values is returned in the response from the <a href="../endpoints/post-token-generate">POST&nbsp;/token/generate</a> endpoint and also from the <a href="../endpoints/post-token-refresh">POST&nbsp;/token/refresh</a> endpoint.</dd>
+
+<dt><MdxJumpAnchor id="gl-integration-approaches"><a href="#gl-integration-approaches">Integration approaches</a></MdxJumpAnchor></dt>
+<dd>EUID integrations can be entirely on the <a href="#gl-client-side">client side</a>, entirely on the <a href="#gl-server-side">server side</a>, or partially on the client side and partially on the server side (<a href="#gl-client-server">client-server</a>).</dd>
 
 </dl>
 
@@ -331,6 +349,12 @@ import Link from '@docusaurus/Link';
 
 <dt><MdxJumpAnchor id="gl-secret"><a href="#gl-secret">Secret</a></MdxJumpAnchor></dt>
 <dd>See <a href="#gl-client-secret">client secret</a>.</dd>
+
+<dt><MdxJumpAnchor id="gl-server-side"><a href="#gl-server-side">Server-side integration</a></MdxJumpAnchor></dt>uptohere
+<dd>One of the UID2 <a href="#gl-integration-approaches">integration approaches</a> is to integrate entirely on the server side.</dd>
+<dd>In a server-side integration, raw EUIDs or EUID tokens are generated and refreshed on the server.</dd>
+<dd>For example, in a server-side integration, advertisers generate raw EUIDs on the server side to be delivered for audience targeting, and publishers generate EUID tokens on the server side for bidstream use.</dd>
+<dd>An example of documentation for publisher server-side integration is <a href="../guides/custom-publisher-integration">Publisher Integration Guide, Server-Side</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-sha-256"><a href="#gl-sha-256">SHA-256</a></MdxJumpAnchor></dt>
 <dd>SHA-256 is the secure hashing algorithm that EUID uses.</dd>
