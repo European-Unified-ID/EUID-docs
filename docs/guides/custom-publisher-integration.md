@@ -15,9 +15,9 @@ This guide is for publishers who want to generate <Link href="../ref-info/glossa
 
 The following options are available for publishers to integrate with EUID on the server side:
 
-- EUID SDK for Java (see [Usage for Publishers](../sdks/sdk-ref-java.md#usage-for-publishers) section)
-- EUID SDK for Python (see [Usage for Publishers](../sdks/sdk-ref-python.md#usage-for-publishers) section)
-- Custom server code
+- EUID SDK for Java (see [Usage for Publishers](../sdks/sdk-ref-java.md#usage-for-publishers) section).
+- EUID SDK for Python (see [Usage for Publishers](../sdks/sdk-ref-python.md#usage-for-publishers) section).
+- Custom server code to generate and refresh the UID2 token by calling the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) and [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoints.
 
 For a complete summary of publisher integration options, see [Publisher Integrations](summary-guides.md#publisher-integrations).
 
