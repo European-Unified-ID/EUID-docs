@@ -269,9 +269,7 @@ When the operator instance has been deployed, the default log rotation settings 
 
 #### Log Rotation Default Settings
 
-The following are the default logrotate settings, defined in `/etc/logrotate.d/uid2operator.conf`:
-
-(**GWH_TM is the above uid2operator.conf the same for EUID? This instance plus another later.**)
+The following are the default logrotate settings, defined in `/etc/logrotate.d/operator-logrotate.conf`:
 
 ```
 /var/log/operator.log*
@@ -319,7 +317,7 @@ These are the default settings for the following reasons:
 - The command refers to `/var/lib/logrotate/logrotate.status` to check the log status and see if it has reached the rotation condition, so that it won't make extra rotations when `logrotate` is run every minute.
 
 ### Changing the Log Rotation Schedule
-To change the log rotation schedule, update the `etc/logrotate.d/uid2operator.conf` file.
+To change the log rotation schedule, update the `etc/logrotate.d/operator-logrotate.conf` file.
 
 Follow the instructions in the logrotate documentation: see [logrotate(8) - Linux man](https://linux.die.net/man/8/logrotate) page.
 
