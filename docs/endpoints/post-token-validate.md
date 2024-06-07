@@ -1,6 +1,6 @@
 ---
 title: POST /token/validate
-description: Validate an advertising token (for testing purposes). 
+description: Validates an advertising token (for testing purposes). 
 hide_table_of_contents: false
 sidebar_position: 03
 ---
@@ -8,7 +8,7 @@ sidebar_position: 03
 import Link from '@docusaurus/Link';
 
 # POST /token/validate
-Validate that an advertising token matches the specified hashed or unhashed email address. 
+Validates that an advertising token matches the specified hashed or unhashed email address. 
 
 Used by: This endpoint is used mainly by publishers.
 
@@ -21,14 +21,14 @@ This endpoint is intended primarily for testing and troubleshooting new integrat
 `POST '{environment}/v2/token/validate'`
 
 :::important
-You must encrypt all requests, using your secret key. For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
+You must encrypt all requests using your secret key. For details, and code examples in different programming languages, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
 :::
 
 ### Path Parameters
 
 | Path Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
-| `{environment}` | string | Required | Testing environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu`<br/>For a full list, including regional operators, see [Environments](../getting-started/gs-environments.md). |
+| `{environment}` | string | Required | Integration environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu`<br/>For a full list, including regional operators, see [Environments](../getting-started/gs-environments.md). |
 
 :::note
 The integration environment and the production environment require different <Link href="../ref-info/glossary-uid#gl-api-key">API keys</Link>.
@@ -36,12 +36,12 @@ The integration environment and the production environment require different <Li
 
 ### Unencrypted JSON Body Parameters
 
-- Include only one of the following valid options, as listed in the Body Parameter table: `email`, `email_hash`. For the parameter you choose to test with, use the exact value listed. 
+- Include only one of the following valid options, as listed in the Body Parameter table: `email`, `email_hash`. For the parameter you choose to test with, use the exact value listed.
 - Include the required body parameters as key-value pairs in the JSON body of a request when encrypting it.
 
 | Body Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
-| `token` | string | Required | The advertising token returned by the [POST /token/generate](post-token-generate.md) response. |
+| `token` | string | Required | The advertising token returned by the [POST&nbsp;/token/generate](post-token-generate.md) response. |
 | `email` | string | Conditionally Required | The email address for token validation.<br/>The only valid value is: `validate@example.com`. |
 | `email_hash` | string | Conditionally Required | The [Base64-encoded SHA-256](../getting-started/gs-normalization-encoding.md#email-address-hash-encoding) hash of a [normalized](../getting-started/gs-normalization-encoding.md#email-address-normalization) email address for token validation (`validate@example.com`).<br/>The only valid value is: `ntI244ZRTXwAwpki6/M5cyBYW7h/Wq576lnN3l9+W/c=`. |
 
@@ -66,15 +66,6 @@ The advertising tokens in these examples are fictitious, for illustrative purpos
 }
 ```
 
-Here's an encrypted token validation request format with placeholder values:
-
-```sh
-echo '[Unencrypted-JSON-Request-Body]' \
-  | encrypt_request.py [CLIENT_SECRET] \
-  | curl -X POST 'https://prod.euid.eu/v2/token/validate' -H 'Authorization: Bearer [CLIENT_API_KEY]' -d @- \
-  | decrypt_response.py [CLIENT_SECRET]
-```
-
 Here's an encrypted token validation request example for an email hash:
 
 ```sh
@@ -84,7 +75,7 @@ echo '{"token": "AdvertisingTokenmZ4dZgeuXXl6DhoXqbRXQbHlHhA96leN94U1uavZVspwKXl
   | decrypt_response.py DELPabG/hsJsZk4Xm9Xr10Wb8qoKarg4ochUdY9e+Ow= 
 ```
 
-For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
+For details, and code examples in different programming languages, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
 
 ## Decrypted JSON Response Format
 
@@ -121,12 +112,12 @@ If the `status` value is anything other than `success`, the `message` field prov
 
 ## Using POST /token/validate to Test
 
-You can use this endpoint to test whether the personal data you are sending through [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) is valid. Follow these steps.
+You can use this endpoint to test whether the <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> that you are sending through [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) is valid. Follow these steps.
 
-1. Depending on whether the personal data is a hashed or unhashed email address, send a [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) request using one of the valid options listed in the [Unencrypted JSON Body Parameters](#unencrypted-json-body-parameters) table&#8212;`email` or `email_hash`&#8212;with the corresponding value as listed in the table.
+1. Depending on whether the personal data is a hashed or unhashed email address, send a [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) request using one of the two valid options listed in the [Unencrypted JSON Body Parameters](#unencrypted-json-body-parameters) table&#8212;`email` or `email_hash`&#8212;with the corresponding value as listed in the table.
 
 2. Store the returned `advertising_token` value for use in the next step.
-3. Send a `POST&nbsp;/token/validate` request using the `email` or `email_hash` value that you sent in Step 1, with the `advertising_token` that you saved in Step 2 as the `token` property value. 
-4. Check the response to the `POST&nbsp;/token/validate` request. The results indicate the success of your process, as follows: 
+3. Send a `POST /token/validate` request using the `email` or `email_hash` value that you sent in Step 1, with the `advertising_token` that you saved in Step 2 as the `token` property value. 
+4. Check the response to the `POST /token/validate` request. The results indicate the success of your process, as follows: 
     - A response of `true` indicates that the personal data you sent as a request in Step 1 matches the token you received in the response of Step 1. 
     - A response of `false` indicates that there might be an issue with the way you are sending email addresses or their hashes.

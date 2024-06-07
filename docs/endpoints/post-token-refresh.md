@@ -1,6 +1,6 @@
 ---
 title: POST /token/refresh
-description: Use the refresh token to generate an updated EUID token.
+description: Uses the refresh token to generate an updated EUID token.
 hide_table_of_contents: false
 sidebar_position: 04
 ---
@@ -26,7 +26,7 @@ Here's what you need to know about this endpoint:
 - No encryption is required for token refresh requests.
 - If the request is successful, with an HTTP status code of 200, a new EUID token or opt-out information is returned.
 - Successful responses, whether the response includes a new token or opt-out information, are encrypted. Error responses are not encrypted.
-- To decrypt responses, use the most recent `refresh_response_key` value for this token. The `refresh_response_key` value is returned in the response to the [POST&nbsp;/token/generate](post-token-generate.md) and `POST&nbsp;/token/refresh` operations. Each time a token is refreshed, a new `refresh_response_key` is returned. Be sure to use the most recent one to decrypt the current response.
+- To decrypt responses, use the most recent `refresh_response_key` value for this token. The `refresh_response_key` value is returned in the response to the [POST&nbsp;/token/generate](post-token-generate.md) and `POST /token/refresh` operations. Each time a token is refreshed, a new `refresh_response_key` is returned. Be sure to use the most recent one to decrypt the current response.
 
 ### Path Parameters
 
@@ -40,7 +40,7 @@ The integration environment and the production environment require different <Li
 
 #### Testing Notes
 
-Using the `refresh-optout@example.com` email address in a [POST&nbsp;/token/generate](post-token-generate.md) request always generates an identity response with a `refresh_token` that results in a logout response when used with the `POST&nbsp;/token/refresh` endpoint.
+Using the `refresh-optout@example.com` email address in a [POST&nbsp;/token/generate](post-token-generate.md) request always generates an identity response with a `refresh_token` that results in a logout response when used with the `POST /token/refresh` endpoint.
 
 ### Request Example
 
