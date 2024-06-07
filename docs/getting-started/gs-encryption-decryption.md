@@ -15,8 +15,6 @@ import Link from '@docusaurus/Link';
 If you're a publisher and are implementing EUID on the client side, encryption and decryption is managed automatically by your implementation, such as Prebid.js (see [EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md)) or the JavaScript SDK (see [Client-Side Integration Guide for JavaScript](../guides/publisher-client-side.md)).
 :::
 
-## Overview
-
 For almost all EUID [endpoints](../endpoints/summary-endpoints.md), requests sent to the endpoint must be [encrypted](#encrypting-requests) and responses from the endpoint must be [decrypted](#decrypting-responses).
 
 The only exception is that requests to the [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint do not need to be encrypted.
@@ -24,10 +22,10 @@ The only exception is that requests to the [POST&nbsp;/token/refresh](../endpoin
 Here's what you need to know about encrypting EUID API requests and decrypting respective responses:
 
 - To use the APIs, in addition to your client API key, you need your client secret.
-- You can write your own custom code or use the Python scripts provided in the following sections.
+- You can write your own custom code or use one of the code examples provided: see [Encryption and Decryption Code Examples](#encryption-and-decryption-code-examples).
 - Request and response use AES/GCM/NoPadding encryption algorithm with 96-bit initialization vector and 128-bit authentication tag.
-- The raw, unencrypted JSON body of the request is wrapped in a binary [unencrypted request data envelope](#unencrypted-request-data-envelope) which then gets encrypted and formatted according to the [Encrypted Request Envelope](#encrypted-request-envelope).
-- The response JSON body is wrapped in a binary [unencrypted request data envelope](#unencrypted-response-data-envelope) which is encrypted and formatted according to the [Encrypted Response Envelope](#encrypted-response-envelope).
+- The raw, unencrypted JSON body of the request is wrapped in a binary [unencrypted request data envelope](#unencrypted-request-data-envelope) which then gets encrypted and formatted according to the [encrypted request envelope](#encrypted-request-envelope).
+- The response JSON body is wrapped in a binary [unencrypted response data envelope](#unencrypted-response-data-envelope) which is encrypted and formatted according to the [encrypted response envelope](#encrypted-response-envelope).
 
 ## Workflow
 
@@ -46,7 +44,7 @@ The high-level request-response workflow for the EUID APIs includes the followin
 
 A code example for [encrypting requests and decrypting responses](#encryption-and-decryption-code-examples) can help with automating steps 2-10 and serves as a reference of how to implement these steps in your application.
 
-Documentation for the individual EUID [endpoints](../endpoints/summary-endpoints.md) explains the respective JSON body format requirements and parameters, includes call examples, and shows decrypted responses. The following sections provide examples of the encryption and decryption scripts in Python, field layout requirements, and request and response examples. 
+Documentation for the individual EUID [endpoints](../endpoints/summary-endpoints.md) explains the respective JSON body format requirements and parameters, includes call examples, and shows decrypted responses. The following sections provide encryption and decryption code examples, field layout requirements, and request and response examples.
 
 ## Encrypting Requests
 
@@ -59,7 +57,7 @@ The following table describes the field layout for request encryption code.
 | Offset (Bytes) | Size (Bytes) | Description |
 | :--- | :--- | :--- |
 | 0 | 8 | The UNIX timestamp (in milliseconds). Must be int64 big endian. |
-| 8 | 8 | Nonce: Random 64 bits of data used to protect against replay attacks. The corresponding [Unencrypted Response Data Envelope](#unencrypted-response-data-envelope) should contain the same nonce value for the response to be considered valid. |
+| 8 | 8 | Nonce: Random 64 bits of data used to help protect against replay attacks. The corresponding [Unencrypted Response Data Envelope](#unencrypted-response-data-envelope) should contain the same nonce value for the response to be considered valid. |
 | 16 | N | Payload, which is a request JSON document serialized in UTF-8 encoding. |
 
 ### Encrypted Request Envelope
@@ -122,7 +120,7 @@ For example, a decrypted response to the [POST&nbsp;/token/generate](../endpoint
 
 ## Encryption and Decryption Code Examples
 
-This section includes an encryption and decryption code example in different programming languages.
+This section includes encryption and decryption code examples in different programming languages.
 
 For the [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint, the code takes the values for `refresh_token` and `refresh_response_key` that were obtained from a prior call to [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) or [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md).
 
@@ -138,6 +136,10 @@ Before using the code example, check the prerequisites and notes for the languag
 <TabItem value='py' label='Python'>
 
 The following code example encrypts requests and decrypts responses using Python. The required parameters are shown at the top of the code example, or by running `python3 uid2_request.py`.
+
+:::note
+For Windows, replace `python3` with `python`.
+:::
 
 The Python code requires the `pycryptodomex` and `requests` packages. You can install these as follows:
 

@@ -38,8 +38,8 @@ When a consumer opts out of EUID, that individual's EUID is no longer accepted f
 The following steps provide a high-level outline of the workflow intended for users who engage with publishers or their identity providers. 
 
 1. Users visit the [Transparency and Control Portal](https://www.transparentadvertising.eu/), where they can globally opt out of EUID.
-2. The Transparency and Control Portal sends the opt-out request to the EUID Operator Service.
-3. If the user has opted out, the EUID Operator Service distributes the opt-out information to EUID participants, as follows:
+2. The Transparency and Control Portal sends the opt-out request to the EUID <Link href="../ref-info/glossary-uid#gl-operator-service">Operator Service</Link>.
+3. If the user has opted out, the EUID Operator Service distributes the opt-out information to EUID participants, as shown in the following table.
 
    | Participant | Distribution Method |
    | :--- | :--- | 

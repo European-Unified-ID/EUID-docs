@@ -13,14 +13,14 @@ Each EUID <a href="../intro#participants">participant</a> gets a set of unique c
 
 | Audience | Credentials | Integration |
 | :--- | :--- | :--- |
-| Participants using a server-side endpoint | Both of the following:<ul><li>API key, also called a client key</li><li>Client secret, a value known only to the participant and the EUID service</li></ul> | Any integration using one of these endpoints: <ul><li>[POST&nbsp;/identity/map](../endpoints/post-identity-map.md)</li><li>[POST&nbsp;/identity/buckets](../endpoints/post-identity-buckets.md)</li><li>[POST&nbsp;/token/generate](../endpoints/post-token-generate.md)</li></ul> |
+| Participants using a server-side endpoint | Both of the following:<ul><li><Link href="../ref-info/glossary-uid#gl-api-key">API key</Link>, also called a client key</li><li><Link href="../ref-info/glossary-uid#gl-client-secret">Client secret</Link>, a value known only to the participant and the EUID service</li></ul> | Any integration using one of these endpoints: <ul><li>[POST&nbsp;/identity/map](../endpoints/post-identity-map.md)</li><li>[POST&nbsp;/identity/buckets](../endpoints/post-identity-buckets.md)</li><li>[POST&nbsp;/token/generate](../endpoints/post-token-generate.md)</li></ul> |
 | Participants using a client-side implementation | Both of the following: <ul><li>Subscription ID</li><li>Public key</li></ul> | Integrations using one of these: <ul><li>[EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md)</li><li>[Client-Side Integration Guide for JavaScript](../guides/publisher-client-side.md)</li></ul> |
 
 If you're using the integration environment as well as the production environment, you'll get a separate set of credentials for each environment.
 
 ## API Key and Client Secret
 
-If you're using a client-server or server-side implementation (see [EUID Client-Server Integration Guide for Prebid.js](../guides/integration-prebid-server-side.md) or [Client-Server Integration Guide for JavaScript](../guides/integration-javascript-server-side.md), the API key and client secret allow you to connect to the[Operator Service and call API endpoints. These values identify you to the service.
+If you're using a client-server or server-side implementation (see [EUID Client-Server Integration Guide for Prebid.js](../guides/integration-prebid-server-side.md) or [Client-Server Integration Guide for JavaScript](../guides/integration-javascript-server-side.md), the API key and client secret allow you to connect to the <Link href="../ref-info/glossary-uid#gl-operator-service">Operator Service</Link> and call API endpoints. These values identify you to the service.
 
 Here is some information about API keys and client secrets:
 - One EUID participant can have multiple keys.
@@ -57,7 +57,6 @@ Notes:
 - The values are valid for a specific [environment](gs-environments.md). If you're using both the integration and production environments, you'll get a set of credentials for each environment.
 
 - Subscription ID and public key credentials can be used only to generate client-side tokens. If you need any additional roles (see [API Permissions](gs-permissions.md)), request API Key and Client Secret for those roles. 
-
 
 ## Refreshing Credentials
 

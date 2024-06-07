@@ -63,7 +63,7 @@ DSPs can check the opt-out status of raw EUIDs using the [POST&nbsp;/optout/stat
 
 Use the logic below during bidding (2-b) to honor a user's opt-out.
 
-Leverage one of the server-side SDKs (see [SDKs](../sdks/summary-sdks.md)) to decrypt incoming EUID tokens into raw EUIDs. The response to the decrypt function contains the raw EUID.
+Leverage one of the server-side SDKs (see [SDKs: Summary](../sdks/summary-sdks.md)) to decrypt incoming EUID tokens into raw EUIDs. The response to the decrypt function contains the raw EUID.
 
 The following diagram illustrates opt-out logic.
 
