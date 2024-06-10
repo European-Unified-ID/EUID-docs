@@ -181,7 +181,7 @@ If a user opts out through your website, you should follow your internal procedu
 
 In general yes, the process of generating a raw EUID from personal data is the same, and results in the same value, no matter who sent the request. If two EUID participants were to send the same email address to the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint at the same time, they would both get the same raw EUID in response.
 
-However, there is a variable factor, which is the [salt](../ref-info/glossary-uid.md#gl-salt) value that's used in generating the raw EUID. The salt values are rotated roughly once per year (for details, see [How often should EUIDs be refreshed for incremental updates?](#how-often-should-euids-be-refreshed-for-incremental-updates)). If the salt value changes between one request and another, those two requests result in two different raw EUIDs, even when the personal data is the same.
+However, there is a variable factor, which is the <Link href="../ref-info/glossary-uid#gl-salt">salt</Link> value that's used in generating the raw EUID. The salt values are rotated roughly once per year (for details, see [How often should EUIDs be refreshed for incremental updates?](#how-often-should-euids-be-refreshed-for-incremental-updates)). If the salt value changes between one request and another, those two requests result in two different raw EUIDs, even when the personal data is the same.
 
 For more information, see [Monitor for salt bucket rotations related to your stored raw EUIDs](../guides/advertiser-dataprovider-guide.md#3-monitor-for-salt-bucket-rotations-related-to-your-stored-raw-euids) in the *Advertiser/Data Provider Integration Guide*.
 

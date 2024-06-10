@@ -38,7 +38,7 @@ The following process occurs in the background:
 
 The following steps are an example of how a data provider can integrate with EUID:
 
-1. The data provider sends a user’s consented [personal data](../ref-info/glossary-uid.md#gl-personal-data) to the EUID Operator.
+1. The data provider sends a user’s consented <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to the EUID Operator.
 
    <!-- euid_only_ep_20240312: ("consented" in above line DP only EUID only) -->
 
