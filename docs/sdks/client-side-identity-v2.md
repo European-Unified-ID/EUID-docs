@@ -119,7 +119,7 @@ All interactions with the Client-Side JavaScript SDK are done through the global
 
 ### constructor()
 
-Constructs a EUID object.
+Constructs an EUID object.
 
 :::tip
 Instead of calling this function, you can just use the global `__euid` object.

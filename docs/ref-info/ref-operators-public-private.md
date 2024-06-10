@@ -17,7 +17,7 @@ All instances of the Operator Service are designed with rigorous protections in 
 
 There can be multiple instances of the Operator Service, operated by multiple participants. Each of these participants is known as an EUID Operator.
 
-A EUID Operator is simply an organization that runs the Operator Service. Operators receive and store encryption keys and salts from the EUID Core Service, salt and hash personal data to return raw EUIDs, encrypt raw EUIDs to generate EUID tokens, and distribute EUID token decryption keys.
+An EUID Operator is simply an organization that runs the Operator Service. Operators receive and store encryption keys and salts from the EUID Core Service, salt and hash personal data to return raw EUIDs, encrypt raw EUIDs to generate EUID tokens, and distribute EUID token decryption keys.
 
 EUID Operators fall into two categories:
 
