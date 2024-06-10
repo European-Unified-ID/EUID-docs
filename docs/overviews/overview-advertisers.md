@@ -33,7 +33,7 @@ The following process occurs in the background:
 
 The following steps are an example of how an advertiser can integrate with EUID:
 
-1. The advertiser sends a user’s [personal data](../ref-info/glossary-uid.md#gl-personal-data) to the EUID Operator.
+1. The advertiser sends a user’s <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to the EUID Operator.
 2. The EUID Operator generates and returns a raw EUID and salt bucket ID.
 3. The advertiser stores the EUID and salt bucket ID and sends the EUID-based first-party and third-party audience segments to the DSP. 
 

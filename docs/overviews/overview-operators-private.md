@@ -9,7 +9,7 @@ banner_description: Own the process of generating EUIDs from personal data in a 
 
 import Link from '@docusaurus/Link';
 
-Private Operators of EUID send first-party [personal data](../ref-info/glossary-uid.md#gl-personal-data) to a secure environment for translation, and control the destinations for those identifiers. A participant that chooses to become a private Operator (previously known as closed Operator) can generate and manage EUIDs, running a EUID Operator service in a private environment.
+Private Operators of EUID send first-party <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to a secure environment for translation, and control the destinations for those identifiers. A participant that chooses to become a private Operator (previously known as closed Operator) can generate and manage EUIDs, running a EUID Operator service in a private environment.
 
 Learn about what the EUID framework offers to private Operators, including benefits, hosting options, documentation and other resources, and how to get started.
 
@@ -17,7 +17,7 @@ Learn about what the EUID framework offers to private Operators, including benef
 
 Here are some of the intended benefits of participating in EUID as a private Operator:
 - You can maintain privacy-conscious workflows for your customer data to be encrypted and activated across chosen partners.
-- You can participate in EUID using your own first-party [personal data](../ref-info/glossary-uid.md#gl-personal-data) without sharing it.
+- You can participate in EUID using your own first-party <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> without sharing it.
 - You have full control of resources, performance, and latency for EUID.
 - You can plan to minimize network hops with a service that can provide regional proximity.
 - You can implement processes and policies that you control, as opposed to taking part in a shared service.
@@ -28,7 +28,7 @@ For details, see [The EUID Operator](../ref-info/ref-operators-public-private.md
 
 If you choose to be a private Operator, several implementation options are available. You can do any of the following:
 
-- Use a cloud services setup. EUID supports hosting EUID in an [enclave](../ref-info/glossary-uid.md#gl-enclave) on the following cloud service provider (medium level of effort to implement):
+- Use a cloud services setup. EUID supports hosting EUID in an <Link href="../ref-info/glossary-uid#gl-enclave">enclave</Link> on the following cloud service provider (medium level of effort to implement):
   - Amazon Web Services (AWS)
 - Use your own machines to generate and manage EUIDs (greater level of effort to implement).
 

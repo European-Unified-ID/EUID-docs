@@ -35,7 +35,7 @@ The following steps provide a high-level outline of the workflow intended for or
 <!-- uid2_only_ep_20240312: Once the user has provided an email address or phone number, the publisher sends it to the UID2 Operator via an SDK or direct API integration. -->
 <!-- euid_only_ep_20240312: Once the user has provided an email address, and consented, the publisher sends it to the EUID Operator via an SDK or direct API integration. -->
 
-   A publisher can authorize an SSO provider or identity provider to pass [personal data](../ref-info/glossary-uid.md#gl-personal-data) and privacy settings on their behalf.
+   A publisher can authorize an SSO provider or identity provider to pass <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> and privacy settings on their behalf.
 4. The EUID Operator:
    - Takes the email<!--  or phone number -->.
    - Performs the salt, hash, and encryption process.
