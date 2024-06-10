@@ -123,6 +123,8 @@ A successful decrypted response returns the raw EUIDs and salt bucket IDs for th
 
 ### Response Body Properties
 
+The response body includes the properties shown in the following table.
+
 | Property | Data Type | Description |
 | :--- | :--- | :--- |
 | `identifier` | string | The email address or email address hash specified in the request body. |
