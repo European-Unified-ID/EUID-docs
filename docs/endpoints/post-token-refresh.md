@@ -9,17 +9,21 @@ import Link from '@docusaurus/Link';
 
 # POST /token/refresh
 
-Generate a new EUID token by sending the corresponding unexpired refresh token, returned by the [POST&nbsp;/token/generate](post-token-generate.md) endpoint.
+Generates a new <Link href="../ref-info/glossary-uid#gl-euid-token">EUID token</Link> by sending the corresponding unexpired refresh token, returned by the [POST&nbsp;/token/generate](post-token-generate.md) endpoint.
 
 Used by: This endpoint is used mainly by publishers.
 
+You can call this endpoint from the client side (for example, a browser or a mobile app) because it does not require using an <Link href="../ref-info/glossary-uid#gl-api-key">API key</Link>.
+
 :::note
-This endpoint can be called from the client side (for example, a browser or a mobile app) because it does not require using an API key.
+Rather than calling this endpoint directly, you could use one of the EUID SDKs to manage it for you. For a summary of options, see [SDKs: Summary](../sdks/summary-sdks.md).
 :::
 
 ## Request Format 
 
 `POST '{environment}/v2/token/refresh'`
+
+Add the content of the `refresh_token` value, returned in the response from the previous [POST&nbsp;/token/generate](post-token-generate.md) or `POST /token/refresh` operation, as the POST body.
 
 Here's what you need to know about this endpoint:
 
@@ -32,11 +36,7 @@ Here's what you need to know about this endpoint:
 
 | Path Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
-| `{environment}` | string | Required | Testing environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu`<br/>For a full list, including regional operators, see [Environments](../getting-started/gs-environments.md). |
-
-:::note
-The integration environment and the production environment require different <Link href="../ref-info/glossary-uid#gl-api-key">API keys</Link>.
-:::
+| `{environment}` | string | Required | Testing (integration) environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu`<br/>For a full list, including regional operators, see [Environments](../getting-started/gs-environments.md).<br/>Notes:<ul><li>The `integ` environment and the `prod` environment require different <Link href="../ref-info/glossary-uid#gl-api-key">API keys</Link>.</li><li>Token expiration time is subject to change, but is always significantly shorter in the `integ` environment than it is in the `prod` environment.</li></ul> |
 
 #### Testing Notes
 
@@ -44,23 +44,7 @@ Using the `refresh-optout@example.com` email address in a [POST&nbsp;/token/gene
 
 ### Request Example
 
-Here's a token refresh request format with placeholder values, which include the `refresh_token` and `refresh_response_key` values returned by a [POST&nbsp;/token/generate](post-token-generate.md) request:
-
-```sh
-echo [refresh_token] \
-  | curl -X POST 'https://prod.euid.eu/v2/token/refresh' -H 'Authorization: Bearer [CLIENT_API_KEY]' -d @- \
-  | decrypt_response.py [REFRESH_RESPONSE_KEY] --is-refresh
-```
-
-Here's a token refresh request example:
-
-```sh
-echo AAAAAQLMcnV+YE6/xoPDZBJvJtWyPyhF9QTV4242kFdT+DE/OfKsQ3IEkgCqD5jmP9HuR4O3PNSVnCnzYq2BiDDz8SLsKOo6wZsoMIn95jVWBaA6oLq7uUGY5/g9SUOfFmX5uDXUvO0w2UCKi+j9OQhlMfxTsyUQUzC1VQOx6ed/gZjqH/Sw6Kyk0XH7AlziqSyyXA438JHqyJphGVwsPl2LGCH1K2MPxkLmyzMZ2ghTzrr0IgIOXPsL4lXqSPkl/UJqnO3iqbihd66eLeYNmyd1Xblr3DwYnwWdAUXEufLoJbbxifGYc+fPF+8DpykpyL9neq3oquxQWpyHsftnwYaZT5EBZHQJqAttHUZ4yQ== \
-  | curl -X POST 'https://prod.euid.eu/v2/token/refresh' -H 'Authorization: Bearer YourTokenBV3tua4BXNw+HVUFpxLlGy8nWN6mtgMlIk=' -d @- \
-  | decrypt_response.py wR5t6HKMfJ2r4J7fEGX9Gw== --is-refresh
-```
-
-For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
+For details, and code examples in different programming languages, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
 
 ## Decrypted JSON Response Format
 
@@ -117,15 +101,16 @@ An error response might look like the following:
 
 ### Response Body Properties
 
+The response body includes the properties shown in the following table.
+
 | Property | Data Type | Description |
 | :--- | :--- | :--- |
-| `advertising_token` | string | The EUID token (also known as advertising token) for the user. |
+| `advertising_token` | string | The <Link href="../ref-info/glossary-uid#gl-euid-token">EUID token</Link> (also known as advertising token) for the user. |
 | `refresh_token` | string | An encrypted token that can be exchanged with the EUID Service for the latest set of identity tokens. |
 | `identity_expires` | number | The UNIX timestamp (in milliseconds) that indicates when the EUID token expires. |
-| `refresh_from` | number | The UNIX timestamp (in milliseconds) that indicates when the [SDK for JavaScript](../sdks/client-side-identity.md) will start refreshing the EUID token.<br/>TIP: If you are not using the SDK, consider refreshing the EUID token from this timestamp, too. |
+| `refresh_from` | number | The UNIX timestamp (in milliseconds) that indicates when the SDK for JavaScript (see [EUID SDK for JavaScript Reference Guide](../sdks/client-side-identity.md)) will start refreshing the EUID token, if the SDK is in use.<br/>TIP: If you are not using the SDK, consider refreshing the EUID token from this timestamp, too. |
 | `refresh_expires` | number | The UNIX timestamp (in milliseconds) that indicates when the refresh token expires. |
 | `refresh_response_key` | string | A key to be used in a new [POST&nbsp;/token/refresh](post-token-refresh.md) request for response decryption. |
-
 
 ### Response Status Codes
 
