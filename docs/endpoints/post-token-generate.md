@@ -1,6 +1,6 @@
 ---
 title: POST /token/generate
-description: Generate an EUID token (advertising token) from personal data. 
+description: Generates an EUID token (advertising token) from personal data. 
 hide_table_of_contents: false
 sidebar_position: 02
 ---
@@ -8,12 +8,12 @@ sidebar_position: 02
 import Link from '@docusaurus/Link';
 
 # POST /token/generate
-Requests an EUID token generated from the email address provided by a user with their authorization for EUID-based targeted advertising. If the email is valid, and the user has not opted out of EUID, this operation returns an EUID token and associated values.
+Requests an EUID token generated from the <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> (email address) provided by a user with their authorization for EUID-based targeted advertising. If the email is valid, and the user has not opted out of EUID, this operation returns an EUID token and associated values.
 
 Used by: This endpoint is used mainly by publishers.
 
 :::important
-Be sure to call this endpoint only when you have obtained legal basis to convert the user’s personal data to EUID tokens for targeted advertising. The `optout_check` parameter, required with a value of `1`, checks whether the user has opted out.
+Be sure to call this endpoint only when you have obtained legal basis to convert the user’s personal data to an EUID token for targeted advertising. The `optout_check` parameter, required with a value of `1`, checks whether the user has opted out.
 :::
 
 Rather than calling this endpoint directly, you could use one of the SDKs to manage it for you. For a summary of options, see [SDKs: Summary](../sdks/summary-sdks.md).
@@ -23,18 +23,14 @@ Rather than calling this endpoint directly, you could use one of the SDKs to man
 `POST '{environment}/v2/token/generate'`
 
 Here's what you need to know about this endpoint requests:
-- To ensure that the API key used to access the service remains secret, EUID tokens must be generated only on the server side after authentication. 
-- You must encrypt all requests using your secret. For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
+- To ensure that the <Link href="../ref-info/glossary-uid#gl-api-key">API key</Link> used to access the service remains secret, EUID tokens must be generated only on the server side after authentication. 
+- You must encrypt all requests using your secret. For details, and code examples in different programming languages, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
 
 ### Path Parameters
 
 | Path Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
-| `{environment}` | string | Required | Testing environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu`<br/>For a full list, including regional operators, see [Environments](../getting-started/gs-environments.md). |
-
-:::note
-The integration environment and the production environment require different <Link href="../ref-info/glossary-uid#gl-api-key">API keys</Link>.
-:::
+| `{environment}` | string | Required | Testing (integration) environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu`<br/>For a full list, including regional operators, see [Environments](../getting-started/gs-environments.md).<br/>Notes:<ul><li>The `integ` environment and the `prod` environment require different <Link href="../ref-info/glossary-uid#gl-api-key">API keys</Link>.</li><li>Token expiration time is subject to change, but is always significantly shorter in the `integ` environment than it is in the `prod` environment.</li></ul> |
 
 ### Unencrypted JSON Body Parameters
 
@@ -52,7 +48,7 @@ You must include only **one** of the following two conditional parameters, plus 
 ### Request Examples
 
 :::important
-To ensure that the API key used to access the service remains secret, the `POST&nbsp;/token/generate` endpoint must be called from the server side, unlike the [POST&nbsp;/token/refresh](post-token-refresh.md), which does not require using an API key.
+To ensure that the API key used to access the service remains secret, the `POST /token/generate` endpoint must be called from the server side, unlike the [POST&nbsp;/token/refresh](post-token-refresh.md), which does not require using an API key.
 :::
 
 The following are unencrypted JSON request body examples for each parameter, one of which you should include in your token generation requests:
@@ -87,7 +83,7 @@ echo '{"email_hash": "tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ="}' \
   | curl -X POST 'https://prod.euid.eu/v2/token/generate' -H 'Authorization: Bearer YourTokenBV3tua4BXNw+HVUFpxLlGy8nWN6mtgMlIk=' -d @- \
   | decrypt_response.py DELPabG/hsJsZk4Xm9Xr10Wb8qoKarg4ochUdY9e+Ow=
 ```
-For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
+For details, and code examples in different programming languages, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md)
 
 ## Decrypted JSON Response Format 
 
@@ -158,4 +154,4 @@ If the `status` value is anything other than `success`, the `message` field prov
 |:------|:-----------------------------|:----------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------|
 | Email | `validate@example.com`       | Test that the `advertising_token` you've cached matches the `advertising_token` for the specified email address.                  | [POST&nbsp;/token/validate](post-token-validate.md) |
 | Email | `optout@example.com`         | Using this email for the request always generates an `optout` response.                                                           | [POST&nbsp;/token/generate](post-token-generate.md) |
-| Email | `refresh-optout@example.com` | Using this email for the request always generates an identity response with a `refresh_token` that results in an optout response. | [POST&nbsp;/token/refresh](post-token-refresh.md)   |
+| Email | `refresh-optout@example.com` | Using this email for the request always generates an identity response with a `refresh_token` that results in an `optout` response. | [POST&nbsp;/token/refresh](post-token-refresh.md)   |

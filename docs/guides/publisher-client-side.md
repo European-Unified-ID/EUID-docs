@@ -140,7 +140,7 @@ EUID provides the publisher with the following values required to use the client
 * A subscription ID
 * A public key
 
-You'll have one set of these values for your publisher testing environment, and a separate set for your production environment.
+You'll have one set of these values for your publisher integration environment, and a separate set for your production environment.
 
 To configure the SDK, call one of the following methods, with an object containing the **public key** and **subscription ID** that you received during account setup, as well as the user's hashed or unhashed personal data (email address):
 

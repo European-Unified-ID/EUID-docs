@@ -1,6 +1,6 @@
 ---
 title: POST /identity/buckets
-description: Monitor rotated salt buckets.
+description: Monitors rotated salt buckets.
 hide_table_of_contents: false
 sidebar_position: 07
 ---
@@ -9,7 +9,7 @@ import Link from '@docusaurus/Link';
 
 # POST /identity/buckets
 
-Monitor rotated salt buckets.
+Monitors rotated salt buckets.
 
 Used by: This endpoint is used mainly by advertisers and data providers. For details, see [Advertiser/Data Provider Integration Guide](../guides/advertiser-dataprovider-guide.md).
 
@@ -18,14 +18,14 @@ Used by: This endpoint is used mainly by advertisers and data providers. For det
 `POST '{environment}/v2/identity/buckets'`
 
 :::important
-You must encrypt all requests using your secret. For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
+You must encrypt all requests using your secret. For details, and code examples in different programming languages, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
 :::
 
 ### Path Parameters
 
 | Path Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
-| `{environment}` | string | Required | Testing environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu`<br/>For a full list, including regional operators, see [Environments](../getting-started/gs-environments.md). |
+| `{environment}` | string | Required | Integration environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu`<br/>For a full list, including regional operators, see [Environments](../getting-started/gs-environments.md). |
 
 :::note
 The integration environment and the production environment require different <Link href="../ref-info/glossary-uid#gl-api-key">API keys</Link>.
@@ -50,25 +50,13 @@ The following is an unencrypted JSON request body example, which you should incl
     "since_timestamp": "2022-06-01T13:00:00"
 }
 ```
-Here's an encrypted identity bucket rotation request format with placeholder values:
-
-```sh
-echo '[Unencrypted-JSON-Request-Body]' \
-  | encrypt_request.py [CLIENT_SECRET] \
-  | curl -X POST 'https://prod.euid.eu/v2/identity/buckets' -H 'Authorization: Bearer [CLIENT_API_KEY]' -d @- \
-  | decrypt_response.py [CLIENT_SECRET] 
-```
-
 Here's an encrypted identity bucket rotation request example:
 
 ```sh
-echo '{"since_timestamp": "2022-06-01T13:00:00"}' \
-  | encrypt_request.py DELPabG/hsJsZk4Xm9Xr10Wb8qoKarg4ochUdY9e+Ow= \
-  | curl -X POST 'https://prod.euid.eu/v2/identity/buckets' -H 'Authorization: Bearer YourTokenBV3tua4BXNw+HVUFpxLlGy8nWN6mtgMlIk=' -d @- \
-  | decrypt_response.py DELPabG/hsJsZk4Xm9Xr10Wb8qoKarg4ochUdY9e+Ow= 
+echo '{"since_timestamp": "2023-04-19T13:00:00"}' | python3 uid2_request.py https://prod.euid.eu/v2/identity/buckets [Your-Client-API-Key] [Your-Client-Secret]
 ```
 
-For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
+For details, and code examples in different programming languages, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
 
 ## Decrypted JSON Response Format
 
@@ -98,6 +86,8 @@ A successful decrypted response returns a list of salt bucket IDs and the timest
 }
 ```
 ### Response Body Properties
+
+The response body includes the properties shown in the following table.
 
 | Property | Format | Description |
 | :--- | :--- | :--- |

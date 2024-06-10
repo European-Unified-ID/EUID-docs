@@ -1,6 +1,6 @@
 ---
 title: POST /identity/map
-description: Map personal data to raw EUIDs and salt bucket IDs.
+description: Maps personal data to raw EUIDs and salt bucket IDs.
 hide_table_of_contents: false
 sidebar_position: 08
 ---
@@ -9,7 +9,7 @@ import Link from '@docusaurus/Link';
 
 # POST /identity/map
 
-Map multiple email addresses or email address hashes to their raw EUIDs and salt bucket IDs. You can also use this endpoint to check for updates to opt-out information.
+Maps multiple email addresses or email address hashes to their raw EUIDs and salt bucket IDs. You can also use this endpoint to check for updates to opt-out information.
 
 Used by: This endpoint is used mainly by advertisers and data providers. For details, see [Advertiser/Data Provider Integration Guide](../guides/advertiser-dataprovider-guide.md).
 
@@ -19,7 +19,7 @@ Here's what you need to know:
 
 - The maximum request size is 1MB. 
 - To map a large number of email addresses or email address hashes, send them in *sequential* batches with a maximum batch size of 5,000 items per batch.
-- Unless you are using a private operator, do not send batches in parallel. In other words, use a single HTTP connection and map personal data consecutively.
+- Unless you are using a Private Operator, do not send batches in parallel. In other words, use a single HTTP connection and map <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> consecutively.
 - Be sure to store mappings of email addresses or email address hashes.<br/>Not storing mappings may increase processing time drastically when you have to map millions of emails addresses. Recalculating only those mappings that actually need to be updated, however, reduces the total processing time because only about 1/365th of raw EUIDs need to be updated daily. See also [Advertiser/Data Provider Integration Guide](../guides/advertiser-dataprovider-guide.md) and [FAQs for Advertisers and Data Providers](../getting-started/gs-faqs.md#faqs-for-advertisers-and-data-providers).
 
 ## Request Format
@@ -27,14 +27,14 @@ Here's what you need to know:
 `POST '{environment}/v2/identity/map'`
 
 :::important
-You must encrypt all requests using your secret. For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
+You must encrypt all requests using your secret. For details, and code examples in different programming languages, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
 :::
 
 ### Path Parameters
 
 | Path Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
-| `{environment}` | string | Required | Testing environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu`<br/>For a full list, including regional operators, see [Environments](../getting-started/gs-environments.md). |
+| `{environment}` | string | Required | Integration environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu`<br/>For a full list, including regional operators, see [Environments](../getting-started/gs-environments.md). |
 
 :::note
 The integration environment and the production environment require different <Link href="../ref-info/glossary-uid#gl-api-key">API keys</Link>.
@@ -49,8 +49,7 @@ You must include only **one** of the following two conditional parameters as a k
 | Body Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
 | `email` | string array | Conditionally Required | The list of email addresses to be mapped. |
-| `email_hash` | string array | Conditionally Required | The list of [Base64-encoded SHA-256](../getting-started/gs-normalization-encoding.md#email-address-hash-encoding) hashes of [normalized](../getting-started/gs-normalization-encoding.md#email-address-normalization) email addresses. |
-
+| `email_hash` | string array | Conditionally Required | The list of [Base64-encoded SHA-256](../getting-started/gs-normalization-encoding.md#email-address-hash-encoding) hashes of [normalized](../getting-started/gs-normalization-encoding.md#email-address-normalization) email addresses to be mapped. |
 
 ### Request Examples
 
@@ -91,7 +90,7 @@ echo '{"email": ["user@example.com", "user2@example.com"]}' \
   | decrypt_response.py DELPabG/hsJsZk4Xm9Xr10Wb8qoKarg4ochUdY9e+Ow= 
 ```
 
-For details and Python script examples, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
+For details, and code examples in different programming languages, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
 
 ## Decrypted JSON Response Format
 
@@ -122,6 +121,8 @@ A successful decrypted response returns the raw EUIDs and salt bucket IDs for th
 ```
 
 ### Response Body Properties
+
+The response body includes the properties shown in the following table.
 
 | Property | Data Type | Description |
 | :--- | :--- | :--- |
