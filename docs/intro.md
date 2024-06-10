@@ -9,7 +9,7 @@ import Link from '@docusaurus/Link';
 
 # European Unified ID Overview
 
-The European Unified ID (EUID) is a framework that enables deterministic identity for advertising opportunities on the open internet for many [participants](#participants) across the advertising ecosystem. The EUID framework enables logged-in experiences from publisher websites, mobile apps, and Connected TV (CTV) apps to monetize through programmatic workflows. Built on the [UID2 framework](https://unifiedid.com/docs/intro), EUID offers the user transparency and privacy controls designed to meet market requirements in Europe and the UK.
+The European Unified ID (EUID) is a framework that enables deterministic identity for advertising opportunities on the open internet for many [participants](#participants) across the advertising ecosystem. The EUID framework enables logged-in experiences from publisher websites, mobile apps, and Connected TV (CTV) apps to monetize through programmatic workflows. Built on the [UID2 framework](https://unifiedid.com/docs/intro), EUID offers the user transparency and privacy controls designed to meet market requirements in many European countries and some other regions such as the UK.
 
 :::note
 The term "EUID" can refer to either the framework or an actual identifier. Unless otherwise indicated, this page provides an overview of the EUID framework.
@@ -17,7 +17,7 @@ The term "EUID" can refer to either the framework or an actual identifier. Unles
 
 ### EUID vs. UID2
 
-EUID is an open-source, standalone solution with its own unique namespace that builds on the [UID2 framework](https://unifiedid.com/docs/intro). The main differences between UID2 and EUID result from more stringent European and UK data protection laws, relating to consent practices, rights for data subjects, and obligations between participants. Otherwise, EUID follows the same [guiding principles](#guiding-principles) as UID2.
+EUID is an open-source, standalone solution with its own unique namespace that builds on the [UID2 framework](https://unifiedid.com/docs/intro). The main differences between UID2 and EUID result from more stringent European and UK data protection laws relating to consent practices, rights for data subjects, and obligations between participants. Otherwise, EUID follows the same [guiding principles](#guiding-principles) as UID2.
 
 :::important
 Even though it is built on the UID2 framework, EUID is a separate framework.
@@ -38,7 +38,7 @@ The EUID framework has the following principles as its foundation:
 
 - **First-party relationships**: EUID enables advertisers to activate their first-party data on publisher websites across the open internet.
 
-- **Non-proprietary (universal) standard**: All [participants](#participants) in the advertising ecosystem who abide by the code of conduct can access EUID.
+- **Non-proprietary (universal) standard**: All [participants](#participants) in the advertising ecosystem who agree to abide by the code of conduct can access EUID.
 
 - **Open source**: The source code for the EUID [components](#components) is publicly available.
 
@@ -62,7 +62,7 @@ The EUID framework is built on the following technical principles:
 
 - **Self-reliant**: EUID does not rely on external services for the processing of real-time bidding (RTB) data.
 
-## EUID Infrastructure
+## Elements of the EUID Infrastructure
 
 The following sections explain and illustrate the key elements of the EUID infrastructure:
 
@@ -73,7 +73,7 @@ The following sections explain and illustrate the key elements of the EUID infra
 
 ### EUID Identifier Types
 
-EUID is a deterministic identifier based on email addresses. There are two types of EUIDs: raw EUIDs and EUID tokens (also known as advertising tokens). The following table explains each type.
+EUID is a deterministic ID that is based on email addresses. There are two types of EUIDs: raw EUIDs and EUID tokens (also known as advertising tokens). The following table explains each type.
 
 | ID Type | Shared in Bidstream? | Description |
 | :--- | :--- | :--- |
@@ -86,26 +86,26 @@ The EUID framework consists of the following components, all of which are curren
 
 | Component | Description |
 | :--- | :--- |
-| **Core Service**  | A centralized service that manages access to salts, encryption keys, and other relevant data in the EUID ecosystem. | 
-| **Operator Service**  | A service that enables the management and storage of encryption keys and salts from the EUID Core Service, hashing of users' personal data, encryption of raw EUIDs, and decryption of EUID tokens. There can be multiple instances of the service (public or private) operated by multiple [participants](#participants), known as operators.<br/>Open operators run publicly available instances of the Operator Service and make them available to all relevant EUID participants. There might also be private operators that run private instances of the Operator Service exclusively for their own use. All instances are designed with protections to keep critical EUID data secure and interoperable, regardless of who operates the service.  | 
-| **Opt-Out Service**  | A global service that manages and stores user opt-out requests and disseminates them to publishers, operator service instances, and DSPs. | 
-| **Transparency and Control Portal**  | A user-facing website, [https://transparentadvertising.eu](https://transparentadvertising.eu), that allows consumers to opt out of EUID at any time. | 
+| **Core Service** | A centralized service that manages access to <a href="ref-info/glossary-uid#gl-salt">salts</a>, encryption keys, and other relevant data in the EUID ecosystem. |
+| **Operator Service** | A service that enables the management and storage of encryption keys and salts from the EUID Core Service, hashing of users' personal data, encryption of raw EUIDs, and decryption of EUID tokens. There can be multiple instances of the service (public or private) operated by multiple [participants](#participants), known as operators.<br/>Open operators run publicly available instances of the Operator Service and make them available to all relevant EUID participants. There might also be private operators that run private instances of the Operator Service exclusively for their own use. All instances are designed with protections to keep critical EUID data secure and interoperable, regardless of who operates the service. |
+| **Opt-Out Service** | A global service that manages and stores user opt-out requests and disseminates them to publishers, operator service instances, and DSPs. |
+| **Transparency and Control Portal** | A user-facing website, [https://transparentadvertising.eu](https://transparentadvertising.eu), that allows consumers to opt out of EUID at any time. |
 
 ### Participants 
 
-With its transparent and interoperable approach, EUID provides a collaborative framework for many participants across the advertising ecosystem—advertisers, publishers, DSPs, SSPs, single sign-on (SSO) providers, customer data platforms (CDPs), consent management providers (CMPs), identity providers, third-party data providers, and measurement providers.  
+With its transparent and interoperable approach, EUID provides a collaborative framework for many participants across the advertising ecosystem—advertisers, publishers, DSPs, SSPs, single sign-on (SSO) providers, customer data platforms (CDPs), consent management providers (CMPs), identity providers, third-party data providers, and measurement providers.
 
 The following table lists the key participants and their roles in the EUID [workflows](#workflows).
 
 | Participant | Role Description |
 | :--- | :--- |
-| **Core Administrator**  | An organization (currently, The Trade Desk) that manages the EUID Core Service and other [components](#components). For example, it distributes encryption keys and salts to EUID operators and sends user opt-out requests to operators and DSPs. |  
-| **Operators**  | Organizations that operate the Operator Service (via the EUID APIs). Operators receive and store encryption keys and salts from the EUID Core Service, salt and hash personal data to return EUID tokens, encrypt raw EUIDs to generate EUID tokens, and distribute EUID token decryption keys.<br/>Open operators run public instances of the Operator Service. For example, The Trade Desk currently serves as an open operator for the EUID framework, available to all participants. If other open operators are available, a participant can choose which operator to work with.<br/>Any participant can also choose to become a private operator to generate and manage EUIDs. | 
-| **DSPs**  | DSPs integrate with the EUID system to receive EUIDs from advertisers (as first-party data) and third-party data providers (as third-party data) and leverage them to inform bidding on EUIDs in the bidstream. | 
-| **Data Providers**  | Organizations that collect user data and push it to other EUID participants—for example, advertisers, identity graph providers, and third-party data providers. | 
-| **Advertisers**  | Organizations that buy impressions across a range of publisher sites and use DSPs to decide which ad impressions to purchase and how much to bid on them. | 
-| **Publishers**  | Organizations that propagate EUID tokens to the bidstream via SSPs—for example, identity providers, publishers, and SSO providers. Publishers can choose to work with an SSO provider or an independent ID provider that is interoperable with EUID. The latter can handle the EUID integration on behalf of publishers. | 
-| **Consumers**  | Users who engage with publishers or their identity providers. Users can opt out of EUID in the [EUID Transparency and Control Portal](https://transparentadvertising.eu). | 
+| **Core Administrator** | An organization (currently, The Trade Desk) that manages the EUID Core Service and other [components](#components). For example, it distributes encryption keys and salts to EUID operators and sends user opt-out requests to operators and DSPs. |
+| **Operators** | Organizations that operate the Operator Service (via the EUID APIs). Operators receive and store encryption keys and salts from the EUID Core Service, salt and hash personal data to return EUID tokens, encrypt raw EUIDs to generate EUID tokens, and distribute EUID token decryption keys.<br/>Open operators run public instances of the Operator Service. For example, The Trade Desk currently serves as an open operator for the EUID framework, available to all participants. If other open operators are available, a participant can choose which operator to work with.<br/>Any participant can also choose to become a private operator to generate and manage EUIDs. |
+| **DSPs** | DSPs integrate with the EUID system to receive EUIDs from advertisers (as first-party data) and third-party data providers (as third-party data) and leverage them to inform bidding on EUIDs in the bidstream. |
+| **Data Providers** | Organizations that collect user data and push it to other EUID participants&#8212;for example, advertisers, identity graph providers, and third-party data providers. |
+| **Advertisers** | Organizations that buy impressions across a range of publisher sites and use DSPs to decide which ad impressions to purchase and how much to bid on them. | 
+| **Publishers** | Organizations that propagate EUID tokens to the bidstream via SSPs—for example, identity providers, publishers, and SSO providers. Publishers can choose to work with an SSO provider or an independent ID provider that is interoperable with EUID. Independent ID providers can handle the EUID integration on behalf of publishers. |
+| **Consumers** | Users who engage with publishers or their identity providers. Consumers can opt out of EUID in the [EUID Transparency and Control Portal](https://transparentadvertising.eu). |
 
 ## Workflows
 
@@ -113,10 +113,10 @@ The following table lists four key workflows in the EUID system and provides lin
 
 | Workflow | Intended Primary Participants | Integration Guide |
 | :--- | :--- | :--- |
-| **Buy-Side** | DSPs who transact on EUID tokens in the bidstream. | [DSP](guides/dsp-guide.md) |
-| **Data Provider** | Organizations that collect user data and push it to other EUID participants. | [Advertiser and Third-Party Data Provider](guides/advertiser-dataprovider-guide.md) |
-| **Supply-Side** | Organizations that propagate EUID tokens to the bidstream via SSPs.<br/> NOTE: Publishers can choose to leverage the [SDK for JavaScript](sdks/client-side-identity.md) or complete their own server-side integration without using an SDK. | [Client-Side Integration Guide for JavaScript](guides/publisher-client-side.md)<br/>[Publisher Integration Guide, Server-Side](guides/custom-publisher-integration.md) |
-| **Opt-Out** | Consumers who engage with publishers or their SSO providers and other identity providers. | N/A |
+| [Workflow for DSPs](overviews/overview-dsps.md#workflow-for-dsps) (Buy-Side) | DSPs who transact on EUID tokens in the bidstream. | See [DSP Integrations](guides/summary-guides#dsp-integrations) |
+| [Workflow for Advertisers](overviews/overview-advertisers.md#workflow-for-advertisers) and [Workflow for Data Providers](overviews/overview-data-providers.md#workflow-for-data-providers) | Organizations that collect user data and push it to DSPs. | See [Advertiser/Data Provider Integrations](guides/summary-guides#advertiserdata-provider-integrations) |
+| [Workflow for Publishers](overviews/overview-publishers.md#workflow-for-publishers) | Organizations that propagate EUID tokens to the bidstream via SSPs.<br/> NOTE: Publishers can choose to integrate using Prebid, leverage the EUID SDK for JavaScript, or complete their own server-side integration without using an SDK. | See [Publisher Integrations](guides/summary-guides#publisher-integrations) |
+| [Opt-Out Workflow](getting-started/gs-opt-out.md#opt-out-workflow) | Consumers who engage with publishers or their SSO providers and other identity providers. | N/A |
 
 The following diagram summarizes all four workflows. For each workflow, the [participants](#participants), [components](#components), [EUID identifier types](#euid-identifier-types), and numbered steps are color-coded.
 
