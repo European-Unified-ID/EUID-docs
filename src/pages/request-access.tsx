@@ -26,7 +26,7 @@ const componentData = {
   }),
   description: translate({
     id: "requestAccess.metaDescription",
-    message: "Contact us to become a EUID partner.",
+    message: "Contact us to become an EUID partner.",
     description: "The request access page meta description",
   }),
   heading: translate({
