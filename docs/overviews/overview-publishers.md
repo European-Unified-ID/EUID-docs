@@ -25,7 +25,7 @@ Here are just some of the intended benefits for publishers integrating with EUID
 
 ## Workflow for Publishers
 
-The following steps provide a high-level outline of the workflow intended for organizations that propagate EUID tokens to the bidstream via SSPs&#8212;for example, identity providers, publishers, and SSO providers. Publishers can choose to work with an SSO provider or an independent ID provider that is interoperable with EUID and can handle the EUID integration on behalf of publishers.
+The following steps provide a high-level outline of the workflow intended for organizations that propagate EUID tokens to the <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link> via SSPs&#8212;for example, identity providers, publishers, and SSO providers. Publishers can choose to work with an SSO provider or an independent ID provider that is interoperable with EUID and can handle the EUID integration on behalf of publishers.
 
 1. A user visits a publisher website, mobile app, or CTV app.
 2. The publisher provides transparency around its data practices and asks the user to provide an email address, by login or other means, and consent to the use of their email address for EUID.
