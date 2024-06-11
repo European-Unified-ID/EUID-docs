@@ -102,7 +102,7 @@ The EUID service encrypts tokens using random initialization vectors. The encryp
 
 #### What does an EUID token look like in the bidstream?
 
-There are many ways to approach EUID implementation. Here is one example of a code snippet showing how an EUID token is passed in the bidstream:
+There are many ways to approach EUID implementation. Here is one example of a code snippet showing how an EUID token is passed in the <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link>:
 
 ```js
 {

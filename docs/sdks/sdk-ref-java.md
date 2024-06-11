@@ -336,7 +336,7 @@ The SDK hashes input values before sending them. This ensures that raw email add
 
 ## Usage for DSPs
 
-The following instructions provide an example of how a DSP can decode bidstream tokens using the EUID SDK for Java.
+The following instructions provide an example of how a DSP can decode <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link> tokens using the EUID SDK for Java.
 
 1. Create a `BidstreamClient`:
 

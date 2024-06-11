@@ -10,7 +10,7 @@ import Link from '@docusaurus/Link';
 
 # DSP Integration Guide
 
-This guide is for DSPs who transact on EUIDs in the bidstream.
+This guide is for DSPs who transact on EUIDs in the <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link>.
 
 DSPs receive EUID tokens in bid requests, and decrypt the EUID tokens to arrive at raw EUIDs that they can use for bidding, using one of the server-side SDKs that support this function.
 
