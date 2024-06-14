@@ -115,23 +115,7 @@ __euid.init({
 Tokens from the EUID integration environment are not valid for passing to the <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link>. For the integration environment, you will have different **subscription ID** and **public key** values.
 :::
 
-### Optional: Reduce Latency by Setting the API Base URL for the Production Environment
-
-By default, in the production environment, the JS SDK makes API calls to an EUID server in the USA. Depending on where your users are based, you might consider choosing a server closer to your users in order to reduce latency.
-
-For example, a publisher in Singapore can set the base URL to `https://sg.prod.uidapi.com`. This is still the EUID production environment, but the servers are in Singapore.
-
-For the list of possible base URLs, see [Environments](../getting-started/gs-environments.md).
-
-A publisher can also set the base URL to `https://global.prod.uidapi.com`. This URL directs readers to a region geographically close to them, which is ideal if your audience is geographically distributed.
-
-To specify a different EUID server, you can change it in the `init` call:
-
-```js
-__euid.init({
-  baseUrl: "https://global.prod.uidapi.com",
-});
-```
+<!-- Reduce Latency by Setting the API Base URL for the Production Environment not applicable for EUID -->
 
 ## Configure the SDK for JavaScript
 
