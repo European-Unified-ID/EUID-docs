@@ -8,7 +8,7 @@
     U->>+P: 1-a. The user visits a publisher asset.
     P->>-U: 1-b. The publisher provides transparency around its data practices.
     activate U
-    U->>P: 1-c. The user authenticates and authorizes the creation of an EUID.
+    U->>P: 1-c. The user authenticates.
     deactivate U
     activate P
     P->>EUID: 1-d. The publisher sends the user's personal data to the token generation service.
@@ -40,7 +40,10 @@
     P->>U: 4-b. The user's identity is cleared.
     deactivate P
 
-    <!-- Mermaid Live Editor Source: https://mermaid-js.github.io/mermaid-live-editor/edit#pako:eNqNVUtv2kAQ_isjR8iHAkqTXOJDDmmCFLWqUIl74jJ4B1jV7Lq7axqK-O-d3bVxg6GqcoiZ5zffPHafFFpQkiUAg8FeKuky2KduTRtKM0gXaCkdQhR8RyNxUZJlzR7SysgNmt0nXWrjba-ur-_vJ_feXGlHj9oIMo22U6ZYOG1e6c11jpPJxHtZKrQSXcj0ioT_Sw-Hw2AwVwCWftakCnqSuDK48SKACo2ThaxQOcgBLeSWTF819appvSilXZ_TP-cvT94k_J-R2cqC-laz2TQKv3KJoLdkIB-yMIOPY3i2DkN8eBGknHS7aJuPHh4-eJMRjuF1TVAzQthKK50FhKoFxektuXF0mrLTKPdOi-jUmdFbVaJUFrgtsMWyJhYVa1QrhrQMUl2RAqkcGUUOUAkwnjsbEpZ6JVWThtsht8i15B3WALX4CyrWHJMLKtjQhmheoo38TRFEYQid1MqnRxU4bOILOs1w_D3tCvUOPqk4LdWSEjGFB5JaqMhYrbAEgQ7B6aBz-geXuyJFJsKwsX99DNMTDD5xFPmvtnaKMC6FZS5dbVQzK8HK9lN1oc9VHDq77JfrGxQJhKU2x8ovVtKbw5sxPErBSyDVKsZ5DQC9eZc-mrbz2AEosCwj32wRECDzX4dgXtpVfDo_x83gj8jjTTu5PlRLmQ_HXRPS8gzv-mUdw1wg7aYdzA5zEyvCbuL_k7cLzN2O4RstDfH-dpTFjYjzedvyNXv63Ewmtnvlk5rG-0hUx9tRdY663hDmPheT98LbFDdwjValjtfakQBdu2E_am86Ff0C2Ryi_5jSHh9343BK4YteccZ35-Hu3SXje2I9KFgavbl40C409K6dkmbBj4ilhaIkNCTONDEZJhsyG5SC3659mO0kPFLzJONPHlzuyTyZqwNb1hUfC3oWkl-eJFtiaWmY8AXTs50qksyZmlqj5mVprA5_AM6AUB0  -->
+
+<!-- Updated 6/17/24 -->
+
+    <!-- Mermaid Live Editor Source: https://mermaid-js.github.io/mermaid-live-editor/edit#pako:eNqdVUtvGjEQ_isjR2gPJYj3Yw85pEmkSG2FSuih4mJ2B7C62NT20lDEf-_YXtjyitKyB3bHM9_MNw_PliUqRRYzgEplK6SwMWwju8AlRjFEU24wqkIQfONa8GmGhk62EK20WHK9-agypZ3uTb0-GDwNnLpUFu-VTlEXp-VhxBOr9Au-2tLw6enJWRlMlExLyOgGU_dEu92uUplIAIM_c5QJPgg-13zpRAArrq1IxIpLC2PgBsYG9fnR0B0N82kmzOLS-eP4-cGp-P8R6rVI8FxrNBoG4ReiCGqNGsZVEsbQqMGjsdzjw3OK0gq7Cbrj27u7D07lltfgZYGQU4SwFkZYAxxW-6DIvUFbC0ZDMrodO6NpMCrV8HWVcSENUFlgzbMcSZQsuJxTSDMvVSuUIKRFLdEClylolzvjHWZqLmThhsoh1py4jMtYfajJX6HynDCJUEKKpjBM8dT08D0sGbhsOrT0lINBmQYCzkNkYIXaKMkzSLnlYJU_s-oH8ZijRM2tUJLMfGHOYxiexOAcB5F725PCEMY1WEqSzbUsmsBrXaBbQl9i7Es2O6frMi8D8EzpA_OrTM4arFmDe5FSdws5DzgvPkCnXroPqvtGKwNIeJaFfJOGj4BT_nMP5qQl49PGOLQ8vYQ8Nvct6aD2KXNwVLVUGGrOzTmtA8yVpDX3HVfGXGCFsAv8N_N2JXOtGnzFmUYazDJlh1ZvHU3lng65ujaZ1_u8dT6rBOpGThf-Q-cReDGOIPEXiOK2KDruff3xZqe3XDKfZ-TYk1pwIyNLl4LFFFRuqx7-OKbTEbgQ2H-MQuvS5NtQUefhffNwpa7tmr_r4ZOaE6mjoraPikoXnnG8YabV8p_qOnZQ0xKKLqpDUpIMub6QlCGrsiXqJRcpLdatn0_mN-iExfRKdKnyEzaRO9Kku1WNNjJhsdU5Vlm-ogtwv-GOhY-poN3J4hnPDAnRf34O-9uv8SqjJfVdqeVBh75ZvGWvLG60a-1up9XvDFrtbqPXqferbMPidqdD8v6g0az36_Ver9fdVdlvD9Go1f2v0Rg064Nmf9Dd_QE6JaEq  -->
     
     
     

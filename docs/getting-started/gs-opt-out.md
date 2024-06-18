@@ -21,7 +21,7 @@ Because each participant has their own opt-out workflow, participants are mandat
 
 For example, if a user opts out of a publisher's site, but has not opted out of EUID, the publisher should not generate an EUID token for that user.  
 
-Consumers can always opt out of EUID completely in the [Transparency and Control Portal](https://www.transparentadvertising.eu/). Enter your email address and follow the prompts.
+Consumers can always opt out of EUID being used to show them personalized ads, in the [Transparency and Control Portal](https://www.transparentadvertising.eu/). Enter your email address and follow the prompts.
 
 ## Difference Between Opting Out from a Single Participant and Opting Out of EUID
 
@@ -47,6 +47,6 @@ The following steps provide a high-level outline of the workflow intended for us
    | DSPs | The EUID Operator Service distributes information on all opted-out users to DSPs via a webhook provided for the purpose. For details, see [Honor User Opt-Outs](../guides/dsp-guide#honor-user-opt-outs).<br/>DSPs can also check the opt-out status of raw EUIDs using the [POST&nbsp;/optout/status](../endpoints/post-optout-status.md) endpoint. |
    | Advertisers and data providers | The EUID Operator Service distributes opt-out information to advertisers and data providers via the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint. Another option is to check the opt-out status of raw EUIDs using the [POST&nbsp;/optout/status](../endpoints/post-optout-status.md) endpoint. |
 
-This workflow allows users to consent to the creation of EUID identifiers and manage their EUID consent and privacy settings through the Transparency and Control Portal.
+This workflow allows users to opt out of personalized advertising based on their EUID through the Transparency and Control Portal.
 
 ![User Trust Workflow](images/EUIDGlobalOptoutWorkflow.svg)
