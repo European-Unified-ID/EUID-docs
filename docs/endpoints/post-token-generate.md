@@ -8,7 +8,7 @@ sidebar_position: 02
 import Link from '@docusaurus/Link';
 
 # POST /token/generate
-Requests an EUID token generated from a user's  <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> (email address). If the email address is valid, and the user has not opted out of EUID, this operation returns an EUID token and associated values.
+Requests an EUID token generated from a user's <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> (email address). If the email address is valid, and the user has not opted out of EUID, this operation returns an EUID token and associated values.
 
 Used by: This endpoint is used mainly by publishers.
 
