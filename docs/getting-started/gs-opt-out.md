@@ -35,7 +35,7 @@ The sure way for a consumer to fully opt out of EUID is in the [Transparency and
 
 When a consumer opts out of EUID, that individual's EUID is no longer accepted for targeted advertising anywhere in the EUID ecosystem. However, because there is a delay in the time it takes to process and refresh EUID information, the EUID for a user who has opted out might be in play for a short while after opt-out. As each participant periodically refreshes their EUIDs, the opt-out information is propagated to the participants.
 
-The following steps provide a high-level outline of the workflow intended for users who engage with publishers or their identity providers. 
+The following steps provide a high-level outline of the opt-out workflow intended for users who have had an EUID created from their email address. 
 
 1. Users visit the [Transparency and Control Portal](https://www.transparentadvertising.eu/), where they can globally opt out of EUID.
 2. The Transparency and Control Portal sends the opt-out request to the EUID <Link href="../ref-info/glossary-uid#gl-operator-service">Operator Service</Link>.
