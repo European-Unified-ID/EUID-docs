@@ -14,7 +14,7 @@ Requests an EUID token generated from a user's <Link href="../ref-info/glossary-
 Used by: This endpoint is used mainly by publishers.
 
 :::important
-Be sure to call this endpoint only when you have legal basis to convert the user’s personal data to an EUID token for targeted advertising. The `optout_check` parameter, required with a value of `1`, checks whether the user has opted out.
+Be sure to call this endpoint only when you have a legal basis to convert the user’s personal data to an EUID token for targeted advertising. The `optout_check` parameter, required with a value of `1`, checks whether the user has opted out.
 :::
 
 <!-- Admonition is different re legal basis. -->
