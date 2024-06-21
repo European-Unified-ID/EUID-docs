@@ -23,7 +23,7 @@ export default function HomepageConsumerBenefit(): JSX.Element {
     subheading: translate({
       id: "homepage.benefitsCopy",
       message:
-        "EUID was created with consumer privacy and the regulatory requirements of the region as a top priority. Users can opt out of using their EUID universally by visiting the opt-out portal. Participants are required to honor user opt-out requests made through the portal.",
+        "EUID was created to be conscious of consumer privacy and the regulatory requirements of the region. Users can opt out of using their EUID universally by visiting the opt-out portal. Participants are required to honor user opt-out requests made through the portal.",
     }),
   };
 

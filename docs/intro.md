@@ -9,7 +9,7 @@ import Link from '@docusaurus/Link';
 
 # European Unified ID Overview
 
-The European Unified ID (EUID) is a framework that enables deterministic identity for advertising opportunities on the open internet for many [participants](#participants) across the advertising ecosystem. The EUID framework enables logged-in experiences from publisher websites, mobile apps, and Connected TV (CTV) apps to monetize through programmatic workflows. Built on the [UID2 framework](https://unifiedid.com/docs/intro), EUID offers the user transparency and privacy controls designed to meet market requirements in many European countries and some other regions such as the UK.
+The European Unified ID (EUID) is a framework that enables deterministic identity for advertising opportunities on the open internet for many [participants](#participants) across the advertising ecosystem. The EUID framework enables publisher websites, mobile apps, and Connected TV (CTV) apps to monetize through programmatic workflows. Built on the [UID2 framework](https://unifiedid.com/docs/intro), EUID offers privacy controls designed to help participants meet market requirements in many European countries and some other regions such as the UK.
 
 :::note
 The term "EUID" can refer to either the framework or an actual identifier. Unless otherwise indicated, this page provides an overview of the EUID framework.
@@ -38,7 +38,7 @@ The EUID framework has the following principles as its foundation:
 
 - **First-party relationships**: EUID enables advertisers to activate their first-party data on publisher websites across the open internet.
 
-- **Non-proprietary (universal) standard**: All [participants](#participants) in the advertising ecosystem who agree to abide by the code of conduct can access EUID.
+- **Non-proprietary (universal) standard**: All [participants](#participants) in the advertising ecosystem who execute an appropriate participation agreement can access EUID.
 
 - **Open source**: The source code for the EUID [components](#components) is publicly available.
 
@@ -105,7 +105,7 @@ The following table lists the key participants and their roles in the EUID [work
 | **Data Providers** | Organizations that collect user data and push it to other EUID participants&#8212;for example, advertisers, identity graph providers, and third-party data providers. |
 | **Advertisers** | Organizations that buy impressions across a range of publisher sites and use DSPs to decide which ad impressions to purchase and how much to bid on them. | 
 | **Publishers** | Organizations that propagate EUID tokens to the bidstream via SSPs—for example, identity providers, publishers, and SSO providers. Publishers can choose to work with an SSO provider or an independent ID provider that is interoperable with EUID. Independent ID providers can handle the EUID integration on behalf of publishers. |
-| **Consumers** | Users who engage with publishers or their identity providers. Consumers can opt out of EUID in the [EUID Transparency and Control Portal](https://transparentadvertising.eu). |
+| **Consumers** | Users who have had an EUID token or raw EUID created from their email address. Consumers can opt out of EUID in the [EUID Transparency and Control Portal](https://transparentadvertising.eu). |
 
 ## Workflows
 
