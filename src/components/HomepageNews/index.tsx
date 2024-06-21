@@ -47,6 +47,26 @@ const ArticleList: ArticleItem[] = [
     url: "https://www.engage.it/programmatic/italiaonline-ancora-piu-cookieless-grazie-alladozione-di-euid-.aspx",
     date: "April 10, 2024",
   },
+  {
+    title: "Performance Marketing World",
+    url: "https://www.performancemarketingworld.com/article/1868520/identity-fabric-enables-personalisation-privacy-first-era",
+    date: "April 12, 2024",
+  },
+  {
+    title: "Decision Marketing",
+    url: "https://www.decisionmarketing.co.uk/news/tealium-jumps-into-bed-with-trade-desk-for-adtech-boost",
+    date: "May 29, 2024",
+  },
+  {
+    title: "GlobeNewswire",
+    url: "https://www.globenewswire.com/news-release/2024/05/29/2889945/0/en/Tealium-expands-global-capabilities-for-customers-with-European-Unified-ID-integration.html",
+    date: "May 29, 2024",
+  },
+  {
+    title: "NewDigitalAge",
+    url: "https://newdigitalage.co/technology/tealium-expands-capabilities-with-european-unified-id-integration/",
+    date: "May 31, 2024",
+  },
 ];
 
 function ArticleCard({ title, url, date }: ArticleItem) {
