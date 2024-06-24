@@ -125,6 +125,7 @@ Decryption response codes, and their meanings, are shown in the following table.
    - Always apply `do_not_generate_tokens_for_opted_out()`. This applies a parameter similar to setting `optout_check=1` in the call to the POST&nbsp;/token/generate endpoint (see [Unencrypted JSON Body Parameters](../endpoints/post-token-generate.md#unencrypted-json-body-parameters)).
    :::
 
+   <!-- uid2_euid_diff re legal basis for admonition above (not in UID2) -->
 
 #### Client-Server Integration
 
