@@ -148,7 +148,7 @@ If you're using the SDK's HTTP implementation, follow these steps.
    private final PublisherUid2Client publisherUid2Client = new PublisherUid2Client(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY);
    ```
 
-2. Call a function that takes the user's email address <!-- or phone number  -->as input and generates a `TokenGenerateResponse` object. The following example uses an email address:
+2. Call a function that takes the user's email address as input and generates a `TokenGenerateResponse` object. The following example uses an email address:
    ```java
    TokenGenerateResponse tokenGenerateResponse = publisherUid2Client.generateTokenResponse(TokenGenerateInput.fromEmail(emailAddress).doNotGenerateTokensForOptedOut());
    ```
@@ -158,6 +158,8 @@ If you're using the SDK's HTTP implementation, follow these steps.
 
    - Always apply `doNotGenerateTokensForOptedOut()`. This applies a parameter similar to setting `optout_check=1` in the call to the POST&nbsp;/token/generate endpoint (see [Unencrypted JSON Body Parameters](../endpoints/post-token-generate.md#unencrypted-json-body-parameters)).
    :::
+
+   <!-- uid2_euid_diff re legal basis for admonition above (first bullet not in UID2) -->
 
 #### Client-Server Integration
 
@@ -236,6 +238,8 @@ If you're using server-side integration (see [Publisher Integration Guide, Serve
 
    - Always apply `doNotGenerateTokensForOptedOut()`. This applies a parameter similar to setting `optout_check=1` in the call to the POST&nbsp;/token/generate endpoint (see [Unencrypted JSON Body Parameters](../endpoints/post-token-generate.md#unencrypted-json-body-parameters)).
    :::
+
+ <!-- uid2_euid_diff re legal basis for admonition above (first bullet not in UID2) -->
 
 4. If the HTTP response status code is _not_ 200, see [Response Status Codes](../endpoints/post-token-generate.md#response-status-codes) to determine next steps. Otherwise, convert the EUID identity response content into a `TokenGenerateResponse` object:
 
