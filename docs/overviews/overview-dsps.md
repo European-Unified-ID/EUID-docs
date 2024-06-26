@@ -89,7 +89,7 @@ To integrate with EUID to receive EUIDs from brands (as first-party data) and da
 - Accept data in the form of EUIDs
 - Bid on data in the form of EUIDs
 - Build a webhook for honoring opt-out requests
-- Sync encryption keys daily with the EUID Administrator
+- Sync <a href="../ref-info/glossary-uid#gl-encryption-key">encryption keys</a> daily with the EUID Administrator
 
 For details, see [DSP Integration Guide](../guides/dsp-guide.md).
 

@@ -9,7 +9,7 @@ import Link from '@docusaurus/Link';
 
 # The EUID Operator
 
-The EUID Operator Service enables the management and storage of encryption keys and [salts](../ref-info/glossary-uid.md#gl-salt) from the EUID Core Service, hashing of users' <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>, encryption of [raw EUIDs](../ref-info/glossary-uid.md#gl-raw-euid), and decryption of <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link>.
+The EUID Operator Service enables the management and storage of <a href="../ref-info/glossary-uid#gl-encryption-key">encryption keys</a> and [salts](../ref-info/glossary-uid.md#gl-salt) from the EUID Core Service, hashing of users' <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>, encryption of [raw EUIDs](../ref-info/glossary-uid.md#gl-raw-euid), and decryption of <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link>.
 
 All instances of the Operator Service are designed with rigorous protections in place to keep critical EUID data secure and interoperable, regardless of who operates the service.
 
