@@ -38,6 +38,7 @@ import Link from '@docusaurus/Link';
 
 **E**
 <a href="#gl-enclave">Enclave</a> | 
+<a href="#gl-encryption-key">Encryption key</a> 
 <a href="#gl-euid-framework">EUID framework</a> | 
 <a href="#gl-euid-identifier">EUID identifier</a> | 
 <a href="#gl-euid-service">EUID service</a> | 
@@ -56,6 +57,9 @@ import Link from '@docusaurus/Link';
 
 **J**
 <a href="#gl-json-web-token">JSON Web Token (JWT)</a> | 
+
+**K**
+<a href="#gl-key">Key</a> 
 
 **N**
 <a href="#gl-normalize">Normalize</a> | 
@@ -187,6 +191,9 @@ import Link from '@docusaurus/Link';
 <dd>In the context of EUID, a <a href="#gl-private-operator">Private Operator</a> must run inside an enclave or in a private environment.<!--  For a summary of the enclave versions supported, see <a href="../guides/summary-guides#private-operator-service-integrations">Private Operator Service Integrations</a>. --></dd>
 <dd>In an enclave, the operator image must be a very specific, predefined version, and additional constraints are applied to ensure security.</dd>
 
+<dt><MdxJumpAnchor id="gl-encryption-key"><a href="#gl-encryption-key">Encryption key</a></MdxJumpAnchor></dt>
+<dd>Each <a href="#gl-euid-token">EUID token</a> is encrypted using an encryption key that's unique to the publisher that requested the token. The key identifies the publisher and is required for decrypting the token. This helps ensure that EUID tokens cannot be decrypted by unauthorized individuals.</dd>
+
 <dt><MdxJumpAnchor id="gl-euid-framework"><a href="#gl-euid-framework">EUID framework</a></MdxJumpAnchor></dt>
 <dd>The European Unified ID (EUID) framework enables deterministic identity for advertising opportunities on the open internet for many <a href="../intro#participants">participants</a> across the advertising ecosystem. It enables publisher websites, mobile apps, and Connected TV (CTV) apps to monetize through programmatic workflows. Built on the [UID2 framework](https://unifiedid.com/docs/intro), EUID offers privacy controls designed to help participants meet market requirements.</dd>
 <dd>EUID operates in the European region, including many European countries, such as France, Italy, and Spain, some non-European countries, such as Iceland, and some other regions, such as the Azores, Martinique, and the United Kingdom. It was designed with EU privacy law compliance in mind.</dd>
@@ -253,6 +260,15 @@ import Link from '@docusaurus/Link';
 
 </dl>
 
+### K
+
+<dl>
+
+<dt><MdxJumpAnchor id="gl-key"><a href="#gl-key">Key</a></MdxJumpAnchor></dt>
+<dd>See <a href="#gl-encryption-key">Encryption key</a>.</dd>
+
+</dl>
+
 ### N
 
 <dl>
@@ -272,7 +288,7 @@ import Link from '@docusaurus/Link';
 
 <dt><MdxJumpAnchor id="gl-operator"><a href="#gl-operator">Operator</a></MdxJumpAnchor></dt>
 <dd>An Operator is an organization or entity that runs the EUID <a href="#gl-operator-service">Operator Service</a>. The EUID Operator is the API server in the EUID ecosystem.</dd>
-<dd>Operators perform multiple functions, such as receiving encryption keys and salts from the EUID Core Service, salting and hashing personal data to return raw EUIDs, and encrypting raw EUIDs to generate EUID tokens.</dd>
+<dd>Operators perform multiple functions, such as receiving <a href="#gl-encryption-key">encryption keys</a> and <a href="#gl-salt">salts</a> from the EUID Core Service, salting and hashing personal data to return raw EUIDs, and encrypting raw EUIDs to generate EUID tokens.</dd>
 <dd>A participant can also choose to become a <a href="#gl-private-operator">Private Operator</a> to access EUID APIs and to generate raw EUIDs and EUID tokens from within a private infrastructure.</dd>
 <dd>For details, see <a href="../intro#participants">participants</a> and <a href="../ref-info/ref-operators-public-private">The EUID Operator</a>.</dd>
 
