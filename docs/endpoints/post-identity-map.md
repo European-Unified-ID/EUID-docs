@@ -66,8 +66,8 @@ The following are unencrypted JSON request body examples for each parameter, one
 ```json
 {
     "email_hash":[
-        "eVvLS/Vg+YZ6+z3i0NOpSXYyQAfEXqCZ7BTpAjFUBUc=",
-        "tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ="
+        "tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ=",
+        "KzsrnOhCq4tqbGFMsflgS7ig1QLRr0nFJrcrEIlOlbU="
     ] 
 }
 ```
@@ -105,12 +105,12 @@ A successful decrypted response returns the raw EUIDs and salt bucket IDs for th
     "body":{
         "mapped": [
             {
-                "identifier": "eVvLS/Vg+YZ6+z3i0NOpSXYyQAfEXqCZ7BTpAjFUBUc=",
+                "identifier": "tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ=",
                 "advertising_id": "AdvIvSiaum0P5s3X/7X8h8sz+OhF2IG8DNbEnkWSbYM=",
                 "bucket_id": "a30od4mNRd"
             },
             {
-                "identifier": "tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ=",
+                "identifier": "KzsrnOhCq4tqbGFMsflgS7ig1QLRr0nFJrcrEIlOlbU=",
                 "advertising_id": "IbW4n6LIvtDj/8fCESlU0QG9K/fH63UdcTkJpAG8fIQ=",
                 "bucket_id": "ad1ANEmVZ"
             }

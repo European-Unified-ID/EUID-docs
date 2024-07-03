@@ -182,7 +182,7 @@ The following example configures the EUID SDK with a hashed email address.
 
 ```js
 await __euid.setIdentityFromEmailHash(
-    'eVvLS/Vg+YZ6+z3i0NOpSXYyQAfEXqCZ7BTpAjFUBUc=',
+    'tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ=',
     {
         subscriptionId: subscriptionId,
         serverPublicKey: publicKey,
