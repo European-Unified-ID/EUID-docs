@@ -2,7 +2,7 @@
 title: Client-Server Integration Guide for JavaScript
 sidebar_label: Client-Server Integration for JavaScript
 pagination_label: Client-Server Integration Guide for JavaScript
-description: Information for publishers covering standard web integration scenarios that use the EUID SDK for JavaScript and requires the token to be generated on the server side and passed to the publisher's web pages.
+description: Information for publishers about using EUID to generate identity tokens for the RTB bidstream, generating tokens on the server side and refreshing on the client side.
 hide_table_of_contents: false
 sidebar_position: 02
 ---
@@ -13,9 +13,11 @@ import Link from '@docusaurus/Link';
 
 # Client-Server Integration Guide for JavaScript
 
-This guide is intended for publishers with web assets who want to generate identity tokens using EUID for the RTB <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link>, while integrating directly with EUID rather than EUID-enabled single-sign-on or identity providers. This requires server-side changes such as generating EUID tokens on the server side and passing them to the publisher's web pages. If you want to integrate with EUID via only client-side JavaScript changes, refer to [Client-Side Integration Guide for JavaScript](publisher-client-side.md) instead.
+This guide is for publishers with web assets who want to generate identity tokens using EUID for the RTB <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link>, generating EUID tokens on the server side and passing them to the publishers' web pages, and refreshing the tokens on the client side using the EUID SDK for JavaScript.
 
-This is called client-server integration because these JavaScript integration steps are client-side and some other steps are server-side.
+This is called client-server integration because the JavaScript integration steps are client-side and some other steps are server-side.
+
+If you prefer to integrate with EUID via **only** client-side JavaScript changes, see [Client-Side Integration Guide for JavaScript](publisher-client-side.md).
 
 For technical details about the SDK, see [EUID SDK for JavaScript Reference Guide](../sdks/client-side-identity.md).
 
