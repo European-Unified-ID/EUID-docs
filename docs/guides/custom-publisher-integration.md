@@ -2,7 +2,7 @@
 title: Publisher Integration Guide, Server-Side
 sidebar_label: Server-Side
 pagination_label: Publisher Integration Guide, Server-Side
-description: Information about generating identity tokens using EUID for the RTB bidstream, while integrating directly with EUID rather than EUID-enabled single-sign-on or identity providers.
+description: Information about generating identity tokens using EUID for the RTB bidstream, with all integration activity on the server side.
 hide_table_of_contents: false
 sidebar_position: 03
 ---
@@ -11,7 +11,7 @@ import Link from '@docusaurus/Link';
 
 # Publisher Integration Guide, Server-Side
 
-This guide is for publishers who want to generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) for the RTB <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link>, while integrating directly with EUID rather than EUID-enabled single-sign-on or identity providers, with all integration activity on the server side. 
+This guide is for publishers who want to integrate with EUID to generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) for the RTB <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link>, with all integration activity on the server side.
 
 The following options are available for publishers to integrate with EUID on the server side:
 
@@ -62,7 +62,7 @@ Rather than calling this endpoint directly, you could use one of the SDKs to man
 
 | Step | Endpoint | Description |
 | :--- | :--- | :--- |
-| 1-d | [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) | There are two ways for publishers to establish identity with EUID:<br/>- Integrate with an EUID-enabled single-sign-on provider.<br/>- Use the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint to generate an EUID token using the normalized email address of the user. |
+| 1-d | [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) | Establish identity with EUID by using the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint to generate an EUID token using the normalized email address of the user. |
 | 1-e | [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) | Return an EUID token generated from the user's hashed or unhashed email address, plus associated values such as the refresh token. |
 | 1-f | N/A | Place the returned `advertising_token` and `refresh_token` in a store tied to a user. You might consider client-side storage, such as a first-party cookie, or server-side storage. |
 
