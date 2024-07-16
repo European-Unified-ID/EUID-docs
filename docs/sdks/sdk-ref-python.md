@@ -179,7 +179,7 @@ If you're using server-side integration (see [Publisher Integration Guide, Serve
    client = IdentityMapClient(base_url, api_key, client_secret)
    ```
 
-2. Call a function that takes email addresses as input and generates an `IdentityMapResponse` object. The following example uses email addresses:
+2. Call a function that takes email addresses as input and generates an `IdentityMapResponse` object<!-- . The following example uses email addresses -->:
    ```py
    identity_map_response = client.generate_identity_map(IdentityMapInput.from_emails(["email1@example.com", "email2@example.com"]))
    ```

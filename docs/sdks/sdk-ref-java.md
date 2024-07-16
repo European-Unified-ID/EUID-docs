@@ -312,7 +312,7 @@ If you're using server-side integration (see [Publisher Integration Guide, Serve
    final private IdentityMapClient identityMapClient = new IdentityMapClient(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY);
    ```
 
-2. Call a function that takes email addresses<!--  or phone numbers --> as input and generates an IdentityMapResponse object. The following example uses email addresses:
+2. Call a function that takes email addresses<!--  or phone numbers --> as input and generates an IdentityMapResponse object<!-- . The following example uses email addresses -->:
    ```java
    IdentityMapResponse identityMapResponse = identityMapClient.generateIdentityMap(IdentityMapInput.fromEmails(Arrays.asList("email1@example.com", "email2@example.com")));
    ```
