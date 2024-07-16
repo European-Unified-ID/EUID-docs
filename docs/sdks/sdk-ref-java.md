@@ -222,7 +222,7 @@ If you're using server-side integration (see [Publisher Integration Guide, Serve
     ```java
     private final PublisherUid2Helper publisherUid2Helper = new PublisherUid2Helper(EUID_SECRET_KEY);
     ```
-2. Call a function that takes the user's email address or phone number as input and creates a secure request data envelope. See [Encrypting requests](../getting-started/gs-encryption-decryption.md#encrypting-requests). The following example uses an email address:
+2. Call a function that takes the user's email address<!--  or phone number --> as input and creates a secure request data envelope. See [Encrypting requests](../getting-started/gs-encryption-decryption.md#encrypting-requests). The following example uses an email address:
 
     ```java
     EnvelopeV2 envelope = publisherUid2Helper.createEnvelopeForTokenGenerateRequest(TokenGenerateInput.fromEmail(emailAddress).doNotGenerateTokensForOptedOut());
@@ -312,13 +312,13 @@ If you're using server-side integration (see [Publisher Integration Guide, Serve
    final private IdentityMapClient identityMapClient = new IdentityMapClient(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY);
    ```
 
-2. Call a function that takes email addresses or phone numbers as input and generates an IdentityMapResponse object. The following example uses email addresses:
+2. Call a function that takes email addresses<!--  or phone numbers --> as input and generates an IdentityMapResponse object. The following example uses email addresses:
    ```java
    IdentityMapResponse identityMapResponse = identityMapClient.generateIdentityMap(IdentityMapInput.fromEmails(Arrays.asList("email1@example.com", "email2@example.com")));
    ```
 
 :::note
-The SDK hashes input values before sending them. This ensures that raw email addresses and phone numbers do not leave your server.
+The SDK hashes input values before sending them. This ensures that raw email addresses<!--  and phone numbers --> do not leave your server.
 :::
 
 3. Retrieve the mapped and unmapped results as follows:
