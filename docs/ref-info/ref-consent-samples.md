@@ -9,10 +9,9 @@ import Link from '@docusaurus/Link';
 
 # Consent Samples
 
-(**GWH_EP_01: Shall I add in links to glossary entries (EUID or any others)?**)
 (**GWH_EP_02: Note I've preserved the English spelling here although in general the site content is in US English. For example, "customise" rather than "customize" in the wording.**)
 
-The following samples of consent language are intended to help xxx and xxx to xxx.
+The following samples of consent language are intended to provide examples of wording that publishers, advertisers, or data providers could use as a basis for requesting user consent for EUID.
 
 :::note
 These samples are provided for informational purposes only, and do not constitute legal advice.
@@ -60,7 +59,7 @@ The following samples of consent language could be used on an existing page wher
 
  [Learn how to withdraw consent](https://www.transparentadvertising.eu/)
  
-For more information, please see [PARTICIPANT NAME] Privacy Policy [LINK TO PARTICIPANT PIRVACY POLICY WHICH CONTAINS FURTHER LINKS TO THE EUID PRIVACY NOTICE AND EUID TRANSPARENCY AND CONTROL PORTAL].
+For more information, please see [PARTICIPANT NAME] Privacy Policy [LINK TO PARTICIPANT PRIVACY POLICY WHICH CONTAINS FURTHER LINKS TO THE EUID PRIVACY NOTICE AND EUID TRANSPARENCY AND CONTROL PORTAL].
 
 Notes:
 - The checkbox should be unchecked by default.
