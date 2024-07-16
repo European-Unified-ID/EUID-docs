@@ -130,25 +130,6 @@ const sidebars = {
         ],
         },
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         {
           type: 'category',
           label: 'Advertiser/Data Provider Integrations',
@@ -204,6 +185,7 @@ const sidebars = {
       collapsed: true,
       items: [
         'ref-info/ref-operators-public-private',
+        'ref-info/ref-consent-samples',
       ],
     },
 
