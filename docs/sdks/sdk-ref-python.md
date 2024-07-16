@@ -113,7 +113,7 @@ Decryption response codes, and their meanings, are shown in the following table.
    client = Uid2PublisherClient(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY)
    ```
 
-2. Call a function that takes the user's email address as input and generates a `TokenGenerateResponse` object. The following example uses an email address:
+2. Call a function that takes the user's email address as input and generates a `TokenGenerateResponse` object<!-- . The following example uses an email address -->:
 
    ```py
    token_generate_response = client.generate_token(TokenGenerateInput.from_email(emailAddress).do_not_generate_tokens_for_opted_out())
