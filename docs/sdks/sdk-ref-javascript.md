@@ -28,7 +28,7 @@ This page describes version 3 of the EUID SDK for JavaScript. If you are maintai
 Related information:
 
 For integration steps for content publishers, see:
-  - [Client-Side Integration Guide for JavaScript](../guides/publisher-client-side.md). 
+  - [Client-Side Integration Guide for JavaScript](../guides/integration-javascript-client-side.md). 
 
 For example applications with associated documentation, see:
   - The EUID Google Secure Signals with SDK v3 example:
@@ -127,7 +127,7 @@ The high-level client-side workflow for establishing EUID identity using the SDK
 	- If the advertising token is available, use it to initiate requests for targeted advertising.
 	- If the advertising token is not available, either use untargeted advertising or redirect the user to the data capture with the consent form.
 
-For more detailed web integration steps, see [Client-Side Integration Guide for JavaScript](../guides/publisher-client-side.md).
+For more detailed web integration steps, see [Client-Side Integration Guide for JavaScript](../guides/integration-javascript-client-side.md).
 
 ### Background Token Auto-Refresh
 

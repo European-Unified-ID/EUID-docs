@@ -17,7 +17,7 @@ This guide is for publishers with web assets who want to generate identity token
 
 This is called client-server integration because the JavaScript integration steps are client-side and some other steps are server-side.
 
-If you prefer to integrate with EUID via **only** client-side JavaScript changes, see [Client-Side Integration Guide for JavaScript](publisher-client-side.md).
+If you prefer to integrate with EUID via **only** client-side JavaScript changes, see [Client-Side Integration Guide for JavaScript](integration-javascript-client-side.md).
 
 For technical details about the SDK, see [EUID SDK for JavaScript Reference Guide](../sdks/sdk-ref-javascript.md).
 

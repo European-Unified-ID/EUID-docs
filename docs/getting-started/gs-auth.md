@@ -14,5 +14,5 @@ To authenticate to the EUID endpoints in a server-side implementation, you need 
 - A client secret for encrypting API requests and decrypting API responses. This is needed for all endpoints except [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md). <br/>For details, and encryption/decryption examples in several different programming languages, see [Encrypting Requests and Decrypting Responses](gs-encryption-decryption.md).
 
 :::note
-If you're a publisher and are implementing EUID on the client side, the authentication and authorization is managed automatically by your implementation, such as Prebid.js (see [EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md)) or the JavaScript SDK (see [Client-Side Integration Guide for JavaScript](../guides/publisher-client-side.md)).
+If you're a publisher and are implementing EUID on the client side, the authentication and authorization is managed automatically by your implementation, such as Prebid.js (see [EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md)) or the JavaScript SDK (see [Client-Side Integration Guide for JavaScript](../guides/integration-javascript-client-side.md)).
 :::

@@ -129,7 +129,7 @@ Decryption response codes, and their meanings, are shown in the following table.
 
 #### Client-Server Integration
 
-If you're using client-server integration (see [Client-Side Integration Guide for JavaScript](../guides/publisher-client-side.md)), follow this step:
+If you're using client-server integration (see [Client-Side Integration Guide for JavaScript](../guides/integration-javascript-client-side.md)), follow this step:
 
 * Send this identity as a JSON string back to the client (to use in the [identity field](../sdks/sdk-ref-javascript.md#initopts-object-void)) using the following:
 

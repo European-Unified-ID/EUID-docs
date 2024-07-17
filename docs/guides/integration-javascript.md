@@ -31,8 +31,8 @@ The options for integrating with EUID using the SDK for JavaScript are summarize
 
 | Scenario | Option | Integration Guide |
 | :--- | :--- | :--- |
-| You have access to personal data on the client side and want to do front-end development only. | Client-side integration | [Client-Side Integration Guide for JavaScript](publisher-client-side.md) |
-| You have access to personal data on the server side and can do server-side development, or you are using a Private Operator. | Server-side integration | [Client-Server Integration Guide for JavaScript](integration-javascript-server-side.md) |
+| You have access to personal data on the client side and want to do front-end development only. | Client-side integration | [Client-Side Integration Guide for JavaScript](integration-javascript-client-side.md) |
+| You have access to personal data on the server side and can do server-side development, or you are using a Private Operator. | Server-side integration | [Client-Server Integration Guide for JavaScript](integration-javascript-client-server.md) |
 
 ## Generating the EUID Token
 
@@ -67,5 +67,5 @@ At a high level, to integrate your site with EUID using the SDK for JavaScript, 
 
 For detailed instructions, refer to one of the following integration guides:
 
-- [Client-Side Integration Guide for JavaScript](publisher-client-side.md)
-- [Client-Server Integration Guide for JavaScript](integration-javascript-server-side.md)
+- [Client-Side Integration Guide for JavaScript](integration-javascript-client-side.md)
+- [Client-Server Integration Guide for JavaScript](integration-javascript-client-server.md)

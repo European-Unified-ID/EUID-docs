@@ -105,8 +105,8 @@ const sidebars = {
                 },
                 collapsed: true,
                 items: [
-                  'guides/publisher-client-side',
-                  'guides/integration-javascript-server-side',
+                  'guides/integration-javascript-client-side',
+                  'guides/integration-javascript-client-server',
                 ],
               },
               'guides/custom-publisher-integration',
