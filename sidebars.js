@@ -109,7 +109,7 @@ const sidebars = {
                   'guides/integration-javascript-client-server',
                 ],
               },
-              'guides/custom-publisher-integration',
+              'guides/integration-publisher-server-side',
             ],
           },
 

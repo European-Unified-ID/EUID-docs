@@ -39,13 +39,13 @@ To facilitate the process of establishing client identity using EUID and retriev
 The first-party cookie and local storage implementation details might change in the future. To avoid potential issues, be sure to rely on the functionality documented in the [EUID SDK for JavaScript API Reference](../sdks/sdk-ref-javascript.md#api-reference) for your identity management.
 :::
 
-For integration scenarios for publishers that do not use the EUID SDK for JavaScript, see [Publisher Integration Guide, Server-Side](custom-publisher-integration.md). 
+For integration scenarios for publishers that do not use the EUID SDK for JavaScript, see [Publisher Integration Guide, Server-Side](integration-publisher-server-side.md). 
 
 ## Integration Steps
 
 The following diagram outlines the steps required for establishing a user's EUID token with a publisher and how the EUID token integrates with the RTB bidstream.
 
-![Publisher Flow](images/custom-publisher-integration-mermaid.svg)
+![Publisher Flow](images/integration-javascript-client-server-mermaid.svg)
 
 The following sections provide additional details for each step in the diagram:
  
