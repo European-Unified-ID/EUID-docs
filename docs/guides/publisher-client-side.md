@@ -17,7 +17,7 @@ This guide is for publishers who want to integrate with EUID and generate <Link 
 
 This guide does not apply to publishers who want to use a private operator, or who want to generate tokens server-side. Those publishers should follow the [Client-Server Integration Guide for JavaScript](integration-javascript-server-side.md).
 
-EUID provides an SDK for JavaScript (see [SDK for JavaScript Reference Guide](../sdks/client-side-identity.md)) with the following features:
+EUID provides an SDK for JavaScript (see [SDK for JavaScript Reference Guide](../sdks/sdk-ref-javascript.md)) with the following features:
 
 - EUID token generation
 - Automatic refreshing of EUID tokens
@@ -99,7 +99,7 @@ window.__euid.callbacks.push((eventType, payload) => {
 </script>
 ```
 
-For more information about the SDK, see [SDK for JavaScript Reference Guide](../sdks/client-side-identity.md).
+For more information about the SDK, see [SDK for JavaScript Reference Guide](../sdks/sdk-ref-javascript.md).
 
 ### Using the EUID Integration Environment
 
@@ -212,7 +212,7 @@ When this is the first page load with no identity, to start the token generation
 In some cases, the user's personal data is not available on page load, and getting the personal data has some associated cost. For example, an API call might be required to fetch the personal data, or the user has to be prompted to provide it.
 
 You can potentially avoid that cost by checking for an existing token that you can use or refresh. To do this, call
-[__euid.isLoginRequired](../sdks/client-side-identity#isloginrequired-boolean) which returns a Boolean value. If it returns `true`, this means that the EUID SDK cannot create a new advertising token with the existing resource and personal data is required to generate a brand new EUID token.
+[__euid.isLoginRequired](../sdks/sdk-ref-javascript#isloginrequired-boolean) which returns a Boolean value. If it returns `true`, this means that the EUID SDK cannot create a new advertising token with the existing resource and personal data is required to generate a brand new EUID token.
 
 The following code snippet demonstrates how you might integrate with the SDK for JavaScript for the two scenarios above&#8212;starting with no token as well as reusing/refreshing any existing EUID token if found. 
 

@@ -45,7 +45,7 @@ const sidebars = {
       collapsed: true,
       items: [
         'sdks/summary-sdks',
-        'sdks/client-side-identity',
+        'sdks/sdk-ref-javascript',
         'sdks/sdk-ref-java',
         'sdks/sdk-ref-python',
         'sdks/sdk-ref-csharp-dotnet',

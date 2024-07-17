@@ -37,7 +37,7 @@ For a detailed summary of web integration options, see [Web Integration Overview
 | [EUID Integration Overview for JavaScript](integration-javascript.md) | An overview of options for publishers who want to integrate with EUID using the JavaScript SDK. |
 | [Client-Side Integration Guide for JavaScript](publisher-client-side.md) | A guide for publishers who want to integrate with EUID using only client-side JavaScript changes, which is the easiest implementation approach.<br/>The EUID SDK for JavaScript manages token generation and token refresh automatically. |
 | [Client-Server Integration Guide for JavaScript](integration-javascript-server-side.md) | This integration guide for publishers covers standard web integration scenarios that use the EUID SDK for JavaScript and requires the token to be generated on the server side and passed to the publishers' web pages. |
-| [Publisher Integration Guide, Server-Side](custom-publisher-integration.md) | This integration guide for publishers covers integration scenarios that do not use the [SDK for JavaScript](../sdks/client-side-identity.md). |
+| [Publisher Integration Guide, Server-Side](custom-publisher-integration.md) | This integration guide for publishers covers integration scenarios that do not use the [SDK for JavaScript](../sdks/sdk-ref-javascript.md). |
 
 ### Prebid Integrations
 
