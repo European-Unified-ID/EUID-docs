@@ -45,7 +45,7 @@ const sidebars = {
       collapsed: true,
       items: [
         'sdks/summary-sdks',
-        'sdks/client-side-identity',
+        'sdks/sdk-ref-javascript',
         'sdks/sdk-ref-java',
         'sdks/sdk-ref-python',
         'sdks/sdk-ref-csharp-dotnet',
@@ -105,8 +105,8 @@ const sidebars = {
                 },
                 collapsed: true,
                 items: [
-                  'guides/publisher-client-side',
-                  'guides/integration-javascript-server-side',
+                  'guides/integration-javascript-client-side',
+                  'guides/integration-javascript-client-server',
                 ],
               },
               'guides/custom-publisher-integration',

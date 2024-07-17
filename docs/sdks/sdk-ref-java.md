@@ -163,9 +163,9 @@ If you're using the SDK's HTTP implementation, follow these steps.
 
 #### Client-Server Integration
 
-If you're using client-server integration (see [Client-Server Integration Guide for JavaScript](../guides/integration-javascript-server-side.md)), follow this step:
+If you're using client-server integration (see [Client-Server Integration Guide for JavaScript](../guides/integration-javascript-client-server.md)), follow this step:
 
-* Send this identity as a JSON string back to the client (to use in the [identity field](../sdks/client-side-identity.md#initopts-object-void)), using the following:
+* Send this identity as a JSON string back to the client (to use in the [identity field](../sdks/sdk-ref-javascript.md#initopts-object-void)), using the following:
 
    ```java
    tokenGenerateResponse.getIdentityJsonString()
@@ -249,9 +249,9 @@ If you're using server-side integration (see [Publisher Integration Guide, Serve
 
 #### Client-Server Integration
 
-If you're using client-server integration (see [Client-Server Integration Guide for JavaScript](../guides/integration-javascript-server-side.md)), follow this step:
+If you're using client-server integration (see [Client-Server Integration Guide for JavaScript](../guides/integration-javascript-client-server.md)), follow this step:
 
-* Send this identity as a JSON string back to the client (to use in the [identity field](../sdks/client-side-identity.md#initopts-object-void)) using the following:
+* Send this identity as a JSON string back to the client (to use in the [identity field](../sdks/sdk-ref-javascript.md#initopts-object-void)) using the following:
 
     ```java
     tokenGenerateResponse.getIdentityJsonString()

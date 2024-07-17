@@ -12,7 +12,7 @@ import Link from '@docusaurus/Link';
 # Encrypting Requests and Decrypting Responses
 
 :::note
-If you're a publisher and are implementing EUID on the client side, encryption and decryption is managed automatically by your implementation, such as Prebid.js (see [EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md)) or the JavaScript SDK (see [Client-Side Integration Guide for JavaScript](../guides/publisher-client-side.md)).
+If you're a publisher and are implementing EUID on the client side, encryption and decryption is managed automatically by your implementation, such as Prebid.js (see [EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md)) or the JavaScript SDK (see [Client-Side Integration Guide for JavaScript](../guides/integration-javascript-client-side.md)).
 :::
 
 For almost all EUID [endpoints](../endpoints/summary-endpoints.md), requests sent to the endpoint must be [encrypted](#encrypting-requests) and responses from the endpoint must be [decrypted](#decrypting-responses).
