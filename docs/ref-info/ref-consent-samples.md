@@ -59,11 +59,10 @@ The following consent samples could be used on an existing page where the user's
 
 The following sample offers consent for use of email address.
 
-<table>
-<tr>
-<td>&#9744; Yes! You and The Trade Desk (your advertising partner) can use my email address for the purpose of creating a unique advertising identifier (the EUID). The identifier will be encrypted and shared with different sites and advertisers who may, subject to my choices, use the identifier to show me personalized ads.<br/><Link href="https://www.transparentadvertising.eu/">Learn how to withdraw consent</Link><br/>For more information, please see [Participant Name] <strong>Privacy Policy</strong>.</td>
-</tr>
-</table>
+<div style={{border: "1px solid", display: "flex", gap: "0.5em", padding: "0.5em" }}>
+  <input style={{ alignSelf: "flex-start", marginTop: "5px" }} type="checkbox" />
+  <span>Yes! You and The Trade Desk (your advertising partner) can use my email address for the purpose of creating a unique advertising identifier (the EUID). The identifier will be encrypted and shared with different sites and advertisers who may, subject to my choices, use the identifier to show me personalized ads.<br/><Link href="https://www.transparentadvertising.eu/">Learn how to withdraw consent</Link><br/>For more information, please see [Participant Name] <strong>Privacy Policy</strong>.</span>
+</div>
 
 Notes:
 - The checkbox should be unchecked by default.
@@ -75,11 +74,14 @@ Notes:
 
 The following sample offers consent for use of email address, with alternative wording.
 
-<table>
-<tr>
-<td>&#9744; You are happy for us and The Trade Desk (our advertising partner) to use your email address [ENTER EMAIL ADDRESS] to create a unique ad ID (the EUID). The unique ad ID will be encrypted and shared with different sites and advertisers who may, subject to your choices, use it to show you personalized ads.<br/><br/><Link href="https://www.transparentadvertising.eu/">Learn how to withdraw consent</Link><br/><br/>For more information, please see our <strong>Privacy Policy</strong>.</td>
-</tr>
-</table>
+<div style={{ border: "1px solid", display: "flex", gap: "0.5em", padding: "0.5em" }}>
+  <input style={{ alignSelf: "flex-start" }} type="checkbox" />
+  <div>
+    <p>You are happy for us and The Trade Desk (our advertising partner) to use your email address [ENTER EMAIL ADDRESS] to create a unique ad ID (the EUID). The unique ad ID will be encrypted and shared with different sites and advertisers who may, subject to your choices, use it to show you personalized ads.</p>
+    <p><Link href="https://www.transparentadvertising.eu/">Learn how to withdraw consent</Link></p>
+    <p>For more information, please see our <strong>Privacy Policy</strong>.</p>
+  </div>
+</div>
 
 Notes:
 - The checkbox should be unchecked by default.
