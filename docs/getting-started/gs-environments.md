@@ -18,7 +18,7 @@ All EUID endpoints use the same base URL.
 | Testing | `https://integ.euid.eu/v2` |
 | Production | `https://prod.euid.eu/v2` |
 
-For example, https://integ.euid.eu/v2/token/generate
+For example, `https://integ.euid.eu/v2/token/generate`.
 
 Notes:
 
