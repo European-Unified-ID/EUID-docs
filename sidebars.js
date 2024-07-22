@@ -38,32 +38,14 @@ const sidebars = {
 
     {
       type: 'category',
-      label: 'SDKs',
-      link: {
-        type: 'generated-index',
-      },
-      collapsed: true,
-      items: [
-        'sdks/summary-sdks',
-        'sdks/sdk-ref-javascript',
-        'sdks/sdk-ref-java',
-        'sdks/sdk-ref-python',
-        'sdks/sdk-ref-csharp-dotnet',
-        'sdks/sdk-ref-cplusplus',
-      ],
-    },
-
-    {
-      type: 'category',
       label: 'Integration Guides',
       link: {
-        type: 'generated-index',
+        type: 'doc',
+        id: 'guides/summary-guides',
       },
       collapsed: true,
 
       items: [
-        'guides/summary-guides',
-
         {
           type: 'category',
           label: 'Publisher Integrations',
@@ -130,25 +112,6 @@ const sidebars = {
         ],
         },
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         {
           type: 'category',
           label: 'Advertiser/Data Provider Integrations',
@@ -175,6 +138,23 @@ const sidebars = {
           ],
         },
        ],
+    },
+
+    {
+      type: 'category',
+      label: 'SDKs',
+      link: {
+        type: 'generated-index',
+      },
+      collapsed: true,
+      items: [
+        'sdks/summary-sdks',
+        'sdks/sdk-ref-javascript',
+        'sdks/sdk-ref-java',
+        'sdks/sdk-ref-python',
+        'sdks/sdk-ref-csharp-dotnet',
+        'sdks/sdk-ref-cplusplus',
+      ],
     },
 
     {
