@@ -43,9 +43,9 @@ The following table includes consent sample copy for the primary overlay.
 
 The following consent sample copy is for content accessed via the **Customize Options** link.
 
-1. We and our partners store or access information on devices, such as cookies, and process personal information for the purposes described below. Where we have your email address, we and The Trade Desk (our advertising partner) will use it to create a unique advertising identifier (the EUID), which, subject to your choices, may then be used for the purposes described below.
-
-1. You can customize your consent choices for the use of cookies and your personal information for the specific purposes listed below. Click **Yes to all** or **No to all**, or use the toggles to turn some choices on and off. Some processing of your personal information might not require your consent, but you have the right to object to such processing. You can also withdraw or change your consent preferences at any time.
+<div style={{ border: "1px solid", display: "flex", gap: "0.5em", padding: "0.5em", margin: "0.8em" }}>
+    <span><ol><li>We and our partners store or access information on devices, such as cookies, and process personal information for the purposes described below. Where we have your email address, we and The Trade Desk (our advertising partner) will use it to create a unique advertising identifier (the EUID), which, subject to your choices, may then be used for the purposes described below.</li><li>You can customize your consent choices for the use of cookies and your personal information for the specific purposes listed below. Click **Yes to all** or **No to all**, or use the toggles to turn some choices on and off. Some processing of your personal information might not require your consent, but you have the right to object to such processing. You can also withdraw or change your consent preferences at any time.</li></ol></span>
+</div>
 
 ## Standalone EUID Consent
 
@@ -57,11 +57,13 @@ The following consent samples could be used on an existing page where the user's
 
 ### Standalone EUID Consent Sample 1
 
-The following sample offers consent for use of email address.
-
-<div style={{border: "1px solid", display: "flex", gap: "0.5em", padding: "0.5em" }}>
+<div style={{ border: "1px solid", display: "flex", gap: "0.5em", padding: "0.5em", margin: "0.8em" }}>
   <input style={{ alignSelf: "flex-start", marginTop: "5px" }} type="checkbox" />
-  <span>Yes! You and The Trade Desk (your advertising partner) can use my email address for the purpose of creating a unique advertising identifier (the EUID). The identifier will be encrypted and shared with different sites and advertisers who may, subject to my choices, use the identifier to show me personalized ads.<br/><Link href="https://www.transparentadvertising.eu/">Learn how to withdraw consent</Link><br/>For more information, please see [Participant Name] <strong>Privacy Policy</strong>.</span>
+  <div>
+    <p>Yes! You and The Trade Desk (your advertising partner) can use my email address for the purpose of creating a unique advertising identifier (the EUID). The identifier will be encrypted and shared with different sites and advertisers who may, subject to my choices, use the identifier to show me personalized ads.</p>
+    <p><Link href="https://www.transparentadvertising.eu/">Learn how to withdraw consent</Link></p>
+    <p>For more information, please see [Participant Name] <strong>Privacy Policy</strong>.</p>
+  </div>
 </div>
 
 Notes:
@@ -72,9 +74,7 @@ Notes:
 
 ### Standalone EUID Consent Sample 2
 
-The following sample offers consent for use of email address, with alternative wording.
-
-<div style={{ border: "1px solid", display: "flex", gap: "0.5em", padding: "0.5em" }}>
+<div style={{ border: "1px solid", display: "flex", gap: "0.5em", padding: "0.5em", margin: "0.8em" }}>
   <input style={{ alignSelf: "flex-start" }} type="checkbox" />
   <div>
     <p>You are happy for us and The Trade Desk (our advertising partner) to use your email address [ENTER EMAIL ADDRESS] to create a unique ad ID (the EUID). The unique ad ID will be encrypted and shared with different sites and advertisers who may, subject to your choices, use it to show you personalized ads.</p>
@@ -98,33 +98,26 @@ The following sample offers a layered approach to consent, in two parts:
 
 #### First Layer of Consent
 
-(**GWH_EP_11 I feel this section needs something to pull it together. Should this be a numbered set of instructions?**)
-
-(**GWH_EP_12 Just checking -- in the below, "... my information being sent to and then..." is that correct wording?**)
-
-Create an account 
-
-[EMAIL ADDRESS DATA FIELD] 
-
-<table>
-<tr>
-<td>I consent to my information being sent to and then used for personalized advertising purposes by:<br/><br/>&#9744; [PARTICIPANT NAME]'s advertising partners [Link to second layer of consent].</td>
-</tr>
-</table>
-
-<!-- I consent to my information being sent to and then used for personalized advertising purposes by: 
-
-&#9744; [PARTICIPANT NAME]'s advertising partners [Link to second layer of consent]. -->
+<div style={{ border: "1px solid", display: "flex", gap: "0.5em", padding: "0.5em", margin: "0.8em" }}>
+  <div>
+    <p>Create an account</p>
+    <p>[EMAIL ADDRESS DATA FIELD]</p>
+    <p>I consent to my information being sent to, and then used for personalized advertising purposes by, the following:</p>
+    <p>&#9744; [PARTICIPANT NAME]'s advertising partners [Link to second layer of consent].</p>
+  </div>
+</div>
 
 #### Second Layer of Consent
 
 In this example, the link in the first layer of consent under "advertising partners" links to a second layer of consent with this sample wording:
 
-<table>
-<tr>
-<td>We and The Trade Desk (our advertising partner) will use your email address to create a unique advertising identifier (the EUID). The identifier will be encrypted and shared with different sites and advertisers who may, subject to your choices, use the identifier to show you personalized ads.<br/><br/><Link href="https://www.transparentadvertising.eu/">Learn how to withdraw consent</Link><br/><br/>For more information, please see our <strong>Privacy Policy</strong>.</td>
-</tr>
-</table>
+<div style={{ border: "1px solid", display: "flex", gap: "0.5em", padding: "0.5em", margin: "0.8em" }}>
+  <div>
+    <p>We and The Trade Desk (our advertising partner) will use your email address to create a unique advertising identifier (the EUID). The identifier will be encrypted and shared with different sites and advertisers who may, subject to your choices, use the identifier to show you personalized ads.</p>
+    <p><Link href="https://www.transparentadvertising.eu/">Learn how to withdraw consent</Link></p>
+    <p>For more information, please see our <strong>Privacy Policy</strong>.</p>
+  </div>
+</div>
 
 Notes:
 - The checkbox in the first layer of consent should be unchecked by default.
