@@ -184,6 +184,7 @@ const sidebars = {
       collapsed: true,
       items: [
         'ref-info/ref-operators-public-private',
+        'ref-info/ref-integration-approaches',
       ],
     },
 
