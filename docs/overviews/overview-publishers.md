@@ -58,7 +58,10 @@ To get started, follow these steps:
 1. Request access to EUID by filling out the form on the [Request Access](/request-access) page.
 1. Identify the properties that you want to integrate with EUID.
 1. Sign the EUID contract.
-1. Determine whether you want a <Link href="../ref-info/glossary-uid#gl-client-side">client-side</Link>, <Link href="../ref-info/glossary-uid#gl-server-side">server-side</Link>, or <Link href="../ref-info/glossary-uid#gl-client-server">client-server</Link> integration, and tell your EUID contact. <!-- (**GWH_KK new page coming that we will link to**) -->
+1. Determine whether you want a <Link href="../ref-info/glossary-uid#gl-client-side">client-side</Link>, <Link href="../ref-info/glossary-uid#gl-client-server">client-server</Link>, or <Link href="../ref-info/glossary-uid#gl-server-side">server-side</Link> integration, and tell your EUID contact.
+
+   For more information about these options, see [Integration Approaches](../ref-info/ref-integration-approaches.md).
+
 1. Receive the [EUID credentials](../getting-started/gs-credentials.md).
 1. Build your integration to EUID via an SDK or direct integration with the EUID APIs, using the applicable [implementation resources](#implementation-resources).
 
