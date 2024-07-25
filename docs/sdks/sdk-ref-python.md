@@ -129,9 +129,9 @@ Decryption response codes, and their meanings, are shown in the following table.
 
 #### Client-Server Integration
 
-If you're using client-server integration (see [Client-Side Integration Guide for JavaScript](../guides/publisher-client-side.md)), follow this step:
+If you're using client-server integration (see [Client-Side Integration Guide for JavaScript](../guides/integration-javascript-client-side.md)), follow this step:
 
-* Send this identity as a JSON string back to the client (to use in the [identity field](../sdks/client-side-identity.md#initopts-object-void)) using the following:
+* Send this identity as a JSON string back to the client (to use in the [identity field](../sdks/sdk-ref-javascript.md#initopts-object-void)) using the following:
 
   ```py
   token_generate_response.get_identity_json_string()
@@ -143,7 +143,7 @@ If you're using client-server integration (see [Client-Side Integration Guide fo
 
 ### Server-Side Integration
 
-If you're using server-side integration (see [Publisher Integration Guide, Server-Side](../guides/custom-publisher-integration.md)):
+If you're using server-side integration (see [Publisher Integration Guide, Server-Side](../guides/integration-publisher-server-side.md)):
 
 1. Store this identity as a JSON string in the user's session, using the `token_generate_response.get_identity_json_string()` function.
 

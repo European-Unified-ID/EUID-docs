@@ -22,7 +22,7 @@ The following options are available for publishers to integrate with EUID on the
 For a complete summary of publisher integration options, see [Publisher Integrations](summary-guides.md#publisher-integrations).
 
 :::tip
-To facilitate the process of establishing client identity using EUID and retrieving EUID tokens, consider using the EUID SDK for JavaScript. For details, see [Client-Server Integration Guide for JavaScript](integration-javascript-server-side.md).
+To facilitate the process of establishing client identity using EUID and retrieving EUID tokens, consider using the EUID SDK for JavaScript. For details, see [Client-Server Integration Guide for JavaScript](integration-javascript-client-server.md).
 :::
 
 ## Introduction
@@ -43,7 +43,7 @@ The following diagram outlines the steps required for a user to establish an EUI
 
 If you're using a server-side SDK, the SDK takes care of all the steps that mention endpoints: for example, step 1-d, the publisher sends the user's personal data to the token generation service.
  
-![Publisher Flow](images/custom-publisher-integration-mermaid.svg)
+![Publisher Flow](images/integration-publisher-server-side-mermaid.svg)
 
 The following sections provide additional details for each step in the diagram:
  

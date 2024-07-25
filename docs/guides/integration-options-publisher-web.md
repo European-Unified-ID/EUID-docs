@@ -33,11 +33,11 @@ To accomplish all steps, you can combine solutions. For example, you could use t
 | :--- | :--- | :--- | :--- |
 | [Prebid.js client-side (8.42.0 or later)](integration-prebid-client-side.md) | &#9989; | &#9989; | &#9989; |
 | [Prebid.js server-side (7.53.0 or later)](integration-prebid-server-side.md) | &#8212; | &#9989; | &#9989; |
-| [EUID SDK for JavaScript, client-side](publisher-client-side.md) | &#9989; | &#9989; | &#8212; |
-| [EUID SDK for JavaScript, server-side](integration-javascript-server-side.md) | &#9989; | &#9989; | &#8212; |
+| [EUID SDK for JavaScript, client-side](integration-javascript-client-side.md) | &#9989; | &#9989; | &#8212; |
+| [EUID SDK for JavaScript, server-side](integration-javascript-client-server.md) | &#9989; | &#9989; | &#8212; |
 | [EUID SDK for Java](../sdks/sdk-ref-java.md) | &#9989; | &#9989; | &#8212; |
 | [EUID SDK for Python](../sdks/sdk-ref-python.md) | &#9989; | &#9989; | &#8212; |
-| [Direct integration (API endpoints)](custom-publisher-integration.md) | &#9989; | &#9989; | &#8212; |
+| [Direct integration (API endpoints)](integration-publisher-server-side.md) | &#9989; | &#9989; | &#8212; |
 
 <!-- &#9989; = Supported | &#8212; = Not Supported -->
 
@@ -77,7 +77,7 @@ The following table summarizes the options for publishers who want to generate t
 | Option | Documentation |
 | :--- | :--- |
 | Prebid.js client-side implementation (8.21.0 or later) | [EUID Client-Side Integration Guide for Prebid.js](integration-prebid-client-side.md) |
-| EUID SDK for JavaScript, client-side implementation | [Client-Side Integration Guide for JavaScript](publisher-client-side.md) |
+| EUID SDK for JavaScript, client-side implementation | [Client-Side Integration Guide for JavaScript](integration-javascript-client-side.md) |
 
 ### Server-Side Integration Options
 
@@ -91,10 +91,10 @@ The following table summarizes the options for publishers who want to generate t
 
 | Option | Documentation |
 | :--- | :--- |
-| EUID SDK for JavaScript, client-server implementation | [Client-Server Integration Guide for JavaScript](integration-javascript-server-side.md) |
-| EUID SDK for Java | - [Publisher Integration Guide, Server-Side](custom-publisher-integration.md)<br/>- [EUID SDK for Java](../sdks/sdk-ref-java.md) |
-| EUID SDK for Python | - [Publisher Integration Guide, Server-Side](custom-publisher-integration.md)<br/>- [EUID SDK for Python](../sdks/sdk-ref-python.md)  |
-| Direct integration (API endpoints) | [Publisher Integration Guide, Server-Side](custom-publisher-integration.md) |
+| EUID SDK for JavaScript, client-server implementation | [Client-Server Integration Guide for JavaScript](integration-javascript-client-server.md) |
+| EUID SDK for Java | - [Publisher Integration Guide, Server-Side](integration-publisher-server-side.md)<br/>- [EUID SDK for Java](../sdks/sdk-ref-java.md) |
+| EUID SDK for Python | - [Publisher Integration Guide, Server-Side](integration-publisher-server-side.md)<br/>- [EUID SDK for Python](../sdks/sdk-ref-python.md)  |
+| Direct integration (API endpoints) | [Publisher Integration Guide, Server-Side](integration-publisher-server-side.md) |
 
 ## Refresh the EUID Token
 
@@ -108,11 +108,11 @@ The following table shows the integration options that support refreshing the EU
 | :--- | :--- |
 | Prebid.js client-side implementation (8.21.0 or later) | [EUID Client-Side Integration Guide for Prebid.js](integration-prebid-client-side.md) |
 | Prebid.js server-side implementation (7.53.0 or later) | [EUID Client-Server Integration Guide for Prebid.js](integration-prebid-server-side.md) |
-| EUID SDK for JavaScript, client-side implementation | [Client-Side Integration Guide for JavaScript](publisher-client-side.md) |
-| EUID SDK for JavaScript, client-server implementation | [Client-Server Integration Guide for JavaScript](integration-javascript-server-side.md) |
-| EUID SDK for Java | - [Publisher Integration Guide, Server-Side](custom-publisher-integration.md)<br/>- [EUID SDK for Java](../sdks/sdk-ref-java.md) |
-| EUID SDK for Python | - [Publisher Integration Guide, Server-Side](custom-publisher-integration.md)<br/>- [EUID SDK for Python](../sdks/sdk-ref-python.md)  |
-| Direct integration (API endpoints) | [Publisher Integration Guide, Server-Side](custom-publisher-integration.md) |
+| EUID SDK for JavaScript, client-side implementation | [Client-Side Integration Guide for JavaScript](integration-javascript-client-side.md) |
+| EUID SDK for JavaScript, client-server implementation | [Client-Server Integration Guide for JavaScript](integration-javascript-client-server.md) |
+| EUID SDK for Java | - [Publisher Integration Guide, Server-Side](integration-publisher-server-side.md)<br/>- [EUID SDK for Java](../sdks/sdk-ref-java.md) |
+| EUID SDK for Python | - [Publisher Integration Guide, Server-Side](integration-publisher-server-side.md)<br/>- [EUID SDK for Python](../sdks/sdk-ref-python.md)  |
+| Direct integration (API endpoints) | [Publisher Integration Guide, Server-Side](integration-publisher-server-side.md) |
 
 ## Pass the Token Into the Bidstream
 

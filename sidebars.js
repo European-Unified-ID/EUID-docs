@@ -38,32 +38,14 @@ const sidebars = {
 
     {
       type: 'category',
-      label: 'SDKs',
-      link: {
-        type: 'generated-index',
-      },
-      collapsed: true,
-      items: [
-        'sdks/summary-sdks',
-        'sdks/client-side-identity',
-        'sdks/sdk-ref-java',
-        'sdks/sdk-ref-python',
-        'sdks/sdk-ref-csharp-dotnet',
-        'sdks/sdk-ref-cplusplus',
-      ],
-    },
-
-    {
-      type: 'category',
       label: 'Integration Guides',
       link: {
-        type: 'generated-index',
+        type: 'doc',
+        id: 'guides/summary-guides',
       },
       collapsed: true,
 
       items: [
-        'guides/summary-guides',
-
         {
           type: 'category',
           label: 'Publisher Integrations',
@@ -105,11 +87,11 @@ const sidebars = {
                 },
                 collapsed: true,
                 items: [
-                  'guides/publisher-client-side',
-                  'guides/integration-javascript-server-side',
+                  'guides/integration-javascript-client-side',
+                  'guides/integration-javascript-client-server',
                 ],
               },
-              'guides/custom-publisher-integration',
+              'guides/integration-publisher-server-side',
             ],
           },
 
@@ -160,6 +142,23 @@ const sidebars = {
 
     {
       type: 'category',
+      label: 'SDKs',
+      link: {
+        type: 'generated-index',
+      },
+      collapsed: true,
+      items: [
+        'sdks/summary-sdks',
+        'sdks/sdk-ref-javascript',
+        'sdks/sdk-ref-java',
+        'sdks/sdk-ref-python',
+        'sdks/sdk-ref-csharp-dotnet',
+        'sdks/sdk-ref-cplusplus',
+      ],
+    },
+
+    {
+      type: 'category',
       label: 'Endpoints',
       link: {
         type: 'generated-index',
@@ -185,6 +184,7 @@ const sidebars = {
       collapsed: true,
       items: [
         'ref-info/ref-operators-public-private',
+        'ref-info/ref-integration-approaches',
         'ref-info/ref-consent-samples',
       ],
     },

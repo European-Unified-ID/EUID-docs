@@ -31,8 +31,8 @@ The options for integrating with EUID using the SDK for JavaScript are summarize
 
 | Scenario | Option | Integration Guide |
 | :--- | :--- | :--- |
-| You have access to personal data on the client side and want to do front-end development only. | Client-side integration | [Client-Side Integration Guide for JavaScript](publisher-client-side.md) |
-| You have access to personal data on the server side and can do server-side development, or you are using a Private Operator. | Server-side integration | [Client-Server Integration Guide for JavaScript](integration-javascript-server-side.md) |
+| You have access to personal data on the client side and want to do front-end development only. | Client-side integration | [Client-Side Integration Guide for JavaScript](integration-javascript-client-side.md) |
+| You have access to personal data on the server side and can do server-side development, or you are using a Private Operator. | Server-side integration | [Client-Server Integration Guide for JavaScript](integration-javascript-client-server.md) |
 
 ## Generating the EUID Token
 
@@ -47,7 +47,7 @@ The SDK for JavaScript includes automated token refresh.
 ## Storing the EUID Token in the Browser
 <!-- GWH check corresponding (not identical) section in integration-prebid.md, integration-prebid-client-side.md, integration-prebid-client-side.md, for consistency -->
 
-The client-side option stores data using local storage. The client-server option uses local storage by default, but you can also choose to use a cookie instead. For details, see [EUID Storage Format](../sdks/client-side-identity.md#euid-storage-format) in the *SDK for JavaScript Reference Guide*.
+The client-side option stores data using local storage. The client-server option uses local storage by default, but you can also choose to use a cookie instead. For details, see [EUID Storage Format](../sdks/sdk-ref-javascript.md#euid-storage-format) in the *SDK for JavaScript Reference Guide*.
 
 The cookie size can be significant, which could be a problem. However, if local storage is not an option, this is one possible approach.
 
@@ -67,5 +67,5 @@ At a high level, to integrate your site with EUID using the SDK for JavaScript, 
 
 For detailed instructions, refer to one of the following integration guides:
 
-- [Client-Side Integration Guide for JavaScript](publisher-client-side.md)
-- [Client-Server Integration Guide for JavaScript](integration-javascript-server-side.md)
+- [Client-Side Integration Guide for JavaScript](integration-javascript-client-side.md)
+- [Client-Server Integration Guide for JavaScript](integration-javascript-client-server.md)

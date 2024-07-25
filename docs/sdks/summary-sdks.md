@@ -39,7 +39,7 @@ The following SDK documentation is available for EUID integration. Documentation
 
 | SDK | Document | Description | Audience
 | :--- | :--- | :--- | :--- |
-| [SDK for JavaScript](client-side-identity.md) | Client-Side JavaScript SDK that facilitates the process of establishing client identity using EUID and retrieving EUID tokens for publishers. | Publishers |
+| [SDK for JavaScript](sdk-ref-javascript.md) | Client-Side JavaScript SDK that facilitates the process of establishing client identity using EUID and retrieving EUID tokens for publishers. | Publishers |
 | [SDK for Java](sdk-ref-java.md) | An SDK for audiences using Java server-side:<br/>- Helps publishers to generate or refresh EUID tokens from <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> ([POST&nbsp;/token/generate](../endpoints/post-token-generate)).<br/>- Helps DSPs to decrypt EUID tokens from bid requests ([Decrypt EUID Tokens for RTB Use](../guides/dsp-guide.md#decrypt-euid-tokens-for-rtb-use)). | Publishers<br/>DSPs<br/>Advertisers<br/>Data&nbsp;Providers |
 | [SDK for Python](sdk-ref-python.md) | An SDK for audiences using Python server-side:<br/>- Helps publishers to generate or refresh EUID tokens from personal data ([POST&nbsp;/token/generate](../endpoints/post-token-generate)).<br/>- Helps DSPs to decrypt EUID tokens from bid requests ([Decrypt EUID Tokens for RTB Use](../guides/dsp-guide.md#decrypt-euid-tokens-for-rtb-use)). | Publishers<br/>DSPs |
 | [SDK for C# / .NET](sdk-ref-csharp-dotnet.md) | An SDK for audiences using .NET server-side:<br/>- Helps DSPs to decrypt EUID tokens from bid requests. | DSPs<br/>Data&nbsp;Providers |
