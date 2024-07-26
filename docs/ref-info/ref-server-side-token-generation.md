@@ -63,5 +63,5 @@ Whatever integration option you choose to generate the <Link href="../ref-info/g
   The identity output that you need for the rest of this guide is the content inside the body section of a successful endpoint response. For an example, see [Successful Response](../endpoints/post-token-generate.md#successful-response).
   
 :::important
-The endpoint and SDK API return opt-out status if the <Link href="../ref-info/glossary-uid#gl-dii">DII</Link> you are generating the token for has been opted out of EUID. If this happens, save the information and do not call the token generation endpoint for the same DII again. 
+The endpoint and SDK API return opt-out status if the <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> you are generating the token for has been opted out of EUID. If this happens, save the information and do not call the token generation endpoint for the same personal data again. 
 :::
