@@ -13,10 +13,10 @@ The following table lists all current testing and production environments for EU
 
 All EUID endpoints use the same base URL.
 
-| Environment | Base URL |
-| :--- | :--- |
-| Testing | `https://integ.euid.eu/v2` |
-| Production | `https://prod.euid.eu/v2` |
+| Environment | Cloud Region | Code | Base URL |
+| :--- | :--- | :--- | :--- |
+| Integration Testing | AWS EU West (London) | `eu-west-2` | `https://integ.euid.eu/v2` |
+| Production | AWS EU West (London) | `eu-west-2` | `https://prod.euid.eu/v2` |
 
 For example, `https://integ.euid.eu/v2/token/generate`.
 
