@@ -74,7 +74,7 @@ const sidebars = {
                 collapsed: true,
                 items: [
                   'guides/integration-prebid-client-side',
-                  'guides/integration-prebid-server-side',
+                  'guides/integration-prebid-client-server',
                 ],
               },
 
@@ -105,7 +105,7 @@ const sidebars = {
             collapsed: true,
             items: [
               'guides/integration-prebid-client-side',
-              'guides/integration-prebid-server-side',
+              'guides/integration-prebid-client-server',
             ],
           },
 

@@ -1,5 +1,5 @@
 ---
-title: EUID SDK for C# / .NET
+title: SDK for C# / .NET
 description: Reference information about the C# / .NET server-side SDK.
 hide_table_of_contents: false
 sidebar_position: 08
@@ -7,9 +7,9 @@ sidebar_position: 08
 
 import Link from '@docusaurus/Link';
 
-# EUID SDK for C# / .NET (Server-Side) Reference Guide
+# SDK for C# / .NET (Server-Side) Reference Guide
 
-You can use the EUID SDK for C# / .NET (Server-Side) to facilitate decrypting of EUID tokens to access the raw EUID. 
+You can use the SDK for C# / .NET (Server-Side) to facilitate decrypting of EUID tokens to access the raw EUID. 
 
 ## Overview
 

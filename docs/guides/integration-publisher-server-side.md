@@ -15,14 +15,14 @@ This guide is for publishers who want to integrate with EUID to generate <Link h
 
 The following options are available for publishers to integrate with EUID on the server side:
 
-- EUID SDK for Java (see [Usage for Publishers](../sdks/sdk-ref-java.md#usage-for-publishers) section).
-- EUID SDK for Python (see [Usage for Publishers](../sdks/sdk-ref-python.md#usage-for-publishers) section).
+- SDK for Java (see [Usage for Publishers](../sdks/sdk-ref-java.md#usage-for-publishers) section).
+- SDK for Python (see [Usage for Publishers](../sdks/sdk-ref-python.md#usage-for-publishers) section).
 - Custom server code to generate and refresh the EUID token by calling the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) and [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoints.
 
 For a complete summary of publisher integration options, see [Publisher Integrations](summary-guides.md#publisher-integrations).
 
 :::tip
-To facilitate the process of establishing client identity using EUID and retrieving EUID tokens, consider using the EUID SDK for JavaScript. For details, see [Client-Server Integration Guide for JavaScript](integration-javascript-client-server.md).
+To facilitate the process of establishing client identity using EUID and retrieving EUID tokens, consider using the SDK for JavaScript. For details, see [Client-Server Integration Guide for JavaScript](integration-javascript-client-server.md).
 :::
 
 ## Introduction

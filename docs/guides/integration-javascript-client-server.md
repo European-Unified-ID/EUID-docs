@@ -13,13 +13,13 @@ import Link from '@docusaurus/Link';
 
 # Client-Server Integration Guide for JavaScript
 
-This guide is for publishers with web assets who want to generate identity tokens using EUID for the RTB <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link>, generating EUID tokens on the server side and passing them to the publishers' web pages, and refreshing the tokens on the client side using the EUID SDK for JavaScript.
+This guide is for publishers with web assets who want to generate identity tokens using EUID for the RTB <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link>, generating EUID tokens on the server side and passing them to the publishers' web pages, and refreshing the tokens on the client side using the SDK for JavaScript.
 
 This is called client-server integration because the JavaScript integration steps are client-side and some other steps are server-side.
 
 If you prefer to integrate with EUID via **only** client-side JavaScript changes, see [Client-Side Integration Guide for JavaScript](integration-javascript-client-side.md).
 
-For technical details about the SDK, see [EUID SDK for JavaScript Reference Guide](../sdks/sdk-ref-javascript.md).
+For technical details about the SDK, see [SDK for JavaScript Reference Guide](../sdks/sdk-ref-javascript.md).
 
 <!-- ## Sample Implementation Website
 
@@ -33,13 +33,13 @@ This guide outlines the basic steps that you need to consider if you are buildin
 
 For a workflow diagram, see [Integration Steps](#integration-steps). See also [FAQs](#faqs).
 
-To facilitate the process of establishing client identity using EUID and retrieving advertising tokens, the web integration steps provided in this guide rely on the EUID SDK for JavaScript. Here's an [example application](https://example-jssdk-integ.uidapi.com/) that illustrates the integration steps described in this guide and the usage of the SDK (currently only for email addresses). For the application documentation, see [SDK Integration Example](https://github.com/IABTechLab/uid2-examples/blob/main/publisher/standard/README.md).
+To facilitate the process of establishing client identity using EUID and retrieving advertising tokens, the web integration steps provided in this guide rely on the SDK for JavaScript. Here's an [example application](https://example-jssdk-integ.uidapi.com/) that illustrates the integration steps described in this guide and the usage of the SDK (currently only for email addresses). For the application documentation, see [SDK Integration Example](https://github.com/IABTechLab/uid2-examples/blob/main/publisher/standard/README.md).
 
 :::tip
-The first-party cookie and local storage implementation details might change in the future. To avoid potential issues, be sure to rely on the functionality documented in the [EUID SDK for JavaScript API Reference](../sdks/sdk-ref-javascript.md#api-reference) for your identity management.
+The first-party cookie and local storage implementation details might change in the future. To avoid potential issues, be sure to rely on the functionality documented in the [SDK for JavaScript API Reference](../sdks/sdk-ref-javascript.md#api-reference) for your identity management.
 :::
 
-For integration scenarios for publishers that do not use the EUID SDK for JavaScript, see [Publisher Integration Guide, Server-Side](integration-publisher-server-side.md). 
+For integration scenarios for publishers that do not use the SDK for JavaScript, see [Publisher Integration Guide, Server-Side](integration-publisher-server-side.md). 
 
 ## Integration Steps
 
@@ -62,8 +62,8 @@ After authentication in step 1-c, which allows the publisher to validate the use
 | :--- | :--- | :--- |
 | 1-d | [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) | Use the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint to generate an EUID token using the email address provided by the user. Make sure it is normalized. |
 | 1-e | [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) | The endpoint returns an EUID token generated from the user's hashed or unhashed email address. |
-| 1-f | EUID SDK for JavaScript | The SDK sends the returned EUID token from step 1-e to the SDK in the `identity` property of its [init() function](../sdks/sdk-ref-javascript.md#initopts-object-void). |
-| 1-g | EUID SDK for JavaScript | Provide the SDK a callback function that will receive identity updates from the SDK and use them to initiate targeted advertising. |
+| 1-f | SDK for JavaScript | The SDK sends the returned EUID token from step 1-e to the SDK in the `identity` property of its [init() function](../sdks/sdk-ref-javascript.md#initopts-object-void). |
+| 1-g | SDK for JavaScript | Provide the SDK a callback function that will receive identity updates from the SDK and use them to initiate targeted advertising. |
 
 #### Generating an EUID Token on the Server
 
@@ -178,7 +178,7 @@ The bidding step is shown in the following table.
 
 | Step | Endpoint/SDK | Description |
 | :--- | :--- | :--- |
-| 2-a | EUID SDK for JavaScript | Gets the current user's advertising token by using the [getAdvertisingToken() function](../sdks/sdk-ref-javascript.md#getadvertisingtoken-string) as shown below. |
+| 2-a | SDK for JavaScript | Gets the current user's advertising token by using the [getAdvertisingToken() function](../sdks/sdk-ref-javascript.md#getadvertisingtoken-string) as shown below. |
 
 :::note
 For an example of what an EUID token might look like in the bidstream, when it's sent from an SSP to a DSP, see [What does an EUID token look like in the bidstream?](../getting-started/gs-faqs.md#what-does-an-euid-token-look-like-in-the-bidstream).
@@ -191,7 +191,7 @@ For an example of what an EUID token might look like in the bidstream, when it's
 ```
 
 :::note
-You need to consider how you pass the returned advertising token to SSPs. With some other approaches to client-side EUID implementation, such as using `Prebid.js` (see [EUID Integration Overview for Prebid.js](integration-prebid.md)), the implementation includes functions that manage passing the returned advertising token. If you're using the EUID SDK for JavaScript you'll need to manage this yourself.
+You need to consider how you pass the returned advertising token to SSPs. With some other approaches to client-side EUID implementation, such as using `Prebid.js` (see [EUID Integration Overview for Prebid.js](integration-prebid.md)), the implementation includes functions that manage passing the returned advertising token. If you're using the SDK for JavaScript you'll need to manage this yourself.
 :::
 
 :::tip
@@ -204,8 +204,8 @@ As part of its initialization, the SDK sets up a [token auto-refresh](../sdks/sd
 
 | Step | Endpoint/SDK | Description |
 | :--- | :--- | :--- |
-| 3-a | [EUID SDK for JavaScript](../sdks/sdk-ref-javascript.md) | The SDK automatically refreshes EUID tokens in the background. No manual action is required. |
-| 3-b | [EUID SDK for JavaScript](../sdks/sdk-ref-javascript.md) | If the user hasn't opted out, the [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint automatically returns new identity tokens. |
+| 3-a | [SDK for JavaScript](../sdks/sdk-ref-javascript.md) | The SDK automatically refreshes EUID tokens in the background. No manual action is required. |
+| 3-b | [SDK for JavaScript](../sdks/sdk-ref-javascript.md) | If the user hasn't opted out, the [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint automatically returns new identity tokens. |
 
 
 ### Clear Identity: User Logout
@@ -215,7 +215,7 @@ The client lifecycle is complete when the user decides to log out from the publi
 | Step | Endpoint/SDK | Description |
 | :--- | :--- | :--- |
 | 4-a | N/A | The user logs out from the publisher's asset. |
-| 4-b | [EUID SDK for JavaScript](../sdks/sdk-ref-javascript.md) | The SDK clears the EUID identity from the first-party cookie and disconnects the client lifecycle by using the [disconnect() function](../sdks/sdk-ref-javascript.md#disconnect-void) as shown below.|
+| 4-b | [SDK for JavaScript](../sdks/sdk-ref-javascript.md) | The SDK clears the EUID identity from the first-party cookie and disconnects the client lifecycle by using the [disconnect() function](../sdks/sdk-ref-javascript.md#disconnect-void) as shown below.|
 
 
 ```html
