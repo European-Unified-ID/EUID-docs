@@ -17,7 +17,6 @@ Each EUID <a href="../intro#participants">participant</a> gets a set of unique c
 | Participants using a client-server implementation | Both of the following:<ul><li><Link href="../ref-info/glossary-uid#gl-api-key">API key</Link>, also called a client key</li><li><Link href="../ref-info/glossary-uid#gl-client-secret">Client secret</Link>, a value known only to the participant and the EUID service</li></ul> | Integrations using one of these: <ul><li>[Client-Server Integration Guide for JavaScript](../guides/integration-javascript-client-server.md)</li><li>[Client-Server Integration Guide for Prebid.js](../guides/integration-prebid-client-server.md)</li></ul>  |
 | Participants using a server-side implementation | Both of the following:<ul><li><Link href="../ref-info/glossary-uid#gl-api-key">API key</Link>, also called a client key</li><li><Link href="../ref-info/glossary-uid#gl-client-secret">Client secret</Link>, a value known only to the participant and the EUID service</li></ul> | Integrations using one of these: <ul><li>[Publisher Integration Guide, Server-Side](../guides/integration-publisher-server-side.md)</li><li>[Advertiser/Data Provider Integration Guide](../guides/advertiser-dataprovider-guide.md)</li></ul> |
 
-
 If you're using the integration environment as well as the production environment, you'll get a separate set of credentials for each environment.
 
 ## Subscription ID and Public Key
