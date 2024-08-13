@@ -72,7 +72,9 @@ A sample application is also available for server-side integration. See [Sample 
 
 ### SDK for JavaScript Client-Side Integration
 
-If you're using the SDK for JavaScript version 3.0.0 or later, the EUID secure signals script uses the `getAdvertisingTokenAsync` function provided in the SDK to get the fresh advertising token, and then pushes the token to Google Ad Manager.
+If you're using the SDK for JavaScript version 3.4.0 or later, the EUID secure signals script uses the `getAdvertisingTokenAsync` function provided in the SDK to get the fresh advertising token, and then pushes the token to Google Ad Manager.
+
+<!-- (UID2/EUID diff re JS SDK ver at 20240813 UID2 3.0.0 EUID 3.4.0. 170) -->
 
 This script is hosted on CDN, and GPT automatically loads it with the secure signals feature. 
 
@@ -93,6 +95,4 @@ The following sample applications are available to illustrate how to integrate w
 
 Each sample application has its own instructions.
 
-(**GWH_SS query_01: there are instances of uid2 in the code and the sample applications. Just want to make sure there is no change to these for EUID?**)
-
-(**GWH_SS query_02: there are mentions of sharing here, but I believe it's nothing to do with UID2 sharing, but rather, a feature of GSS. Just want to verify that, because sharing in the UID2 sense is not implemented in EUID.**)
+<!-- (170 I'll make a ticket to consider an EUID version of the sample.) -->
