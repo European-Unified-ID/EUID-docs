@@ -39,11 +39,11 @@ Determine which method is best for you, and then follow the applicable integrati
 | Scenario | Integration Guide |
 | :--- | :--- |
 | You have access to personal data on the client side and want to do front-end development only | [EUID Client-Side Integration Guide for Prebid.js](integration-prebid-client-side.md) |
-| You have access to personal data on the server side and can do server-side development | [EUID Client-Server Integration Guide for Prebid.js](integration-prebid-server-side.md) |
+| You have access to personal data on the server side and can do server-side development | [Client-Server Integration Guide for Prebid.js](integration-prebid-client-server.md) |
 
 ## Refreshing the EUID Token
 
-The Prebid.js EUID module can automatically refresh the EUID tokens. If you prefer to implement manual refresh outside Prebid.js, see [Refreshing an EUID Token](integration-prebid-server-side.md#refreshing-an-euid-token) in the Server-Side Integration Guide. The client-side integration solution includes automated token refresh.
+The Prebid.js EUID module can automatically refresh the EUID tokens. If you prefer to implement manual refresh outside Prebid.js, see [Refreshing an EUID Token](integration-prebid-client-server.md#refreshing-an-euid-token) in the Server-Side Integration Guide. The client-side integration solution includes automated token refresh.
 
 ## Storing the EUID Token in the Browser
 
@@ -54,11 +54,11 @@ The Prebid.js EUID module can automatically refresh the EUID tokens. If you pref
 To configure the EUID module, call `pbjs.setConfig`. For details on supported parameters, refer to the guide that applies to your implementation:
 
 - [EUID Client-Side Integration Guide for Prebid.js](integration-prebid-client-side.md)
-- [EUID Client-Server Integration Guide for Prebid.js](integration-prebid-server-side.md)
+- [Client-Server Integration Guide for Prebid.js](integration-prebid-client-server.md)
 
 When the EUID module is configured, it manages an EUID token for the user and stores it in the user's browser. 
 
-When generating tokens with Client Refresh mode on the client side or on the server side, the module automatically takes care of refreshing the token as long as your site is open in the user's browser. However, you also have the option to manage the token refresh on the server side. For details, see [Refreshing an EUID Token](integration-prebid-server-side.md#refreshing-an-euid-token) in the Server-Side Integration Guide. The client-side integration solution includes automated token refresh.
+When generating tokens with Client Refresh mode on the client side or on the server side, the module automatically takes care of refreshing the token as long as your site is open in the user's browser. However, you also have the option to manage the token refresh on the server side. For details, see [Refreshing an EUID Token](integration-prebid-client-server.md#refreshing-an-euid-token) in the Server-Side Integration Guide. The client-side integration solution includes automated token refresh.
 
 ## Integration Overview: High-Level Steps
 
@@ -71,4 +71,4 @@ At a high level, to integrate your site with EUID using Prebid.js, you'll need t
 For detailed instructions, refer to one of the following integration guides:
 
 - [EUID Client-Side Integration Guide for Prebid.js](integration-prebid-client-side.md)
-- [EUID Client-Server Integration Guide for Prebid.js](integration-prebid-server-side.md)
+- [Client-Server Integration Guide for Prebid.js](integration-prebid-client-server.md)

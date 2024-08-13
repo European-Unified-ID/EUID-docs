@@ -2,7 +2,7 @@
 title: Client-Side Integration Guide for JavaScript
 sidebar_label: Client-Side Integration for JavaScript
 pagination_label: Client-Side Integration Guide for JavaScript
-description: Information about using the EUID SDK for JavaScript in your client-side integration.
+description: Information about using the SDK for JavaScript in your client-side integration.
 hide_table_of_contents: false
 sidebar_position: 04
 ---
@@ -57,7 +57,7 @@ Complete the EUID account setup by following the steps described in the [Account
 When account setup is complete, you'll receive a client keypair consisting of two values that identify you to the EUID servers: Subscription ID and public key. These values are unique to you, and you'll use them to configure the EUID module. For details, see [Subscription ID and Public Key](../getting-started/gs-credentials.md#subscription-id-and-public-key).
 
 :::tip
-Only root-level domains are required for account setup. For example, if you're going to use the EUID SDK for JavaScript on example.com, shop.example.com, and example.org, you only need to provide the domain names example.com and example.org.
+Only root-level domains are required for account setup. For example, if you're going to use the SDK for JavaScript on example.com, shop.example.com, and example.org, you only need to provide the domain names example.com and example.org.
 :::
 
 ## Add SDK for JavaScript to Your Site

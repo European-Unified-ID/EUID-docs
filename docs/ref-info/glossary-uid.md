@@ -157,7 +157,7 @@ import Link from '@docusaurus/Link';
 <dt><MdxJumpAnchor id="gl-client-server"><a href="#gl-client-server">Client-server integration</a></MdxJumpAnchor></dt>
 <dd>One of the EUID <a href="#gl-integration-approaches">integration approaches</a> is to integrate partially on the client side and partially on the server side (client-server).</dd>
 <dd>For example, in a client-server integration for a publisher, the EUID token is generated on the server side and refreshed on the client side.</dd>
-<dd>Examples of documentation for publisher client-server integrations: <a href="../guides/integration-prebid-server-side">EUID Client-Server Integration Guide for Prebid.js</a>, <a href="../guides/integration-javascript-client-server">Client-Server Integration Guide for JavaScript</a>.</dd>
+<dd>Examples of documentation for publisher client-server integrations: <a href="../guides/integration-prebid-client-server">Client-Server Integration Guide for Prebid.js</a>, <a href="../guides/integration-javascript-client-server">Client-Server Integration Guide for JavaScript</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-client-side"><a href="#gl-client-side">Client-side integration</a></MdxJumpAnchor></dt>
 <dd>One of the EUID <a href="#gl-integration-approaches">integration approaches</a> is to integrate entirely on the client side.</dd>

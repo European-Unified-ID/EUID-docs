@@ -11,7 +11,7 @@ import ChartSvg from './images/euid-js-sdk-workflow.svg';
 # SDK for JavaScript Reference Guide (2.x and earlier versions)
 
 :::tip
-This documentation is for earlier versions of the EUID SDK for JavaScript. If you're using an earlier version, we recommend upgrading. See [EUID SDK for JavaScript Reference Guide](./sdk-ref-javascript.md), which includes a migration guide.
+This documentation is for earlier versions of the SDK for JavaScript. If you're using an earlier version, we recommend upgrading. See [SDK for JavaScript Reference Guide](./sdk-ref-javascript.md), which includes a migration guide.
 :::
 
 Use this SDK to facilitate the process of establishing client identity using EUID and retrieving advertising tokens. The following sections describe the high-level [workflow](#workflow-overview) for establishing EUID identity, provide the SDK [API reference](#api-reference), and explain the [EUID cookie format](#euid-cookie-format).
@@ -36,7 +36,7 @@ For details, see [API Permissions](../getting-started/gs-permissions.md).
 
 ## SDK Version
 
-This documentation is for version 2 of the EUID SDK for JavaScript.
+This documentation is for version 2 of the SDK for JavaScript.
 
 ## GitHub Repository
 

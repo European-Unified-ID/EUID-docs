@@ -1,5 +1,5 @@
 ---
-title: EUID SDK for Python
+title: SDK for Python
 description: Reference information about the Python server-side SDK.
 hide_table_of_contents: false
 sidebar_position: 06
@@ -7,9 +7,9 @@ sidebar_position: 06
 
 import Link from '@docusaurus/Link';
 
-# EUID SDK for Python (Server-Side) Reference Guide
+# SDK for Python (Server-Side) Reference Guide
 
-You can use the EUID SDK for Python (Server-Side) to facilitate:
+You can use the SDK for Python (Server-Side) to facilitate:
 
 - Generating EUID advertising tokens
 - Refreshing EUID advertising tokens
@@ -43,7 +43,7 @@ The SDK supports Python 3.6 and above.
 
 This SDK is in the following open-source GitHub repository:
 
-- [EUID SDK for Python](https://github.com/IABTechLab/uid2-client-python/blob/master/README.md)
+- [SDK for Python](https://github.com/IABTechLab/uid2-client-python/blob/master/README.md)
 
 The package is published in this location:
 
@@ -206,7 +206,7 @@ The SDK hashes input values before sending them. This ensures that raw email add
 
 ## Usage for DSPs
 
-The following instructions provide an example of how you can decode <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link> tokens using the EUID SDK for Python as a DSP.
+The following instructions provide an example of how you can decode <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link> tokens using the SDK for Python as a DSP.
 
 1. Create a `BidstreamClient`:
 

@@ -1,5 +1,5 @@
 ---
-title: EUID SDK for JavaScript
+title: SDK for JavaScript
 description: Reference information about the JavaScript client-side SDK.
 hide_table_of_contents: false
 sidebar_position: 02
@@ -21,7 +21,7 @@ Use this SDK to facilitate the process of establishing client identity using EUI
 If you're using Prebid.js with the EUID Identity Module, or with another product that has EUID support, you probably don't need to use the SDK at all. The Prebid.js module manages everything. For details, see [EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md).
 :::
 
-This page describes version 3 of the EUID SDK for JavaScript. If you are maintaining an integration using an earlier version, do one of the following:
+This page describes version 3 of the SDK for JavaScript. If you are maintaining an integration using an earlier version, do one of the following:
 - Upgrade your integration, using the [migration guide](#migration-guide) (recommended).
 - Refer to the documentation for [earlier versions of the SDK](./sdk-ref-javascript-v2.md).
 
@@ -53,7 +53,7 @@ For details, see [API Permissions](../getting-started/gs-permissions.md).
 
 ## SDK Version
 
-This documentation is for version 3 of the EUID SDK for JavaScript.
+This documentation is for version 3 of the SDK for JavaScript.
 
 ## GitHub Repository
 
@@ -250,7 +250,7 @@ At any time after `init` has completed, you can call [`setIdentity`](#setidentit
 ## API Reference
 
 :::info
-All interactions with the EUID SDK for JavaScript are done through the global `__euid` object, which is an instance of the `EUID` class. All of the following JavaScript functions are members of the `EUID` class:
+All interactions with the SDK for JavaScript are done through the global `__euid` object, which is an instance of the `EUID` class. All of the following JavaScript functions are members of the `EUID` class:
 :::
 
 - [constructor()](#constructor)
@@ -509,7 +509,7 @@ The contents of the `private` object are explicitly unspecified and are left for
 
 ## Migration Guide
 
-This section includes all the information you need to upgrade from an earlier version of the EUID SDK for JavaScript to the current version, v3. It includes:
+This section includes all the information you need to upgrade from an earlier version of the SDK for JavaScript to the current version, v3. It includes:
 
 - [Benefits of Migrating](#benefits-of-migrating)
 - [Required Changes](#required-changes)

@@ -55,7 +55,7 @@ For example, in a client-server integration for a publisher, the EUID token is g
 
 Examples of documentation for publisher client-server integrations:
 
-- [EUID Client-Server Integration Guide for Prebid.js](../guides/integration-prebid-server-side.md)
+- [Client-Server Integration Guide for Prebid.js](../guides/integration-prebid-client-server.md)
 - [Client-Server Integration Guide for JavaScript](../guides/integration-javascript-client-server.md)
 <!-- - [EUID Client-Server Integration Guide for Mobile] -->
 

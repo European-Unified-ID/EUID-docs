@@ -1,5 +1,5 @@
 ---
-title: EUID Client-Server Integration Guide for Prebid.js
+title: Client-Server Integration Guide for Prebid.js
 sidebar_label: Client-Server Integration for Prebid.js
 pagination_label: EUID Client-Server Integration for Prebid.js
 description: Information about setting up a server-side Prebid.js integration.
@@ -11,7 +11,7 @@ import Link from '@docusaurus/Link';
 import AddPrebidjsToYourSite from '/docs/snippets/_prebid-add-prebidjs-to-your-site.mdx';
 import StoreEUIDTokenInBrowser from '/docs/snippets/_prebid-storing-euid-token-in-browser.mdx';
 
-# EUID Client-Server Integration Guide for Prebid.js
+# Client-Server Integration Guide for Prebid.js
 
 This guide is for publishers who have access to <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> on the server side and want to integrate with EUID and generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) to be passed by Prebid.js in the RTB <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link>.
 
@@ -78,7 +78,7 @@ There are two ways to refresh an EUID token, as shown in the following table.
 | Mode | Description | Link to Section | 
 | --- | --- | --- |
 | Client refresh mode | Prebid.js automatically refreshes the tokens internally.<br/>This is the simplest approach. | [Client Refresh Mode](#client-refresh-mode) |
-| Server-only mode | Prebid.js doesn't automatically refresh the token. It is up to the publisher to manage token refresh.<br/>Examples of why you might want to choose this option:<ul><li>If you want to use the [EUID SDK for JavaScript](../sdks/sdk-ref-javascript.md) to refresh the token, and Prebid.js to send the token to the bidstream.</li><li>If you want to send the token to the bidstream via multiple avenues (such as Prebid.js and also Google).</li></ul> | [Server-Only Mode](#server-only-mode) |
+| Server-only mode | Prebid.js doesn't automatically refresh the token. It is up to the publisher to manage token refresh.<br/>Examples of why you might want to choose this option:<ul><li>If you want to use the [SDK for JavaScript](../sdks/sdk-ref-javascript.md) to refresh the token, and Prebid.js to send the token to the bidstream.</li><li>If you want to send the token to the bidstream via multiple avenues (such as Prebid.js and also Google).</li></ul> | [Server-Only Mode](#server-only-mode) |
 
 ### Client Refresh Mode
 

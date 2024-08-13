@@ -1,5 +1,5 @@
 ---
-title: EUID SDK for C++
+title: SDK for C++
 description: Reference information about the C++ server-side SDK.
 hide_table_of_contents: false
 sidebar_position: 10
@@ -7,9 +7,9 @@ sidebar_position: 10
 
 import Link from '@docusaurus/Link';
 
-# EUID SDK for C++ (Server-Side) Reference Guide
+# SDK for C++ (Server-Side) Reference Guide
 
-You can use the EUID SDK for C++ (Server-Side) to facilitate decrypting of EUID tokens to access the raw EUID. 
+You can use the SDK for C++ (Server-Side) to facilitate decrypting of EUID tokens to access the raw EUID. 
 
 ## Overview
 
@@ -31,7 +31,7 @@ The SDK requires C++ version 11.
 
 This SDK is in the following open-source GitHub repository:
 
-- [EUID SDK for C++](https://github.com/IABTechLab/uid2-client-cpp11/blob/master/README.md).
+- [SDK for C++](https://github.com/IABTechLab/uid2-client-cpp11/blob/master/README.md).
 
 Release tags are available in the following GitHub location, but you must build your own binaries:
 

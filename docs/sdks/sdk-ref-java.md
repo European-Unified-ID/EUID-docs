@@ -1,5 +1,5 @@
 ---
-title: EUID SDK for Java
+title: SDK for Java
 description: Reference information about the Java server-side SDK.
 hide_table_of_contents: false
 sidebar_position: 04
@@ -7,9 +7,9 @@ sidebar_position: 04
 
 import Link from '@docusaurus/Link';
 
-# EUID SDK for Java Reference Guide
+# SDK for Java Reference Guide
 
-You can use the EUID SDK for Java on the server side to facilitate the following:
+You can use the SDK for Java on the server side to facilitate the following:
 
 - Generating EUID advertising tokens
 - Refreshing EUID advertising tokens
@@ -132,7 +132,7 @@ Decryption response codes, and their meanings, are shown in the following table.
 
 ## Usage for Publishers
 
-As a publisher, there are two ways to use the EUID SDK for Java: 
+As a publisher, there are two ways to use the SDK for Java: 
 1. [**Basic Usage**](#basic-usage) is for publishers who want to use this SDK's HTTP implementation (synchronous [OkHttp](https://square.github.io/okhttp/)).
 2. [**Advanced Usage**](#advanced-usage) is for publishers who prefer to use their own HTTP library. 
 
@@ -340,7 +340,7 @@ The SDK hashes input values before sending them. This ensures that raw email add
 
 ## Usage for DSPs
 
-The following instructions provide an example of how a DSP can decode <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link> tokens using the EUID SDK for Java.
+The following instructions provide an example of how a DSP can decode <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link> tokens using the SDK for Java.
 
 1. Create a `BidstreamClient`:
 
