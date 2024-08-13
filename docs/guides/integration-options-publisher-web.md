@@ -38,6 +38,7 @@ To accomplish all steps, you can combine solutions. For example, you could use t
 | [SDK for Java](../sdks/sdk-ref-java.md) | &#9989; | &#9989; | &#8212; |
 | [SDK for Python](../sdks/sdk-ref-python.md) | &#9989; | &#9989; | &#8212; |
 | [Direct integration (API endpoints)](integration-publisher-server-side.md) | &#9989; | &#9989; | &#8212; |
+| [Google Ad Manager Secure Signals](integration-google-ss.md) | &#8212; | &#8212; | &#9989; |
 
 <!-- &#9989; = Supported | &#8212; = Not Supported -->
 
@@ -118,12 +119,13 @@ The following table shows the integration options that support refreshing the EU
 
 Publishers use EUIDs by encrypting personal data into EUID tokens and then sending the EUID tokens into the bidstream.
 
-The following table shows integration options that support passing EUID token into the bidstream.
+The following table shows integration options that support passing EUID tokens into the bidstream.
 
 | Option | Documentation |
 | :--- | :--- |
 | Prebid.js client-side implementation (8.21.0 or later) | [EUID Client-Side Integration Guide for Prebid.js](integration-prebid-client-side.md) |
 | Prebid.js server-side implementation (7.53.0 or later) | [Client-Server Integration Guide for Prebid.js](integration-prebid-client-server.md) |
+| Google Ad Manager Secure Signals| [Google Ad Manager Secure Signals Integration Guide](integration-google-ss.md) |
 
 :::note
 As long as you generate the token and keep it refreshed, you can also use other options for passing the EUID token into the bidstream.

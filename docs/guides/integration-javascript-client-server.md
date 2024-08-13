@@ -39,7 +39,11 @@ To facilitate the process of establishing client identity using EUID and retriev
 The first-party cookie and local storage implementation details might change in the future. To avoid potential issues, be sure to rely on the functionality documented in the [SDK for JavaScript API Reference](../sdks/sdk-ref-javascript.md#api-reference) for your identity management.
 :::
 
-For integration scenarios for publishers that do not use the SDK for JavaScript, see [Publisher Integration Guide, Server-Side](integration-publisher-server-side.md). 
+For integration scenarios for publishers that do not use the SDK for JavaScript, see [Publisher Integration Guide, Server-Side](integration-publisher-server-side.md).
+
+:::note
+If you are using Google Ad Manager and want to use the secure signals feature, first follow the steps in this guide and then follow the additional steps in the [Google Ad Manager Secure Signals Integration Guide](integration-google-ss.md).
+:::
 
 ## Integration Steps
 
@@ -190,8 +194,8 @@ For an example of what an EUID token might look like in the bidstream, when it's
 </script>
 ```
 
-:::note
-You need to consider how you pass the returned advertising token to SSPs. With some other approaches to client-side EUID implementation, such as using `Prebid.js` (see [EUID Integration Overview for Prebid.js](integration-prebid.md)), the implementation includes functions that manage passing the returned advertising token. If you're using the SDK for JavaScript you'll need to manage this yourself.
+:::info
+You need to consider how you pass the returned advertising token to SSPs. With some other approaches to client-side EUID implementation, such as using `Prebid.js` (see [EUID Integration Overview for Prebid.js](integration-prebid.md)) or Google Ad Manager Secure Signals (see [Google Ad Manager Secure Signals Integration Guide](integration-google-ss.md)), the implementation includes functions that manage passing the returned advertising token. If you're using the SDK for JavaScript you'll need to manage this yourself.
 :::
 
 :::tip
