@@ -52,14 +52,14 @@ window.googletag.cmd.push(function () {
 
 ### Server-Side Integration
 
-So that it can share encrypted signals, the hosted auto-loaded secure signals script must be able to make an asynchronous call to the `window.getUid2AdvertisingToken` function and, in response, receive `advertising_token` as a string.
+So that it can share encrypted signals, the hosted auto-loaded secure signals script must be able to make an asynchronous call to the `window.getEuidAdvertisingToken` function and, in response, receive `advertising_token` as a string.
 
 It's important to make sure that the identity token is fresh. For a server-side integration, we recommend making a call to the [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint to get a fresh [advertising token](../endpoints/post-token-refresh.md#decrypted-json-response-format) from the JSON response.
 
 The following code is an example of how you could do this.
 
 ```
-window.getUid2AdvertisingToken = async () => {
+window.getEuidAdvertisingToken = async () => {
   // Make a call to get a fresh identity token which could last for at least 12 hours.
   const identity = await getFreshIdentity()
   return JSON.parse(decodeURIComponent(identity)).advertising_token
