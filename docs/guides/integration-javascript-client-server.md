@@ -45,7 +45,9 @@ For integration scenarios for publishers that do not use the SDK for JavaScript,
 
 The following diagram outlines the steps required for establishing a user's EUID token with a publisher and how the EUID token integrates with the RTB bidstream.
 
-![Publisher Flow](images/integration-javascript-client-server-mermaid.svg)
+![Publisher Flow](images/integration-javascript-client-server-mermaid.png)
+
+<!-- diagram source: resource/integration-javascript-client-server-mermaid.md.bak -->
 
 The following sections provide additional details for each step in the diagram:
  

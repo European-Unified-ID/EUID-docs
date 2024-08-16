@@ -1,8 +1,14 @@
+
+
+<!-- 8/16/24: update to change UID2 Service to UID2 Operator per 2509: -->
+
+<!-- 8/16/24: Code: -->
+
     %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#0099F9', 'noteBorderColor':'#0099F9','actorTextColor': '#FFF', 'secondaryColor':'#ededed'}}}%%
   sequenceDiagram
     participant U as User
     participant P as Publisher
-    participant EUID as EUID Service
+    participant EUID as EUID Operator
     participant SSP
 
     Note over U,SSP: 1. Establish Identity
@@ -49,13 +55,17 @@
     deactivate P
 
 
+<!-- Config is same as UID2 but first line of code customizes the colors:
 
-<!-- Mermaid source updated 7/26/24: reworked EUID diagram. Based on UID2 with mods comparing with EUID, so wording is a tiny bit closer. Updated EUID for step 3b to say SDK does it. Note step 4b EUID wording slightly different. not sure why but didn't mess with it. -->
+{
+  "theme": "forest"
+}
 
-<!-- Mermaid Live Editor Source: 
-https://mermaid.live/edit#pako:eNqlVU1v2zAM_SuEi8CHpUbX7FIfeujaAMU-ECz1TrkwFpMIcyRPkrMFQf77KNmxmzgBti4-xCapx8dHStpFuRYUpRHwbzDYSSVdCrvYrWhNcQrxHC3FQ6gN39FInBdk2bODuDRyjWb7URfa-Nirm5u7u_GdD1fa0YM2gkzj7Zwx5k6bF_rtuoXj8divspRrJTrI-IqEf-L9fj8YzBSApZ8VqZweJS4Nrr0JoETjZC5LVA4yQAuZJdN3TbxrUs0LaVfn_E_Z86MPCf9TMhuZUz9qOp3MVG3-ykWC3pCBbMjmFN4n8GQdhgzwLEg56bZ1bHZ9f__Oh1xjEvjBRlrpLCCUB0qc3JJL6gUTXnCd-QXzpGMNpdEbKciCM6gsE2M1toBGV0qAxxPoGNKwyEzfNmD-a4PMNuvYBDJ5QwYrbjDTzTnosEjQ6bL2e9Jx9Gp5JPGapSUlmOKKoGL02EJJxmqFRU3P6eBz-gcpWJIig05qxcuC6P38k5P8Pmlt8m-HYiiBlwuQYMhVRrHcqu5vyN1P1AGfqzW0Y3FcqOswF9q0NZ-t4cLY3CbwIAU3QqpljRTK6PLWUX5yusw5FkUtMXtDamTJq4Dhrb0qWyJhgr2FX2rpbv2MeZhWJd89DULassBtv5YW4oJKt36wOq4NTk23wX6LUKMEvtHCEO-uU5maiR612-tQCqe6tMUuj_MoCPL4qRlkZDQ-d6zzaKZhcCzyUfOHr_rQhp8fuL-Z7JFX83nRwsMKrYod6NKRAF25YT9Tf_BB0a__m_3R6SZ3dUdb4LdugA9Nzz7rJVdz1NAPbUMLvbS-WFgYvf6nnmYehhv60p1HsjmcIS8IzZkTbxINozWZNUrBt-PO-2dRuARnUcqvXCrPwyyaqT1H8vGpp1uVR6kzFQ2jquRz7nBJRekCC8tWEpJvvi_1hRvu3f0fbrNqvQ -->
+-->
 
 
-<!-- Previous update: Mermaid source updated 6/17/24: abbreviated copy on Step 1-c. -->
+<!--  8/16/24: URL:
 
-<!-- Mermaid Live Editor Source: https://mermaid-js.github.io/mermaid-live-editor/edit#pako:eNqdVUtvGjEQ_isjR9EeShDPBPaQQ5pEitRWqIQeKi5mdwCri721vTQU8d87tnfZhkeUNhyynsc337zsLUtUiixmAJeXWyGFjWEb2SWuMIohmnGDUQOC4BvXgs8yNKTZQpRrseJ681FlSjvbi1ZrOHwcOnOpLN4pnaIutbUy4olV-hlfbO34-PjovAwmSqY1ZHSBqftFu93u8nIqAQz-LFAmeC_4QvOVEwHkXFuRiJxLCxPgBiYG9bFq5FSjYpYJszylf5g83TsT_3-Mei0SPLYaj0dB-IVSBLVGDZMGCWNoN-HBWO7x4SlFaYXdBNvJ1e3tB2dyxZvwvEQoiCGshRHWAIe8IkXhDdpmcBqR09XEOc2CU22Wa7UWKRqwmktD9KgmG-BaFTIFh5lyS7CaSk1JmBLQndacWE9qVp5U8hcpXlCriXpChpVjioeu-_Oo5urq5tDSQ7YGZUpUywiRgRy1UZJngaZVXmfVD5SwQImaW6EkufkWHHMYHXBwgYPIfVVJYaBxDhY02kLLst3e6kS6NfSpjH1z5sfpuqbKADxXep_52UyORqnThDuR0hwLuQg4z56gM6_DB9NqpGoCCc-yUG-y8Aw41b_wYE5aZ3w4GPvhpo9Qx041fA6qKpmDo66lwuQZ3xyntYc5U7RONXE15xIr0C7x36zbmcp1m_AV5xppBeuS7Ue9-2r_qnQo1LkdPD_n3eOtJFC3zbqMHyaPwLW7tIwFib9AlPdCOXHvm483J73rivk0p8A-qSU3MrKgcospqMI2PPxrTocrcILYf6xC99Tm29BRF-F9-3Cmr72mv9Xhk1pQUq-a2nvV1EwtjMsb5lqt_qmvEwc1q6HootoXJcmQ6xNFGbEGW6FecZHSE7r1-8n8WzllMX1SutT5KZvKHVnS3arGG5mw2OoCG6zI6QKs3jIWz3lm9tKHVNAzuReiP34OT7V_sRuM3qPvStWOdGbxlr2wuN1r9q773UF_2O1dt2_6rUGDbVjc6_dJPhi2O61Bq3Vzc3O9a7DfHqLdbPm_dnvYaQ07g-H17g8C7JoN -->  
+https://mermaid.live/edit#pako:eNqlVU1v2zAM_SuEh8CHuUbX9FIfeujaAMW-jLXeYchFsZhEmCN5kpwtCPLfR0mO3cQJsHXxITZJPT4-UtI2KhXHKIuAfqPRVkhhM9jGdokrjDOIZ8xgnEAwfGNasFmFhjxbiGstVkxv3qtKaRf75vLy5mZy48KlsninNEfdentnzEqr9DP-tv3CyWTiVhksleQ9ZPwGuXvi3W43Gk0lgMGfDcoS7wVbaLZyJoCaaStKUTNpoQBmoDCoh67cufJmVgmzPOV_KB7vXYj__1KjZsRzGPb0lE9lMH-mKkGtUUORkDmDdyk8GMt8CnjkKK2wmxBbXNzevnUhFyz1BGEtjLAGGNR7TpTdoE3DgpwWXBRuwSztaUOt1VpwNGA1k4aIkRwbYFo1koPD48wSpCaVRYmmBXNfa0Zsi56NJ1O2ZFhDHSa6JQXtF3E8XtZ95z1HJ5dD4i9ZGpScKC4RGkKPDZCcRklWBXpWeZ9VP1DCAqXTWihJy_SaWA_z50f5XdJgcm_7YjCF5zOQoNE2WpLcMjTY5x4m6oFP1erbMT8s1PaYc6W7mk_WcGZsrlK4E5waIeQiIPky-rwhyk1On7lkVRUkJq9PzUjyxmM466DKjoifYGehlyDdlZsxB9Op5LqngAtTV2wzrKWDOKPSlRusnmuLE-i22K8RapzCV5xrpN11LFM70eNue-1LoVTnttj5cR57Qe4_tIPMCI0OHmMdmm4ZHIp80PzkRR-68NMD9zeTPXZqPs47eFgyI2MLqrbIQTU2GWYaDj5I_PV_sz8-3uQ2dLQDfu0GuG579lEtqJqDhl53Da3UwrhiYa7V6p96WjgYauhzfx6J9nCGskKmT5x4eZREK9QrJjhdj1vnn0b-FpxGGb1SqTQP02gqdxRJx6d62sgyyqxuMInoOF4so2zOKkNfTU2n3v7O6qzIBV0wn8L966_hJKIb5rtS-5jdHwbNdas
+
+-->
