@@ -1,9 +1,3 @@
-
-
-<!-- 8/16/24: update to change UID2 Service to UID2 Operator per 2509: -->
-
-<!-- 8/16/24: Code: -->
-
   %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#0099F9', 'noteBorderColor':'#0099F9','actorTextColor': '#FFF', 'secondaryColor':'#ededed'}}}%%
   sequenceDiagram
     participant U as User
@@ -24,20 +18,5 @@
     DSP->>DSP: 2-a. Decrypt EUID tokens.
     DSP->>DSP: 2-b. Execute bidding logic, honoring user opt-outs from step 1.
 
-
-<!-- Config is same as UID2 but first line of code customizes the colors:
-
-{
-  "theme": "forest"
-}
-
--->
-
-
-<!--  8/16/24: URL:
-
-https://mermaid-js.github.io/mermaid-live-editor/edit#pako:eNqNU7Fu2zAQ_ZUDA1eLLEiO5UQaMsSJ0Q5tg0buUHihqYtNVCJVkjLiGv73HiU5RusMhQbq3r17PD7yDkzoElnOAEajg1TS5XAI3BZrDHII1txiEEIPfOdG8nWFljIHCBoja272c11p47lXcZxli8zTlXZ4r02JZsiekwEXTpsCX925cLFY-CqLQqvyLBlcYem_4Hg8jkYrBWDxV4tK4IPkG8NrDwE03DgpZMOVgyVwC0uL5jL1_Px0CT68Bz4uPz14nW792qDh1PElrZh7UmG4sgRTW3v4AHOtnNEVPGnjeNUXfSE3QO_QwDIs5jkkEXzUShtoqVHQjRvr1tmoJy_Hd3cdacyj7iSeYIEYA4H8kztOisW8B4o5lfhefdE66tumwp0UCAYFyh3a0zaDSIkXMm-Ar-8h_0faZJKXFpG36z8UzwL_nnxCEijMvhlMdvonKkuLtwKkgm_F_aBH1zU-7V1s0ccgeFVZ4F0bL-TfWpYDm5ATeeKNe2eX95jerVcULXVJWqVUG6j0RooQtv6CfPzXHcGL0TVYhw1d4kqxkNVoai5LGqCD11-xblJWLKdfahGtW7GVOhKTt04_75VguTMthszodrNl-QuvLEVtU5J1w7s-UXrwsZT0_t6Y2IWf-6nthjdk9B5_aF2_cShm-YG9svw6nUWTZHqTzeIkTZJJGrI9y9NJlM6y6fWUUtMsTm6PIfvdCcTR7XQyTW9uszhN4jTNkuMf1fJMEw
-
--->
-
+<!-- Edit in Mermaid Live Editor: https://mermaid-js.github.io/mermaid-live-editor/edit#pako:eNqNU8GO2jAQ_ZWRVzQXiLZ7I4c9bFi0e6lWJfSUi3EGsJrY6dhBiyL-vTMkFLVwqHJw_ObN8_Oz3SvjK1SZAphMeutszKBP4h4bTDJINjpgMoUB-KHJ6k2NgSs9JC3ZRtMx97Un4T48Ps7ny7nQnY_44qlCGqvXYqJN9FTgZ7w2LpdL6QpovKuukskDVvIlp9NpMikdQMBfHTqDC6t3pBuBAFpN0RrbahdhDTrAOiDdllarj1twcQ98Xb8vROc8rpAO1uAtq8iFU5B2gWF2dYQvkHsXydfw4Snqemj6xmGAPyDBelrkGXxN4c07T9CxT_BtnPkuhnQgr2fPz2fSTKfnjQghADNGAsdnD5oVi3wAipxbxKo0bdLBdRhcA6FBe8BwWWYUqfBG5g8g_QMkf6zNGYm0SSWt_1C8Cvy78yeWQEPHdsw4-p_oAg8SBVgH34uXUY9Pa3ZZu9ijzMHoug6gzza2nN_GViObkQv5SYK7s8o9pqT1iaZjl6xVWbeD2u-smcJeDkjmf50RbMk3ECK2fIilU1PVIDXaVvx-etEv1fmhlCrjX7aIIZaqdCdmdm3F4bxWlm-_yra6DjhVuot-dXRGZZE6vJDG2z2yTr8BU6oo8g  -->
 

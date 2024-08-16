@@ -26,9 +26,7 @@ The following describes the integration workflow for DSP to support EUID as part
 1. [Honor user opt-outs](#honor-user-opt-outs)
 2. [Decrypt EUID Tokens for RTB Use](#decrypt-euid-tokens-for-rtb-use)
 
-![Advertiser Flow](images/dsp-guide-flow-mermaid.png)
-
-<!-- diagram source: resource/dsp-guide-flow-mermaid.md.bak -->
+![DSP Flow](images/dsp-guide-flow-mermaid.svg)
 
 ### Honor User Opt-Outs
 
