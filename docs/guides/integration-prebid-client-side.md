@@ -133,7 +133,7 @@ pbjs.setConfig({
 }); 
 ```
 
-It is possible that the user has opted out of EUID previously. In this case, EUID module respects the user's optout and no EUID token is generated and collected by Prebid.js.
+It is possible that the user has opted out of EUID previously. In this case, the EUID module respects the user's optout and no EUID token is generated and collected by Prebid.js.
 
 ## Checking the Integration
 
