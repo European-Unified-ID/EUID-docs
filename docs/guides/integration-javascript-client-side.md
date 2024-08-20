@@ -144,7 +144,7 @@ You can pass the user's personal data to the EUID SDK either hashed or unhashed.
 
 The SDK encrypts the hashed personal data before sending it to the EUID service.
 
-You can configure the SDK using either of the two accepted personal data formats, for any specific user. The personal data format might vary per user but you can only send one value per user.
+You can configure the SDK using either of the two accepted personal data formats, for any specific user. The personal data format might vary per user, but you can only send one value per user.
 
 The following examples demonstrate the different ways that you can configure the EUID SDK and list the requirements for the personal data passed to the SDK:
 
@@ -214,7 +214,9 @@ In some cases, the user's personal data is not available on page load, and getti
 You can potentially avoid that cost by checking for an existing token that you can use or refresh. To do this, call
 [__euid.isLoginRequired](../sdks/sdk-ref-javascript#isloginrequired-boolean) which returns a Boolean value. If it returns `true`, this means that the EUID SDK cannot create a new advertising token with the existing resource and personal data is required to generate a brand new EUID token.
 
-The following code snippet demonstrates how you might integrate with the SDK for JavaScript for the two scenarios above&#8212;starting with no token as well as reusing/refreshing any existing EUID token if found. 
+It is possible that when you provide the user's personal data, [__euid.isLoginRequired](../sdks/sdk-ref-javascript#isloginrequired-boolean) still returns a `false` value. This happens if the user has opted out of EUID. The EUID SDK for JavaScript respects the user's optout and does not generate an EUID token, even if you call any of the `setIdentity` method calls with the same user's personal data again. Optionally, you might want to avoid making such calls repeatedly.
+
+The following code snippet demonstrates how you might integrate with the EUID SDK for JavaScript for these two scenarios&#8212;starting with no token, or reusing/refreshing an existing EUID token.
 
 ```js
 <script async src="{{ EUID_JS_SDK_URL }}"></script>
@@ -244,7 +246,7 @@ window.__euid.callbacks.push(async (eventType, payload) => {
       // The InitCompleted event occurs just once.
       //
       // If there is a valid EUID token, it is in payload.identity.
-      if (payload.identity) {
+      if (payload?.identity) {
         //
         // payload looks like this:
         // {
@@ -260,24 +262,28 @@ window.__euid.callbacks.push(async (eventType, payload) => {
         var advertising_token_to_use = payload.identity.advertising_token;
       } else {
           if (__euid.isLoginRequired()) {
-            // Call one of the setIdentityFrom functions to generate a new EUID token.
-            // Add any retry logic around this call as required.
-            await __euid.setIdentityFromEmailHash(
-                emailHash,
-                clientSideConfig
-          );
+              // Call one of the setIdentityFrom functions to generate a new EUID token.
+              // Add any retry logic around this call as required.
+              await __euid.setIdentityFromEmailHash(
+              emailHash,
+              clientSideConfig);
+          }  
           else {
-            // there is a token generation API call in flight which triggers
-            // a IdentityUpdated event 
+              // there is a token generation API call in flight which triggers a IdentityUpdated event 
+              // or no token is generated because one of the previous `setIdentity` calls determines that the user has opted out.
           }
-        }
       }
       break;
- 
+      
     case "IdentityUpdated":
       // The IdentityUpdated event happens when an EUID token is generated or refreshed.
       // See previous comment for an example of how the payload looks.
-      var advertising_token_to_use = payload.identity.advertising_token;
+      // It's possible that payload/identity objects could be null for reasons such as the token
+      // has expired and cannot be refreshed, or the user has opted out of EUID.
+      // Check that the advertising token exists before using it.
+      if (payload?.identity?.advertising_token) {
+        var advertising_token_to_use = payload.identity.advertising_token;
+      }
       break;
   }
 });
