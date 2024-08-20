@@ -133,6 +133,8 @@ pbjs.setConfig({
 }); 
 ```
 
+It is possible that the user has opted out of EUID previously. In this case, EUID module respects the user's optout and no EUID token is generated and collected by Prebid.js.
+
 ## Checking the Integration
 
 To check that the EUID module has successfully generated an EUID token, call `pbjs.getUserIds().euid`. If a value is returned, a valid EUID token exists in the EUID module.
