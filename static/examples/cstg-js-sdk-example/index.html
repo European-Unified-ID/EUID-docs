@@ -21,6 +21,9 @@
         $(`#login_required`).text(
           __euid.isLoginRequired() || __euid.isLoginRequired() === undefined ? 'yes' : 'no'
         );
+        $(`#has_opted_out`).text(
+          __euid.hasOptedOut() ? 'yes' : 'no'
+        );
         $(`#update_counter`).text(callbackCounter);
         $(`#identity_state`).text(String(JSON.stringify(state, null, 2)));
 
@@ -101,6 +104,10 @@
       <tr>
         <td class="label">Is EUID Login Required?</td>
         <td class="value"><pre id="login_required"></pre></td>
+      </tr>
+      <tr>
+        <td class="label">Has opted out?</td>
+        <td class="value"><pre id="has_opted_out"></pre></td>
       </tr>
       <tr>
         <td class="label">EUID Identity Updated Counter:</td>
