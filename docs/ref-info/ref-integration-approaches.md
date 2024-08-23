@@ -44,7 +44,7 @@ For details, see [Subscription ID and Public Key](../getting-started/gs-credenti
 
 For added security, you'll need to provide a list of your top-level domains or apps. For details, see:
 
-- For websites: [Client-Side Implementation for Publishers](../getting-started/gs-account-setup.md#client-side-implementation-for-publishers).
+- For websites: [Client-Side Implementation for Publishers](../getting-started/gs-account-setup.md#client-side-web-integrations).
 <!-- - For mobile apps: [Client-Side Mobile Integrations]. -->
 
 ## Client-Server Integration
