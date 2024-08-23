@@ -35,7 +35,10 @@ The following steps provide a high-level outline of the workflow intended for or
 <!-- uid2_only_ep_20240312: Once the user has provided an email address or phone number, the publisher sends it to the UID2 Operator via an SDK or direct API integration. -->
 <!-- euid_only_ep_20240312: Once the user has provided an email address, and consented, the publisher sends it to the EUID Operator via an SDK or direct API integration. -->
 
+   :::tip
    A publisher can authorize an SSO provider or identity provider to pass <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> on their behalf.
+   :::
+
 4. The EUID Operator:
    - Takes the email<!--  or phone number -->.
    - Performs the salt, hash, and encryption process.
@@ -80,7 +83,6 @@ To get started, follow these steps:
 The following resources are available for publishers to implement EUID:
 
 - [Web Integrations](#web-integrations)
-- [Mobile Integrations](#mobile-integrations)
 - [Prebid Integrations](#prebid-integrations)
 
 ### Web Integrations
@@ -101,13 +103,13 @@ For a detailed summary of web integration options, see [Web Integration Overview
 | JavaScript Client-Server Integration | [Client-Server Integration Guide for JavaScript](../guides/integration-javascript-client-server.md) | A publisher guide covering standard web integration scenarios that use the SDK for JavaScript and require tokens to be generated on the server side and passed to the publisher web pages. |
 | Server-Side Integration | [Publisher Integration Guide, Server-Side](../guides/integration-publisher-server-side.md) | A guide for publishers who do not use the [SDK for JavaScript](../sdks/sdk-ref-javascript.md). |
 
-### Mobile Integrations
+<!-- ### Mobile Integrations
 
 The following resources are available for publisher integrations supporting mobile devices.
 
 | Integration Type| Documentation | Content Description |
 | :--- | :--- | :--- |
-| iOS | [SDK for iOS Reference Guide](../sdks/sdk-ref-ios.md) | An SDK that facilitates the process of generating or establishing client identity using EUID and retrieving EUID tokens for publishers that need to support iOS apps. |
+-->
 
 ### Prebid Integrations
 
