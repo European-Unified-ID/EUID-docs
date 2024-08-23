@@ -144,16 +144,17 @@ const sidebars = {
       type: 'category',
       label: 'SDKs',
       link: {
-        type: 'generated-index',
+        type: 'doc',
+        id: 'sdks/summary-sdks',
       },
       collapsed: true,
       items: [
-        'sdks/summary-sdks',
         'sdks/sdk-ref-javascript',
         'sdks/sdk-ref-java',
         'sdks/sdk-ref-python',
         'sdks/sdk-ref-csharp-dotnet',
         'sdks/sdk-ref-cplusplus',
+        'sdks/sdk-ref-ios',
       ],
     },
 

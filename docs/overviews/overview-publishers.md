@@ -80,6 +80,7 @@ To get started, follow these steps:
 The following resources are available for publishers to implement EUID:
 
 - [Web Integrations](#web-integrations)
+- [Mobile Integrations](#mobile-integrations)
 - [Prebid Integrations](#prebid-integrations)
 
 ### Web Integrations
@@ -99,6 +100,14 @@ For a detailed summary of web integration options, see [Web Integration Overview
 | JavaScript Client-Side Integration | [Client-Side Integration Guide for JavaScript](../guides/integration-javascript-client-side.md) | A guide for publishers who want to integrate with EUID using only client-side JavaScript changes, which is the easiest implementation approach.<br/>The SDK for JavaScript manages token generation and token refresh automatically. |
 | JavaScript Client-Server Integration | [Client-Server Integration Guide for JavaScript](../guides/integration-javascript-client-server.md) | A publisher guide covering standard web integration scenarios that use the SDK for JavaScript and require tokens to be generated on the server side and passed to the publisher web pages. |
 | Server-Side Integration | [Publisher Integration Guide, Server-Side](../guides/integration-publisher-server-side.md) | A guide for publishers who do not use the [SDK for JavaScript](../sdks/sdk-ref-javascript.md). |
+
+### Mobile Integrations
+
+The following resources are available for publisher integrations supporting Android or iOS devices.
+
+| Integration Type| Documentation | Content Description |
+| :--- | :--- | :--- |
+| iOS | [SDK for iOS Reference Guide](../sdks/sdk-ref-ios.md) | An SDK that facilitates the process of generating or establishing client identity using UID2 and retrieving EUID tokens for publishers that need to support iOS apps. |
 
 ### Prebid Integrations
 
