@@ -11,13 +11,13 @@ import Link from '@docusaurus/Link';
 
 Check out the latest updates to our EUID documentation resources.
 
-### New: EUID Token Reference Page
+<!-- ### New: EUID Token Reference Page
 
 August 23, 2024
 
 We've added a new reference page with general information about EUID tokens, including refresh tokens.
 
-For details, see [EUID Tokens and Refresh Tokens](ref-tokens.md).
+For details, see EUID Tokens and Refresh Tokens. -->
 
 <!-- APIDOCS-2519 -->
 
