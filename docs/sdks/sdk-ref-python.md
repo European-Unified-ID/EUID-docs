@@ -7,9 +7,9 @@ sidebar_position: 06
 
 import Link from '@docusaurus/Link';
 
-# SDK for Python (Server-Side) Reference Guide
+# SDK for Python Reference Guide
 
-You can use the SDK for Python (Server-Side) to facilitate:
+You can use the SDK for Python to facilitate:
 
 - Generating EUID advertising tokens
 - Refreshing EUID advertising tokens
@@ -23,9 +23,10 @@ This SDK is valid for UID2 and EUID. Some of the code naming and URLs are labell
 
 This SDK simplifies integration with EUID for any DSPs who are using Python for their server-side coding. The following table shows the functions it supports.
 
-| Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID  | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to a Raw EUID |
+| Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to a Raw EUID |
 | :--- | :--- | :--- | :--- | :--- |
 | Not Supported | Supported | Supported | Supported | Supported |
+| &#8212; | &#9989; | &#9989; | &#9989; | &#9989; |
 
 ## API Permissions
 
