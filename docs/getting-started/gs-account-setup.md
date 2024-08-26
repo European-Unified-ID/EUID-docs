@@ -22,25 +22,32 @@ To get access to the EUID framework, contact the appropriate team at The Trade D
 
 ## Account Setup Details
 
-Once you've expressed interest in EUID, someone will contact you to help work out the details.
+When you've expressed interest in EUID, someone will contact you to help work out the details.
 
-All participants will need to provide at least the following information:
+As part of account setup, provide the following information:
 * Name
 * Email address
 * Company name
 * Name and contact information for an authorized individual who can sign the contract.
 
-### Client-Side Implementation for Publishers
+### Client-Side Web Integrations
 
-If you're a publisher, and you determine that you want to implement EUID so that tokens are generated on the client side, you'll also need to provide a list of **domain names** for your sites. This is a security measure, for client-side implementation only.
+If you'll be requesting EUID tokens from the client side on the [web](../overviews/overview-publishers.md#web-integrations)<!--  rather than in [mobile](../overviews/overview-publishers.md#mobile-integrations) apps -->, you must also provide a list of **domain names** for your sites. This is a security measure, for client-side implementation only.
 
 :::tip
-Only top-level (root-level) domains are required for account setup. For example, if you're going to implement EUID to generate tokens on the client side on example.eu, shop.example.eu, and example.org, you only need to provide the domain names example.eu and example.org.
+Only root-level domains are required for account setup. For example, if you're going to implement EUID to generate tokens on the client side on example.eu, shop.example.eu, and example.org, you only need to provide the domain names example.eu and example.org.
 :::
+
+<!-- ### Client-Side Mobile Integrations
+
+If you'll be requesting EUID tokens from the client side in mobile apps, it's important to provide a complete list of all your mobile app IDs, including:
+
+- Android App ID: any that apply.
+- iOS/tvOS Bundle ID and corresponding iOS App Store ID: any that apply. -->
 
 ## Credentials
 
-When you've signed a contract for participating in EUID, you'll be issued with [EUID credentials](gs-credentials.md) and other information for getting up and running with EUID.
+When you've signed a contract for participating in EUID, we'll give you [EUID credentials](gs-credentials.md) and additional information for getting up and running with EUID.
 
 ## API Version
 
