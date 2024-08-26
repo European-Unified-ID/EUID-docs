@@ -22,9 +22,9 @@ For integration steps for content publishers, see [Client-Server Integration Gui
 
 This SDK simplifies integration with EUID for any publishers who want to support EUID. The following table shows the functions it supports.
 
-| Encrypt Raw EUID to EUID Token | Decrypt EUID Token | Generate EUID Token from Personal Data | Refresh EUID Token |
+| Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token |
 | :--- | :--- | :--- | :--- |
-| Not supported | Not supported | Not supported | Supported |
+| &#8212; | &#8212; | &#8212; | &#9989; |
 
 ## API Permissions
 

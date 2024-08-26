@@ -19,9 +19,9 @@ The functions outlined here define the information that you'll need to configure
 
 This SDK simplifies integration with EUID for any DSPs who are using C++ for their server-side coding. The following table shows the functions it supports.
 
-| Encrypt Raw EUID to EUID Token | Decrypt EUID Token | Generate EUID Token from Personal Data | Refresh EUID Token |
+| Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token |
 | :--- | :--- | :--- | :--- |
-| Supported | Supported | Not supported | Not supported |
+| &#9989; | &#9989; | &#8212; | &#8212; |
 
 ## Version
 
