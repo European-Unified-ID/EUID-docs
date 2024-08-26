@@ -21,7 +21,7 @@ The following table summarizes the functionality available with each SDK.
 | EUID SDK for... | Client-Side or Server-Side | Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Generate Raw EUID from Personal Data |
 | :--- | :--- |  :--- | :--- | :--- | :--- | :--- |
 |JavaScript | Client| &#8212; | &#8212; | &#9989; | &#9989; | &#8212; |
-|Java | Server | &#8212; | &#9989; | &#9989; | &#9989; | &#9989; |
+|Java | Server | &#9989; | &#9989; | &#9989; | &#9989; | &#9989; |
 |Python | Server | &#9989; | &#9989; | &#9989; | &#9989; | &#8212; |
 |C# / .NET | Server | &#9989; | &#9989; | &#8212; | &#8212; | &#8212; |
 |C++ | Server | &#9989; | &#9989; | &#8212; | &#8212; | &#8212; |

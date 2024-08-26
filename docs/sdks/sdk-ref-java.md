@@ -26,7 +26,7 @@ This SDK simplifies integration with EUID for any publishers, DSPs, advertisers,
 
 | Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token |  Map Personal Data to a Raw EUID |
 | :--- | :--- | :--- | :--- | :--- |
-| &#8212; | &#9989; | &#9989; | &#9989; | &#9989; |
+| &#9989; | &#9989; | &#9989; | &#9989; | &#9989; |
 
 ## API Permissions
 
