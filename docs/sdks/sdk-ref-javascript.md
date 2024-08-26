@@ -39,9 +39,9 @@ For example applications with associated documentation, see:
 
 This SDK simplifies development for publishers who want to build their own customized EUID integration. The following table shows the functions it supports.
 
-| Encrypt Raw EUID to EUID Token | Decrypt EUID Token | Generate EUID Token from Personal Data | Refresh EUID Token |
-| :--- | :--- | :--- | :--- |
-| Not supported | Not supported | Not supported | Supported |
+| Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to a Raw EUID |
+| :--- | :--- | :--- | :--- | :--- |
+| &#8212; | &#8212; | &#9989; | &#9989; | &#8212; |
 
 ## API Permissions
 
