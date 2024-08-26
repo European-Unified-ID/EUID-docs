@@ -25,7 +25,6 @@ This SDK simplifies integration with EUID for any DSPs who are using Python for 
 
 | Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to a Raw EUID |
 | :--- | :--- | :--- | :--- | :--- |
-| Not Supported | Supported | Supported | Supported | Supported |
 | &#8212; | &#9989; | &#9989; | &#9989; | &#9989; |
 
 ## API Permissions
