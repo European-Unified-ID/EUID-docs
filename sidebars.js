@@ -141,14 +141,14 @@ const sidebars = {
     },
 
     {
-      type: 'category',
-      label: 'SDKs',
-      link: {
-        type: 'generated-index',
-      },
-      collapsed: true,
-      items: [
-        'sdks/summary-sdks',
+        type: 'category',
+        label: 'SDKs',
+        link: {
+          type: 'doc',
+          id: 'sdks/summary-sdks',
+        },
+        collapsed: true,
+        items: [
         'sdks/sdk-ref-javascript',
         'sdks/sdk-ref-java',
         'sdks/sdk-ref-python',
@@ -161,11 +161,11 @@ const sidebars = {
       type: 'category',
       label: 'Endpoints',
       link: {
-        type: 'generated-index',
+        type: 'doc',
+        id: 'endpoints/summary-endpoints',
       },
-      collapsed: true,
+      collapsed: false,
       items: [
-        'endpoints/summary-endpoints',
         'endpoints/post-token-generate',
         'endpoints/post-token-validate',
         'endpoints/post-token-refresh',
