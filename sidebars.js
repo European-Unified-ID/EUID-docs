@@ -185,7 +185,6 @@ const sidebars = {
       items: [
         'ref-info/ref-operators-public-private',
         'ref-info/ref-server-side-token-generation',
-        'ref-info/ref-tokens',
         'ref-info/ref-integration-approaches',
         'ref-info/ref-areas-of-coverage',
         'ref-info/ref-consent-samples',
