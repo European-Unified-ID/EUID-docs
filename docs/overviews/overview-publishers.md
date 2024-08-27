@@ -110,7 +110,7 @@ The following resources are available for publisher integrations supporting mobi
 
 | Integration Type| Documentation | Content Description |
 | :--- | :--- | :--- |
-| iOS | [SDK for iOS Reference Guide](../sdks/sdk-ref-ios.md) | An SDK that facilitates the process of generating or establishing client identity using UID2 and retrieving EUID tokens for publishers that need to support iOS apps. |
+| iOS | [SDK for iOS Reference Guide](../sdks/sdk-ref-ios.md) | An SDK that facilitates the process of generating or establishing client identity using EUID and retrieving EUID tokens for publishers that need to support iOS apps. |
 
 ### Prebid Integrations
 
