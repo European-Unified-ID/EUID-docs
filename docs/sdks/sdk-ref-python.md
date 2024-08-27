@@ -244,7 +244,7 @@ To monitor salt buckets, follow these steps.
 The following examples are valid timestamp strings:
    - Date in local timezone: `2024-08-18`
    - Date and time in UTC: `2024-08-18T14:30:15.123456+00:00`
-   - Date and time in EST: `2024-08-18T14:30:15.123456-05:00`
+   - Date and time in CEST: `2024-08-18T14:30:15.123456+02:00`
 
    ```py
       since_timestamp = '2024-08-18T14:30:15+00:00'
