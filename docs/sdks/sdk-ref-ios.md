@@ -98,7 +98,7 @@ In the XCode user interface, under Package Dependencies, add the following entry
 Add the following entry in your `Podfile`:
 
 ```
-pod 'UID2', '~> 1.2'
+pod 'UID2', '~> 1.7'
 ```
 
 ## Usage Guidelines
