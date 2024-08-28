@@ -6,10 +6,10 @@ export function initEuidSdk() {
             if (window.location.href.includes('localhost')) {
                 // Client-side token generate won't work on localhost, so this fakes it for a good dev experience.
                 // Do not do this outside a dev environment!
-                __euid.setIdentityFromEmail = fakeSetIdentityFromEmail;
+                //__euid.setIdentityFromEmail = fakeSetIdentityFromEmail;
             }
             window.__euid.init({
-                baseUrl: 'https://integ.euid.eu/',
+                //baseUrl: 'https://integ.euid.eu/',
             });
         }
     });

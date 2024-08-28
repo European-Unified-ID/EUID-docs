@@ -5,16 +5,18 @@ import { LoginForm } from './loginForm.js';
 import { addEuidCallback, removeEuidCallback, initEuidSdk } from './euidHelpers.js';
 
 const clientSideIdentityOptions = {
-    serverPublicKey:  'EUID-X-I-MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEYla1YQ6N+surF4Yjaax46mPxCv7ixCR0zd3AYV5D8nhEVbQOuhs+GGxp0rUVpucJGQxNvkINwdSeCTpyzLMtFA==',
-    subscriptionId: 'QRtT141htm',
+    // serverPublicKey:  'EUID-X-I-MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEYla1YQ6N+surF4Yjaax46mPxCv7ixCR0zd3AYV5D8nhEVbQOuhs+GGxp0rUVpucJGQxNvkINwdSeCTpyzLMtFA==',
+    // subscriptionId: 'QRtT141htm',
 };
 initEuidSdk();
 
 function euidLogin(email) {
+    window.googletag.secureSignalProviders.clearAllCache();
     __euid.setIdentityFromEmail(email, clientSideIdentityOptions);
 }
 
 function euidLogout() {
+    window.googletag.secureSignalProviders.clearAllCache();
     __euid.disconnect();
 }
 
@@ -27,6 +29,11 @@ function App () {
             const info = createSdkInfo(event, payload);
             setSdkInfo(info);
         };
+        const onEuidIdentityUpdated = (eventType, payload) => {
+            console.log('EUID Callback', payload);
+        };
+
+        addEuidCallback(onEuidIdentityUpdated);
         addEuidCallback(callback);
 
         // Remove our callback if this component unmounts
