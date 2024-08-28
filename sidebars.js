@@ -162,11 +162,11 @@ const sidebars = {
       type: 'category',
       label: 'Endpoints',
       link: {
-        type: 'generated-index',
+        type: 'doc',
+        id: 'endpoints/summary-endpoints',
       },
-      collapsed: true,
+      collapsed: false,
       items: [
-        'endpoints/summary-endpoints',
         'endpoints/post-token-generate',
         'endpoints/post-token-validate',
         'endpoints/post-token-refresh',

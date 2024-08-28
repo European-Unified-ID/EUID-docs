@@ -7,9 +7,9 @@ sidebar_position: 06
 
 import Link from '@docusaurus/Link';
 
-# SDK for Python (Server-Side) Reference Guide
+# SDK for Python Reference Guide
 
-You can use the SDK for Python (Server-Side) to facilitate:
+You can use the SDK for Python on the server side to facilitate the following:
 
 - Generating EUID advertising tokens
 - Refreshing EUID advertising tokens
@@ -23,9 +23,9 @@ This SDK is valid for UID2 and EUID. Some of the code naming and URLs are labell
 
 This SDK simplifies integration with EUID for any DSPs who are using Python for their server-side coding. The following table shows the functions it supports.
 
-| Encrypt Raw EUID to EUID Token | Decrypt EUID Token | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to a Raw EUID |
-| :--- | :--- | :--- | :--- | :--- |
-| Not Supported | Supported | Supported | Supported | Supported |
+| Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to a Raw EUID | Monitor Rotated Salt Buckets |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| &#9989; | &#9989; | &#9989; | &#9989; | &#9989; | &#9989; |
 
 ## API Permissions
 
@@ -49,6 +49,14 @@ The package is published in this location:
 
 - [https://pypi.org/project/uid2-client/](https://pypi.org/project/uid2-client/)
 
+## Installation
+
+You can use the [Pip](https://packaging.python.org/en/latest/guides/tool-recommendations/#installing-packages) package manager to install the SDK.
+
+```
+pip install uid2-client
+```
+
 ## Initialization
 
 The initialization step depends on the role, as shown in the following table.
@@ -69,6 +77,7 @@ You will need to provide the values necessary for the SDK to authenticate with t
 | `secret_key` | The client secret. See [EUID Credentials](../getting-started/gs-credentials).              |
 
 ## Interface
+
 The `BidstreamClient` class allows you to decrypt EUID tokens into raw EUIDs.
 
 For details on the bidding logic for handling user opt-outs, see [DSP Integration Guide](../guides/dsp-guide.md).
@@ -81,7 +90,7 @@ When you use an SDK, you do not need to store or manage decryption keys.
 
 Whether decrypting with the `BidstreamClient` class<!--  or the `SharingClient` class -->, the SDK returns the information shown in the following table.
 
-| Methods       | Description                                                                                                                                     |
+| Property      | Description                                                                                                                                     |
 |:--------------|:------------------------------------------------------------------------------------------------------------------------------------------------|
 | `status`      | The decryption result status. For a list of possible values and definitions, see [Decryption Response Statuses](#decryption-response-statuses). |
 | `uid`         | The raw EUID for the corresponding EUID token.                                                                                                  |
@@ -120,7 +129,7 @@ Decryption response codes, and their meanings, are shown in the following table.
    ```
 
    :::important
-   - Be sure to call the POST&nbsp;/token/generate endpoint only when you have a legal basis to convert the user’s <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to EUID tokens for targeted advertising.
+   - Be sure to call this function only when you have a legal basis to convert the user’s <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to EUID tokens for targeted advertising.
 
    - Always apply `do_not_generate_tokens_for_opted_out()`. This applies a parameter similar to setting `optout_check=1` in the call to the POST&nbsp;/token/generate endpoint (see [Unencrypted JSON Body Parameters](../endpoints/post-token-generate.md#unencrypted-json-body-parameters)).
    :::
@@ -150,7 +159,7 @@ If you're using server-side integration (see [Publisher Integration Guide, Serve
    If the user has opted out, this method returns `None`, so be sure to handle that case.
 2. To retrieve the user's EUID token, use the following:
 
-   ```
+   ```py
    identity = token_generate_response.get_identity()
    if identity:
       advertising_token = identity.get_advertising_token()
@@ -161,19 +170,36 @@ If you're using server-side integration (see [Publisher Integration Guide, Serve
       `identity = IdentityTokens.from_json_string(identityJsonString)`
    2. Determine if the identity can be refreshed (that is, the refresh token hasn't expired):
 
-      `if not identity or not identity.is_refreshable(): # we must no longer use this identity (for example, remove this identity from the user's session) `
+       ```py
+      if not identity or not identity.is_refreshable(): # we must no longer use this identity (for example, remove this identity from the user's session)
+      ```
+
    3. Determine if a refresh is needed:
 
-      `if identity.is_due_for_refresh()):`
+       ```py
+      if identity.is_due_for_refresh()):
+      ```
+
 4. If needed, refresh the token and associated values:
 
-   `token_refresh_response = client.refresh_token(identity)`
+   ```py
+   token_refresh_response = client.refresh_token(identity)
+   ```
 
 5. Store `token_refresh_response.get_identity_json_string()` in the user's session.
 
    If the user has opted out, this method returns `None`, indicating that the user's identity should be removed from the session. To confirm optout, you can use the `token_refresh_response.is_optout()` function.
 
 ## Usage for Advertisers/Data Providers
+
+There are two operations that apply to Advertisers/Data Providers:
+- [Map Personal Data to Raw EUIDs](#map-personal-data-to-raw-euids)
+- [Monitor rotated salt buckets](#monitor-rotated-salt-buckets)
+
+### Map Personal Data to Raw EUIDs
+
+To map email addresses or their hashes to their raw EUIDs and salt bucket IDs, follow these steps.
+
 1. Create an instance of `IdentityMapClient` as an instance variable.
    ```py
    client = IdentityMapClient(base_url, api_key, client_secret)
@@ -202,6 +228,38 @@ The SDK hashes input values before sending them. This ensures that raw email add
     else:
         unmapped_identity = unmapped_identities.get("email1@example.com")
         reason = unmapped_identity.get_reason()
+   ```
+
+### Monitor Rotated Salt Buckets
+
+To monitor salt buckets, follow these steps.
+
+1. Create an instance of `IdentityMapClient` as an instance variable or reuse the one from [Map Personal Data to Raw EUIDs:](#map-personal-data-to-raw-euids)
+
+   ```py
+   client = IdentityMapClient(base_url, api_key, client_secret)
+   ```
+
+2. Call a function that takes the timestamp string as input and generates an `IdentityBucketsResponse` object. The timestamp string should be in ISO 8601 format: `YYYY-MM-DD[*HH[:MM[:SS[.fff[fff]]]][+HH:MM[:SS[.ffffff]]]]`.
+The following examples are valid timestamp strings:
+   - Date in local timezone: `2024-08-18`
+   - Date and time in UTC: `2024-08-18T14:30:15.123456+00:00`
+   - Date and time in CEST: `2024-08-18T14:30:15.123456+02:00`
+
+   ```py
+      since_timestamp = '2024-08-18T14:30:15+00:00'
+      identity_buckets_response = client.get_identity_buckets(datetime.fromisoformat(since_timestamp))
+   ```
+
+3. The `IdentityBucketsResponse` object contains the `bucket_id` and the `last_updated` timestamp which is in UTC. Iterate through the list of rotated salt buckets and extract the `bucket_id` and `last_updated` timestamp as follows:
+
+   ```py
+   if identity_buckets_response.buckets:
+       for bucket in identity_buckets_response.buckets:
+           bucket_id = bucket.get_bucket_id()         # example "bucket_id": "a30od4mNRd"
+           last_updated = bucket.get_last_updated()   # example "last_updated" "2024-08-19T22:52:03.109"
+   else:
+       print("No bucket was returned")
    ```
 
 ## Usage for DSPs
