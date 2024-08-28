@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>EUID Publisher Client-Side Integration Example using UID2 JavsScript SDK</title>
+    <link rel="stylesheet" type="text/css" href="./app.css" />
+    <link rel="stylesheet" type="text/css" href="./ads.css" />
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <script async src="https://cdn.integ.euid.eu/euidSecureSignal.js"></script>
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script defer src="https://cdn.integ.euid.eu/euid-sdk-3.4.5.js"></script>
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>    
+    <div id="root"></div>
+
+    <div id="page-content">
+      <div id="video-container">
+        <video id="video-element">
+          <source src="https://storage.googleapis.com/interactive-media-ads/media/android.mp4">
+          <source src="https://storage.googleapis.com/interactive-media-ads/media/android.webm">
+        </video>
+        <div id="ad-container"></div>
+      </div>
+      <button id="play-button">Play</button>
+    </div>
+    <script src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+    <script src="ads.js"></script>
+  </body>
+</html>
