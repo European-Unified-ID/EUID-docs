@@ -46,7 +46,7 @@ You'll be granted permission to use specific functions offered by the SDK, and g
 
 <!-- As of 7 May 2024 -->
 
-This documentation is for the SDK for iOS version 1.2.0 and later.
+This documentation is for the SDK for iOS version 1.7.0 and later.
 
 For current and past release notes information, see [https://github.com/IABTechLab/uid2-ios-sdk/releases](https://github.com/IABTechLab/uid2-ios-sdk/releases).
 
@@ -81,7 +81,7 @@ Add the following dependency to Package.swift:
 
 ```js
 dependencies: [
-  .package(url: "https://github.com/IABTechLab/uid2-ios-sdk.git", from: "1.2.0"),
+  .package(url: "https://github.com/IABTechLab/uid2-ios-sdk.git", from: "1.7.0"),
 ]
 ```
 
@@ -91,7 +91,7 @@ In the XCode user interface, under Package Dependencies, add the following entry
 
 | Name | Location | Dependency Rule                         |
 | :--- | :--- |:----------------------------------------| 
-| uid2-ios-sdk | `git@github.com:IABTechLab/uid2-ios-sdk.git` | Up to next major version: 1.2.0 < 2.0.0 |
+| uid2-ios-sdk | `git@github.com:IABTechLab/uid2-ios-sdk.git` | Up to next major version: 1.7.0 < 2.0.0 |
 
 ### Installing with CocoaPods
 
@@ -196,4 +196,3 @@ The `Identity` variable stores and returns the current `UID2Identity` data objec
 #### identityStatus
 
 The `identityStatus` variable stores and returns the status of the current EUID Identity being managed by the SDK.
-
