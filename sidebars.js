@@ -145,16 +145,17 @@ const sidebars = {
       type: 'category',
       label: 'SDKs',
       link: {
-        type: 'generated-index',
+        type: 'doc',
+        id: 'sdks/summary-sdks',
       },
       collapsed: true,
       items: [
-        'sdks/summary-sdks',
         'sdks/sdk-ref-javascript',
         'sdks/sdk-ref-java',
         'sdks/sdk-ref-python',
         'sdks/sdk-ref-csharp-dotnet',
         'sdks/sdk-ref-cplusplus',
+        'sdks/sdk-ref-ios',
       ],
     },
 
@@ -162,11 +163,11 @@ const sidebars = {
       type: 'category',
       label: 'Endpoints',
       link: {
-        type: 'generated-index',
+        type: 'doc',
+        id: 'endpoints/summary-endpoints',
       },
-      collapsed: true,
+      collapsed: false,
       items: [
-        'endpoints/summary-endpoints',
         'endpoints/post-token-generate',
         'endpoints/post-token-validate',
         'endpoints/post-token-refresh',
@@ -185,6 +186,7 @@ const sidebars = {
       collapsed: true,
       items: [
         'ref-info/ref-operators-public-private',
+        'ref-info/ref-server-side-token-generation',
         'ref-info/ref-integration-approaches',
         'ref-info/ref-areas-of-coverage',
         'ref-info/ref-consent-samples',
@@ -192,6 +194,7 @@ const sidebars = {
     },
 
     'ref-info/glossary-uid',
+    'ref-info/updates-doc',
 
   ],
 };

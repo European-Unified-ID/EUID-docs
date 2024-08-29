@@ -18,7 +18,7 @@ The following diagram outlines the steps that data collectors must complete to m
 
 Personal data refers to a user's normalized email address, or the normalized and SHA-256-hashed email address.
 
-![Advertiser Flow](images/advertiser-flow-mermaid.svg)
+![Advertiser Flow](images/advertiser-flow-mermaid.png)
 
 <!-- diagram source: resource/advertiser-flow-mermaid.md.bak -->
 

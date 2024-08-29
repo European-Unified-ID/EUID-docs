@@ -1,7 +1,12 @@
+
+<!-- 8/16/24: update to change UID2 Service to UID2 Operator per 2509: -->
+
+<!-- 8/16/24: Code: -->
+
   %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#0099F9', 'labelTextColor': '#FFF', 'actorTextColor': '#FFF'}}}%%
   sequenceDiagram
     participant DP as Data Provider
-    participant EUID as EUID Service
+    participant EUID as EUID Operator
     participant DSP
     loop 1. Retrieve an EUID for personal data using the identity map endpoints.
     DP->>EUID: 1-a. Send a request containing personal data to the identity mapping endpoints.
@@ -16,5 +21,19 @@
        EUID->>DP: 3-d. Store the EUID and salt bucket returned from the identity mapping service.
     end
 
-    <!-- Mermaid Live Editor Source:  https://mermaid-js.github.io/mermaid-live-editor/edit#pako:eNq1lMGO2kAMhl_FSoW4sNFuORFVXDaLtIdKaGl74mIyho6azKQzDi1CvHvtJLtLFjj2lGjs-X77tzXHpPCGkiwBGI2O1lnO4Djmn1TROIPxBiONJ9Ad_MBgcVNSlMgRxnWwFYbDoy990NxP9_ez2WKm6SVuqPxGf_k9uFgsNIIF-3AZOZ1Oo9HaAUT63ZArKLe4C1jpEUCNgW1ha3QM-RIwQo6MsAx-bw2Fy6Sn78-5prXfFYW9LegKarXsDkvva3hI4YU4WNoToOuubn2AmkL0DkswqtlE63YgdoAoO7Z8gAprIGdqbx3HtCPmy7v5XBEZPNxhKjU4AwhBu4sMhXeMYraghnj2F-xasz7yFS0K-VL5G-GLq9Re7VoXtYglw6YpfhGLLjfBkYFt8NV1hdi51PNF760R1VmJ0Oe-jahaphWKWrAE228RCFm8a4zVCWqpZ_ZOU_jqZb3EUXV1UJ1nZOtdlDpLQRilHXwTBlJ9ZUNzp2ruK_c6831ifWjY6dDMqZr50rp1josdT0oRWCE9ws7uyQHbSsaJVX2juCKFR1_JznWzeYOck6XXszYHsfTLJsyft6_3JuJP1Alc7MytabZWIzj608JvtGz-0_4kk6SiUKE18r4cNbBO2odknWTyK7WJeetk7U6S2dTSDD0ZnWSSbbGMNEmwYb86uCLJODT0mtS_DX3W6R-55JVD -->
-   
+
+<!-- Config is same as UID2 but first line of code customizes the colors:
+
+{
+  "theme": "forest"
+}
+
+-->
+
+
+<!--  8/16/24: URL:
+
+https://mermaid.live/edit#pako:eNq1VMFu2kAQ_ZXRVogLcZNyihVxiYuUQ1QU2h4qLoM9kFXtXXd3TIsQ_94ZGxJc4NiT7Z2Z9-a9Wc_O5L4gkxqAwWBnneUUdkN-pYqGKQyXGGk4gu7gOwaLy5KiRHYwrIOtMGwffemD5n64vb2_n95reolLKr_SH34PTqdTjWDOPpxH9vv9YLBwAJF-NeRyyiyuA1Z6BFBjYJvbGh1DNgOMkCEjzILf2ILCedLnb0-ZprXPLzUFFNYLWPNZd1h6X8NdAi_EwdKGAF1Xu_IBpDx6hyUUStpE69YgfoBQO7a8hQprIFfU3jqOSYeYzW4mE4VI4e4GE5hLAiAElRcZcu8YxW2B6sOzP8OuNetffIUWhmym-EvBF4HUlnbahS1iybBs8p_EwstNcFTAKvjqMkOksLE5HfCF702I8syF6NNBRlSuoiWK2rAE22ceCFm8awqrI9RWT-wdJ_Ds5X6Jo-pqrzvPyNa7KH2WAlEo2tY3oUd16Kxv7ljNPeJexnyf2CHUV9o3c6xmvrRuncLFDk9aEbBcNMLabsgB20rGiVV9pbk8gUdfyZ3rZvMGcoosWk9k9mLJwzJ8nDytjoUjMSjqCM4uzbVxtl4jOPrdol_RXPyXC2RGpqJQoS1kv-z0eGHaRbIwqbxKZ-LdwizcXjKxYT_futykHBoameCb9atJV1hG-WpqEXpcCscUKnTqz93-atfYyMh__cP76lC4_wvOl55B
+
+-->
+
