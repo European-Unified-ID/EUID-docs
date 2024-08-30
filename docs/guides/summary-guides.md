@@ -23,7 +23,15 @@ Integrations fall into these categories:
 
 ## Publisher Integrations
 
-The following resources are available for publisher integrations.
+Publisher integrations fall into the following main categories:
+
+- [Web Integrations](#web-integrations)
+- [Prebid Integrations](#prebid-integrations)
+- [Google Ad Manager Integrations](#google-ad-manager-integrations)
+
+### Web Integrations
+
+The following resources are available for publisher web integrations.
 
 :::tip
 For a detailed summary of web integration options, see [Web Integration Overview](../guides/integration-options-publisher-web.md).
@@ -48,6 +56,15 @@ The following resources are available for publisher Prebid integrations.
 | [EUID Integration Overview for Prebid.js](integration-prebid.md) | An overview of options for publishers who want to integrate with EUID and generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) to be passed by Prebid.js in the RTB bidstream. |
 | [EUID Client-Side Integration Guide for Prebid.js](integration-prebid-client-side.md) | An integration guide for publishers who want to integrate with EUID and want Prebid.js to manage token generation and automatic token refresh as well as passing the tokens into the RTB bidstream. This guide is for publishers who want to request EUID tokens client-side, which is the easiest implementation approach. |
 | [Client-Server Integration Guide for Prebid.js](integration-prebid-client-server.md) | An integration guide for publishers who want to integrate with EUID and generate identity tokens to be passed by Prebid in the RTB bidstream. This guide is for publishers who are using a private operator or who want to generate tokens server-side. |
+
+### Google Ad Manager Integrations
+
+The following resources are available for publishers integrating with Google Ad Manager.
+
+| Integration Guide | Content Description |
+| :--- | :--- |
+| [EUID GMA Plugin for Android Integration Guide](mobile-plugin-gma-android.md) | The EUID Google Mobile Ads (GMA) Plugin for Android enables publishers that use the [Google GMA SDK](https://developers.google.com/ad-manager/mobile-ads-sdk) to send <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> as [secure signals](https://support.google.com/admob/answer/11556288) in ad requests from Android apps. |
+| [EUID IMA Plugin for Android Integration Guide](mobile-plugin-ima-android.md) | The EUID Interactive Media Ads (IMA) Plugin for Android enables publishers that use the [Google IMA SDK for Android](https://developers.google.com/interactive-media-ads/docs/sdks/android/client-side) to send <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> as [secure signals](https://support.google.com/admob/answer/11556288) in ad requests from Android apps. |
 
 ## Advertiser/Data Provider Integrations
 

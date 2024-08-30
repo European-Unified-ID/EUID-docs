@@ -29,7 +29,7 @@ Although this page refers to SDK for iOS, this SDK also supports tvOS. For the r
 
 This SDK simplifies integration with EUID for any publishers who want to support EUID for apps running on iOS devices. The following table shows the functions it supports.
 
-| Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from DII | Refresh EUID Token | Map Personal Data to Raw EUID |
+| Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to Raw EUID |
 | :--- | :--- | :--- | :--- | :--- |
 | &#8212; | &#8212; | &#9989; | &#9989; | &#8212; |
 
@@ -109,7 +109,7 @@ For iOS, the `EUIDManager` is initialized automatically the first time it is acc
 
 There are two ways to establish an initial EUID Identity:
 
-1. Generate the EUID identity using DII&#8212;email (hashed or unhashed). <!-- For integration instructions, see [Client-Side Integration Guide for Mobile]LINK REMOVED. -->
+1. Generate the EUID identity using personal data&#8212;email (hashed or unhashed). <!-- For integration instructions, see [Client-Side Integration Guide for Mobile]LINK REMOVED. -->
 
 2. Create an EUID identity from your server's back end and then pass it to the EUID SDK. <!-- For integration instructions, see [Client-Server Integration Guide for Mobile]LINK REMOVED. -->
 

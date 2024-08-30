@@ -40,7 +40,7 @@ The following steps provide a high-level outline of the workflow intended for or
    :::
 
 4. The EUID Operator:
-   - Takes the email<!--  or phone number -->.
+   - Takes the email.
    - Performs the salt, hash, and encryption process.
    - Returns the EUID token.
 5. The publisher stores the EUID token to share with SSPs during real-time bidding.
@@ -85,6 +85,7 @@ The following resources are available for publishers to implement EUID:
 - [Web Integrations](#web-integrations)
 - [Mobile Integrations](#mobile-integrations)
 - [Prebid Integrations](#prebid-integrations)
+- [Google Ad Manager Integrations](#google-ad-manager-integrations)
 
 ### Web Integrations
 
@@ -110,6 +111,7 @@ The following resources are available for publisher integrations supporting mobi
 
 | Integration Type| Documentation | Content Description |
 | :--- | :--- | :--- |
+| Android | [SDK for Android Reference Guide](../sdks/sdk-ref-android.md) |An SDK that facilitates the process of generating or establishing client identity using EUID and retrieving EUID tokens for publishers that need to support Android apps. |
 | iOS | [SDK for iOS Reference Guide](../sdks/sdk-ref-ios.md) | An SDK that facilitates the process of generating or establishing client identity using EUID and retrieving EUID tokens for publishers that need to support iOS apps. |
 
 ### Prebid Integrations
@@ -121,6 +123,15 @@ The following resources are available for publishers integrating with Prebid.
 | Prebid.js (Overview) | [EUID Integration Overview for Prebid.js](../guides/integration-prebid.md) | An overview of options for publishers who want to integrate with EUID and generate EUID tokens to be passed by Prebid.js in the RTB bidstream. |
 | Prebid.js Client-Side Integration | [EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md) | A guide for publishers who want to request EUID tokens client-side, which is the easiest implementation approach, and choose to have Prebid.js manage the following: <ul><li>Token generation and token refresh.</li><li>Passing the tokens into the RTB bidstream.</li></ul> |
 | Prebid.js Client-Server Integration | [Client-Server Integration Guide for Prebid.js](../guides/integration-prebid-client-server.md) | A guide for publishers who want to integrate with EUID and generate EUID tokens to be passed by Prebid.js in the RTB bidstream, but want to generate tokens server-side: for example, publishers who are using a Private Operator. |
+
+### Google Ad Manager Integrations
+
+The following resources are available for publishers integrating with Google Ad Manager.
+
+| Integration Type| Documentation | Content Description |
+| :--- | :--- | :--- |
+| GMA for Android | [EUID GMA Plugin for Android Integration Guide](../guides/mobile-plugin-gma-android.md) | A guide that enables publishers using the Google Mobile Ads (GMA) SDK to include EUID tokens in ad requests from their Android apps. |
+| IMA for Android | [EUID IMA Plugin for Android Integration Guide](../guides/mobile-plugin-ima-android.md) | A guide that enables publishers using the Google Interactive Media Ads (IMA) SDK to include EUID tokens in ad requests from their Android apps. |
 
 ## FAQs for Publishers
 
