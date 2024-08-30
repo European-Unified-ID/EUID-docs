@@ -99,12 +99,12 @@ The following code examples illustrate steps 1-f and 1-g, in JavaScript and Type
     if (eventType === 'SdkLoaded') {
       __euid.init({
         identity : {
-          "advertising_token": "AgmZ4dZgeuXXl6DhoXqbRXQbHlHhA96leN94U1uavZVspwKXlfWETZ3b/besPFFvJxNLLySg4QEYHUAiyUrNncgnm7ppu0mi6wU2CW6hssiuEkKfstbo9XWgRUbWNTM+ewMzXXM8G9j8Q=",
-          "refresh_token": "Mr2F8AAAF2cskumF8AAAF2cskumF8AAAADXwFq/90PYmajV0IPrvo51Biqh7/M+JOuhfBY8KGUn//GsmZr9nf+jIWMUO4diOA92kCTF69JdP71Ooo+yF3V5yy70UDP6punSEGmhf5XSKFzjQssCtlHnKrJwqFGKpJkYA==",
-          "identity_expires": 1633643601000,
-          "refresh_from": 1633643001000,
-          "refresh_expires": 1636322000000,
-          "refresh_response_key":"dYNTB20edyHJU9mZv11e3OBDlLTlS5Vb97iQVumc7b/8QY/DDxr6FrRfEB/D",
+          "advertising_token": "E4AAAAW2T2Fj-aRzN_G_t-1UP9Ndl-e1kJLCL0b9wTq0UORlRIFjIS4Mz7I3TYy6YrYyIGDwjHWZOifsnYTZawQcCwAkfyp0RbkLhB4Hznodt3ZLHrOYqFmvSrsbEuMrowfoGSJyFz3hj-Q4CArezZzamp1-aoOjJz3s-ydQADH7OapPv5iQBYBiWza3r3tBVY7drUMV8_08aBMqHuLyKzNUvws",
+          "identity_expires": 1724995694316,
+          "refresh_expires": 1727586794316,
+          "refresh_from": 1724995094316,
+          "refresh_response_key": "8yaj8hL5gS0fiB7CxvCxG25mDO3QWiqr73oF696QtiU=",
+          "refresh_token": "EAAABbf4KYu1LMa4+9wE7SqDIhSnSOMSmneocSaAxYl9ptV7iEOT0899ZUdtaTkSb5fHuArOtanqenPIDESXqg5uhqCDlHZfIqqq6HNBiV4ZZjPm3nA2LJAQ9Za0WydmWcpTdPSapcMyQPvW9CQTZcHNoYTVjtol4nraKDcn6ZGxea/4TA+zeFf9ohBZ8Eyt1zN+JKhB4ccvbCUeFaRrOKYyBUppGdaRiN6bL+d/uKY6XPVCw4lW7BJ87xDRb/JDfkG1bly0sIl3MWaFQK8AzEJJj8dzBYvpYAVXbvpxi/9gDEAzsdF3lT8Mdso8xj4Kx7jp79QDrIBL40E4pSDaNeNMnU8+Yo1nrQVCO2JBEy3kpvn8pUnDjxZlBTZ9I4PkmH/Q"
         }
       });
     }
@@ -137,12 +137,12 @@ The following code examples illustrate steps 1-f and 1-g, in JavaScript and Type
     if (eventType === 'SdkLoaded') {
       __euid.init({
         identity : {
-          "advertising_token": "AgmZ4dZgeuXXl6DhoXqbRXQbHlHhA96leN94U1uavZVspwKXlfWETZ3b/besPFFvJxNLLySg4QEYHUAiyUrNncgnm7ppu0mi6wU2CW6hssiuEkKfstbo9XWgRUbWNTM+ewMzXXM8G9j8Q=",
-          "refresh_token": "Mr2F8AAAF2cskumF8AAAF2cskumF8AAAADXwFq/90PYmajV0IPrvo51Biqh7/M+JOuhfBY8KGUn//GsmZr9nf+jIWMUO4diOA92kCTF69JdP71Ooo+yF3V5yy70UDP6punSEGmhf5XSKFzjQssCtlHnKrJwqFGKpJkYA==",
-          "identity_expires": 1633643601000,
-          "refresh_from": 1633643001000,
-          "refresh_expires": 1636322000000,
-          "refresh_response_key":"dYNTB20edyHJU9mZv11e3OBDlLTlS5Vb97iQVumc7b/8QY/DDxr6FrRfEB/D",
+          "advertising_token": "E4AAAAW2T2Fj-aRzN_G_t-1UP9Ndl-e1kJLCL0b9wTq0UORlRIFjIS4Mz7I3TYy6YrYyIGDwjHWZOifsnYTZawQcCwAkfyp0RbkLhB4Hznodt3ZLHrOYqFmvSrsbEuMrowfoGSJyFz3hj-Q4CArezZzamp1-aoOjJz3s-ydQADH7OapPv5iQBYBiWza3r3tBVY7drUMV8_08aBMqHuLyKzNUvws",
+          "identity_expires": 1724995694316,
+          "refresh_expires": 1727586794316,
+          "refresh_from": 1724995094316,
+          "refresh_response_key": "8yaj8hL5gS0fiB7CxvCxG25mDO3QWiqr73oF696QtiU=",
+          "refresh_token": "EAAABbf4KYu1LMa4+9wE7SqDIhSnSOMSmneocSaAxYl9ptV7iEOT0899ZUdtaTkSb5fHuArOtanqenPIDESXqg5uhqCDlHZfIqqq6HNBiV4ZZjPm3nA2LJAQ9Za0WydmWcpTdPSapcMyQPvW9CQTZcHNoYTVjtol4nraKDcn6ZGxea/4TA+zeFf9ohBZ8Eyt1zN+JKhB4ccvbCUeFaRrOKYyBUppGdaRiN6bL+d/uKY6XPVCw4lW7BJ87xDRb/JDfkG1bly0sIl3MWaFQK8AzEJJj8dzBYvpYAVXbvpxi/9gDEAzsdF3lT8Mdso8xj4Kx7jp79QDrIBL40E4pSDaNeNMnU8+Yo1nrQVCO2JBEy3kpvn8pUnDjxZlBTZ9I4PkmH/Q"
         }
       });
     }

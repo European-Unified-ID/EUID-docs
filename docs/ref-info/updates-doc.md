@@ -11,6 +11,16 @@ import Link from '@docusaurus/Link';
 
 Check out the latest updates to our EUID documentation resources.
 
+### New: iOS SDK Guide
+
+August 29, 2024
+
+A new guide for publishers that provides information about the SDK for iOS, an SDK that facilitates the process of establishing client identity using EUID and retrieving EUID tokens for publishers who need to support iOS apps.
+
+For details, see [SDK for iOS Reference Guide](../sdks/sdk-ref-ios.md).
+
+<!-- APIDOCS-2526 -->
+
 <!-- ### New: EUID Token Reference Page
 
 August 23, 2024
