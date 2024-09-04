@@ -68,19 +68,19 @@ window.getEuidAdvertisingToken = async () => {
 
 For details, see [Publisher Integration Guide, Server-Side](integration-publisher-server-side.md).
 
-A sample application is also available for server-side integration. See [Sample Applications](#sample-applications).
+<!-- A sample application is also available for server-side integration. See [Sample Applications](#sample-applications). -->
 
 ### SDK for JavaScript Client-Side Integration
 
-If you're using the SDK for JavaScript version 3.4.0 or later, the EUID secure signals script uses the `getAdvertisingTokenAsync` function provided in the SDK to get the fresh advertising token, and then pushes the token to Google Ad Manager.
+If you're using the SDK for JavaScript version 3.4.5 or later, the EUID secure signals script uses the `getAdvertisingTokenAsync` function provided in the SDK to get the fresh advertising token, and then pushes the token to Google Ad Manager.
 
-<!-- (UID2/EUID diff re JS SDK ver at 20240813 UID2 3.0.0 EUID 3.4.0. 170) -->
+<!-- (UID2/EUID diff re JS SDK ver at 20240813 UID2 3.0.0 EUID 3.4.0. 170 | 20240904 EUID 3.4.5) -->
 
 This script is hosted on CDN, and GPT automatically loads it with the secure signals feature. 
 
 For details, see [Client-Side Integration Guide for JavaScript](integration-javascript-client-side.md).
 
-A sample application is also available for integration using the SDK for JavaScript. See [Sample Applications](#sample-applications).
+<!-- A sample application is also available for integration using the SDK for JavaScript. See [Sample Applications](#sample-applications).
 
 ## Sample Applications
 
@@ -93,6 +93,6 @@ The following sample applications are available to illustrate how to integrate w
   - [Sample application](https://secure-signals-jssdk-integ.uidapi.com/)
   - [Code repository](https://github.com/IABTechLab/uid2-web-integrations/tree/main/examples/google-secure-signals-integration/with_sdk_v3)
 
-Each sample application has its own instructions.
+Each sample application has its own instructions. -->
 
 <!-- (170 I'll make a ticket to consider an EUID version of the sample.) -->
