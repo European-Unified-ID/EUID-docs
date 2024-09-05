@@ -212,5 +212,5 @@ The Identity variable stores and returns the current UID2Identity data object be
 
 The identityStatus variable stores and returns the status of the current EUID Identity being managed by the SDK.
 
-<!-- GWH note 8/30/24: Changed UID2Manager > EUIDManager but not UID2Identity -->
+<!-- GWH note 8/30/24: Changed EUIDManager > EUIDManager but not UID2Identity -->
 

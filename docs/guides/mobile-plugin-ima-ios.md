@@ -1,5 +1,5 @@
 ---
-title: UID2 IMA Plugin for iOS
+title: EUID IMA Plugin for iOS
 description: A guide for publishers using IMA for ad requests on iOS apps.
 hide_table_of_contents: false
 sidebar_position: 15
@@ -7,19 +7,19 @@ sidebar_position: 15
 
 import Link from '@docusaurus/Link';
 
-# UID2 IMA Plugin for iOS Integration Guide
+# EUID IMA Plugin for iOS Integration Guide
 
-The UID2 Interactive Media Ads (IMA) Plugin for iOS enables publishers that use the [Google IMA SDK for iOS](https://developers.google.com/interactive-media-ads/docs/sdks/ios/client-side) to send <Link href="../ref-info/glossary-uid#gl-euid-token">UID2 tokens</Link> as [secure signals](https://support.google.com/admob/answer/11556288) in ad requests from iOS apps. This is done automatically, with no direct coding needed from the app developer.
+The EUID Interactive Media Ads (IMA) Plugin for iOS enables publishers that use the [Google IMA SDK for iOS](https://developers.google.com/interactive-media-ads/docs/sdks/ios/client-side) to send <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> as [secure signals](https://support.google.com/admob/answer/11556288) in ad requests from iOS apps. This is done automatically, with no direct coding needed from the app developer.
 
 ## Functionality
 
-This plugin simplifies integration with Google Interactive Media Ads (IMA) for any publishers who want to support UID2 for apps running on iOS devices.
+This plugin simplifies integration with Google Interactive Media Ads (IMA) for any publishers who want to support EUID for apps running on iOS devices.
 
 ## Version
 
 <!-- As of 2024-04-17 -->
 
-This documentation is for the UID2 IMA Plugin for iOS version 0.3.2 or later.
+This documentation is for the EUID IMA Plugin for iOS version 0.3.2 or later.
 
 ## GitHub Repository
 
@@ -37,13 +37,13 @@ To run this plugin, install the following:
 1. SDK for iOS v0.3.2 or later:
    - [SDK](https://github.com/IABTechLab/uid2-ios-sdk)
    - [SDK for iOS Reference Guide](../sdks/sdk-ref-ios.md)
-1. [UID2 IMA Plugin for iOS v0.3.2](https://github.com/IABTechLab/uid2-ios-plugin-google-ima)
+1. [EUID IMA Plugin for iOS v0.3.2](https://github.com/IABTechLab/uid2-ios-plugin-google-ima)
 
 ## Installation
 
 Prerequisite: Install the Google Interactive Ads SDK and the SDK for iOS.
 
-Install the UID2 iOS IMA Plugin via Swift Package Manager or CocoaPods to an existing app with the SDK for iOS and the Google Interactive Ads SDK installed.
+Install the EUID iOS IMA Plugin via Swift Package Manager or CocoaPods to an existing app with the SDK for iOS and the Google Interactive Ads SDK installed.
 
 There are three installation options:
 
