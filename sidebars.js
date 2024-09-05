@@ -95,6 +95,22 @@ const sidebars = {
             ],
           },
 
+          {
+            type: 'category',
+            label: 'Mobile',
+            link: {
+              type: 'doc',
+              id: 'guides/integration-mobile-overview',
+            },
+            collapsed: true,
+            items: [
+              'guides/integration-mobile-client-side',
+              'guides/integration-mobile-client-server',
+            ],
+          },
+
+          'guides/integration-ctv-guide',
+
             {
               type: 'category',
               label: 'Prebid',
@@ -106,6 +122,7 @@ const sidebars = {
               items: [
                 'guides/integration-prebid-client-side',
                 'guides/integration-prebid-client-server',
+                'guides/integration-prebid-mobile-summary',
               ],
             },
 
@@ -118,7 +135,9 @@ const sidebars = {
               collapsed: true,
               items: [
                 'guides/mobile-plugin-gma-android',
+                'guides/mobile-plugin-gma-ios',
                 'guides/mobile-plugin-ima-android',
+                'guides/mobile-plugin-ima-ios',
               ],
             },
 
