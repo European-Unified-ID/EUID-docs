@@ -69,7 +69,7 @@ Follow the applicable instructions, for Android or iOS:
 1. In Android Studio (check the version required in the [Minimum Requirements](../sdks/sdk-ref-android.md#minimum-requirements) section in the SDK for Android Reference Guide), open the directory that you checked out.
 1. Run the **dev-app** app.
 1. When you've started the app, make sure that the **Client Side** checkbox is checked.
-1. Enter an email or phone number, and then click the arrow to the right.
+1. Enter an email address, and then click the arrow to the right.
 
 </TabItem>
 <TabItem value='ios' label='iOS'>
@@ -82,12 +82,12 @@ EUID
    ```
 1. Run the **UID2SDKDevelopmentApp** app scheme.
 1. When you've started the app, make sure that the **Client Side** checkbox is checked.
-1. Enter an email or phone number, and then click the arrow to the right.
+1. Enter an email address, and then click the arrow to the right.
 
 </TabItem>
 </Tabs>
 
-Behind the scenes, the development app makes the following EUID SDK API call. This call sends a request to the EUID service to generate an <Link href="../ref-info/glossary-uid#gl-identity">identity</Link> (an EUID token and associated values) for the email/phone input:
+Behind the scenes, the development app makes the following EUID SDK API call. This call sends a request to the EUID service to generate an <Link href="../ref-info/glossary-uid#gl-identity">identity</Link> (an EUID token and associated values) for the email input:
 
 <Tabs groupId="language-selection">
 <TabItem value='android' label='Android'>
@@ -275,7 +275,7 @@ EUID provides the publisher with the following values, which are needed for gene
 
 You'll have one set of these values for your Integration environment, and a separate set for your production environment.
 
-To configure the SDK, you must pass in the Subscription ID and public key that you received during account setup, as well as the user’s hashed or unhashed directly identifying information (<Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>) (email address or phone number), into the following method call:
+To configure the SDK, you must pass in the Subscription ID and public key that you received during account setup, as well as the user’s hashed or unhashed directly identifying information (<Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>) (email address), into the following method call:
 
 <Tabs groupId="language-selection">
 <TabItem value='android' label='Android'>
@@ -311,21 +311,19 @@ Once it's configured, the EUID mobile SDK does the following:
 - Automatically refreshes the token as required while your app is open.
 
 :::tip
-You can pass the user’s <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to the EUID mobile SDK either hashed or unhashed. If you pass the DII unhashed, the SDK hashes it for you. If you want to pass the DII to the SDK already hashed, you must normalize it before hashing. For details, see [Normalization and Encoding](../getting-started/gs-normalization-encoding.md).
+You can pass the user’s <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to the EUID mobile SDK either hashed or unhashed. If you pass the personal data unhashed, the SDK hashes it for you. If you want to pass the personal data to the SDK already hashed, you must normalize it before hashing. For details, see [Normalization and Encoding](../getting-started/gs-normalization-encoding.md).
 :::
 
-### Format Examples for DII
+### Format Examples for Personal Data
 
-The SDK encrypts the hashed DII before sending it to the EUID service.
+The SDK encrypts the hashed personal data before sending it to the EUID service.
 
-You can invoke the `generateIdentity` method using any of the four accepted formats for DII, for any specific user. The DII format might vary per user, but you can only send one value per user.
+You can invoke the `generateIdentity` method using one of the two accepted formats for personal data, for any specific user. The personal data format might vary per user, but you can only send one value per user.
 
-The following examples demonstrate the different ways that you can configure the EUID mobile SDK and list the requirements for the DII passed into the SDK:
+The following examples demonstrate the different ways that you can configure the EUID mobile SDK and list the requirements for the personal data passed into the SDK:
 
 - Email, Unhashed
 - Email, Normalized and Hashed
-- Phone Number, Unhashed
-- Phone Number, Normalized and Hashed
 
 If the `generateIdentity` method is called multiple times, the EUID mobile SDK uses the most recent configuration values.
 
@@ -427,114 +425,14 @@ Task<Void, Never> {
 In this scenario:
 
 - The publisher is responsible for normalizing and hashing the email address. For details, see [Email Address Normalization](../getting-started/gs-normalization-encoding.md#email-address-normalization).
-- The EUID mobile SDK encrypts the hashed DII before sending it to the EUID service.
-
-</TabItem>
-<TabItem value='example_phone_unhashed' label='Phone Number, Unhashed'>
-
-The following example configures the EUID mobile SDK with a phone number.
-
-<Tabs groupId="language-selection">
-<TabItem value='android' label='Android'>
-
-```js
-EUIDManager.getInstance().generateIdentity(
-    IdentityRequest.Phone("+12345678901"),
-    subscriptionId,
-    publicKey,
-) { result ->
-    when (result) {
-        is Error -> ...
-        is Success -> ...
-    }
-}
-```
-
-</TabItem>
-<TabItem value='ios' label='iOS'>
-
-```js
-struct InvalidPhoneError: Error, LocalizedError {
-    var errorDescription: String = "Invalid phone number"
-}
-Task<Void, Never> {
-    do {
-        guard let normalizedPhone = IdentityType.NormalizedPhone(normalized: "+12345678901") else {
-            throw InvalidPhoneError() // Phone number is not normalized according to ITU E.164.
-        }
-        try await EUIDManager.shared.generateIdentity(
-            .phone(normalizedPhone),
-            subscriptionID: subscriptionID,
-            serverPublicKey: serverPublicKeyString
-        )
-    } catch {
-        // read `error` object for troubleshooting or enable logging to view it in logs
-    }
-}
-```
-
-</TabItem>
-</Tabs>
-
-In this scenario:
-
-- The publisher is responsible for normalizing the phone number. 
-- The EUID mobile SDK hashes the phone number before sending the encrypted hash to the EUID service.
-
-</TabItem>
-<TabItem value='example_phone_hash' label='Phone Number, Normalized and Hashed'>
-
-The following example configures the EUID mobile SDK with a hashed and Base64-encoded phone number.
-
-<Tabs groupId="language-selection">
-<TabItem value='android' label='Android'>
-
-```js
-EUIDManager.getInstance().generateIdentity(
-    IdentityRequest.PhoneHash(
-        "EObwtHBUqDNZR33LNSMdtt5cafsYFuGmuY4ZLenlue4="
-    ),
-    subscriptionId,
-    publicKey,
-) { result ->
-    when (result) {
-        is Error -> ...
-        is Success -> ...
-    }
-}
-```
-
-</TabItem>
-<TabItem value='ios' label='iOS'>
-
-```js
-Task<Void, Never> {
-    do {
-        try await EUIDManager.shared.generateIdentity(
-            .phoneHash("EObwtHBUqDNZR33LNSMdtt5cafsYFuGmuY4ZLenlue4="),
-            subscriptionID: subscriptionID,
-            serverPublicKey: serverPublicKeyString
-        )
-    } catch {
-        // read `error` object for troubleshooting or enable logging to view it in logs
-    }
-}
-```
-
-</TabItem>
-</Tabs>
-
-In this scenario: 
-
-- The publisher is responsible for normalizing and hashing the phone number.
-- The EUID mobile SDK encrypts the hashed DII before sending it to the EUID service.
+- The EUID mobile SDK encrypts the hashed personal data before sending it to the EUID service.
 
 </TabItem>
 </Tabs>
 
 ## Token Storage and Refresh
 
-After a call to the applicable method listed in [Format Examples for DII](#format-examples-for-dii) is successful, an identity is generated and stored in local file storage. The EUID mobile SDK refreshes the EUID token periodically.
+After a call to the applicable method listed in [Format Examples for Personal Data](#format-examples-for-personal-data) is successful, an identity is generated and stored in local file storage. The EUID mobile SDK refreshes the EUID token periodically.
 
 :::warning
 The format of the file stored in the local file storage, or the filename itself, could change without notice. We recommend that you do not read or update the file directly.
@@ -578,17 +476,17 @@ Some possible reasons for this, and some things you could do to troubleshoot, ar
     - **Android Kotlin**: `EUIDManager.getInstance().currentIdentityStatus()`
     - **iOS**: `EUIDManager.shared.identityStatus`
 
-    It's possible that the DII has been opted out of EUID: for details, see [When to Pass DII into the SDK](#when-to-pass-dii-into-the-sdk).
+    It's possible that the personal data has been opted out of EUID: for details, see [When to Pass Personal Data into the SDK](#when-to-pass-personal-data-into-the-sdk).
 - You could enable logging to get more information: see [Enable Logging](#enable-logging).
 - The advertising token inside the EUID identity has expired, and the refresh token has also expired, so the SDK cannot refresh the token.
 
 If there is no identity, you'll need to call the `generateIdentity` method again: see [Configure the EUID Mobile SDK](#configure-the-euid-mobile-sdk).
 
-For more information, see [When to Pass DII into the SDK](#when-to-pass-dii-into-the-sdk) (next section).
+For more information, see [When to Pass Personal Data into the SDK](#when-to-pass-personal-data-into-the-sdk) (next section).
 
-## When to Pass DII into the SDK
+## When to Pass Personal Data into the SDK
 
-The first time a new user opens the app, no EUID identity exists. You'll need to call the `generateIdentity` method, with the DII, to start the token generation:
+The first time a new user opens the app, no EUID identity exists. You'll need to call the `generateIdentity` method, with the personal data, to start the token generation:
 
 <Tabs groupId="language-selection">
 <TabItem value='android' label='Android'>
@@ -619,7 +517,7 @@ EUIDManager.shared.generateIdentity(
 
 When this method call completes successfully, the advertising token (EUID token) is available for you to send to the bidstream.
 
-If the EUID identity stored in local file storage has expired and cannot be refreshed, you must call the `generateIdentity` method again to generate a new identity and get the resulting EUID token. The only exception is when the response to the following Android method/iOS object indicates that the DII was opted out of EUID:
+If the EUID identity stored in local file storage has expired and cannot be refreshed, you must call the `generateIdentity` method again to generate a new identity and get the resulting EUID token. The only exception is when the response to the following Android method/iOS object indicates that the personal data was opted out of EUID:
 
 <Tabs groupId="language-selection">
 <TabItem value='android' label='Android'>
@@ -646,9 +544,9 @@ EUIDManager.shared.identityStatus
 </TabItem>
 </Tabs>
 
-A response status of `OPT_OUT` for Android, or `optOut` for iOS, indicates that the DII has been opted out of EUID and no identity/token should be generated for it. You might want to avoid making repeated `generateIdentity` calls: if the DII has a status of opted out, the EUID token is not generated.
+A response status of `OPT_OUT` for Android, or `optOut` for iOS, indicates that the personal data has been opted out of EUID and no identity/token should be generated for it. You might want to avoid making repeated `generateIdentity` calls: if the personal data has a status of opted out, the EUID token is not generated.
 
-The best way to determine if DII is required by the EUID mobile SDKs is to always call the `getAdvertisingToken()` method when the app starts up or resumes:
+The best way to determine if personal data is required by the EUID mobile SDKs is to always call the `getAdvertisingToken()` method when the app starts up or resumes:
 
 <Tabs groupId="language-selection">
 <TabItem value='android' label='Android'>
@@ -667,7 +565,7 @@ EUIDManager.shared.getAdvertisingToken()
 </TabItem>
 </Tabs>
 
-If `getAdvertisingToken()` returns null, and the identity status is not `OPT_OUT`/`optOut`, you'll need to generate a new token. To do this, pass the DII into the `generateIdentity` method again. For details, see [Configure the EUID mobile SDK](#configure-the-euid-mobile-sdk).
+If `getAdvertisingToken()` returns null, and the identity status is not `OPT_OUT`/`optOut`, you'll need to generate a new token. To do this, pass the personal data into the `generateIdentity` method again. For details, see [Configure the EUID mobile SDK](#configure-the-euid-mobile-sdk).
 
 ## Enable Logging
 

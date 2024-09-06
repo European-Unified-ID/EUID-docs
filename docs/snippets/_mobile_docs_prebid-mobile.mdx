@@ -1,23 +1,23 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-This section is for participants who want to integrate with UID2 and use the [Prebid Mobile SDK](https://prebid.org/product-suite/prebid-mobile/) for header bidding in Android and iOS applications.
+This section is for participants who want to integrate with EUID and use the [Prebid Mobile SDK](https://prebid.org/product-suite/prebid-mobile/) for header bidding in Android and iOS applications.
 
-The UID2 Prebid integration monitors the state of the `UID2Identity`. Whenever the state changes, the Prebid integration automatically updates Prebid’s external user IDs. This includes when an identity is refreshed, resulting in a new advertising token.
+The EUID Prebid integration monitors the state of the `UID2Identity`. Whenever the state changes, the Prebid integration automatically updates Prebid’s external user IDs. This includes when an identity is refreshed, resulting in a new advertising token.
 
-Prebid then sends the UID2 tokens into the RTB bidstream, along with other external user IDs that you might set.
+Prebid then sends the EUID tokens into the RTB bidstream, along with other external user IDs that you might set.
 
 :::note
 This integration requires a Prebid Server setup.
 :::
 
-To configure your UID2 Prebid for Mobile integration, follow the steps below.
+To configure your EUID Prebid for Mobile integration, follow these steps:
 
 1. Set up Prebid's Mobile SDK, following the steps in [Prebid SDK Integration for Android](https://docs.prebid.org/prebid-mobile/pbm-api/android/code-integration-android.html) or [Prebid SDK Integration for iOS](https://docs.prebid.org/prebid-mobile/pbm-api/ios/code-integration-ios.html).
 
-2. Add the UID2 Mobile SDK to your app, following the steps in [Add the UID2 Mobile SDK to Your Mobile App](#add-the-uid2-mobile-sdk-to-your-mobile-app).
+2. Add the EUID Mobile SDK to your app, following the steps in [Add the EUID Mobile SDK to Your Mobile App](#add-the-euid-mobile-sdk-to-your-mobile-app).
 
-3. The UID2 Prebid integration is distributed as a separate module, so you must add it as a dependency in your project. Follow the installation instructions that apply to your integration, out of the following options:
+3. The EUID Prebid integration is distributed as a separate module, so you must add it as a dependency in your project. Follow the installation instructions that apply to your integration, out of the following options:
 
    <Tabs groupId="dependency-selection">
    <TabItem value='gradle' label='Gradle (Android)'>
@@ -82,9 +82,9 @@ To configure your UID2 Prebid for Mobile integration, follow the steps below.
 
 5. Configure a callback that's passed in during initialization.
 
-   The UID2 Prebid integration periodically updates Prebid by setting the relevant external IDs when a new identity is generated or an existing token is refreshed.
+   The EUID Prebid integration periodically updates Prebid by setting the relevant external IDs when a new identity is generated or an existing token is refreshed.
    
-   This process is destructive, which means that if your application uses external IDs from another source, you'll need to provide those to the UID2 Prebid integration so that all external IDs are retained while the UID2 token is updated.
+   This process is destructive, which means that if your application uses external IDs from another source, you'll need to provide those to the EUID Prebid integration so that all external IDs are retained while the EUID token is updated.
    
    This is done via the callback, which must be passed in during initialization, as shown in the following examples.
    

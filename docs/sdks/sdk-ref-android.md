@@ -22,7 +22,7 @@ The following Android-related plugins, and associated documentation, are also av
 | To use the Google Mobile Ads (GMA) SDK to send <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> as [secure signals](https://support.google.com/admob/answer/11556288) in ad requests from Android apps | [EUID GMA Plugin for Android Integration Guide](../guides/mobile-plugin-gma-android.md) |
 | To use the Google Interactive Media Ads (IMA) SDK for Android to send <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> as [secure signals](https://support.google.com/admob/answer/11556288) in ad requests from Android apps | [EUID IMA Plugin for Android Integration Guide](../guides/mobile-plugin-ima-android.md) |
 
-<!-- For FAQs relating to mobile publisher integrations, see [FAQs for Mobile Integrations]LINK REMOVED. -->
+For FAQs relating to mobile publisher integrations, see [FAQs for Mobile Integrations](../guides/integration-mobile-overview.md#faqs-for-mobile-integrations).
 
 ## Non-Mobile Android Device Support
 
@@ -70,7 +70,7 @@ To consume the binary package of this SDK in your app:
 - Minimum target Android version: 4.4+ / API 19+ (SDK) 5.0+
 
 
-To run the development app<!--  (see [Client-Side Integration Guide for Mobile]LINK REMOVED --> or to build binary from source code, the minimum requirements are as follows:
+To run the development app (see [Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side.md)) or to build binary from source code, the minimum requirements are as follows:
 
 - Android Studio version: Check the Android Gradle Plugin (AGP) version required by the EUID SDK specified in the [code repository](https://github.com/IABTechLab/uid2-android-sdk/blob/main/gradle/libs.versions.toml) (see the stated `agp` version), and check [the Android Gradle Plugin release notes](https://developer.android.com/build/releases/gradle-plugin) for the corresponding Android Studio version required.
 - Minimum target Android version: 4.4+ / API 19+ (SDK) 5.0+ / API 21+ (Dev-App)
@@ -128,9 +128,9 @@ class MyApplication : Application() {
 
 There are two ways to establish an initial EUID Identity:
 
-1. Generate the EUID identity using personal data&#8212;email (hashed or unhashed).<!--  For integration instructions, see [Client-Side Integration Guide for Mobile]LINK REMOVED. -->
+1. Generate the EUID identity using personal data&#8212;email (hashed or unhashed). For integration instructions, see [Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side.md).
 
-2. Create an EUID identity server-side and then pass it into the EUID SDK.<!--  For integration instructions, refer to [Client-Server Integration Guide for Mobile]LINK REMOVED. -->
+2. Create an EUID identity server-side and then pass it into the EUID SDK. For integration instructions, see [Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side.md).
 
 The EUID Mobile SDKs can perform refreshes of EUID identities, after an Identity is established. This is because the refresh functionality relies on the refresh tokens that are part of the EUID Identity.
 
@@ -138,7 +138,7 @@ The EUID Mobile SDKs can perform refreshes of EUID identities, after an Identity
 
 The following code samples provide examples of performing specific activities relating to managing EUID with the SDK for Android.
 
-Generate an initial EUID Identity<!--  (refer to [Client-Side Integration Guide for Mobile]LINK REMOVED) -->:
+Generate an initial EUID Identity (see [Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side.md)):
 ``` javascript
 EUIDManager.getInstance().generateIdentity(
     identityRequest: IdentityRequest,
@@ -147,7 +147,7 @@ EUIDManager.getInstance().generateIdentity(
     onResult: (GenerateIdentityResult) -> Unit
 )
 ```
-Set the EUID Identity<!--  (refer to [Client-Server Integration Guide for Mobile](LINK REMOVED) -->:
+Set the EUID Identity (see [Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side.md)):
 
 ```js
 EUIDManager.getInstance().setIdentity(identity: UID2Identity)
@@ -175,11 +175,11 @@ The following functions are available as part of the EUIDManager API:
 
 #### generateIdentity()
 
-Generate an EUID Identity using <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>.<!--  For instructions, see [Configure the EUID mobile SDK]LINK REMOVED in the *Client-Side Integration Guide for Mobile*. -->
+Generate an EUID Identity using <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>. For instructions, see [Configure the EUID Mobile SDK](../guides/integration-mobile-client-side.md#configure-the-euid-mobile-sdk) in the *Client-Side Integration Guide for Mobile*.
 
 #### setIdentity()
 
-Sets an EUID Identity, created server-side, to be managed by the SDK.<!--  For details, see [Configure the EUID Mobile SDK]LINK REMOVED in the *Client-Server Integration Guide for Mobile*. -->
+Sets an EUID Identity, created server-side, to be managed by the SDK. For details, see [Configure the EUID Mobile SDK](../guides/integration-mobile-client-side.md#configure-the-euid-mobile-sdk) in the *Client-Server Integration Guide for Mobile*.
 
 #### resetIdentity()
 
@@ -213,4 +213,3 @@ The Identity variable stores and returns the current UID2Identity data object be
 The identityStatus variable stores and returns the status of the current EUID Identity being managed by the SDK.
 
 <!-- GWH note 8/30/24: Changed EUIDManager > EUIDManager but not UID2Identity -->
-
