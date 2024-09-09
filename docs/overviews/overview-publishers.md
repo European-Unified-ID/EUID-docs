@@ -130,8 +130,9 @@ The following resources are available for publishers integrating with Google Ad 
 
 | Integration Type| Documentation | Content Description |
 | :--- | :--- | :--- |
-| GMA for Android | [EUID GMA Plugin for Android Integration Guide](../guides/mobile-plugin-gma-android.md) | A guide that enables publishers using the Google Mobile Ads (GMA) SDK to include EUID tokens in ad requests from their Android apps. |
+| GMA for iOS | [EUID GMA Plugin for iOS Integration Guide](../guides/mobile-plugin-gma-ios.md) | A guide that enables publishers using the Google Mobile Ads (GMA) SDK to include EUID tokens in ad requests from their iOS apps. |
 | IMA for Android | [EUID IMA Plugin for Android Integration Guide](../guides/mobile-plugin-ima-android.md) | A guide that enables publishers using the Google Interactive Media Ads (IMA) SDK to include EUID tokens in ad requests from their Android apps. |
+| IMA for iOS | [EUID IMA Plugin for iOS Integration Guide](../guides/mobile-plugin-ima-ios.md) | A guide that enables publishers using the Google Interactive Media Ads (IMA) SDK to include EUID tokens in ad requests from their iOS apps. |
 
 ## FAQs for Publishers
 
