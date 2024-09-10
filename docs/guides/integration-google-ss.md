@@ -33,6 +33,12 @@ For your Google Ad Manager account to be eligible to receive encrypted EUID toke
 
 For details, see [Share encrypted signals with bidders](https://support.google.com/admanager/answer/10488752) (Google reference documentation) and then follow the steps in [Use a third-party signal provider](https://developers.google.com/interactive-media-ads/docs/sdks/html5/client-side/securesignals) to switch on EUID as your signal provider.
 
+:::important
+When you're following the steps, in [Select allowed secure signals](https://support.google.com/admanager/answer/10488752#select-signals), under **Web Signal Deploy Option**, choose **Google Deploy**.
+If you choose the **Prebid User ID Module**, your EUIDs will not be correctly processed unless you also choose the **Use your Prebid configuration to automatically configure your Secure signals settings** field.
+Before saving your configuration, double-check that you've selected the correct option.
+:::
+
 ## Publisher Integration
 
 When an encrypted signal is cached, the secure signals feature does not execute the handler to generate a new signal. Because of this, it is necessary to clear the cache before and after data capture.
@@ -96,3 +102,17 @@ The following sample applications are available to illustrate how to integrate w
 Each sample application has its own instructions. -->
 
 <!-- (170 I'll make a ticket to consider an EUID version of the sample.) -->
+
+## Troubleshooting Tips for EUID Integration with Google Secure Signals
+
+Here is some troubleshooting info that might help you in working with Google Secure Signals for your EUID integration:
+
+- [I enabled Secure Signals within Google Ad Manager, but EUIDs are not being passed through Google](#i-enabled-secure-signals-within-google-ad-manager-but-euids-are-not-being-passed-through-google)
+
+#### I enabled Secure Signals within Google Ad Manager, but EUIDs are not being passed through Google
+
+In some cases, after choosing Secure Signals within Google Ad Manager, successful EUIDs were not being passed through Google because the participant had an incorrect **Web Signal Deployment Method** configuration.
+
+If your EUIDs are not being passed through Google, make sure that you chose the correct Web Signal Deployment Method during setup.
+
+For details, see the **Important** note in [Allow Secure Signals Sharing](#allow-secure-signals-sharing).
