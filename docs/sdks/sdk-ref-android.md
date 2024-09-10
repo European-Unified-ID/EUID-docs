@@ -46,9 +46,9 @@ You'll be granted permission to use specific functions offered by the SDK, and g
 
 ## SDK Version
 
-<!-- As of 7 May 2024 -->
+<!-- As of 10 Sept 2024 -->
 
-This documentation is for the SDK for Android version 1.2.0 and later.
+This documentation is for the SDK for Android version 1.5.0 and later.
 
 For current and past release notes information, see [https://github.com/IABTechLab/uid2-android-sdk/releases](https://github.com/IABTechLab/uid2-android-sdk/releases).
 
@@ -90,7 +90,7 @@ To install with Gradle, add the SDK as a dependency in the build.gradle
 file:
 
 ```js
-implementation 'com.uid2:uid2-android-sdk:1.2.0'
+implementation 'com.uid2:uid2-android-sdk:1.5.0'
 ```
 
 ### Installing with Maven 
@@ -101,7 +101,7 @@ To install with Maven, add the SDK as a dependency in the `pom.xml` file:
 <dependency> 
   <groupId>com.uid2</groupId> 
   <artifactId>uid2-android-sdk</artifactId> 
-  <version>1.2.0</version> 
+  <version>1.5.0</version> 
 </dependency> 
 ```
 
@@ -210,5 +210,3 @@ The Identity variable stores and returns the current UID2Identity data object be
 #### identityStatus
 
 The identityStatus variable stores and returns the status of the current EUID Identity being managed by the SDK.
-
-<!-- GWH note 8/30/24: Changed EUIDManager > EUIDManager but not UID2Identity -->

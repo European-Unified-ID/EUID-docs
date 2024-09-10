@@ -49,10 +49,10 @@ To integrate with UIEUIDD2 client-side, you'll need to complete the following st
 
 ## Mobile SDK Version
 
-This guide provides instructions for using version 1.2.0 or higher of either of these EUID mobile SDKs:
+This guide provides instructions for using either of these EUID mobile SDKs:
 
-- SDK for Android
-- SDK for iOS
+- SDK for Android (version 1.5.0 or higher)
+- SDK for iOS (version 1.7 0 or higher)
 
 For instructions for installing the correct SDK/version into your mobile app, see [Add the EUID Mobile SDK to Your Mobile App](#add-the-euid-mobile-sdk-to-your-mobile-app).
 
@@ -219,7 +219,7 @@ EUIDManager.init(
 
 ```js
 // Must be set before EUIDManager.shared is accessed
-UID2Settings.shared.environment = .custom(
+UID2Settings.shared.euidEnvironment = .custom(
   url: URL(string: "https://operator-integ.uidapi.com")!
 )
 ```
@@ -256,11 +256,11 @@ EUIDManager.init(
 
 ```js
 // Must be set before EUIDManager.shared is accessed
-UID2Settings.shared.environment = .custom(
+UID2Settings.shared.euidEnvironment = .custom(
   url: URL(string: "https://global.prod.uidapi.com")!
 )
 // or use a named environment
-UID2Settings.shared.environment = .sydney
+UID2Settings.shared.euidEnvironment = .london
 ```
 
 </TabItem>
@@ -579,7 +579,7 @@ If `getAdvertisingToken()` returns null, and the identity status is not `OPT_OUT
 ## Optional: EUID Prebid Mobile SDK Integration
 
 :::important
-The EUID Prebid Mobile SDK integration requires version 1.4.0 of the EUID SDK for Android, or version 1.5.0 of the EUID SDK for iOS.
+The EUID Prebid Mobile SDK integration requires version 1.5.0 of the EUID SDK for Android, or version 1.7.0 of the EUID SDK for iOS.
 :::
 
 <PrebidMobileSDK />
