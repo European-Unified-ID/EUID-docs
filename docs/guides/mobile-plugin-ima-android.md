@@ -17,9 +17,9 @@ This plugin simplifies integration with Google Interactive Media Ads (IMA) for a
 
 ## Version
 
-<!-- As of 2023-07-15 -->
+<!-- Updated 10 Sept 2024 -->
 
-This documentation is for the EUID IMA Plugin for Android version 1.5.0 and later.
+This documentation is for the EUID IMA Plugin for Android version 1.5.0 or later.
 
 ## GitHub Repository
 

@@ -44,9 +44,9 @@ You'll be granted permission to use specific functions offered by the SDK, and g
 
 ## SDK Version
 
-<!-- As of 7 May 2024 -->
+<!-- Updated 10 Sept 2024 -->
 
-This documentation is for the SDK for iOS version 1.7.0 and later.
+This documentation is for the SDK for iOS version 1.7.0 or later.
 
 For current and past release notes information, see [https://github.com/IABTechLab/uid2-ios-sdk/releases](https://github.com/IABTechLab/uid2-ios-sdk/releases).
 

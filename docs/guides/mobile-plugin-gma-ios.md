@@ -17,7 +17,7 @@ This plugin simplifies integration with Google Mobile Ads (GMA) for any publishe
 
 ## Version
 
-<!-- As of 2024-04-17 -->
+<!-- Updated 10 Sept 2024 -->
 
 This documentation is for the EUID GMA Plugin for iOS version 1.0.0.
 

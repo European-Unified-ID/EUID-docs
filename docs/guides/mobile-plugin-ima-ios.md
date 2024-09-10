@@ -17,7 +17,7 @@ This plugin simplifies integration with Google Interactive Media Ads (IMA) for a
 
 ## Version
 
-<!-- As of 2024-04-17 -->
+<!-- Updated 10 Sept 2024 -->
 
 This documentation is for the EUID IMA Plugin for iOS version 1.0.0 or later.
 

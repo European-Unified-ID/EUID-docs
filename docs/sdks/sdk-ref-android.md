@@ -48,7 +48,7 @@ You'll be granted permission to use specific functions offered by the SDK, and g
 
 <!-- As of 10 Sept 2024 -->
 
-This documentation is for the SDK for Android version 1.5.0 and later.
+This documentation is for the SDK for Android version 1.5.0 or later.
 
 For current and past release notes information, see [https://github.com/IABTechLab/uid2-android-sdk/releases](https://github.com/IABTechLab/uid2-android-sdk/releases).
 
