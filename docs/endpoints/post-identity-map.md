@@ -20,7 +20,7 @@ Here's what you need to know:
 - The maximum request size is 1MB. 
 - To map a large number of email addresses or email address hashes, send them in *sequential* batches with a maximum batch size of 5,000 items per batch.
 - Unless you are using a Private Operator, do not send batches in parallel. In other words, use a single HTTP connection and map <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> consecutively.
-- Be sure to store mappings of email addresses or email address hashes.<br/>Not storing mappings may increase processing time drastically when you have to map millions of emails addresses. Recalculating only those mappings that actually need to be updated, however, reduces the total processing time because only about 1/365th of raw EUIDs need to be updated daily. See also [Advertiser/Data Provider Integration Guide](../guides/advertiser-dataprovider-guide.md) and [FAQs for Advertisers and Data Providers](../getting-started/gs-faqs.md#faqs-for-advertisers-and-data-providers).
+- Be sure to store mappings of email addresses or email address hashes.<br/>Not storing mappings may increase processing time drastically when you have to map millions of email addresses. Recalculating only those mappings that actually need to be updated, however, reduces the total processing time because only about 1/365th of raw EUIDs need to be updated daily. See also [Advertiser/Data Provider Integration Guide](../guides/advertiser-dataprovider-guide.md) and [FAQs for Advertisers and Data Providers](../getting-started/gs-faqs.md#faqs-for-advertisers-and-data-providers).
 
 ## Request Format
 
@@ -40,7 +40,7 @@ You must encrypt all requests using your secret. For details, and code examples 
 The integration environment and the production environment require different <Link href="../ref-info/glossary-uid#gl-api-key">API keys</Link>.
 :::
 
-###  Unencrypted JSON Body Parameters
+### Unencrypted JSON Body Parameters
 
 :::important
 You must include only **one** of the following two conditional parameters as a key-value pair in the JSON body of the request when encrypting it.

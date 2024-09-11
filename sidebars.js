@@ -12,7 +12,6 @@ const sidebars = {
         'overviews/overview-advertisers',
         'overviews/overview-dsps',
         'overviews/overview-data-providers',
-        'overviews/overview-operators-private',
       ],
     },
 
@@ -131,14 +130,15 @@ const sidebars = {
           type: 'category',
           label: 'Private Operator Integrations',
           link: {
-            type: 'generated-index',
+            type: 'doc',
+            id: 'guides/integration-options-private-operator',
           },
           collapsed: true,
           items: [
             'guides/operator-guide-aws-marketplace',
           ],
         },
-       ],
+      ],
     },
 
     {
