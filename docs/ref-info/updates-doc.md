@@ -11,6 +11,16 @@ import Link from '@docusaurus/Link';
 
 Check out the latest updates to our EUID documentation resources.
 
+### New: Google Ad Manager Secure Signals Integration Guide
+
+September 11, 2024
+
+We've added a guide with integration steps for publishers using EUID with the Google Ad Manager secure signals feature.
+
+For details, see [Google Ad Manager Secure Signals Integration Guide](../guides/integration-google-ss.md).
+
+<!-- APIDOCS-2495 -->
+
 ### New: iOS SDK Guide
 
 August 29, 2024

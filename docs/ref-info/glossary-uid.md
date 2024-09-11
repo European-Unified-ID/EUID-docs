@@ -89,6 +89,7 @@ import Link from '@docusaurus/Link';
 <a href="#gl-salt">Salt</a> | 
 <a href="#gl-salted-hash">Salted hash</a> | 
 <a href="#gl-secret">Secret</a> | 
+<a href="#gl-secure-signals">Secure Signals</a> | 
 <a href="#gl-server-side">Server-side integration</a> | 
 <a href="#gl-sha-256">SHA-256</a> | 
 <a href="#gl-subscription-id">Subscription ID</a> | 
@@ -371,8 +372,13 @@ import Link from '@docusaurus/Link';
 <dt><MdxJumpAnchor id="gl-secret"><a href="#gl-secret">Secret</a></MdxJumpAnchor></dt>
 <dd>See <a href="#gl-client-secret">client secret</a>.</dd>
 
+<dt><MdxJumpAnchor id="gl-secure-signals"><a href="#gl-secure-signals">Secure Signals</a></MdxJumpAnchor></dt>
+<dd>A feature of Google Ad Manager. The secure signals feature (previously known as Encrypted Signals for Publishers, abbreviated to ESP) allows publishers to securely share signals with trusted third-party buying partners. It allows publishers to pass "encrypted" user IDs to bidders that are approved by Google, via <a href="https://admanager.google.com/home/">Google Ad Manager</a> and the <a href="https://support.google.com/admanager/answer/6321605?hl=en">Google Ad Manager Ad Exchange (AdX)</a>.</dd>
+<dd>For details, see <a href="https://blog.google/products/admanager/new-ways-for-publishers-to-manage-first-party-data/">Share secure signals with your trusted partners</a> (second section) and <a href="https://support.google.com/admanager/answer/10488752?hl=en">Share secure signals with bidders</a>, both from Google.</dd>
+<dd>For details about EUID support of the Google secure signals feature, see <a href="../guides/google-ss-integration">Google Ad Manager Secure Signals Integration Guide</a>.</dd>
+
 <dt><MdxJumpAnchor id="gl-server-side"><a href="#gl-server-side">Server-side integration</a></MdxJumpAnchor></dt>
-<dd>One of the UID2 <a href="#gl-integration-approaches">integration approaches</a> is to integrate entirely on the server side.</dd>
+<dd>One of the EUID <a href="#gl-integration-approaches">integration approaches</a> is to integrate entirely on the server side.</dd>
 <dd>In a server-side integration, raw EUIDs or EUID tokens are generated and refreshed on the server.</dd>
 <dd>For example, in a server-side integration, advertisers generate raw EUIDs on the server side to be delivered for audience targeting, and publishers generate EUID tokens on the server side for bidstream use.</dd>
 <dd>An example of documentation for publisher server-side integration is <a href="../guides/integration-publisher-server-side">Publisher Integration Guide, Server-Side</a>.</dd>

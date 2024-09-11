@@ -104,6 +104,7 @@ For a detailed summary of web integration options, see [Web Integration Overview
 | JavaScript Client-Side Integration | [Client-Side Integration Guide for JavaScript](../guides/integration-javascript-client-side.md) | A guide for publishers who want to integrate with EUID using only client-side JavaScript changes, which is the easiest implementation approach.<br/>The SDK for JavaScript manages token generation and token refresh automatically. |
 | JavaScript Client-Server Integration | [Client-Server Integration Guide for JavaScript](../guides/integration-javascript-client-server.md) | A publisher guide covering standard web integration scenarios that use the SDK for JavaScript and require tokens to be generated on the server side and passed to the publisher web pages. |
 | Server-Side Integration | [Publisher Integration Guide, Server-Side](../guides/integration-publisher-server-side.md) | A guide for publishers who do not use the [SDK for JavaScript](../sdks/sdk-ref-javascript.md). |
+| Publisher/SSP Integration with GAM | [Google Ad Manager Secure Signals Integration Guide](../guides/integration-google-ss.md) | A guide covering the additional steps needed for publishers using EUID with the Google Ad Manager Secure Signals feature (previously known as Encrypted Signals for Publishers, ESP). |
 
 ### Mobile Integrations
 
@@ -130,6 +131,7 @@ The following resources are available for publishers integrating with Google Ad 
 
 | Integration Type| Documentation | Content Description |
 | :--- | :--- | :--- |
+| Publisher/SSP Integration with GAM | [Google Ad Manager Secure Signals Integration Guide](../guides/integration-google-ss.md) | A guide covering the additional steps needed for publishers using EUID with the Google Ad Manager Secure Signals feature (previously known as Encrypted Signals for Publishers, ESP). |
 | GMA for iOS | [EUID GMA Plugin for iOS Integration Guide](../guides/mobile-plugin-gma-ios.md) | A guide that enables publishers using the Google Mobile Ads (GMA) SDK to include EUID tokens in ad requests from their iOS apps. |
 | IMA for Android | [EUID IMA Plugin for Android Integration Guide](../guides/mobile-plugin-ima-android.md) | A guide that enables publishers using the Google Interactive Media Ads (IMA) SDK to include EUID tokens in ad requests from their Android apps. |
 | IMA for iOS | [EUID IMA Plugin for iOS Integration Guide](../guides/mobile-plugin-ima-ios.md) | A guide that enables publishers using the Google Interactive Media Ads (IMA) SDK to include EUID tokens in ad requests from their iOS apps. |
