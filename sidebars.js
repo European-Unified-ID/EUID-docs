@@ -92,6 +92,7 @@ const sidebars = {
                 ],
               },
               'guides/integration-publisher-server-side',
+              'guides/integration-google-ss',
             ],
           },
 
