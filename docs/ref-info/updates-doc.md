@@ -11,6 +11,16 @@ import Link from '@docusaurus/Link';
 
 Check out the latest updates to our EUID documentation resources.
 
+### New: Tokens Page
+
+September 12, 2024
+
+We've added a new reference page with information about tokens.
+
+For details, see [EUID Tokens and Refresh Tokens](../ref-info/ref-tokens.md).
+
+<!-- APIDOCS-2534 -->
+
 ### New: Google Ad Manager Secure Signals Integration Guide
 
 September 11, 2024
