@@ -81,7 +81,6 @@ There are a couple of limitations to Private Operator functionality:
 To get started as a Private Operator, follow these steps:
 
 1. Request access to EUID by filling out the form on the [Request Access](/request-access) page.
-2. Decide which implementation option you want to use.
 
    For details about available options, see [Hosting Options for Private Operators](#hosting-options-for-private-operators).
 3. If you're using an SDK, download the SDK. Refer to the applicable SDK guide.
