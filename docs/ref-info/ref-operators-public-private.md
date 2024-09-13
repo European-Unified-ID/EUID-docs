@@ -28,7 +28,7 @@ The Operator is the operational code of EUID&#8212;the code that turns an email 
 
 ## Public Operators
 
-A Public Operator, or Open Operator, is an EUID Operator instance that is available to all relevant EUID participants. Public Operators run publicly available instances of the Operator Service and make them available to participants.
+A Public Operator is an EUID Operator instance that is available to all relevant EUID participants. Public Operators run publicly available instances of the Operator Service and make them available to participants.
 
 In most cases, EUID participants use a Public Operator.
 
@@ -40,37 +40,19 @@ When you use a Public Operator, there is no additional work for you to do to hos
 
 There is no cost, to the participant, for using a Public Operator.
 
-The participant must sign a contract (see [Account Setup](../getting-started/gs-account-setup.md)) to get the applicable credentials ([API key and client secret](../getting-started/gs-credentials.md#api-key-and-client-secret)) to use the EUID APIs hosted on the Public Operator.
+The participant must sign a contract (see [Account Setup](../getting-started/gs-account-setup.md)) to get the applicable credentials (see [EUID Credentials](../getting-started/gs-credentials.md)) to use the EUID APIs hosted on the Public Operator.
 
 :::note
 With a Public Operator, data leaves the participant's infrastructure and is sent to the Operator. Rigorous security measures are in place to help protect the data within the Public Operator.
 :::
 
-##  Private Operators
+## Private Operators
 
-A Private Operator, or Closed Operator, is a private instance of the EUID Operator. This means that a specific entity hosts a private instance exclusively for their own use.
+A Private Operator is a private instance of the EUID Operator. This means that a specific entity hosts a private instance exclusively for their own use.
 
 Any participant can also choose to become a Private Operator to generate and manage their EUIDs. However, becoming a Private Operator includes several additional steps, and uses resources that the participant must provide.
 
-The participant must host, configure, maintain, and update the Private Operator instance, and must conform to strict security measures. Engineering resources are required to integrate and to make ongoing updates.
-
-The participant must sign a contract (see [Account Setup](../getting-started/gs-account-setup.md)) to host a Private Operator instance.
-
-:::note
-A Private Operator cannot process raw EUIDs or EUID tokens from a Public Operator or another Private Operator. Each Private Operator is a completely closed infrastructure.
-:::
-
-## Private Operator: Benefits
-
-Some reasons why a participant might choose to become a Private Operator:
-
-- Within a Private Operator solution, personal data does not leave your infrastructure.
-
-- When you have a Private Operator, you're in charge of resources. You have more control. For example, you can provide greater availability, without rate limitations.
-
-- If you are not physically located near to a Public Operator instance, you might choose to host a Private Operator solution for latency reasons.
-
-If you have significant latency concerns, or your security requirements dictate that data stays within your systems, and you also have extensive engineering resources to both build and maintain your EUID implementation, you might consider the Private Operator solution. 
+For details, see [Private Operator Integrations](../guides/integration-options-private-operator.md).
 
 ## Summary
 
