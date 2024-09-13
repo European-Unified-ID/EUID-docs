@@ -61,7 +61,9 @@ This SDK is in the following open-source GitHub repository:
 Minimum requirements for this SDK are as follows:
 
 - Xcode version: 15.0+
-- iOS	minimum target version: 13.0+
+- iOS minimum target version:
+  - For full functionality: 13.0+
+  - For partial functionality: 12.0+. The App with the SDK integrated can be installed with all devices, but generating or retrieving UID2 tokens on the client side will not work with devices running iOS versions below 13.0.
 - tvOS minimum target version: 13.0+
 - Swift version: 5.0+
 

@@ -92,6 +92,7 @@ To configure your EUID Prebid for Mobile integration, follow these steps:
    <TabItem value='android' label='Android Kotlin'>
    ```js
    prebid = UID2Prebid(
+       manager = EUIDManager.getInstance(),
        externalUserIdFactory = ::getExternalIds,
    ).apply {
        initialize()
@@ -106,7 +107,7 @@ To configure your EUID Prebid for Mobile integration, follow these steps:
    </TabItem>
     <TabItem value='ios' label='iOS Swift'>
    ```js
-   self.prebid = UID2Prebid(thirdPartyUserIDs: {
+   self.prebid = UID2Prebid(manager: EUIDManager.shared, thirdPartyUserIDs: {
        // return externalUserIDs
    })
    ```
