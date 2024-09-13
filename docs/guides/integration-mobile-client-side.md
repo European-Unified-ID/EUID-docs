@@ -67,7 +67,6 @@ Follow the applicable instructions, for Android or iOS:
 
 1. Check out the main branch of the [SDK for Android source code repository on GitHub](https://github.com/IABTechLab/uid2-android-sdk/tree/main).
 1. In Android Studio (check the version required in the [Minimum Requirements](../sdks/sdk-ref-android.md#minimum-requirements) section in the SDK for Android Reference Guide), open the directory that you checked out.
-1. set `uid2_environment_euid` to `true` in [AndroidManifest.xml](https://github.com/IABTechLab/uid2-android-sdk/blob/main/dev-app/src/main/AndroidManifest.xml)
 1. Run the **dev-app** app.
 1. When you've started the app, make sure that the **Client Side** checkbox is checked.
 1. Enter an email address, and then click the arrow to the right.
@@ -80,14 +79,6 @@ EUID
 
    ```js
    Development/UID2SDKDevelopmentApp/UID2SDKDevelopmentApp.xcodeproj
-   ```
-1. Set the `UID2EnvironmentEUID` key to `YES` in `Development/UID2SDKDevelopmentApp/UID2SDKDevelopmentApp/Info.plist` in Xcode's editor. Alternatively you can use `plutil` from the command line: 
-   ```console
-   plutil -replace UID2EnvironmentEUID -bool YES Development/UID2SDKDevelopmentApp/UID2SDKDevelopmentApp/Info.plist
-   ```
-   to revert back to using a UID2 environment,
-   ```console
-   plutil -replace UID2EnvironmentEUID -bool NO Development/UID2SDKDevelopmentApp/UID2SDKDevelopmentApp/Info.plist
    ```
 1. Run the **UID2SDKDevelopmentApp** app scheme.
 1. When you've started the app, make sure that the **Client Side** checkbox is checked.
@@ -211,7 +202,7 @@ At this point, you are ready to start generating EUID tokens using the SDK.
 
 ### Using the EUID Integration Environment
 
-By default, the SDK is configured to work with the EUID production environment: `https://prod.euid.eu/v2`. If you want to use the integration environment instead, provide the following URL in your call to initialize `EUIDManager`:
+By default, the SDK is configured to work with the EUID production environment: `https://prod.uidapi.com`. If you want to use the integration environment instead, provide the following URL in your call to initialize `EUIDManager`:
 
 <Tabs groupId="language-selection">
 <TabItem value='android' label='Android'>
@@ -219,7 +210,7 @@ By default, the SDK is configured to work with the EUID production environment: 
 ```js
 EUIDManager.init(
   context = this,
-  serverUrl = "https://integ.euid.eu/v2"
+  serverUrl = "https://operator-integ.uidapi.com"
 )
 ```
 
@@ -229,7 +220,7 @@ EUIDManager.init(
 ```js
 // Must be set before EUIDManager.shared is accessed
 UID2Settings.shared.euidEnvironment = .custom(
-  url: URL(string: "https://integ.euid.eu/v2")!
+  url: URL(string: "https://operator-integ.uidapi.com")!
 )
 ```
 
@@ -256,7 +247,7 @@ To specify an EUID server that is not the default, you can make config changes, 
 ```js
 EUIDManager.init(
   context = this,
-  serverUrl = "https://prod.euid.eu/v2"
+  serverUrl = "https://global.prod.uidapi.com"
 )
 ```
 
@@ -266,7 +257,7 @@ EUIDManager.init(
 ```js
 // Must be set before EUIDManager.shared is accessed
 UID2Settings.shared.euidEnvironment = .custom(
-  url: URL(string: "https://prod.euid.eu/v2")!
+  url: URL(string: "https://global.prod.uidapi.com")!
 )
 // or use a named environment
 UID2Settings.shared.euidEnvironment = .london

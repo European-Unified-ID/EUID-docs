@@ -34,7 +34,7 @@ For integration steps for content publishers, see:
 For example applications with associated documentation, see:
   - The EUID Google Secure Signals with SDK v3 example:
     - [Code and docs](https://github.com/IABTechLab/uid2-web-integrations/tree/main/examples/google-secure-signals-integration/with_sdk_v3)
-    - Running site: [Client-Side UID2 SDK Integration Example](https://secure-signals-jssdk-integ.uidapi.com/).
+    - Running site: [Client-Side EUID SDK Integration Example](https://secure-signals-jssdk-integ.uidapi.com/).
 
 ## Functionality
 
@@ -331,7 +331,7 @@ The `opts` object supports the following properties.
 | Property | Data Type | Attribute | Description | Default Value |
 | :--- | :--- | :--- | :--- | :--- |
 | `identity` | object | Optional | The `body` property value from a successful [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) or [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) call that has been run on the server to generate an identity.<br/>To use the identity from a first-party cookie (see [EUID Storage Format](#euid-storage-format)), leave this property empty. | N/A |
-| `baseUrl` | string | Optional | The custom base URL of the EUID operator to use when invoking the [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint.<br/>For example: `https://my.operator.com`. | `https://prod.euid.eu/v2`. |
+| `baseUrl` | string | Optional | The custom base URL of the EUID operator to use when invoking the [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint.<br/>For example: `https://my.operator.com`. | `https://prod.uidapi.com`. |
 | `refreshRetryPeriod` | number | Optional | The number of milliseconds after which to retry refreshing a token if an intermittent error occurs.<br/>This value must be >= 1000. | 5000 |
 | `cookieDomain` | string | Optional | The domain name string to apply to the EUID cookie (see [EUID Storage Format](#euid-storage-format)).<br/>For example, if the `baseUrl` is `https://my.operator.com`, the `cookieDomain` value might be `operator.com`. | `undefined` |
 | `cookiePath` | string | Optional | The path string to apply to the EUID cookie (see [EUID Storage Format](#euid-storage-format)). | `/` |
