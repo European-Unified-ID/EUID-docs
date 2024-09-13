@@ -219,7 +219,7 @@ By default, the SDK is configured to work with the EUID production environment: 
 ```js
 EUIDManager.init(
   context = this,
-  serverUrl = "https://integ.euid.eu/v2"
+  EUIDManager.Environment.Custom("https://integ.euid.eu/v2"),
 )
 ```
 
@@ -256,7 +256,7 @@ To specify an EUID server that is not the default, you can make config changes, 
 ```js
 EUIDManager.init(
   context = this,
-  serverUrl = "https://prod.euid.eu/v2"
+  EUIDManager.Environment.Custom("https://integ.euid.eu/v2"),
 )
 ```
 
