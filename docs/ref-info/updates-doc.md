@@ -11,6 +11,16 @@ import Link from '@docusaurus/Link';
 
 Check out the latest updates to our EUID documentation resources.
 
+### New: Private Operator Integrations Page
+
+September 13, 2024
+
+We've added a new page with information about Private Operator integrations.
+
+For details, see [EUID Private Operator Integration Overview](../guides/integration-options-private-operator).
+
+<!-- APIDOCS-2594 -->
+
 ### New: Tokens Page
 
 September 12, 2024
