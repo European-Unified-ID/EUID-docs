@@ -108,7 +108,7 @@ At this point, you are ready to use the EUID Identity generated server-side in t
 
 ### Using the EUID Integration Environment
 
-By default, the SDK is configured to work with the EUID production environment: `https://prod.uidapi.com`. If you want to use the EUID integration environment instead, provide the following URL in your call to EUIDManager initialization:
+By default, the SDK is configured to work with the EUID production environment: `https://prod.euid.eu/v2`. If you want to use the EUID integration environment instead, provide the following URL in your call to EUIDManager initialization:
 
 <Tabs groupId="language-selection">
 <TabItem value='android' label='Android'>
@@ -116,7 +116,7 @@ By default, the SDK is configured to work with the EUID production environment: 
 ```js
 EUIDManager.init(
   context = this,
-  serverUrl = "https://operator-integ.uidapi.com"
+  serverUrl = "https://integ.euid.eu/v2"
 )
 ```
 
@@ -126,7 +126,7 @@ EUIDManager.init(
 ```js
 // Must be set before EUIDManager.shared is accessed
 UID2Settings.shared.euidEnvironment = .custom(
-  url: URL(string: "https://operator-integ.uidapi.com")!
+  url: URL(string: "https://integ.euid.eu/v2")!
 )
 ```
 
@@ -153,7 +153,7 @@ To specify an EUID server that is not the default, you can change it in the `ini
 ```js
 EUIDManager.init(
   context = this,
-  serverUrl = "https://global.prod.uidapi.com"
+  serverUrl = "https://prod.euid.eu/v2"
 )
 ```
 
@@ -164,7 +164,7 @@ EUIDManager.init(
 UID2Settings.shared.euidEnvironment = .london
 // or
 UID2Settings.shared.euidEnvironment = .custom(
-  url: URL(string: "https://global.prod.uidapi.com")!
+  url: URL(string: "https://prod.euid.eu/v2")!
 )
 ```
 

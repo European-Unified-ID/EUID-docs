@@ -96,14 +96,14 @@ A good first step in troubleshooting is to look at the health check endpoint.
 From your mobile device or Android emulator, see if you can reach this endpoint:
 
 ```
-https://prod.uidapi.com/ops/healthcheck
+https://prod.euid.eu/ops/healthcheck
 ```
 
 The response should be `OK`.
 
 Some error responses indicate  a networking problem resulting in your app not being able to reach the EUID endpoint. For example:
 
-- `Caused by java.net.UnknownHostException: Unable to resolve host "prod.uidapi.com": No address associated with hostname`
+- `Caused by java.net.UnknownHostException: Unable to resolve host "prod.euid.eu": No address associated with hostname`
 
    The SDK tries to refresh the EUID token in the background. If an error such as an IOException occurs, the SDK retries multiple times. If retry is not successful, this exception is displayed.
 
