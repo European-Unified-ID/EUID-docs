@@ -11,6 +11,31 @@ import Link from '@docusaurus/Link';
 
 Check out the latest updates to our EUID documentation resources.
 
+### New: Mobile Docs
+
+September 16, 2024
+
+We've added the following new documents to support EUID integration for mobile devices:
+
+SDK doc:
+- [SDK for Android Reference Guide](../sdks/sdk-ref-android)
+
+Mobile plugin guides:
+- [EUID GMA Plugin for iOS Integration Guide](../guides/mobile-plugin-gma-ios)
+- [EUID IMA Plugin for Android Integration Guide](../guides/mobile-plugin-ima-android)
+- [EUID IMA Plugin for iOS Integration Guide](../guides/mobile-plugin-ima-ios)
+
+Mobile integration guides:
+- [EUID Mobile Integration Overview for Android and iOS](../guides/integration-mobile-overview)
+- [EUID Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side)
+- [EUID Client-Server Integration Guide for Mobile](../guides/integration-mobile-client-server)
+
+Additional resources:
+- [CTV Integration Guide](../guides/integration-ctv-guide)
+- [EUID Mobile Integration for Prebid Mobile SDK](../guides/integration-prebid-mobile-summary)
+
+<!-- APIDOCS-2554 -->
+
 ### New: Private Operator Integrations Page
 
 September 13, 2024
