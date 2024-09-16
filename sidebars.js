@@ -97,17 +97,48 @@ const sidebars = {
 
           {
             type: 'category',
-            label: 'Prebid',
+            label: 'Mobile',
             link: {
               type: 'doc',
-              id: 'guides/integration-prebid',
+              id: 'guides/integration-mobile-overview',
             },
             collapsed: true,
             items: [
-              'guides/integration-prebid-client-side',
-              'guides/integration-prebid-client-server',
+              'guides/integration-mobile-client-side',
+              'guides/integration-mobile-client-server',
             ],
           },
+
+          'guides/integration-ctv-guide',
+
+            {
+              type: 'category',
+              label: 'Prebid',
+              link: {
+                type: 'doc',
+                id: 'guides/integration-prebid',
+              },
+              collapsed: true,
+              items: [
+                'guides/integration-prebid-client-side',
+                'guides/integration-prebid-client-server',
+                'guides/integration-prebid-mobile-summary',
+              ],
+            },
+
+            {
+              type: 'category',
+              label: 'Google Ad Manager',
+              link: {
+                type: 'generated-index',
+              },
+              collapsed: true,
+              items: [
+                'guides/mobile-plugin-gma-ios',
+                'guides/mobile-plugin-ima-android',
+                'guides/mobile-plugin-ima-ios',
+              ],
+            },
 
         ],
         },
@@ -155,6 +186,7 @@ const sidebars = {
         'sdks/sdk-ref-python',
         'sdks/sdk-ref-csharp-dotnet',
         'sdks/sdk-ref-cplusplus',
+        'sdks/sdk-ref-android',
         'sdks/sdk-ref-ios',
       ],
     },

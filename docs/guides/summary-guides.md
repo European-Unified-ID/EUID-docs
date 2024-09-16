@@ -65,6 +65,9 @@ The following resources are available for publishers integrating with Google Ad 
 | Integration Guide | Content Description |
 | :--- | :--- |
 | [Publisher - Google Ad Manager Secure Signals](integration-google-ss.md) | This integration guide covers the additional steps needed for publishers using EUID with the Google Ad Manager Secure Signals feature (previously known as Encrypted Signals for Publishers, ESP). |
+| [EUID GMA Plugin for iOS Integration Guide](mobile-plugin-gma-ios.md) | The EUID Google Mobile Ads (GMA) Plugin for iOS enables publishers that use the [Google GMA SDK](https://developers.google.com/ad-manager/mobile-ads-sdk) to send <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> as [secure signals](https://support.google.com/admob/answer/11556288) in ad requests from iOS apps. |
+| [EUID IMA Plugin for Android Integration Guide](mobile-plugin-ima-android.md) | The EUID Interactive Media Ads (IMA) Plugin for Android enables publishers that use the [Google IMA SDK for Android](https://developers.google.com/interactive-media-ads/docs/sdks/android/client-side) to send <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> as [secure signals](https://support.google.com/admob/answer/11556288) in ad requests from Android apps. |
+| [EUID IMA Plugin for iOS Integration Guide](mobile-plugin-ima-ios.md) | The EUID Interactive Media Ads (IMA) Plugin for iOS enables publishers that use the [Google IMA SDK for iOS](https://developers.google.com/interactive-media-ads/docs/sdks/ios/client-side) to send <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> as [secure signals](https://support.google.com/admob/answer/11556288) in ad requests from iOS apps. |
 
 ## Advertiser/Data Provider Integrations
 

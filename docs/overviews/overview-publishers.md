@@ -40,7 +40,7 @@ The following steps provide a high-level outline of the workflow intended for or
    :::
 
 4. The EUID Operator:
-   - Takes the email<!--  or phone number -->.
+   - Takes the email.
    - Performs the salt, hash, and encryption process.
    - Returns the EUID token.
 5. The publisher stores the EUID token to share with SSPs during real-time bidding.
@@ -112,6 +112,7 @@ The following resources are available for publisher integrations supporting mobi
 
 | Integration Type| Documentation | Content Description |
 | :--- | :--- | :--- |
+| Android | [SDK for Android Reference Guide](../sdks/sdk-ref-android.md) |An SDK that facilitates the process of generating or establishing client identity using EUID and retrieving EUID tokens for publishers that need to support Android apps. |
 | iOS | [SDK for iOS Reference Guide](../sdks/sdk-ref-ios.md) | An SDK that facilitates the process of generating or establishing client identity using EUID and retrieving EUID tokens for publishers that need to support iOS apps. |
 
 ### Prebid Integrations
@@ -131,6 +132,9 @@ The following resources are available for publishers integrating with Google Ad 
 | Integration Type| Documentation | Content Description |
 | :--- | :--- | :--- |
 | Publisher/SSP Integration with GAM | [Google Ad Manager Secure Signals Integration Guide](../guides/integration-google-ss.md) | A guide covering the additional steps needed for publishers using EUID with the Google Ad Manager Secure Signals feature (previously known as Encrypted Signals for Publishers, ESP). |
+| GMA for iOS | [EUID GMA Plugin for iOS Integration Guide](../guides/mobile-plugin-gma-ios.md) | A guide that enables publishers using the Google Mobile Ads (GMA) SDK to include EUID tokens in ad requests from their iOS apps. |
+| IMA for Android | [EUID IMA Plugin for Android Integration Guide](../guides/mobile-plugin-ima-android.md) | A guide that enables publishers using the Google Interactive Media Ads (IMA) SDK to include EUID tokens in ad requests from their Android apps. |
+| IMA for iOS | [EUID IMA Plugin for iOS Integration Guide](../guides/mobile-plugin-ima-ios.md) | A guide that enables publishers using the Google Interactive Media Ads (IMA) SDK to include EUID tokens in ad requests from their iOS apps. |
 
 ## FAQs for Publishers
 
