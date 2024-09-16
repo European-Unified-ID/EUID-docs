@@ -96,7 +96,7 @@ The following sample applications are available to illustrate how to integrate w
   - [Sample application](https://secure-signals-srvonly-integ.uidapi.com/)
   - [Code repository](https://github.com/IABTechLab/uid2-web-integrations/tree/main/examples/google-secure-signals-integration/server_only)
 - Client-Server EUID SDK Integration Example:
-  - [Sample application](https://secure-signals-jssdk-integ.uidapi.com/)
+  - [Sample application](https://euid.eu/examples/cstg-js-sdk-example/)
   - [Code repository](https://github.com/IABTechLab/uid2-web-integrations/tree/main/examples/google-secure-signals-integration/with_sdk_v3)
 
 Each sample application has its own instructions. -->

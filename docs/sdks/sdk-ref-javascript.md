@@ -34,7 +34,7 @@ For integration steps for content publishers, see:
 For example applications with associated documentation, see:
   - The EUID Google Secure Signals with SDK v3 example:
     - [Code and docs](https://github.com/IABTechLab/uid2-web-integrations/tree/main/examples/google-secure-signals-integration/with_sdk_v3)
-    - Running site: [Client-Side UID2 SDK Integration Example](https://secure-signals-jssdk-integ.uidapi.com/).
+    - Running site: [Client-Side EUID SDK Integration Example](https://euid.eu/examples/cstg-js-sdk-example/).
 
 ## Functionality
 
