@@ -153,7 +153,7 @@ To specify an EUID server that is not the default, you can change it in the `ini
 ```js
 EUIDManager.init(
   context = this,
-  EUIDManager.Environment.Custom("https://integ.euid.eu/v2"),
+  EUIDManager.Environment.Custom("https://prod.euid.eu/v2")
 )
 ```
 
