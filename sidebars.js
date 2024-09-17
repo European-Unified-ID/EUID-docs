@@ -134,6 +134,7 @@ const sidebars = {
               },
               collapsed: true,
               items: [
+                'guides/integration-google-ss',
                 'guides/mobile-plugin-gma-ios',
                 'guides/mobile-plugin-ima-android',
                 'guides/mobile-plugin-ima-ios',
