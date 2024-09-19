@@ -154,14 +154,14 @@ If you're using the SDK's HTTP implementation, follow these steps.
    ```
 
    :::important
-   - Be sure to call the POST&nbsp;/token/generate endpoint only when you have a legal basis to convert the user’s <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to EUID tokens for targeted advertising.
+   - Be sure to call the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint only when you have a legal basis to convert the user’s <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to EUID tokens for targeted advertising.
 
    - Always apply `doNotGenerateTokensForOptedOut()`. This applies a parameter similar to setting `optout_check=1` in the call to the POST&nbsp;/token/generate endpoint (see [Unencrypted JSON Body Parameters](../endpoints/post-token-generate.md#unencrypted-json-body-parameters)).
    :::
 
    <!-- uid2_euid_diff re legal basis for admonition above (first bullet not in UID2) -->
 
-#### Client-Server Integration
+#### Basic Usage, Client-Server Integration
 
 If you're using client-server integration (see [Client-Server Integration Guide for JavaScript](../guides/integration-javascript-client-server.md)), follow this step:
 
@@ -175,7 +175,7 @@ If you're using client-server integration (see [Client-Server Integration Guide 
    If the user has opted out, this method returns `null`, so be sure to handle that case.
    :::
 
-#### Server-Side Integration
+#### Basic Usage, Server-Side Integration
 
 If you're using server-side integration (see [Publisher Integration Guide, Server-Side](../guides/integration-publisher-server-side.md)), follow these steps:
 
@@ -247,7 +247,7 @@ If you're using server-side integration (see [Publisher Integration Guide, Serve
    TokenGenerateResponse tokenGenerateResponse = publisherUid2Helper.createTokenGenerateResponse({response body}, envelope);
    ```
 
-#### Client-Server Integration
+#### Advanced Usage, Client-Server Integration
 
 If you're using client-server integration (see [Client-Server Integration Guide for JavaScript](../guides/integration-javascript-client-server.md)), follow this step:
 
@@ -261,7 +261,7 @@ If you're using client-server integration (see [Client-Server Integration Guide 
     This method returns null if the user has opted out, so be sure to handle that case.
     :::
 
-#### Server-Side Integration
+#### Advanced Usage, Server-Side Integration
 
 If you're using server-side integration (see [Publisher Integration Guide, Server-Side](../guides/integration-publisher-server-side.md)):
 
