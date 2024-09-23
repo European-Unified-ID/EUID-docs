@@ -86,23 +86,6 @@ This script is hosted on CDN, and GPT automatically loads it with the secure sig
 
 For details, see [Client-Side Integration Guide for JavaScript](integration-javascript-client-side.md).
 
-<!-- A sample application is also available for integration using the SDK for JavaScript. See [Sample Applications](#sample-applications).
-
-## Sample Applications
-
-The following sample applications are available to illustrate how to integrate with the Google Ad Manager secure signals feature:
-
-- Server-Side EUID Integration Example:
-  - [Sample application](https://secure-signals-srvonly-integ.uidapi.com/)
-  - [Code repository](https://github.com/IABTechLab/uid2-web-integrations/tree/main/examples/google-secure-signals-integration/server_only)
-- Client-Server EUID SDK Integration Example:
-  - [Sample application](https://euid.eu/examples/cstg-js-sdk-example/)
-  - [Code repository](https://github.com/IABTechLab/uid2-web-integrations/tree/main/examples/google-secure-signals-integration/with_sdk_v3)
-
-Each sample application has its own instructions. -->
-
-<!-- (170 I'll make a ticket to consider an EUID version of the sample.) -->
-
 ## Troubleshooting Tips for EUID Integration with Google Secure Signals
 
 Here is some troubleshooting info that might help you in working with Google Secure Signals for your EUID integration:

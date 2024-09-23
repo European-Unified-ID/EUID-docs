@@ -69,7 +69,7 @@ For all integration options, you can choose to store the EUID token in local sto
 Generating the EUID token on the client side has the following advantages:
 
 - The code runs on the client side, on the consumer's web page, and no server-side coding is required.
-- There is a Prebid integration that handles all functions for you&#8212;token generation, token refresh, and passing the token into the bidstream. If you use Prebid 8.21.0 or later, this is generally the simplest and fastest implementation option.
+- There is a Prebid.js integration that handles all functions for you&#8212;token generation, token refresh, and passing the token into the bidstream. If you use Prebid.js 8.21.0 or later, this is generally the simplest and fastest implementation option.
 
 If you choose a client-side integration, you'll need to provide a list of your top-level domains, for security purposes, as part of account setup. For details, see [Client-Side Implementation for Publishers](../getting-started/gs-account-setup.md#client-side-web-integrations) on the Account Setup page.
 
@@ -86,7 +86,7 @@ Generating the EUID token on the server side has the following advantages:
 
 - You can keep your <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> entirely on the server side.
 - If your development resources are back-end developers, you might prefer a server-side integration.
-- For server-side Prebid integration, there is no requirement to update to the latest Prebid version, as long as your version is 7.53.0 or later.
+- For server-side Prebid.js integration, there is no requirement to update to the latest Prebid.js version, as long as your version is 7.53.0 or later.
 
 The following table summarizes the options for publishers who want to generate the EUID token on the server side.
 
