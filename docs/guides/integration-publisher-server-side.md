@@ -82,7 +82,7 @@ For an example of what an EUID token might look like in the bidstream, when it's
 
 ### Refresh an EUID Token
 
-Use the `POST&nbsp;/token/refresh` endpoint to make sure you always have a valid and up-to-date EUID token. The EUID token must be refreshed to sync with the EUID rotation. In addition, the token refresh process checks the user's opt-out status, and if the user has opted out, no new token is sent. This ends the token refresh chain, and you must not use that EUID token again.
+Use the `POST /token/refresh` endpoint to make sure you always have a valid and up-to-date EUID token. The EUID token must be refreshed to sync with the EUID rotation. In addition, the token refresh process checks the user's opt-out status, and if the user has opted out, no new token is sent. This ends the token refresh chain, and you must not use that EUID token again.
 
 | Step | Endpoint | Description |
 | :--- | :--- | :--- |
