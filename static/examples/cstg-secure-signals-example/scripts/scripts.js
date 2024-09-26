@@ -1,6 +1,6 @@
 const clientSideIdentityOptions = {
-  subscriptionId: '4WvryDGbR5',
-  serverPublicKey: 'EUID-X-L-MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEtXJdTSZAYHvoRDWiehMHoWF1BNPuqLs5w2ZHiAZ1IJc7O4/z0ojPTB0V+KYX/wxQK0hxx6kxCvHj335eI/ZQsQ==',
+  subscriptionId: 'QRtT141htm',
+  serverPublicKey: 'EUID-X-I-MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEYla1YQ6N+surF4Yjaax46mPxCv7ixCR0zd3AYV5D8nhEVbQOuhs+GGxp0rUVpucJGQxNvkINwdSeCTpyzLMtFA==',
 };
 
 function updateGuiElements(state) {
