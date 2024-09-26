@@ -109,7 +109,7 @@ The procedure is a little different depending on whether or not you are using an
 
 #### What is the uniqueness and rotation policy for EUID tokens?
 
-The EUID service encrypts tokens using random initialization vectors. The encrypted EUID is unique for a given user as they browse the internet. At every refresh, the token re-encrypts. This mechanism ensures that untrusted parties cannot track a user's identity.
+The EUID service encrypts tokens using random initialization vectors. The encrypted EUID is unique for a given user as they browse the internet. At every refresh, the token re-encrypts.
 
 #### What does an EUID token look like in the bidstream?
 
@@ -142,7 +142,7 @@ Here are some frequently asked questions for advertisers and data providers usin
 - [Do refreshed emails get assigned to the same bucket with which they were previously associated?](#do-refreshed-emails-get-assigned-to-the-same-bucket-with-which-they-were-previously-associated)
 - [How often should EUIDs be refreshed for incremental updates?](#how-often-should-euids-be-refreshed-for-incremental-updates)
 - [How should I generate the SHA-256 of personal data for mapping?](#how-should-i-generate-the-sha-256-of-personal-data-for-mapping)
-- [Should I store large volumes of email addresses or their hash mappings? ](#should-i-store-large-volumes-of-email-addresses-or-their-hash-mappings)
+- [Should I store mapping of email addresses or corresponding hashes to raw EUIDs in my own datasets?](#should-i-store-mapping-of-email-addresses-or-corresponding-hashes-to-raw-euids-in-my-own-datasets)
 - [How should I handle user opt-outs?](#how-should-i-handle-user-opt-outs)
 - [Does the same personal data always result in the same raw EUID?](#does-the-same-personal-data-always-result-in-the-same-raw-euid)
 
@@ -172,7 +172,7 @@ Even though each salt bucket is updated roughly once a year, individual bucket u
 
 The system should follow the [email normalization rules](../getting-started/gs-normalization-encoding.md#email-address-normalization) and hash without salting.
 
-#### Should I store large volumes of email addresses or their hash mappings?
+#### Should I store mapping of email addresses or corresponding hashes to raw EUIDs in my own datasets?
 
 Yes. Not storing email address or hash mappings may increase processing time drastically when you have to map millions of addresses. Recalculating only those mappings that actually need to be updated, however, reduces the total processing time because only about 1/365th of EUIDs need to be updated daily.
 
