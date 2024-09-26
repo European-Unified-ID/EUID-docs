@@ -77,7 +77,7 @@ function isEnabled(product) {
   window.__euid.callbacks.push((eventType, payload) => {
     if (eventType === 'SdkLoaded') {
       window.__euid.init({
-        baseUrl: 'http://localhost:8080',
+        baseUrl: 'https://integ.euid.eu/',
       });
       $(document).ready(onDocumentReady);
     }
