@@ -25,7 +25,7 @@ function updateGuiElements(state) {
 
     const secureSignalsStorage = localStorage['_GESPSK-euid.eu'];
     if (token && !secureSignalsStorage) {
-        // token is valid but secure signals has not been refreshed.  reload the page
+      //Token is valid but Secure Signals has not been refreshed. Reload the page.
         location.reload();
     }
     const secureSignalsStorageJson = secureSignalsStorage && JSON.parse(secureSignalsStorage);
@@ -42,43 +42,43 @@ function isEnabled(product) {
     return $(`#${product}_state th input`)[0].checked;
 }
 
-  function onEuidIdentityUpdated(eventType, payload) {
+function onEuidIdentityUpdated(eventType, payload) {
     console.log('EUID Callback', payload);
     // allow secure signals time to load
     setTimeout(() => updateGuiElements(payload), 1000);
-  }
+}
 
-  function onDocumentReady() {
+function onDocumentReady() {
     $('#logout').click(() => {
       window.googletag.secureSignalProviders.clearAllCache();
-      if (isEnabled("euid")) {
-        __euid.disconnect();
-      }
+        if (isEnabled("euid")) {
+            __euid.disconnect();
+        }
     });
 
     $('#login').click(async () => {
-      window.googletag.secureSignalProviders.clearAllCache();
-      const email = $('#email').val();
+        window.googletag.secureSignalProviders.clearAllCache();
+        const email = $('#email').val();
 
-      try {
+    try {
         if (isEnabled("euid")) {
-          await __euid.setIdentityFromEmail(email, clientSideIdentityOptions);
+            await __euid.setIdentityFromEmail(email, clientSideIdentityOptions);
         }
-      } catch (e) {
-        console.error('setIdentityFromEmail failed', e);
-      }
+        } catch (e) {
+            console.error('setIdentityFromEmail failed', e);
+        }
     });
-  }
+}
 
-  window.__euid = window.__euid || {};
-  window.__euid.callbacks = window.__euid.callbacks || [];
+window.__euid = window.__euid || {};
+window.__euid.callbacks = window.__euid.callbacks || [];
 
-  window.__euid.callbacks.push(onEuidIdentityUpdated);
-  window.__euid.callbacks.push((eventType, payload) => {
+window.__euid.callbacks.push(onEuidIdentityUpdated);
+window.__euid.callbacks.push((eventType, payload) => {
     if (eventType === 'SdkLoaded') {
-      window.__euid.init({
-        baseUrl: 'https://integ.euid.eu/',
-      });
-      $(document).ready(onDocumentReady);
+        window.__euid.init({
+            baseUrl: 'https://integ.euid.eu/',
+        });
+        $(document).ready(onDocumentReady);
     }
-  });
+});

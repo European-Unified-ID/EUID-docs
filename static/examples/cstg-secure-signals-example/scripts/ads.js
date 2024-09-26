@@ -92,7 +92,7 @@ function loadAds(event) {
 }
 
 function onAdsManagerLoaded(adsManagerLoadedEvent) {
-  // Instantiate the AdsManager from the adsLoader response and pass it the video element
+  // Instantiate the AdsManager from the adsLoader response and pass it the video element.
   adsManager = adsManagerLoadedEvent.getAdsManager(
       videoElement);
   adsManager.addEventListener(
