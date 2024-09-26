@@ -25,6 +25,7 @@ The following table summarizes the functionality available with each SDK.
 |Python | Server | &#9989; | &#9989; | &#9989; | &#9989; | &#8212; |
 |C# / .NET | Server | &#9989; | &#9989; | &#8212; | &#8212; | &#8212; |
 |C++ | Server | &#9989; | &#9989; | &#8212; | &#8212; | &#8212; |
+|iOS | Client (Mobile)| &#8212; | &#8212; | &#9989;| &#9989; |&#8212; |
 
 <!-- &#9989; = Supported | &#10060; = Not Supported | &#8212; = Not Supported -->
 
@@ -39,4 +40,5 @@ The following SDK documentation is available for EUID integration. Documentation
 | [SDK for Python](sdk-ref-python.md) | An SDK for audiences using Python server-side:<ul><li>Helps publishers to generate or refresh EUID tokens from personal data ([POST&nbsp;/token/generate](../endpoints/post-token-generate)).</li><li>Helps DSPs to decrypt EUID tokens from bid requests ([Decrypt EUID Tokens for RTB Use](../guides/dsp-guide.md#decrypt-euid-tokens-for-rtb-use)).</li></ul> | Publishers<br/>DSPs |
 | [SDK for C# / .NET](sdk-ref-csharp-dotnet.md) | An SDK for audiences using .NET server-side:<ul><li>Helps DSPs to decrypt EUID tokens from bid requests.</li></ul> | DSPs<br/>Data Providers |
 | [SDK for C++](sdk-ref-cplusplus.md) | An SDK for audiences using C++ server-side:<ul><li>Helps DSPs to decrypt EUID tokens from bid requests.</li></ul> | DSPs<br/>Data Providers |
-
+| [SDK for Android](sdk-ref-android.md) |An SDK that facilitates the process of generating or establishing client identity using EUID and retrieving EUID tokens for publishers that need to support Android apps. | Publishers |
+| [SDK for iOS](sdk-ref-ios.md) | An SDK that facilitates the process of generating or establishing client identity using EUID and retrieving EUID tokens for publishers that need to support iOS apps. | Publishers |

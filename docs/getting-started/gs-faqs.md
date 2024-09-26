@@ -15,9 +15,9 @@ Frequently asked questions for EUID are grouped into general categories by audie
 
 Here are some frequently asked questions regarding the EUID framework.
 
-   - [Will all integration partners in the UID2 infrastructure (SSPs, third-party data providers, measurement providers) be automatically integrated with EUID?](#will-all-integration-partners-in-the-uid2-infrastructure-ssps-third-party-data-providers-measurement-providers-be-automatically-integrated-with-euid)
-   - [Can users opt out of targeted advertising tied to their EUID?](#can-users-opt-out-of-targeted-advertising-tied-to-their-euid)
-   - [When I send personal data to EUID, does EUID store the information?](#when-i-send-personal-data-to-euid-does-euid-store-the-information)
+- [Will all integration partners in the UID2 infrastructure (SSPs, third-party data providers, measurement providers) be automatically integrated with EUID?](#will-all-integration-partners-in-the-uid2-infrastructure-ssps-third-party-data-providers-measurement-providers-be-automatically-integrated-with-euid)
+- [Can users opt out of targeted advertising tied to their EUID?](#can-users-opt-out-of-targeted-advertising-tied-to-their-euid)
+- [When I send personal data to EUID, does EUID store the information?](#when-i-send-personal-data-to-euid-does-euid-store-the-information)
 
 #### Will all integration partners in the UID2 infrastructure (SSPs, third-party data providers, measurement providers) be automatically integrated with EUID?
 
@@ -37,14 +37,15 @@ In addition, in almost all cases, EUID doesn't store any values at all once the 
 
 Here are some frequently asked questions for publishers using the EUID framework.
 
-  - [How can I test that the personal data sent and the returned token match up?](#how-can-i-test-that-the-personal-data-sent-and-the-returned-token-match-up)
-  - [Do I need to decrypt tokens?](#do-i-need-to-decrypt-tokens)
-  - [How will I be notified of user opt-out?](#how-will-i-be-notified-of-user-opt-out)
-  - [Where should I make token generation calls&#8212;from the server side or the client side?](#where-should-i-make-token-generation-callsfrom-the-server-side-or-the-client-side)
-  - [Can I make token refresh calls from the client side?](#can-i-make-token-refresh-calls-from-the-client-side)
-  - [How can I test the refresh token workflow?](#how-can-i-test-the-refresh-token-workflow)
-  - [What is the uniqueness and rotation policy for EUID tokens?](#what-is-the-uniqueness-and-rotation-policy-for-euid-tokens)
-  - [What does an EUID token look like in the bidstream?](#what-does-an-euid-token-look-like-in-the-bidstream)
+- [How can I test that the personal data sent and the returned token match up?](#how-can-i-test-that-the-personal-data-sent-and-the-returned-token-match-up)
+- [Do I need to decrypt tokens?](#do-i-need-to-decrypt-tokens)
+- [How will I be notified of user opt-out?](#how-will-i-be-notified-of-user-opt-out)
+- [Where should I make token generation calls&#8212;from the server side or the client side?](#where-should-i-make-token-generation-callsfrom-the-server-side-or-the-client-side)
+- [Can I make token refresh calls from the client side?](#can-i-make-token-refresh-calls-from-the-client-side)
+- [If I choose to manually refresh the token, how will I know when to refresh the token?](#if-i-choose-to-manually-refresh-the-token-how-will-i-know-when-to-refresh-the-token)
+- [How can I test the refresh token workflow?](#how-can-i-test-the-refresh-token-workflow)
+- [What is the uniqueness and rotation policy for EUID tokens?](#what-is-the-uniqueness-and-rotation-policy-for-euid-tokens)
+- [What does an EUID token look like in the bidstream?](#what-does-an-euid-token-look-like-in-the-bidstream)
 
 #### How can I test that the personal data sent and the returned token match up?
 
@@ -72,6 +73,16 @@ You can generate EUID tokens from either the client side or the server side. For
 #### Can I make token refresh calls from the client side?
 
 Yes. The [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) can be called from the client side (for example, a browser or a mobile app) because it does not require using an API key.
+
+#### If I choose to manually refresh the token, how will I know when to refresh the token?
+
+The recommended refresh interval is hourly.
+
+To determine when to refresh, you can use the timestamp of the `refresh_from` field in the response to the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint (see [Successful Response](../endpoints/post-token-generate.md#successful-response)) or [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint (see [Successful Response With Tokens](../endpoints/post-token-refresh.md#successful-response-with-tokens)).
+
+You could also use one of the SDKs that has a function to check if token refresh is needed.
+
+For details, see [Recommended Token Refresh Frequency](../ref-info/ref-tokens.md#recommended-token-refresh-frequency) and [Managing Token Refresh with an SDK](../ref-info/ref-tokens.md#managing-token-refresh-with-an-sdk).
 
 #### How can I test the refresh token workflow?
 
@@ -113,7 +124,7 @@ There are many ways to approach EUID implementation. Here is one example of a co
           "source":"euid.eu",
           "uids":[
             {
-              "id":"E3AAAAGnjHikWAL4FRzBh6p+4iKvCFFi3RieJhBg2kCXNT1AjMKev/jreXLPVb2u2IRT7AtZRqpwjFlibf4xaAmJCsdOed9S15igcJiHZ3PR1gOjCmL2HRvN5wMvnvE4CVYCwbLSXjzb6nCqSWL2xPkwMMjZGE7U4S4Xt+jMzQ2uu0vxqfIp5rzAboap5XLrCPHyq6hOQ5dnWZyaEi5TcvBzNIQ="
+              "id":"E4AAAAW2T2Fj-aRzN_G_t-1UP9Ndl-e1kJLCL0b9wTq0UORlRIFjIS4Mz7I3TYy6YrYyIGDwjHWZOifsnYTZawQcCwAkfyp0RbkLhB4Hznodt3ZLHrOYqFmvSrsbEuMrowfoGSJyFz3hj-Q4CArezZzamp1-aoOjJz3s-ydQADH7OapPv5iQBYBiWza3r3tBVY7drUMV8_08aBMqHuLyKzNUvws"
             }
           ]
         }
@@ -127,13 +138,13 @@ There are many ways to approach EUID implementation. Here is one example of a co
 
 Here are some frequently asked questions for advertisers and data providers using the EUID framework.
 
-   - [How do I know when to refresh the EUID due to salt bucket rotation?](#how-do-i-know-when-to-refresh-the-euid-due-to-salt-bucket-rotation)
-   - [Do refreshed emails get assigned to the same bucket with which they were previously associated?](#do-refreshed-emails-get-assigned-to-the-same-bucket-with-which-they-were-previously-associated)
-   - [How often should EUIDs be refreshed for incremental updates?](#how-often-should-euids-be-refreshed-for-incremental-updates)
-   - [How should I generate the SHA-256 of personal data for mapping?](#how-should-i-generate-the-sha-256-of-personal-data-for-mapping)
-   - [Should I store large volumes of email addresses or their hash mappings? ](#should-i-store-large-volumes-of-email-addresses-or-their-hash-mappings)
-   - [How should I handle user opt-outs?](#how-should-i-handle-user-opt-outs)
-   - [Does the same personal data always result in the same raw EUID?](#does-the-same-personal-data-always-result-in-the-same-raw-euid)
+- [How do I know when to refresh the EUID due to salt bucket rotation?](#how-do-i-know-when-to-refresh-the-euid-due-to-salt-bucket-rotation)
+- [Do refreshed emails get assigned to the same bucket with which they were previously associated?](#do-refreshed-emails-get-assigned-to-the-same-bucket-with-which-they-were-previously-associated)
+- [How often should EUIDs be refreshed for incremental updates?](#how-often-should-euids-be-refreshed-for-incremental-updates)
+- [How should I generate the SHA-256 of personal data for mapping?](#how-should-i-generate-the-sha-256-of-personal-data-for-mapping)
+- [Should I store large volumes of email addresses or their hash mappings? ](#should-i-store-large-volumes-of-email-addresses-or-their-hash-mappings)
+- [How should I handle user opt-outs?](#how-should-i-handle-user-opt-outs)
+- [Does the same personal data always result in the same raw EUID?](#does-the-same-personal-data-always-result-in-the-same-raw-euid)
 
 #### How do I know when to refresh the EUID due to salt bucket rotation?
 
@@ -166,7 +177,7 @@ The system should follow the [email normalization rules](../getting-started/gs-n
 Yes. Not storing email address or hash mappings may increase processing time drastically when you have to map millions of addresses. Recalculating only those mappings that actually need to be updated, however, reduces the total processing time because only about 1/365th of EUIDs need to be updated daily.
 
 :::important
-Unless you are using a private operator, you must map email addresses or hashes consecutively, using a single HTTP connection, in batches of  5,000 emails at a time. In other words, do your mapping without creating multiple parallel connections.
+Unless you are using a private operator, you must map email addresses or hashes consecutively, using a single HTTP connection, in batches of 5,000 emails at a time. In other words, do your mapping without creating multiple parallel connections.
 :::
 
 #### How should I handle user opt-outs?
@@ -189,21 +200,21 @@ For more information, see [Monitor for salt bucket rotations related to your sto
 
 Here are some frequently asked questions for DSPs.
 
-   - [How do I know which decryption key to apply to an EUID?](#how-do-i-know-which-decryption-key-to-apply-to-an-euid)
-   - [Where do I get the decryption keys?](#where-do-i-get-the-decryption-keys)
-   - [How many decryption keys may be present in memory at any point?](#how-many-decryption-keys-may-be-present-in-memory-at-any-point)
-   - [How do I know if/when the salt bucket has rotated?](#how-do-i-know-ifwhen-the-salt-bucket-has-rotated)
-   - [Should the DSP be concerned with latency?](#should-the-dsp-be-concerned-with-latency)
-   - [How should the DSP maintain proper frequency capping with EUID?](#how-should-the-dsp-maintain-proper-frequency-capping-with-euid)
-   - [Will all user opt-out traffic be sent to the DSP?](#will-all-user-opt-out-traffic-be-sent-to-the-dsp)
-   - [Is the DSP expected to handle opt-out signals only for the EUID that they already store?](#is-the-dsp-expected-to-handle-opt-out-signals-only-for-the-euid-that-they-already-store)
-   - [How long should the DSP keep the opt-out list?](#how-long-should-the-dsp-keep-the-opt-out-list)
-   - [Is the EUID of an opted-out user sent to the opt-out endpoint in an encrypted form?](#is-the-euid-of-an-opted-out-user-sent-to-the-opt-out-endpoint-in-an-encrypted-form)
-   - [In what format is the EUID of an opted-out user sent to the webhook?](#in-what-format-is-the-euid-of-an-opted-out-user-sent-to-the-webhook)
-   - [What request type do opt-outs use? ](#what-request-type-do-opt-outs-use)
-   - [How strict are the requirements for honoring opt-outs? ](#how-strict-are-the-requirements-for-honoring-opt-outs)
-   - [How can I check if a user has opted out?](#how-can-i-check-if-a-user-has-opted-out)
-   - [How do SDK errors impact the DSP's ability to respond to a bid?](#how-do-sdk-errors-impact-the-dsps-ability-to-respond-to-a-bid)
+- [How do I know which decryption key to apply to an EUID?](#how-do-i-know-which-decryption-key-to-apply-to-an-euid)
+- [Where do I get the decryption keys?](#where-do-i-get-the-decryption-keys)
+- [How many decryption keys may be present in memory at any point?](#how-many-decryption-keys-may-be-present-in-memory-at-any-point)
+- [How do I know if/when the salt bucket has rotated?](#how-do-i-know-ifwhen-the-salt-bucket-has-rotated)
+- [Should the DSP be concerned with latency?](#should-the-dsp-be-concerned-with-latency)
+- [How should the DSP maintain proper frequency capping with EUID?](#how-should-the-dsp-maintain-proper-frequency-capping-with-euid)
+- [Will all user opt-out traffic be sent to the DSP?](#will-all-user-opt-out-traffic-be-sent-to-the-dsp)
+- [Is the DSP expected to handle opt-out signals only for the EUID that they already store?](#is-the-dsp-expected-to-handle-opt-out-signals-only-for-the-euid-that-they-already-store)
+- [How long should the DSP keep the opt-out list?](#how-long-should-the-dsp-keep-the-opt-out-list)
+- [Is the EUID of an opted-out user sent to the opt-out endpoint in an encrypted form?](#is-the-euid-of-an-opted-out-user-sent-to-the-opt-out-endpoint-in-an-encrypted-form)
+- [In what format is the EUID of an opted-out user sent to the webhook?](#in-what-format-is-the-euid-of-an-opted-out-user-sent-to-the-webhook)
+- [What request type do opt-outs use? ](#what-request-type-do-opt-outs-use)
+- [How strict are the requirements for honoring opt-outs? ](#how-strict-are-the-requirements-for-honoring-opt-outs)
+- [How can I check if a user has opted out?](#how-can-i-check-if-a-user-has-opted-out)
+- [How do SDK errors impact the DSP's ability to respond to a bid?](#how-do-sdk-errors-impact-the-dsps-ability-to-respond-to-a-bid)
 
 #### How do I know which decryption key to apply to an EUID?
 

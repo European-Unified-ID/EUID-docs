@@ -37,7 +37,7 @@ You must encrypt all requests using your secret. For details, and code examples 
 
 | Path Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
-| `{environment}` | string | Required | Integration environment: `https://integ.euid.eu`.<br/>Production environment: `https://prod.uidapi.com`.<br/>For a full list, including regional operators, see [Environments](../getting-started/gs-environments.md). |
+| `{environment}` | string | Required | Integration environment: `https://integ.euid.eu`.<br/>Production environment: `https://prod.euid.eu`.<br/>For a full list, including regional operators, see [Environments](../getting-started/gs-environments.md). |
 
 :::note
 The integration environment and the production environment require different <Link href="../ref-info/glossary-uid#gl-api-key">API keys</Link>.
@@ -110,7 +110,7 @@ The response body includes the following properties.
 | Property | Format | Description |
 | :--- | :--- | :--- |
 | `advertising_id` | string | The <Link href="../ref-info/glossary-uid#gl-advertising-id">advertising ID</Link> (raw EUID). |
-| `opted_out_since` | number | The UNIX timestamp (in milliseconds) that indicates when the raw EUID was opted out. |
+| `opted_out_since` | number | The <a href="../ref-info/glossary-uid#gl-unix-time">Unix</a> timestamp (in milliseconds) that indicates when the raw EUID was opted out. |
 
 ### Response Status Codes
 

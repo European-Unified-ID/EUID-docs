@@ -8,6 +8,7 @@ sidebar_position: 11
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Link from '@docusaurus/Link';
+import ExampleTokenGenerateResponse from '/docs/snippets/_example-identity-generate-response.mdx';
 
 # Encrypting Requests and Decrypting Responses
 
@@ -56,7 +57,7 @@ The following table describes the field layout for request encryption code.
 
 | Offset (Bytes) | Size (Bytes) | Description |
 | :--- | :--- | :--- |
-| 0 | 8 | The UNIX timestamp (in milliseconds). Must be int64 big endian. |
+| 0 | 8 | The <a href="../ref-info/glossary-uid#gl-unix-time">Unix</a> timestamp (in milliseconds). Must be int64 big endian. |
 | 8 | 8 | Nonce: Random 64 bits of data used to help protect against replay attacks. The corresponding [Unencrypted Response Data Envelope](#unencrypted-response-data-envelope) should contain the same nonce value for the response to be considered valid. |
 | 16 | N | Payload, which is a request JSON document serialized in UTF-8 encoding. |
 
@@ -95,7 +96,7 @@ The following table describes the field layout for response decryption code.
 
 | Offset (Bytes) | Size (Bytes) | Description |
 | :--- | :--- | :--- |
-| 0 | 8 | The UNIX timestamp (in milliseconds). Must be int64 big endian. |
+| 0 | 8 | The Unix timestamp (in milliseconds). Must be int64 big endian. |
 | 8 | 8 | Nonce. For the response to be considered valid, this should match the nonce in the [unencrypted request data envelope](#unencrypted-request-data-envelope). |
 | 16 | N | Payload, which is a response JSON document serialized in UTF-8 encoding. |
 
@@ -103,20 +104,7 @@ The following table describes the field layout for response decryption code.
 
 For example, a decrypted response to the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) request for an email address might look like this:
 
-```json
-{
-    "body": {
-        "advertising_token": "AgAAAQFt3aNLXKXEyWS8Tpezcymk1Acv3n+ClOHLdAgqR0kt0Y+pQWSOVaW0tsKZI4FOv9K/rZH9+c4lpm2DBpmFJqjdF6FAaAzva5vxDIX/67UOspsYtiwxH73zU7Fj8PhVf1JcpsxUHRHzuk3vHF+ODrM13A8NAVlO1p0Wkb+cccIIhQ==",
-        "user_token": "AgAAAPpTqz7/Z+40Ue5G3XOM2RiyU6RS9Q5yj1n7Tlg7PN1K1LZWejvo8Er7A+Q8KxdXdj0OrKRf/XEGWsyUJscRNu1bg/MK+5AozvoJKUca8b10eQdYU86ZOHPH7pFnFhD5WHs=",
-        "refresh_token": "AAAAAQLMcnV+YE6/xoPDZBJvJtWyPyhF9QTV4242kFdT+DE/OfKsQ3IEkgCqD5jmP9HuR4O3PNSVnCnzYq2BiDDz8SLsKOo6wZsoMIn95jVWBaA6oLq7uUGY5/g9SUOfFmX5uDXUvO0w2UCKi+j9OQhlMfxTsyUQUzC1VQOx6ed/gZjqH/Sw6Kyk0XH7AlziqSyyXA438JHqyJphGVwsPl2LGCH1K2MPxkLmyzMZ2ghTzrr0IgIOXPsL4lXqSPkl/UJqnO3iqbihd66eLeYNmyd1Xblr3DwYnwWdAUXEufLoJbbxifGYc+fPF+8DpykpyL9neq3oquxQWpyHsftnwYaZT5EBZHQJqAttHUZ4yQ==",
-        "identity_expires": 1654623500142,
-        "refresh_expires": 1657214600142,
-        "refresh_from": 1654622900142,
-        "refresh_response_key": "wR5t6HKMfJ2r4J7fEGX9Gw=="
-    },
-    "status": "success"
-}
-```
+<ExampleTokenGenerateResponse />
 
 ## Encryption and Decryption Code Examples
 
@@ -157,7 +145,7 @@ The following code example encrypts requests and decrypts responses using Java. 
 java -jar Uid2Request-jar-with-dependencies.jar
 ```
 
-The Java example is written for JDK version 11 and later, and you must have the com.google.code.gson library in your classpath.
+The Java example is written for JDK version 11 or later, and you must have the com.google.code.gson library in your classpath.
 
 If you are using Maven, you can use the following minimal `pom.xml`, and run `mvn package` to build the project:
 
@@ -362,13 +350,13 @@ public class Uid2Request {
       +             "java -jar Uid2Request-jar-with-dependencies.jar <url> <api_key> <client_secret>" + "\n\n"
       
       +       "Example:" + "\n   "  
-      +             "echo '{\"email\": \"test@example.com\"}' | java -jar Uid2Request-jar-with-dependencies.jar https://prod.uidapi.com/v2/token/generate PRODGwJ0hP19QU4hmpB64Y3fV2dAed8t/mupw3sjN5jNRFzg= wJ0hP19QU4hmpB64Y3fV2dAed8t/mupw3sjN5jNRFzg=" + "\n\n\n"
+      +             "echo '{\"email\": \"test@example.com\"}' | java -jar Uid2Request-jar-with-dependencies.jar https://prod.euid.eu/v2/token/generate PRODGwJ0hP19QU4hmpB64Y3fV2dAed8t/mupw3sjN5jNRFzg= wJ0hP19QU4hmpB64Y3fV2dAed8t/mupw3sjN5jNRFzg=" + "\n\n\n"
       
       +       "Refresh Token Usage:" + "\n   "
       +             "java -jar Uid2Request-jar-with-dependencies.jar <url> --refresh-token <refresh_token> <refresh_response_key>"  + "\n\n"
                       
       +       "Refresh Token Example:" + "\n   " 
-      +             "java -jar Uid2Request-jar-with-dependencies.jar https://prod.uidapi.com/v2/token/refresh --refresh-token AAAAAxxJ...(truncated, total 388 chars) v2ixfQv8eaYNBpDsk5ktJ1yT4445eT47iKC66YJfb1s="  + "\n"
+      +             "java -jar Uid2Request-jar-with-dependencies.jar https://prod.euid.eu/v2/token/refresh --refresh-token AAAAAxxJ...(truncated, total 388 chars) v2ixfQv8eaYNBpDsk5ktJ1yT4445eT47iKC66YJfb1s="  + "\n"
       );
       System.exit(1);
     }
@@ -473,14 +461,14 @@ Usage:
    echo '<json>' | .\uid2_request <url> <api_key> <client_secret>
 
 Example:
-   echo '{"email": "test@example.com"}' | .\uid2_request https://prod.uidapi.com/v2/token/generate UID2-C-L-999-fCXrMM.fsR3mDqAXELtWWMS+xG1s7RdgRTMqdOH2qaAo= wJ0hP19QU4hmpB64Y3fV2dAed8t/mupw3sjN5jNRFzg=
+   echo '{"email": "test@example.com"}' | .\uid2_request https://prod.euid.eu/v2/token/generate UID2-C-L-999-fCXrMM.fsR3mDqAXELtWWMS+xG1s7RdgRTMqdOH2qaAo= wJ0hP19QU4hmpB64Y3fV2dAed8t/mupw3sjN5jNRFzg=
    
 
 Refresh Token Usage:
    .\uid2_request <url> --refresh-token <refresh_token> <refresh_response_key>
 
 Refresh Token Usage example:
-   .\uid2_request https://prod.uidapi.com/v2/token/refresh --refresh-token AAAAAxxJ...(truncated, total 388 chars) v2ixfQv8eaYNBpDsk5ktJ1yT4445eT47iKC66YJfb1s=
+   .\uid2_request https://prod.euid.eu/v2/token/refresh --refresh-token AAAAAxxJ...(truncated, total 388 chars) v2ixfQv8eaYNBpDsk5ktJ1yT4445eT47iKC66YJfb1s=
 """);
 
     Environment.Exit(1);

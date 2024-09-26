@@ -21,11 +21,11 @@ If you prefer to integrate with EUID via **only** client-side JavaScript changes
 
 For technical details about the SDK, see [SDK for JavaScript Reference Guide](../sdks/sdk-ref-javascript.md).
 
-<!-- ## Sample Implementation Website
+## Sample Implementation Website
 
 For an example application, see the UID2 Google Secure Signals with SDK v3 example:
 - Code and docs: [UID2 SDK Secure Signals Integration Example](https://github.com/IABTechLab/uid2-web-integrations/tree/main/examples/google-secure-signals-integration/with_sdk_v3)
-- Running site: [Client-Side UID2 SDK Integration Example](https://secure-signals-jssdk-integ.uidapi.com/) -->
+- Running site: [Client-Side EUID SDK Integration Example](https://euid.eu/examples/cstg-js-sdk-example/)
 
 ## Introduction
 
@@ -39,7 +39,11 @@ To facilitate the process of establishing client identity using EUID and retriev
 The first-party cookie and local storage implementation details might change in the future. To avoid potential issues, be sure to rely on the functionality documented in the [SDK for JavaScript API Reference](../sdks/sdk-ref-javascript.md#api-reference) for your identity management.
 :::
 
-For integration scenarios for publishers that do not use the SDK for JavaScript, see [Publisher Integration Guide, Server-Side](integration-publisher-server-side.md). 
+For integration scenarios for publishers that do not use the SDK for JavaScript, see [Publisher Integration Guide, Server-Side](integration-publisher-server-side.md).
+
+:::note
+If you are using Google Ad Manager and want to use the secure signals feature, first follow the steps in this guide and then follow the additional steps in the [Google Ad Manager Secure Signals Integration Guide](integration-google-ss.md).
+:::
 
 ## Integration Steps
 
@@ -95,12 +99,12 @@ The following code examples illustrate steps 1-f and 1-g, in JavaScript and Type
     if (eventType === 'SdkLoaded') {
       __euid.init({
         identity : {
-          "advertising_token": "AgmZ4dZgeuXXl6DhoXqbRXQbHlHhA96leN94U1uavZVspwKXlfWETZ3b/besPFFvJxNLLySg4QEYHUAiyUrNncgnm7ppu0mi6wU2CW6hssiuEkKfstbo9XWgRUbWNTM+ewMzXXM8G9j8Q=",
-          "refresh_token": "Mr2F8AAAF2cskumF8AAAF2cskumF8AAAADXwFq/90PYmajV0IPrvo51Biqh7/M+JOuhfBY8KGUn//GsmZr9nf+jIWMUO4diOA92kCTF69JdP71Ooo+yF3V5yy70UDP6punSEGmhf5XSKFzjQssCtlHnKrJwqFGKpJkYA==",
-          "identity_expires": 1633643601000,
-          "refresh_from": 1633643001000,
-          "refresh_expires": 1636322000000,
-          "refresh_response_key":"dYNTB20edyHJU9mZv11e3OBDlLTlS5Vb97iQVumc7b/8QY/DDxr6FrRfEB/D",
+          "advertising_token": "E4AAAAW2T2Fj-aRzN_G_t-1UP9Ndl-e1kJLCL0b9wTq0UORlRIFjIS4Mz7I3TYy6YrYyIGDwjHWZOifsnYTZawQcCwAkfyp0RbkLhB4Hznodt3ZLHrOYqFmvSrsbEuMrowfoGSJyFz3hj-Q4CArezZzamp1-aoOjJz3s-ydQADH7OapPv5iQBYBiWza3r3tBVY7drUMV8_08aBMqHuLyKzNUvws",
+          "identity_expires": 1724995694316,
+          "refresh_expires": 1727586794316,
+          "refresh_from": 1724995094316,
+          "refresh_response_key": "8yaj8hL5gS0fiB7CxvCxG25mDO3QWiqr73oF696QtiU=",
+          "refresh_token": "EAAABbf4KYu1LMa4+9wE7SqDIhSnSOMSmneocSaAxYl9ptV7iEOT0899ZUdtaTkSb5fHuArOtanqenPIDESXqg5uhqCDlHZfIqqq6HNBiV4ZZjPm3nA2LJAQ9Za0WydmWcpTdPSapcMyQPvW9CQTZcHNoYTVjtol4nraKDcn6ZGxea/4TA+zeFf9ohBZ8Eyt1zN+JKhB4ccvbCUeFaRrOKYyBUppGdaRiN6bL+d/uKY6XPVCw4lW7BJ87xDRb/JDfkG1bly0sIl3MWaFQK8AzEJJj8dzBYvpYAVXbvpxi/9gDEAzsdF3lT8Mdso8xj4Kx7jp79QDrIBL40E4pSDaNeNMnU8+Yo1nrQVCO2JBEy3kpvn8pUnDjxZlBTZ9I4PkmH/Q"
         }
       });
     }
@@ -133,12 +137,12 @@ The following code examples illustrate steps 1-f and 1-g, in JavaScript and Type
     if (eventType === 'SdkLoaded') {
       __euid.init({
         identity : {
-          "advertising_token": "AgmZ4dZgeuXXl6DhoXqbRXQbHlHhA96leN94U1uavZVspwKXlfWETZ3b/besPFFvJxNLLySg4QEYHUAiyUrNncgnm7ppu0mi6wU2CW6hssiuEkKfstbo9XWgRUbWNTM+ewMzXXM8G9j8Q=",
-          "refresh_token": "Mr2F8AAAF2cskumF8AAAF2cskumF8AAAADXwFq/90PYmajV0IPrvo51Biqh7/M+JOuhfBY8KGUn//GsmZr9nf+jIWMUO4diOA92kCTF69JdP71Ooo+yF3V5yy70UDP6punSEGmhf5XSKFzjQssCtlHnKrJwqFGKpJkYA==",
-          "identity_expires": 1633643601000,
-          "refresh_from": 1633643001000,
-          "refresh_expires": 1636322000000,
-          "refresh_response_key":"dYNTB20edyHJU9mZv11e3OBDlLTlS5Vb97iQVumc7b/8QY/DDxr6FrRfEB/D",
+          "advertising_token": "E4AAAAW2T2Fj-aRzN_G_t-1UP9Ndl-e1kJLCL0b9wTq0UORlRIFjIS4Mz7I3TYy6YrYyIGDwjHWZOifsnYTZawQcCwAkfyp0RbkLhB4Hznodt3ZLHrOYqFmvSrsbEuMrowfoGSJyFz3hj-Q4CArezZzamp1-aoOjJz3s-ydQADH7OapPv5iQBYBiWza3r3tBVY7drUMV8_08aBMqHuLyKzNUvws",
+          "identity_expires": 1724995694316,
+          "refresh_expires": 1727586794316,
+          "refresh_from": 1724995094316,
+          "refresh_response_key": "8yaj8hL5gS0fiB7CxvCxG25mDO3QWiqr73oF696QtiU=",
+          "refresh_token": "EAAABbf4KYu1LMa4+9wE7SqDIhSnSOMSmneocSaAxYl9ptV7iEOT0899ZUdtaTkSb5fHuArOtanqenPIDESXqg5uhqCDlHZfIqqq6HNBiV4ZZjPm3nA2LJAQ9Za0WydmWcpTdPSapcMyQPvW9CQTZcHNoYTVjtol4nraKDcn6ZGxea/4TA+zeFf9ohBZ8Eyt1zN+JKhB4ccvbCUeFaRrOKYyBUppGdaRiN6bL+d/uKY6XPVCw4lW7BJ87xDRb/JDfkG1bly0sIl3MWaFQK8AzEJJj8dzBYvpYAVXbvpxi/9gDEAzsdF3lT8Mdso8xj4Kx7jp79QDrIBL40E4pSDaNeNMnU8+Yo1nrQVCO2JBEy3kpvn8pUnDjxZlBTZ9I4PkmH/Q"
         }
       });
     }
@@ -192,8 +196,8 @@ For an example of what an EUID token might look like in the bidstream, when it's
 </script>
 ```
 
-:::note
-You need to consider how you pass the returned advertising token to SSPs. With some other approaches to client-side EUID implementation, such as using `Prebid.js` (see [EUID Integration Overview for Prebid.js](integration-prebid.md)), the implementation includes functions that manage passing the returned advertising token. If you're using the SDK for JavaScript you'll need to manage this yourself.
+:::info
+You need to consider how you pass the returned advertising token to SSPs. With some other approaches to client-side EUID implementation, such as using `Prebid.js` (see [EUID Integration Overview for Prebid.js](integration-prebid.md)) or Google Ad Manager Secure Signals (see [Google Ad Manager Secure Signals Integration Guide](integration-google-ss.md)), the implementation includes functions that manage passing the returned advertising token. If you're using the SDK for JavaScript you'll need to manage this yourself.
 :::
 
 :::tip

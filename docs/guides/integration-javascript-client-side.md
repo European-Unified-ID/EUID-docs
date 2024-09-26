@@ -103,7 +103,7 @@ For more information about the SDK, see [SDK for JavaScript Reference Guide](../
 
 ### Using the EUID Integration Environment
 
-By default, the SDK is configured to work with the EUID production environment `https://prod.uidapi.com`. If you want to use the EUID integration environment instead, provide the following URL in your call to `init`:
+By default, the SDK is configured to work with the EUID production environment `https://prod.euid.eu/v2`. If you want to use the EUID integration environment instead, provide the following URL in your call to `init`:
 
 ```js
 __euid.init({
@@ -251,8 +251,8 @@ window.__euid.callbacks.push(async (eventType, payload) => {
         // payload looks like this:
         // {
         //   "identity": {
-        //     "advertising_token": "A4A...MqA",
-        //     "refresh_token": "A3A...pdg==",
+        //     "advertising_token": "E4A...MqA",
+        //     "refresh_token": "EAA...pdg==",
         //     "identity_expires": 1692257038260,
         //     "refresh_expires": 1692339838260,
         //     "refresh_from": 1692254338260

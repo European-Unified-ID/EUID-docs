@@ -65,7 +65,7 @@ For a client-server EUID integration for Prebid, the first step is to generate t
 
 For details, including instructions and examples, see [Server-Side Token Generation](../ref-info/ref-server-side-token-generation.md).
 
-To generate a token, call one of the SDKs or the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint. For an example of the API response, showing the token, see [Sample Token](#sample-token). You will need to pass the `Identity` response to Prebid.
+To generate a token, call one of the SDKs or the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint. For an example of the API response, showing the token, see [Sample Token Response Object](#sample-token-response-object). You will need to pass the `Identity` response to Prebid.
 
 :::warning
 For security reasons, the API key and secret used in token generation must be called server-side. Do not store these values as part of your Prebid implementation.
@@ -87,7 +87,7 @@ You must provide the Prebid module with the full JSON response body from the app
 - [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) for a new EUID token.
 - [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) for a refreshed EUID token.
 
-For an example, see [Sample Token](#sample-token).
+For an example, see [Sample Token Response Object](#sample-token-response-object).
 
 As long as the refresh token remains valid, the EUID Prebid module refreshes the EUID token as needed.
 
@@ -131,11 +131,11 @@ pbjs.setConfig({
 });
 ```
 
-For an example of the token, see [Sample Token](#sample-token).
+For an example of the token, see [Sample Token Response Object](#sample-token-response-object).
 
 #### Client Refresh Mode euidToken Example
 
-The following example shows a sample configuration. For the contents of the token, see [Sample Token](#sample-token).
+The following example shows a sample configuration. For the contents of the token, see [Sample Token Response Object](#sample-token-response-object).
 
 ```js
 pbjs.setConfig({
@@ -178,12 +178,14 @@ This section includes the following information:
 
 #### Server-Only Mode Cookie Example
 
-The following example stores the advertising token value in a cookie named `__euid_advertising_token`. The configuration allows the EUID module to retrieve the advertising token value from the cookie.
+The following example stores the advertising token value in a cookie named `__euid_advertising_token`. The value of the cookie is the value returned in the token response object (see [Sample Token Response Object](#sample-token-response-object)).
+
+The configuration allows the EUID module to retrieve the advertising token value from the cookie.
 
 Cookie:
 
 ```js
-__euid_advertising_token=...advertising token...
+__euid_advertising_token=A4AAAABlh75XmviGJi-hkLGs96duivRhMd3a3pe7yTIwbAHudfB9wFTj2FtJTdMW5TXXd1KAb-Z3ekQ_KImZ5Mi7xP75jRNeD6Mt6opWwXCCpQxYejP0R6WnCGnWawx9rLu59LsHv6YEA_ARNIUUl9koobfA9pLmnxE3dRedDgCKm4xHXYk01Fr8rOts6iJj2AhYISR3XkyBpqzT-vqBjsHH0g
 ```
 
 Configuration:
@@ -300,8 +302,8 @@ In this table, CR = client refresh mode, SO = server-only mode, and N/A = not ap
 | --- | --- | --- | --- | --- |
 | name | CR: Required<br/>SO:&nbsp;Required | String | ID value for the EUID module. Always `"euid"`. | `"euid"` |
 | value | CR: N/A<br/>SO: Optional | Object | An object containing the value for the advertising token. | See [Configuration Parameter Examples: Value](#configuration-parameter-examples-value) |
-| params.euidToken | CR: Optional<br/>SO: N/A | Object | The initial EUID token. This should be the `body` element of the decrypted response from a call to the `/token/generate` or `/token/refresh` endpoint. | See [Sample Token](#sample-token) |
-| params.euidCookie | CR: Optional<br/>SO: N/A  | String | The name of a cookie that holds the initial EUID token, set by the server. The cookie should contain JSON in the same format as the euidToken param. If `euidToken` is supplied, this parameter is ignored. | See [Sample Token](#sample-token) |
+| params.euidToken | CR: Optional<br/>SO: N/A | Object | The initial EUID token. This should be the `body` element of the decrypted response from a call to the `/token/generate` or `/token/refresh` endpoint. | See [Sample Token Response Object](#sample-token-response-object) |
+| params.euidCookie | CR: Optional<br/>SO: N/A  | String | The name of a cookie that holds the initial EUID token, set by the server. The cookie should contain JSON in the same format as the euidToken param. If `euidToken` is supplied, this parameter is ignored. | See [Sample Token Response Object](#sample-token-response-object) |
 | params.euidApiBase | CR: Optional<br/>SO: Optional | String | Overrides the default EUID API endpoint. For valid values, see [Environments](../getting-started/gs-environments.md). | `"https://prod.euid.eu"` (the default)|
 | params.storage | CR: Optional<br/>SO: Optional | String | Specify the module internal storage method: `cookie` or `localStorage`. We recommend that you do not provide this parameter. Instead, allow the module to use the default. | `"localStorage"` (the default) |
 
@@ -324,7 +326,7 @@ pbjs.setConfig({
 });
 ```
 
-### Sample Token
+### Sample Token Response Object
 
 The following sample is fictitious, but shows what the token response object, returned from either the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) or [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint, looks like:
 
@@ -340,3 +342,10 @@ The following sample is fictitious, but shows what the token response object, re
 ```
 
 <!-- Reduce Latency by Setting the API Base URL for the Production Environment not applicable for EUID -->
+
+## Optional: Prebid.js Integration with Google Secure Signals
+
+if you're using Prebid.js, and you're planning to pass UID2 tokens to Google using Google Secure Signals, there are a couple of additional configuration steps:
+
+- In your Google Ad Manager account, make sure that encrypted signals are properly shared with third-party bidders: see [Allow Secure Signals Sharing](integration-google-ss.md#allow-secure-signals-sharing).
+- Update your Prebid.js configuration: see [Optional: Enable Secure Signals in Prebid.js](integration-google-ss.md#optional-enable-secure-signals-in-prebidjs).

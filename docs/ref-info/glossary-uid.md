@@ -89,6 +89,7 @@ import Link from '@docusaurus/Link';
 <a href="#gl-salt">Salt</a> | 
 <a href="#gl-salted-hash">Salted hash</a> | 
 <a href="#gl-secret">Secret</a> | 
+<a href="#gl-secure-signals">Secure Signals</a> | 
 <a href="#gl-server-side">Server-side integration</a> | 
 <a href="#gl-sha-256">SHA-256</a> | 
 <a href="#gl-subscription-id">Subscription ID</a> | 
@@ -193,7 +194,7 @@ import Link from '@docusaurus/Link';
 
 <dt><MdxJumpAnchor id="gl-enclave"><a href="#gl-enclave">Enclave</a></MdxJumpAnchor></dt>
 <dd>An enclave is a secure subsection of a computing environment. The enclave has additional business logic and security measures applied to it, to prevent anyone from tampering with it.</dd>
-<dd>In the context of EUID, a <a href="#gl-private-operator">Private Operator</a> must run inside an enclave or in a private environment.<!--  For a summary of the enclave versions supported, see <a href="../guides/summary-guides#private-operator-service-integrations">Private Operator Service Integrations</a>. --></dd>
+<dd>In the context of EUID, a <a href="#gl-private-operator">Private Operator</a> must run inside an enclave. For a summary of the enclave versions supported, see <a href="../guides/integration-options-private-operator#hosting-options-for-private-operators">Hosting Options for Private Operators</a> in *EUID Private Operator Integration Overview*.</dd>
 <dd>In an enclave, the operator image must be a very specific, predefined version, and additional constraints are applied to ensure security.</dd>
 
 <dt><MdxJumpAnchor id="gl-encryption-key"><a href="#gl-encryption-key">Encryption key</a></MdxJumpAnchor></dt>
@@ -214,7 +215,7 @@ import Link from '@docusaurus/Link';
 
 <dt><MdxJumpAnchor id="gl-euid-token"><a href="#gl-euid-token">EUID token (advertising token)</a></MdxJumpAnchor></dt>
 <dd>A European Unified ID (EUID) token, also called an advertising token, is an encrypted form of a <a href="#gl-raw-euid">raw EUID</a>.</dd>
-<dd>EUID tokens are generated from hashed or unhashed email addresses<!--  or phone numbers --> that are converted to raw EUIDs and then encrypted. The EUID token is a unique value; no two EUID tokens are the same. EUID tokens are case sensitive.</dd>
+<dd>EUID tokens are generated from hashed or unhashed email addresses that are converted to raw EUIDs and then encrypted. The EUID token is a unique value; no two EUID tokens are the same. EUID tokens are case sensitive.</dd>
 <dd>The token has a limited life, but can be refreshed in the background using the <a href="#gl-refresh-token">refresh token</a>.</dd>
 <dd>Publishers send EUID tokens in the bidstream.</dd>
 <dd>For details, see <a href="../intro#euid-identifier-types">EUID Identifier Types</a>.</dd>
@@ -229,7 +230,7 @@ import Link from '@docusaurus/Link';
 <dl>
 
 <dt><MdxJumpAnchor id="gl-first-level-hash"><a href="#gl-first-level-hash">First-level hash</a></MdxJumpAnchor></dt>
-<dd>In the context of EUID, the first-level hash is the anonymized, opaque, secure value from which the <a href="#gl-raw-euid">raw EUID</a>, <a href="#gl-euid-token">EUID token</a>, and <a href="#gl-refresh-token">refresh token</a> are generated. Several cryptographic functions, including salting and hashing, are applied to the initial <!-- value, whether an  -->email<!--  or a phone number -->, to create the first-level hash.</dd>
+<dd>In the context of EUID, the first-level hash is the anonymized, opaque, secure value from which the <a href="#gl-raw-euid">raw EUID</a>, <a href="#gl-euid-token">EUID token</a>, and <a href="#gl-refresh-token">refresh token</a> are generated. Several cryptographic functions, including salting and hashing, are applied to the initial email, to create the first-level hash.</dd>
 
 </dl>
 
@@ -280,13 +281,16 @@ import Link from '@docusaurus/Link';
 
 <dt><MdxJumpAnchor id="gl-normalize"><a href="#gl-normalize">Normalize</a></MdxJumpAnchor></dt>
 <dd>To normalize a data set means to bring it to a standard condition or state.</dd>
-<dd>EUID includes specific normalization rules. For details, see <a href="../getting-started/gs-normalization-encoding#email-address-normalization">Email Address Normalization</a><!--  and <a href="../getting-started/gs-normalization-encoding#phone-number-normalization">Phone Number Normalization</a> -->.</dd>
+<dd>EUID includes specific normalization rules. For details, see <a href="../getting-started/gs-normalization-encoding#email-address-normalization">Email Address Normalization</a>.</dd>
 
 </dl>
 
 ### O
 
 <dl>
+
+<dt><MdxJumpAnchor id="gl-opaque"><a href="#gl-opaque">Opaque</a></MdxJumpAnchor></dt>
+<dd>When we say an EUID token is an opaque string, we mean that the way that the token is computed, and its format, are not communicated to EUID participants and cannot be relied upon to remain unchanged. No assumptions should be made about the format or length of the string, or any other aspect of it.</dd>
 
 <dt><MdxJumpAnchor id="gl-open-operator"><a href="#gl-open-operator">Open Operator</a></MdxJumpAnchor></dt>
 <dd>Open Operator is another term for a <a href="#gl-public-operator">Public Operator</a>.</dd>
@@ -298,7 +302,7 @@ import Link from '@docusaurus/Link';
 <dd>For details, see <a href="../intro#participants">participants</a> and <a href="../ref-info/ref-operators-public-private">The EUID Operator</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-operator-key"><a href="#gl-operator-key">Operator key</a></MdxJumpAnchor></dt>
-<dd>Each EUID Private Operator has an operator key that allows the private Operator Service to connect to the Core Service and Opt-Out Service and call some endpoints on it.</dd>
+<dd>Each EUID Private Operator has an operator key that allows the Private Operator Service to connect to the Core Service and Opt-Out Service and call some endpoints on it.</dd>
 <dd>The operator key identifies the participant Operator to the EUID service.</dd>
 
 <dt><MdxJumpAnchor id="gl-operator-service"><a href="#gl-operator-service">Operator Service</a></MdxJumpAnchor></dt>
@@ -348,13 +352,13 @@ import Link from '@docusaurus/Link';
 <dl>
 
 <dt><MdxJumpAnchor id="gl-raw-euid"><a href="#gl-raw-euid">Raw EUID</a></MdxJumpAnchor></dt>
-<dd>An unencrypted alphanumeric identifier created through the EUID APIs or SDKs with the user's <a href="#gl-personal-data">personal data</a> (email address<!--  or phone number -->) as input. The raw EUID is encrypted to create an <a href="#gl-euid-token">EUID token</a>. The raw EUID is a unique value; no two raw EUIDs are the same. Raw EUIDs, and their associated EUID tokens, are case sensitive.</dd>
+<dd>An unencrypted alphanumeric identifier created through the EUID APIs or SDKs with the user's <a href="#gl-personal-data">personal data</a> (email address) as input. The raw EUID is encrypted to create an <a href="#gl-euid-token">EUID token</a>. The raw EUID is a unique value; no two raw EUIDs are the same. Raw EUIDs, and their associated EUID tokens, are case sensitive.</dd>
 <dd>For details, see <a href="../intro#euid-identifier-types">EUID Identifier Types</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-refresh-token"><a href="#gl-refresh-token">Refresh token</a></MdxJumpAnchor></dt>
 <dd>A refresh token is an opaque string that is issued along with the <a href="#gl-euid-token">EUID token</a>. It is used to refresh the EUID token, which has a limited life.</dd>
 <dd>When the EUID server receives the refresh token with a request for a new EUID token, it checks for user opt-out. If the user has opted out of EUID, no new EUID token is generated.</dd>
-<dd>When a new EUID token is generated and returned, a new refresh token is returned along with it. However, if the user is inactive for a long period of time, the refresh token itself expires.</dd>
+<dd>When a new EUID token is generated and returned in response to the refresh token, a new refresh token is returned along with it. However, if the user is inactive for a long period of time, the refresh token itself expires.</dd>
 </dl>
 
 ### S
@@ -362,7 +366,7 @@ import Link from '@docusaurus/Link';
 <dl>
 
 <dt><MdxJumpAnchor id="gl-salt"><a href="#gl-salt">Salt</a></MdxJumpAnchor></dt>
-<dd>A string of characters that is used in the process of transforming an email address<!--  or phone number --> into a secure, opaque value that cannot by itself be traced back to the original value.</dd>
+<dd>A string of characters that is used in the process of transforming an email address into a secure, opaque value that cannot by itself be traced back to the original value.</dd>
 <dd>The EUID service uses salt as part of the process, along with hashing and encryption, to secure the original value. Salt is added to the input value before hashing.</dd>
 
 <dt><MdxJumpAnchor id="gl-salted-hash"><a href="#gl-salted-hash">Salted hash</a></MdxJumpAnchor></dt>
@@ -371,8 +375,13 @@ import Link from '@docusaurus/Link';
 <dt><MdxJumpAnchor id="gl-secret"><a href="#gl-secret">Secret</a></MdxJumpAnchor></dt>
 <dd>See <a href="#gl-client-secret">client secret</a>.</dd>
 
+<dt><MdxJumpAnchor id="gl-secure-signals"><a href="#gl-secure-signals">Secure Signals</a></MdxJumpAnchor></dt>
+<dd>A feature of Google Ad Manager. The secure signals feature (previously known as Encrypted Signals for Publishers, abbreviated to ESP) allows publishers to securely share signals with trusted third-party buying partners. It allows publishers to pass "encrypted" user IDs to bidders that are approved by Google, via <a href="https://admanager.google.com/home/">Google Ad Manager</a> and the <a href="https://support.google.com/admanager/answer/6321605?hl=en">Google Ad Manager Ad Exchange (AdX)</a>.</dd>
+<dd>For details, see <a href="https://blog.google/products/admanager/new-ways-for-publishers-to-manage-first-party-data/">Share secure signals with your trusted partners</a> (second section) and <a href="https://support.google.com/admanager/answer/10488752?hl=en">Share secure signals with bidders</a>, both from Google.</dd>
+<dd>For details about EUID support of the Google secure signals feature, see <a href="../guides/integration-google-ss">Google Ad Manager Secure Signals Integration Guide</a>.</dd>
+
 <dt><MdxJumpAnchor id="gl-server-side"><a href="#gl-server-side">Server-side integration</a></MdxJumpAnchor></dt>
-<dd>One of the UID2 <a href="#gl-integration-approaches">integration approaches</a> is to integrate entirely on the server side.</dd>
+<dd>One of the EUID <a href="#gl-integration-approaches">integration approaches</a> is to integrate entirely on the server side.</dd>
 <dd>In a server-side integration, raw EUIDs or EUID tokens are generated and refreshed on the server.</dd>
 <dd>For example, in a server-side integration, advertisers generate raw EUIDs on the server side to be delivered for audience targeting, and publishers generate EUID tokens on the server side for bidstream use.</dd>
 <dd>An example of documentation for publisher server-side integration is <a href="../guides/integration-publisher-server-side">Publisher Integration Guide, Server-Side</a>.</dd>
@@ -410,6 +419,10 @@ import Link from '@docusaurus/Link';
 <dd>UID2 operates in North America, parts of Asia, and some other regions.</dd>
 <dd>There are many similarities between UID2 and EUID, but they are completely separate, and their tokens are not interchangeable.</dd>
 <dd>For details, see <a href="https://unifiedid.com/docs/intro">Unified ID 2.0 Overview</a>.</dd>
+
+<dt><MdxJumpAnchor id="gl-unix-time"><a href="#gl-unix-time">Unix time</a></MdxJumpAnchor></dt>
+<dd>Unix time, also called Epoch time, is defined as the number of seconds since 00:00:00 <a href="#gl-utc">UTC</a> on Thursday, 1 January 1970. Unix time is used in some EUID response messages, expressed in milliseconds: for example, in the response to the `POST /token/refresh` endpoint (see <a href="../endpoints/post-token-refresh#successful-response-with-tokens">Successful Response With Tokens</a>).</dd>
+<dd>Example: 1 January 2024, 9:00:00 AM GMT, expressed in Unix time, is `1704067200`. In milliseconds it is: `1704067200000`.</dd>
 
 <dt><MdxJumpAnchor id="gl-utc"><a href="#gl-utc">UTC</a></MdxJumpAnchor></dt>
 <dd>UTC is an abbreviation for Coordinated Universal Time, also called Zulu time, which is the primary time standard in general use. UTC essentially equates to Greenwich Mean Time (GMT), but is more scientifically precise.</dd>

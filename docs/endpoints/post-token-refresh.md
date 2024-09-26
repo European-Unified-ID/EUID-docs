@@ -6,6 +6,7 @@ sidebar_position: 04
 ---
 
 import Link from '@docusaurus/Link';
+import ExampleTokenGenerateResponse from '/docs/snippets/_example-identity-generate-response.mdx';
 
 # POST /token/refresh
 
@@ -64,19 +65,7 @@ This section includes the following sample responses:
 
 If all values are valid and the user has not opted out, the response is successful and a new EUID token is returned, with associated values. The following example shows a decrypted successful response with tokens:
 
-```json
-{
-    "body": {
-        "advertising_token": "NewAdvertisingTokenIjb6u6KcMAtd0/4ZIAYkXvFrMdlZVqfb9LNf99B+1ysE/lBzYVt64pxYxjobJMGbh5q/HsKY7KC0Xo5Rb/Vo8HC4dYOoWXyuGUaL7Jmbw4bzh+3pgokelUGyTX19DfArTeIg7n+8cxWQ=",
-        "refresh_token": "NewRefreshTokenAAAF2c8H5dF8AAAF2c8H5dF8AAAADX393Vw94afoVLL6A+qjdSUEisEKx6t42fLgN+2dmTgUavagz0Q6Kp7ghM989hKhZDyAGjHyuAAwm+CX1cO7DWEtMeNUA9vkWDjcIc8yeDZ+jmBtEaw07x/cxoul6fpv2PQ==",
-        "identity_expires": 1633643601000,
-        "refresh_from": 1633643001000,
-        "refresh_expires": 1636322000000,
-        "refresh_response_key": "yptCUTBoZm1ffosgCrmuwg=="
-    },
-    "status": "success"
-}
-```
+<ExampleTokenGenerateResponse />
 
 #### Successful Response With Opt-Out
 
@@ -107,9 +96,9 @@ The response body includes the properties shown in the following table.
 | :--- | :--- | :--- |
 | `advertising_token` | string | The <Link href="../ref-info/glossary-uid#gl-euid-token">EUID token</Link> (also known as advertising token) for the user. |
 | `refresh_token` | string | An encrypted token that can be exchanged with the EUID Service for the latest set of identity tokens. |
-| `identity_expires` | number | The UNIX timestamp (in milliseconds) that indicates when the EUID token expires. |
-| `refresh_from` | number | The UNIX timestamp (in milliseconds) that indicates when the SDK for JavaScript (see [SDK for JavaScript Reference Guide](../sdks/sdk-ref-javascript.md)) will start refreshing the EUID token, if the SDK is in use.<br/>TIP: If you are not using the SDK, consider refreshing the EUID token from this timestamp, too. |
-| `refresh_expires` | number | The UNIX timestamp (in milliseconds) that indicates when the refresh token expires. |
+| `identity_expires` | number | The <a href="../ref-info/glossary-uid#gl-unix-time">Unix</a> timestamp (in milliseconds) that indicates when the EUID token expires. |
+| `refresh_from` | number | The Unix timestamp (in milliseconds) that indicates when the SDK for JavaScript (see [SDK for JavaScript Reference Guide](../sdks/sdk-ref-javascript.md)) will start refreshing the EUID token, if the SDK is in use.<br/>TIP: If you are not using the SDK, consider refreshing the EUID token from this timestamp, too. |
+| `refresh_expires` | number | The Unix timestamp (in milliseconds) that indicates when the refresh token expires. |
 | `refresh_response_key` | string | A key to be used in a new [POST&nbsp;/token/refresh](post-token-refresh.md) request for response decryption. |
 
 ### Response Status Codes

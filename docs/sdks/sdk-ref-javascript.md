@@ -8,6 +8,7 @@ sidebar_position: 02
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Link from '@docusaurus/Link';
+import ExampleEuidCookie from '/docs/snippets/_example-euid-cookie.mdx';
 
 # SDK for JavaScript Reference Guide
 
@@ -28,12 +29,15 @@ This page describes version 3 of the SDK for JavaScript. If you are maintaining 
 Related information:
 
 For integration steps for content publishers, see:
-  - [Client-Side Integration Guide for JavaScript](../guides/integration-javascript-client-side.md). 
+  - [Client-Side Integration Guide for JavaScript](../guides/integration-javascript-client-side.md)
+  - [Client-Server Integration Guide for JavaScript](../guides/integration-javascript-client-server.md)
+
+## Sample Implementation Website
 
 For example applications with associated documentation, see:
   - The EUID Google Secure Signals with SDK v3 example:
     - [Code and docs](https://github.com/IABTechLab/uid2-web-integrations/tree/main/examples/google-secure-signals-integration/with_sdk_v3)
-    - Running site: [Client-Side EUID SDK Integration Example](https://secure-signals-jssdk-integ.uidapi.com/).
+    - Running site: [Client-Side EUID SDK Integration Example](https://euid.eu/examples/cstg-js-sdk-example/).
 
 ## Functionality
 
@@ -263,6 +267,7 @@ All interactions with the SDK for JavaScript are done through the global `__euid
 - [callbacks](#callbacks) <New />
 - [setIdentity()](#setidentityidentity-identity-void) <New />
 - [getIdentity()](#getidentity-identity--null) <New />
+- [isInitComplete()](#isinitcomplete-boolean) <New />
 
 ### constructor()
 
@@ -295,11 +300,12 @@ The following is an example of an `init()` call made using a callback with the s
     if (eventType === "SdkLoaded") {
       __euid.init({
         identity : { // The `body` property value from the token/generate or token/refresh API response.
-          "advertising_token": "AgmZ4dZgeuXXl6DhoXqbRXQbHlHhA96leN94U1uavZVspwKXlfWETZ3b/besPFFvJxNLLySg4QEYHUAiyUrNncgnm7ppu0mi6wU2CW6hssiuEkKfstbo9XWgRUbWNTM+ewMzXXM8G9j8Q=",
-          "refresh_token": "Mr2F8AAAF2cskumF8AAAF2cskumF8AAAADXwFq/90PYmajV0IPrvo51Biqh7/M+JOuhfBY8KGUn//GsmZr9nf+jIWMUO4diOA92kCTF69JdP71Ooo+yF3V5yy70UDP6punSEGmhf5XSKFzjQssCtlHnKrJwqFGKpJkYA==",
-          "identity_expires": 1633643601000,
-          "refresh_from": 1633643001000,
-          "refresh_expires": 1636322000000
+          "advertising_token": "E4AAAABl85Pd1yKbznQL58Q_09bAJtGbGl2e-JCLPLGUSsz7ao6iR11QySi-kLtJ7suJAn3lK474gJvOLVK0_BZe8FABStV44hHWoFt9IfWVj35PIWQJ8VoJzrmHhh6YyQDtQ3q_t0ZJL9OjB8cXa94dMDhlGzi3j5K4o9cH3X1OYgJFQDat4L2cj7HMptpWUO9dheldwpVhgfAlLdEw9D3xtA",
+          "identity_expires": 1724998239163,
+          "refresh_expires": 1725081039163,
+          "refresh_from": 1724995539163,
+          "refresh_response_key": "JZcp6vMDhuMUPAA03QnsW74MhNn4Ng37XRCNChyeX2k=",
+          "refresh_token": "EAAAAGb41t8MrmTpHpDWYi67K8ok7qo87IQwan5Ghz4CGPz3pYXCoS/bAEygLYa0tjMPw6v1q2UsjQQ7SURA6tq7VvTdROOkxJ6YcNiaCeCpINoZYT5xzsPp9VgkkWT0HkxLYdMUt3M7KMJ+gziJQZGsoMeEYTMR3yEO5w+A7N1uW71Q7PWyTJaRab7F0hUdmwHwN9ZdDj/+Ky/qzf8YBGPzSWvpN7Ry9gT6EQxVZSZIj6PSzFxvSPVt48i59VpJ6zvOL4MKCAtiAFZ92DUeKfGYZ3XptcbO2srOFaAgeJm2hiSOKWPxYfhCBPZa2yYbKRc+UFNO7L+UnxlL+VRU1GTZm3zncDpXlif1lqmfXuza+KMXQmPzuhzxljn0nkUBa8OC"
         }
       });
     }
@@ -328,12 +334,36 @@ The `opts` object supports the following properties.
 | Property | Data Type | Attribute | Description | Default Value |
 | :--- | :--- | :--- | :--- | :--- |
 | `identity` | object | Optional | The `body` property value from a successful [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) or [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) call that has been run on the server to generate an identity.<br/>To use the identity from a first-party cookie (see [EUID Storage Format](#euid-storage-format)), leave this property empty. | N/A |
-| `baseUrl` | string | Optional | The custom base URL of the EUID operator to use when invoking the [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint.<br/>For example: `https://my.operator.com`. | `https://prod.uidapi.com`. |
+| `baseUrl` | string | Optional | The custom base URL of the EUID operator to use when invoking the [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint.<br/>For example: `https://my.operator.com`. | `https://prod.euid.eu/v2`. |
 | `refreshRetryPeriod` | number | Optional | The number of milliseconds after which to retry refreshing a token if an intermittent error occurs.<br/>This value must be >= 1000. | 5000 |
 | `cookieDomain` | string | Optional | The domain name string to apply to the EUID cookie (see [EUID Storage Format](#euid-storage-format)).<br/>For example, if the `baseUrl` is `https://my.operator.com`, the `cookieDomain` value might be `operator.com`. | `undefined` |
 | `cookiePath` | string | Optional | The path string to apply to the EUID cookie (see [EUID Storage Format](#euid-storage-format)). | `/` |
 | `useCookie` | `boolean` | Optional | Set this to `true` to tell the SDK to store the identity in cookie storage instead of local storage. You can still provide an identity using a first-party cookie if this value is false or not provided. | 
 | `callback` | `function(object): void` | Deprecated | The function that the SDK should invoke after validating the passed identity. Do not use this for new integrations. | N/A |
+
+#### Multiple Init Calls
+
+You can call the `init()` function any number of times.  In most cases, the  code will accept the latest value of a certain [init parameter](#init-parameters). For example, if init is called twice, and a different `baseUrl` is passed in each call, the `baseUrl` variable is updated to the value from the second call. 
+
+There are two exceptions to this functionality:
+
+1. If a new identity is passed in a subsequent call, and the new identity expires before the current identity, the new identity does not replace the current identity.  
+2. For every subsequent callback function passed, the function is added to the existing array of callbacks using the [Array Push Pattern](#array-push-pattern).
+
+:::note
+
+If `useCookie` is updated, the location of the identity changes.  For example, if the value is updated from `true` to `false`, the first party cookie is removed and the identity is added to local storage.
+
+:::
+
+
+### Init Config
+
+Calling `init()` stores an init config in a first-party cookie or local storage which can include the following parameters if given: `baseUrl`, `useCookie`, `refreshRetryPeriod`, `cookiePath`, and `cookieDomain`.  This config is used to [bootstrap init](#self-bootstrap) and save load time in future page loads.  Subsequent calls to `init()` update the config with the most recent parameters.
+
+### Self Bootstrap
+
+When the constructor has completed and the SDK has been put on the window object, the code will check local storage and cookie storage for a stored [init config](#init-config).  If the config exists, `init()` is automatically called with the parameters from the config, and as a result, any functions that require `init()` can be used. 
 
 
 #### Errors
@@ -342,7 +372,7 @@ The `init()` function can throw the following errors.
 
 | Error | Description |
 | :--- | :--- |
-| `TypeError` | One of the following issues has occurred:<ul><li>The function has already been called.</li><li>The `opts` value is not an object.</li><li>A legacy callback is provided, but it is not a function.</li><li>`refreshRetryPeriod` is provided, but it is not a number.</li></ul> |
+| `TypeError` | One of the following issues has occurred:<ul><li>The `opts` value is not an object.</li><li>A legacy callback is provided, but it is not a function.</li><li>`refreshRetryPeriod` is provided, but it is not a number.</li></ul> |
 | `RangeError` | The refresh retry period is less than 1000. |
 
 #### Legacy Callback Function
@@ -355,9 +385,7 @@ If you have already built an integration using a legacy callback function, you c
 
 ### getAdvertisingToken(): string
 
-Gets the current advertising token. 
-
-Before calling this function, be sure to call [init()](#initopts-object-void) and wait until your callback handler has received an `InitCompleted` event. 
+Gets the current advertising token. This function can be called without `init()` and returns the token if it is stored in local storage or a first-party cookie.
 
 ```html
 <script>
@@ -379,7 +407,7 @@ If the identity is not available, use the [isLoginRequired()](#isloginrequired-b
 
 Gets a `Promise` string for the current advertising token.
 
-This function can be called before or after the [init()](#initopts-object-void) call. The returned promise is settled after the initialization is complete, based on the availability of the advertising token:
+This function can be called before or after the [init()](#initopts-object-void) call. The returned promise is settled based on the availability of the advertising token:
 
 - If the advertising token is available, the promise is fulfilled with the current advertising token.
 - If the advertising token is not available, even temporarily, the promise is rejected with an instance of `Error`. To determine the best course of action in this case, you can use [isLoginRequired()](#isloginrequired-boolean).
@@ -461,11 +489,18 @@ Use this function to provide a new identity to the EUID SDK. Any existing refres
 
 ### getIdentity(): Identity | null
 
-Returns the current stored identity, if available.
+Returns the current stored identity, if available. `init()` does not have to be called to use this function.
 
 If there is a valid identity available, the return value is an object representing the full stored identity. The properties of the object are the same as the stored value as described in the [contents structure](#contents-structure) section.
 
 If there is no currently valid identity (even if the identity is only temporarily unavailable), the return value is null. If you need to know whether the identity is only temporarily unavailable, you can call [isLoginRequired()](#isloginrequired-boolean).
+
+
+### isInitComplete(): boolean
+
+Returns true if the `init()` function has been called at least once.
+
+Returns false if `init()` has never been called.
 
 ## EUID Storage Format
 
@@ -490,18 +525,7 @@ The content of the EUID local storage or cookie is a URI-encoded string represen
 
 The following is an example of the EUID cookie structure:
 
-```json
-{
-   "advertising_token":"AgAAAAVacu1uAxgAxH+HJ8+nWlS2H4uVqr6i+HBDCNREHD8WKsio/x7D8xXFuq1cJycUU86yXfTH9Xe/4C8KkH+7UCiU7uQxhyD7Qxnv251pEs6K8oK+BPLYR+8BLY/sJKesa/koKwx1FHgUzIBum582tSy2Oo+7C6wYUaaV4QcLr/4LPA==",
-   "refresh_token":"AgAAAXxcu2RbAAABfGHhwFsAAAF79zosWwAAAAWeFJRShH8u1AYc9dYNTB20edyHJU9mZv11e3OBDlLTlS5Vb97iQVumc7b/8QY/DDxr6FrRfEB/D85E8GzziB4YH7WUCLusHaXKLxlKBSRANSD66L02H3ss56xo92LMDMA=",
-   "identity_expires":1633643601000,
-   "refresh_from":1633643001000,
-   "refresh_expires":1636322000000,
-   "refresh_response_key":"dYNTB20edyHJU9mZv11e3OBDlLTlS5Vb97iQVumc7b/8QY/DDxr6FrRfEB/D",
-   "private":{     
-   }
-}
-```
+<ExampleEuidCookie />
 
 :::warning
 The contents of the `private` object are explicitly unspecified and are left for the SDK to interpret. Do not make any assumptions about the structure, semantics, or compatibility of this object. Any updates to the cookie must retain its structure.
