@@ -2,14 +2,26 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>EUID Publisher Client-Side Integration Example using UID2 JavsScript SDK</title>
-    <link rel="stylesheet" type="text/css" href="./app.css" />
-    <link rel="stylesheet" type="text/css" href="./ads.css" />
-    <link rel="shortcut icon" href="/images/favicon.png" />
-  </head>
-  <body>    
-    <div id="root"></div>
+    <title>UID2 Publisher Client-Side Integration Example using UID2 JavsScript SDK, Secure Signals</title>
+    <link rel="stylesheet" type="text/css" href="./styles/ads.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/app.css" />
+    <link rel="shortcut icon" href="images/favicon.png" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
 
+    </script>
+  </head>
+  <body>
+    <h1>UID2 Publisher Client-Side Integration Example using UID2 JavsScript SDK, Secure Signals</h1>
+    <p>
+      This example demonstrates how a content publisher can follow the
+      <a href="https://unifiedid.com/docs/guides/publisher-client-side"
+        >Client-Side Integration Guide for JavaScript
+      </a>
+      to implement UID2 integration and generate UID2 tokens.
+      Secure Signals is updated when the page is reloaded.  
+      Reload the page when logging in order out to update Secure Signals in local storage.
+    </p>
     <div id="page-content">
       <div id="video-container">
         <video id="video-element">
@@ -20,12 +32,59 @@
       </div>
       <button id="play-button">Play</button>
     </div>
-    
-    <script src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <div class="product-tables">
+      <table id="euid_state">
+        <thead>
+          <th >EUID Enabled<input type="checkbox" checked></input></th>
+        </thead>
+        <tr>
+          <td class="label">Ready for Targeted Advertising:</td>
+          <td class="value"><pre id="targeted_advertising_ready"></pre></td>
+        </tr>
+        <tr>
+          <td class="label">EUID Advertising Token:</td>
+          <td class="value"><pre id="advertising_token"></pre></td>
+        </tr>
+        <tr>
+          <td class="label">Is EUID Login Required?</td>
+          <td class="value"><pre id="login_required"></pre></td>
+        </tr>
+        <tr>
+          <td class="label">EUID Identity Callback State:</td>
+          <td class="value"><pre id="identity_state"></pre></td>
+        </tr>
+        <tr>
+          <td class="label">Secure Signals Loaded?</td>
+          <td class="value"><pre id="secure_signals_loaded"></pre></td>
+        </tr>
+        <tr>
+          <td class="label">Secure Signals Value:</td>
+          <td class="value"><pre id="secure_signals_value"></pre></td>
+        </tr>
+      </table>
+    </div>
+    <div id="login_form" style="display: none" class="form">
+      <div class="email_prompt">
+        <input
+          type="text"
+          id="email"
+          name="email"
+          placeholder="Enter an email address"
+          style="border-style: none"
+          value="test@example.com"
+        />
+      </div>
+      <div><button type="button" class="button" id="login">Log In</button>></div>
+    </div>
+    <div id="logout_form" style="display: none" class="form">
+      <form>
+        <button type="button" class="button" id="logout">Log Out</button>
+      </form>
+    </div>
     <script src="https://cdn.integ.euid.eu/euid-sdk-3.4.5.js"></script>
     <script src="https://cdn.integ.euid.eu/euidSecureSignal.js"></script>
-    <script src="ads.js"></script>
-    <script defer src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
-    <script defer type="module" src="app.js"></script>
+    <script type="text/javascript" src="scripts/ads.js"></script>
+    <script type="text/javascript" src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+    <script type="text/javascript" src="scripts/scripts.js"></script>
   </body>
 </html>
