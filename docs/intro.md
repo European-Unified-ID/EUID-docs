@@ -77,7 +77,7 @@ EUID is a deterministic ID that is based on email addresses. There are two types
 
 | ID Type | Shared in Bidstream? | Description |
 | :--- | :--- | :--- |
-| **Raw EUIDs** | No | An unencrypted alphanumeric identifier created through the EUID APIs or SDKs with the user's email address as input.<br/>To prevent re-identification of the original personal data, the input value is hashed if it was not already hashed, then salted, and then hashed again to create the raw EUID. The process that creates the raw EUID is designed to create a secure, opaque value that can be stored by advertisers, third-party data providers, and demand-side platforms (DSPs). |
+| **Raw EUIDs** | No | An unencrypted alphanumeric identifier created through the EUID APIs or SDKs with the user's email address as input.<br/>To avoid revealing the source data, the input value is hashed if it was not already hashed, then salted, and then hashed again using a secret <Link href="../ref-info/glossary-uid#gl-salt">salt</Link> value to create the raw EUID. The process that creates the raw EUID is designed to create a secure, opaque value that can be stored by advertisers, third-party data providers, and demand-side platforms (DSPs). |
 | **EUID Token (Advertising Token)** | Yes | An encrypted form of a raw EUID. EUID tokens are generated from hashed or unhashed email addresses that are converted to raw EUIDs and then encrypted to help ensure protection in the <Link href="ref-info/glossary-uid#gl-bidstream">bidstream</Link>.<br/>EUID tokens are designed to be used by publishers or publisher service providers. Supply-side platforms (SSPs) pass EUID tokens in the bidstream and DSPs decrypt them at bid request time. |
 
 ### Components
