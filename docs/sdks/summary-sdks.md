@@ -25,9 +25,10 @@ The following table summarizes the functionality available with each SDK.
 |Python | Server | &#9989; | &#9989; | &#9989; | &#9989; | &#8212; |
 |C# / .NET | Server | &#9989; | &#9989; | &#8212; | &#8212; | &#8212; |
 |C++ | Server | &#9989; | &#9989; | &#8212; | &#8212; | &#8212; |
+|Android | Client&nbsp;(Mobile) | &#8212; | &#8212; | &#9989; | &#9989; | &#8212; |
 |iOS | Client (Mobile)| &#8212; | &#8212; | &#9989;| &#9989; |&#8212; |
 
-<!-- &#9989; = Supported | &#10060; = Not Supported | &#8212; = Not Supported -->
+<!-- &#9989; = Supported | &#8212; = Not Supported -->
 
 ## SDK Documentation
 
