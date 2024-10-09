@@ -10,11 +10,11 @@ sidebar_position: 04
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Link from '@docusaurus/Link';
+import ExampleAdvertisingToken from '/docs/snippets/_example-advertising-token.mdx';
 import EnableLogging from '/docs/snippets/_mobile-docs-enable-logging.mdx';
 import GMAIMA_Plugins from '/docs/snippets/_mobile_docs_gmaima-plugin-gss.mdx';
 import PrebidMobileSDK from '/docs/snippets/_mobile_docs_prebid-mobile.mdx';
-import ExampleAdvertisingToken from '/docs/snippets/_example-advertising-token.mdx';
-
+import ErrorResponseStates from '/docs/snippets/_mobile-docs-error-response-states.mdx';
 
 # EUID Client-Side Integration Guide for Mobile
 
@@ -592,3 +592,7 @@ The EUID Prebid Mobile SDK integration requires version 1.5.0 or later of the EU
 :::
 
 <PrebidMobileSDK />
+
+## Error Response States
+
+<ErrorResponseStates />
