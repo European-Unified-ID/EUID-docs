@@ -9,7 +9,7 @@ import Link from '@docusaurus/Link';
 
 # POST /optout/status
 
-Checks the opt-out status of raw EUIDs. Given a list of raw EUIDs, this endpoint returns the raw EUIDs that have opted out, as well as the time that the opt-out took place. For more information, see [User Opt-Out](../getting-started/gs-opt-out.md).
+Checks the opt-out status of <Link href="../ref-info/glossary-uid#gl-raw-euid">raw EUIDs</Link>. Given a list of raw EUIDs, this endpoint returns the raw EUIDs that have opted out, as well as the time that the opt-out took place. For more information, see [User Opt-Out](../getting-started/gs-opt-out.md).
 
 Used by: This endpoint is used by advertisers, data providers, and DSPs. More generally, this is for participants who have access to raw EUIDs but do not have access to the underlying email addresses and want to know opt-out status.
 
@@ -23,7 +23,7 @@ For details, refer to the following documentation, depending on your role:
 The key guidelines for managing batches of requests to this endpoint are as follows:
 
 - To check the opt-out status of a large number of EUIDs, send them in sequential batches with a maximum batch size of 5,000 items per batch.
-- Unless you are using a Private Operator, do not send batches in parallel. In other words, use a single HTTP connection and send batches of raw EUIDs consecutively.
+- Unless you are using a Private Operator, do not send batches in parallel. In other words, use a single HTTP connection and send batches of raw EUIDs consecutively, without creating multiple parallel connections.
 
 ## Request Format
 
