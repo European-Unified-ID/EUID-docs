@@ -27,7 +27,7 @@ EUID supports the following type of personal data:
 
 ## Email Address Normalization
 
-If you send unhashed email addresses to the EUID Operator Service, the service normalizes the email addresses and then hashes them. If you want to hash the email addresses yourself before sending them, you must normalize them before you hash them.
+If you send unhashed email addresses to the EUID <Link href="../ref-info/glossary-uid#gl-operator-service">Operator Service</Link>, the service normalizes the email addresses and then hashes them. If you want to hash the email addresses yourself before sending them, you must normalize them before you hash them.
 
 :::important
 Normalizing before hashing ensures that the generated EUID value will always be the same, so that the data can be matched. If you do not normalize before hashing, this might result in a different EUID, reducing the effectiveness of targeted advertising.
