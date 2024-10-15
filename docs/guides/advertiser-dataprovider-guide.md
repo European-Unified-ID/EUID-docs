@@ -69,7 +69,7 @@ To keep your EUID-based audience information accurate and up to date, follow the
 
 It's important to honor user opt-out status. Here are two ways you can check that you have the latest opt-out information:
 
-- The EUID Operator Service distributes opt-out information to advertisers and data providers via the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint.
+- The EUID <Link href="../ref-info/glossary-uid#gl-operator-service">Operator Service</Link> distributes opt-out information to advertisers and data providers via the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint.
 
 - Advertisers and data providers can check the opt-out status of raw EUIDs using the [POST&nbsp;/optout/status](../endpoints/post-optout-status.md) endpoint.
 

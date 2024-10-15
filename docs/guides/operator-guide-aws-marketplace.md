@@ -12,7 +12,7 @@ import AttestFailure from '/docs/snippets/_private-operator-attest-failure.mdx';
 
 # EUID Private Operator for AWS Integration Guide
 
-The EUID Operator is the API server in the EUID ecosystem. For a Private Operator service running in AWS Marketplace, the EUID Operator solution is enhanced with [AWS Nitro](https://aws.amazon.com/ec2/nitro/) Enclave technology. This is an additional security measure to help protect EUID information from unauthorized access.
+The EUID Operator is the API server in the EUID ecosystem. For a <Link href="../ref-info/glossary-uid#gl-private-operator">Private Operator</Link> service running in AWS Marketplace, the EUID Operator solution is enhanced with [AWS Nitro](https://aws.amazon.com/ec2/nitro/) Enclave technology. This is an additional security measure to help protect EUID information from unauthorized access.
 
 ## EUID Private Operator for AWS
 

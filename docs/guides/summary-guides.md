@@ -87,7 +87,7 @@ The following resources are available for DSPs integrating with EUID.
 
 ## Private Operator Service Integrations
 
-The following resources are available for Private Operator integrations.
+The following resources are available for <Link href="../ref-info/glossary-uid#gl-private-operator">Private Operator</Link> integrations.
  
 | Integration Guide | Content Description |
 | :--- | :--- |

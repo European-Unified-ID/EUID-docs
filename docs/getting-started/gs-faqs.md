@@ -18,6 +18,7 @@ Here are some frequently asked questions regarding the EUID framework.
 - [Will all integration partners in the UID2 infrastructure (SSPs, third-party data providers, measurement providers) be automatically integrated with EUID?](#will-all-integration-partners-in-the-uid2-infrastructure-ssps-third-party-data-providers-measurement-providers-be-automatically-integrated-with-euid)
 - [Can users opt out of targeted advertising tied to their EUID?](#can-users-opt-out-of-targeted-advertising-tied-to-their-euid)
 - [When I send personal data to EUID, does EUID store the information?](#when-i-send-personal-data-to-euid-does-euid-store-the-information)
+- [Should I use a Public Operator or a Private Operator?](#should-i-use-a-public-operator-or-a-private-operator)
 
 #### Will all integration partners in the UID2 infrastructure (SSPs, third-party data providers, measurement providers) be automatically integrated with EUID?
 
@@ -32,6 +33,16 @@ Yes. Through the [Transparency and Control Portal](https://transparentadvertisin
 No. None of the components of the <Link href="../ref-info/glossary-uid#gl-euid-service">EUID service</Link> store any personal information.
 
 In addition, in almost all cases, EUID doesn't store any values at all once the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md), [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md), or [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) call is complete. A necessary exception is the case where a user has opted out. In this scenario, EUID stores a hashed, opaque value to indicate the opted-out user. The stored value cannot be reverse engineered back to the original value of the personal data, but can be used to identify future requests for an EUID generated from the same personal data, which are therefore denied.
+
+#### Should I use a Public Operator or a Private Operator?
+
+For most participants, <Link href="../ref-info/glossary-uid#gl-public-operator">Public Operator</Link> is the simplest solution. A Public Operator integration is a much easier option than hosting your own <Link href="../ref-info/glossary-uid#gl-private-operator">Private Operator</Link>. Having a Private Operator instance has some advantages, but adds extra complexities and costs.
+
+The best choice depends on your unique scenario and needs. For more information to help you arrive at a decision, refer to the following:
+
+- [The EUID Operator](../ref-info/ref-operators-public-private.md)
+
+- [EUID Private Operator Integration Overview](../guides/integration-options-private-operator.md)
 
 ## FAQs for Publishers
 
@@ -145,10 +156,11 @@ Here are some frequently asked questions for advertisers and data providers usin
 - [Should I store mapping of email addresses or corresponding hashes to raw EUIDs in my own datasets?](#should-i-store-mapping-of-email-addresses-or-corresponding-hashes-to-raw-euids-in-my-own-datasets)
 - [How should I handle user opt-outs?](#how-should-i-handle-user-opt-outs)
 - [Does the same personal data always result in the same raw EUID?](#does-the-same-personal-data-always-result-in-the-same-raw-euid)
+- [If two operators process the same personal data, are the results the same?](#if-two-operators-process-the-same-personal-data-are-the-results-the-same)
 
 #### How do I know when to refresh the EUID due to salt bucket rotation?
 
-Metadata supplied with the EUID generation request indicates the salt bucket used for generating the EUID. Salt buckets persist and correspond to the underlying personal data used to generate an EUID. Use the [POST&nbsp;/identity/buckets](../endpoints/post-identity-buckets.md) endpoint to return which salt buckets rotated since a given timestamp. The returned rotated salt buckets inform you which EUIDs to refresh.
+Metadata supplied with the EUID generation request indicates the <Link href="../ref-info/glossary-uid#gl-salt-bucket">salt bucket</Link> used for generating the EUID. Salt buckets persist and correspond to the underlying personal data used to generate an EUID. Use the [POST&nbsp;/identity/buckets](../endpoints/post-identity-buckets.md) endpoint to return which salt buckets rotated since a given timestamp. The returned rotated salt buckets inform you which EUIDs to refresh.
 
 :::note
 We do not make any promises about when the rotation takes place. To stay as up-to-date as possible, we recommend doing the checks once per hour.
@@ -177,7 +189,7 @@ The system should follow the [email normalization rules](../getting-started/gs-n
 Yes. Not storing email address or hash mappings may increase processing time drastically when you have to map millions of addresses. Recalculating only those mappings that actually need to be updated, however, reduces the total processing time because only about 1/365th of EUIDs need to be updated daily.
 
 :::important
-Unless you are using a <Link href="../ref-info/glossary-uid#gl-private-operator">Private Operator</Link>, you must map email addresses or hashes consecutively, using a single HTTP connection, in batches of 5,000 emails at a time. In other words, do your mapping without creating multiple parallel connections.
+Unless you are using a <Link href="../ref-info/glossary-uid#gl-private-operator">Private Operator</Link>, you must map email addresses or hashes consecutively, using a single HTTP connection, with a maximum batch size of 5,000 items per batch. In other words, do your mapping without creating multiple parallel connections.
 :::
 
 #### How should I handle user opt-outs?
@@ -195,6 +207,16 @@ In general yes, the process of generating a raw EUID from personal data is the s
 However, there is a variable factor, which is the <Link href="../ref-info/glossary-uid#gl-salt">salt</Link> value that's used in generating the raw EUID. The salt values are rotated roughly once per year (for details, see [How often should EUIDs be refreshed for incremental updates?](#how-often-should-euids-be-refreshed-for-incremental-updates)). If the salt value changes between one request and another, those two requests result in two different raw EUIDs, even when the personal data is the same.
 
 For more information, see [Monitor for salt bucket rotations related to your stored raw EUIDs](../guides/advertiser-dataprovider-guide.md#3-monitor-for-salt-bucket-rotations-related-to-your-stored-raw-euids) in the *Advertiser/Data Provider Integration Guide*.
+
+#### If two operators process the same personal data, are the results the same?
+
+Yes, if the request is for a <Link href="../ref-info/glossary-uid#gl-raw-euid">raw EUID</Link>. As covered in the previous FAQ, [Does the same personal data always result in the same raw EUID?](#does-the-same-personal-data-always-result-in-the-same-raw-euid), if an advertiser or data provider sends the same personal data to the EUID Operator, by using an SDK or the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint, at the same time, the same raw EUID is created.
+
+The result is the same, regardless of the <Link href="../ref-info/glossary-uid#gl-operator">Operator</Link> and whether it's a Private Operator or a Public Operator.
+
+The timing is important only because of salt bucket rotation. If the salt value changes between one request and another, the result is a different raw EUID.
+
+However, if a publisher sends personal data in a request for an <Link href="../ref-info/glossary-uid#gl-euid-token">EUID token</Link>, via the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) or [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint or via an SDK, the resulting EUID token contains the same encrypted raw EUID, but the token itself is always unique.
 
 ## FAQs for DSPs
 

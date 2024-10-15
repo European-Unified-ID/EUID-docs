@@ -17,7 +17,14 @@ All instances of the Operator Service are designed with rigorous protections in 
 
 There can be multiple instances of the Operator Service, operated by multiple participants. Each of these participants is known as an EUID Operator.
 
-An EUID Operator is simply an organization that runs the Operator Service. Operators receive and store encryption keys and salts from the EUID Core Service, salt and hash <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to return raw EUIDs, encrypt raw EUIDs to generate EUID tokens, and distribute EUID token decryption keys.
+An EUID Operator is an organization that runs the Operator Service. Operators periodically perform multiple tasks including the following:
+
+- Receive and store up-to-date encryption keys and salts from the EUID Core Service.
+- Salt and hash <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to return raw EUIDs.
+- Encrypt raw EUIDs to generate EUID tokens.
+- Distribute EUID token decryption keys to server-side SDKs (see [SDKs: Summary](../sdks/summary-sdks.md)).
+- Download the latest user opt-out information from the EUID <a href="glossary-uid#gl-opt-out-service">Opt-Out Service</a>.
+- Support a number of UID2 endpoints. For details, see [UID2 Endpoints: Summary](../endpoints/summary-endpoints.md).
 
 EUID Operators fall into two categories:
 
@@ -60,6 +67,6 @@ For most participants, Public Operator is the simplest solution.
 
 The down side of the Private Operator option is that it requires ongoing engineering effort to build and maintain. Because a Private Operator instance is managed by the participant, there are continual updates and changes that are required and must be completed within a specified time frame.
 
-A Public Operator integration is a much easier option than creating your own instance. There is no cost to the participant, and virtually no engineering work is needed other than initial setup and configuration.
+A Public Operator integration is a much easier option than hosting your own instance. There is no cost to the participant, and virtually no engineering work is needed other than initial setup and configuration.
 
 For these reasons, we recommend choosing a Public Operator. 
