@@ -23,9 +23,9 @@ For integration steps for content publishers, see [Client-Server Integration Gui
 
 This SDK simplifies integration with EUID for any publishers who want to support EUID. The following table shows the functions it supports.
 
-| Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token |
-| :--- | :--- | :--- | :--- |
-| &#8212; | &#8212; | &#8212; | &#9989; |
+| Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to Raw EUIDs | Monitor Rotated Salt Buckets |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| &#8212; | &#8212; | &#8212; | &#9989; | &#8212; |
 
 ## API Permissions
 

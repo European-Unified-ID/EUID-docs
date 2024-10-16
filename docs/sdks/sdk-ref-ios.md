@@ -9,11 +9,7 @@ import Link from '@docusaurus/Link';
 
 # SDK for iOS Reference Guide
 
-You can use the SDK for iOS for the following:
-
-- Generating or establishing client identity using EUID.
-- Retrieving advertising tokens for <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link> use.
-- Automatically refreshing EUID tokens.
+You can use the SDK for iOS to facilitate the process of generating or establishing client identity using EUID, retrieving advertising tokens for <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link> use, and automatically refreshing EUID tokens.
 
 The following iOS-related plugins, and associated documentation, are also available:
 
@@ -29,9 +25,9 @@ Although this page refers to SDK for iOS, this SDK also supports tvOS. For the r
 
 This SDK simplifies integration with EUID for any publishers who want to support EUID for apps running on iOS devices. The following table shows the functions it supports.
 
-| Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to Raw EUID |
-| :--- | :--- | :--- | :--- | :--- |
-| &#8212; | &#8212; | &#9989; | &#9989; | &#8212; |
+| Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to Raw EUIDs | Monitor Rotated Salt Buckets |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| &#8212; | &#8212; | &#9989; | &#9989; | &#8212; | &#8212; |
 
 The SDK for iOS is designed to generate and/or manage EUID identity on behalf of iOS apps. It enables EUID identity to be persisted across app lifecycles by securely storing the identity on a device via platform-native encryption tools.
 
