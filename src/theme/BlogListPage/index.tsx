@@ -56,7 +56,7 @@ export default function BlogListPage(props: Props): JSX.Element {
     <HtmlClassNameProvider
       className={clsx(
         ThemeClassNames.wrapper.blogPages,
-        ThemeClassNames.page.blogListPage
+        ThemeClassNames.page.blogListPage,
       )}
     >
       <BlogListPageMetadata {...props} />
