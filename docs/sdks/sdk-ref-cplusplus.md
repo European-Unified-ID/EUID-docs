@@ -9,7 +9,7 @@ import Link from '@docusaurus/Link';
 
 # SDK for C++ (Server-Side) Reference Guide
 
-You can use the SDK for C++ (Server-Side) to facilitate decrypting of EUID tokens to access the raw EUID. 
+You can use the SDK for C++ on the server side to facilitate decrypting of EUID tokens to access the raw EUID.
 
 ## Overview
 
@@ -19,9 +19,9 @@ The functions outlined here define the information that you'll need to configure
 
 This SDK simplifies integration with EUID for any DSPs who are using C++ for their server-side coding. The following table shows the functions it supports.
 
-| Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token |
-| :--- | :--- | :--- | :--- |
-| &#9989; | &#9989; | &#8212; | &#8212; |
+| Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to Raw EUIDs | Monitor Rotated Salt Buckets |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| &#9989; | &#9989; | &#8212; | &#8212; | &#8212; | &#8212; |
 
 ## Version
 

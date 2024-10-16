@@ -9,12 +9,7 @@ import Link from '@docusaurus/Link';
 
 # SDK for Java Reference Guide
 
-You can use the SDK for Java on the server side to facilitate the following:
-
-- Generating EUID advertising tokens
-- Refreshing EUID advertising tokens
-- Decrypting EUID tokens to access the raw EUIDs
-- Mapping personal data to raw EUIDs
+You can use the SDK for Java on the server side to facilitate the process of generating or establishing client identity using EUID, retrieving advertising tokens for <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link> use, and automatically refreshing EUID tokens. If you have the applicable permissions, you can also decrypt EUID tokens to access the raw EUID and map personal data to raw EUIDs.
 
 :::note
 This SDK is valid for UID2 and EUID. Some of the code naming and URLs are labelled as UID2. These apply equally to EUID.
@@ -24,9 +19,9 @@ This SDK is valid for UID2 and EUID. Some of the code naming and URLs are labell
 
 This SDK simplifies integration with EUID for any publishers, DSPs, advertisers, and data providers who are using Java for their server-side coding. The following table shows the functions it supports.
 
-| Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token |  Map Personal Data to a Raw EUID |
-| :--- | :--- | :--- | :--- | :--- |
-| &#9989; | &#9989; | &#9989; | &#9989; | &#9989; |
+| Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to Raw EUIDs | Monitor Rotated Salt Buckets |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| &#9989; | &#9989; | &#9989; | &#9989; | &#9989; | &#8212; |
 
 ## API Permissions
 
