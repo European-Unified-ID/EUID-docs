@@ -5,7 +5,6 @@ import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import styles from "./styles.module.scss";
-import RightArrow from "@site/static/img/right-arrow-icon.svg";
 import SectionHeader from "@site/src/components/SectionHeader";
 import { useIsMobile } from "@site/src/utils/isMobile";
 import { usePrefersReducedMotion } from "@site/src/utils/usePrefersReducesMotion";
@@ -22,7 +21,7 @@ import uploadAnimation from "./uploadIconData.json";
 type PartnerItem = {
   heading: string;
   Svg: React.ComponentType<React.ComponentProps<"svg">>;
-  animationData: JSON;
+  animationData: Record<string, unknown>;
   url: string;
   description: string;
 };

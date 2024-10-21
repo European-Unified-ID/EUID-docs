@@ -16,7 +16,9 @@ export const New = () => (
   <span className='pill'>NEW IN V3</span>
 );
 
-Use this SDK to facilitate the process of establishing client identity using EUID and retrieving advertising tokens. The following sections describe the high-level [workflow](#workflow-overview) for establishing EUID identity, provide the SDK [API reference](#api-reference), and explain the EUID [storage format](#euid-storage-format).
+Use this SDK to facilitate the process of generating or establishing client identity using EUID, retrieving advertising tokens for <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link> use, and automatically refreshing EUID tokens.
+
+The following sections describe the high-level [workflow](#workflow-overview) for establishing EUID identity, provide the SDK [API reference](#api-reference), and explain the EUID [storage format](#euid-storage-format).
 
 :::tip
 If you're using Prebid.js with the EUID Identity Module, or with another product that has EUID support, you probably don't need to use the SDK at all. The Prebid.js module manages everything. For details, see [EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md).
@@ -43,9 +45,9 @@ For example applications with associated documentation, see:
 
 This SDK simplifies development for publishers who want to build their own customized EUID integration. The following table shows the functions it supports.
 
-| Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to a Raw EUID |
-| :--- | :--- | :--- | :--- | :--- |
-| &#8212; | &#8212; | &#9989; | &#9989; | &#8212; |
+| Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to Raw EUIDs | Monitor Rotated Salt Buckets |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| &#8212; | &#8212; | &#9989; | &#9989; | &#8212; | &#8212; |
 
 ## API Permissions
 

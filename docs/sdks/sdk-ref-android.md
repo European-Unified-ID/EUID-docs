@@ -9,11 +9,7 @@ import Link from '@docusaurus/Link';
 
 # SDK for Android Reference Guide
 
-You can use the SDK for Android for the following:
-
-- Generating or establishing client identity using EUID.
-- Retrieving advertising tokens for <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link> use.
-- Automatically refreshing EUID tokens.
+You can use the SDK for Android to facilitate the process of generating or establishing client identity using EUID, retrieving advertising tokens for <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link> use, and automatically refreshing EUID tokens.
 
 The following Android-related plugin, and associated documentation, is also available.
 
@@ -31,10 +27,10 @@ This SDK for Android can be used for non-mobile devices for Android platforms as
 ## Functionality
 
 This SDK simplifies integration with EUID for any publishers who want to support EUID for apps running on Android devices. The following table shows the functions it supports.
-EUID
-| Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to Raw EUID |
-| :--- | :--- | :--- | :--- | :--- |
-| &#8212; | &#8212; | &#9989; | &#9989; | &#8212; |
+
+| Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to Raw EUIDs | Monitor Rotated Salt Buckets |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| &#8212; | &#8212; | &#9989; | &#9989; | &#8212; | &#8212; |
 
 The SDK for Android is designed to generate and/or manage EUID identity on behalf of Android apps. It enables EUID identity to be persisted across app lifecycles by securely storing the identity on a device via platform-native encryption tools.
 
