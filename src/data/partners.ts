@@ -22,6 +22,10 @@ export const partnersData: PartnersDataType = [
     logo: "future-plc-logo.png",
   },
   {
+    name: "Google",
+    logo: "google-full-color-logo.svg",
+  },
+  {
     name: "Gutefrage.net",
     logo: "gutefrage-logo.png",
   },
