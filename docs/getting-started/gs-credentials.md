@@ -9,12 +9,12 @@ import Link from '@docusaurus/Link';
 
 # EUID Credentials
 
-Each EUID <a href="../intro#participants">participant</a> gets a set of unique credentials. The set of credentials you get is determined by how you are participating in EUID, as shown in the following table.
+Each EUID <a href="../intro.md#participants">participant</a> gets a set of unique credentials. The set of credentials you get is determined by how you are participating in EUID, as shown in the following table.
 
 | Audience | Credentials | Integration |
 | :--- | :--- | :--- |
-| Participants using a client-side implementation | Both of the following: <ul><li><Link href="../ref-info/glossary-uid#gl-subscription-id">Subscription ID</Link></li><li><Link href="../ref-info/glossary-uid#gl-public-key">Public key</Link></li></ul>These two, together, are sometimes called <Link href="../ref-info/glossary-uid#gl-client-keypair">client keypair</Link>. | Integrations using one of these: <ul><li>[EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md)</li><li>[Client-Side Integration Guide for JavaScript](../guides/integration-javascript-client-side.md)</li></ul> |
-| Participants using a client-server implementation | Both of the following:<ul><li><Link href="../ref-info/glossary-uid#gl-api-key">API key</Link>, also called a client key</li><li><Link href="../ref-info/glossary-uid#gl-client-secret">Client secret</Link>, a value known only to the participant and the EUID service</li></ul> | Integrations using one of these: <ul><li>[Client-Server Integration Guide for JavaScript](../guides/integration-javascript-client-server.md)</li><li>[Client-Server Integration Guide for Prebid.js](../guides/integration-prebid-client-server.md)</li></ul>  |
+| Participants using a client-side implementation | Both of the following: <ul><li><Link href="../ref-info/glossary-uid#gl-subscription-id">Subscription ID</Link></li><li><Link href="../ref-info/glossary-uid#gl-public-key">Public key</Link></li></ul>These two, together, are sometimes called <Link href="../ref-info/glossary-uid#gl-client-keypair">client keypair</Link>. | Integrations using one of these: <ul><li>[EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md)</li><li>[Client-Side Integration Guide for JavaScript](../guides/integration-javascript-client-side.md)</li><li>[EUID Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side.md)</li></ul> |
+| Participants using a client-server implementation | Both of the following:<ul><li><Link href="../ref-info/glossary-uid#gl-api-key">API key</Link>, also called a client key</li><li><Link href="../ref-info/glossary-uid#gl-client-secret">Client secret</Link>, a value known only to the participant and the EUID service</li></ul> | Integrations using one of these: <ul><li>[Client-Server Integration Guide for JavaScript](../guides/integration-javascript-client-server.md)</li><li>[EUID Client-Server Integration Guide for Prebid.js](../guides/integration-prebid-client-server.md)</li><li>[EUID Client-Server Integration Guide for Mobile](../guides/integration-mobile-client-server.md)</li></ul> |
 | Participants using a server-side implementation | Both of the following:<ul><li><Link href="../ref-info/glossary-uid#gl-api-key">API key</Link>, also called a client key</li><li><Link href="../ref-info/glossary-uid#gl-client-secret">Client secret</Link>, a value known only to the participant and the EUID service</li></ul> | Integrations using one of these: <ul><li>[Publisher Integration Guide, Server-Side](../guides/integration-publisher-server-side.md)</li><li>[Advertiser/Data Provider Integration Guide](../guides/advertiser-dataprovider-guide.md)</li></ul> |
 
 If you're using the integration environment as well as the production environment, you'll get a separate set of credentials for each environment.
@@ -27,7 +27,7 @@ If you're using a client-side implementation (see [EUID Client-Side Integration 
 
 **Client keypair** is a group term we use for these two values, which are used to uniquely define an account that's using an implementation that generates the token on the client side.
 
-When you're implementing EUID on the client side, by using the EUID JavaScript SDK or Prebid.js, provide the values to the SDK or to Prebid.js as part of configuration.
+When you're implementing EUID on the client side, by using the EUID JavaScript SDK, Client-Side Integration for Mobile, or Prebid.js, provide the values to the SDK or to Prebid.js as part of configuration.
 
 Notes:
 
@@ -39,7 +39,7 @@ Notes:
 
 ## API Key and Client Secret
 
-If you're using a client-server or server-side implementation (see [Client-Server Integration Guide for Prebid.js](../guides/integration-prebid-client-server.md) or [Client-Server Integration Guide for JavaScript](../guides/integration-javascript-client-server.md), the API key and client secret allow you to connect to the <Link href="../ref-info/glossary-uid#gl-operator-service">Operator Service</Link> and call API endpoints. These values identify you to the service.
+If you're using a client-server or server-side implementation (see [EUID Client-Server Integration Guide for Prebid.js](../guides/integration-prebid-client-server.md) or [Client-Server Integration Guide for JavaScript](../guides/integration-javascript-client-server.md)), the API key and client secret allow you to connect to the <Link href="../ref-info/glossary-uid#gl-operator-service">Operator Service</Link> and call API endpoints. These values identify you to the service.
 
 Here is some information about API keys and client secrets:
 - One EUID participant can have multiple keys.

@@ -39,7 +39,7 @@ Determine which method is best for you, and then follow the applicable integrati
 | Scenario | Integration Guide |
 | :--- | :--- |
 | You have access to personal data on the client side and want to do front-end development only | [EUID Client-Side Integration Guide for Prebid.js](integration-prebid-client-side.md) |
-| You have access to personal data on the server side and can do server-side development | [Client-Server Integration Guide for Prebid.js](integration-prebid-client-server.md) |
+| You have access to personal data on the server side and can do server-side development | [EUID Client-Server Integration Guide for Prebid.js](integration-prebid-client-server.md) |
 
 ## Refreshing the EUID Token
 
@@ -54,7 +54,7 @@ The Prebid.js EUID module can automatically refresh the EUID tokens. If you pref
 To configure the EUID module, call `pbjs.setConfig`. For details on supported parameters, refer to the guide that applies to your implementation:
 
 - [EUID Client-Side Integration Guide for Prebid.js](integration-prebid-client-side.md)
-- [Client-Server Integration Guide for Prebid.js](integration-prebid-client-server.md)
+- [EUID Client-Server Integration Guide for Prebid.js](integration-prebid-client-server.md)
 
 When the EUID module is configured, it manages an EUID token for the user and stores it in the user's browser. 
 
@@ -71,4 +71,4 @@ At a high level, to integrate your site with EUID using Prebid.js, you'll need t
 For detailed instructions, refer to one of the following integration guides:
 
 - [EUID Client-Side Integration Guide for Prebid.js](integration-prebid-client-side.md)
-- [Client-Server Integration Guide for Prebid.js](integration-prebid-client-server.md)
+- [EUID Client-Server Integration Guide for Prebid.js](integration-prebid-client-server.md)

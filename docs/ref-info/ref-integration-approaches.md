@@ -30,7 +30,7 @@ Examples of documentation for publisher client-side integrations:
 
 - [EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md)
 - [Client-Side Integration Guide for JavaScript](../guides/integration-javascript-client-side.md)
-<!-- - [EUID Client-Side Integration Guide for Mobile] -->
+- [EUID Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side.md)
 
 Advertisers integrating on the client side can use the JavaScript SDK:
 
@@ -45,7 +45,7 @@ For details, see [Subscription ID and Public Key](../getting-started/gs-credenti
 For added security, you'll need to provide a list of your top-level domains or apps. For details, see:
 
 - For websites: [Client-Side Implementation for Publishers](../getting-started/gs-account-setup.md#client-side-web-integrations).
-<!-- - For mobile apps: [Client-Side Mobile Integrations]. -->
+- For mobile apps: [Client-Side Mobile Integrations](../getting-started/gs-account-setup.md#client-side-mobile-integrations).
 
 ## Client-Server Integration
 
@@ -55,16 +55,16 @@ For example, in a client-server integration for a publisher, the EUID token is g
 
 Examples of documentation for publisher client-server integrations:
 
-- [Client-Server Integration Guide for Prebid.js](../guides/integration-prebid-client-server.md)
+- [EUID Client-Server Integration Guide for Prebid.js](../guides/integration-prebid-client-server.md)
 - [Client-Server Integration Guide for JavaScript](../guides/integration-javascript-client-server.md)
-<!-- - [EUID Client-Server Integration Guide for Mobile] -->
+- [EUID Client-Server Integration Guide for Mobile](../guides/integration-mobile-client-server.md)
 
 ### Client-Server Integration: Credentials
 
 If you choose a client-server integration, you'll need to have an **API key** and **client secret**, values that you must store securely.
 
 :::important
-Do not embed the credentials in a web page<!-- , in mobile app source code, --> or anywhere else that they could be compromised. Store them securely on your server.
+Do not embed the credentials in a web page, in mobile app source code, or anywhere else that they could be compromised. Store them securely on your server.
 :::
 
 For details, see [API Key and Client Secret](../getting-started/gs-credentials.md#api-key-and-client-secret).
@@ -87,7 +87,7 @@ An example of documentation for publisher server-side integration is [Publisher 
 If you choose a client-side integration, you'll need to have an **API key** and **client secret**, values that you must store securely.
 
 :::important
-Do not embed the credentials in a web page<!-- , in mobile app source code, --> or anywhere else that they could be compromised. Store them securely on your server.
+Do not embed the credentials in a web page, in mobile app source code, or anywhere else that they could be compromised. Store them securely on your server.
 :::
 
 For details, see [API Key and Client Secret](../getting-started/gs-credentials.md#api-key-and-client-secret).
