@@ -8,7 +8,7 @@ sidebar_position: 11
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Link from '@docusaurus/Link';
-import ExampleTokenGenerateResponse from '/docs/snippets/_example-identity-generate-response.mdx';
+import IdentityGenerateResponse from '/docs/snippets/_example-identity-generate-response.mdx';
 
 # Encrypting Requests and Decrypting Responses
 
@@ -104,7 +104,7 @@ The following table describes the field layout for response decryption code.
 
 For example, a decrypted response to the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) request for an email address might look like this:
 
-<ExampleTokenGenerateResponse />
+<IdentityGenerateResponse />
 
 ## Encryption and Decryption Code Examples
 
@@ -450,7 +450,6 @@ public class Uid2Request {
 </TabItem>
 <TabItem value='cs' label='C#'>
 
-
 ```cs title="uid2_request.cs"
 using System.Buffers.Binary;
 using System.Net;
@@ -582,8 +581,8 @@ else
 ```
 
 </TabItem>
-
 <TabItem value='go' label='Go'>
+
 ```go title="uid2_request.go"
 package main
 
