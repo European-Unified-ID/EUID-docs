@@ -11,8 +11,6 @@ import Link from '@docusaurus/Link';
 
 The following table lists all current testing and production environments for EUID.
 
-All EUID endpoints use the same base URL.
-
 | Environment | Cloud Region | Code | Base URL |
 | :--- | :--- | :--- | :--- |
 | Integration Testing | AWS Europe (London) | `eu-west-2` | `https://integ.euid.eu/v2` |

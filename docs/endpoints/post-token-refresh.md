@@ -6,7 +6,7 @@ sidebar_position: 04
 ---
 
 import Link from '@docusaurus/Link';
-import ExampleTokenGenerateResponse from '/docs/snippets/_example-identity-generate-response.mdx';
+import IdentityGenerateResponse from '/docs/snippets/_example-identity-generate-response.mdx';
 
 # POST /token/refresh
 
@@ -65,7 +65,7 @@ This section includes the following sample responses:
 
 If all values are valid and the user has not opted out, the response is successful and a new EUID token is returned, with associated values. The following example shows a decrypted successful response with tokens:
 
-<ExampleTokenGenerateResponse />
+<IdentityGenerateResponse />
 
 #### Successful Response With Opt-Out
 

@@ -6,6 +6,7 @@ sidebar_position: 20
 ---
 
 import Link from '@docusaurus/Link';
+import ExampleTokenInBidstream from '/docs/snippets/_example-token-in-bidstream.mdx';
 
 # Frequently Asked Questions
 
@@ -20,13 +21,17 @@ Here are some frequently asked questions regarding the EUID framework.
 - [When I send personal data to EUID, does EUID store the information?](#when-i-send-personal-data-to-euid-does-euid-store-the-information)
 - [Should I use a Public Operator or a Private Operator?](#should-i-use-a-public-operator-or-a-private-operator)
 
+:::note
+For FAQs relating to mobile publisher integrations, see [FAQs for Mobile Integrations](../guides/integration-mobile-overview.md#faqs-for-mobile-integrations).
+:::
+
 #### Will all integration partners in the UID2 infrastructure (SSPs, third-party data providers, measurement providers) be automatically integrated with EUID?
 
-No. EUID has its own framework, which is separate from UID2. As such, paperwork relating to the usage and access to the UID2 framework does not automatically grant usage and access to the EUID framework. New contracts are required to be signed for EUID.
+No. EUID has its own framework, which is separate from UID2. As such, paperwork relating to accessing and using the UID2 framework does not automatically grant usage and access to the EUID framework. New contracts are required to be signed for EUID.
 
 #### Can users opt out of targeted advertising tied to their EUID?
 
-Yes. Through the [Transparency and Control Portal](https://transparentadvertising.eu), users can opt out from being served targeted ads tied to their EUID identity. Each request is distributed through the EUID Opt-Out Service, and EUID Operators make the opt-out information available to all relevant participants. 
+Yes. Through the [Transparency and Control Portal](https://transparentadvertising.eu), users can opt out from being served targeted ads tied to their EUID. Each request is distributed through the EUID Opt-Out Service, and EUID Operators make the opt-out information available to all relevant participants. 
 
 #### When I send personal data to EUID, does EUID store the information?
 
@@ -114,7 +119,7 @@ The procedure is a little different depending on whether or not you are using an
     - The `refresh-optout@example.com` as the `email` value.
     - The hash of `refresh-optout@example.com` as the `email_hash` value. 
 2. Store the returned `refresh_token` for use in the following step.
-3. Send a [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) request with the `refresh_token` (saved in step 2) as the `token` value.
+3. Send a [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) request with the `refresh_token` (saved in step 2) as the `token` value.<br/>The body response should be empty, and the `status` value should be set to `optout` because the `refresh-optout@example.com` email always results in a logged-out user.
 
    The body response should be empty, and the `status` value should be set to `optout` because the `refresh-optout@example.com` email always results in a logged out user.
 
@@ -126,24 +131,7 @@ The EUID service encrypts tokens using random initialization vectors. The encryp
 
 There are many ways to approach EUID implementation. Here is one example of a code snippet showing how an EUID token is passed in the <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link>:
 
-```js
-{
-  "user":{
-    "ext":{
-      "eids":[
-        {
-          "source":"euid.eu",
-          "uids":[
-            {
-              "id":"E4AAAAW2T2Fj-aRzN_G_t-1UP9Ndl-e1kJLCL0b9wTq0UORlRIFjIS4Mz7I3TYy6YrYyIGDwjHWZOifsnYTZawQcCwAkfyp0RbkLhB4Hznodt3ZLHrOYqFmvSrsbEuMrowfoGSJyFz3hj-Q4CArezZzamp1-aoOjJz3s-ydQADH7OapPv5iQBYBiWza3r3tBVY7drUMV8_08aBMqHuLyKzNUvws"
-            }
-          ]
-        }
-      ]
-    }
-  }
-}
-```
+<ExampleTokenInBidstream />
 
 ## FAQs for Advertisers and Data Providers
 

@@ -40,7 +40,7 @@ Only root-level domains are required for account setup. For example, if you're g
 
 ### Client-Side Mobile Integrations
 
-If you'll be requesting EUID tokens from the client side in mobile apps, it's important to provide a complete list of all your mobile app IDs, including:
+If you'll be requesting EUID tokens from the client side in [mobile apps](../guides/integration-mobile-client-side.md), it's important to provide a complete list of all your mobile app IDs, including:
 
 - Android App ID: any that apply.
 - iOS/tvOS Bundle ID and corresponding iOS App Store ID: any that apply.
