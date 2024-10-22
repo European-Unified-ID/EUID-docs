@@ -42,7 +42,7 @@ From the table in [Client-Side or Client-Server Integration](#client-side-or-cli
 
 ## Refreshing the EUID Token
 
-The SDK for JavaScript includes automated token refresh.
+The SDK for JavaScript includes automated <a href="../ref-info/glossary-uid#gl-token-refresh">token refresh</a>.
 
 ## Storing the EUID Token in the Browser
 <!-- GWH check corresponding (not identical) section in integration-prebid.md, integration-prebid-client-side.md, integration-prebid-client-side.md, for consistency -->

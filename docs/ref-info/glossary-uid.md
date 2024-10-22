@@ -95,6 +95,7 @@ import Link from '@docusaurus/Link';
 <a href="#gl-subscription-id">Subscription ID</a> | 
 
 **T**
+<a href="#gl-tokenized-refresh">Tokenrefresh</a> |
 <a href="#gl-transparency-and-control-portal">Transparency and Control Portal</a> | 
 
 **U**
@@ -218,7 +219,7 @@ import Link from '@docusaurus/Link';
 <dd>EUID tokens are generated from hashed or unhashed email addresses that are converted to raw EUIDs and then encrypted. The EUID token is a unique value; no two EUID tokens are the same. EUID tokens are case sensitive.</dd>
 <dd>The token has a limited life, but can be refreshed in the background using the <a href="#gl-refresh-token">refresh token</a>.</dd>
 <dd>Publishers send EUID tokens in the bidstream.</dd>
-<dd>For details, see <a href="../intro#euid-identifier-types">EUID Identifier Types</a>.</dd>
+<dd>For details, see <a href="../intro#euid-identifier-types">EUID Identifier Types</a> and <a href="ref-tokens#euid-tokens-key-information">EUID Tokens: Key Information</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-euid"><a href="#gl-euid">European Unified ID</a></MdxJumpAnchor></dt>
 <dd>The term EUID can be used to mean the <a href="#gl-euid-framework">EUID framework</a>, the <a href="#gl-euid-service">EUID service</a>, a <a href="#gl-raw-euid">raw EUID</a>, or a <a href="#gl-euid-token">EUID token</a> (advertising token).</dd>
@@ -407,6 +408,13 @@ import Link from '@docusaurus/Link';
 ### T
 
 <dl>
+
+<dt><MdxJumpAnchor id="gl-token-refresh"><a href="#gl-token-refresh">Token refresh</a></MdxJumpAnchor></dt>
+<dd>When an EUID participant requests a <a href="#gl-euid-token">EUID token</a>, the token is returned with a set of associated values, including a <a href="#gl-refresh-token">refresh token</a> and timestamps for the EUID token and the refresh token. As long as the refresh token has not expired, the publisher can use it to request a fresh EUID token without having to send <a href="#gl-dii">DII</a>.</dd>
+<dd>Any EUID participant that requests an EUID token must have a process in place for keeping the token valid: either monitoring the refresh period and requesting a new EUID token before the refresh token expires, or requesting a new EUID token each time, which requires sending DII.</dd>
+<dd>In most cases, token refresh is managed by an SDK or other implementation strategy such as a Prebid.js implementation.</dd>
+<dd>If the refresh token expires, the publisher must re-request an EUID token by sending DII.</dd>
+<dd>For details, see <a href="ref-tokens">EUID Tokens and Refresh Tokens</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-transparency-and-control-portal"><a href="#gl-transparency-and-control-portal">Transparency and Control Portal</a></MdxJumpAnchor></dt>
 <dd>The EUID Transparency and Control Portal is a user-facing website, <a href="https://www.transparentadvertising.eu/">https://www.transparentadvertising.eu/</a>, that allows consumers to opt out of EUID at any time.</dd>
