@@ -37,7 +37,7 @@ Here are some key points about refresh tokens:
 - The token value is an <a href="glossary-uid#gl-opaque">opaque</a> string: do not make any assumptions about the format or length of the string.
 - You can use the refresh token to generate a new EUID token and new refresh token before the current refresh token expires.
 - Using refresh tokens is optional: you could choose to generate a new token from personal data each time rather than refreshing an existing token. 
-- You can manage token refresh in a variety of ways, such as:
+- You can manage <a href="../ref-info/glossary-uid#gl-token-refresh">token refresh</a> in a variety of ways, such as:
   - With an EUID SDK (see [SDK Functionality](../sdks/summary-sdks.md#sdk-functionality))
   - By calling the [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint
   - By using the EUID Prebid.js module (see [EUID Integration Overview for Prebid.js](../guides/integration-prebid.md))
