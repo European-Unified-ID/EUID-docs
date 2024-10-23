@@ -87,7 +87,7 @@ Available information returned through the SDK is outlined in the following tabl
 | `InvalidPayload` | The incoming EUID advertising token is not a valid payload. |
 | `ExpiredToken` | The incoming EUID advertising token has expired. |
 | `KeysNotSynced` | The client has failed to synchronize keys from the EUID service. |
-| `VersionNotSupported` |  The client library does not support the version of the encrypted token. |
+| `VersionNotSupported` | The client library does not support the version of the encrypted token. |
 
 ## FAQs
 

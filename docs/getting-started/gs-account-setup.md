@@ -15,6 +15,12 @@ This page provides general information required for you to get your account set 
 
 To get access to the EUID framework, contact the appropriate team at The Trade Desk listed below. 
 
+If you have an existing relationship with The Trade Desk (the current EUID Administrator), connect directly with your contact to get started with EUID.
+
+:::note
+Contacting The Trade Desk for access is temporary. When the system is moved to independent governance, the governing organizations will manage access requests.
+:::
+
 | Your Role | Contact Email |
 | :--- | :--- |
 | Publisher, App Developer | [dl-EUID-publishers@thetradedesk.com](mailto:dl-EUID-publishers@thetradedesk.com) |

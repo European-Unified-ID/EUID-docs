@@ -1,6 +1,6 @@
 ---
 title: Integration Approaches
-description: Reference information about the approaches available for EUID integration.
+description: Information about the approaches available for EUID integration.
 hide_table_of_contents: false
 sidebar_position: 06
 ---
@@ -44,7 +44,7 @@ For details, see [Subscription ID and Public Key](../getting-started/gs-credenti
 
 For added security, you'll need to provide a list of your top-level domains or apps. For details, see:
 
-- For websites: [Client-Side Implementation for Publishers](../getting-started/gs-account-setup.md#client-side-web-integrations).
+- For websites: [Client-Side Web Integrations](../getting-started/gs-account-setup.md#client-side-web-integrations).
 - For mobile apps: [Client-Side Mobile Integrations](../getting-started/gs-account-setup.md#client-side-mobile-integrations).
 
 ## Client-Server Integration
