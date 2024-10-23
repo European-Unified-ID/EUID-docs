@@ -114,7 +114,7 @@ import Link from '@docusaurus/Link';
 <dd>Advertising token is another term for a <a href="#gl-euid-token">EUID token</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-api-key"><a href="#gl-api-key">API key</a></MdxJumpAnchor></dt>
-<dd>Each EUID <a href="/docs/intro#participants">participant</a> using a server-side implementation has an API key (client key) and also a secret value associated with the key, called the client secret (API secret). The client secret is known only to the participant and the EUID service.</dd>
+<dd>Each EUID <a href="../intro#participants">participant</a> using a server-side implementation has an API key (client key) and also a secret value associated with the key, called the client secret (API secret). The client secret is known only to the participant and the EUID service.</dd>
 <dd>For details, see <a href="../getting-started/gs-credentials">EUID Credentials</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-api-secret"><a href="#gl-api-secret">API secret</a></MdxJumpAnchor></dt>
@@ -159,13 +159,13 @@ import Link from '@docusaurus/Link';
 <dt><MdxJumpAnchor id="gl-client-server"><a href="#gl-client-server">Client-server integration</a></MdxJumpAnchor></dt>
 <dd>One of the EUID <a href="#gl-integration-approaches">integration approaches</a> is to integrate partially on the client side and partially on the server side (client-server).</dd>
 <dd>For example, in a client-server integration for a publisher, the EUID token is generated on the server side and refreshed on the client side.</dd>
-<dd>Examples of documentation for publisher client-server integrations: <a href="../guides/integration-prebid-client-server">EUID Client-Server Integration Guide for Prebid.js</a>, <a href="../guides/integration-javascript-client-server">Client-Server Integration Guide for JavaScript</a>.</dd>
+<dd>Examples of documentation for publisher client-server integrations:<br/>- <a href="../guides/integration-prebid-client-server">EUID Client-Server Integration Guide for Prebid.js</a><br/>- <a href="../guides/integration-javascript-client-server">Client-Server Integration Guide for JavaScript</a><br/>- <a href="../guides/integration-mobile-client-server">EUID Client-Server Integration Guide for Mobile</a></dd>
 
 <dt><MdxJumpAnchor id="gl-client-side"><a href="#gl-client-side">Client-side integration</a></MdxJumpAnchor></dt>
 <dd>One of the EUID <a href="#gl-integration-approaches">integration approaches</a> is to integrate entirely on the client side.</dd>
 <dd>In a client-side integration, EUID tokens are generated and refreshed on the client side.</dd>
 <dd>For example, in a client-side integration, advertisers generate EUID tokens on the client side for tracking pixels, and publishers generate EUID tokens on the client side for bidstream use, as well as refreshing the tokens.</dd>
-<dd>Examples of documentation for publisher client-side integrations: <a href="../guides/integration-prebid-client-side">EUID Client-Side Integration Guide for Prebid.js</a>, <a href="../guides/integration-javascript-client-side">Client-Side Integration Guide for JavaScript</a>.</dd>
+<dd>Examples of documentation for publisher client-side integrations:<br/>- <a href="../guides/integration-prebid-client-side">EUID Client-Side Integration Guide for Prebid.js</a><br/>- <a href="../guides/integration-javascript-client-side">Client-Side Integration Guide for JavaScript</a><br/>- <a href="../guides/integration-mobile-client-side">EUID Client-Side Integration Guide for Mobile</a></dd>
 
 <dt><MdxJumpAnchor id="gl-closed-operator"><a href="#gl-closed-operator">Closed Operator</a></MdxJumpAnchor></dt>
 <dd>Closed Operator is another term for a <a href="#gl-private-operator">Private Operator</a>.</dd>
@@ -217,6 +217,7 @@ import Link from '@docusaurus/Link';
 <dt><MdxJumpAnchor id="gl-euid-token"><a href="#gl-euid-token">EUID token (advertising token)</a></MdxJumpAnchor></dt>
 <dd>A European Unified ID (EUID) token, also called an advertising token, is an encrypted form of a <a href="#gl-raw-euid">raw EUID</a>.</dd>
 <dd>EUID tokens are generated from hashed or unhashed email addresses that are converted to raw EUIDs and then encrypted. The EUID token is a unique value; no two EUID tokens are the same. EUID tokens are case sensitive.</dd>
+<dd>The token value is opaque: No assumptions should be made about the format or about the length of the string.</dd>
 <dd>The token has a limited life, but can be refreshed in the background using the <a href="#gl-refresh-token">refresh token</a>.</dd>
 <dd>Publishers send EUID tokens in the bidstream.</dd>
 <dd>For details, see <a href="../intro#euid-identifier-types">EUID Identifier Types</a> and <a href="ref-tokens#euid-tokens-key-information">EUID Tokens: Key Information</a>.</dd>
