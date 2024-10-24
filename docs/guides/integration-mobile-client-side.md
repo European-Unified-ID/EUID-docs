@@ -51,7 +51,7 @@ To integrate with UIEUIDD2 client-side, you'll need to complete the following st
 
 This guide provides instructions for using either of these EUID mobile SDKs:
 
-- SDK for Android (version 1.5.0 or later)
+- SDK for Android (version 1.6.0 or later)
 - SDK for iOS (version 1.7 0 or later)
 
 For instructions for installing the correct SDK/version into your mobile app, see [Add the EUID Mobile SDK to Your Mobile App](#add-the-euid-mobile-sdk-to-your-mobile-app).
@@ -588,7 +588,7 @@ If `getAdvertisingToken()` returns null, and the identity status is not `OPT_OUT
 ## Optional: EUID Prebid Mobile SDK Integration
 
 :::important
-The EUID Prebid Mobile SDK integration requires version 1.5.0 or later of the EUID SDK for Android, or version 1.7.0 or later of the EUID SDK for iOS.
+The EUID Prebid Mobile SDK integration requires version 1.6.0 or later of the EUID SDK for Android, or version 1.7.0 or later of the EUID SDK for iOS.
 :::
 
 <PrebidMobileSDK />
