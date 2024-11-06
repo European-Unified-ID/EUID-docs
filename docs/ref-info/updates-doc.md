@@ -11,6 +11,16 @@ import Link from '@docusaurus/Link';
 
 Check out the latest updates to our EUID documentation resources.
 
+### New: GMA Android Doc
+
+November 6, 2024
+
+We've added the following new document to support EUID integration with GMA Android for mobile ads:
+
+- [EUID GMA Plugin for Android Integration Guide](../guides/mobile-plugin-gma-android)
+
+<!-- APIDOCS-2390 -->
+
 ### New: Mobile Docs
 
 September 16, 2024
