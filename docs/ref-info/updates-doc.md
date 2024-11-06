@@ -13,7 +13,7 @@ Check out the latest updates to our EUID documentation resources.
 
 ### New: GMA Android Doc
 
-November 6, 2024
+October 24, 2024
 
 We've added the following new document to support EUID integration with GMA Android for mobile ads:
 
