@@ -2,7 +2,7 @@
 title: EUID Integration Overview for Prebid
 sidebar_label: EUID Integration Overview for Prebid
 pagination_label: EUID Integration Overview for Prebid
-description: Overview of options for integrating with Prebid.js as part of your EUID implementation.
+description: Overview of options for integrating with Prebid as part of your EUID implementation.
 hide_table_of_contents: false
 sidebar_position: 04
 
