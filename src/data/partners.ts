@@ -55,7 +55,7 @@ export const partnersData: PartnersDataType = [
   },
   {
     name: "Media Figaro",
-    logo: "media-fiagro-logo.png",
+    logo: "media-figaro-logo.png",
   },
   {
     name: "Motorsport Network",
