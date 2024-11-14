@@ -14,6 +14,10 @@ export const partnersData: PartnersDataType = [
     logo: "bcn-logo.png",
   },
   {
+    name: "ElDiario.es",
+    logo: "eldiario-logo.png",
+  },
+  {
     name: "Funke Digital",
     logo: "funke.png",
   },
@@ -50,12 +54,20 @@ export const partnersData: PartnersDataType = [
     logo: "m6-logo.png",
   },
   {
+    name: "Media Figaro",
+    logo: "media-figaro-logo.png",
+  },
+  {
     name: "Motorsport Network",
     logo: "motorsport_network_logo.png",
   },
   {
     name: "Mumsnet",
     logo: "mumsnet-logo.png",
+  },
+  {
+    name: "Prensa Iberica",
+    logo: "prensa-iberica-logo.png",
   },
   {
     name: "Primsa",
@@ -78,6 +90,10 @@ export const partnersData: PartnersDataType = [
     logo: "salesforce-logo.png",
   },
   {
+    name: "SEM, SEO y MAS",
+    logo: "ssmas-logo.png",
+  },
+  {
     name: "Tealium",
     logo: "tealium.png",
   },
@@ -89,5 +105,9 @@ export const partnersData: PartnersDataType = [
   {
     name: "TF1",
     logo: "tf1.png",
+  },
+  {
+    name: "Webedia Spain",
+    logo: "webdia-logo.jpg",
   },
 ];

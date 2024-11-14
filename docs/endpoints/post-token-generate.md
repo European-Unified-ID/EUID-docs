@@ -18,7 +18,7 @@ Used by: This endpoint is used mainly by publishers.
 Be sure to call this endpoint only when you have a legal basis to convert the user’s personal data to an EUID token for targeted advertising. The `optout_check` parameter, required with a value of `1`, checks whether the user has opted out.
 :::
 
-<!-- uid2_euid_diff re legal basis. For admonition -->
+<!-- uid2_euid_diff re legal basis for admonition above -->
 
 Rather than calling this endpoint directly, you could use one of the SDKs to manage it for you. For a summary of options, see [SDKs: Summary](../sdks/summary-sdks.md).
 
@@ -87,7 +87,7 @@ echo '{"email_hash": "tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ="}' \
   | curl -X POST 'https://prod.euid.eu/v2/token/generate' -H 'Authorization: Bearer YourTokenBV3tua4BXNw+HVUFpxLlGy8nWN6mtgMlIk=' -d @- \
   | decrypt_response.py DELPabG/hsJsZk4Xm9Xr10Wb8qoKarg4ochUdY9e+Ow=
 ```
-For details, and code examples in different programming languages, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md)
+For details, and code examples in different programming languages, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
 
 ## Decrypted JSON Response Format 
 
