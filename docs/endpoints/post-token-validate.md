@@ -9,7 +9,7 @@ import Link from '@docusaurus/Link';
 
 # POST /token/validate
 
-Validates that an advertising token matches the specified hashed or unhashed email address. 
+Validates that an advertising token matches the specified hashed or unhashed email address or phone number.
 
 Used by: This endpoint is used mainly by publishers.
 
@@ -37,14 +37,16 @@ The integration environment and the production environment require different <Li
 
 ### Unencrypted JSON Body Parameters
 
-- Include only one of the following valid options, as listed in the Body Parameter table: `email`, `email_hash`. For the parameter you choose to test with, use the exact value listed.
+- Include only one of the following four valid options, as listed in the Body Parameter table: `email`, `email_hash`, `phone`, or `phone_hash`. For the parameter you choose to test with, use the exact value listed.
 - Include the required body parameters as key-value pairs in the JSON body of a request when encrypting it.
 
 | Body Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
 | `token` | string | Required | The advertising token returned by the [POST&nbsp;/token/generate](post-token-generate.md) response. |
 | `email` | string | Conditionally Required | The email address for token validation.<br/>The only valid value is: `validate@example.com`. |
-| `email_hash` | string | Conditionally Required | The [Base64-encoded SHA-256](../getting-started/gs-normalization-encoding.md#email-address-hash-encoding) hash of a [normalized](../getting-started/gs-normalization-encoding.md#email-address-normalization) email address for token validation (`validate@example.com`).<br/>The only valid value is: `ntI244ZRTXwAwpki6/M5cyBYW7h/Wq576lnN3l9+W/c=`. |
+| `email_hash` | string | Conditionally Required | The [Base64-encoded SHA-256](../getting-started/gs-normalization-encoding.md#email-address-hash-encoding) hash of the [normalized](../getting-started/gs-normalization-encoding.md#email-address-normalization) email address for token validation (`validate@example.com`).<br/>The only valid value is: `ntI244ZRTXwAwpki6/M5cyBYW7h/Wq576lnN3l9+W/c=`. |
+| `phone` | string | Conditionally Required | The [normalized](../getting-started/gs-normalization-encoding.md#phone-number-normalization) phone number for which to generate tokens.<br/>The only valid value is: `+12345678901`. |
+| `phone_hash` | string | Conditionally Required | The [Base64-encoded SHA-256](../getting-started/gs-normalization-encoding.md#phone-number-hash-encoding) hash of a [normalized](../getting-started/gs-normalization-encoding.md#phone-number-normalization) phone number.<br/>The only valid value is: `EObwtHBUqDNZR33LNSMdtt5cafsYFuGmuY4ZLenlue4=`. |
 
 ### Request Examples
 
@@ -66,6 +68,18 @@ The advertising tokens in these examples are fictitious, for illustrative purpos
     "email_hash": "ntI244ZRTXwAwpki6/M5cyBYW7h/Wq576lnN3l9+W/c="
 }
 ```
+```json
+{
+    "token": "AdvertisingTokenmZ4dZgeuXXl6DhoXqbRXQbHlHhA96leN94U1uavZVspwKXlfWETZ3b%2FbesPFFvJxNLLySg4QEYHUAiyUrNncgnm7ppu0mi6wU2CW6hssiuEkKfstbo9XWgRUbWNTM%2BewMzXXM8G9j8Q%3D",
+    "phone": "+12345678901"
+}
+```
+```json
+{
+    "token": "AdvertisingTokenmZ4dZgeuXXl6DhoXqbRXQbHlHhA96leN94U1uavZVspwKXlfWETZ3b%2FbesPFFvJxNLLySg4QEYHUAiyUrNncgnm7ppu0mi6wU2CW6hssiuEkKfstbo9XWgRUbWNTM%2BewMzXXM8G9j8Q%3D",
+    "phone_hash": "EObwtHBUqDNZR33LNSMdtt5cafsYFuGmuY4ZLenlue4="
+}
+```
 
 Here's an encrypted token validation request example for an email hash:
 
@@ -75,6 +89,8 @@ echo '{"token": "AdvertisingTokenmZ4dZgeuXXl6DhoXqbRXQbHlHhA96leN94U1uavZVspwKXl
   | curl -X POST 'https://prod.euid.eu/v2/token/validate' -H 'Authorization: Bearer YourTokenBV3tua4BXNw+HVUFpxLlGy8nWN6mtgMlIk=' -d @- \
   | decrypt_response.py DELPabG/hsJsZk4Xm9Xr10Wb8qoKarg4ochUdY9e+Ow= 
 ```
+
+[**GWH__AA03 the UID2 example is different. See post token validate line 87**]
 
 For details, and code examples in different programming languages, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
 
@@ -97,7 +113,7 @@ A successful decrypted response returns a boolean value that indicates the valid
 
 | Property | Data Type | Description |
 | :--- | :--- | :--- |
-| `body` | boolean | A value of `true` indicates that the email address or email address hash specified in the request is the same as the one used to generate the advertising token.<br/>A value of `false` indicates any of the following:<br/>- The request included an invalid advertising token.<br/>- The email address or email address hash specified in the request is not one of the two valid values specified in the [Unencrypted JSON Body Parameters](#unencrypted-json-body-parameters) table. |
+| `body` | boolean | A value of `true` indicates that the email address, phone number, or the respective hash specified in the request is the same as the one used to generate the advertising token.<br/>A value of `false` indicates any of the following:<br/>- The request included an invalid advertising token.<br/>- The email address, phone number, or the respective hash specified in the request is not one of the four valid values specified in the [Unencrypted JSON Body Parameters](#unencrypted-json-body-parameters) table. |
 
 ### Response Status Codes
 
@@ -115,10 +131,10 @@ If the `status` value is anything other than `success`, the `message` field prov
 
 You can use this endpoint to test whether the <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> that you are sending through [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) is valid. Follow these steps.
 
-1. Depending on whether the personal data is a hashed or unhashed email address, send a [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) request using one of the two valid options listed in the [Unencrypted JSON Body Parameters](#unencrypted-json-body-parameters) table&#8212;`email` or `email_hash`&#8212;with the corresponding value as listed in the table.
+1. Depending on whether the personal data is a hashed or unhashed email address or phone number, send a [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) request using one of the four valid options listed in the [Unencrypted JSON Body Parameters](#unencrypted-json-body-parameters) table&#8212;`email`, `email_hash`, `phone`, or `phone_hash`&#8212;with the corresponding value as listed in the table.
 
 2. Store the returned `advertising_token` value for use in the next step.
-3. Send a `POST /token/validate` request using the `email` or `email_hash` value that you sent in Step 1, with the `advertising_token` that you saved in Step 2 as the `token` property value. 
+3. Send a `POST /token/validate` request using the `email`, `email_hash`, `phone`, or `phone_hash` value that you sent in Step 1, with the `advertising_token` that you saved in Step 2 as the `token` property value. 
 4. Check the response to the `POST /token/validate` request. The results indicate the success of your process, as follows: 
     - A response of `true` indicates that the personal data you sent as a request in Step 1 matches the token you received in the response of Step 1. 
-    - A response of `false` indicates that there might be an issue with the way you are sending email addresses or their hashes.
+    - A response of `false` indicates that there might be an issue with the way you are sending email addresses, phone numbers, or their respective hashes.
