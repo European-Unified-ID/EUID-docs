@@ -136,13 +136,16 @@ const sidebars = {
                 'guides/mobile-plugin-ima-ios',
               ],
             },
-
-        ],
-        },
-
-        {
-          type: 'category',
-          label: 'Advertiser/Data Provider Integrations',
+  
+  
+            'guides/integration-liveramp-tips',
+  
+          ],
+          },
+  
+          {
+            type: 'category',
+            label: 'Advertiser/Data Provider Integrations',
           link: {
             type: 'generated-index',
           },
