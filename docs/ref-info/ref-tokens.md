@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 # EUID Tokens and Refresh Tokens
 
-When a publisher sends a user's <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>&#8212;hashed or unhashed email addresses&#8212;to the EUID Operator, whether via one of the EUID SDKs or the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint, the EUID Operator converts the personal data to a <a href="glossary-uid#gl-raw-euid">raw EUID</a>, encrypts it into an <a href="glossary-uid#gl-euid-token">EUID token</a>, and returns the EUID token with associated values, including a refresh token. The publisher can then use the EUID token in the bidstream.
+When a publisher sends a user's <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>&#8212;hashed or unhashed email addresses or phone numbers&#8212;to the EUID Operator, whether via one of the EUID SDKs or the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint, the EUID Operator converts the personal data to a <a href="glossary-uid#gl-raw-euid">raw EUID</a>, encrypts it into an <a href="glossary-uid#gl-euid-token">EUID token</a>, and returns the EUID token with associated values, including a refresh token. The publisher can then use the EUID token in the bidstream.
 
 ## EUID Tokens: Key Information
 
@@ -24,7 +24,7 @@ Here are some key points about EUID tokens:
 - The token generation logic checks for user opt-out. If the user has opted out of EUID, no EUID token is generated. For details, see [User Opt-Out](../getting-started/gs-opt-out.md).
 - The token has a limited life, but can be refreshed using the refresh token.
 - You can refresh many times, to get a new EUID token and corresponding new refresh token, as long as the current EUID token is always refreshed before the current refresh token expires.
-- If the token has expired, or as an alternative to refreshing an existing token, you can generate a new EUID token from the original hashed or unhashed email address.
+- If the token has expired, or as an alternative to refreshing an existing token, you can generate a new EUID token from the original hashed or unhashed email address or phone number.
 - Publishers send EUID tokens in the bidstream.
 - Refreshing an EUID token does not invalidate/expire the original or previous EUID token. You can still use the earlier token until it expires.
 
@@ -76,23 +76,31 @@ The following examples show how you could first check if the token can be refres
     ```java
     if (identity == null || !identity.isRefreshable()) { we must no longer use this identity (for example, remove this identity from the user's session) }
     ```
+
 1. Determine if a refresh is needed:
+
     ```java
     if (identity.isDueForRefresh()) {..}
     ```
+
 </TabItem>
 <TabItem value='py' label='Python'>
+
 1. Determine if the identity can be refreshed (that is, the refresh token hasn't expired):
 
    ```py
    if not identity or not identity.is_refreshable(): # we must no longer use this identity (for example, remove this identity from the user's session)
    ```
+
 1. Determine if a refresh is needed:
+
    ```py
     if identity.is_due_for_refresh()):
     ```
+
 </TabItem>
 </Tabs>
+
 Before using the code example, check the prerequisites and notes for the language you're using. For details, refer to the doc for the applicable SDK:
 
 - [SDK for Java, Usage for Publishers, Basic Usage Server-Side Integration section](../sdks/sdk-ref-java.md#basic-usage-server-side-integration)

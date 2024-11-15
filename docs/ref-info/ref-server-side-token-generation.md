@@ -13,13 +13,13 @@ import Link from '@docusaurus/Link';
 
 If you're a publisher setting up a client-server or server-side EUID integration, the first step is to generate the EUID token on your server. Then, you can keep the token refreshed either on the client side or server side, and pass the token to the client side for sending to the RTB bidstream.
 
-There are two approaches for publishers generating EUID tokens on the server side by providing <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> (email address):
+There are two approaches for publishers generating EUID tokens on the server side by providing <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> (email address or phone number):
 
 - Integration with an SDK
 - Direct integration to API endpoints
 
 :::warning
-For security reasons, the API key and secret used in token generation *must* be called on the server side. Do not store these values on the client side, whether on a web page or in Prebid. For details, see [Security of API Key and Client Secret](../getting-started/gs-credentials.md#security-of-api-key-and-client-secret).
+For security reasons, the API key and secret used in token generation *must* be called on the server side. Do not store these values on the client side, whether on a web page, in a mobile app, or in Prebid. For details, see [Security of API Key and Client Secret](../getting-started/gs-credentials.md#security-of-api-key-and-client-secret).
 :::
 
 Options are summarized in the following table.
