@@ -9,7 +9,7 @@ import Link from '@docusaurus/Link';
 
 # European Unified ID Overview
 
-The European Unified ID (EUID) is a framework that enables deterministic identity for advertising opportunities on the open internet for many [participants](#participants) across the advertising ecosystem. The EUID framework enables publisher websites, mobile apps, and Connected TV (CTV) apps to monetize through programmatic workflows. Built on the [UID2 framework](https://unifiedid.com/docs/intro), EUID offers privacy controls designed to help participants meet market requirements in many European countries and some other regions such as the UK.
+European Unified ID (EUID) is a framework that enables deterministic identity for advertising opportunities on the open internet for many [participants](#participants) across the advertising ecosystem. The EUID framework enables publisher websites, mobile apps, and Connected TV (CTV) apps to monetize through programmatic workflows. Built on the [UID2 framework](https://unifiedid.com/docs/intro), EUID offers privacy controls designed to help participants meet market requirements in many European countries and some other regions such as the UK.
 
 :::note
 The term "EUID" can refer to either the framework or an actual identifier. Unless otherwise indicated, this page provides an overview of the EUID framework.
@@ -29,7 +29,7 @@ The following table summarizes the key differences between the two frameworks.
 | :--- | :--- | :--- |
 | Open-sourced framework | Yes | Yes |
 | Interoperability | Yes | Yes |
-| Personal data used | Email addresses, phone numbers | Email addresses |
+| Personal data used | Email addresses, phone numbers | Email addresses, phone numbers |
 | Consent | Based on local regulations such as the California Privacy Rights Act (CPRA) and the California Consumer Privacy Act (CCPA). | Driven by the General Data Protection Regulation (GDPR), the Transparency and Consent Framework (TCF) operated by IAB, and local regulatory guidance. |
 
 ### Guiding Principles
@@ -44,7 +44,7 @@ The EUID framework has the following principles as its foundation:
 
 - **Interoperable**: The framework allows other identity solutions (commercial and proprietary) to integrate and provide EUID tokens with their offerings.
 
-- **Secure and encrypted data**: EUID leverages multiple layers of security to protect user and other participant data.
+- **Secure and encrypted data**: EUID leverages multiple layers of security to help protect user and other participant data.
 
 - **Consumer control**: Consumers can opt out of EUID at any time through the [Transparency and Control Portal](https://transparentadvertising.eu).
 
@@ -64,7 +64,7 @@ The EUID framework is built on the following technical principles:
 
 ## Elements of the EUID Infrastructure
 
-The following sections explain and illustrate the key elements of the EUID infrastructure:
+The following sections explain and illustrate the key elements of the EUID framework infrastructure:
 
   - [EUID Identifier Types](#euid-identifier-types)
   - [Components](#components)
@@ -73,12 +73,16 @@ The following sections explain and illustrate the key elements of the EUID infra
 
 ### EUID Identifier Types
 
-EUID is a deterministic ID that is based on email addresses. There are two types of EUIDs: raw EUIDs and EUID tokens (also known as advertising tokens). The following table explains each type.
+EUID is a deterministic ID that is based on <Link href="ref-info/glossary-uid#gl-personal-data">personal data</Link>, such as email address or phone number. There are two types of EUIDs: raw EUIDs and EUID tokens (also known as advertising tokens). The following table explains each type.
 
 | ID Type | Shared in Bidstream? | Description |
 | :--- | :--- | :--- |
-| **Raw EUIDs** | No | An unencrypted alphanumeric identifier created through the EUID APIs or SDKs with the user's email address as input.<br/>To avoid revealing the source data, the input value is hashed if it was not already hashed, then salted, and then hashed again using a secret <Link href="ref-info/glossary-uid#gl-salt">salt</Link> value to create the raw EUID. The process that creates the raw EUID is designed to create a secure, opaque value that can be stored by advertisers, third-party data providers, and demand-side platforms (DSPs). |
-| **EUID Token (Advertising Token)** | Yes | An encrypted form of a raw EUID. EUID tokens are generated from hashed or unhashed email addresses that are converted to raw EUIDs and then encrypted to help ensure protection in the <Link href="ref-info/glossary-uid#gl-bidstream">bidstream</Link>.<br/>EUID tokens are designed to be used by publishers or publisher service providers. Supply-side platforms (SSPs) pass EUID tokens in the bidstream and DSPs decrypt them at bid request time. |
+| **Raw EUIDs** | No | An unencrypted alphanumeric identifier created through the EUID APIs or SDKs with the user's verifiable personal data, such as a hashed or unhashed email address or a phone number, as input.<br/>To avoid revealing the source data, the input value is hashed if it was not already hashed, and then hashed again using a secret <Link href="ref-info/glossary-uid#gl-salt">salt</Link> value to create the raw EUID. The process that creates the raw EUID is designed to create a secure, opaque value that can be stored by advertisers, third-party data providers, and demand-side platforms (DSPs).<br/>Raw EUIDs are case sensitive.<br/>Example: A request for the raw EUID for the fictitious email address `user@example.com` resulted in this value: `E2dxEv3oMBzNHPw5iUVmwH2Hv+60D4AXYe+2ge9U0No=`. |
+| **EUID Token (Advertising Token)** | Yes | An encrypted form of a raw EUID. EUID tokens are generated from hashed or unhashed email addresses or phone numbers that are converted to raw EUIDs and then encrypted to help ensure protection in the <Link href="ref-info/glossary-uid#gl-bidstream">bidstream</Link>.<br/>EUID tokens are designed to be used by publishers or publisher service providers. Supply-side platforms (SSPs) pass EUID tokens in the bidstream and DSPs decrypt them at bid request time.<br/>EUID tokens are case sensitive.<br/>Example: A request for a EUID token for the fictitious email address `user@example.com` resulted in this value: `A4AAAAs6ZBcEbwAPoFhVV7CNW5W-4R-9TKDNL4RS0ctkw1U-IkNOXSnWczvwOMgCQaXHPf3Gd1o1W6IBmlZBFIloM67XOsOgwP5jUrQrclGkq1zBJJUJmOFTe6sJJA7pM1GP9gLd-hz5did6baZvcKd8DXkUYM-WALRZFnzHivu_1YEsC_CeXNdMexKDN7EwSQ6L5eZvOd1F1RkF_nLy_J0twg`. |
+
+:::note
+For the fictitious email address `user@example.com` used in these examples, the corresponding refresh token was: `AAAABrexFHvQVhNJqu+y/ua7rsgShF8e9NUXUJOZFmeFRD8TAsJadaLfOlLkwC5iSxcOKWFD9YwMBzbbcPa92CInba+bcPTaAFNmM2ZpIHgGy6lDcNPzvEnPQh/5fyZ3MD44SX/tHyIXa0R2OBAOLBA1A81r3jefhSsxZdyyBF58KtnaX6UbaeOEaguOfMnJdmhaPeWKj33v7vGfROWtxDWmi6wvGL5lHTX9H6iIZ9i1WSsemYPUgmoDOQeT7nzllJK968OECFj5LkCazDN3pCrYSeuJby9o0fMuSZNxzp6EVzi6XVED4ETtzpcaY0AArzzdh0IXV9MgH8jyg7bJSUWXQG+8kMPZzwbs9EB+7ddAUOLZL/GBna8Hm3Im03EjN3sJ`.
+:::
 
 ### Components
 
@@ -100,18 +104,18 @@ The following table lists the key participants and their roles in the EUID [work
 | Participant | Role Description |
 | :--- | :--- |
 | **Core Administrator** | An organization (currently, The Trade Desk) that manages the EUID Core Service and other [components](#components). For example, it distributes encryption keys and salts to EUID operators and sends user opt-out requests to operators and DSPs. |
-| **Operators** | Organizations that operate the <Link href="ref-info/glossary-uid#gl-operator-service">Operator Service</Link> (via the EUID APIs). Operators periodically receive and store up-to-date encryption keys and salts from the EUID Core Service, salt and hash <Link href="ref-info/glossary-uid#gl-personal-data">personal data</Link> to return EUID tokens, encrypt raw EUIDs to generate EUID tokens, and distribute EUID token decryption keys.<br/>Public Operators (Open Operators) run public instances of the Operator Service. For example, The Trade Desk currently serves as a Public Operator for the EUID framework, available to all participants. If other Public Operators are available, a participant can choose which operator to work with.<br/>Any participant can also choose to become a Private Operator to generate and manage EUIDs. |
+| **Operators** | Organizations that run the <Link href="ref-info/glossary-uid#gl-operator-service">Operator Service</Link> (via the EUID APIs). Operators periodically receive and store up-to-date encryption keys and salts from the EUID Core Service, salt and hash <Link href="ref-info/glossary-uid#gl-personal-data">personal data</Link> to return raw EUIDs, encrypt raw EUIDs to generate EUID tokens, and distribute EUID token decryption keys.<br/>Public Operators (Open Operators) run public instances of the Operator Service. For example, The Trade Desk currently serves as a Public Operator for the EUID framework, available to all participants. If other Public Operators are available, a participant can choose which operator to work with.<br/>Any participant can also choose to become a Private Operator to generate and manage EUIDs. |
 | **DSPs** | DSPs integrate with the EUID system to receive EUIDs from advertisers (as first-party data) and third-party data providers (as third-party data) and leverage them to inform bidding on EUIDs in the bidstream. |
 | **Data Providers** | Organizations that collect user data and push it to other EUID participants&#8212;for example, advertisers, identity graph providers, and third-party data providers. |
 | **Advertisers** | Organizations that buy impressions across a range of publisher sites and use DSPs to decide which ad impressions to purchase and how much to bid on them. | 
 | **Publishers** | Organizations that propagate EUID tokens to the bidstream via SSPs—for example, identity providers, publishers, and SSO providers. Publishers can choose to work with an SSO provider or an independent ID provider that is interoperable with EUID. Independent ID providers can handle the EUID integration on behalf of publishers. |
-| **Consumers** | Users who have had an EUID token or raw EUID created from their email address. Consumers can opt out of EUID in the [EUID Transparency and Control Portal](https://transparentadvertising.eu). |
+| **Consumers** | Users who have had an EUID token or raw EUID created from their email address or phone number. Consumers can opt out of EUID in the [EUID Transparency and Control Portal](https://transparentadvertising.eu). |
 
 ## Workflows
 
-The following table lists four key workflows in the EUID system and provides links to the respective integration guides, which include specific diagrams, integration steps, FAQs, and other relevant information for each workflow.
+The following table lists four key workflows in the EUID framework with links to their high-level overviews. It also provides links to the respective integration guides, which include diagrams, integration steps, FAQs, and other relevant information for each workflow.
 
-| Workflow | Intended Primary Participants | Integration Guide |
+| Workflow | Intended Primary Participants | Integration Guides |
 | :--- | :--- | :--- |
 | [Workflow for DSPs](overviews/overview-dsps.md#workflow-for-dsps) (Buy-Side) | DSPs who transact on EUID tokens in the bidstream. | See [DSP Integrations](guides/summary-guides#dsp-integrations) |
 | [Workflow for Advertisers](overviews/overview-advertisers.md#workflow-for-advertisers) and [Workflow for Data Providers](overviews/overview-data-providers.md#workflow-for-data-providers) | Organizations that collect user data and push it to DSPs. | See [Advertiser/Data Provider Integrations](guides/summary-guides#advertiserdata-provider-integrations) |
