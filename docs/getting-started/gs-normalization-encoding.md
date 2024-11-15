@@ -68,6 +68,45 @@ When applying Base64 encoding, be sure to Base64-encode the raw bytes of the has
 
 For additional examples, see [Normalization Examples for Email](#normalization-examples-for-email).
 
+## Phone Number Normalization
+
+If you send unhashed phone numbers to the EUID Operator Service, the service normalizes the phone numbers and then hashes them. If you want to hash the phone numbers yourself before sending them, you must normalize them before you hash them.
+
+:::important
+Normalization before hashing ensures that the generated EUID value will always be the same, so that the data can be matched. If you do not normalize before hashing, this might result in a different EUID, reducing the effectiveness of targeted advertising.
+:::
+
+Here's what you need to know about phone number normalization rules:
+
+- The EUID Operator accepts phone numbers in the [E.164](https://en.wikipedia.org/wiki/E.164) format, which is the international phone number format that ensures global uniqueness. 
+- E.164 phone numbers can have a maximum of 15 digits.
+- Normalized E.164 phone numbers use the following syntax, with no spaces, hyphens, parentheses, or other special characters:<br/>
+  `[+] [country code] [subscriber number including area code]`
+ Examples:
+   - US: `1 (234) 567-8901` is normalized to `+12345678901`.
+   - Singapore: `65 1243 5678` is normalized to `+6512345678`.
+   - Sydney, Australia: `(02) 1234 5678` is normalized to drop the leading zero for the city plus include the country code: `+61212345678`.
+
+:::warning
+Make sure that the normalized phone number is UTF-8, not another encoding system such as UTF-16.
+:::
+
+## Phone Number Hash Encoding
+
+A phone number hash is a Base64-encoded SHA-256 hash of a normalized phone number. The phone number is first normalized, then hashed using the SHA-256 hashing algorithm, and then the resulting bytes of the hash value are encoded using Base64 encoding. Note that the Base64 encoding is applied to the bytes of the hash value, not the hex-encoded string representation. 
+
+The following table shows an example of a simple input phone number, and the result as each step is applied to arrive at a secure, opaque, URL-safe value.
+
+| Type | Example | Comments and Usage |
+| :--- | :--- | :--- |
+| Normalized phone number | `+12345678901` | Normalization is always the first step. |
+| SHA-256 hash of normalized phone number | `10e6f0b47054a83359477dcb35231db6de5c69fb1816e1a6b98e192de9e5b9ee` |This 64-character string is a hex-encoded representation of the 32-byte SHA-256. |
+| Hex to Base64 SHA-256 encoding of normalized and hashed phone number | `EObwtHBUqDNZR33LNSMdtt5cafsYFuGmuY4ZLenlue4=` | This 44-character string is a Base64-encoded representation of the 32-byte SHA-256.<br/>NOTE: The SHA-256 hash is a hexadecimal value. You must use a Base64 encoder that takes a hex value as input. Use this encoding for `phone_hash` values sent in the request body. |
+
+:::warning
+When applying Base64 encoding, be sure to use a function that takes a hex value as input. If you use a function that takes text as input, the result is a longer string which is invalid for the purposes of EUID.
+:::
+
 ## Normalization Examples for Email
 
 The following table shows examples of original email addresses and the normalized and hashed values.
@@ -83,6 +122,8 @@ Some of the examples show email addresses that include the plus sign (+), with d
 | `JaneSaoirse+Work@example.com` | `janesaoirse+work@example.com` | Hashed: `28aaee4815230cd3b4ebd88c515226550666e91ac019929e3adac3f66c288180`<br/>Base64-Encoded: `KKruSBUjDNO069iMUVImVQZm6RrAGZKeOtrD9mwogYA=` |
 | `JANE.SAOIRSE@gmail.com`<br/>`Jane.Saoirse@gmail.com`<br/>`JaneSaoirse+Work@gmail.com` | `janesaoirse@gmail.com` | Hashed: `92ee26057ed9dea2535d6c8b141d48373932476599196e00352254896db5888f`<br/>Base64-Encoded: `ku4mBX7Z3qJTXWyLFB1INzkyR2WZGW4ANSJUiW21iI8=` |
 
-<!-- ## Example Code
+## Example Code
 
-For an example of how to generate email hashes in JavaScript, see [Example Code: Hashing and Base-64 Encoding](../guides/integration-javascript-client-side#example-code-hashing-and-base-64-encoding). -->
+For an example of how to generate email and phone hashes in JavaScript, see [Example Code: Hashing and Base-64 Encoding](../guides/integration-javascript-client-side#example-code-hashing-and-base-64-encoding).
+
+<!-- EUID Hashing Tool to come -->

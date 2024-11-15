@@ -9,7 +9,7 @@ import Link from '@docusaurus/Link';
 
 # User Opt-Out
 
-Many different publishers and advertisers use EUID. Different publishers might have different opt-out processes for their individual sites; however, EUID as a whole has very specific opt-out processes that all EUID participants are expected to honor.
+Many different publishers and advertisers use EUID. Different publishers might have different opt-out processes for their individual sites; however, EUID as a whole has very specific opt-out processes that all EUID [participants](../ref-info/glossary-uid.md#gl-participant) are expected to honor.
 
 ## How Users Can Opt Out of EUID
 
@@ -21,7 +21,11 @@ Because each participant has their own opt-out workflow, participants are mandat
 
 For example, if a user opts out of a publisher's site, but has not opted out of EUID, the publisher should not generate an EUID token for that user.  
 
-Consumers can always opt out of EUID being used to show them personalized ads, in the [Transparency and Control Portal](https://www.transparentadvertising.eu/). Enter your email address and follow the prompts.
+Consumers can always opt out of EUID being used to show them personalized ads, in the [Transparency and Control Portal](https://www.transparentadvertising.eu/). Choose email address or phone number, enter the data, and follow the prompts.
+
+:::tip
+To opt out both your email address and your phone number, do them one at a time.
+:::
 
 ## Difference Between Opting Out from a Single Participant and Opting Out of EUID
 
@@ -35,7 +39,7 @@ The sure way for a consumer to fully opt out of EUID is in the [Transparency and
 
 When a consumer opts out of EUID, that individual's EUID is no longer accepted for targeted advertising anywhere in the EUID ecosystem. However, because there is a delay in the time it takes to process and refresh EUID information, the EUID for a user who has opted out might be in play for a short while after opt-out. As each participant periodically refreshes their EUIDs, the opt-out information is propagated to the participants.
 
-The following steps provide a high-level outline of the opt-out workflow intended for users who have had an EUID created from their email address. 
+The following steps provide a high-level outline of the opt-out workflow intended for users who have had an EUID created from their email address or phone number.
 
 1. Users visit the [Transparency and Control Portal](https://www.transparentadvertising.eu/), where they can globally opt out of EUID.
 2. The Transparency and Control Portal sends the opt-out request to the EUID <Link href="../ref-info/glossary-uid#gl-operator-service">Operator Service</Link>.
