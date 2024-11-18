@@ -118,7 +118,7 @@ The procedure is a little different depending on whether or not you are using an
 
 ##### Without SDK:
 
-1. Depending on whether the <Link href="../ref-info/glossary-uid#gl-dii">DII</Link> is an email address or a phone number, send a [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) request using one of the following values:
+1. Depending on whether the <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> is an email address or a phone number, send a [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) request using one of the following values:
     - The `refresh-optout@example.com` as the `email` value.
     - The hash of `refresh-optout@example.com` as the `email_hash` value. 
     - The `+00000000002` as the `phone` value.
