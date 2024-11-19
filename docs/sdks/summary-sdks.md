@@ -20,13 +20,13 @@ The following table summarizes the functionality available with each SDK.
 
 | EUID SDK for... | Client-Side or Server-Side | Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to Raw EUIDs | Monitor Rotated Salt Buckets |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-|JavaScript | Client| &#8212; | &#8212; | &#9989; | &#9989; | &#8212; | &#8212; |
+|JavaScript | Client | &#8212; | &#8212; | &#9989; | &#9989; | &#8212; | &#8212; |
 |Java | Server | &#9989; | &#9989; | &#9989; | &#9989; | &#9989; | &#8212; |
 |Python | Server | &#9989; | &#9989; | &#9989; | &#9989; | &#9989; | &#9989; |
 |C# / .NET | Server | &#9989; | &#9989; | &#8212; | &#8212; | &#8212; | &#8212; |
 |C++ | Server | &#9989; | &#9989; | &#8212; | &#8212; | &#8212; | &#8212; |
 |Android | Client&nbsp;(Mobile) | &#8212; | &#8212; | &#9989; | &#9989; | &#8212; | &#8212; |
-|iOS | Client (Mobile)| &#8212; | &#8212; | &#9989;| &#9989; |&#8212; | &#8212; |
+|iOS | Client (Mobile) | &#8212; | &#8212; | &#9989;| &#9989; |&#8212; | &#8212; |
 
 <!-- &#9989; = Supported | &#8212; = Not Supported -->
 

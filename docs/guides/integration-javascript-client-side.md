@@ -130,6 +130,8 @@ To configure the SDK, call one of the following methods, with an object containi
 
 *  `__euid.setIdentityFromEmail`
 *  `__euid.setIdentityFromEmailHash`
+*  `__euid.setIdentityFromPhone`
+*  `__euid.setIdentityFromPhoneHash`
 
 The following sections include coding examples for each scenario.
 
@@ -192,6 +194,44 @@ await __euid.setIdentityFromEmailHash(
 
 In this scenario:
 - **The publisher is responsible for normalizing and hashing the email address**. For details, see [Normalization and Encoding](../getting-started/gs-normalization-encoding.md).
+- The EUID SDK encrypts the hash before sending it to the EUID service.
+
+</TabItem>
+<TabItem value='example_phone_unhashed' label='Phone Number, Unhashed'>
+
+The following example configures the EUID SDK with a phone number.
+
+```js
+await __euid.setIdentityFromPhone(
+    '+12345678901',
+    {
+        subscriptionId: subscriptionId,
+        serverPublicKey: publicKey,
+    }
+);
+```
+In this scenario:
+
+- **The publisher is responsible for normalizing the phone number**. For details, see [Phone Number Normalization](../getting-started/gs-normalization-encoding.md#phone-number-normalization).
+- The EUID SDK hashes the phone number before sending the encrypted hash to the EUID service.
+
+</TabItem>
+<TabItem value='example_phone_hash' label='Phone Number, Normalized and Hashed'>
+
+The following example configures the EUID SDK with a hashed phone number:
+
+```js
+await __euid.setIdentityFromPhoneHash(
+    'EObwtHBUqDNZR33LNSMdtt5cafsYFuGmuY4ZLenlue4=',
+    {
+        subscriptionId: subscriptionId,
+        serverPublicKey: publicKey,
+    }
+);
+```
+
+In this scenario:
+- **The publisher is responsible for normalizing, hashing, and Base64-encoding the phone number**. For details, see [Normalization and Encoding](../getting-started/gs-normalization-encoding.md).
 - The EUID SDK encrypts the hash before sending it to the EUID service.
 
 </TabItem>

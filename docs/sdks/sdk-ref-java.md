@@ -143,7 +143,7 @@ If you're using the SDK's HTTP implementation, follow these steps.
    private final PublisherUid2Client publisherUid2Client = new PublisherUid2Client(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY);
    ```
 
-2. Call a function that takes the user's email address as input and generates a `TokenGenerateResponse` object<!-- . The following example uses an email address -->:
+2. Call a function that takes the user's email address or phone number as input and generates a `TokenGenerateResponse` object<!-- . The following example uses an email address -->:
    ```java
    TokenGenerateResponse tokenGenerateResponse = publisherUid2Client.generateTokenResponse(TokenGenerateInput.fromEmail(emailAddress).doNotGenerateTokensForOptedOut());
    ```
@@ -217,7 +217,7 @@ If you're using server-side integration (see [Publisher Integration Guide, Serve
     ```java
     private final PublisherUid2Helper publisherUid2Helper = new PublisherUid2Helper(EUID_SECRET_KEY);
     ```
-2. Call a function that takes the user's email address<!--  or phone number --> as input and creates a secure request data envelope. See [Encrypting requests](../getting-started/gs-encryption-decryption.md#encrypting-requests)<!-- . The following example uses an email address -->:
+2. Call a function that takes the user's email address or phone number as input and creates a secure request data envelope. See [Encrypting requests](../getting-started/gs-encryption-decryption.md#encrypting-requests). The following example uses an email address:
 
     ```java
     EnvelopeV2 envelope = publisherUid2Helper.createEnvelopeForTokenGenerateRequest(TokenGenerateInput.fromEmail(emailAddress).doNotGenerateTokensForOptedOut());
@@ -234,7 +234,7 @@ If you're using server-side integration (see [Publisher Integration Guide, Serve
    - Always apply `doNotGenerateTokensForOptedOut()`. This applies a parameter similar to setting `optout_check=1` in the call to the POST&nbsp;/token/generate endpoint (see [Unencrypted JSON Body Parameters](../endpoints/post-token-generate.md#unencrypted-json-body-parameters)).
    :::
 
- <!-- uid2_euid_diff re legal basis for admonition above (first bullet not in UID2) -->
+<!-- uid2_euid_diff re legal basis for admonition above (first bullet not in UID2) -->
 
 4. If the HTTP response status code is _not_ 200, see [Response Status Codes](../endpoints/post-token-generate.md#response-status-codes) to determine next steps. Otherwise, convert the EUID identity response content into a `TokenGenerateResponse` object:
 
@@ -286,7 +286,7 @@ If you're using server-side integration (see [Publisher Integration Guide, Serve
       ```java
       if (identity.isDueForRefresh()) {..}
       ```
-4. If a refresh is needed, call the [POST&nbsp;token/refresh](../endpoints/post-token-refresh.md) endpoint, with the following:
+4. If a refresh is needed, call the [POST token/refresh](../endpoints/post-token-refresh.md) endpoint, with the following:
    1. Headers: Depending on your HTTP library, this might look something like the following:
     
       `.putHeader("Authorization", "Bearer " + EUID_API_KEY)`  
@@ -302,19 +302,18 @@ If you're using server-side integration (see [Publisher Integration Guide, Serve
    If the user has opted out, this method returns null, indicating that the user's identity should be removed from the session. To confirm optout, you can use the `tokenRefreshResponse.isOptout()` function.
 
 ## Usage for Advertisers/Data Providers
+
 1. Create an instance of IdentityMapClient as an instance variable.
    ```java
    final private IdentityMapClient identityMapClient = new IdentityMapClient(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY);
    ```
 
-2. Call a function that takes email addresses<!--  or phone numbers --> as input and generates an IdentityMapResponse object<!-- . The following example uses email addresses -->:
+2. Call a function that takes email addresses or phone numbers as input and generates an IdentityMapResponse object. The following example uses email addresses:
    ```java
    IdentityMapResponse identityMapResponse = identityMapClient.generateIdentityMap(IdentityMapInput.fromEmails(Arrays.asList("email1@example.com", "email2@example.com")));
    ```
 
-:::note
-The SDK hashes input values before sending them. This ensures that raw email addresses<!--  and phone numbers --> do not leave your server.
-:::
+   >Note: The SDK hashes input values before sending them. This ensures that raw email addresses and phone numbers do not leave your server.
 
 3. Retrieve the mapped and unmapped results as follows:
    ```java
@@ -350,9 +349,9 @@ client.refresh();
 ```
 
 3. Decrypt a token into a raw EUID. Pass the token, and then do one of the following:
-* If the bid request originated from a publisher's website, pass the domain name. The domain name must be all lower case, without spaces and without subdomain. For example, for `Subdomain.DOMAIN.com`, pass `domain.com` instead.
-<!-- * If the bid request originated from a mobile app, pass the <Link href="../ref-info/glossary-uid#gl-app-name">app name</Link>. -->
-* Otherwise, pass `null`.
+   * If the bid request originated from a publisher's website, pass the domain name. The domain name must be all lower case, without spaces and without subdomain. For example, for `Subdomain.DOMAIN.com`, pass `domain.com` instead.
+   * If the bid request originated from a mobile app, pass the <Link href="../ref-info/glossary-uid#gl-app-name">app name</Link>.
+   * Otherwise, pass `null`.
 
 ```java
 DecryptionResponse decrypted = client.decryptTokenIntoRawUid(uidToken, domainOrAppName); 
