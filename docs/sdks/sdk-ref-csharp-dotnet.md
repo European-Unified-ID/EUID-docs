@@ -10,6 +10,7 @@ import Link from '@docusaurus/Link';
 # SDK for C# / .NET (Server-Side) Reference Guide
 
 You can use the SDK for C# / .NET on the server side to facilitate decrypting of EUID tokens to access the raw EUID.
+
 ## Overview
 
 The functions outlined here define the information that you'll need to configure or can retrieve from the library. The parameters and property names defined below are pseudocode. Actual parameters and property names vary by language but will be similar to the information outlined here.
@@ -22,6 +23,14 @@ This SDK simplifies integration with EUID for any DSPs who are using C# / .NET f
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | &#9989; | &#9989; | &#8212; | &#8212; | &#8212; | &#8212; |
 
+## API Permissions
+
+To use this SDK, you'll need to complete the EUID account setup by following the steps described in the [Account Setup](../getting-started/gs-account-setup.md) page.
+
+You'll be granted permission to use specific functions offered by the SDK, and given credentials for that access. Bear in mind that there might be functions in the SDK that you don't have permission to use.
+
+For details, see [API Permissions](../getting-started/gs-permissions.md).
+
 ## Version
 
 The library uses .NET Standard 2.1. unit tests. The sample app uses .NET 5.0.
@@ -31,7 +40,7 @@ The library uses .NET Standard 2.1. unit tests. The sample app uses .NET 5.0.
 
 This SDK is in the following open-source GitHub repository:
 
-- [EUID SDK for .NET](https://github.com/IABTechLab/uid2-client-net/blob/master/README.md)
+- [SDK for .NET](https://github.com/IABTechLab/uid2-client-net/blob/master/README.md)
 
 The binary is published in this location:
 
@@ -45,8 +54,11 @@ The initialization function configures the parameters necessary for the SDK to a
 | :--- | :--- | :--- |
 | `endpoint` | The endpoint for the EUID service. | N/A |
 | `authKey` | The authentication token that belongs to the client. For access to EUID, see [Contact Info](../getting-started/gs-account-setup.md#contact-info). | N/A |
+| `secretKey` | The client secret. See [EUID Credentials](../getting-started/gs-credentials). |
 
 ## Interface 
+
+The `BidstreamClient` class allows you to decrypt EUID tokens into raw EUIDs.
 
 The interface allows you to decrypt EUID advertising tokens and return the corresponding raw EUID. 
 

@@ -12,7 +12,7 @@ import ExampleEuidCookie from '/docs/snippets/_example-euid-cookie.mdx';
 # SDK for JavaScript Reference Guide (2.x and earlier versions)
 
 :::tip
-This documentation is for earlier versions of the SDK for JavaScript. If you're using an earlier version, we recommend upgrading. See [SDK for JavaScript Reference Guide](./sdk-ref-javascript.md), which includes a migration guide.
+This documentation is for earlier versions of the SDK for JavaScript. If you're using an earlier version, we recommend upgrading. See [SDK for JavaScript Reference Guide](sdk-ref-javascript.md), which includes a migration guide.
 :::
 
 Use this SDK to facilitate the process of establishing client identity using EUID and retrieving advertising tokens. The following sections describe the high-level [workflow](#workflow-overview) for establishing EUID identity, provide the SDK [API reference](#api-reference), and explain the [EUID cookie format](#euid-cookie-format).
@@ -44,6 +44,11 @@ This documentation is for version 2 of the SDK for JavaScript.
 This SDK is in the following open-source GitHub repository:
 
 - [https://github.com/iabtechlab/uid2-web-integrations](https://github.com/iabtechlab/uid2-web-integrations)
+
+<!-- The binary is published in these locations:
+
+- NPM: [https://www.npmjs.com/package/@uid2/uid2-sdk](https://www.npmjs.com/package/@uid2/uid2-sdk)
+- CDN: [https://cdn.prod.uidapi.com/uid2-sdk-${VERSION_ID}.js](https://cdn.prod.uidapi.com/uid2-sdk-${VERSION_ID}.js) (** v3 JS SDK: stash per SW 8/15/23 (same note propagated from UID2 to EUID 11/19/24**) -->
 
 ## Terminology
 
@@ -98,7 +103,6 @@ As part of the SDK [initialization](#initopts-object-void), a token auto-refresh
 Here's what you need to know about the token auto-refresh:
 
 - Only one call to the [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint call can be active at a time.
-
 - If the [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) response is unsuccessful because the user has opted out, or because the refresh token has expired, this suspends the background auto-refresh process. To use EUID-based targeted advertising again, you must obtain the email from the consumer ([isLoginRequired()](#isloginrequired-boolean) returns `true`). In all other cases, auto-refresh attempts continue in the background.
 - The [callback function](#callback-function) specified during the SDK initialization is invoked in the following cases:
 	- After each successful refresh attempt.
@@ -184,8 +188,8 @@ The `opts` object supports the following properties.
 | Property | Data Type | Attribute | Description | Default Value |
 | :--- | :--- | :--- | :--- | :--- |
 | `callback` | `function(object): void` | Required | The function that the SDK should invoke after validating the passed identity. For details, see [Callback Function](#callback-function).| N/A |
-| `identity` | object | Optional | The `body` property value from a successful [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) or [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) call that has been run on the server to generate an identity. To use the identity from a [first-party cookie](#euid-cookie-format), leave this property empty. | N/A |
-| `baseUrl` | string | Optional | The custom base URL of the EUID operator to use when invoking the [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint.<br/>For example: `https://my.operator.fr`. | `https://prod.euid.eu ` |
+| `identity` | object | Optional | The `body` property value from a successful [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) or [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) call that has been run on the server to generate an identity.<br/>To use the identity from a [first-party cookie](#euid-cookie-format), leave this property empty. | N/A |
+| `baseUrl` | string | Optional | The custom base URL of the EUID operator to use when invoking the [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint.<br/>For example: `https://my.operator.fr`. | `https://prod.euid.eu `. |
 | `refreshRetryPeriod` | number | Optional | The number of seconds after which to retry refreshing tokens if intermittent errors occur. | 5 |
 | `cookieDomain` | string | Optional | The domain name string to apply to the [EUID cookie](#euid-cookie-format).<br/>For example, if the `baseUrl` is `https://my.operator.fr`, the `cookieDomain` value might be `operator.fr`. | `undefined` |
 | `cookiePath` | string | Optional | The path string to apply to the [EUID cookie](#euid-cookie-format). | `/` |
@@ -275,7 +279,7 @@ If the `getAdvertisingTokenAsync()` function is called *after* the initializatio
 ```
 
 :::tip
-You can use this function to be notified of the completion of the SDK for JavaScript initialization from a component that might not be the one that called `init()`.
+You can use this function to be notified of the completion of the Client-Side JavaScript SDK initialization from a component that might not be the one that called `init()`.
 :::
 
 ### isLoginRequired(): boolean
