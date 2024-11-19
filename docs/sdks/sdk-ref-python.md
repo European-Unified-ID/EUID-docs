@@ -130,11 +130,11 @@ Decryption response codes, and their meanings, are shown in the following table.
    - Always apply `do_not_generate_tokens_for_opted_out()`. This applies a parameter similar to setting `optout_check=1` in the call to the POST&nbsp;/token/generate endpoint (see [Unencrypted JSON Body Parameters](../endpoints/post-token-generate.md#unencrypted-json-body-parameters)).
    :::
 
-   <!-- uid2_euid_diff re legal basis for admonition above (not in UID2) -->
+<!-- uid2_euid_diff re legal basis for admonition above (not in UID2) -->
 
 #### Client-Server Integration
 
-If you're using client-server integration (see [Client-Side Integration Guide for JavaScript](../guides/integration-javascript-client-side.md)), follow this step:
+If you're using client-server integration (see [Client-Server Integration Guide for JavaScript](../guides/integration-javascript-client-server.md)), follow this step:
 
 * Send this identity as a JSON string back to the client (to use in the [identity field](../sdks/sdk-ref-javascript.md#initopts-object-void)) using the following:
 
@@ -163,8 +163,11 @@ If you're using server-side integration (see [Publisher Integration Guide, Serve
 3. Periodically check if the user's EUID token should be refreshed. This can be done at fixed intervals using a timer, or can be done whenever the user accesses another page:
    1. Retrieve the identity JSON string from the user's session, and then call the following function that takes the identity information as input and generates an `IdentityTokens` object:
 
-      `identity = IdentityTokens.from_json_string(identityJsonString)`
-   2. Determine if the identity can be refreshed (that is, the refresh token hasn't expired):
+       ```py
+       identity = IdentityTokens.from_json_string(identityJsonString)
+       ```
+
+    2. Determine if the identity can be refreshed (that is, the refresh token hasn't expired):
 
        ```py
       if not identity or not identity.is_refreshable(): # we must no longer use this identity (for example, remove this identity from the user's session)
@@ -206,9 +209,9 @@ To map email addresses or their hashes to their raw EUIDs and salt bucket IDs, f
    identity_map_response = client.generate_identity_map(IdentityMapInput.from_emails(["email1@example.com", "email2@example.com"]))
    ```
 
-:::note
-The SDK hashes input values before sending them. This ensures that raw email addresses do not leave your server.
-:::
+   :::note
+   The SDK hashes input values before sending them. This ensures that raw email addresses do not leave your server.
+   :::
 
 3. Retrieve the mapped and unmapped results as follows:
    ```py

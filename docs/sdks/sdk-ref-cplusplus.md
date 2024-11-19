@@ -7,9 +7,9 @@ sidebar_position: 10
 
 import Link from '@docusaurus/Link';
 
-# SDK for C++ (Server-Side) Reference Guide
+# SDK for C++ Reference Guide
 
-You can use the SDK for C++ on the server side to facilitate decrypting of EUID tokens to access the raw EUID.
+You can use the SDK for C++ on the server side to decrypt EUID tokens to access the raw EUID.
 
 ## Overview
 
@@ -22,6 +22,14 @@ This SDK simplifies integration with EUID for any DSPs who are using C++ for the
 | Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to Raw EUIDs | Monitor Rotated Salt Buckets |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | &#9989; | &#9989; | &#8212; | &#8212; | &#8212; | &#8212; |
+
+## API Permissions
+
+To use this SDK, you'll need to complete the EUID account setup by following the steps described in the [Account Setup](../getting-started/gs-account-setup.md) page.
+
+You'll be granted permission to use specific functions offered by the SDK, and given credentials for that access. Bear in mind that there might be functions in the SDK that you don't have permission to use. For example, publishers get a specific API permission to generate and refresh tokens, but the SDK might support other activities that require a different API permission.
+
+For details, see [API Permissions](../getting-started/gs-permissions.md).
 
 ## Version
 

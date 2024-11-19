@@ -24,22 +24,11 @@ The following sections describe the high-level [workflow](#workflow-overview) fo
 If you're using Prebid.js with the EUID Identity Module, or with another product that has EUID support, you probably don't need to use the SDK at all. The Prebid.js module manages everything. For details, see [EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md).
 :::
 
-This page describes version 3 of the SDK for JavaScript. If you are maintaining an integration using an earlier version, do one of the following:
-- Upgrade your integration, using the [migration guide](#migration-guide) (recommended).
-- Refer to the documentation for [earlier versions of the SDK](./sdk-ref-javascript-v2.md).
+This page describes version 3 of the SDK. If you are using an earlier version, we recommend that you upgrade your integration, using the [migration guide](#migration-guide). If needed, documentation for [earlier versions of the SDK](./sdk-ref-javascript-v2.md) is also available.
 
-Related information:
-
-For integration steps for content publishers, see:
+For integration steps for content publishers, refer to either of the following:
   - [Client-Side Integration Guide for JavaScript](../guides/integration-javascript-client-side.md)
   - [Client-Server Integration Guide for JavaScript](../guides/integration-javascript-client-server.md)
-
-## Sample Implementation Website
-
-For example applications with associated documentation, see:
-  - The EUID Google Secure Signals with SDK v3 example:
-    - [Code and docs](https://github.com/IABTechLab/uid2-web-integrations/tree/main/examples/google-secure-signals-integration/with_sdk_v3)
-    - Running site: [Client-Side EUID SDK Integration Example](https://euid.eu/examples/cstg-js-sdk-example/).
 
 ## Functionality
 
@@ -48,6 +37,14 @@ This SDK simplifies development for publishers who want to build their own custo
 | Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to Raw EUIDs | Monitor Rotated Salt Buckets |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | &#8212; | &#8212; | &#9989; | &#9989; | &#8212; | &#8212; |
+
+
+## Sample Implementation Website
+
+For example applications with associated documentation, see:
+  - The EUID Google Secure Signals with SDK v3 example:
+    - [Code and docs](https://github.com/IABTechLab/uid2-web-integrations/tree/main/examples/google-secure-signals-integration/with_sdk_v3)
+    - Running site: [Client-Side EUID SDK Integration Example](https://euid.eu/examples/cstg-js-sdk-example/).
 
 ## API Permissions
 
@@ -255,9 +252,7 @@ At any time after `init` has completed, you can call [`setIdentity`](#setidentit
 
 ## API Reference
 
-:::info
 All interactions with the SDK for JavaScript are done through the global `__euid` object, which is an instance of the `EUID` class. All of the following JavaScript functions are members of the `EUID` class:
-:::
 
 - [constructor()](#constructor)
 - [init()](#initopts-object-void)
@@ -353,11 +348,8 @@ There are two exceptions to this functionality:
 2. For every subsequent callback function passed, the function is added to the existing array of callbacks using the [Array Push Pattern](#array-push-pattern).
 
 :::note
-
-If `useCookie` is updated, the location of the identity changes.  For example, if the value is updated from `true` to `false`, the first party cookie is removed and the identity is added to local storage.
-
+If `useCookie` is updated, the location of the identity changes.  For example, if the value is updated from `true` to `false`, the first-party cookie is removed and the identity is added to local storage.
 :::
-
 
 ### Init Config
 
@@ -366,7 +358,6 @@ Calling `init()` stores an init config in a first-party cookie or local storage 
 ### Self Bootstrap
 
 When the constructor has completed and the SDK has been put on the window object, the code will check local storage and cookie storage for a stored [init config](#init-config).  If the config exists, `init()` is automatically called with the parameters from the config, and as a result, any functions that require `init()` can be used. 
-
 
 #### Errors
 
