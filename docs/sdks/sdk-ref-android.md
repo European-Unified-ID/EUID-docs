@@ -135,6 +135,7 @@ The EUID Mobile SDKs can perform refreshes of EUID identities, after an Identity
 The following code samples provide examples of performing specific activities relating to managing EUID with the SDK for Android.
 
 Generate an initial EUID Identity (see [Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side.md#configure-the-euid-mobile-sdk)):
+
 ``` javascript
 EUIDManager.getInstance().generateIdentity(
     identityRequest: IdentityRequest,

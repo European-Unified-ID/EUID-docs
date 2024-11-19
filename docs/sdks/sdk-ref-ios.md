@@ -128,7 +128,7 @@ EUIDManager.shared.generateIdentity(
     appName: String? = nil
 )
 ```
-Set the Initial EUID Identity (for instructions, see [Client-Server Integration Guide for Mobile](../guides/integration-mobile-client-server.md#configure-the-euid-mobile-sdk)):
+Set the Initial EUID Identity (for instructions, see [Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side.md#configure-the-euid-mobile-sdk)):
 
 ``` javascript
 EUIDManager.shared.setIdentity(_ identity: UID2Identity)
