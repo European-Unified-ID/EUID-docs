@@ -24,7 +24,7 @@ This page is about Private Operators. For information about Public Operators, or
 
 Here are some of the intended benefits of participating in EUID as a Private Operator:
 - You can maintain privacy-conscious workflows for your customer data to be encrypted and activated across chosen partners.
-- You can participate in EUID using your own first-party <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>  without sharing it.
+- You can participate in EUID using your own first-party <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> without sharing it.
 
   Within a Private Operator solution, personal data does not leave your infrastructure.
 - You have full control of resources, performance, and latency for EUID. For example:  
@@ -72,7 +72,7 @@ Each supported Private Operator implementation must meet rigorous security stand
 - The Private Operator must complete an attestation process before accessing the information needed to process EUIDs.
 - The information on S3 is encrypted at rest and also encrypted in transit through TLS. In addition, access is limited to only correctly authorized and attested Private Operators.
 - The information retrieved at startup is not stored locally at any point. It is only ever held in memory, and the Private Operator is running in a protected environment that makes it difficult for anyone running the Operator (such as an Administrator), as well as any external players, to see the data that's in memory.
-- The Private Operator never stores <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> that is sent for processing (email addresses). The data is only used within the enclave, to generate EUIDs, and is discarded immediately after processing.
+- The Private Operator never stores <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> that is sent for processing (email addresses and/or phone numbers). The data is only used within the enclave, to generate EUIDs, and is discarded immediately after processing.
 
 ## Private Operator Limitations
 

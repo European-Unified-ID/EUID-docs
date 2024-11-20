@@ -62,12 +62,12 @@ The following sections provide additional details for each step in the diagram:
 
 ### Establish Identity: Capture User Data
 
-After authentication in step 1-c, which allows the publisher to validate the user's email address, an EUID token must be generated on the server side. The following table details the token generation steps.
+After authentication in step 1-c, which allows the publisher to validate the user's email address or phone number, an EUID token must be generated on the server side. The following table details the token generation steps.
 
 | Step | Endpoint/SDK | Description |
 | :--- | :--- | :--- |
-| 1-d | [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) | Use the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint to generate an EUID token using the email address provided by the user. Make sure it is normalized. |
-| 1-e | [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) | The endpoint returns an EUID token generated from the user's hashed or unhashed email address. |
+| 1-d | [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) | Use the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint to generate an EUID token using the email address or phone number provided by the user. Make sure it is normalized. |
+| 1-e | [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) | The endpoint returns an EUID token generated from the user's email address, phone number, or the respective hash. |
 | 1-f | SDK for JavaScript | The SDK sends the returned EUID token from step 1-e to the SDK in the `identity` property of its [init() function](../sdks/sdk-ref-javascript.md#initopts-object-void). |
 | 1-g | SDK for JavaScript | Provide the SDK a callback function that will receive identity updates from the SDK and use them to initiate targeted advertising. |
 

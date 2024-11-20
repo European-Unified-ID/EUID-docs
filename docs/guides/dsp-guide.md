@@ -24,7 +24,7 @@ If your back end is written in a language not covered by one of the available se
 
 The following describes the integration workflow for DSP to support EUID as part of RTB, which consists of two major steps:
 1. [Honor user opt-outs](#honor-user-opt-outs)
-2. [Decrypt EUID Tokens for RTB Use](#decrypt-euid-tokens-for-rtb-use)
+2. [Decrypt EUID tokens for RTB use](#decrypt-euid-tokens-for-rtb-use)
 
 ![DSP Flow](images/dsp-guide-flow-mermaid.png)
 
@@ -35,7 +35,7 @@ The following describes the integration workflow for DSP to support EUID as part
 This section includes the following information for DSPs, who must honor user opt-out of EUID:
 
 - [Opt-Out Webhook](#opt-out-webhook)
-- [POST&nbsp;/optout/status Endpoint](#post-optoutstatus-endpoint)
+- [POST /optout/status Endpoint](#post-optoutstatus-endpoint)
 - [Bidding Opt-Out Logic](#bidding-opt-out-logic)
 
 #### Opt-Out Webhook
@@ -46,8 +46,8 @@ The EUID service sends the following data within seconds of a user's opt-out, wh
 
 | Parameter | Description |
 | :--- | :--- |
-| `identity` | The EUID for the user who opted out. |
-| `timestamp` | The time when the user opted out. |
+| `identity` | The raw EUID for the user who opted out. |
+| `timestamp` | The time when the user opted out (for information only). |
 
 The DSP must respond to the opt-out data with a 200 response code.
 

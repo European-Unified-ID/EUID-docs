@@ -84,25 +84,11 @@ The following are unencrypted JSON request body examples for each parameter, one
 }
 ```
 
-Here's an encrypted token generation request format with placeholder values: [**GWH__AA01 this example is not in the UID2 doc. Do we need it in both, neither, or it's a necessary difference?**]
-
-```sh
-echo '[Unencrypted-JSON-Request-Body]' \
-  | encrypt_request.py [CLIENT_SECRET] \
-  | curl -X POST 'https://prod.euid.eu/v2/token/generate' -H 'Authorization: Bearer [CLIENT_API_KEY]' -d @- \
-  | decrypt_response.py [CLIENT_SECRET]
-```
-
 Here's an encrypted token generation request example for an email hash:
 
 ```sh
-echo '{"email_hash": "tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ="}' \
-  | encrypt_request.py DELPabG/hsJsZk4Xm9Xr10Wb8qoKarg4ochUdY9e+Ow= \
-  | curl -X POST 'https://prod.euid.eu/v2/token/generate' -H 'Authorization: Bearer YourTokenBV3tua4BXNw+HVUFpxLlGy8nWN6mtgMlIk=' -d @- \
-  | decrypt_response.py DELPabG/hsJsZk4Xm9Xr10Wb8qoKarg4ochUdY9e+Ow=
+echo '{"email_hash": "tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ=","optout_check":1}' | python3 uid2_request.py https://prod.euid.eu/v2/token/generate [Your-Client-API-Key] [Your-Client-Secret] 
 ```
-
-[**GWH__AA02 for the example above, UID2 is different. See [post-token-generate.md](https://github.com/IABTechLab/uid2docs/blob/main/docs/endpoints/post-token-generate.md) line 89. Which should it be? Thx.**]
 
 For details, and code examples in different programming languages, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
 

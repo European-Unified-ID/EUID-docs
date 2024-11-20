@@ -13,7 +13,7 @@ import StoreEUIDTokenInBrowser from '/docs/snippets/_prebid-storing-euid-token-i
 
 # EUID Client-Server Integration Guide for Prebid.js
 
-This guide is for publishers who have access to <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> on the server side and want to integrate with EUID and generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) to be passed by Prebid.js in the RTB <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link>.
+This guide is for publishers who have access to <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> (email address or phone number) on the server side and want to integrate with EUID and generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) to be passed by Prebid.js in the RTB <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link>.
 
 This is called client-server integration because some integration steps are client-side and some are server-side.
 
@@ -23,7 +23,10 @@ To integrate with EUID using Prebid.js, you'll need to:
 - Make server-side changes for token generation (and, optionally, <a href="../ref-info/glossary-uid#gl-token-refresh">token refresh</a>).  
 
 ## Prebid.js Version
+
 This implementation requires Prebid.js version 7.53.0 or later. For version information, see [https://github.com/prebid/Prebid.js/releases](https://github.com/prebid/Prebid.js/releases).
+
+<!-- Diff in Prebid.js supported version for UID2/EUID is fine: verif SS 11/19/24 -->
 
 ## EUID Prebid Module Page
 
@@ -59,7 +62,6 @@ You'll need to configure the EUID Prebid module to complete the following two ac
 | 2 | Store the response value, so that the Prebid module can manage token refresh as well as opt-out if needed. | [Refreshing an EUID Token](#refreshing-an-euid-token) |
 
 ### Generating an EUID Token on the Server
-
 
 For a client-server EUID integration for Prebid, the first step is to generate the EUID token on your server. Then, you can pass the token to Prebid for sending to the RTB bidstream.
 

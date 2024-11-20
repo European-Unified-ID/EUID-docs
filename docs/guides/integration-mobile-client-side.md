@@ -284,7 +284,7 @@ EUID provides the publisher with the following values, which are needed for gene
 
 You'll have one set of these values for your Integration environment, and a separate set for your production environment.
 
-To configure the SDK, you must pass in the Subscription ID and public key that you received during account setup, as well as the user’s hashed or unhashed directly identifying information (<Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>) (email address), into the following method call:
+To configure the SDK, you must pass in the Subscription ID and public key that you received during account setup, as well as the user’s hashed or unhashed directly identifying information (<Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>) (email address or phone number), into the following method call:
 
 <Tabs groupId="language-selection">
 <TabItem value='android' label='Android'>
@@ -333,6 +333,8 @@ The following examples demonstrate the different ways that you can configure the
 
 - Email, Unhashed
 - Email, Normalized and Hashed
+- Phone Number, Unhashed
+- Phone Number, Normalized and Hashed
 
 If the `generateIdentity` method is called multiple times, the EUID mobile SDK uses the most recent configuration values.
 
@@ -583,7 +585,6 @@ If `getAdvertisingToken()` returns null, and the identity status is not `OPT_OUT
 ## Optional: EUID GMA/IMA Plugin for GAM Secure Signals integration
 
 <GMAIMA_Plugins />
-
 
 ## Optional: EUID Prebid Mobile SDK Integration
 
