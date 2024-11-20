@@ -144,7 +144,7 @@ EUIDManager.getInstance().generateIdentity(
     onResult: (GenerateIdentityResult) -> Unit
 )
 ```
-Set the EUID Identity (see [Client-Server Integration Guide for Mobile](../guides/integration-mobile-client-server.md#configure-the-uid2-mobile-sdk)):
+Set the EUID Identity (see [Client-Server Integration Guide for Mobile](../guides/integration-mobile-client-server.md#configure-the-euid-mobile-sdk)):
 
 ```js
 EUIDManager.getInstance().setIdentity(identity: UID2Identity)

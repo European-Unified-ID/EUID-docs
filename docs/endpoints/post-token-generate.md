@@ -106,6 +106,7 @@ This section includes the following sample responses:
 #### Successful Response
 
 A successful decrypted response returns the user's advertising and refresh tokens for the specified email address, phone number, or the respective hash.
+
 <IdentityGenerateResponse />
 
 #### Optout

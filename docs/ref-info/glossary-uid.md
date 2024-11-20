@@ -414,7 +414,7 @@ import Link from '@docusaurus/Link';
 <dd>When an EUID participant requests a <a href="#gl-euid-token">EUID token</a>, the token is returned with a set of associated values, including a <a href="#gl-refresh-token">refresh token</a> and timestamps for the EUID token and the refresh token. As long as the refresh token has not expired, the publisher can use it to request a fresh EUID token without having to send <a href="#gl-personal-data">personal data</a>.</dd>
 <dd>Any EUID participant that requests an EUID token must have a process in place for keeping the token valid: either monitoring the refresh period and requesting a new EUID token before the refresh token expires, or requesting a new EUID token each time, which requires sending DII.</dd>
 <dd>In most cases, token refresh is managed by an SDK or other implementation strategy such as a Prebid.js implementation.</dd>
-<dd>If the refresh token expires, the publisher must re-request an EUID token by sending DII.</dd>
+<dd>If the refresh token expires, the publisher must re-request an EUID token by sending personal data.</dd>
 <dd>For details, see <a href="ref-tokens">EUID Tokens and Refresh Tokens</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-transparency-and-control-portal"><a href="#gl-transparency-and-control-portal">Transparency and Control Portal</a></MdxJumpAnchor></dt>

@@ -96,7 +96,7 @@ The following table summarizes the functionality available with the various inte
 
 All options support either client-side or server-side integration.
 
-| Implementation Option | Generate Token from DII | Refresh Token | Android/iOS? | Send Token to Bidstream |
+| Implementation Option | Generate Token from Personal Data  | Refresh Token | Android/iOS? | Send Token to Bidstream |
 | :--- | :--- | :--- | :--- | :--- |
 | EUID SDK for Android | &#9989; | &#9989; | Android | &ast; |
 | EUID SDK for iOS | &#9989;| &#9989; | iOS | &ast; |

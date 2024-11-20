@@ -347,7 +347,7 @@ The following sample is fictitious, but shows what the token response object, re
 
 ## Optional: Prebid.js Integration with Google Secure Signals
 
-if you're using Prebid.js, and you're planning to pass UID2 tokens to Google using Google Secure Signals, there are a couple of additional configuration steps:
+if you're using Prebid.js, and you're planning to pass EUID tokens to Google using Google Secure Signals, there are a couple of additional configuration steps:
 
 - In your Google Ad Manager account, make sure that encrypted signals are properly shared with third-party bidders: see [Allow Secure Signals Sharing](integration-google-ss.md#allow-secure-signals-sharing).
 - Update your Prebid.js configuration: see [Optional: Enable Secure Signals in Prebid.js](integration-google-ss.md#optional-enable-secure-signals-in-prebidjs).
