@@ -73,7 +73,7 @@ The following sections explain and illustrate the key elements of the EUID frame
 
 ### EUID Identifier Types
 
-EUID is a deterministic ID that is based on email addresses. There are two types of EUIDs: raw EUIDs and EUID tokens (also known as advertising tokens). The following table explains each type.
+EUID is a deterministic ID that is based on <Link href="ref-info/glossary-uid#gl-personal-data">personal data</Link>, such as email addresse. There are two types of EUIDs: raw EUIDs and EUID tokens (also known as advertising tokens). The following table explains each type.
 
 | ID Type | Shared in Bidstream? | Description |
 | :--- | :--- | :--- |
