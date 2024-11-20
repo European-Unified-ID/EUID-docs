@@ -17,7 +17,7 @@ This plugin simplifies integration with Google Mobile Ads (GMA) for any publishe
 
 ## Version
 
-<!-- As of 2024-10-22, release expected soon -->
+<!-- As of 2024-10-22 -->
 
 This documentation is for the EUID GMA Plugin for Android version 1.6.0 and later.
 

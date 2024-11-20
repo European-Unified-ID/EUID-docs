@@ -24,7 +24,7 @@ This page is about Private Operators. For information about Public Operators, or
 
 Here are some of the intended benefits of participating in EUID as a Private Operator:
 - You can maintain privacy-conscious workflows for your customer data to be encrypted and activated across chosen partners.
-- You can participate in EUID using your own first-party <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>  without sharing it.
+- You can participate in EUID using your own first-party <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> without sharing it.
 
   Within a Private Operator solution, personal data does not leave your infrastructure.
 - You have full control of resources, performance, and latency for EUID. For example:  

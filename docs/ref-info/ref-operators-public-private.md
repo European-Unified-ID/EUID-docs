@@ -24,7 +24,7 @@ An EUID Operator is an organization that runs the Operator Service. Operators pe
 - Encrypt raw EUIDs to generate EUID tokens.
 - Distribute EUID token decryption keys to server-side SDKs (see [SDKs: Summary](../sdks/summary-sdks.md)).
 - Download the latest user opt-out information from the EUID <a href="glossary-uid#gl-opt-out-service">Opt-Out Service</a>.
-- Support a number of UID2 endpoints. For details, see [UID2 Endpoints: Summary](../endpoints/summary-endpoints.md).
+- Support a number of EUID endpoints. For details, see [EUID Endpoints: Summary](../endpoints/summary-endpoints.md).
 
 EUID Operators fall into two categories:
 

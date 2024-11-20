@@ -584,7 +584,6 @@ If `getAdvertisingToken()` returns null, and the identity status is not `OPT_OUT
 
 <GMAIMA_Plugins />
 
-
 ## Optional: EUID Prebid Mobile SDK Integration
 
 :::important

@@ -47,7 +47,7 @@ For a detailed summary of web integration options, see [Web Integration Overview
 | [EUID Integration Overview for JavaScript](integration-javascript.md) | An overview of options for publishers who want to integrate with EUID using the JavaScript SDK. |
 | [Client-Side Integration Guide for JavaScript](integration-javascript-client-side.md) | A guide for publishers who want to integrate with EUID using only client-side JavaScript changes, which is the easiest implementation approach.<br/>The SDK for JavaScript manages token generation and token refresh automatically. |
 | [Client-Server Integration Guide for JavaScript](integration-javascript-client-server.md) | This integration guide for publishers covers standard web integration scenarios that use the SDK for JavaScript and requires the token to be generated on the server side and passed to the publishers' web pages. |
-| [Publisher Integration Guide, Server-Side](integration-publisher-server-side.md) | This integration guide for publishers covers integration scenarios that do not use the [SDK for JavaScript](../sdks/sdk-ref-javascript.md). |
+| [Publisher Integration Guide, Server-Side](integration-publisher-server-side.md) | This integration guide is for publishers that do not use the [SDK for JavaScript](../sdks/sdk-ref-javascript.md). |
 | [Google Ad Manager Secure Signals Integration Guide](integration-google-ss.md) | This integration guide covers the additional steps needed for publishers using EUID with the Google Ad Manager Secure Signals feature (previously known as Encrypted Signals for Publishers, ESP). |
 
 ### Mobile Integrations
@@ -74,7 +74,7 @@ The following resources are available for publishers integrating with Prebid.
 
 | Integration Guide | Content Description |
 | :--- | :--- |
-| [EUID Integration Overview for Prebid](integration-prebid.md) | An overview of options for publishers who want to integrate with EUID and generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) to be passed by Prebid.js in the RTB bidstream. |
+| [EUID Integration Overview for Prebid](integration-prebid.md) | An overview of options for publishers who want to integrate with EUID and generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) to be passed by Prebid.js or the Prebid Mobile SDK in the RTB bidstream. |
 | [EUID Client-Side Integration Guide for Prebid.js](integration-prebid-client-side.md) | An integration guide for publishers who want to integrate with EUID and want Prebid.js to manage token generation and automatic token refresh as well as passing the tokens into the RTB bidstream. This guide is for publishers who want to request EUID tokens client-side, which is the easiest implementation approach. |
 | [EUID Client-Server Integration Guide for Prebid.js](integration-prebid-client-server.md) | An integration guide for publishers who want to integrate with EUID and generate identity tokens to be passed by Prebid.js and the Prebid Mobile SDK in the RTB bidstream. This guide is for publishers who are using a Private Operator or who want to generate tokens server-side. |
 
@@ -98,6 +98,7 @@ The following resources are available for advertisers and data providers integra
 | :--- | :--- |
 | [Advertiser/Data Provider Integration Guide](advertiser-dataprovider-guide.md) | This integration guide for advertisers and data providers covers integration workflows for mapping identity for audience-building and targeting. |
 
+
 ## DSP Integrations
 
 The following resources are available for DSPs integrating with EUID.
@@ -112,4 +113,4 @@ The following resources are available for <Link href="../ref-info/glossary-uid#g
  
 | Integration Guide | Content Description |
 | :--- | :--- |
-| [EUID Private Operator for AWS Integration Guide](operator-guide-aws-marketplace.md) | Instructions for setting up Private Operator service for AWS Marketplace. |
+| [EUID Private Operator for AWS](operator-guide-aws-marketplace.md) | Instructions for setting up a Private Operator service for AWS Marketplace. |
