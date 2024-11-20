@@ -107,11 +107,11 @@ This script is hosted on CDN, and GPT automatically loads it with the secure sig
 
 For details, see [Client-Side Integration Guide for JavaScript](integration-javascript-client-side.md).
 
-A sample application is also available for integration using the SDK for JavaScript.  See [Sample application](https://euid.eu/examples/cstg-secure-signals-example/).
+A sample application is also available for integration using the SDK for JavaScript. See [Sample application](https://euid.eu/examples/cstg-secure-signals-example/).
 
-## Troubleshooting Tips for EUID Integration with Google Secure Signals
+## Troubleshooting
 
-Here is some troubleshooting info that might help you in working with Google Secure Signals for your EUID integration:
+Here is some troubleshooting information that might help you in working with Google Secure Signals for your EUID integration:
 
 - [I enabled Secure Signals within Google Ad Manager, but EUIDs are not being passed through Google](#i-enabled-secure-signals-within-google-ad-manager-but-euids-are-not-being-passed-through-google)
 

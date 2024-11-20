@@ -104,13 +104,6 @@ If the user logs out, do not use the EUID token.
 | 4-a | N/A | The user logs out from a publisher asset. |
 | 4-b | N/A | Remove the EUID token you've stored for that user. No interaction with the EUID service is required. |
 
-
-
-
-
-
-
-
 ## FAQs
 
 For a list of frequently asked questions for the publisher audience, see [FAQs for Publishers](../getting-started/gs-faqs.md#faqs-for-publishers).

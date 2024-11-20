@@ -70,23 +70,12 @@ The following are unencrypted JSON request body examples for each parameter, one
 }
 ```
 
-Here's an encrypted token generation request format with placeholder values:
-
-```sh
-echo '[Unencrypted-JSON-Request-Body]' \
-  | encrypt_request.py [CLIENT_SECRET] \
-  | curl -X POST 'https://prod.euid.eu/v2/token/generate' -H 'Authorization: Bearer [CLIENT_API_KEY]' -d @- \
-  | decrypt_response.py [CLIENT_SECRET]
-```
-
 Here's an encrypted token generation request example for an email hash:
 
 ```sh
-echo '{"email_hash": "tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ="}' \
-  | encrypt_request.py DELPabG/hsJsZk4Xm9Xr10Wb8qoKarg4ochUdY9e+Ow= \
-  | curl -X POST 'https://prod.euid.eu/v2/token/generate' -H 'Authorization: Bearer YourTokenBV3tua4BXNw+HVUFpxLlGy8nWN6mtgMlIk=' -d @- \
-  | decrypt_response.py DELPabG/hsJsZk4Xm9Xr10Wb8qoKarg4ochUdY9e+Ow=
+echo '{"email_hash": "tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ=","optout_check":1}' | python3 uid2_request.py https://prod.euid.eu/v2/token/generate [Your-Client-API-Key] [Your-Client-Secret] 
 ```
+
 For details, and code examples in different programming languages, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
 
 ## Decrypted JSON Response Format 
@@ -103,7 +92,6 @@ This section includes the following sample responses:
 #### Successful Response
 
 A successful decrypted response returns the user's advertising and refresh tokens for the specified email address or email address hash. 
-
 <IdentityGenerateResponse />
 
 #### Optout

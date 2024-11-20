@@ -21,6 +21,8 @@ To integrate with EUID using Prebid.js, you'll need to make changes to the HTML 
 
 This implementation requires Prebid.js version 8.42.0 or later. For version information, see [https://github.com/prebid/Prebid.js/releases](https://github.com/prebid/Prebid.js/releases).
 
+<!-- Diff in Prebid.js supported version for UID2/EUID is fine: verif SS 11/19/24 -->
+
 If you need to use an earlier version of Prebid.js, use the implementation solution presented in the [EUID Client-Server Integration Guide for Prebid.js](integration-prebid-client-server.md) instead.
 
 ## Integration Example
@@ -62,14 +64,21 @@ Once it's configured, the EUID module generates an EUID token for the user and s
 You can configure the EUID module using any one of these accepted personal data formats, for any specific user:
 
 - Normalized or un-normalized email address
-- Normalized and hashed email address
+- Normalized, hashed, and Base64-encoded email address
 
 Notes:
 
 - The personal data format might vary per user, but you can only send one value per user.
-- If the module is configured multiple times, it uses the most recent configuration values.
-- If you want to pass the personal data to the module already hashed, remember to normalize it before hashing. For details, see [Normalization and Encoding](../getting-started/gs-normalization-encoding.md).
+- If you want to pass the personal data to the module already hashed, follow this sequence:
+  1. First normalize.
+  1. Then hash the result using the SHA-256 hashing algorithm.
+  1. Then encode the resulting bytes of the hash value using Base64 encoding.
+  
+  For details, see [Normalization and Encoding](../getting-started/gs-normalization-encoding.md). For an example, see [Configuring the EUID Module: Code Example](#configuring-the-euid-module-code-example).
 - The EUID module encrypts the hashed personal data before sending it to the EUID service.
+- If the module is configured multiple times, it uses the most recent configuration values.
+
+#### Configuring the EUID Module: Code Example
 
 The following code snippet demonstrates the different ways that you can configure the EUID module.
 
@@ -83,7 +92,7 @@ const baseConfig = {
         subscriptionId: subscriptionId,
         // Choose only one of the following: email or emailHash
         email: 'user@example.com', // Normalized or non-normalized, unhashed email address
-        // emailHash: 'eVvLS/Vg+YZ6+z3i0NOpSXYyQAfEXqCZ7BTpAjFUBUc=', // Normalized and hashed email address
+        // emailHash: 'tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ=', // Normalized, hashed, and encoded email address
       }
     }]
   }
@@ -159,7 +168,7 @@ An example of a tool for validating and debugging Prebid.js configuration is Pro
 
 ## Optional: Prebid.js Integration with Google Secure Signals
 
-if you're using Prebid.js, and you're planning to pass UID2 tokens to Google using Google Secure Signals, there are a couple of additional configuration steps:
+if you're using Prebid.js, and you're planning to pass EUID tokens to Google using Google Secure Signals, there are a couple of additional configuration steps:
 
 - In your Google Ad Manager account, make sure that encrypted signals are properly shared with third-party bidders: see [Allow Secure Signals Sharing](integration-google-ss.md#allow-secure-signals-sharing).
 - Update your Prebid.js configuration: see [Optional: Enable Secure Signals in Prebid.js](integration-google-ss.md#optional-enable-secure-signals-in-prebidjs).
