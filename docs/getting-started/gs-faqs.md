@@ -71,7 +71,7 @@ For details, see [Using POST&nbsp;/token/validate to Test](../endpoints/post-tok
 
 #### Do I need to decrypt tokens?
 
-No, publishers do not need to decrypt EUID tokens.
+No, publishers do not need to decrypt <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link>.
 
 #### How will I be notified of user opt-out?
 
@@ -125,7 +125,7 @@ The procedure is a little different depending on whether or not you are using an
 
 #### What is the uniqueness and rotation policy for EUID tokens?
 
-The EUID service encrypts tokens using random initialization vectors. The encrypted EUID is unique for a given user as they browse the internet. At every refresh, the token re-encrypts.
+The EUID service encrypts EUID tokens using random initialization vectors. The EUID token is unique for a given user as the user browses the internet. This means that every time an EUID token is generated, the token is always different, even for the same underlying raw EUID. Every time the token is refreshed, a new token is generated and encrypted.
 
 #### What does an EUID token look like in the bidstream?
 
@@ -208,7 +208,7 @@ However, if a publisher sends personal data in a request for an <Link href="../r
 
 ## FAQs for DSPs
 
-Here are some frequently asked questions for DSPs.
+Here are some frequently asked questions for demand-side platforms (DSPs).
 
 - [How do I know which decryption key to apply to an EUID?](#how-do-i-know-which-decryption-key-to-apply-to-an-euid)
 - [Where do I get the decryption keys?](#where-do-i-get-the-decryption-keys)
@@ -227,7 +227,6 @@ Here are some frequently asked questions for DSPs.
 - [How do SDK errors impact the DSP's ability to respond to a bid?](#how-do-sdk-errors-impact-the-dsps-ability-to-respond-to-a-bid)
 
 #### How do I know which decryption key to apply to an EUID?
-
 
 Each of the server-side SDKs (see [SDKs: Summary](../sdks/summary-sdks.md)) updates decryption keys automatically. Metadata supplied with the EUID token discloses the IDs of the decryption keys to use. 
 

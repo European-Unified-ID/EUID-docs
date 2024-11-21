@@ -35,7 +35,7 @@ This guide uses the group term **EUID mobile SDKs** to include both the SDK for 
 
 For FAQs relating to mobile publisher integrations, see [FAQs for Mobile Integrations](integration-mobile-overview.md#faqs-for-mobile-integrations).
 
-To integrate with UIEUIDD2 client-side, you'll need to complete the following steps:
+To integrate with EUID client-side, you'll need to complete the following steps:
 
 1. [Complete the EUID account setup](#complete-the-euid-account-setup).
 
@@ -52,7 +52,7 @@ To integrate with UIEUIDD2 client-side, you'll need to complete the following st
 This guide provides instructions for using either of these EUID mobile SDKs:
 
 - SDK for Android (version 1.6.0 or later)
-- SDK for iOS (version 1.7 0 or later)
+- SDK for iOS (version 1.7.0 or later)
 
 For instructions for installing the correct SDK/version into your mobile app, see [Add the EUID Mobile SDK to Your Mobile App](#add-the-euid-mobile-sdk-to-your-mobile-app).
 
