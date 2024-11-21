@@ -441,7 +441,7 @@ In this scenario:
 </TabItem>
 <TabItem value='example_phone_unhashed' label='Phone Number, Unhashed'>
 
-The following example configures the UID2 mobile SDK with a phone number.
+The following example configures the EUID mobile SDK with a phone number.
 
 <Tabs groupId="language-selection">
 <TabItem value='android' label='Android'>
@@ -488,12 +488,12 @@ Task<Void, Never> {
 In this scenario:
 
 - The publisher is responsible for normalizing the phone number. For details, see [Phone Number Normalization](../getting-started/gs-normalization-encoding.md#phone-number-normalization).
-- The UID2 mobile SDK hashes the phone number before sending the encrypted hash to the UID2 service.
+- The EUID mobile SDK hashes the phone number before sending the encrypted hash to the EUID service.
 
 </TabItem>
 <TabItem value='example_phone_hash' label='Phone Number, Normalized and Hashed'>
 
-The following example configures the UID2 mobile SDK with a hashed and Base64-encoded phone number.
+The following example configures the EUID mobile SDK with a hashed and Base64-encoded phone number.
 
 <Tabs groupId="language-selection">
 <TabItem value='android' label='Android'>
@@ -536,7 +536,7 @@ Task<Void, Never> {
 In this scenario: 
 
 - The publisher is responsible for normalizing and hashing the phone number. For details, see [Phone Number Hash Encoding](../getting-started/gs-normalization-encoding.md#phone-number-hash-encoding).
-- The UID2 mobile SDK encrypts the hashed DII before sending it to the UID2 service.
+- The EUID mobile SDK encrypts the hashed personal data before sending it to the EUID service.
 
 </TabItem>
 </Tabs>

@@ -46,7 +46,7 @@ At a high level, the steps for advertisers and data providers integrating with E
 
 The following diagram outlines the steps that data collectors must complete to map oersonal data to raw EUIDs for audience building and targeting.
 
-DII refers to a user's normalized email address or phone number, or the normalized and SHA-256-hashed email address or phone number.
+Personal data refers to a user's normalized email address or phone number, or the normalized and SHA-256-hashed email address or phone number.
 
 ![Advertiser Flow](images/advertiser-flow-mermaid.png)
 

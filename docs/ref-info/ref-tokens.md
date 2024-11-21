@@ -93,7 +93,6 @@ The following examples show how you could first check if the token can be refres
    ```
 
 1. Determine if a refresh is needed:
-
    ```py
     if identity.is_due_for_refresh()):
     ```

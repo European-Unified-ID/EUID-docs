@@ -65,7 +65,7 @@ The options for integrating with EUID using the EUID mobile SDKs are summarized 
 | Scenario | Option | Integration Guide |
 | :--- | :--- | :--- |
 | You have access to <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> (email address or phone number) on the client side/within the mobile app, and want to keep changes within your app only. | Client-side integration | [EUID Client-Side Integration Guide for Mobile](integration-mobile-client-side.md) |
-| You have access to DII on the server side only and can do the necessary development to generate EUID tokens server-side, or you are using a <Link href="../ref-info/glossary-uid#gl-private-operator">Private Operator</Link>. | Client-Server Integration | [EUID Client-Server Integration Guide for Mobile](integration-mobile-client-server.md) |
+| You have access to personal data on the server side only and can do the necessary development to generate EUID tokens server-side, or you are using a <Link href="../ref-info/glossary-uid#gl-private-operator">Private Operator</Link>. | Client-Server Integration | [EUID Client-Server Integration Guide for Mobile](integration-mobile-client-server.md) |
 
 ### Generating, Storing, and Refreshing the EUID Token
 
@@ -96,7 +96,7 @@ The following table summarizes the functionality available with the various inte
 
 All options support either client-side or server-side integration.
 
-| Implementation Option | Generate Token from Personal Data  | Refresh Token | Android/iOS? | Send Token to Bidstream |
+| Implementation Option | Generate Token from Personal Data | Refresh Token | Android/iOS? | Send Token to Bidstream |
 | :--- | :--- | :--- | :--- | :--- |
 | EUID SDK for Android | &#9989; | &#9989; | Android | &ast; |
 | EUID SDK for iOS | &#9989;| &#9989; | iOS | &ast; |

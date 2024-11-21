@@ -83,9 +83,8 @@ Here's what you need to know about phone number normalization rules:
 - Normalized E.164 phone numbers use the following syntax, with no spaces, hyphens, parentheses, or other special characters:<br/>
   `[+] [country code] [subscriber number including area code]`
  Examples:
-   - US: `1 (234) 567-8901` is normalized to `+12345678901`.
-   - Singapore: `65 1243 5678` is normalized to `+6512345678`.
-   - Sydney, Australia: `(02) 1234 5678` is normalized to drop the leading zero for the city plus include the country code: `+61212345678`.
+   - UK: `44 (234) 567-8901` is normalized to `+442345678901`.
+   - France: `33 1 23 45 67 89` is normalized to `+33123456789`.
 
 :::warning
 Make sure that the normalized phone number is UTF-8, not another encoding system such as UTF-16.
