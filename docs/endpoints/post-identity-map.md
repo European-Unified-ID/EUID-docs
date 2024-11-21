@@ -87,12 +87,12 @@ A successful decrypted response returns the raw EUIDs and salt bucket IDs for th
     "body":{
         "mapped": [
             {
-                "identifier": "tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ=",
+                "identifier": "EObwtHBUqDNZR33LNSMdtt5cafsYFuGmuY4ZLenlue4=",
                 "advertising_id": "AdvIvSiaum0P5s3X/7X8h8sz+OhF2IG8DNbEnkWSbYM=",
                 "bucket_id": "a30od4mNRd"
             },
             {
-                "identifier": "KzsrnOhCq4tqbGFMsflgS7ig1QLRr0nFJrcrEIlOlbU=",
+                "identifier": "Rx8SW4ZyKqbPypXmswDNuq0SPxStFXBTG/yvPns/2NQ=",
                 "advertising_id": "IbW4n6LIvtDj/8fCESlU0QG9K/fH63UdcTkJpAG8fIQ=",
                 "bucket_id": "ad1ANEmVZ"
             }

@@ -9,7 +9,7 @@ import Link from '@docusaurus/Link';
 
 # User Opt-Out
 
-Many different publishers and advertisers use EUID. Different publishers might have different opt-out processes for their individual sites; however, EUID as a whole has very specific opt-out processes that all EUID participants are expected to honor.
+Many different publishers and advertisers use EUID. Different publishers might have different opt-out processes for their individual sites; however, EUID as a whole has very specific opt-out processes that all EUID [participants](../ref-info/glossary-uid.md#gl-participant) are expected to honor.
 
 ## How Users Can Opt Out of EUID
 

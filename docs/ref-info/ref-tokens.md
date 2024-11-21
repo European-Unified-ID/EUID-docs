@@ -76,10 +76,13 @@ The following examples show how you could first check if the token can be refres
     ```java
     if (identity == null || !identity.isRefreshable()) { we must no longer use this identity (for example, remove this identity from the user's session) }
     ```
+
 1. Determine if a refresh is needed:
+
     ```java
     if (identity.isDueForRefresh()) {..}
     ```
+
 </TabItem>
 <TabItem value='py' label='Python'>
 1. Determine if the identity can be refreshed (that is, the refresh token hasn't expired):
@@ -88,11 +91,14 @@ The following examples show how you could first check if the token can be refres
    if not identity or not identity.is_refreshable(): # we must no longer use this identity (for example, remove this identity from the user's session)
    ```
 1. Determine if a refresh is needed:
+ 
    ```py
     if identity.is_due_for_refresh()):
     ```
+
 </TabItem>
 </Tabs>
+
 Before using the code example, check the prerequisites and notes for the language you're using. For details, refer to the doc for the applicable SDK:
 
 - [SDK for Java, Usage for Publishers, Basic Usage Server-Side Integration section](../sdks/sdk-ref-java.md#basic-usage-server-side-integration)
