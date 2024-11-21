@@ -41,6 +41,8 @@ This SDK is in the following open-source GitHub repository:
 
 - [SDK for C++](https://github.com/IABTechLab/uid2-client-cpp11/blob/master/README.md).
 
+  >NOTE: This SDK is valid for both UID2 and EUID. The SDK, and some of its technical components, are named UID2, but are equally applicable for EUID.
+
 Release tags are available in the following GitHub location, but you must build your own binaries:
 
 - https://github.com/IABTechLab/uid2-client-cpp11/tags

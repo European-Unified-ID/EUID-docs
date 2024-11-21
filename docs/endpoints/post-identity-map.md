@@ -72,15 +72,6 @@ The following are unencrypted JSON request body examples for each parameter, one
 }
 ```
 
-Here's an encrypted identity mapping request format with placeholder values:
-
-```sh
-echo '[Unencrypted-JSON-Request-Body]' \
-  | encrypt_request.py [CLIENT_SECRET] \
-  | curl -X POST 'https://prod.euid.eu/v2/identity/map' -H 'Authorization: Bearer [CLIENT_API_KEY]' -d @- \
-  | decrypt_response.py [CLIENT_SECRET] 
-```
-
 For details, and code examples in different programming languages, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
 
 ## Decrypted JSON Response Format
