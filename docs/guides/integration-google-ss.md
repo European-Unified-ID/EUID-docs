@@ -50,7 +50,7 @@ If you want to use Secure Signals with Prebid.js, you must complete both these a
      "sources":[
        {
          "source":[
-           "uidapi.com"
+           "euid.eu"
          ],
          "encrypt":false
        }

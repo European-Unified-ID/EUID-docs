@@ -41,7 +41,7 @@ This SDK is in the following open-source GitHub repository:
 
 - [SDK for Java](https://github.com/IABTechLab/uid2-client-java/blob/master/README.md)
 
-  The SDK, and some of its technical components, are named UID2, but are equally applicable for EUID.
+  >NOTE: This SDK is valid for both UID2 and EUID. The SDK, and some of its technical components, are named UID2, but are equally applicable for EUID.
 
 The binary is published on the Maven repository:
 
