@@ -87,7 +87,7 @@ To keep your EUID-based audience information accurate and up to date, follow the
 1. The response from the [EUID retrieval step](#1-retrieve-a-raw-euid-for-personal-data-using-the-identity-map-endpoint) contains mapping information. Cache the following:
    - The mapping between personal data (`identifier`), raw EUID (`advertising_id`), and salt bucket (`bucket_id`).
    - The most recent `last_updated` timestamp.
-2. Using the results from [3: Monitor for salt bucket rotations related to your stored raw EUIDs](#3-monitor-for-salt-bucket-rotations-related-to-your-stored-raw-euids), remap any raw EUID for which the salt buckets have been rotated by retrieving new raw EUIDs for those IDs, following Step 1, [Retrieve a raw EUID for personal data using the identity map endpoint].(#1-retrieve-a-raw-euid-for-personal-data-using-the-identity-map-endpoint).
+2. Using the results from [3: Monitor for salt bucket rotations related to your stored raw EUIDs](#3-monitor-for-salt-bucket-rotations-related-to-your-stored-raw-euids), remap any raw EUID for which the salt buckets have been rotated by retrieving new raw EUIDs for those IDs, following Step 1, [Retrieve a raw EUID for personal data using the identity map endpoint](#1-retrieve-a-raw-euid-for-personal-data-using-the-identity-map-endpoint).
 
    Then, use the refreshed EUIDs to update audiences or conversions, following Step 2, [send raw EUIDs to a DSP](#2-send-stored-raw-euids-to-dsps-to-create-audiences-or-conversions).
 
