@@ -34,7 +34,7 @@ There are other ways that you can use EUID, outside these use cases. These are j
 
 At a high level, the steps for advertisers and data providers integrating with EUIDs are as follows:
 
-1. Generate a raw EUID from <Link href="../ref-info/glossary-uid#gl-dii">directly identifying information (DII)</Link>, or receive EUIDs from another EUID participant such as a data provider acting on your behalf.
+1. Generate a raw EUID from <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>, or receive EUIDs from another EUID participant such as a data provider acting on your behalf.
 
 1. Use the EUIDs you received in Step 1. For example, you might do one or more of the following:
    - Do some manipulation: for example, combine EUIDs you generated from personal data and EUIDs received from another participant such as an advertiser or data provider.
