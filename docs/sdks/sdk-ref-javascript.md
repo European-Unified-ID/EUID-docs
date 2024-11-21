@@ -68,18 +68,21 @@ The source for this SDK is in the following open-source GitHub repository:
 
 The SDK is published in these locations:
 
-<!-- - NPM: [https://www.npmjs.com/package/@uid2/uid2-sdk](https://www.npmjs.com/package/@uid2/uid2-sdk)
-  - This is the easiest way to include the SDK in your own build. Use this if you want to bundle the SDK along with your other JavaScript or TypeScript files.
-  - You can also use this for TypeScript type information and still load the script via the CDN. If you do this, ensure that the version of NPM package you have installed matches the version in the CDN url. LP_TODO: Looking at the NPM package, I don't believe it's ready for use - it just includes the source and doesn't seem to include a ready-to-deploy build. LP 12 Sep 2023 -->
-- CDN: `https://cdn.prod.uidapi.com/uid2-sdk-${VERSION_ID}.js`
-  <!-- - This is the easiest way to include the SDK in your site if you don't use a build pipeline to bundle your JavaScript. LP_TODO: This doesn't make sense until we add the NPM option above. -->
+- NPM: [https://www.npmjs.com/package/@uid2/uid2-sdk](https://www.npmjs.com/package/@uid2/uid2-sdk)
 
-  As of the latest update to this document, the most recent version is [3.4.5](https://cdn.prod.uidapi.com/uid2-sdk-3.4.5.js). You can also see [the list of available versions](https://cdn.prod.uidapi.com/).
-- CDN (Integration): `https://cdn.integ.uidapi.com/uid2-sdk-${VERSION_ID}.js`
+  This is the easiest way to include the SDK in your own build. Use this if you want to bundle the SDK along with your other JavaScript or TypeScript files.
+
+  You can also use this for TypeScript type information and still load the script via the CDN. If you do this, ensure that the version of the NPM package that you have installed matches the version in the CDN URL.
+
+  >NOTE: This SDK is valid for both UID2 and EUID. The SDK, and some of its technical components, are named UID2, but are equally applicable for EUID.
+- CDN: `https://cdn.prod.uidapi.com/uid2-sdk-${VERSION_ID}.js`
+
+  This is the easiest way to include the SDK in your site if you don't use a build pipeline to bundle your JavaScript.
+
+  As of the latest update to this document, the most recent version is [3.4.5](https://cdn.prod.euid.eu/euid-sdk-3.4.5.js). You can also see [the list of available versions](https://cdn.prod.euid.eu/).
+- CDN (Integration): `https://cdn.integ.euid.eu/euid-sdk-${VERSION_ID}.js`
 
   This integration URL contains un-minified code and is intended for testing purposes only. Do not use this URL for your production site.
-
-  As of the latest update to this document, the most recent version is [3.4.5](https://cdn.integ.uidapi.com/uid2-sdk-3.4.5.js). You can also see [the list of available versions](https://cdn.integ.uidapi.com/).
 
 ## Terminology
 
@@ -94,7 +97,7 @@ In this document, the following terms apply:
 On every page where you want to use EUID for targeted advertising, include the following SDK script:
 
 ```html
-<script src="https://cdn.prod.uidapi.com/uid2-sdk-3.4.5.js" type="text/javascript"></script> 
+<script src="https://cdn.prod.euid.eu/euid-sdk-3.4.5.js" type="text/javascript"></script> 
 ```
 
 ### Async or Defer Loading the SDK Script
@@ -109,7 +112,7 @@ If you are using `async` or `defer` script loading on your site, do the followin
    ```html
    <head>
      <!-- ... -->
-     <script async src="https://cdn.prod.uidapi.com/uid2-sdk-3.4.5.js" type="text/javascript"></script>
+     <script async src="https://cdn.prod.euid.eu/euid-sdk-3.4.5.js" type="text/javascript"></script>
      <!-- ... -->
    </head>
    ```
@@ -390,7 +393,6 @@ The `getAdvertisingToken()` function allows you to access the advertising token 
 
 This function returns `undefined` if any of the following conditions apply:
 
-- The [callback function](#callback-function) has not received an `InitCompleted` event, which means that the SDK initialization is not yet complete.
 - The SDK initialization is complete, but there is no valid identity to use.
 - The SDK initialization is complete, but the auto-refresh has cleared the identity&#8212;for example, because the user has opted out.
 

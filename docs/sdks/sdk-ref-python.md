@@ -41,6 +41,8 @@ This SDK is in the following open-source GitHub repository:
 
 - [SDK for Python](https://github.com/IABTechLab/uid2-client-python/blob/master/README.md)
 
+  >NOTE: This SDK is valid for both UID2 and EUID. The SDK, and some of its technical components, are named UID2, but are equally applicable for EUID.
+
 The package is published in this location:
 
 - [https://pypi.org/project/uid2-client/](https://pypi.org/project/uid2-client/)
