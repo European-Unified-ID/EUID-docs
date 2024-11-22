@@ -157,6 +157,17 @@ To deploy European Unified ID Operator on AWS Marketplace, complete the followin
 
 It takes several minutes for the stack to be created. When you see an Auto Scaling Group (ASG) created, you can select it and check the EC2 instances. By default, there is only one instance to start with.
 
+### Operator Version
+
+The latest ZIP file is linked in the Release Notes column in the following table.
+
+| Release | Version | Date | Release Notes | AWS Version |
+| ------- | ------  | ------ | ------ | ------ |
+| Q1 2024 | 5.26.19 | February 13, 2024 | [v5.26.19-56899dc0d7](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.26.19-56899dc0d7) | 5.26.19-56899dc0d7 |
+| Q2 2024 | 5.37.12 | June 12, 2024 | [v5.37.12](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.37.12) | 5.37.12 |
+| Q3 2024 | 5.38.104 | September 12, 2024 | [v5.38.104](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.38.104) | 5.38.104 |
+| Q3 2024 Out-of-band | 5.41.0 | October 29, 2024 | [v5.41.0](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.41.0) | 5.41.0 |
+
 ### Stack Details
 
 The following images show the **Specify stack details** page in the Create stack wizard ([deployment](#deployment) step 5). The table that follows provides a parameter value reference.
@@ -320,6 +331,7 @@ These are the default settings for the following reasons:
 - The command refers to `/var/lib/logrotate/logrotate.status` to check the log status and see if it has reached the rotation condition, so that it won't make extra rotations when `logrotate` is run every minute.
 
 ### Changing the Log Rotation Schedule
+
 To change the log rotation schedule, update the `etc/logrotate.d/operator-logrotate.conf` file.
 
 Follow the instructions in the logrotate documentation: see [logrotate(8) - Linux man](https://linux.die.net/man/8/logrotate) page.
