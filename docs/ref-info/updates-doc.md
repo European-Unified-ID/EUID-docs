@@ -17,7 +17,7 @@ November 22, 2024
 
 EUID now supports phone numbers, as well as email addresses, as valid <Link href="glossary-uid#gl-personal-data">personal data</Link>.
 
-All the EUID documentation has been updated to reflect this support, including reference information, procedures, and code samples.
+All the EUID documentation has been updated to reflect this support, including reference information, procedures, and code samples. 
 
 <!-- APIDOCS-2691 -->
 
