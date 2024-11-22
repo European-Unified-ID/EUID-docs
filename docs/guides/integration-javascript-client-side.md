@@ -126,10 +126,12 @@ EUID provides the publisher with the following values required to use the client
 
 You'll have one set of these values for your publisher integration environment, and a separate set for your production environment.
 
-To configure the SDK, call one of the following methods, with an object containing the **public key** and **Subscription ID** that you received during account setup, as well as the user's hashed or unhashed <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> (email address):
+To configure the SDK, call one of the following methods, with an object containing the **public key** and **Subscription ID** that you received during account setup, as well as the user's hashed or unhashed <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> (email address or phone number):
 
 *  `__euid.setIdentityFromEmail`
 *  `__euid.setIdentityFromEmailHash`
+*  `__euid.setIdentityFromPhone`
+*  `__euid.setIdentityFromPhoneHash`
 
 The following sections include coding examples for each scenario.
 
@@ -144,16 +146,18 @@ You can pass the user's personal data to the EUID SDK either hashed or unhashed.
 
 The SDK encrypts the hashed personal data before sending it to the EUID service.
 
-You can configure the SDK using either of the two accepted personal data formats, for any specific user. The personal data format might vary per user, but you can only send one value per user.
+You can configure the SDK using any one of the four accepted personal data formats, for any specific user. The personal data format might vary per user, but you can only send one value per user.
 
 The following examples demonstrate the different ways that you can configure the EUID SDK and list the requirements for the personal data passed to the SDK:
 
 - Email, Unhashed
 - Email, Normalized and Hashed
+- Phone Number, Unhashed
+- Phone Number, Normalized and Hashed
 
 If the SDK is configured multiples times, it uses the most recent configuration values.
 
-For an example of how to generate an email hash in JavaScript, see [Example Code: Hashing and Base-64 Encoding](#example-code-hashing-and-base-64-encoding).
+For an example of how to generate email and phone hashes in JavaScript, see [Example Code: Hashing and Base-64 Encoding](#example-code-hashing-and-base-64-encoding).
 
 <Tabs>
 <TabItem value='example_email_unhashed' label='Email, Unhashed'>
@@ -192,6 +196,44 @@ await __euid.setIdentityFromEmailHash(
 
 In this scenario:
 - **The publisher is responsible for normalizing and hashing the email address**. For details, see [Normalization and Encoding](../getting-started/gs-normalization-encoding.md).
+- The EUID SDK encrypts the hash before sending it to the EUID service.
+
+</TabItem>
+<TabItem value='example_phone_unhashed' label='Phone Number, Unhashed'>
+
+The following example configures the EUID SDK with a phone number.
+
+```js
+await __euid.setIdentityFromPhone(
+    '+12345678901',
+    {
+        subscriptionId: subscriptionId,
+        serverPublicKey: publicKey,
+    }
+);
+```
+In this scenario:
+
+- **The publisher is responsible for normalizing the phone number**. For details, see [Phone Number Normalization](../getting-started/gs-normalization-encoding.md#phone-number-normalization).
+- The EUID SDK hashes the phone number before sending the encrypted hash to the EUID service.
+
+</TabItem>
+<TabItem value='example_phone_hash' label='Phone Number, Normalized and Hashed'>
+
+The following example configures the EUID SDK with a hashed phone number:
+
+```js
+await __euid.setIdentityFromPhoneHash(
+    'EObwtHBUqDNZR33LNSMdtt5cafsYFuGmuY4ZLenlue4=',
+    {
+        subscriptionId: subscriptionId,
+        serverPublicKey: publicKey,
+    }
+);
+```
+
+In this scenario:
+- **The publisher is responsible for normalizing, hashing, and Base64-encoding the phone number**. For details, see [Normalization and Encoding](../getting-started/gs-normalization-encoding.md).
 - The EUID SDK encrypts the hash before sending it to the EUID service.
 
 </TabItem>
@@ -304,7 +346,7 @@ If there was a problem generating the token, find the request in the **Network**
 
 ## Example Code: Hashing and Base-64 Encoding
 
-The following code example demonstrates how to generate an email hash in JavaScript.
+The following code example demonstrates how to generate email and phone hashes in JavaScript.
 
 ```js
 async function hash(value) {

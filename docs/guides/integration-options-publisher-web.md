@@ -117,7 +117,7 @@ The following table shows the integration options that support refreshing the EU
 
 ## Pass the Token Into the Bidstream
 
-Publishers use EUIDs by encrypting personal data (email addresses) into EUID tokens and then sending the EUID tokens into the bidstream.
+Publishers use EUIDs by encrypting personal data (email addresses or phone numbers) into EUID tokens and then sending the EUID tokens into the bidstream.
 
 The following table shows integration options that support passing EUID tokens into the bidstream.
 

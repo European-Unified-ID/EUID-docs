@@ -13,7 +13,7 @@ import StoreEUIDTokenInBrowser from '/docs/snippets/_prebid-storing-euid-token-i
 
 # EUID Client-Side Integration Guide for Prebid.js
 
-This guide is for publishers who have access to <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> (email address) on the client side and want to integrate with EUID and generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) to be passed by Prebid.js in the RTB <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link>.
+This guide is for publishers who have access to <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> (email address or phone number) on the client side and want to integrate with EUID and generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) to be passed by Prebid.js in the RTB <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link>.
 
 To integrate with EUID using Prebid.js, you'll need to make changes to the HTML and JavaScript on your site. No server-side work is required if you follow this guide.
 
@@ -65,6 +65,8 @@ You can configure the EUID module using any one of these accepted personal data 
 
 - Normalized or un-normalized email address
 - Normalized, hashed, and Base64-encoded email address
+- Normalized phone number
+- Normalized, hashed, and Base64-encoded phone number
 
 Notes:
 
@@ -90,9 +92,11 @@ const baseConfig = {
       params: {
         serverPublicKey: publicKey,
         subscriptionId: subscriptionId,
-        // Choose only one of the following: email or emailHash
+        // Choose only one of the following: email, emailHash, phone, or phoneHash
         email: 'user@example.com', // Normalized or non-normalized, unhashed email address
         // emailHash: 'tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ=', // Normalized, hashed, and encoded email address
+        // phone: '+12345678901', // Normalized phone number
+        // phoneHash: 'EObwtHBUqDNZR33LNSMdtt5cafsYFuGmuY4ZLenlue4=', // Normalized, hashed, and encoded phone number
       }
     }]
   }

@@ -120,7 +120,7 @@ Decryption response codes, and their meanings, are shown in the following table.
    client = Uid2PublisherClient(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY)
    ```
 
-2. Call a function that takes the user's email address as input and generates a `TokenGenerateResponse` object<!-- . The following example uses an email address -->:
+2. Call a function that takes the user's email address or phone number as input and generates a `TokenGenerateResponse` object. The following example uses an email address:
 
    ```py
    token_generate_response = client.generate_token(TokenGenerateInput.from_email(emailAddress).do_not_generate_tokens_for_opted_out())
@@ -199,20 +199,20 @@ There are two operations that apply to Advertisers/Data Providers:
 
 ### Map Personal Data to Raw EUIDs
 
-To map email addresses or their hashes to their raw EUIDs and salt bucket IDs, follow these steps.
+To map email addresses, phone numbers, or their hashes to their raw EUIDs and salt bucket IDs, follow these steps.
 
 1. Create an instance of `IdentityMapClient` as an instance variable.
    ```py
    client = IdentityMapClient(base_url, api_key, client_secret)
    ```
 
-2. Call a function that takes email addresses as input and generates an `IdentityMapResponse` object<!-- . The following example uses email addresses -->:
+2. Call a function that takes email addresses or phone numbers as input and generates an `IdentityMapResponse` object. The following example uses email addresses:
    ```py
    identity_map_response = client.generate_identity_map(IdentityMapInput.from_emails(["email1@example.com", "email2@example.com"]))
    ```
 
    :::note
-   The SDK hashes input values before sending them. This ensures that raw email addresses do not leave your server.
+   The SDK hashes input values before sending them. This ensures that raw email addresses and phone numbers do not leave your server.
    :::
 
 3. Retrieve the mapped and unmapped results as follows:

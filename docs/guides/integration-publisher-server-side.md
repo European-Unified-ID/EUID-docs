@@ -29,7 +29,7 @@ To facilitate the process of establishing client identity using EUID and retriev
 
 The guide outlines the [basic steps](#integration-steps) that you need to consider if you're building an integration without using a client-side or server-side SDK. For example, you need to decide how to do the following:
 
-- Implement opportunities to capture email: for example, promotional exchanges, sign-ups and subscriptions, or marketing form fills.
+- Implement opportunities to capture email or phone number: for example, promotional exchanges, sign-ups and subscriptions, or marketing form fills.
 - Manage EUID identity information and use it for targeted advertising
 - Refresh EUID tokens
 - Deal with missing identities
@@ -56,7 +56,7 @@ The following sections provide additional details for each step in the diagram:
 
 ### Establish Identity: Capture User Data
 
-After authentication in step 1-c, which allows the publisher to validate the user's email address, the publisher can send a request to generate an EUID token, on the server side. The following table details the token generation steps.
+After authentication in step 1-c, which allows the publisher to validate the user's email address or phone number, the publisher can send a request to generate an EUID token, on the server side. The following table details the token generation steps.
 
 :::tip
 Rather than calling this endpoint directly, you could use one of the SDKs to manage it for you. For a summary of options, see [SDKs: Summary](../sdks/summary-sdks.md).
@@ -64,8 +64,8 @@ Rather than calling this endpoint directly, you could use one of the SDKs to man
 
 | Step | Endpoint | Description |
 | :--- | :--- | :--- |
-| 1-d | [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) | Establish identity with EUID by using the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint to generate an EUID token using the normalized email address of the user. |
-| 1-e | [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) | Return an EUID token generated from the user's hashed or unhashed email address, plus associated values such as the refresh token. |
+| 1-d | [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) | Establish identity with EUID by using the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint to generate an EUID token using the normalized email address or phone number of the user. |
+| 1-e | [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) | Return an EUID token generated from the user's hashed or unhashed email address or phone number, plus associated values such as the refresh token. |
 | 1-f | N/A | Place the returned `advertising_token` and `refresh_token` in a store tied to a user. You might consider client-side storage, such as a first-party cookie, or server-side storage. |
 
 ### Bid Using an EUID Token

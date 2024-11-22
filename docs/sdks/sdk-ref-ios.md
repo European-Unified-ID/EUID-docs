@@ -107,7 +107,7 @@ For iOS, the `EUIDManager` is initialized automatically the first time it is acc
 
 There are two ways to establish an initial EUID Identity:
 
-1. Generate the EUID identity using personal data&#8212;email (hashed or unhashed). For integration instructions, see [Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side.md).
+1. Generate the EUID identity using personal data&#8212;email (hashed or unhashed) or phone number (hashed or unhashed). For integration instructions, see [Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side.md).
 
 2. Create an EUID identity from your server's back end and then pass it to the EUID SDK. For integration instructions, see [Client-Server Integration Guide for Mobile](../guides/integration-mobile-client-server.md).
 

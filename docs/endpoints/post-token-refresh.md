@@ -41,7 +41,10 @@ Here's what you need to know about this endpoint:
 
 #### Testing Notes
 
-Using the `refresh-optout@example.com` email address in a [POST&nbsp;/token/generate](post-token-generate.md) request always generates an identity response with a `refresh_token` that results in a logout response when used with the `POST /token/refresh` endpoint.
+Using either of the following parameters in a [POST&nbsp;/token/generate](post-token-generate.md) request always generates an identity response with a `refresh_token` that results in a logout response when used with the `POST /token/refresh` endpoint:
+
+- The `refresh-optout@example.com` email address
+- The `+00000000002` phone number
 
 ### Request Example
 

@@ -67,10 +67,10 @@ Follow the applicable instructions, for Android or iOS:
 
 1. Check out the main branch of the [SDK for Android source code repository on GitHub](https://github.com/IABTechLab/uid2-android-sdk/tree/main).
 1. In Android Studio (check the version required in the [Minimum Requirements](../sdks/sdk-ref-android.md#minimum-requirements) section in the SDK for Android Reference Guide), open the directory that you checked out.
-1. set `uid2_environment_euid` to `true` in [AndroidManifest.xml](https://github.com/IABTechLab/uid2-android-sdk/blob/main/dev-app/src/main/AndroidManifest.xml)
+1. In [AndroidManifest.xml](https://github.com/IABTechLab/uid2-android-sdk/blob/main/dev-app/src/main/AndroidManifest.xml), set `uid2_environment_euid` to `true`.
 1. Run the **dev-app** app.
 1. When you've started the app, make sure that the **Client Side** checkbox is checked.
-1. Enter an email address, and then click the arrow to the right.
+1. Enter an email address or phone number, and then click the arrow to the right.
 
 </TabItem>
 <TabItem value='ios' label='iOS'>
@@ -81,22 +81,22 @@ EUID
    ```js
    Development/UID2SDKDevelopmentApp/UID2SDKDevelopmentApp.xcodeproj
    ```
-1. Set the `UID2EnvironmentEUID` key to `YES` in `Development/UID2SDKDevelopmentApp/UID2SDKDevelopmentApp/Info.plist` in Xcode's editor. Alternatively you can use `plutil` from the command line: 
+1. In `Development/UID2SDKDevelopmentApp/UID2SDKDevelopmentApp/Info.plist` in Xcode's editor, set the `UID2EnvironmentEUID` key to `YES`. Alternatively, you can use `plutil` from the command line: 
    ```console
    plutil -replace UID2EnvironmentEUID -bool YES Development/UID2SDKDevelopmentApp/UID2SDKDevelopmentApp/Info.plist
    ```
-   to revert back to using a UID2 environment,
+   to revert back to using a UID2 environment:
    ```console
    plutil -replace UID2EnvironmentEUID -bool NO Development/UID2SDKDevelopmentApp/UID2SDKDevelopmentApp/Info.plist
    ```
 1. Run the **UID2SDKDevelopmentApp** app scheme.
 1. When you've started the app, make sure that the **Client Side** checkbox is checked.
-1. Enter an email address, and then click the arrow to the right.
+1. Enter an email or phone number, and then click the arrow to the right.
 
 </TabItem>
 </Tabs>
 
-Behind the scenes, the development app makes the following EUID SDK API call. This call sends a request to the EUID service to generate an <Link href="../ref-info/glossary-uid#gl-identity">identity</Link> (an EUID token and associated values) for the email input:
+Behind the scenes, the development app makes the following EUID SDK API call. This call sends a request to the EUID service to generate an <Link href="../ref-info/glossary-uid#gl-identity">identity</Link> (an EUID token and associated values) for the email/phone input:
 
 <Tabs groupId="language-selection">
 <TabItem value='android' label='Android'>
@@ -284,7 +284,7 @@ EUID provides the publisher with the following values, which are needed for gene
 
 You'll have one set of these values for your Integration environment, and a separate set for your production environment.
 
-To configure the SDK, you must pass in the Subscription ID and public key that you received during account setup, as well as the user’s hashed or unhashed directly identifying information (<Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>) (email address), into the following method call:
+To configure the SDK, you must pass in the Subscription ID and public key that you received during account setup, as well as the user’s hashed or unhashed directly identifying information (<Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>) (email address or phone number), into the following method call:
 
 <Tabs groupId="language-selection">
 <TabItem value='android' label='Android'>
@@ -333,6 +333,8 @@ The following examples demonstrate the different ways that you can configure the
 
 - Email, Unhashed
 - Email, Normalized and Hashed
+- Phone Number, Unhashed
+- Phone Number, Normalized and Hashed
 
 If the `generateIdentity` method is called multiple times, the EUID mobile SDK uses the most recent configuration values.
 
@@ -434,6 +436,106 @@ Task<Void, Never> {
 In this scenario:
 
 - The publisher is responsible for normalizing and hashing the email address. For details, see [Email Address Normalization](../getting-started/gs-normalization-encoding.md#email-address-normalization).
+- The EUID mobile SDK encrypts the hashed personal data before sending it to the EUID service.
+
+</TabItem>
+<TabItem value='example_phone_unhashed' label='Phone Number, Unhashed'>
+
+The following example configures the EUID mobile SDK with a phone number.
+
+<Tabs groupId="language-selection">
+<TabItem value='android' label='Android'>
+
+```js
+EUIDManager.getInstance().generateIdentity(
+    IdentityRequest.Phone("+12345678901"),
+    subscriptionId,
+    publicKey,
+) { result ->
+    when (result) {
+        is Error -> ...
+        is Success -> ...
+    }
+}
+```
+
+</TabItem>
+<TabItem value='ios' label='iOS'>
+
+```js
+struct InvalidPhoneError: Error, LocalizedError {
+    var errorDescription: String = "Invalid phone number"
+}
+Task<Void, Never> {
+    do {
+        guard let normalizedPhone = IdentityType.NormalizedPhone(normalized: "+12345678901") else {
+            throw InvalidPhoneError() // Phone number is not normalized according to ITU E.164.
+        }
+        try await EUIDManager.shared.generateIdentity(
+            .phone(normalizedPhone),
+            subscriptionID: subscriptionID,
+            serverPublicKey: serverPublicKeyString
+        )
+    } catch {
+        // read `error` object for troubleshooting or enable logging to view it in logs
+    }
+}
+```
+
+</TabItem>
+</Tabs>
+
+In this scenario:
+
+- The publisher is responsible for normalizing the phone number. For details, see [Phone Number Normalization](../getting-started/gs-normalization-encoding.md#phone-number-normalization).
+- The EUID mobile SDK hashes the phone number before sending the encrypted hash to the EUID service.
+
+</TabItem>
+<TabItem value='example_phone_hash' label='Phone Number, Normalized and Hashed'>
+
+The following example configures the EUID mobile SDK with a hashed and Base64-encoded phone number.
+
+<Tabs groupId="language-selection">
+<TabItem value='android' label='Android'>
+
+```js
+EUIDManager.getInstance().generateIdentity(
+    IdentityRequest.PhoneHash(
+        "EObwtHBUqDNZR33LNSMdtt5cafsYFuGmuY4ZLenlue4="
+    ),
+    subscriptionId,
+    publicKey,
+) { result ->
+    when (result) {
+        is Error -> ...
+        is Success -> ...
+    }
+}
+```
+
+</TabItem>
+<TabItem value='ios' label='iOS'>
+
+```js
+Task<Void, Never> {
+    do {
+        try await EUIDManager.shared.generateIdentity(
+            .phoneHash("EObwtHBUqDNZR33LNSMdtt5cafsYFuGmuY4ZLenlue4="),
+            subscriptionID: subscriptionID,
+            serverPublicKey: serverPublicKeyString
+        )
+    } catch {
+        // read `error` object for troubleshooting or enable logging to view it in logs
+    }
+}
+```
+
+</TabItem>
+</Tabs>
+
+In this scenario: 
+
+- The publisher is responsible for normalizing and hashing the phone number. For details, see [Phone Number Hash Encoding](../getting-started/gs-normalization-encoding.md#phone-number-hash-encoding).
 - The EUID mobile SDK encrypts the hashed personal data before sending it to the EUID service.
 
 </TabItem>
