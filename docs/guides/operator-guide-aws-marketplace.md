@@ -161,7 +161,7 @@ It takes several minutes for the stack to be created. When you see an Auto Scali
 
 The latest ZIP file is linked in the Release Notes column in the following table.
 
-| Release | Version | Date | Release Notes | AWS Version |
+| Release | Version | Date | Release Notes | Version |
 | ------- | ------  | ------ | ------ | ------ |
 | Q1 2024 | 5.26.19 | February 13, 2024 | [v5.26.19-56899dc0d7](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.26.19-56899dc0d7) | 5.26.19-56899dc0d7 |
 | Q2 2024 | 5.37.12 | June 12, 2024 | [v5.37.12](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.37.12) | 5.37.12 |
