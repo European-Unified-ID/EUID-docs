@@ -11,6 +11,16 @@ import Link from '@docusaurus/Link';
 
 Check out the latest updates to our EUID documentation resources.
 
+### New: EUID Phone Number Support
+
+November 22, 2024
+
+EUID now supports phone numbers, as well as email addresses, as valid <Link href="glossary-uid#gl-personal-data">personal data</Link>.
+
+All the EUID documentation has been updated to reflect this support, including reference information, procedures, and code samples. 
+
+<!-- APIDOCS-2691 -->
+
 ### New: LiveRamp Integration Tips
 
 November 14, 2024

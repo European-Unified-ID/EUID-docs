@@ -216,7 +216,7 @@ import Link from '@docusaurus/Link';
 
 <dt><MdxJumpAnchor id="gl-euid-token"><a href="#gl-euid-token">EUID token (advertising token)</a></MdxJumpAnchor></dt>
 <dd>A European Unified ID (EUID) token, also called an advertising token, is an encrypted form of a <a href="#gl-raw-euid">raw EUID</a>.</dd>
-<dd>EUID tokens are generated from hashed or unhashed email addresses that are converted to raw EUIDs and then encrypted. The EUID token is a unique value; no two EUID tokens are the same. EUID tokens are case sensitive.</dd>
+<dd>EUID tokens are generated from hashed or unhashed email addresses or phone numbers that are converted to raw EUIDs and then encrypted. The EUID token is a unique value; no two EUID tokens are the same. EUID tokens are case sensitive.</dd>
 <dd>The token value is opaque: No assumptions should be made about the format or about the length of the string.</dd>
 <dd>The token has a limited life, but can be refreshed in the background using the <a href="#gl-refresh-token">refresh token</a>.</dd>
 <dd>Publishers send EUID tokens in the bidstream.</dd>
@@ -331,7 +331,7 @@ import Link from '@docusaurus/Link';
 
 <dt><MdxJumpAnchor id="gl-personal-data"><a href="#gl-personal-data">Personal data</a></MdxJumpAnchor></dt>
 <dd>In general, personal data is information that relates to an identified or identifiable individual, including name, email address, or phone number.</dd>
-<dd>EUID supports email address, and translates the personal data to a value that can be used for the purpose of targeted advertising but cannot by itself be traced back to the original value.</dd>
+<dd>EUID supports email address and phone number, and translates the personal data to a value that can be used for the purpose of targeted advertising but cannot by itself be traced back to the original value.</dd>
 
 <dt><MdxJumpAnchor id="gl-private-operator"><a href="#gl-private-operator">Private Operator</a></MdxJumpAnchor></dt>
 <dd>A Private <a href="#gl-operator">Operator</a> is an entity that runs a private instance of the Operator Service. The Private Operator generates and manages EUIDs for itself, using its own resources (such as hardware) in a secure environment.</dd>
