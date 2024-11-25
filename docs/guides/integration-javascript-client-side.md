@@ -11,6 +11,10 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Link from '@docusaurus/Link';
 
+export const New370 = () => (
+  <span className='pill'>New in version 3.7.0</span>
+);
+
 # Client-Side Integration Guide for JavaScript
 
 This guide is for publishers who want to integrate with EUID and generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) using only JavaScript client-side changes on their website with minimum effort.
@@ -130,8 +134,8 @@ To configure the SDK, call one of the following methods, with an object containi
 
 *  `__euid.setIdentityFromEmail`
 *  `__euid.setIdentityFromEmailHash`
-*  `__euid.setIdentityFromPhone`
-*  `__euid.setIdentityFromPhoneHash`
+*  `__euid.setIdentityFromPhone` <New370 />
+*  `__euid.setIdentityFromPhoneHash` <New370 />
 
 The following sections include coding examples for each scenario.
 
