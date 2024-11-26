@@ -11,6 +11,16 @@ import Link from '@docusaurus/Link';
 
 Check out the latest updates to our EUID documentation resources.
 
+### New: EUID Hashing Tool
+
+November 26, 2024
+
+We've added a new EUID hashing tool so that you can check that you're normalizing and encoding correctly.
+
+For details, see [EUID Hashing Tool](../getting-started/gs-normalization-encoding#euid-hashing-tool) in the *Normalization and Encoding* documentation.
+
+<!-- APIDOCS-2772 -->
+
 ### New: EUID Phone Number Support
 
 November 22, 2024

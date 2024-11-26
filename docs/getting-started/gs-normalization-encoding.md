@@ -125,4 +125,26 @@ Some of the examples show email addresses that include the plus sign (+), with d
 
 For an example of how to generate email and phone hashes in JavaScript, see [Example Code: Hashing and Base-64 Encoding](../guides/integration-javascript-client-side#example-code-hashing-and-base-64-encoding).
 
-<!-- EUID Hashing Tool to come -->
+## EUID Hashing Tool
+
+To check that you're correctly normalizing, hashing, and encoding, you can test with the [EUID hashing tool](https://unifiedid.com/examples/hashing-tool/).
+
+Choose Email or Phone Number, type or paste the value, and then click **Enter**.
+
+The tool does the following:
+- Email: Displays each of the following three values:
+  - Normalized value
+  - Hashed value
+  - Base64-encoded value
+
+- Phone: Displays each of the following two values:
+  - Hashed value
+  - Base64-encoded value
+
+  :::note
+  For phone numbers, you must first normalize the data.
+  :::
+
+If the input data doesn't have a valid email or phone number format, or if the phone number is not normalized, the tool gives an error.
+
+You can use this tool to verify that your internal processes are set up to correctly create normalized, hashed, and encoded values for EUID.
