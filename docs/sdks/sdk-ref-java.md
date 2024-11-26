@@ -143,7 +143,7 @@ If you're using the SDK's HTTP implementation, follow these steps.
    private final PublisherUid2Client publisherUid2Client = new PublisherUid2Client(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY);
    ```
 
-2. Call a function that takes the user's email address or phone number as input and generates a `TokenGenerateResponse` object<!-- . The following example uses an email address -->:
+2. Call a function that takes the user's email address or phone number as input and generates a `TokenGenerateResponse` object. The following example uses an email address:
    ```java
    TokenGenerateResponse tokenGenerateResponse = publisherUid2Client.generateTokenResponse(TokenGenerateInput.fromEmail(emailAddress).doNotGenerateTokensForOptedOut());
    ```
