@@ -145,11 +145,11 @@ If the `status` value is anything other than `success`, the `message` field prov
 
 ## Test Identities
 
-| Type  | Identity                     | Purpose                                                                                                                           | Next Endpoint                                  |
-|:------|:-----------------------------|:----------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------|
-| Email | `validate@example.com`       | Test that the `advertising_token` you've cached matches the `advertising_token` for the specified email address.                  | [POST&nbsp;/token/validate](post-token-validate.md) |
-| Email | `optout@example.com`         | Using this email for the request always generates an `optout` response.                                                           | [POST&nbsp;/token/generate](post-token-generate.md) |
-| Email | `refresh-optout@example.com` | Using this email for the request always generates an identity response with a `refresh_token` that results in an `optout` response. | [POST&nbsp;/token/refresh](post-token-refresh.md)   |
+| Type  | Identity                     | Purpose                                                                                                                                    | Next Endpoint                                       |
+|:------|:-----------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------|
+| Email | `validate@example.com`       | Test that the `advertising_token` you've cached matches the `advertising_token` for the specified email address.                           | [POST&nbsp;/token/validate](post-token-validate.md) |
+| Email | `optout@example.com`         | Using this email for the request always generates an `optout` response.                                                                    | [POST&nbsp;/token/generate](post-token-generate.md) |
+| Email | `refresh-optout@example.com` | Using this email for the request always generates an identity response with a `refresh_token` that results in an `optout` response.        | [POST&nbsp;/token/refresh](post-token-refresh.md)   |
 | Phone | `+12345678901`               | Test that the `advertising_token` you've cached matches the `advertising_token` for the specified phone number.                            | [POST&nbsp;/token/validate](post-token-validate.md) |
 | Phone | `+00000000002`               | Using this phone number for the request always generates an `optout` response.                                                             | [POST&nbsp;/token/generate](post-token-generate.md) |
 | Phone | `+00000000000`               | Using this phone number for the request always generates an identity response with a `refresh_token` that results in an `optout` response. | [POST&nbsp;/token/refresh](post-token-refresh.md)   |
