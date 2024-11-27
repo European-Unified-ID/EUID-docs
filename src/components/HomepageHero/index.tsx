@@ -35,8 +35,8 @@ export default function HomepageHero(): JSX.Element {
           <div className="col col--6">
             <p className={clsx("type-paragraph-large")}>
               <Translate id="homepage.heroCopy">
-                European Unified ID (EUID) leverages encrypted email data to
-                provide a privacy-conscious, secure, and accurate identity
+                European Unified ID (EUID) leverages encrypted email and phone number 
+                data to provide a privacy-conscious, secure, and accurate identity 
                 standard for the digital advertising ecosystem.
               </Translate>
             </p>
