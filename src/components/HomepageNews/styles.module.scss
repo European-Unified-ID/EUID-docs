@@ -67,7 +67,11 @@
 }
 
 .cardBody {
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  
   h3 {
     display: inline;
     background-image: linear-gradient(120deg, var(--c-eleven-o-clock), var(--c-eleven-o-clock));
@@ -75,6 +79,10 @@
     background-size: 100% 0;
     background-position: 0 100%;
     transition: background-size .3s ease-in-out;
+  }
+  span {
+    display: block;
+    margin-top: 6px;
   }
 
   p {
