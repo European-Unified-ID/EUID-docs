@@ -34,6 +34,8 @@ The following endpoints are used by advertisers and third-party data providers. 
 
 The following endpoint can be used by advertisers, third-party data providers, and DSPs. Publishers do not need to use this endpoint.
 
+For details about the EUID opt-out workflow and how users can opt out, see [User Opt-Out](../getting-started/gs-opt-out.md).
+
 | Endpoint | Description | Request Encryption | Response Decryption |
 | :--- | :--- | :--- | :--- |
 | [POST&nbsp;/optout/status](post-optout-status.md) | Checks the opt-out status of raw EUIDs. This endpoint takes a list of raw EUIDs as input, and returns the raw EUIDs that have opted out, as well as the time that the opt-out took place.  | Required | Required |
