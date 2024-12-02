@@ -12,7 +12,7 @@ import Link from '@docusaurus/Link';
 
 This guide is for DSPs who transact on EUIDs in the <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link>.
 
-DSPs receive EUID tokens in bid requests, and decrypt the EUID tokens to arrive at raw EUIDs that they can use for bidding, using one of the server-side SDKs that support this function.
+DSPs receive EUID tokens in bid requests, and decrypt the [EUID tokens](../ref-info/glossary-uid.md#gl-euid-token) to arrive at [raw EUIDs](../ref-info/glossary-uid.md#gl-raw-euid) that they can use for bidding, using one of the server-side SDKs that support this function.
 
 For a summary of available server-side SDKs, see [SDKs: Summary](../sdks/summary-sdks.md).
 
@@ -37,6 +37,8 @@ This section includes the following information for DSPs, who must honor user op
 - [Opt-Out Webhook](#opt-out-webhook)
 - [POST /optout/status Endpoint](#post-optoutstatus-endpoint)
 - [Bidding Opt-Out Logic](#bidding-opt-out-logic)
+
+For details about the EUID opt-out workflow and how users can opt out, see [User Opt-Out](../getting-started/gs-opt-out.md).
 
 #### Opt-Out Webhook
 
