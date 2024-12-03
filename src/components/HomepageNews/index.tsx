@@ -121,7 +121,7 @@ const ArticleList: ArticleItem[] = [
     date: "October 28, 2024",
   },
   {
-    title: "The Trade Desk rassemble autour de son “European Unified ID",
+    title: `The Trade Desk rassemble autour de son "European Unified ID"`,
     source: "CB News",
     url: "https://www.cbnews.fr/digital/image-the-trade-desk-rassemble-autour-son-european-unified-id-88209",
     date: "October 28, 2024",
