@@ -95,7 +95,7 @@ window.getEuidAdvertisingToken = async () => {
 
 For details, see [Publisher Integration Guide, Server-Side](integration-publisher-server-side.md).
 
-<!-- A sample application is also available for server-side integration. See [Sample Applications](#sample-applications). -->
+<!-- A sample implementation is also available for server-side integration. See [Sample Implementations](#sample-implementations). -->
 
 ### SDK for JavaScript Client-Side Integration
 
@@ -107,7 +107,17 @@ This script is hosted on CDN, and GPT automatically loads it with the secure sig
 
 For details, see [Client-Side Integration Guide for JavaScript](integration-javascript-client-side.md).
 
-A sample application is also available for integration using the SDK for JavaScript. See [Sample application](https://euid.eu/examples/cstg-secure-signals-example/).
+A sample implementation is also available for integration using the SDK for JavaScript. See [Sample Implementation](#sample-implementation).
+
+## Sample Implementation
+
+The following sample implementation is available to illustrate how to integrate with the Google Ad Manager secure signals feature:
+
+- Client-Server EUID SDK Integration Example:
+  - [Sample implementation](https://euid.eu/examples/cstg-secure-signals-example/)
+  - [Code repository](https://github.com/European-Unified-ID/EUID-docs/tree/main/static/examples/cstg-secure-signals-example)
+
+<!-- Server-Side EUID Integration Example to come. -->
 
 ## Troubleshooting
 
