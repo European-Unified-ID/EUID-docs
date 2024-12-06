@@ -11,6 +11,16 @@ import Link from '@docusaurus/Link';
 
 Check out the latest updates to our EUID documentation resources.
 
+### New: Zoom-In Tool for Images
+
+December 15, 2024
+
+The EUID docs site now includes a zoom-in tool for images.
+
+Just hover over the image and the tool appears as a magnifying glass... click to view a magnified version of the image.
+
+<!-- APIDOCS-2237 for both -->
+
 ### New: EUID Hashing Tool
 
 November 26, 2024

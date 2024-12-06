@@ -91,7 +91,7 @@ const ArticleList: ArticleItem[] = [
       "Media Figaro intègre EUID et OpenPath dans le cadre d'un partenariat avec The Trade Desk",
     source: "The Media Leader",
     url: "https://fr.themedialeader.com/media-figaro-integre-euid-et-openpath-dans-le-cadre-dun-partenariat-avec-the-trade-desk/",
-    date: "June 24, 2024",
+    date: "June 27, 2024",
   },
   {
     title: "Reach PLC adopts The Trade Desk's European Unified ID",

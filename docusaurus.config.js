@@ -48,6 +48,7 @@ const config = {
         containerId: "GTM-K3NQMDX",
       },
     ],
+    require.resolve("docusaurus-plugin-image-zoom")
   ],
 
   presets: [
@@ -209,7 +210,17 @@ const config = {
         //https://docusaurus.io/docs/search#algolia-no-search-results
         contextualSearch: false,
       },
+      zoom: {
+        selector: '.markdown :not(em) > img',
+        config: {
+          // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
+          background: {
+            light: 'rgb(255, 255, 255)',
+            dark: 'rgb(50, 50, 50)'
+          }
+        }
+      }
     }),
-};
+  };
 
 export default config;
