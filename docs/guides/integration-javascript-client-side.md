@@ -48,9 +48,9 @@ If you want to use a debug build of the SDK, use the following URL instead:
 
 - [https://cdn.integ.euid.eu/euid-sdk-3.4.5.js](https://cdn.integ.euid.eu/euid-sdk-3.4.5.js)
 
-## Sample Implementation Website
+## Sample Implementation
 
-For an example website, see this example:
+For a sample implementation, see this example:
 - Code: [Example Client-Side Integration for JavaScript](https://github.com/European-Unified-ID/EUID-docs/tree/main/static/examples/cstg-js-sdk-example)
 - Running site: [Client-Side Integration Example, EUID JavaScript SDK](https://euid.eu/examples/cstg-js-sdk-example/)
 

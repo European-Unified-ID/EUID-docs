@@ -21,26 +21,13 @@ If you prefer to integrate with EUID via **only** client-side JavaScript changes
 
 For technical details about the SDK, see [SDK for JavaScript Reference Guide](../sdks/sdk-ref-javascript.md).
 
-## Sample Implementation Website
+<!-- ## Sample Implementation
 
-For an example application, see the EUID Google Secure Signals with SDK v3 example: uptohere
-- Code and docs: [UID2 SDK Secure Signals Integration Example](https://github.com/IABTechLab/uid2-web-integrations/tree/main/examples/google-secure-signals-integration/with_sdk_v3)
-- Running site: [Client-Server UID2 SDK Integration Example](https://secure-signals-jssdk-integ.uidapi.com/)
-
-
-uptohere abandon??
-
-The following sample implementation is available to illustrate how to integrate with the Google Ad Manager secure signals feature:
-
-- Client-Server EUID SDK Integration Example:
-  - [Sample implementation](https://euid.eu/examples/cstg-secure-signals-example/)
-  - [Code repository](https://github.com/European-Unified-ID/EUID-docs/tree/main/static/examples/cstg-secure-signals-example)
-
-<!-- ## Sample Implementation Website
-
-For an example application, see the UID2 Google Secure Signals with SDK v3 example:
+For a sample implementation, see the UID2 Google Secure Signals with SDK v3 example:
 - Code and docs: [UID2 SDK Secure Signals Integration Example](https://github.com/IABTechLab/uid2-web-integrations/tree/main/examples/google-secure-signals-integration/with_sdk_v3)
 - Running site: [Client-Side EUID SDK Integration Example](https://euid.eu/examples/cstg-js-sdk-example/) -->
+
+<!-- (To come: client-server EUID JavaScript client-side implementation example corresponding to the UID2 example) gwh 12/9/24 -->
 
 ## Introduction
 

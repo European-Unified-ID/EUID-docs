@@ -117,7 +117,9 @@ The following sample implementation is available to illustrate how to integrate 
   - [Sample implementation](https://euid.eu/examples/cstg-secure-signals-example/)
   - [Code repository](https://github.com/European-Unified-ID/EUID-docs/tree/main/static/examples/cstg-secure-signals-example)
 
-<!-- Server-Side EUID Integration Example to come. -->
+<!-- EUID Server-Side SDK Integration Example to come. gwh 12/9/24 -->
+
+Each sample implementation has its own instructions.
 
 ## Troubleshooting
 
