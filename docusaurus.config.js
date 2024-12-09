@@ -1,6 +1,6 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-import { themes } from 'prism-react-renderer';
+import { themes } from "prism-react-renderer";
 
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
@@ -48,7 +48,7 @@ const config = {
         containerId: "GTM-K3NQMDX",
       },
     ],
-    require.resolve("docusaurus-plugin-image-zoom")
+    require.resolve("docusaurus-plugin-image-zoom"),
   ],
 
   presets: [
@@ -67,6 +67,10 @@ const config = {
         blog: false,
         theme: {
           customCss: require.resolve("./src/css/custom.scss"),
+        },
+        sitemap: {
+          changefreq: "daily",
+          lastmod: "datetime",
         },
       }),
     ],
@@ -211,16 +215,16 @@ const config = {
         contextualSearch: false,
       },
       zoom: {
-        selector: '.markdown :not(em) > img',
+        selector: ".markdown :not(em) > img",
         config: {
           // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
           background: {
-            light: 'rgb(255, 255, 255)',
-            dark: 'rgb(50, 50, 50)'
-          }
-        }
-      }
+            light: "rgb(255, 255, 255)",
+            dark: "rgb(50, 50, 50)",
+          },
+        },
+      },
     }),
-  };
+};
 
 export default config;
