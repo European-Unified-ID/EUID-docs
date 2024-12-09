@@ -19,6 +19,8 @@ The following options are available for publishers to integrate with EUID on the
 - SDK for Python (see [Usage for Publishers](../sdks/sdk-ref-python.md#usage-for-publishers) section).
 - Custom server code to generate and refresh the EUID token by calling the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) and [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoints.
 
+<!-- There is also a sample implementation that demonstrates the workflow. See [Sample Implementation](#sample-implementation). -->
+
 For a complete summary of publisher integration options, see [Publisher Integrations](summary-guides.md#publisher-integrations).
 
 :::tip
@@ -96,6 +98,15 @@ For details about the EUID opt-out workflow and how users can opt out, see [User
 :::tip
 Refresh tokens starting from the `refresh_from` timestamp, which is part of the identity returned by the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) or [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoints.
 :::
+
+<!-- ## Sample Implementation
+
+A sample implementation is available for server-side integration. See:
+
+- Server-Side EUID Integration Example (sample implementation)
+- Server-Side EUID Integration Example (readme) -->
+
+<!-- EUID integration-publisher-server-side Integration Example to come. gwh 12/9/24 -->
 
 ### Clear Identity: User Logout
 
