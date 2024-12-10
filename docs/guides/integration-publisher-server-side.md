@@ -106,7 +106,7 @@ A sample implementation is available for server-side integration. See:
 - Server-Side EUID Integration Example (sample implementation)
 - Server-Side EUID Integration Example (readme) -->
 
-<!-- EUID integration-publisher-server-side Integration Example to come. gwh 12/9/24 -->
+<!-- EUID Server-Side SDK Integration Example to come. gwh 12/9/24 -->
 
 ### Clear Identity: User Logout
 
