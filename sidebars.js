@@ -27,6 +27,7 @@ const sidebars = {
         'getting-started/gs-credentials',
         'getting-started/gs-permissions',
         'getting-started/gs-faqs',
+        'getting-started/gs-sharing',
       ],
     },
 

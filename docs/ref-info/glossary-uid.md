@@ -403,6 +403,14 @@ import Link from '@docusaurus/Link';
 <dd>SHA-256 (sometimes called SHA256) is part of the SHA-2 family of algorithms developed by the National Institute of Standards and Technology (NIST) and the National Security Agency (NSA) to succeed SHA-1. Each algorithm is named according to the number of bits in the output, so SHA-256 has 256 bits.</dd>
 <dd>For details, see <a href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf">https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf</a> (specification).</dd>
 
+<dt><MdxJumpAnchor id="gl-sharing"><a href="#gl-sharing">Sharing (in EUID)</a></MdxJumpAnchor></dt>
+<dd>In the context of EUID, sharing is a process for distributing <a href="#gl-raw-euid">raw EUIDs</a> from one EUID <a href="#gl-sharing-participant">sharing participant</a> to another.</dd>
+<dd>For details, see <a href="../getting-started/gs-sharing">EUID Sharing</a>.</dd>
+
+<dt><MdxJumpAnchor id="gl-sharing-participant"><a href="#gl-sharing-participant">Sharing participant</a></MdxJumpAnchor></dt>
+<dd>For EUID, a sharing participant is a company that either has agreed to comply with the EUID Participation Policy or fits within one of the <a href="../getting-started/gs-sharing#exceptions">exceptions</a>, and that takes part in <a href="#gl-sharing">sharing</a>, either as a sender or a receiver.</dd>
+<dd>For details, see <a href="../getting-started/gs-sharing">EUID Sharing</a>.</dd>
+
 <dt><MdxJumpAnchor id="gl-subscription-id"><a href="#gl-subscription-id">Subscription ID</a></MdxJumpAnchor></dt>
 <dd>For client-side publisher integrations, the Subscription ID is one of the two values issued to publishers to uniquely identify the account. For details, see <a href="../getting-started/gs-credentials#subscription-id-and-public-key">Subscription ID and Public Key</a>.</dd>
 
