@@ -25,7 +25,7 @@ The security requirements are as follows:
 - [Secure Transport](#secure-transport)
 - [Example Workflow](#example-workflow)
 
-## Authentication
+### Authentication
 
 Authenticating involves verifying the identity of an entity using various methods to ensure that they are who they claim to be. Online, this is commonly accomplished through email verification, and in person this would often be accomplished using a government-issued form of identification.
 
@@ -35,14 +35,14 @@ A multi-layered approach, known as multi-factor authentication (MFA), significan
 
 Security questions, email verification links, or SMS verification codes are also commonly used to strengthen online authentication processes.
 
-## Authorization
+### Authorization
 
 Authorization online determines what resources a user can access and what actions they can perform after they have been authenticated. This process involves:
 
 - Setting permissions and restrictions based on the user's role or account details.
 - Ensuring that users can only access information and functionality relevant to their privileges.
 
-## Accounting
+### Accounting
 
 Accounting means that there is a record of the transaction, so that activity can be reviewed or audited if necessary. To ensure a comprehensive and attributable transaction log for data transfers between two [sharing participants](ref-info/glossary-uid.md#gl-sharing-participant), it's important to record specific fields that capture the details and context of each transaction.
 
@@ -62,14 +62,14 @@ The following table shows the key fields you should consider including in the tr
 
 Additional logs, such as network logs, application logs, and cloud audit logs, can also help by providing additional information such as source and destination IP addresses or cloud platform account IDs.
 
-## Secure Transport
+### Secure Transport
 
 Secure transport helps protect raw EUIDs from being accessible or modifiable by an onlooker during the transition of data from sender to receiver, end to end. Examples of secure transport include:
 
 - HTTPS or TLS
 - Message-based encryption
 
-## Example Workflow
+### Example Workflow
 The following is an example workflow for an online AAA (Authentication, Authorization, and Accounting) flow, with an additional human verification step for contract validation.
 
 1. Pre-Authentication:
@@ -97,7 +97,7 @@ The following is an example workflow for an online AAA (Authentication, Authoriz
 
    - The verifier might also receive a notification confirming that their intervention has been successfully recorded and acted upon.
 
-### Exceptions
+## Exceptions
 
 The following specific types of EUID participants who have not yet agreed to comply with the EUID Participation Policy, but have an effective EUID agreement in place, may until further notice continue with the following activities:
 
