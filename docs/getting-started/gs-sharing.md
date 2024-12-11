@@ -9,13 +9,13 @@ import Link from '@docusaurus/Link';
 
 # EUID Sharing
 
-In the context of EUID, sharing is a process for distributing [raw EUIDs](../ref-info/glossary-uid.md#gl-raw-euid) from one EUID [sharing participant](../ref-info/glossary-uid.md#gl-sharing-participant)  to another.
+In the context of EUID, sharing is a process for distributing [raw EUIDs](../ref-info/glossary-uid.md#gl-raw-euid) from one EUID [sharing participant](../ref-info/glossary-uid.md#gl-sharing-participant) to another.
 
 For EUID, a sharing participant is a company that either has agreed to comply with the EUID Participation Policy or fits within one of the <a href="#exceptions">exceptions</a>, and that takes part in sharing, either as a sender or a receiver.
 
 ## Security Requirements for EUID Sharing 
 
-All EUID participants have a core responsibility to ensure that the EUID ecosystem is safe. The following are standard security practices for all EUID participants and their sharing recipients. If you are sharing raw EUIDs with recepients the below security requirements are required and must all be met consistently.
+All EUID participants have a core responsibility to ensure that the EUID ecosystem is safe. The following are standard security practices for all EUID participants and their sharing recipients. If you are sharing raw EUIDs with recipients the below security requirements are required and must all be met consistently.
 
 The security requirements are as follows:
 
