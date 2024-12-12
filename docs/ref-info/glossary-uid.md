@@ -408,8 +408,9 @@ import Link from '@docusaurus/Link';
 <dd>For details, see <a href="../getting-started/gs-sharing">EUID Sharing</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-sharing-participant"><a href="#gl-sharing-participant">Sharing participant</a></MdxJumpAnchor></dt>
-<dd>For EUID, a sharing participant is a company that either has agreed to comply with the EUID Participation Policy or fits within one of the <a href="../getting-started/gs-sharing#exceptions">exceptions</a>, and that takes part in <a href="#gl-sharing">sharing</a>, either as a sender or a receiver.</dd>
+<dd>For EUID, a sharing participant is a company that either has signed an EUID contract or fits within one of the <a href="../getting-started/gs-sharing#exceptions">exceptions</a>, and that takes part in <a href="#gl-sharing">sharing</a>, either as a sender or a receiver.</dd>
 <dd>For details, see <a href="../getting-started/gs-sharing">EUID Sharing</a>.</dd>
+<!-- uid2_euid_diff re sharing participant definition 12/12/24 -->
 
 <dt><MdxJumpAnchor id="gl-subscription-id"><a href="#gl-subscription-id">Subscription ID</a></MdxJumpAnchor></dt>
 <dd>For client-side publisher integrations, the Subscription ID is one of the two values issued to publishers to uniquely identify the account. For details, see <a href="../getting-started/gs-credentials#subscription-id-and-public-key">Subscription ID and Public Key</a>.</dd>

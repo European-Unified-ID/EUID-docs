@@ -11,7 +11,7 @@ import Link from '@docusaurus/Link';
 
 In the context of EUID, sharing is a process for distributing [raw EUIDs](../ref-info/glossary-uid.md#gl-raw-euid) from one EUID [sharing participant](../ref-info/glossary-uid.md#gl-sharing-participant) to another.
 
-For EUID, a sharing participant is a company that either has agreed to comply with the EUID Participation Policy or fits within one of the <a href="#exceptions">exceptions</a>, and that takes part in sharing, either as a sender or a receiver.
+For EUID, a sharing participant is a company that either has signed an EUID contract or fits within one of the <a href="#exceptions">exceptions</a>, and that takes part in sharing, either as a sender or a receiver.
 
 ## Security Requirements for EUID Sharing 
 
@@ -99,7 +99,7 @@ The following is an example workflow for an online AAA (Authentication, Authoriz
 
 ## Exceptions
 
-The following specific types of EUID participants who have not yet agreed to comply with the EUID Participation Policy, but have an effective EUID agreement in place, may until further notice continue with the following activities:
+The following specific types of EUID participants who have an effective EUID agreement in place may until further notice continue with the following activities:
 
 - Publishers: Share EUID tokens in the <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link>.
 
