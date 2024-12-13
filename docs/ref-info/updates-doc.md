@@ -13,7 +13,7 @@ Check out the latest updates to our EUID documentation resources.
 
 ### New: EUID Sharing page
 
-December 12, 2024
+December 13, 2024
 
 We've added a page with information about <Link href="glossary-uid#gl-sharing">sharing</Link> EUIDs.
 
