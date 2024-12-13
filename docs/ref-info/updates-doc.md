@@ -11,9 +11,19 @@ import Link from '@docusaurus/Link';
 
 Check out the latest updates to our EUID documentation resources.
 
+### New: EUID Sharing page
+
+December 12, 2024
+
+We've added a page with information about <Link href="glossary-uid#gl-sharing">sharing</Link> EUIDs.
+
+For details, see [EUID Sharing](../getting-started/gs-sharing.md).
+
+<!-- APIDOCS-2624 -->
+
 ### New: Zoom-In Tool for Images
 
-December 15, 2024
+December 5, 2024
 
 The EUID docs site now includes a zoom-in tool for images.
 

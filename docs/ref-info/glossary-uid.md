@@ -114,7 +114,7 @@ import Link from '@docusaurus/Link';
 <dd>Advertising token is another term for a <a href="#gl-euid-token">EUID token</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-api-key"><a href="#gl-api-key">API key</a></MdxJumpAnchor></dt>
-<dd>Each EUID <a href="../intro#participants">participant</a> using a server-side implementation has an API key (client key) and also a secret value associated with the key, called the client secret (API secret). The client secret is known only to the participant and the EUID service.</dd>
+<dd>Each EUID <a href="../intro#participants">participant</a> using a server-side implementation has an API key (client key) and also a secret value associated with the key, called the <a href="#gl-client-secret">client secret</a> (API secret). The client secret is known only to the participant and the EUID service.</dd>
 <dd>For details, see <a href="../getting-started/gs-credentials">EUID Credentials</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-api-secret"><a href="#gl-api-secret">API secret</a></MdxJumpAnchor></dt>
@@ -342,6 +342,7 @@ import Link from '@docusaurus/Link';
 
 <dt><MdxJumpAnchor id="gl-public-key"><a href="#gl-public-key">Public key</a></MdxJumpAnchor></dt>
 <dd>For client-side publisher integrations, the public key is one of the two values issued to publishers to uniquely identify the account. For details, see <a href="../getting-started/gs-credentials#subscription-id-and-public-key">Subscription ID and Public Key</a>.</dd>
+<dd>In EUID integrations, this value is often represented as <b>serverPublicKey</b>: for example, in the <a href="../guides/integration-prebid-client-side">EUID Client-Side Integration Guide for Prebid.js</a>, the <a href="../guides/integration-javascript-client-side">Client-Side Integration Guide for JavaScript</a>, and the <a href="../guides/integration-mobile-client-side">EUID Client-Side Integration Guide for Mobile</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-public-operator"><a href="#gl-public-operator">Public Operator</a></MdxJumpAnchor></dt>
 <dd>A Public <a href="#gl-operator">Operator</a> is an entity that runs a public instance of the EUID Operator Service. For example, The Trade Desk currently serves as a Public Operator for the EUID framework, available to all participants.</dd>
@@ -401,6 +402,15 @@ import Link from '@docusaurus/Link';
 <dd>SHA-256 is the secure hashing algorithm that EUID uses.</dd>
 <dd>SHA-256 (sometimes called SHA256) is part of the SHA-2 family of algorithms developed by the National Institute of Standards and Technology (NIST) and the National Security Agency (NSA) to succeed SHA-1. Each algorithm is named according to the number of bits in the output, so SHA-256 has 256 bits.</dd>
 <dd>For details, see <a href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf">https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf</a> (specification).</dd>
+
+<dt><MdxJumpAnchor id="gl-sharing"><a href="#gl-sharing">Sharing (in EUID)</a></MdxJumpAnchor></dt>
+<dd>In the context of EUID, sharing is a process for distributing <a href="#gl-raw-euid">raw EUIDs</a> from one EUID <a href="#gl-sharing-participant">sharing participant</a> to another.</dd>
+<dd>For details, see <a href="../getting-started/gs-sharing">EUID Sharing</a>.</dd>
+
+<dt><MdxJumpAnchor id="gl-sharing-participant"><a href="#gl-sharing-participant">Sharing participant</a></MdxJumpAnchor></dt>
+<dd>For EUID, a sharing participant is a company that takes part in <a href="#gl-sharing">sharing</a>, either as a sender or a receiver.</dd>
+<dd>For details, see <a href="../getting-started/gs-sharing">EUID Sharing</a>.</dd>
+<!-- uid2_euid_diff re sharing participant definition 12/12/24 -->
 
 <dt><MdxJumpAnchor id="gl-subscription-id"><a href="#gl-subscription-id">Subscription ID</a></MdxJumpAnchor></dt>
 <dd>For client-side publisher integrations, the Subscription ID is one of the two values issued to publishers to uniquely identify the account. For details, see <a href="../getting-started/gs-credentials#subscription-id-and-public-key">Subscription ID and Public Key</a>.</dd>
