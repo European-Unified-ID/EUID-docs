@@ -1,6 +1,6 @@
 ---
 title: API Permissions
-description: Information about EUID API permissions
+description: Information about EUID API permissions.
 hide_table_of_contents: false
 sidebar_position: 07
 ---
