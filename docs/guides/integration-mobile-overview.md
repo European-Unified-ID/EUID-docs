@@ -90,7 +90,7 @@ The following table summarizes the options supported by EUID.
 | You want to use Google GMA to integrate video, banner, interstitial, or native ads into your iOS app | Both of the following, in this sequence:<ol><li>[EUID GMA Plugin for iOS Integration Guide](../guides/mobile-plugin-gma-ios.md)</li><li>One of the following:<ul><li>Client-side: [Optional: EUID GMA/IMA Plugin for GAM Secure Signals integration](../guides/integration-mobile-client-side.md#optional-euid-gmaima-plugin-for-gam-secure-signals-integration)</li><li>Client-server: [Optional: EUID GMA/IMA Plugin for GAM Secure Signals integration](../guides/integration-mobile-client-server.md#optional-euid-gmaima-plugin-for-gam-secure-signals-integration)</li></ul></li></ol> |
 | You want to use Google IMA to integrate multimedia ads into your Android app | Both of the following, in this sequence:<ol><li>[EUID IMA Plugin for Android Integration Guide](../guides/mobile-plugin-ima-android.md)</li><li>One of the following:<ul><li>Client-side: [Optional: EUID GMA/IMA Plugin for GAM Secure Signals integration](../guides/integration-mobile-client-side.md#optional-euid-gmaima-plugin-for-gam-secure-signals-integration)</li><li>Client-server: [Optional: EUID GMA/IMA Plugin for GAM Secure Signals integration](../guides/integration-mobile-client-server.md#optional-euid-gmaima-plugin-for-gam-secure-signals-integration)</li></ul></li></ol> |
 | You want to use Google IMA to integrate multimedia ads into your iOS app | Both of the following, in this sequence:<ol><li>[EUID IMA Plugin for iOS Integration Guide](../guides/mobile-plugin-ima-ios.md)</li><li>One of the following:<ul><li>Client-side: [Optional: EUID GMA/IMA Plugin for GAM Secure Signals integration](../guides/integration-mobile-client-side.md#optional-euid-gmaima-plugin-for-gam-secure-signals-integration)</li><li>Client-server: [Optional: EUID GMA/IMA Plugin for GAM Secure Signals integration](../guides/integration-mobile-client-server.md#optional-euid-gmaima-plugin-for-gam-secure-signals-integration)</li></ul></li></ol> |
-| You want to use Prebid Mobile SDK and Prebid Server to send out ad requests from your Android or iOS app | One of the following:<ul><li>Client-side: [Optional: EUID Prebid Mobile SDK Integration](../guides/integration-mobile-client-side.md#optional-euid-prebid-mobile-sdk-integration)</li><li>Client-server: [Optional: EUID Prebid Mobile SDK Integration](../guides/integration-mobile-client-server.md#optional-euid-prebid-mobile-sdk-integration)</li></ul> |
+| You want to use the Prebid Mobile SDK and Prebid Server to send out ad requests from your Android or iOS app | One of the following:<ul><li>Client-side: [Optional: EUID Integration with Prebid Mobile SDK](../guides/integration-mobile-client-side.md#optional-euid-integration-with-prebid-mobile-sdk)</li><li>Client-server: [Optional: EUID Integration with Prebid Mobile SDK](../guides/integration-mobile-client-server.md#optional-euid-integration-with-prebid-mobile-sdk)</li></ul> |
 
 ### Functionality Summary
 
@@ -106,13 +106,13 @@ All options support either client-side or server-side integration.
 | GMA Plugin for iOS<br/>(Requires EUID SDK for iOS) | &#8212; | &#8212; | iOS | &#9989;&ast;&ast; |
 | IMA Plugin for Android <br/>(Requires EUID SDK for Android)| &#8212; | &#8212; | Android | &#9989;&ast;&ast; |
 | IMA Plugin for iOS<br/>(Requires EUID SDK for iOS)| &#8212; | &#8212; | iOS | &#9989;&ast;&ast; |
-| Prebid Mobile SDK | &#8212; | &#8212; | Either | &#9989;&ast;&ast;&ast; |
+| EUID Integration with Prebid Mobile SDK | &#8212; | &#8212; | Either | &#9989;&ast;&ast;&ast; |
 
-&ast;You can combine the SDK with IMA/GMA Plugin or Prebid Mobile SDK to send the token to the bidstream via Google or Prebid Server, or you can retrieve the token manually from the SDK and pass it to the bidstream in another way, according to your preference.
+&ast;You can combine the SDK with the IMA/GMA Plugin or the EUID Integration with Prebid Mobile SDK to send the token to the bidstream via Google or Prebid Server, or you can retrieve the token manually from the SDK and pass it to the bidstream in another way, according to your preference.
 
 &ast;&ast;After setup, Google GMA/IMA collects the token automatically and sends it to the bidstream.
 
-&ast;&ast;&ast;After setup, Prebid Mobile SDK adds the token into the ad request to Prebid Server.
+&ast;&ast;&ast;After setup, the EUID Integration with Prebid Mobile SDK adds the token into the ad request to Prebid Server.
 
 <!-- &#9989; = Supported | &#8212; = Not Supported -->
 
