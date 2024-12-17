@@ -301,7 +301,7 @@ EUIDManager.shared.automaticRefreshEnabled = false
 
 <GMAIMA_Plugins />
 
-## Optional: EUID Prebid Mobile SDK Integration
+## Optional: EUID Integration with Prebid Mobile SDK
 
 <PrebidMobileSDK />
 
