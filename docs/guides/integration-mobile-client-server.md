@@ -303,6 +303,10 @@ EUIDManager.shared.automaticRefreshEnabled = false
 
 ## Optional: EUID Integration with Prebid Mobile SDK
 
+:::important
+The EUID integration with Prebid Mobile SDK requires version 1.6.0 or later of the EUID SDK for Android, or version 1.7.0 or later of the EUID SDK for iOS.
+:::
+
 <PrebidMobileSDK />
 
 ## Error Response States
