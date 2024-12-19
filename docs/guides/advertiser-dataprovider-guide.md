@@ -14,7 +14,7 @@ This guide covers integration steps for organizations that collect user data and
 
 ## Advertiser/Data Provider Routes to Use EUID
 
-Within the ad tech industry, advertisers use identity to build audiences, track conversions, and generate their graphs. As an advertiser, or as a data provider acting on behalf of an advertiser, the following table shows some examples of how you can accomplish some of these goals with EUID.
+Within the ad tech industry, advertisers use identity to build audiences, track conversions, and generate their graphs. The following table shows some examples of how you, as an advertiser or as a data provider acting on behalf of an advertiser, can accomplish some of these goals with EUID.
 
 :::note
 There are other ways that you can use EUID, outside these use cases. These are just some examples.
