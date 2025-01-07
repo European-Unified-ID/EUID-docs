@@ -188,12 +188,21 @@ const config = {
                 href: "https://www.thetradedesk.com/us/website-privacy-policy",
               },
               {
-                label: "Opt-out",
-                href: "https://transparentadvertising.eu/",
+                html: `<a href="#" class="footer__link-item ot-sdk-show-settings">
+                    Website Cookies Settings
+                    </a>`,
               },
               {
-                label: "Do not sell my data",
-                href: "https://www.adsrvr.org/",
+                html: `<a class="truevault-polaris-optout footer__link-item" 
+                    href="https://www.adsrvr.org/"
+                    target="_blank" 
+                    rel="noreferrer noopener">
+                    <img src="https://polaris.truevaultcdn.com/static/assets/icons/optout-icon-black.svg" 
+                    alt="California Consumer Privacy Act (CCPA) Opt-Out Icon" 
+                    height="14px" 
+                    style="vertical-align:middle" />
+                    Your Privacy Choices
+                    </a>`,
               },
             ],
           },
