@@ -8,6 +8,7 @@ sidebar_position: 04
 ---
 
 import Link from '@docusaurus/Link';
+import IntegratingWithSSO from '/docs/snippets/_integrating-with-sso.mdx';
 
 # EUID Mobile Integration Overview for Android and iOS
 
@@ -26,6 +27,10 @@ EUID provides SDKs for Android/iOS that support the following:
 - Storing the EUID token
 
 For additional flexibility, EUID also provides alternative methods for some of the features and complementary products, such as EUID Google GMA/IMA Plugins. Available options are described in the individual guides: see [Integration Overview: High-Level Steps](#integration-overview-high-level-steps).
+
+## Integrating with Single Sign-On (SSO)
+
+<IntegratingWithSSO />
 
 ## Integration Overview: High-Level Steps
 

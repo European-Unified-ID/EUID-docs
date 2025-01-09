@@ -7,9 +7,10 @@ hide_table_of_contents: false
 sidebar_position: 02
 ---
 
+import Link from '@docusaurus/Link';
+import IntegratingWithSSO from '/docs/snippets/_integrating-with-sso.mdx';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import Link from '@docusaurus/Link';
 
 # Client-Server Integration Guide for JavaScript
 
@@ -48,6 +49,10 @@ For integration scenarios for publishers that do not use the SDK for JavaScript,
 :::note
 If you are using Google Ad Manager and want to use the secure signals feature, first follow the steps in this guide and then follow the additional steps in the [Google Ad Manager Secure Signals Integration Guide](integration-google-ss.md).
 :::
+
+## Integrating with Single Sign-On (SSO)
+
+<IntegratingWithSSO />
 
 ## Integration Steps
 

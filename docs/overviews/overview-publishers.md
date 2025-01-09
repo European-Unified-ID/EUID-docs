@@ -9,6 +9,7 @@ banner_description: Maintain audience targeting in the ever-changing advertising
 ---
 
 import Link from '@docusaurus/Link';
+import IntegratingWithSSO from '/docs/snippets/_integrating-with-sso.mdx';
 
 As a publisher, you can benefit from the cross-device presence of European Unified ID (EUID) and take advantage of a consistent identity fabric on all your inventory.
 
@@ -59,6 +60,10 @@ The following steps provide a high-level outline of the workflow intended for or
 <!-- The publisher requests updated EUID tokens using a refresh token. When applicable, the refresh token includes a user’s opt-out request. -->
 
 ![Publisher Workflow](images/EUIDPublisherAndSSPWorkflow.svg)
+
+## Integrating with Single Sign-On (SSO)
+
+<IntegratingWithSSO />
 
 ## Getting Started
 

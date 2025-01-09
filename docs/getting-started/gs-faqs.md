@@ -62,6 +62,7 @@ Here are some frequently asked questions for publishers using the EUID framework
 - [How can I test the refresh token workflow?](#how-can-i-test-the-refresh-token-workflow)
 - [What is the uniqueness and rotation policy for EUID tokens?](#what-is-the-uniqueness-and-rotation-policy-for-euid-tokens)
 - [What does an EUID token look like in the bidstream?](#what-does-an-euid-token-look-like-in-the-bidstream)
+- [Can I integrate EUID with Single Sign-On (SSO)?](#can-i-integrate-euid-with-single-sign-on-sso)
 
 #### How can I test that the personal data sent and the returned token match up?
 
@@ -141,6 +142,12 @@ The EUID service encrypts EUID tokens using random initialization vectors. The E
 There are many ways to approach EUID implementation. Here is one example of a code snippet showing how an EUID token is passed in the <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link>:
 
 <ExampleTokenInBidstream />
+
+#### Can I integrate EUID with Single Sign-On (SSO)?
+
+Yes. With popular <a href="../ref-info/glossary-uid#gl-sso">SSO</a> integration options such as Sign in with Google, Facebook Login, Sign in with Apple, or OpenPass, you can retrieve the email address and use it to generate an EUID.
+
+For details, see [Publisher Integration with SSO Providers](/docs/ref-info/ref-integration-sso-providers.md).
 
 ## FAQs for Advertisers and Data Providers
 

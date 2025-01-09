@@ -8,6 +8,7 @@ sidebar_position: 04
 ---
 
 import Link from '@docusaurus/Link';
+import IntegratingWithSSO from '/docs/snippets/_integrating-with-sso.mdx';
 import AddPrebidjsToYourSite from '/docs/snippets/_prebid-add-prebidjs-to-your-site.mdx';
 import StoreEUIDTokenInBrowser from '/docs/snippets/_prebid-storing-euid-token-in-browser.mdx';
 
@@ -40,6 +41,9 @@ You'll need to complete the following steps:
 2. [Add Prebid.js to your site](#add-prebidjs-to-your-site).
 3. [Configure the EUID module](#configure-the-euid-module).
 
+## Integrating with Single Sign-On (SSO)
+
+<IntegratingWithSSO />
 
 ### Complete EUID Account Setup
 
