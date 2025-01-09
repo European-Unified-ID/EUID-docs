@@ -588,7 +588,7 @@ Some possible reasons for this, and some things you could do to troubleshoot, ar
     - **iOS**: `EUIDManager.shared.identityStatus`
 
     It's possible that the personal data has been opted out of EUID: for details, see [When to Pass Personal Data into the SDK](#when-to-pass-personal-data-into-the-sdk).
-- You could enable logging to get more information: see [Enable Logging](#enable-logging).
+- You could enable logging (set `isLoggingEnabled` to `true`) to get more information: see [Enable Logging](#enable-logging).
 - The advertising token inside the EUID identity has expired, and the refresh token has also expired, so the SDK cannot refresh the token.
 
 If there is no identity, you'll need to call the `generateIdentity` method again: see [Configure the EUID Mobile SDK](#configure-the-euid-mobile-sdk).
