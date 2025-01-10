@@ -5,8 +5,8 @@ hide_table_of_contents: false
 sidebar_position: 10
 ---
 
-import MdxJumpAnchor from '@site/src/components/MdxJumpAnchor';
 import Link from '@docusaurus/Link';
+import MdxJumpAnchor from '@site/src/components/MdxJumpAnchor';
 
 # EUID Glossary
 <p>This page defines some key terms used in the EUID documentation.</p>

@@ -5,9 +5,9 @@ hide_table_of_contents: false
 sidebar_position: 11
 ---
 
+import Link from '@docusaurus/Link';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import Link from '@docusaurus/Link';
 import IdentityGenerateResponse from '/docs/snippets/_example-identity-generate-response.mdx';
 
 # Encrypting Requests and Decrypting Responses
