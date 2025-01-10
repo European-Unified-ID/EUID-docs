@@ -13,7 +13,7 @@ Check out the latest updates to our EUID documentation resources.
 
 ### New: Publisher SSO Integration Page
 
-January 9, 2025
+January 10, 2025
 
 We've added a new reference page for publishers who integrate with one or more SSO providers to offer SSO login, and want to retrieve the logged-in user's email address from the SSO provider to generate EUID tokens.
 
