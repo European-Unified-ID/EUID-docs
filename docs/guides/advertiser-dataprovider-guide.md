@@ -23,7 +23,7 @@ There are other ways that you can use EUID, outside these use cases. These are j
 | Send/Receive? | Action | Advantage/Result |
 | --- | --- | --- |
 | Send | Send EUIDs via API or pixels | Create audiences. |
-| Send | Send EUIDsID2s as conversion information | Use conversion information for measurement (attribution) or for retargeting via API or pixels. |
+| Send | Send EUIDs as conversion information | Use conversion information for measurement (attribution) or for retargeting via API or pixels. |
 | Receive | Receive EUIDs from graph/data providers via API or pixels | Build graph data. |
 
 <!-- - **Create/send in audiences**: You can send EUIDs to create audiences via API or pixels
@@ -44,7 +44,7 @@ At a high level, the steps for advertisers and data providers integrating with E
 
 ## Integration Diagram
 
-The following diagram outlines the steps that data collectors must complete to map oersonal data to raw EUIDs for audience building and targeting.
+The following diagram outlines the steps that data collectors must complete to map personal data to raw EUIDs for audience building and targeting.
 
 Personal data refers to a user's normalized email address or phone number, or the normalized and SHA-256-hashed email address or phone number.
 

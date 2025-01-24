@@ -9,6 +9,7 @@ sidebar_position: 04
 ---
 
 import Link from '@docusaurus/Link';
+import IntegratingWithSSO from '/docs/snippets/_integrating-with-sso.mdx';
 import StoreEUIDTokenInBrowser from '/docs/snippets/_prebid-storing-euid-token-in-browser.mdx';
 
 # EUID Integration Overview for Prebid
@@ -31,6 +32,10 @@ EUID is designed to be used only where GDPR applies. The module checks the conse
 :::
 
 <!-- GDPR statement difference for UID2/EUID | UID2 is not designed to be used where GDPR applies | EUID is designed to be used only where GDPR applies. -->
+
+## Integrating with Single Sign-On (SSO)
+
+<IntegratingWithSSO />
 
 ### Generating the EUID Token
 
