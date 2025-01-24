@@ -13,7 +13,7 @@ import Link from '@docusaurus/Link';
 
 [Snowflake](https://www.snowflake.com/) is a cloud data warehousing solution, where you as a partner can store your data and integrate with the EUID framework. Using Snowflake, EUID enables you to securely share consumer identifier data without exposing sensitive <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>. Even though you have the option to query the Operator Web Services directly for the consumer identifier data, the Snowflake EUID integration offers a more seamless experience.
 
-The following listings for EUID are available on the Snowflake marketplace [**GWH_Eng__01 need listing updates**]:
+The following listing for EUID is available on the Snowflake marketplace [**GWH_Eng__01 need to consolidate two lines below into one line for new listing**]:
 - For advertisers: [Unified ID 2.0: Advertiser Identity Solution](https://app.snowflake.com/marketplace/listing/GZT0ZRYXTMV/unified-id-2-0-unified-id-2-0-advertiser-identity-solution?originTab=provider&providerName=Unified+ID+2.0)
 - For data providers: [Unified ID 2.0: Data Provider Identity Solution](https://app.snowflake.com/marketplace/listing/GZT0ZRYXTN0/unified-id-2-0-unified-id-2-0-data-provider-identity-solution?originTab=provider&providerName=Unified+ID+2.0)
 
@@ -27,7 +27,7 @@ The following table summarizes the functionality available with the EUID Snowfla
 
 | Encrypt Raw EUID to EUID Token for Sharing | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to Raw EUID |
 | :--- | :--- | :--- | :--- | :--- |
-| &#9989; | &#9989; | &#8212;* | &#8212; | &#9989; |
+| &#8212; | &#8212; | &#8212;* | &#8212; | &#9989; |
 
 *You cannot use Snowflake to generate an EUID token directly from personal data. However, you can convert personal data to a raw EUID, and then encrypt the raw EUID into an EUID token.
 
@@ -76,15 +76,6 @@ After your request is received, an EUID administrator will contact you with the 
 Regardless of the EUID solution you choose, you can map personal data to EUIDs by using the following function:
 
 - `FN_T_UID2_IDENTITY_MAP` (See [Map Personal Data](#map-personal-data))
-
-The following functions are deprecated in favor of `FN_T_UID2_IDENTITY_MAP`. You can still use them, but `FN_T_UID2_IDENTITY_MAP` is better. If you are already using these functions, we recommend upgrading as soon as possible.
-
-- `FN_T_UID2_IDENTITY_MAP_EMAIL` (deprecated)
-- `FN_T_UID2_IDENTITY_MAP_EMAIL_HASH` (deprecated)
-
-:::note
-If you are using the deprecated functions, and need help migrating to the newer function, see [Migration Guide](#migration-guide).
-:::
 
 To identify the EUIDs that you must regenerate, use the `UID2_SALT_BUCKETS` view from the UID2 Share. For details, see [Monitor for Salt Bucket Rotation and Regenerate Raw EUIDs](#monitor-for-salt-bucket-rotation-and-regenerate-raw-euids).
 
@@ -475,58 +466,6 @@ The following table identifies each item in the response. The result includes an
 +----+----------------------+----------------------------------------------+------------+-------------------------+-------------------------+
 ```
 
-## Migration Guide
-
-If you are using the `FN_T_UID2_IDENTITY_MAP_EMAIL` and `FN_T_UID2_IDENTITY_MAP_EMAIL_HASH` functions, it's best to migrate to the `FN_T_UID2_IDENTITY_MAP` function as soon as possible. This function does everything that the other two functions do, and has other built-in improvements.
-
-Advantages of the `FN_T_UID2_IDENTITY_MAP` function:
-
-- It supports mapping both phone numbers and hashed phone numbers.
-- It supports user opt-out.
-- It adds a new column, `UNMAPPED`. In any scenario where the personal data cannot be mapped to an EUID for any reason, this column includes information about the reason.<br/>For details, see [Values for the UNMAPPED Column](#values-for-the-unmapped-column)
-
-This section includes the following information to help you upgrade to the new function:
-
-- [Changing Existing Code](#changing-existing-code) 
-- [Using the Values for the UNMAPPED Column](#using-the-values-for-the-unmapped-column) 
-
-### Changing Existing Code
-
-The code snippets in this section are before/after examples of how the earlier functions might be implemented, and how you could update to use the new function.
-
-#### Example for mapping unhashed emails
-
-Before:
-
-```
-FN_T_UID2_IDENTITY_MAP_EMAIL(EMAIL)
-```
-
-After:
-
-```
-FN_T_UID2_IDENTITY_MAP(EMAIL, 'email')
-```
-
-#### Example for mapping unhashed emails
-
-Before:
-
-```
-FN_T_UID2_IDENTITY_MAP_EMAIL_HASH(EMAIL_HASH)
-```
-
-After:
-
-```
-FN_T_UID2_IDENTITY_MAP(EMAIL_HASH, 'email_hash')
-```
-
-### Using the Values for the UNMAPPED Column
-When you have the new function implemented, you can check the `UNMAPPED` column returned by the `FN_T_UID2_IDENTITY_MAP`. If any personal data could not be mapped to an EUID, this column gives the reason.
-
-For details about the values and their explanations, see [Values for the UNMAPPED Column](#values-for-the-unmapped-column).
-
 ## Usage for EUID Sharers
 
 [**GWH_Eng__0 I've left this section in, and partially updated it for EUID. But sharing does not apply to EUID so presumably we have to remove it or comment it out. We need to make sure all references to sharing are removed.**]
@@ -791,9 +730,7 @@ Here is the list. It's fairly random, there might be dups, and it might be no he
 - a.UID2 IS NULL
 - UID2_PROD_ADV_SH (line 115)
 - UID2_PROD_DP_SH (line 115)
-- FN_T_UID2_IDENTITY_MAP (I guess we just leave out `FN_T_UID2_IDENTITY_MAP_EMAIL` (deprecated) and not sure about`FN_T_UID2_IDENTITY_MAP_EMAIL_HASH. Did not remove mentions of those.
-- FN_T_UID2_IDENTITY_MAP_EMAIL
-- FN_T_UID2_IDENTITY_MAP_EMAIL_HASH
+- FN_T_UID2_IDENTITY_MAP
 - FN_T_UID2_ENCRYPT function with prefix
   - For advertisers: ADV.FN_T_UID2_ENCRYPT
   - For data providers: DP.FN_T_UID2_ENCRYPT
