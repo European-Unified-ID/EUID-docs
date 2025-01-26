@@ -21,6 +21,9 @@ type CustomDocFrontMatter = DocFrontMatter & {
   use_banner?: boolean;
   banner_title?: string;
   banner_description?: string;
+  banner_icon?: string;
+  banner_background_color?: string;
+  banner_background_color_dark?: string;
 };
 
 /**
@@ -53,15 +56,18 @@ export default function DocItemLayout({ children }: Props): JSX.Element {
   const customFrontMatter = frontMatter as CustomDocFrontMatter;
 
   React.useEffect(() => {
-    const pageViewData = {
-      event: "Initialize_dataLayer",
-      document_type: "Doc",
-      document_title: document.title,
-      article_author: undefined,
-      tags: frontMatter.tags || undefined,
-    };
+    const timerId = setTimeout(() => {
+      const pageViewData = {
+        event: "Initialize_dataLayer",
+        document_type: "Doc",
+        document_title: document.title,
+        article_author: undefined,
+        tags: frontMatter.tags || undefined,
+      };
+      pushGtmEvent(pageViewData);
+    }, 50);
 
-    pushGtmEvent(pageViewData);
+    return () => clearTimeout(timerId);
   }, []);
 
   const useBanner = customFrontMatter.use_banner;
@@ -80,7 +86,15 @@ export default function DocItemLayout({ children }: Props): JSX.Element {
             {docTOC.mobile}
             <DocBreadcrumbs />
             {useBanner && (
-              <DocsBanner title={bannerTitle} description={bannerDescription} />
+              <DocsBanner
+                title={bannerTitle}
+                description={bannerDescription}
+                icon={customFrontMatter.banner_icon}
+                backgroundColor={customFrontMatter.banner_background_color}
+                backgroundColorDark={
+                  customFrontMatter.banner_background_color_dark
+                }
+              />
             )}
             <DocVersionBadge />
             <DocItemContent>{children}</DocItemContent>
