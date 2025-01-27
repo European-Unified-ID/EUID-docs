@@ -77,7 +77,7 @@ Regardless of the EUID solution you choose, you can map personal data to EUIDs b
 
 - `FN_T_IDENTITY_MAP` (See [Map Personal Data](#map-personal-data))
 
-To identify the EUIDs that you must regenerate, use the `UID2_SALT_BUCKETS` view from the UID2 Share. For details, see [Monitor for Salt Bucket Rotation and Regenerate Raw EUIDs](#monitor-for-salt-bucket-rotation-and-regenerate-raw-euids).
+To identify the EUIDs that you must regenerate, use the `SALT_BUCKETS` view from the UID2 Share. For details, see [Monitor for Salt Bucket Rotation and Regenerate Raw EUIDs](#monitor-for-salt-bucket-rotation-and-regenerate-raw-euids).
 
 The following functions are also available, for UID2 sharing participants:
 - `FN_T_UID2_ENCRYPT` (See [Encrypt Tokens](#encrypt-tokens))
