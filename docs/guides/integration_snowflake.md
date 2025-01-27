@@ -75,7 +75,7 @@ After your request is received, an EUID administrator will contact you with the 
 
 Regardless of the EUID solution you choose, you can map personal data to EUIDs by using the following function:
 
-- `FN_T_UID2_IDENTITY_MAP` (See [Map Personal Data](#map-personal-data))
+- `FN_T_IDENTITY_MAP` (See [Map Personal Data](#map-personal-data))
 
 To identify the EUIDs that you must regenerate, use the `UID2_SALT_BUCKETS` view from the UID2 Share. For details, see [Monitor for Salt Bucket Rotation and Regenerate Raw EUIDs](#monitor-for-salt-bucket-rotation-and-regenerate-raw-euids).
 
