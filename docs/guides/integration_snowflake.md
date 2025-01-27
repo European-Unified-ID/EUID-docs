@@ -75,9 +75,9 @@ After your request is received, an EUID administrator will contact you with the 
 
 Regardless of the EUID solution you choose, you can map personal data to EUIDs by using the following function:
 
-- `FN_T_UID2_IDENTITY_MAP` (See [Map Personal Data](#map-personal-data))
+- `FN_T_IDENTITY_MAP` (See [Map Personal Data](#map-personal-data))
 
-To identify the EUIDs that you must regenerate, use the `UID2_SALT_BUCKETS` view from the UID2 Share. For details, see [Monitor for Salt Bucket Rotation and Regenerate Raw EUIDs](#monitor-for-salt-bucket-rotation-and-regenerate-raw-euids).
+To identify the EUIDs that you must regenerate, use the `SALT_BUCKETS` view from the UID2 Share. For details, see [Monitor for Salt Bucket Rotation and Regenerate Raw EUIDs](#monitor-for-salt-bucket-rotation-and-regenerate-raw-euids).
 
 The following functions are also available, for UID2 sharing participants:
 - `FN_T_UID2_ENCRYPT` (See [Encrypt Tokens](#encrypt-tokens))
@@ -666,45 +666,6 @@ The following table identifies each item in the response, including `NULL` value
 +----+----------------------------------------------+----------+-------------------+
 ```
 
-### EUID Sharing Example
-
-[**GWH_Eng__0 technical updates needed in this section or more likely we remove it? Not sure if we'd update and comment out, pending the release of EUID sharing, or just remove it**]
-
-The following instructions provide an example of how sharing works for a sender and a receiver both using Snowflake. In this example scenario an advertiser (the sender) has an audience table with raw EUIDs
-(`AUDIENCE_WITH_UID2`) and wants to make data in the table available to a data provider (the receiver) using the [Snowflake Secure Data Sharing](https://docs.snowflake.com/en/user-guide/data-sharing-intro) feature.
-
-#### Sender Instructions
-
-[**GWH_Eng__0 technical updates needed in this section.**]
-
- 1. Create a new table named `AUDIENCE_WITH_UID2_TOKENS`.
- 2. Encrypt the raw EUIDs in the `AUDIENCE_WITH_UID2S` table and store the result in the `AUDIENCE_WITH_UID2_TOKENS` table. For example, the following query could help achieve this task:
-    ```
-    insert into AUDIENCE_WITH_UID2_TOKENS select a.ID, t.UID2_TOKEN from AUDIENCE_WITH_UID2S a, lateral UID2_PROD_ADV_SH.ADV.FN_T_UID2_ENCRYPT(a.RAW_UID2) t;
-    ```
- 3. Create a secure share and grant it access to the `AUDIENCE_WITH_UID2_TOKENS` table.
- 4. Grant the receiver access to the secure share.
-
-:::warning
-To help prevent EUID tokens from expiring during sharing, send the newly encrypted EUID tokens to the receiver as soon as possible.
-:::
-
-#### Receiver Instructions
-
- 1. Create a database from the secure share that the sender provided access to.
- 2. Create a new table named `RECEIVED_AUDIENCE_WITH_UID2`.
- 3. Decrypt tokens from the shared `AUDIENCE_WITH_UID2_TOKENS` table and store the result in the `RECEIVED_AUDIENCE_WITH_UID2` table. For example, the following query could be used to achieve this:
-    ```
-    insert into RECEIVED_AUDIENCE_WITH_UID2
-      select a.ID, b.UID2, CASE WHEN b.UID2 IS NULL THEN 'DECRYPT_FAILED' ELSE b.DECRYPTION_STATUS END as DECRYPTION_STATUS
-        from AUDIENCE_WITH_UID2_TOKENS a LEFT OUTER JOIN (
-          select ID, t.* from AUDIENCE_WITH_UID2_TOKENS, lateral UID2_PROD_DP_SH.DP.FN_T_UID2_DECRYPT(UID2_TOKEN) t) b
-        on a.ID=b.ID;
-    ```
-
-:::warning
-To help prevent EUID tokens from expiring, decrypt the EUID tokens as soon as they become available from the sender.
-:::
 
 
 
