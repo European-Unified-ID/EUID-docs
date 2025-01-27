@@ -153,6 +153,7 @@ const sidebars = {
           collapsed: true,
           items: [
             'guides/advertiser-dataprovider-guide',
+            'guides/integration_snowflake',
           ],
         },
 
