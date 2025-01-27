@@ -6,6 +6,9 @@ sidebar_position: 02
 use_banner: true
 banner_title: EUID Overview for Publishers
 banner_description: Maintain audience targeting in the ever-changing advertising industry for better impression monetization and more relevance.
+banner_icon: 'documents'
+banner_background_color: ''
+banner_background_color_dark: ''
 ---
 
 import Link from '@docusaurus/Link';
