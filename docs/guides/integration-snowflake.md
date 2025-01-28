@@ -19,8 +19,7 @@ For a summary of all integration options and steps for advertisers and data prov
 
 ## Snowflake Marketplace Listing
 
-The following listing for EUID is available on the Snowflake marketplace [**GWH_Eng__01 need to update for new listing name plus URL**]:
-- [Unified ID 2.0: Advertiser Identity Solution](https://app.snowflake.com/marketplace/listing/GZT0ZRYXTMV/unified-id-2-0-unified-id-2-0-advertiser-identity-solution?originTab=provider&providerName=Unified+ID+2.0)
+The following listing for EUID is available on the Snowflake marketplace: [EUID Identity Solution (**EXACT URL AND NAMING TO COME**)](https://app.snowflake.com/marketplace/listing/GZT0ZRYXTMV/unified-id-2-0-unified-id-2-0-advertiser-identity-solution?originTab=provider&providerName=Unified+ID+2.0)
 
 ## Functionality
 
@@ -34,7 +33,7 @@ The following table summarizes the functionality available with the EUID Snowfla
 
 The following diagram and table illustrate the different parts of the EUID integration process in Snowflake, and the workflow. [**GWH DIAGRAM UPDATES TO DO**]
 
-![Snowflake Integration Architecture](images/uid2-snowflake-integration-architecture.png)
+![Snowflake Integration Architecture](images/euid-snowflake-integration-architecture.png)
 
 | Partner Snowflake Account | EUID Snowflake Account | EUID Core Opt-Out Cloud Setup |
 | :--- | :--- | :--- |
@@ -56,7 +55,7 @@ To request access to the EUID Share, complete the following steps:
 1.	Log in to the Snowflake Data Marketplace and select the EUID share. For a link, see [Snowflake Marketplace Listing](#snowflake-marketplace-listing).
 2.	In the **Personalized Data** section, click **Request Data**.
 3.	Follow the onscreen instructions to verify and provide your contact details and other required information.
-4.	If you are an existing client of The Trade Desk and are interested in the *Advertiser* Identity Solution, include your partner and advertiser IDs issued by The Trade Desk in the **Message** field of the data request form. [**GWH__Eng10 not sure if we need this step?**]
+4.	If you are an existing client of The Trade Desk, include your identifying IDs, such as partner and advertiser IDs issued by The Trade Desk, in the **Message** field of the data request form.
 5.	Submit the form.
 
 After your request is received, an EUID administrator will contact you with the appropriate access instructions. For details about managing data requests in Snowflake, see the [Snowflake documentation](https://docs.snowflake.com/en/user-guide/data-marketplace-consumer.html).
@@ -101,7 +100,7 @@ If the personal data is a phone number, you must normalize it before sending it 
 
 |Argument|Data Type|Description|
 | :--- | :--- | :--- |
-| `INPUT` | varchar(256) | The personal data to map to the EUID and second-level bucket ID. |
+| `INPUT` | varchar(256) | The personal data to map to the EUID and <Link href="../ref-info/glossary-uid#gl-salt-bucket-id">salt bucket ID</Link>. |
 | `INPUT_TYPE` | varchar(256) | The type of personal data to map. Allowed values: `email`, `email_hash`, `phone`, and `phone_hash`.
 
 A successful query returns the following information for the specified personal data.
@@ -109,7 +108,7 @@ A successful query returns the following information for the specified personal 
 |Column Name|Data Type|Description|
 | :--- | :--- | :--- |
 | `UID` | TEXT | The value is one of the following:<ul><li>Personal data was successfully mapped: The EUID associated with the personal data.</li><li>Personal data was not successfully mapped: `NULL`.</li></ul> |
-| `BUCKET_ID` | TEXT | The value is one of the following:<ul><li>Personal data was successfully mapped: The ID of the second-level salt bucket used to generate the EUID. This ID maps to the bucket ID in the `SALT_BUCKETS` view.</li><li>Personal data was not successfully mapped: `NULL`.</li></ul> |
+| `BUCKET_ID` | TEXT | The value is one of the following:<ul><li>Personal data was successfully mapped: The ID of the <Link href="../ref-info/glossary-uid#gl-salt-bucket">salt bucket</Link> used to generate the EUID. This ID maps to the bucket ID in the `SALT_BUCKETS` view.</li><li>Personal data was not successfully mapped: `NULL`.</li></ul> |
 | `UNMAPPED` | TEXT | The value is one of the following:<ul><li>Personal data was successfully mapped: `NULL`.</li><li>Personal data was not successfully mapped:  The reason why the identifier was not mapped: `OPTOUT`, `INVALID IDENTIFIER`, or `INVALID INPUT TYPE`.<br/>For details, see [Values for the UNMAPPED Column](#values-for-the-unmapped-column).</li></ul> |
 
 #### Values for the UNMAPPED Column
@@ -320,16 +319,16 @@ The following table identifies each item in the response, including `NULL` value
 
 ### Monitor for Salt Bucket Rotation and Regenerate Raw EUIDs
 
-The `SALT_BUCKETS` view query returns the date and time when the second-level salt buckets were last updated. Second-level salt is used when generating EUIDs. When the salt in the bucket is updated, the previously generated EUID becomes outdated and doesn’t match the EUID generated by other parties for the same user.
+The `SALT_BUCKETS` view query returns the date and time when the <Link href="../ref-info/glossary-uid#gl-salt-bucket">salt buckets</Link> for the raw EUIDs were last updated. An additional salt value is used when generating EUIDs. When the salt in the bucket is updated, the previously generated EUID becomes outdated and doesn’t match the EUID generated by other parties for the same user.
 
-To determine which EUIDs need regeneration, compare the timestamps of when they were generated to the most recent timestamp of the second-level salt bucket update.
+To determine which EUIDs need to be regenerated, compare the timestamps of when they were generated to the most recent timestamp of the salt bucket update.
 
 |Column Name|Data Type|Description|
 | :--- | :--- | :--- |
-| `BUCKET_ID` | TEXT | The ID of the second-level salt bucket. This ID parallels the `BUCKET_ID` returned by the identity map function. Use the `BUCKET_ID` as the key to do a join query between the function call results and results from this view call.  |
+| `BUCKET_ID` | TEXT | The salt bucket ID. This ID parallels the `BUCKET_ID` returned by the identity map function. Use the `BUCKET_ID` as the key to do a join query between the function call results and results from this view call.  |
 | `LAST_SALT_UPDATE_UTC` | TIMESTAMP_NTZ | The last time the salt in the bucket was updated. This value is expressed in UTC. |
 
-The following example shows an input table and the query used to find the EUIDs in the table that must be regenerated because the second-level salt was updated.
+The following example shows an input table and the query used to find the EUIDs in the table that must be regenerated because the <Link href="../ref-info/glossary-uid#gl-salt">salt</Link> was updated.
 
 #### Targeted Input Table
 
