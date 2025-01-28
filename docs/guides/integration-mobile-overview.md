@@ -78,10 +78,27 @@ For details, see [Integration Approaches](../ref-info/ref-integration-approaches
 
 The following table summarizes the mobile integration options for managing the EUID token, including generating, storing, and refreshing the token, with links to the documentation for each option.
 
-| EUID Mobile Implementation Option | SDK Doc | Implementation Guide |
-| :--- | :---| :---|
-| EUID Android SDK | [SDK for Android Reference Guide](../sdks/sdk-ref-android.md) | One of the following:<ul><li>[EUID Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side.md)</li><li>[EUID Client-Server Integration Guide for Mobile](../guides/integration-mobile-client-server.md)</li></ul> |
-| EUID iOS SDK | [SDK for iOS Reference Guide](../sdks/sdk-ref-ios.md) | One of the following:<ul><li>[EUID Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side.md)</li><li>[EUID Client-Server Integration Guide for Mobile](../guides/integration-mobile-client-server.md)</li></ul> |
+<table>
+  <thead>
+    <tr>
+      <th>EUID Mobile Implementation Option</th>
+      <th>SDK Doc</th>
+      <th>Implementation Guide</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>EUID Android SDK</td>
+      <td>[SDK for Android Reference Guide](../sdks/sdk-ref-android.md)</td>
+      <td>One of the following:<ul><li>[EUID Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side.md)</li><li>[EUID Client-Server Integration Guide for Mobile](../guides/integration-mobile-client-server.md)</li></ul></td>
+    </tr>
+    <tr>
+      <td>EUID iOS SDK</td>
+      <td>[SDK for iOS Reference Guide](../sdks/sdk-ref-ios.md)</td>
+      <td>One of the following:<ul><li>[EUID Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side.md)</li><li>[EUID Client-Server Integration Guide for Mobile](../guides/integration-mobile-client-server.md)</li></ul></td>
+    </tr>
+  </tbody>
+</table>
 
 ### Sending the Token to the Bidstream
 
@@ -165,7 +182,7 @@ https://prod.euid.eu/ops/healthcheck
 
 The response should be `OK`.
 
-Some error responses indicate  a networking problem resulting in your app not being able to reach the EUID endpoint. For example:
+Some error responses indicate a networking problem resulting in your app not being able to reach the EUID endpoint. For example:
 
 - `Caused by java.net.UnknownHostException: Unable to resolve host "prod.euid.eu": No address associated with hostname`
 
