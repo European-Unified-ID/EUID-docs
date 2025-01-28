@@ -31,9 +31,9 @@ The following table summarizes the functionality available with the EUID Snowfla
 
 ## Workflow Diagram
 
-The following diagram and table illustrate the different parts of the EUID integration process in Snowflake, and the workflow. [**GWH DIAGRAM UPDATES TO DO**]
+The following diagram and table illustrate the different parts of the EUID integration process in Snowflake, and the workflow.
 
-![Snowflake Integration Architecture](images/euid-snowflake-integration-architecture.png)
+![Snowflake Integration Architecture](images/euid-snowflake-integration-architecture-drawio.png)
 
 | Partner Snowflake Account | EUID Snowflake Account | EUID Core Opt-Out Cloud Setup |
 | :--- | :--- | :--- |
