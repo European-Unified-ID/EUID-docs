@@ -7,6 +7,8 @@ use_banner: true
 banner_title: EUID Overview for Publishers
 banner_description: Maintain audience targeting in the ever-changing advertising industry for better impression monetization and more relevance.
 banner_icon: 'publishers'
+banner_text_color: ''
+banner_text_color_dark: ''
 banner_background_color: ''
 banner_background_color_dark: ''
 ---

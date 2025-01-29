@@ -22,6 +22,8 @@ type CustomDocFrontMatter = DocFrontMatter & {
   banner_title?: string;
   banner_description?: string;
   banner_icon?: string;
+  banner_text_color?: string;
+  banner_text_color_dark?: string;
   banner_background_color?: string;
   banner_background_color_dark?: string;
 };
@@ -56,15 +58,18 @@ export default function DocItemLayout({ children }: Props): JSX.Element {
   const customFrontMatter = frontMatter as CustomDocFrontMatter;
 
   React.useEffect(() => {
-    const pageViewData = {
-      event: "Initialize_dataLayer",
-      document_type: "Doc",
-      document_title: document.title,
-      article_author: undefined,
-      tags: frontMatter.tags || undefined,
-    };
+    const timerId = setTimeout(() => {
+      const pageViewData = {
+        event: "Initialize_dataLayer",
+        document_type: "Doc",
+        document_title: document.title,
+        article_author: undefined,
+        tags: frontMatter.tags || undefined,
+      };
+      pushGtmEvent(pageViewData);
+    }, 50);
 
-    pushGtmEvent(pageViewData);
+    return () => clearTimeout(timerId);
   }, []);
 
   const useBanner = customFrontMatter.use_banner;
@@ -87,6 +92,8 @@ export default function DocItemLayout({ children }: Props): JSX.Element {
                 title={bannerTitle}
                 description={bannerDescription}
                 icon={customFrontMatter.banner_icon}
+                textColor={customFrontMatter.banner_text_color}
+                textColorDark={customFrontMatter.banner_text_color_dark}
                 backgroundColor={customFrontMatter.banner_background_color}
                 backgroundColorDark={
                   customFrontMatter.banner_background_color_dark

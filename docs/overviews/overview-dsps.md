@@ -7,6 +7,8 @@ use_banner: true
 banner_title: EUID Overview for DSPs
 banner_description: Enable data strategies with a more durable identifier.
 banner_icon: 'dsps'
+banner_text_color: ''
+banner_text_color_dark: ''
 banner_background_color: ''
 banner_background_color_dark: ''
 ---
