@@ -27,7 +27,7 @@ Here are some of the intended benefits of participating in EUID as a Private Ope
 - You can participate in EUID using your own first-party <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> without sharing it.
 
   Within a Private Operator solution, personal data does not leave your infrastructure.
-- You have full control of resources, performance, and latency for EUID. For example:  
+- You have full control of resources, performance, and latency for EUID. For example:
   - You can provide greater availability, without rate limitations.
   - If you are not physically located near to a Public Operator instance, you might choose to host a Private Operator solution for latency reasons.
 - You can plan to minimize network hops with a service that can provide regional proximity.

@@ -195,7 +195,7 @@ The `init()` function can throw the following errors.
 
 | Error | Description |
 | :--- | :--- |
-| `TypeError` | One of the following issues has occurred:<br/>- The function has already been called.<br/>- The `opts` value is not an object.<br/>- There is no callback function specified.<br/>-  The `callback` value is not a function. |
+| `TypeError` | One of the following issues has occurred:<br/>- The function has already been called.<br/>- The `opts` value is not an object.<br/>- There is no callback function specified.<br/>- The `callback` value is not a function. |
 | `RangeError` | The refresh retry period is less than 1. |
 
 #### Callback Function

@@ -63,7 +63,7 @@ You'll need to configure the EUID Prebid module to complete the following two ac
 
 | Step | Action | Link to Instructions |
 | --- | --- | --- |
-| 1 | Send a server-side API call to generate an EUID token.  | [Generating an EUID Token on the Server](#generating-an-euid-token-on-the-server) |
+| 1 | Send a server-side API call to generate an EUID token. | [Generating an EUID Token on the Server](#generating-an-euid-token-on-the-server) |
 | 2 | Store the response value, so that the Prebid module can manage token refresh as well as opt-out if needed. | [Refreshing an EUID Token](#refreshing-an-euid-token) |
 
 ### Generating an EUID Token on the Server
@@ -310,7 +310,7 @@ In this table, CR = client refresh mode, SO = server-only mode, and N/A = not ap
 | name | CR: Required<br/>SO:&nbsp;Required | String | ID value for the EUID module. Always `"euid"`. | `"euid"` |
 | value | CR: N/A<br/>SO: Optional | Object | An object containing the value for the advertising token. | See [Configuration Parameter Examples: Value](#configuration-parameter-examples-value) |
 | params.euidToken | CR: Optional<br/>SO: N/A | Object | The initial EUID token. This should be the `body` element of the decrypted response from a call to the `/token/generate` or `/token/refresh` endpoint. | See [Sample Token Response Object](#sample-token-response-object) |
-| params.euidCookie | CR: Optional<br/>SO: N/A  | String | The name of a cookie that holds the initial EUID token, set by the server. The cookie should contain JSON in the same format as the euidToken param. If `euidToken` is supplied, this parameter is ignored. | See [Sample Token Response Object](#sample-token-response-object) |
+| params.euidCookie | CR: Optional<br/>SO: N/A | String | The name of a cookie that holds the initial EUID token, set by the server. The cookie should contain JSON in the same format as the euidToken param. If `euidToken` is supplied, this parameter is ignored. | See [Sample Token Response Object](#sample-token-response-object) |
 | params.euidApiBase | CR: Optional<br/>SO: Optional | String | Overrides the default EUID API endpoint. For valid values, see [Environments](../getting-started/gs-environments.md). | `"https://prod.euid.eu"` (the default)|
 | params.storage | CR: Optional<br/>SO: Optional | String | Specify the module internal storage method: `cookie` or `localStorage`. We recommend that you do not provide this parameter. Instead, allow the module to use the default. | `"localStorage"` (the default) |
 

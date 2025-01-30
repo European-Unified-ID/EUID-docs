@@ -96,7 +96,7 @@ For details about the EUID opt-out workflow and how users can opt out, see [User
 | Step | Endpoint | Description |
 | :--- | :--- | :--- |
 | 3-a |N/A | When a user returns to an asset and becomes active again, refresh the EUID token before sending it to the SSP. | 
-| 3-b | [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md)  | Send the `refresh_token` obtained in step [1-e](#establish-identity-capture-user-data) as a query parameter. |
+| 3-b | [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) | Send the `refresh_token` obtained in step [1-e](#establish-identity-capture-user-data) as a query parameter. |
 | 3-c | [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) | The EUID service issues a new identity token for users that haven't opted out. |
 | 3-d | N/A| Place the values returned by the `POST /token/refresh` endpoint, `advertising_token` and `refresh_token`, so that they are linked to the user. You might consider client-side storage, such as a first-party cookie, or server-side storage. |
 

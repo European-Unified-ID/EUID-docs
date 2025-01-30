@@ -223,9 +223,9 @@ If you're using server-side integration (see [Publisher Integration Guide, Serve
     EnvelopeV2 envelope = publisherUid2Helper.createEnvelopeForTokenGenerateRequest(TokenGenerateInput.fromEmail(emailAddress).doNotGenerateTokensForOptedOut());
     ```
 3. Using an HTTP client library of your choice, post this envelope to the [POST&nbsp;token/generate](../endpoints/post-token-generate.md) endpoint, including headers and body:
-   1. Headers: Depending on your HTTP library, this might look something like the following:  
+   1. Headers: Depending on your HTTP library, this might look something like the following:
     
-      `.putHeader("Authorization", "Bearer " + EUID_API_KEY)`  
+      `.putHeader("Authorization", "Bearer " + EUID_API_KEY)`
       `.putHeader("X-UID2-Client-Version", PublisherUid2Helper.getVersionHeader())`
    2. Body: `envelope.getEnvelope()`
    :::important
@@ -289,7 +289,7 @@ If you're using server-side integration (see [Publisher Integration Guide, Serve
 4. If a refresh is needed, call the [POST token/refresh](../endpoints/post-token-refresh.md) endpoint, with the following:
    1. Headers: Depending on your HTTP library, this might look something like the following:
     
-      `.putHeader("Authorization", "Bearer " + EUID_API_KEY)`  
+      `.putHeader("Authorization", "Bearer " + EUID_API_KEY)`
       `.putHeader("X-UID2-Client-Version", PublisherUid2Helper.getVersionHeader())`. 
    2. Body: `identity.getRefreshToken()`
 5. If the refresh HTTP response status code is 200:

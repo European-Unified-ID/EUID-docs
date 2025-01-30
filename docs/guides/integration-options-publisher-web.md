@@ -130,4 +130,3 @@ The following table shows integration options that support passing EUID tokens i
 :::note
 As long as you generate the token and keep it refreshed, you can also use other options for passing the EUID token into the bidstream.
 :::
-
