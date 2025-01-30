@@ -64,7 +64,7 @@ The following documentation resources are available for advertisers and data pro
 
 | Integration Type| Documentation | Content Description |
 | :--- | :--- | :--- |
-| Integration steps for organizations that collect user data and push it to other EUID participants | [Advertiser/Data Provider Integration Guide](../guides/advertiser-dataprovider-guide.md) | This guide covers integration workflows for mapping identity for audience-building and targeting. |
+| Integration steps for organizations that collect user data and push it to other EUID participants | [Advertiser/Data Provider Integration Overview](../guides/integration-advertiser-dataprovider-overview.md) | This guide covers integration workflows for mapping identity for audience-building and targeting. |
 
 ## FAQs for Advertisers
 
