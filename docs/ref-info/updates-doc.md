@@ -11,6 +11,28 @@ import Link from '@docusaurus/Link';
 
 Check out the latest updates to our EUID documentation resources.
 
+<!-- ### New: Snowflake Integration Guide
+
+January 31, 2025
+
+EUID now supports Snowflake, the cloud data warehousing solution.
+
+Using Snowflake, EUID enables advertisers and data providers to securely share consumer identifier data without exposing sensitive personal data.
+
+For details, see [Snowflake Integration Guide](../guides/integration-snowflake.md). -->
+
+<!-- APIDOCS-2747 -->
+
+### New: Expanded and Restructured Advertiser/Data Provider Doc
+
+January 30, 2025
+
+We've significantly expanded and restructured the Advertiser/Data Provider documentation. We now have one significantly updated overview doc, and separate docs for each main integration option.
+
+For details, including a summary of all integration options for advertisers and data providers, see [Advertiser/Data Provider Integration Overview](../guides/integration-advertiser-dataprovider-overview.md).
+
+<!-- APIDOCS-2873 -->
+
 ### New: Publisher SSO Integration Page
 
 January 10, 2025
