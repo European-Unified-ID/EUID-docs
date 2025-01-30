@@ -64,7 +64,8 @@ The following documentation resources are available for advertisers and data pro
 
 | Integration Type| Documentation | Content Description |
 | :--- | :--- | :--- |
-| Integration steps for organizations that collect user data and push it to other EUID participants | [Advertiser/Data Provider Integration Overview](../guides/integration-advertiser-dataprovider-overview.md) | This guide covers integration workflows for mapping identity for audience-building and targeting. |
+| Overview of integration options for organizations that collect user data and push it to other EUID participants | [Advertiser/Data Provider Integration Overview](../guides/integration-advertiser-dataprovider-overview.md) | This guide covers integration workflows for mapping identity for audience building and targeting. |
+| Integration steps for organizations that collect user data and push it to other EUID participants, using UID2 HTTP endpoints only | [Advertiser/Data Provider Integration to HTTP Endpoints](../guides/integration-advertiser-dataprovider-endpoints.md) | This guide covers integration steps for advertisers and data providers to integrate with UID2 by writing code to call UID2 HTTP endpoints, rather than using another implementation options such as an SDK.  |
 
 ## FAQs for Advertisers
 
