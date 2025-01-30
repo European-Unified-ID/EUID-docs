@@ -15,7 +15,7 @@ Used by: This endpoint is used by advertisers, data providers, and DSPs. More ge
 
 For details, refer to the following documentation, depending on your role:
 
-- [Advertiser/Data Provider Integration Guide](../guides/advertiser-dataprovider-guide.md)
+- [Advertiser/Data Provider Integration Overview](../guides/integration-advertiser-dataprovider-overview.md)
 - [DSP Integration Guide](../guides/dsp-guide.md)
 
 ## Batch Size and Request Parallelization Requirements
