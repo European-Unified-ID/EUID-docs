@@ -172,7 +172,7 @@ We do not make any promises about when the rotation takes place. To stay as up-t
 
 #### Do refreshed emails get assigned to the same bucket with which they were previously associated?
 
-Not necessarily. After you remap emails associated with a particular bucket ID, the emails might be assigned to a different bucket ID. To check the bucket ID, [call the mapping function](../guides/advertiser-dataprovider-guide.md#1-retrieve-a-raw-euid-for-personal-data-using-the-identity-map-endpoint) and save the returned EUID and bucket ID again.
+Not necessarily. After you remap emails associated with a particular bucket ID, the emails might be assigned to a different bucket ID. To check the bucket ID, see [Generate Raw EUIDs from Personal Data](../guides/integration-advertiser-dataprovider-overview.md#1-generate-raw-euids-from-personal-data) and save the returned raw EUID and bucket ID again.
 
 :::info
 When mapping and remapping emails, do not make any assumptions about the number of buckets, their rotation dates, or the specific bucket that an email gets assigned to.
@@ -210,7 +210,7 @@ In general yes, the process of generating a raw EUID from personal data is the s
 
 However, there is a variable factor, which is the <Link href="../ref-info/glossary-uid#gl-salt">salt</Link> value that's used in generating the raw EUID. The salt values are rotated roughly once per year (for details, see [How often should EUIDs be refreshed for incremental updates?](#how-often-should-euids-be-refreshed-for-incremental-updates)). If the salt value changes between one request and another, those two requests result in two different raw EUIDs, even when the personal data is the same.
 
-For more information, see [Monitor for salt bucket rotations related to your stored raw EUIDs](../guides/advertiser-dataprovider-guide.md#3-monitor-for-salt-bucket-rotations-related-to-your-stored-raw-euids) in the *Advertiser/Data Provider Integration Guide*.
+For more information, see [Monitor for Salt Bucket Rotations for Your Stored Raw EUIDs](../guides/integration-advertiser-dataprovider-overview.md#5-monitor-for-salt-bucket-rotations-for-your-stored-raw-euids) in the *Advertiser/Data Provider Integration Guide*.
 
 #### If two operators process the same personal data, are the results the same?
 

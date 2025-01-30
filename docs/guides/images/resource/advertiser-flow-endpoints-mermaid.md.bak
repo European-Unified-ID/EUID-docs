@@ -1,0 +1,73 @@
+1/30/25: Porting UID2 updates to EUID.
+
+    %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#0099F9', 'labelTextColor': '#FFF', 'actorTextColor': '#FFF'}}}%%
+  sequenceDiagram
+    participant ADP as Advertiser/Data Provider
+    participant UID as EUID Operator
+    participant DSP
+    Note over ADP,DSP: 1. Generate a raw EUID from personal data.
+        loop 
+    ADP->>UID: 1-a. Send a request containing personal data to the POST /identity/map endpoint.
+    UID->>ADP: 1-b. Receive the raw EUID and salt bucket ID returned from the POST /identity/map endpoint.
+    end
+    Note over ADP,DSP: 2. Store raw EUIDs and salt bucket IDs.
+    Note over ADP,DSP: 3. Manipulate or combine raw EUIDs.
+     Note over ADP,DSP: 4. Send raw EUIDs to DSPs.
+    ADP-->>DSP: Send stored raw EUIDs to DSPs to create audiences and conversions, or use them for measurement.
+    Note over ADP,DSP: 5. Monitor for salt bucket rotation.
+    loop
+       ADP->>UID: 5-a. Monitor salt bucket rotations using the POST /identity/buckets endpoint.
+       UID->>ADP: 5-b. Return salt buckets rotated since a specified timestamp.
+       ADP->>UID: 5-c. Compare the rotated salt buckets to the stored EUID salt buckets.<br>If rotated, resend personal data to the POST /identity/map endpoint for a new raw EUID.
+       UID->>ADP: 5-d. Store the raw EUID and the salt bucket ID returned from the POST /identity/map endpoint.
+    end
+    Note over ADP,DSP: 6. Monitor for opt-out status. Remove all opt-outs from local storage and do not use.
+    loop
+       ADP->>UID: 6-a. Monitor for optout status using the POST optout/status endpoint.
+       UID->>ADP: 6-b. Return optout status.
+    end
+
+<!-- 1/30/25: URL:
+
+https://mermaid-js.github.io/mermaid-live-editor/edit#pako:eNq1VU1v2kAQ_SujrRAXx2CCSbCqSFEIVQ5pUEl7qLgM9kJWtXfd3XVSivjvnbUxmED6cSgXs_PxZvbNG-2axSrhLGJAv1ZrLaSwEazb9olnvB1Be46Gtz2oDF9QC5yn3JBnDe1ciwz16kalSrvYd93ucDgeuvAU5zx95D_s3jkej50HY6v0sWez2bRaMwlg-PeCy5iPBC41Zs4EkKO2IhY5SgvXowmggevkmZPRcN0ZoUWYaPUsEq6PEz7fjVzCrfs-5FwjNXAcNZpOKuNHZTkoAneVPDJHEPjwgUuXyQFB40sFttAqAwI0SmIKCXXhVxDulyqVQ3UknLOrK8ogpDP0Ycpl4nDcTY2FWEmLRLxcHoKBVUC0w-Rh-ggdupu0wq46GeZAALkS0m7rETQVoDKuwNyHTzzm4pmX2btukYoaTC3Mi_gbt0AmzW2hJU-qm_xdLTq-yVOP7kbk7ouaE1WN_2b-uQ_3KEVepI5ppYmabC5kA68m-ERyf0vsvjbxR546x02BWCpjy0DjWj0R776x5uWwi0Q4MVb3oEFRRSOUNJ7rrjAlxRks6JBxNIWmJdkxdaLHkC6oaMUo3uU0idHKoiXobbKTz05MDQGFTkA1xql8Q205KZ2YZhVpXk_0UEBhJSAnjCa-qQoQX4QeuzUwOY_FQpDFiox0jFnun-449uFGZbRsW0XWQE30rda3MykF2_T77-f66m5R53okXeNm-K8LU9KOIPnLbu5vsJDUWj5aorLP_7tIg0OdqNyeqcISO2gL48aTUTxgmtYuU1VOVUxcOBJxyctmEwVSWSfVPwhr0BTWtui-5mtRVc7O1vlbQQ0agjrAbPLAPJZxnaFI6C1aO8eMlU_OjEX0l_ohhc3YTG4oEgurpisZs8jqgntMq2L5xKIFpoZORU5aqJ-PV9bbxF1vZ-Tl8b56AcuH0GP0GHxVap9IZxat2Q8WnYcDvxf0L4aDbhAGQS_02IpFYc8PB8P-eZ9c_WE3uNx47GcJ0PUv-71-eHE57IZBNwyHweYXIstmKg
+
+-->
+
+<!-- Previous version code for this diagram, from 8/16/24:  -->
+
+<!--
+
+  %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#0099F9', 'labelTextColor': '#FFF', 'actorTextColor': '#FFF'}}}%%
+  sequenceDiagram
+    participant DP as Data Provider
+    participant EUID as EUID Operator
+    participant DSP
+    loop 1. Retrieve an EUID for personal data using the identity map endpoints.
+    DP->>EUID: 1-a. Send a request containing personal data to the identity mapping endpoints.
+    EUID->>DP: 1-b. Store the EUID and salt bucket returned from the identity mapping service.
+    end
+    DP-->>DSP: 2. Send stored EUIDs to DSPs to create audiences.
+
+    loop 3. Monitor for salt bucket rotations related to your stored EUIDs.
+       DP->>EUID: 3-a. Monitor salt bucket rotations using the bucket service.
+       EUID->>DP: 3-b. Return salt buckets rotated since a given timestamp.
+       DP->>EUID: 3-c. Compare the rotated salt buckets to stored EUID salt buckets.<br/>If rotated, resend personal data to identity mapping service for a new EUID.
+       EUID->>DP: 3-d. Store the EUID and salt bucket returned from the identity mapping service.
+    end
+
+-->
+
+<!-- Config is same as UID2 but first line of code customizes the colors:
+
+{
+  "theme": "forest"
+}
+
+-->
+
+
+<!--  8/16/24: URL:
+
+https://mermaid.live/edit#pako:eNq1VMFu2kAQ_ZXRVogLcZNyihVxiYuUQ1QU2h4qLoM9kFXtXXd3TIsQ_94ZGxJc4NiT7Z2Z9-a9Wc_O5L4gkxqAwWBnneUUdkN-pYqGKQyXGGk4gu7gOwaLy5KiRHYwrIOtMGwffemD5n64vb2_n95reolLKr_SH34PTqdTjWDOPpxH9vv9YLBwAJF-NeRyyiyuA1Z6BFBjYJvbGh1DNgOMkCEjzILf2ILCedLnb0-ZprXPLzUFFNYLWPNZd1h6X8NdAi_EwdKGAF1Xu_IBpDx6hyUUStpE69YgfoBQO7a8hQprIFfU3jqOSYeYzW4mE4VI4e4GE5hLAiAElRcZcu8YxW2B6sOzP8OuNetffIUWhmym-EvBF4HUlnbahS1iybBs8p_EwstNcFTAKvjqMkOksLE5HfCF702I8syF6NNBRlSuoiWK2rAE22ceCFm8awqrI9RWT-wdJ_Ds5X6Jo-pqrzvPyNa7KH2WAlEo2tY3oUd16Kxv7ljNPeJexnyf2CHUV9o3c6xmvrRuncLFDk9aEbBcNMLabsgB20rGiVV9pbk8gUdfyZ3rZvMGcoosWk9k9mLJwzJ8nDytjoUjMSjqCM4uzbVxtl4jOPrdol_RXPyXC2RGpqJQoS1kv-z0eGHaRbIwqbxKZ-LdwizcXjKxYT_futykHBoameCb9atJV1hG-WpqEXpcCscUKnTqz93-atfYyMh__cP76lC4_wvOl55B
+
+-->

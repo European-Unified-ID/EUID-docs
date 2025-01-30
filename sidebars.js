@@ -152,8 +152,9 @@ const sidebars = {
           },
           collapsed: true,
           items: [
-            'guides/advertiser-dataprovider-guide',
+            'guides/integration-advertiser-dataprovider-overview',
             'guides/integration-snowflake',
+            'guides/integration-advertiser-dataprovider-endpoints',
           ],
         },
 

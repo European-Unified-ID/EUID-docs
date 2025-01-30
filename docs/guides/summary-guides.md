@@ -33,7 +33,7 @@ Publisher integrations fall into the following main categories:
 
 ### Web Integrations
 
-The following resources are available for publisher web integrations.
+The following documentation resources are available for publisher web integrations.
 
 :::tip
 For a detailed summary of web integration options, see [Web Integration Overview](integration-options-publisher-web.md).
@@ -52,7 +52,7 @@ For a detailed summary of web integration options, see [Web Integration Overview
 
 ### Mobile Integrations
 
-The following resources are available for publishers integrating with Android or iOS devices.
+The following documentation resources are available for publishers integrating with Android or iOS devices.
 
 | Integration Guide | Content Description |
 | :--- | :--- |
@@ -62,7 +62,7 @@ The following resources are available for publishers integrating with Android or
 
 ### CTV Integrations
 
-The following resources are available for publisher integrations supporting CTV.
+The following documentation resources are available for publisher integrations supporting CTV.
 
 | Integration Guide | Content Description |
 | :--- | :--- |
@@ -70,7 +70,7 @@ The following resources are available for publisher integrations supporting CTV.
 
 ### Prebid Integrations
 
-The following resources are available for publishers integrating with Prebid.
+The following documentation resources are available for publishers integrating with Prebid.
 
 | Integration Guide | Content Description |
 | :--- | :--- |
@@ -81,7 +81,7 @@ The following resources are available for publishers integrating with Prebid.
 
 ### Google Ad Manager Integrations
 
-The following resources are available for publishers integrating with Google Ad Manager.
+The following documentation resources are available for publishers integrating with Google Ad Manager.
 
 | Integration Guide | Content Description |
 | :--- | :--- |
@@ -93,16 +93,16 @@ The following resources are available for publishers integrating with Google Ad 
 
 ## Advertiser/Data Provider Integrations
 
-The following resources are available for advertisers and data providers integrating with EUID.
+The following documentation resources are available for advertisers and data providers integrating with EUID.
 
 | Integration Guide | Content Description |
 | :--- | :--- |
-| [Advertiser/Data Provider Integration Guide](advertiser-dataprovider-guide.md) | This integration guide for advertisers and data providers covers integration workflows for mapping identity for audience-building and targeting. |
-
+| [Advertiser/Data Provider Overview](integration-advertiser-dataprovider-overview.md) | This guide provides an overview of integration options for organizations that collect user data and push it to other EUID participants. |
+| [Advertiser/Data Provider Integration to HTTP Endpoints](integration-advertiser-dataprovider-endpoints.md) | This guide covers integration steps for advertisers and data providers to integrate with EUID by writing code to call UID2 HTTP endpoints, rather than using another implementation options such as an SDK. |
 
 ## DSP Integrations
 
-The following resources are available for DSPs integrating with EUID.
+The following documentation resources are available for DSPs integrating with EUID.
 
 | Integration Guide | Content Description |
 | :--- | :--- |
@@ -110,7 +110,7 @@ The following resources are available for DSPs integrating with EUID.
 
 ## Private Operator Service Integrations
 
-The following resources are available for <Link href="../ref-info/glossary-uid#gl-private-operator">Private Operator</Link> integrations.
+The following documentation resources are available for <Link href="../ref-info/glossary-uid#gl-private-operator">Private Operator</Link> integrations.
  
 | Integration Guide | Content Description |
 | :--- | :--- |
