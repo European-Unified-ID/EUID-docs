@@ -1,24 +1,25 @@
-<!-- 1/8/25: updated based on revised main Advertiser/Data Provider diagram, but listing endpoints: 
+1/30/25: Porting UID2 updates to EUID.
 
+    %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#0099F9', 'labelTextColor': '#FFF', 'actorTextColor': '#FFF'}}}%%
   sequenceDiagram
     participant ADP as Advertiser/Data Provider
-    participant UID as UID2 Operator
+    participant UID as EUID Operator
     participant DSP
-    Note over ADP,DSP: 1. Generate a raw UID2 from DII using the identity map endpoint.
+    Note over ADP,DSP: 1. Generate a raw EUID from personal data.
         loop 
-    ADP->>UID: 1-a. Send a request containing DII to the POST /identity/map endpoint.
-    UID->>ADP: 1-b. Store the raw UID2 and salt bucket ID returned from the POST /identity/map endpoint.
+    ADP->>UID: 1-a. Send a request containing personal data to the POST /identity/map endpoint.
+    UID->>ADP: 1-b. Receive the raw EUID and salt bucket ID returned from the POST /identity/map endpoint.
     end
-    Note over ADP,DSP: 2. Store raw UID2s and salt bucket IDs.
-    Note over ADP,DSP: 3. Manipulate or combine raw UID2s.
-     Note over ADP,DSP: 4. Send raw UID2s to DSPs.
-    ADP-->>DSP: Send stored raw UID2s to DSPs to create audiences and conversions, or use them for measurement.
+    Note over ADP,DSP: 2. Store raw EUIDs and salt bucket IDs.
+    Note over ADP,DSP: 3. Manipulate or combine raw EUIDs.
+     Note over ADP,DSP: 4. Send raw EUIDs to DSPs.
+    ADP-->>DSP: Send stored raw EUIDs to DSPs to create audiences and conversions, or use them for measurement.
     Note over ADP,DSP: 5. Monitor for salt bucket rotation.
     loop
        ADP->>UID: 5-a. Monitor salt bucket rotations using the POST /identity/buckets endpoint.
        UID->>ADP: 5-b. Return salt buckets rotated since a specified timestamp.
-       ADP->>UID: 5-c. Compare the rotated salt buckets to the stored UID2 salt buckets.<br>If rotated, resend DII to the POST /identity/map endpoint for a new raw UID2.
-       UID->>ADP: 5-d. Store the raw UID2 and the salt bucket ID returned from the POST /identity/map endpoint.
+       ADP->>UID: 5-c. Compare the rotated salt buckets to the stored EUID salt buckets.<br>If rotated, resend personal data to the POST /identity/map endpoint for a new raw EUID.
+       UID->>ADP: 5-d. Store the raw EUID and the salt bucket ID returned from the POST /identity/map endpoint.
     end
     Note over ADP,DSP: 6. Monitor for opt-out status. Remove all opt-outs from local storage and do not use.
     loop
@@ -26,46 +27,47 @@
        UID->>ADP: 6-b. Return optout status.
     end
 
--->
+<!-- 1/30/25: URL:
 
-<!-- 1/8/25: URL:
-
-https://mermaid-js.github.io/mermaid-live-editor/edit#pako:eNq1VU1v2zAM_SuEzq4Tp3HaGEOBYhmGHLoGy3YZclFsJhVmS54-2nVF__so2U7dzNl6WS6ORPI98ukJemK5KpBlDMDgD4cyx4Xge82rjQT61VxbkYuaSwvXixVwA9fFPdKmQT1acMthpdW9KFD_WfB1ufAF9JnAbY2aWzWQtVivms1PyiIoAvdMEW1nkMTwEaWvROCg-UMDttOqgsVyCc4IuQd7h0AdSCvsI1S8BpRFrYS0cQPsf6VSNTRLQj-7uiIgwj_jMawp3aP7-Y2FXEnLhfTAnsKqgL-6XX-BUccyGmAhQIIlcA-7JViaFkPtoW9ORIaXFrYu_44WSB-N1mmJRTPT25hoeVKxSUfckZoBVhOfrD-P4YZLUbvSa640yVFthezhdaIOFE9bMV-4ST2KdDVeedIo5IZE41sdyPffXGM4dlcIb8tmDjocYjRCSRP57pwJElewo0WF3DiNFR6UGugxpQGVFEQcavrCaGW5Jei22FvmYKCeaVJvmg5jqN70fHl0mk2mGXBozz6pt8_nYIw-vmkISC9Cz_2FMDXmYidox4qKvMurOh7uOI_hvaro2rWO7ID66K3T2zMJhu3H43dbfbXcdbURWdf4M3zbJQlic5D4cDjtE7MXJ69O6O7_Xp_Za3eo2p4pZ0kTbp3xh1JRPvCy7EKmYS5VzssgHd9jaLZQIJX1Bv2HnWZ9O7WkL5zHVmqCozb4VxvNejZ6hdnXgUWsQl1xUdAj8OQDG-YvFG5YRn-pH_LVhm3kM2VyZ9X6UeYss9phxLRy-zuW7XhpaOXqgozRPh9Hux8KP95hE8Pypnl6wgsUMXoMvin1Ukhrlj2xnyw7T2fxJJlezGfjJE2SSRqxR5alkzidzafnUwpN5-Pk8jlivwLAOL6cTqbpxeV8nCbjNJ0nz78BZ246eg
+https://mermaid-js.github.io/mermaid-live-editor/edit#pako:eNq1VU1v2kAQ_SujrRAXx2CCSbCqSFEIVQ5pUEl7qLgM9kJWtXfd3XVSivjvnbUxmED6cSgXs_PxZvbNG-2axSrhLGJAv1ZrLaSwEazb9olnvB1Be46Gtz2oDF9QC5yn3JBnDe1ciwz16kalSrvYd93ucDgeuvAU5zx95D_s3jkej50HY6v0sWez2bRaMwlg-PeCy5iPBC41Zs4EkKO2IhY5SgvXowmggevkmZPRcN0ZoUWYaPUsEq6PEz7fjVzCrfs-5FwjNXAcNZpOKuNHZTkoAneVPDJHEPjwgUuXyQFB40sFttAqAwI0SmIKCXXhVxDulyqVQ3UknLOrK8ogpDP0Ycpl4nDcTY2FWEmLRLxcHoKBVUC0w-Rh-ggdupu0wq46GeZAALkS0m7rETQVoDKuwNyHTzzm4pmX2btukYoaTC3Mi_gbt0AmzW2hJU-qm_xdLTq-yVOP7kbk7ouaE1WN_2b-uQ_3KEVepI5ppYmabC5kA68m-ERyf0vsvjbxR546x02BWCpjy0DjWj0R776x5uWwi0Q4MVb3oEFRRSOUNJ7rrjAlxRks6JBxNIWmJdkxdaLHkC6oaMUo3uU0idHKoiXobbKTz05MDQGFTkA1xql8Q205KZ2YZhVpXk_0UEBhJSAnjCa-qQoQX4QeuzUwOY_FQpDFiox0jFnun-449uFGZbRsW0XWQE30rda3MykF2_T77-f66m5R53okXeNm-K8LU9KOIPnLbu5vsJDUWj5aorLP_7tIg0OdqNyeqcISO2gL48aTUTxgmtYuU1VOVUxcOBJxyctmEwVSWSfVPwhr0BTWtui-5mtRVc7O1vlbQQ0agjrAbPLAPJZxnaFI6C1aO8eMlU_OjEX0l_ohhc3YTG4oEgurpisZs8jqgntMq2L5xKIFpoZORU5aqJ-PV9bbxF1vZ-Tl8b56AcuH0GP0GHxVap9IZxat2Q8WnYcDvxf0L4aDbhAGQS_02IpFYc8PB8P-eZ9c_WE3uNx47GcJ0PUv-71-eHE57IZBNwyHweYXIstmKg
 
 -->
 
-<!-- 8/30/24: Update "2. Send stored UID2s to DSPs to create audiences." > "2. Send stored UID2s to DSPs to create audiences and conversions." (2242) -->
-<!-- 8/14/24: update to change UID2 Service to UID2 Operator per 2503: -->
+<!-- Previous version code for this diagram, from 8/16/24:  -->
 
-<!-- 8/30/24: Code: -->
+<!--
 
+  %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#0099F9', 'labelTextColor': '#FFF', 'actorTextColor': '#FFF'}}}%%
   sequenceDiagram
     participant DP as Data Provider
-    participant UID2 as UID2 Operator
+    participant EUID as EUID Operator
     participant DSP
-    loop 1. Retrieve a UID2 for DII using the identity map endpoint.
-    DP->>UID2: 1-a. Send a request containing DII to the identity mapping endpoints.
-    UID2->>DP: 1-b. Store the raw UID2 and salt bucket returned from the POST /identity/map endpoint.
+    loop 1. Retrieve an EUID for personal data using the identity map endpoints.
+    DP->>EUID: 1-a. Send a request containing personal data to the identity mapping endpoints.
+    EUID->>DP: 1-b. Store the EUID and salt bucket returned from the identity mapping service.
     end
-    DP-->>DSP: 2. Send stored UID2s to DSPs to create audiences and conversions.
+    DP-->>DSP: 2. Send stored EUIDs to DSPs to create audiences.
 
-    loop 3. Monitor for salt bucket rotations related to your stored raw UID2s.
-       DP->>UID2: 3-a. Monitor salt bucket rotations using the bucket service.
-       UID2->>DP: 3-b. Return salt buckets rotated since a specified timestamp.
-       DP->>UID2: 3-c. Compare the rotated salt buckets to the stored UID2 salt buckets.<br>If rotated, resend DII to the POST /identity/map endpoint for a new raw UID2.
-       UID2->>DP: 3-d. Store the raw UID2 and the salt bucket returned from the POST /identity/map endpoint.
+    loop 3. Monitor for salt bucket rotations related to your stored EUIDs.
+       DP->>EUID: 3-a. Monitor salt bucket rotations using the bucket service.
+       EUID->>DP: 3-b. Return salt buckets rotated since a given timestamp.
+       DP->>EUID: 3-c. Compare the rotated salt buckets to stored EUID salt buckets.<br/>If rotated, resend personal data to identity mapping service for a new EUID.
+       EUID->>DP: 3-d. Store the EUID and salt bucket returned from the identity mapping service.
     end
 
-<!-- Config:
+-->
+
+<!-- Config is same as UID2 but first line of code customizes the colors:
 
 {
   "theme": "forest"
 }
- -->
-
-<!--  8/30/24: URL with "Pan & Zoom" on:
-
-https://mermaid-js.github.io/mermaid-live-editor/edit#pako:eNqlVMGO2jAQ_ZWRz9mIhISFqOLS9MBhVbSol4qLiQfWKrFT22FLEf_esZOwoIVTuQRnZt5782biE6u0QFYwAIu_W1QVlpLvDK_XCujXcONkJRuuHJRL4BZK7jgsjT5IgeZz0o9Fmfq08PzeoOFO30krV8vu5V7rBpIYXtEZiQcE3pVutYFysYDWSrUD94ZAfMpJd4SaN4BKNFoqF3co5fJpPvd1BSRPPIYVxQnJ-Jasg0orx6XySB7T6U-AjY8NoLZH9YCEWy496oZQqRUMpYa_950Sj-V7B5u2-oWOGF1rFArYGl3fZ7FoDrLCnoM4Ly14rhWRpX0D1vOJQGS9aAqGZ2WQO3KqFdIPzAYV1OMBjZVaeflX5o5jeNFKElYw9Uatdtz5CtK9J0jh0Y-6NQP10OfgyK3VY2_1gH0f92N8fei2-1uTx97k1-DgNZzt8EgOgVV-Q2yDldxKr1fWNGBeNw8EVjF81TVtXj-3AegavV-HK7dv4vGXjZkvtkNtRF5ZP51-kx7NN5jNQeH7xcUHTYuHmxVk_fd2sYjVaGouBX3nJx9YM6qtcc0K-ks6ycI1W6szZfLW6dVRVaxwpsWIGd3u3lix5XtLp7YR5EF_Qwwp3ctvwq_BJRPD8aW7XMIdEzH68n9qfamjIytO7A8rxvkkTpPseTYZJXmSpHnEjqzI0zifzLJxRqFsNkqm54j9DfWjeJqlWf48nY3yZJTns-T8D5qfkDg
 
 -->
 
+
+<!--  8/16/24: URL:
+
+https://mermaid.live/edit#pako:eNq1VMFu2kAQ_ZXRVogLcZNyihVxiYuUQ1QU2h4qLoM9kFXtXXd3TIsQ_94ZGxJc4NiT7Z2Z9-a9Wc_O5L4gkxqAwWBnneUUdkN-pYqGKQyXGGk4gu7gOwaLy5KiRHYwrIOtMGwffemD5n64vb2_n95reolLKr_SH34PTqdTjWDOPpxH9vv9YLBwAJF-NeRyyiyuA1Z6BFBjYJvbGh1DNgOMkCEjzILf2ILCedLnb0-ZprXPLzUFFNYLWPNZd1h6X8NdAi_EwdKGAF1Xu_IBpDx6hyUUStpE69YgfoBQO7a8hQprIFfU3jqOSYeYzW4mE4VI4e4GE5hLAiAElRcZcu8YxW2B6sOzP8OuNetffIUWhmym-EvBF4HUlnbahS1iybBs8p_EwstNcFTAKvjqMkOksLE5HfCF702I8syF6NNBRlSuoiWK2rAE22ceCFm8awqrI9RWT-wdJ_Ds5X6Jo-pqrzvPyNa7KH2WAlEo2tY3oUd16Kxv7ljNPeJexnyf2CHUV9o3c6xmvrRuncLFDk9aEbBcNMLabsgB20rGiVV9pbk8gUdfyZ3rZvMGcoosWk9k9mLJwzJ8nDytjoUjMSjqCM4uzbVxtl4jOPrdol_RXPyXC2RGpqJQoS1kv-z0eGHaRbIwqbxKZ-LdwizcXjKxYT_futykHBoameCb9atJV1hG-WpqEXpcCscUKnTqz93-atfYyMh__cP76lC4_wvOl55B
+
+-->
