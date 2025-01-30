@@ -98,7 +98,7 @@ The following documentation resources are available for advertisers and data pro
 | Integration Guide | Content Description |
 | :--- | :--- |
 | [Advertiser/Data Provider Overview](integration-advertiser-dataprovider-overview.md) | This guide provides an overview of integration options for organizations that collect user data and push it to other EUID participants. |
-| [Advertiser/Data Provider Integration to HTTP Endpoints](integration-advertiser-dataprovider-endpoints.md) | This guide covers integration steps for advertisers and data providers to integrate with UID2 by writing code to call UID2 HTTP endpoints, rather than using another implementation options such as an SDK. |
+| [Advertiser/Data Provider Integration to HTTP Endpoints](integration-advertiser-dataprovider-endpoints.md) | This guide covers integration steps for advertisers and data providers to integrate with EUID by writing code to call UID2 HTTP endpoints, rather than using another implementation options such as an SDK. |
 
 ## DSP Integrations
 
