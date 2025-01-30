@@ -8,6 +8,7 @@ sidebar_position: 04
 ---
 
 import Link from '@docusaurus/Link';
+import IntegratingWithSSO from '/docs/snippets/_integrating-with-sso.mdx';
 
 # EUID Integration Overview for JavaScript
 
@@ -24,6 +25,10 @@ EUID provides an SDK for JavaScript that supports the following:
 - [Storing the EUID token in the browser](#storing-the-euid-token-in-the-browser)
 
 For additional flexibility, EUID also provides alternative methods for some of the features and complementary products, such as a Prebid integration.
+
+## Integrating with Single Sign-On (SSO)
+
+<IntegratingWithSSO />
 
 ## Client-Side or Client-Server Integration
 

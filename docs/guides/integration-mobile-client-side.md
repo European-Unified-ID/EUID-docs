@@ -6,10 +6,10 @@ description: Setting up a mobile integration with token generate and refresh bot
 hide_table_of_contents: false
 sidebar_position: 04
 ---
-
+import Link from '@docusaurus/Link';
+import IntegratingWithSSO from '/docs/snippets/_integrating-with-sso.mdx';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import Link from '@docusaurus/Link';
 import ExampleAdvertisingToken from '/docs/snippets/_example-advertising-token.mdx';
 import EnableLogging from '/docs/snippets/_mobile-docs-enable-logging.mdx';
 import GMAIMA_Plugins from '/docs/snippets/_mobile_docs_gmaima-plugin-gss.mdx';
@@ -189,6 +189,10 @@ see UID2SDKDevelopmentApp/UID2SDKDevelopmentApp/Info.plist
 </Tabs>
 
 If necessary, you can also change the default Subscription ID and public key to values assigned to you, and connect to the EUID Production environment. For details, see [Optional: Specifying the API Base URL to Reduce Latency](#optional-specifying-the-api-base-url-to-reduce-latency).
+
+## Integrating with Single Sign-On (SSO)
+
+<IntegratingWithSSO />
 
 ## Complete the EUID Account Setup
 

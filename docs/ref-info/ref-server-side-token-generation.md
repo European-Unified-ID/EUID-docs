@@ -5,9 +5,9 @@ hide_table_of_contents: false
 sidebar_position: 06
 ---
 
+import Link from '@docusaurus/Link';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import Link from '@docusaurus/Link';
 
 # Server-Side Token Generation
 

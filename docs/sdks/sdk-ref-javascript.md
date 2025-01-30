@@ -5,9 +5,9 @@ hide_table_of_contents: false
 sidebar_position: 02
 ---
 
+import Link from '@docusaurus/Link';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import Link from '@docusaurus/Link';
 import ExampleEuidCookie from '/docs/snippets/_example-euid-cookie.mdx';
 
 export const New = () => (

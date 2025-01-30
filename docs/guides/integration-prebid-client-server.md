@@ -8,6 +8,7 @@ sidebar_position: 04
 ---
 
 import Link from '@docusaurus/Link';
+import IntegratingWithSSO from '/docs/snippets/_integrating-with-sso.mdx';
 import AddPrebidjsToYourSite from '/docs/snippets/_prebid-add-prebidjs-to-your-site.mdx';
 import StoreEUIDTokenInBrowser from '/docs/snippets/_prebid-storing-euid-token-in-browser.mdx';
 
@@ -33,6 +34,10 @@ This implementation requires Prebid.js version 7.53.0 or later. For version info
 Information about how to integrate Prebid with EUID is also in the following locations:
 - On the Prebid site, on the [European Unified ID](https://docs.prebid.org/dev-docs/modules/userid-submodules/euid.html) page for the Prebid User ID submodule.
 - In the Prebid GitHub repository, on the [EUID User ID Submodule](https://github.com/prebid/Prebid.js/blob/master/modules/euidIdSystem.md) page.
+
+## Integrating with Single Sign-On (SSO)
+
+<IntegratingWithSSO />
 
 ## Integration Overview: High-Level Steps
 

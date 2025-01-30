@@ -8,6 +8,7 @@ sidebar_position: 10
 ---
 
 import Link from '@docusaurus/Link';
+import IntegratingWithSSO from '/docs/snippets/_integrating-with-sso.mdx';
 
 # Google Ad Manager Secure Signals Integration Guide
 
@@ -59,6 +60,10 @@ If you want to use Secure Signals with Prebid.js, you must complete both these a
    ```
 
    For details, see [ESP Configurations](https://docs.prebid.org/dev-docs/modules/userId.html#esp-configurations) in the Prebid documentation.
+
+## Integrating with Single Sign-On (SSO)
+
+<IntegratingWithSSO />
 
 ## Publisher Integration
 
@@ -113,11 +118,11 @@ A sample implementation is also available for integration using the SDK for Java
 
 The following sample implementation is available to illustrate how to integrate with the Google Ad Manager secure signals feature:
 
-- Client-Server EUID SDK Integration Example:
+- Client-Side EUID SDK Integration Example:
   - [Sample implementation](https://euid.eu/examples/cstg-secure-signals-example/)
   - [Code repository](https://github.com/European-Unified-ID/EUID-docs/tree/main/static/examples/cstg-secure-signals-example)
 
-<!-- EUID Server-Side SDK Integration Example to come. gwh 12/9/24 -->
+<!-- EUID Server-Side SDK Integration Example to come. gwh 12/9/24. And client-server. gwh 1/29/25. -->
 
 Each sample implementation has its own instructions.
 

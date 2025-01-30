@@ -9,6 +9,7 @@ banner_description: Maintain audience targeting in the ever-changing advertising
 ---
 
 import Link from '@docusaurus/Link';
+import IntegratingWithSSO from '/docs/snippets/_integrating-with-sso.mdx';
 
 As a publisher, you can benefit from the cross-device presence of European Unified ID (EUID) and take advantage of a consistent identity fabric on all your inventory.
 
@@ -29,7 +30,7 @@ The following steps provide a high-level outline of the workflow intended for or
 
 1. A user visits a publisher website, mobile app, or CTV app.
 
-1. The publisher provides transparency around its data practices and asks the user to provide an email address or phone number, by login or other means, and consent to the use of their email address or phone number for EUID.
+1. The publisher provides transparency around its data practices and asks the user to provide an email address or phone number, by login, [SSO login](#integrating-with-single-sign-on-sso), or other means, and consent to the use of their email address or phone number for EUID.
 <!-- uid2_only_ep_20240312: The publisher provides transparency around its data practices and asks the user to provide an email address or phone number, by login or other means. -->
 <!-- euid_only_ep_20240312: The publisher provides transparency around its data practices and asks the user to provide email address or phone number, by login or other means, and consent to the use of their email address or phone number for EUID. -->
 
@@ -59,6 +60,10 @@ The following steps provide a high-level outline of the workflow intended for or
 <!-- The publisher requests updated EUID tokens using a refresh token. When applicable, the refresh token includes a user’s opt-out request. -->
 
 ![Publisher Workflow](images/EUIDPublisherAndSSPWorkflow.svg)
+
+## Integrating with Single Sign-On (SSO)
+
+<IntegratingWithSSO />
 
 ## Getting Started
 
