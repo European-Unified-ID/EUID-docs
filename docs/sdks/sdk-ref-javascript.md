@@ -213,7 +213,7 @@ The following example callback handles the `SdkLoaded` event to call init and th
 | Event | Payload | Details |
 | :--- | :--- | :--- |
 | `SdkLoaded` | `{}` | Called when the SDK script has loaded and the global `__euid` has been constructed. When you receive this event, it is safe to call `__euid.init`. Callbacks always receive this event once. If the SDK has already been loaded when the callback is registered, it receives the event immediately. |
-| `InitCompleted` | `{ identity: Identity  \| null }` | Called once `init()` has finished. Callbacks always receive this event once, as long as a successful call to `init` has been made. If `init` has already been completed when the callback is registered, it receives this immediately after it receives the `SdkLoaded` event. |
+| `InitCompleted` | `{ identity: Identity \| null }` | Called once `init()` has finished. Callbacks always receive this event once, as long as a successful call to `init` has been made. If `init` has already been completed when the callback is registered, it receives this immediately after it receives the `SdkLoaded` event. |
 | `IdentityUpdated` | `{ identity: Identity \| null }` | Called whenever the current identity changes. If the identity doesn't change after the callback is registered, callbacks do not receive this event. |
 
 </div>
@@ -345,24 +345,24 @@ The `opts` object supports the following properties.
 
 #### Multiple Init Calls
 
-You can call the `init()` function any number of times.  In most cases, the  code will accept the latest value of a certain [init parameter](#init-parameters). For example, if init is called twice, and a different `baseUrl` is passed in each call, the `baseUrl` variable is updated to the value from the second call. 
+You can call the `init()` function any number of times. In most cases, the code will accept the latest value of a certain [init parameter](#init-parameters). For example, if init is called twice, and a different `baseUrl` is passed in each call, the `baseUrl` variable is updated to the value from the second call. 
 
 There are two exceptions to this functionality:
 
-1. If a new identity is passed in a subsequent call, and the new identity expires before the current identity, the new identity does not replace the current identity.  
+1. If a new identity is passed in a subsequent call, and the new identity expires before the current identity, the new identity does not replace the current identity.
 2. For every subsequent callback function passed, the function is added to the existing array of callbacks using the [Array Push Pattern](#array-push-pattern).
 
 :::note
-If `useCookie` is updated, the location of the identity changes.  For example, if the value is updated from `true` to `false`, the first-party cookie is removed and the identity is added to local storage.
+If `useCookie` is updated, the location of the identity changes. For example, if the value is updated from `true` to `false`, the first-party cookie is removed and the identity is added to local storage.
 :::
 
 ### Init Config
 
-Calling `init()` stores an init config in a first-party cookie or local storage which can include the following parameters if given: `baseUrl`, `useCookie`, `refreshRetryPeriod`, `cookiePath`, and `cookieDomain`.  This config is used to [bootstrap init](#self-bootstrap) and save load time in future page loads.  Subsequent calls to `init()` update the config with the most recent parameters.
+Calling `init()` stores an init config in a first-party cookie or local storage which can include the following parameters if given: `baseUrl`, `useCookie`, `refreshRetryPeriod`, `cookiePath`, and `cookieDomain`. This config is used to [bootstrap init](#self-bootstrap) and save load time in future page loads.  Subsequent calls to `init()` update the config with the most recent parameters.
 
 ### Self Bootstrap
 
-When the constructor has completed and the SDK has been put on the window object, the code will check local storage and cookie storage for a stored [init config](#init-config).  If the config exists, `init()` is automatically called with the parameters from the config, and as a result, any functions that require `init()` can be used. 
+When the constructor has completed and the SDK has been put on the window object, the code will check local storage and cookie storage for a stored [init config](#init-config). If the config exists, `init()` is automatically called with the parameters from the config, and as a result, any functions that require `init()` can be used. 
 
 #### Errors
 
@@ -608,7 +608,7 @@ window.__euid = window.__euid || {};
 window.__euid.callbacks = window.__euid.callbacks || [];
 window.__euid.callbacks.push((eventType) => {
   // Each callback function you register with the SDK is invoked once with the `SdkLoaded` event type after the SDK has been loaded by the browser and is ready to use.
-  if (eventType === 'SdkLoaded' {    
+  if (eventType === 'SdkLoaded' { 
     __euid.init({
       /* Provide the same options as in your previous code. If you're not using the legacy callback any more, remove it from here. */
     });
