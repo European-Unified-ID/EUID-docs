@@ -82,7 +82,7 @@ window.googletag.cmd.push(function () {
 });
 ```
 
-There are three integration options for Google Secure Signals publisher integration with UID2:
+There are three integration options for Google Secure Signals publisher integration with EUID:
 - [Server-Side Integration](#server-side-integration)
 - [SDK for JavaScript Client-Server Integration](#sdk-for-javascript-client-server-integration)
 - [SDK for JavaScript Client-Side Integration](#sdk-for-javascript-client-side-integration)
