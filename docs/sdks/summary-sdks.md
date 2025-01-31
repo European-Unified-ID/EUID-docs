@@ -18,7 +18,7 @@ Review the SDK functionality to determine which SDK or SDKs you want to use, the
 
 The following table summarizes the functionality available with each SDK.
 
-| EUID SDK for... | Client-Side or Server-Side | Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to Raw EUIDs | Monitor Rotated Salt Buckets |
+| EUID SDK for... | Client-Side or Server-Side | Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to Raw EUIDs* | Monitor Rotated Salt Buckets |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 |JavaScript | Client | &#8212; | &#8212; | &#9989; | &#9989; | &#8212; | &#8212; |
 |Java | Server | &#9989; | &#9989; | &#9989; | &#9989; | &#9989; | &#8212; |
@@ -27,6 +27,8 @@ The following table summarizes the functionality available with each SDK.
 |C++ | Server | &#9989; | &#9989; | &#8212; | &#8212; | &#8212; | &#8212; |
 |Android | Client&nbsp;(Mobile) | &#8212; | &#8212; | &#9989; | &#9989; | &#8212; | &#8212; |
 |iOS | Client (Mobile) | &#8212; | &#8212; | &#9989;| &#9989; |&#8212; | &#8212; |
+
+&ast;Advertisers and Data Providers who need to generate raw EUIDs from personal data can also do this via Snowflake (see [Snowflake Integration Guide](../guides/integration-snowflake.md)) or by using the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint.
 
 <!-- &#9989; = Supported | &#8212; = Not Supported -->
 
