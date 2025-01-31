@@ -7,10 +7,10 @@ use_banner: true
 banner_title: EUID Overview for Advertisers
 banner_description: Upgrade campaign activation with European Unified ID.
 banner_icon: 'advertisers'
-banner_text_color: ''
-banner_text_color_dark: ''
-banner_background_color: ''
-banner_background_color_dark: ''
+banner_text_color: 'white'
+banner_text_color_dark: 'black'
+banner_background_color: '#7085D4'
+banner_background_color_dark: '#B7C2EA'
 ---
 
 import Link from '@docusaurus/Link';
