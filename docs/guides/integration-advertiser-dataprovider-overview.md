@@ -48,11 +48,11 @@ The following table shows the implementation options that are available for adve
 
 | High-Level Step | Implementation Options |
 | --- | --- |
-| [1: Generate Raw EUIDs from Personal Data](#1-generate-raw-euids-from-personal-data) | Use any of the following options to map personal-data to raw EUIDs:<ul><li>One of these EUID SDKs:<ul><li>Python SDK: [Map Personal Data to Raw EUIDs](../sdks/sdk-ref-python.md#map-personal-data-to-raw-euids)</li><li>Java SDK: [Usage for Advertisers/Data Providers](../sdks/sdk-ref-java.md#usage-for-advertisersdata-providers)</li></ul></li><li>HTTP endpoints: [POST&nbsp;/identity/map](../endpoints/post-identity-map.md)</li></ul> |
+| [1: Generate Raw EUIDs from Personal Data](#1-generate-raw-euids-from-personal-data) | Use any of the following options to map personal data to raw EUIDs:<ul><li>One of these EUID SDKs:<ul><li>Python SDK: [Map Personal Data to Raw EUIDs](../sdks/sdk-ref-python.md#map-personal-data-to-raw-euids)</li><li>Java SDK: [Usage for Advertisers/Data Providers](../sdks/sdk-ref-java.md#usage-for-advertisersdata-providers)</li></ul></li><li>Snowflake: [Map Personal Data](integration-snowflake.md#map-personal-data)</li><li>HTTP endpoints: [POST&nbsp;/identity/map](../endpoints/post-identity-map.md)</li></ul> |
 | [2: Store Raw EUIDs and Salt Bucket IDs](#2-store-raw-euids-and-salt-bucket-ids) | Custom (your choice). |
 | [3: Manipulate or Combine Raw EUIDs](#3-manipulate-or-combine-raw-euids) | Custom (your choice). |
 | [4: Send Stored Raw EUIDs to DSPs to Create Audiences or Conversions](#4-send-stored-raw-euids-to-dsps-to-create-audiences-or-conversions) | Custom (your choice). |
-| [5: Monitor for Salt Bucket Rotations for Your Stored Raw EUIDs](#5-monitor-for-salt-bucket-rotations-for-your-stored-raw-euids) | Any of the following options:<ul><li><strong>Python SDK</strong>: see <Link href="../sdks/sdk-ref-python">SDK for Python Reference Guide</Link></li><li><strong>Raw HTTP endpoint</strong>: <Link href="../endpoints/post-identity-buckets">POST /identity/buckets</Link></li></ul> |
+| [5: Monitor for Salt Bucket Rotations for Your Stored Raw EUIDs](#5-monitor-for-salt-bucket-rotations-for-your-stored-raw-euids) | Any of the following options:<ul><li>Python SDK: see <Link href="../sdks/sdk-ref-python">SDK for Python Reference Guide</Link></li><li>Snowflake: see <Link href="integration-snowflake">Snowflake Integration Guide</Link>, section titled <Link href="integration-snowflake#monitor-for-salt-bucket-rotation-and-regenerate-raw-euids">Monitor for Salt Bucket Rotation and Regenerate Raw EUIDs</Link></li><li>Raw HTTP endpoint: <Link href="../endpoints/post-identity-buckets">POST /identity/buckets</Link></li></ul> |
 | [6: Monitor for Opt-Out Status](#6-monitor-for-opt-out-status) | API call to the [POST /optout/status](../endpoints/post-optout-status.md) endpoint. |
 
 ## Integration Diagram
@@ -79,6 +79,8 @@ To generate raw EUIDs, use one of the following options:
 
   - Python SDK: See [Map Personal Data to Raw EUIDs](../sdks/sdk-ref-python.md#map-personal-data-to-raw-euids).
   - Java SDK: See [Usage for Advertisers/Data Providers](../sdks/sdk-ref-java.md#usage-for-advertisersdata-providers).
+
+- Snowflake: See [Map Personal Data](integration-snowflake.md#map-personal-data).
 
 - HTTP endpoints: [POST&nbsp;/identity/map](../endpoints/post-identity-map.md). For details, see [Generate Raw EUIDs from Personal Data](integration-advertiser-dataprovider-endpoints.md#1-generate-raw-euids-from-personal-data).
 
@@ -118,6 +120,8 @@ If the salt bucket has been rotated, regenerate the raw EUID. For details, see [
 For instructions for monitoring for salt bucket rotations, refer to one of the following:
 
 - Python SDK: [Monitor Rotated Salt Buckets](../sdks/sdk-ref-python.md#monitor-rotated-salt-buckets).
+
+- Snowflake: [Monitor for Salt Bucket Rotation and Regenerate Raw EUIDs](integration-snowflake.md#monitor-for-salt-bucket-rotation-and-regenerate-raw-euids).
 
 - HTTP endpoints: [Monitor for Salt Bucket Rotations for Your Stored Raw EUIDs](integration-advertiser-dataprovider-endpoints.md#5-monitor-for-salt-bucket-rotations-for-your-stored-raw-euids).
 
