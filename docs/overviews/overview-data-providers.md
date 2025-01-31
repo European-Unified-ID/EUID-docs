@@ -6,6 +6,11 @@ sidebar_position: 08
 use_banner: true
 banner_title: EUID Overview for Data Providers
 banner_description: An identity solution for the future.
+banner_icon: 'dataProviders'
+banner_text_color: ''
+banner_text_color_dark: ''
+banner_background_color: ''
+banner_background_color_dark: ''
 ---
 
 import Link from '@docusaurus/Link';
