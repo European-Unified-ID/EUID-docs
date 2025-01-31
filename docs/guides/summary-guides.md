@@ -99,7 +99,7 @@ The following documentation resources are available for advertisers and data pro
 | :--- | :--- |
 | [Advertiser/Data Provider Overview](integration-advertiser-dataprovider-overview.md) | This guide provides an overview of integration options for organizations that collect user data and push it to other EUID participants. |
 | [Snowflake Integration Guide](integration-snowflake.md) | Instructions for generating raw EUIDs from emails within Snowflake. |
-| [Advertiser/Data Provider Integration to HTTP Endpoints](integration-advertiser-dataprovider-endpoints.md) | This guide covers integration steps for advertisers and data providers to integrate with EUID by writing code to call UID2 HTTP endpoints, rather than using another implementation options such as an SDK or Snowflake. |
+| [Advertiser/Data Provider Integration to HTTP Endpoints](integration-advertiser-dataprovider-endpoints.md) | This guide covers integration steps for advertisers and data providers to integrate with EUID by writing code to call EUID HTTP endpoints, rather than using another implementation option such as an SDK or Snowflake. |
 
 ## DSP Integrations
 
