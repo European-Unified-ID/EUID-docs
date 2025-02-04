@@ -11,21 +11,17 @@ import Link from '@docusaurus/Link';
 
 # Snowflake Integration Guide
 
-:::important
-EUID Snowflake integration is pending the publication of the EUID listing, which will be available shortly on Snowflake Marketplace. All the information in this document depends on availability of the listing.
-:::
-
 [Snowflake](https://www.snowflake.com/) is a cloud data warehousing solution, where you as a partner can store your data and integrate with the EUID framework. Using Snowflake, EUID enables you to securely share consumer identifier data without exposing sensitive <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>. Even though you have the option to query the Operator Web Services directly for the consumer identifier data, the Snowflake EUID integration offers a more seamless experience.
 
-<!-- :::tip
+:::tip
 For a summary of all integration options and steps for advertisers and data providers, see [Advertiser/Data Provider Integration Overview](integration-advertiser-dataprovider-overview.md).
-::: -->
+:::
 
 ## Snowflake Marketplace Listing
 
-The EUID listing will be available shortly on Snowflake Marketplace.
+The following listing for EUID is available on Snowflake Marketplace:
 
-<!-- The following listing for EUID is available on Snowflake Marketplace: [EUID Identity Solution (**EXACT URL AND NAMING TO COME**)](https://app.snowflake.com/marketplace/listing/GZT0ZRYXTMV/unified-id-2-0-unified-id-2-0-advertiser-identity-solution?originTab=provider&providerName=Unified+ID+2.0) -->
+- [European Unified ID Advertiser and Data Provider Identity Solution](https://app.snowflake.com/marketplace/listing/GZTDZJ7404/european-unified-id-european-unified-id-advertiser-and-data-provider-identity-solution)
 
 ## Functionality
 
