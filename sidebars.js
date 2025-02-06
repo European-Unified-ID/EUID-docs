@@ -1,5 +1,24 @@
-const sidebars = {
-  docs: [
+function removeItems(sidebar, ...remove) {
+  const result = [];
+  for (let item of sidebar) {
+    if (typeof item === 'string')
+    {
+      if (!remove.includes(item)) result.push({
+        type: 'ref', id: item
+      });
+    }
+    else {
+      if (!remove.includes(item.label)) {
+        const {items, ...rest} = item;
+        const keepItems = removeItems(items, ...remove);
+        if (keepItems?.length > 0) result.push({...rest, items: keepItems});
+      }
+    }
+  }
+  return result;
+}
+
+const fullSidebar = [
     {
       type: 'category',
       label: 'EUID Overview',
@@ -47,31 +66,31 @@ const sidebars = {
           link: {
             type: 'generated-index',
           },
-          collapsed: false,
+          collapsed: true,
 
           items: [
-          {
-            type: 'category',
-            label: 'Web',
-            link: {
-              type: 'doc',
-              id: 'guides/integration-options-publisher-web',
-            },
-            collapsed: true,
-            items: [
-              {
-                type: 'category',
-                label: 'Prebid',
-                link: {
-                  type: 'doc',
-                  id: 'guides/integration-prebid',
-                },
-                collapsed: true,
-                items: [
-                  'guides/integration-prebid-client-side',
-                  'guides/integration-prebid-client-server',
-                ],
+            {
+              type: 'category',
+              label: 'Web',
+              link: {
+                type: 'doc',
+                id: 'guides/integration-options-publisher-web',
               },
+              collapsed: true,
+              items: [
+                {
+                  type: 'category',
+                  label: 'Prebid',
+                  link: {
+                    type: 'doc',
+                    id: 'guides/integration-prebid',
+                  },
+                  collapsed: true,
+                  items: [
+                    'guides/integration-prebid-client-side',
+                    'guides/integration-prebid-client-server',
+                  ],
+                },
 
               {
                 type: 'category',
@@ -107,58 +126,82 @@ const sidebars = {
 
           'guides/integration-ctv-guide',
 
-            {
-              type: 'category',
-              label: 'Prebid',
-              link: {
-                type: 'doc',
-                id: 'guides/integration-prebid',
-              },
-              collapsed: true,
-              items: [
-                'guides/integration-prebid-client-side',
-                'guides/integration-prebid-client-server',
-                'guides/integration-prebid-mobile-summary',
-              ],
-            },
-
-            {
-              type: 'category',
-              label: 'Google Ad Manager',
-              link: {
-                type: 'generated-index',
-              },
-              collapsed: true,
-              items: [
-                'guides/integration-google-ss',
-                'guides/mobile-plugin-gma-android',
-                'guides/mobile-plugin-gma-ios',
-                'guides/mobile-plugin-ima-android',
-                'guides/mobile-plugin-ima-ios',
-              ],
-            },
-  
-  
-            'guides/integration-liveramp-tips',
-  
-          ],
-          },
-  
           {
             type: 'category',
-            label: 'Advertiser/Data Provider Integrations',
+            label: 'Prebid',
+            link: {
+              type: 'doc',
+              id: 'guides/integration-prebid',
+            },
+            collapsed: true,
+            items: [
+              'guides/integration-prebid-client-side',
+              'guides/integration-prebid-client-server',
+              'guides/integration-prebid-mobile-summary',
+            ],
+          },
+
+          {
+            type: 'category',
+            label: 'Google Ad Manager',
+            link: {
+              type: 'generated-index',
+            },
+            collapsed: true,
+            items: [
+              'guides/integration-google-ss',
+              'guides/mobile-plugin-gma-android',
+              'guides/mobile-plugin-gma-ios',
+              'guides/mobile-plugin-ima-android',
+              'guides/mobile-plugin-ima-ios',
+            ],
+          },
+
+          'guides/integration-liveramp-tips',
+
+        ],
+      },
+
+
+{
+  type: 'category',
+  label: 'Advertiser/Data Provider Integrations',
+  link: {
+    type: 'generated-index',
+  },
+  collapsed: true,
+
+  items: [
+  {
+    type: 'category',
+    label: 'Integration Overview',
+    link: {
+      type: 'doc',
+      id: 'guides/integration-advertiser-dataprovider-overview',
+    },
+    collapsed: true,
+    items: [
+      'guides/integration-snowflake',
+      'guides/integration-advertiser-dataprovider-endpoints',
+    ],
+  },
+
+  'guides/integration-javascript-client-side',
+
+],
+},
+
+        {
+          type: 'category',
+          label: 'DSP Integrations',
           link: {
             type: 'generated-index',
           },
           collapsed: true,
           items: [
-            'guides/integration-advertiser-dataprovider-overview',
-            'guides/integration-snowflake',
-            'guides/integration-advertiser-dataprovider-endpoints',
+            'guides/dsp-guide',
           ],
         },
-
-        'guides/dsp-guide',
 
         {
           type: 'category',
@@ -212,6 +255,7 @@ const sidebars = {
       ],
     },
 
+
     {
       type: 'category',
       label: 'Reference Information',
@@ -237,7 +281,143 @@ const sidebars = {
 
     'ref-info/glossary-uid',
     'ref-info/updates-doc',
+  ];
 
-  ],
+
+const sidebars = {
+  docs: fullSidebar,
+
+  sidebarPublishers: removeItems(fullSidebar, 
+    'overviews/overview-advertisers',
+    'overviews/overview-dsps',
+    'overviews/overview-data-providers',
+    'Advertiser/Data Provider Integrations',
+    'guides/integration-advertiser-dataprovider-overview',
+    'guides/integration-snowflake',
+    'guides/advertiser-dataprovider-endpoints',
+    'DSP Integrations',
+    'guides/dsp-guide',
+    'endpoints/post-identity-buckets',
+    'endpoints/post-identity-map',
+    'endpoints/post-optout-status'
+  ),
+
+  sidebarAdvertisers: removeItems(fullSidebar, 
+    'overviews/overview-publishers',
+    'overviews/overview-dsps',
+    'overviews/overview-data-providers',
+    'Publisher Integrations',
+    'Web',
+    'guides/integration-options-publisher-web',
+    'Prebid',
+    'guides/integration-prebid',
+    'guides/integration-prebid-client-side',
+    'guides/integration-prebid-client-server',
+    'JavaScript',
+    'guides/integration-javascript',
+    'guides/integration-javascript-client-server',
+    'Server-Only',
+    'guides/integration-publisher-server-side',
+    'GAM Secure Signals',
+    'guides/integration-google-ss',
+    'Mobile',
+    'guides/sdk-ref-android',
+    'guides/sdk-ref-ios',
+    'Prebid',
+    'guides/integration-prebid',
+    'guides/integration-prebid-client-side',
+    'guides/integration-prebid-client-server',
+    'Google Ad Manager',
+    'guides/integration-google-ss',
+    'guides/mobile-plugin-gma-android',
+    'guides/mobile-plugin-gma-ios',
+    'guides/mobile-plugin-ima-android',
+    'guides/mobile-plugin-ima-ios',
+    'DSP Integrations',
+    'guides/dsp-guide',
+    'endpoints/post-token-generate',
+    'endpoints/post-token-validate',
+    'endpoints/post-token-refresh',
+    'sharing/sharing-bid-stream'
+    ),
+
+  sidebarDSPs: removeItems(fullSidebar, 
+    'overviews/overview-publishers',
+    'overviews/overview-advertisers',
+    'overviews/overview-data-providers',
+    'Publisher Integrations',
+    'Web',
+    'guides/integration-options-publisher-web',
+    'Prebid',
+    'guides/integration-prebid',
+    'guides/integration-prebid-client-side',
+    'guides/integration-prebid-client-server',
+    'JavaScript',
+    'guides/integration-javascript',
+    'guides/integration-javascript-client-side',
+    'guides/integration-javascript-client-server',
+    'Server-Only',
+    'guides/integration-publisher-server-side',
+    'GAM Secure Signals',
+    'guides/integration-google-ss',
+    'Mobile',
+    'guides/sdk-ref-android',
+    'guides/sdk-ref-ios',
+    'Prebid',
+    'guides/integration-prebid',
+    'guides/integration-prebid-client-side',
+    'guides/integration-prebid-client-server',
+    'Google Ad Manager',
+    'guides/integration-google-ss',
+    'guides/mobile-plugin-gma-android',
+    'guides/mobile-plugin-gma-ios',
+    'guides/mobile-plugin-ima-android',
+    'guides/mobile-plugin-ima-ios',
+    'Advertiser/Data Provider Integrations',
+    'guides/integration-advertiser-dataprovider-overview',
+    'guides/integration-snowflake',
+    'guides/advertiser-dataprovider-endpoints',
+    'sharing/sharing-bid-stream'
+    ),
+
+  sidebarDataProviders: removeItems(fullSidebar, 
+    'overviews/overview-publishers',
+    'overviews/overview-advertisers',
+    'overviews/overview-dsps',
+    'Publisher Integrations',
+    'Web',
+    'guides/integration-options-publisher-web',
+    'Prebid',
+    'guides/integration-prebid',
+    'guides/integration-prebid-client-side',
+    'guides/integration-prebid-client-server',
+    'JavaScript',
+    'guides/integration-javascript',
+    'guides/integration-javascript-client-server',
+    'Server-Only',
+    'guides/integration-publisher-server-side',
+    'GAM Secure Signals',
+    'guides/integration-google-ss',
+    'Mobile',
+    'guides/sdk-ref-android',
+    'guides/sdk-ref-ios',
+    'Prebid',
+    'guides/integration-prebid',
+    'guides/integration-prebid-client-side',
+    'guides/integration-prebid-client-server',
+    'Google Ad Manager',
+    'guides/integration-google-ss',
+    'guides/mobile-plugin-gma-android',
+    'guides/mobile-plugin-gma-ios',
+    'guides/mobile-plugin-ima-android',
+    'guides/mobile-plugin-ima-ios',
+    'DSP Integrations',
+    'guides/dsp-guide',  
+    'endpoints/post-token-generate',
+    'endpoints/post-token-validate',
+    'endpoints/post-token-refresh',
+    'sharing/sharing-bid-stream'
+  ),
+
 };
 module.exports = sidebars;

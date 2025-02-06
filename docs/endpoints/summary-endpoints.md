@@ -3,6 +3,7 @@ title: EUID Endpoints - Summary
 description: Summary of the endpoints available in the EUID service.
 hide_table_of_contents: false
 sidebar_position: 01
+displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
