@@ -3,6 +3,7 @@ title: Web Integration Overview
 description: Overview of the publisher options for EUID web integration.
 hide_table_of_contents: false
 sidebar_position: 02
+displayed_sidebar: sidebarPublishers
 ---
 
 import Link from '@docusaurus/Link';
