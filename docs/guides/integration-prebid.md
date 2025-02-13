@@ -29,7 +29,7 @@ EUID provides a Prebid.js module that supports the following:
 For additional flexibility, EUID also provides alternative methods for some of the features and complementary products, such as a JavaScript SDK.
 
 :::caution
-EUID is designed to be used only where GDPR applies. The module checks the consent data that's passed in, and operates only if the `gdprApplies` flag is set to `true`.
+EUID is designed to be used only where <Link href="../ref-info/glossary-uid#gl-gdpr">GDPR</Link> applies. The module checks the consent data that's passed in, and operates only if the `gdprApplies` flag is set to `true`.
 :::
 
 <!-- GDPR statement difference for UID2/EUID | UID2 is not designed to be used where GDPR applies | EUID is designed to be used only where GDPR applies. -->
