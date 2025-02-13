@@ -49,6 +49,9 @@ import MdxJumpAnchor from '@site/src/components/MdxJumpAnchor';
 **F**
 <a href="#gl-first-level-hash">First-level hash</a> | 
 
+**G**
+<a href="#gl-gdpr">GDPR</a>
+
 **H**
 <a href="#gl-hash">Hash</a> | 
 
@@ -238,6 +241,15 @@ import MdxJumpAnchor from '@site/src/components/MdxJumpAnchor';
 
 <dt><MdxJumpAnchor id="gl-first-level-hash"><a href="#gl-first-level-hash">First-level hash</a></MdxJumpAnchor></dt>
 <dd>In the context of EUID, the first-level hash is the anonymized, opaque, secure value from which the <a href="#gl-raw-euid">raw EUID</a>, <a href="#gl-euid-token">EUID token</a>, and <a href="#gl-refresh-token">refresh token</a> are generated. Several cryptographic functions, including salting and hashing, are applied to the initial value, whether an email or a phone number, to create the first-level hash.</dd>
+
+</dl>
+
+### G
+
+<dl>
+
+<dt><MdxJumpAnchor id="gl-gdpr"><a href="#gl-gdpr">GDPR</a></MdxJumpAnchor></dt>
+<dd>The GDPR, or General Data Protection Regulation, is a European privacy and security law that regulates how organizations target or collect data related to residents of the European Union.</dd>
 
 </dl>
 
