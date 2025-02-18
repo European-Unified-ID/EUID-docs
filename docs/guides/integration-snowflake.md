@@ -44,7 +44,7 @@ The following diagram and table illustrate the different parts of the EUID integ
 
 ## Access the EUID Share
 
-Access to the EUID Share is available through the [Snowflake Data Marketplace](https://www.snowflake.com/data-marketplace/), where you can request specific data sets based on the EUID personalized listing you select.
+Access to the EUID Share is available through the [Snowflake Data Marketplace](https://www.snowflake.com/data-marketplace/).
 
 For a link to the specific listing, see [Snowflake Marketplace Listing](#snowflake-marketplace-listing).
 
@@ -65,7 +65,7 @@ After your request is received, an EUID administrator will contact you with the 
 
 ## Shared Objects
 
-Regardless of the EUID solution you choose, you can map personal data to EUIDs by using the following function:
+You can map personal data to EUIDs by using the following function:
 
 - `FN_T_IDENTITY_MAP` (See [Map Personal Data](#map-personal-data))
 
@@ -81,7 +81,7 @@ The following sections include query examples for each solution, which are ident
 
 For example:
 
-```
+```sql
 select UID, BUCKET_ID, UNMAPPED from table({DATABASE_NAME}.{SCHEMA_NAME}.FN_T_IDENTITY_MAP('validate@example.com', 'email'));
 ```
 
@@ -143,9 +143,9 @@ The input and output data in these examples is fictitious, for illustrative purp
 
 #### Mapping Request Example - Single Unhashed Email
 
-The following query illustrates how to map a single email address, using the [default database and schema names](#database-and-schema-names):
+The following query illustrates how to map a single email address, using the [default database and schema names](#database-and-schema-names).
 
-```
+```sql
 select UID, BUCKET_ID, UNMAPPED from table(EUID_PROD_UID_SH.UID.FN_T_IDENTITY_MAP('validate@example.com', 'email'));
 ```
 
@@ -161,12 +161,12 @@ Query results for a single email:
 
 #### Mapping Request Example - Multiple Unhashed Emails
 
-The following query illustrates how to map multiple email addresses, using the [default database and schema names](#database-and-schema-names):
+The following query illustrates how to map multiple email addresses, using the [default database and schema names](#database-and-schema-names).
 
-```
+```sql
 select a.ID, a.EMAIL, m.UID, m.BUCKET_ID, m.UNMAPPED from AUDIENCE a LEFT JOIN( 
-  select ID, t.* from AUDIENCE, lateral EUID_PROD_UID_SH.UID.FN_T_IDENTITY_MAP(EMAIL, 'email') t ) m 
-  on a.ID = m.ID;
+    select ID, t.* from AUDIENCE, lateral EUID_PROD_UID_SH.UID.FN_T_IDENTITY_MAP(EMAIL, 'email') t ) m 
+    on a.ID = m.ID;
 ```
 
 Query results for multiple emails:
@@ -190,9 +190,7 @@ The following query illustrates how to map a phone number, using the [default da
 
 You must normalize phone numbers using the EUID [Phone Number Normalization](../getting-started/gs-normalization-encoding.md#phone-number-normalization) rules.
 
-Query for a single phone number:
-
-```
+```sql
 select UID, BUCKET_ID, UNMAPPED from table(EUID_PROD_UID_SH.UID.FN_T_IDENTITY_MAP('+12345678901', 'phone'));
 ```
 
@@ -212,9 +210,7 @@ The following query illustrates how to map multiple phone numbers, using the [de
 
 You must normalize phone numbers using the EUID [Phone Number Normalization](../getting-started/gs-normalization-encoding.md#phone-number-normalization) rules.
 
-Query for multiple phone numbers:
-
-```
+```sql
 select a.ID, a.PHONE, m.UID, m.BUCKET_ID, m.UNMAPPED from AUDIENCE a LEFT JOIN(
     select ID, t.* from AUDIENCE, lateral EUID_PROD_UID_SH.UID.FN_T_IDENTITY_MAP(PHONE, 'phone') t) m 
     on a.ID=m.ID;
@@ -237,9 +233,9 @@ The following table identifies each item in the response, including `NULL` value
 
 #### Mapping Request Example - Single Hashed Email
 
-The following query illustrates how to map a single email address hash, using the [default database and schema names](#database-and-schema-names):
+The following query illustrates how to map a single email address hash, using the [default database and schema names](#database-and-schema-names).
 
-```
+```sql
 select UID, BUCKET_ID, UNMAPPED from table(EUID_PROD_UID_SH.UID.FN_T_IDENTITY_MAP(BASE64_ENCODE(SHA2_BINARY('validate@example.com', 256)), 'email_hash'));
 ```
 
@@ -255,9 +251,9 @@ Query results for a single hashed email:
 
 #### Mapping Request Example - Multiple Hashed Emails
 
-The following query illustrates how to map multiple email address hashes, using the [default database and schema names](#database-and-schema-names):
+The following query illustrates how to map multiple email address hashes, using the [default database and schema names](#database-and-schema-names).
 
-```
+```sql
 select a.ID, a.EMAIL_HASH, m.UID, m.BUCKET_ID, m.UNMAPPED from AUDIENCE a LEFT JOIN(
     select ID, t.* from AUDIENCE, lateral EUID_PROD_UID_SH.UID.FN_T_IDENTITY_MAP(EMAIL_HASH, 'email_hash') t) m 
     on a.ID=m.ID;
@@ -279,9 +275,9 @@ The following table identifies each item in the response, including `NULL` value
 
 #### Mapping Request Example - Single Hashed Phone Number
 
-The following query illustrates how to map a single phone number hash, using the [default database and schema names](#database-and-schema-names):
+The following query illustrates how to map a single phone number hash, using the [default database and schema names](#database-and-schema-names).
 
-```
+```sql
 select UID, BUCKET_ID, UNMAPPED from table(EUID_PROD_UID_SH.UID.FN_T_IDENTITY_MAP(BASE64_ENCODE(SHA2_BINARY('+12345678901', 256)), 'phone_hash'));
 ```
 
@@ -297,9 +293,9 @@ Query results for a single hashed phone number:
 
 #### Mapping Request Example - Multiple Hashed Phone Numbers
 
-The following query illustrates how to map multiple phone number hashes, using the [default database and schema names](#database-and-schema-names):
+The following query illustrates how to map multiple phone number hashes, using the [default database and schema names](#database-and-schema-names).
 
-```
+```sql
 select a.ID, a.PHONE_HASH, m.UID, m.BUCKET_ID, m.UNMAPPED from AUDIENCE a LEFT JOIN(
     select ID, t.* from AUDIENCE, lateral EUID_PROD_UID_SH.UID.FN_T_IDENTITY_MAP(PHONE_HASH, 'phone_hash') t) m
     on a.ID=m.ID;
@@ -336,7 +332,7 @@ The following example shows an input table and the query used to find the EUIDs 
 
 In this example scenario, the advertiser/data provider has stored the EUIDs in a table named `AUDIENCE_WITH_EUID`. The last column, `LAST_EUID_UPDATE_UTC`, is used to record the time at which an EUID was generated. If no EUID has been generated, the value is `NULL`, as shown in the third example. The advertiser/data provider can use this timestamp value to determine which EUIDs need to be regenerated.
 
-```
+```sql
 select * from AUDIENCE_WITH_EUID;
 ```
 ```
@@ -353,16 +349,16 @@ To find missing or outdated EUIDs, use the following query examples, which use t
 
 Query:
 
-```
+```sql
 select a.*, b.LAST_SALT_UPDATE_UTC
-	  from AUDIENCE_WITH_EUID a LEFT OUTER JOIN EUID_PROD_UID_SH.UID.SALT_BUCKETS b
-	  on a.BUCKET_ID=b.BUCKET_ID
-	  where a.LAST_EUID_UPDATE_UTC < b.LAST_SALT_UPDATE_UTC or a.UID IS NULL;
+    from AUDIENCE_WITH_EUID a LEFT OUTER JOIN EUID_PROD_UID_SH.UID.SALT_BUCKETS b
+    on a.BUCKET_ID=b.BUCKET_ID
+    where a.LAST_EUID_UPDATE_UTC < b.LAST_SALT_UPDATE_UTC or a.UID IS NULL;
 ```
 
 Query results:
 
-The following table identifies each item in the response. The result includes an email, `UID`, `BUCKET_ID`, `LAST_EUID_UPDATE_UTC`, and `LAST_SALT_UPDATE_UTC` as shown in the ID 1 example below. No information is returned for ID 2 because the corresponding EUID was generated after the last bucket update. For ID 3, `NULL` values are returned due to a missing EUID.
+The following table identifies each item in the response. The result includes an email, `UID`, `BUCKET_ID`, `LAST_EUID_UPDATE_UTC`, and `LAST_SALT_UPDATE_UTC` as shown in the ID 1 example in the table. No information is returned for ID 2 because the corresponding EUID was generated after the last bucket update. For ID 3, `NULL` values are returned due to a missing EUID.
 
 ```
 +----+----------------------+----------------------------------------------+------------+-------------------------+-------------------------+
