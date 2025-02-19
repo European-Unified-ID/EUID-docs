@@ -15,7 +15,7 @@ displayed_sidebar: sidebarPublishers
 ---
 
 import Link from '@docusaurus/Link';
-import IntegratingWithSSO from '/docs/snippets/_integrating-with-sso.mdx';
+import IntegratingWithSSO from '../snippets/_integrating-with-sso.mdx';
 
 As a publisher, you can benefit from the cross-device presence of European Unified ID (EUID) and take advantage of a consistent identity fabric on all your inventory.
 

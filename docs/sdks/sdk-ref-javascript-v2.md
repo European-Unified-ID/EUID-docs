@@ -7,7 +7,7 @@ sidebar_position: 02
 
 import Link from '@docusaurus/Link';
 import ChartSvg from './images/euid-js-sdk-workflow.svg';
-import ExampleEuidCookie from '/docs/snippets/_example-euid-cookie.mdx';
+import ExampleEuidCookie from '../snippets/_example-euid-cookie.mdx';
 
 # SDK for JavaScript Reference Guide (2.x and earlier versions)
 

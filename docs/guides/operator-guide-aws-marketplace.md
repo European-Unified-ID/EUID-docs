@@ -8,7 +8,7 @@ sidebar_position: 17
 ---
 
 import Link from '@docusaurus/Link';
-import AttestFailure from '/docs/snippets/_private-operator-attest-failure.mdx';
+import AttestFailure from '../snippets/_private-operator-attest-failure.mdx';
 
 # EUID Private Operator for AWS Integration Guide
 

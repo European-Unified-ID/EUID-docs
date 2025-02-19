@@ -9,7 +9,7 @@ displayed_sidebar: sidebarPublishers
 ---
 
 import Link from '@docusaurus/Link';
-import IntegratingWithSSO from '/docs/snippets/_integrating-with-sso.mdx';
+import IntegratingWithSSO from '../snippets/_integrating-with-sso.mdx';
 
 # EUID Mobile Integration Overview for Android and iOS
 
