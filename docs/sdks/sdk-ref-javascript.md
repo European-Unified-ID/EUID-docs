@@ -8,7 +8,7 @@ sidebar_position: 02
 import Link from '@docusaurus/Link';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import ExampleEuidCookie from '/docs/snippets/_example-euid-cookie.mdx';
+import ExampleEuidCookie from '../snippets/_example-euid-cookie.mdx';
 
 export const New = () => (
   <span className='pill'>NEW IN V3</span>
