@@ -18,6 +18,10 @@ export const partnersData: PartnersDataType = [
     logo: "eldiario-logo.png",
   },
   {
+    name: "Evolution Group",
+    logo: "evolution.png",
+  },
+  {
     name: "Funke Digital",
     logo: "funke.png",
   },
