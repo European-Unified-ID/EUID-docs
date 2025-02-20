@@ -1,8 +1,8 @@
 import React from "react";
 import clsx from "clsx";
-import Translate from "@docusaurus/Translate";
 import type { Props } from "@theme/NotFound/Content";
 import Heading from "@theme/Heading";
+import Link from "@docusaurus/Link";
 
 export default function NotFoundContent({ className }: Props): JSX.Element {
   return (
@@ -10,30 +10,25 @@ export default function NotFoundContent({ className }: Props): JSX.Element {
       <div className="row">
         <div className="col col--6 col--offset-3">
           <Heading as="h1" className="hero__title">
-            <Translate
-              id="theme.NotFound.title"
-              description="The title of the 404 page"
-            >
-              Page Not Found
-            </Translate>
+            Page Not Found
           </Heading>
           <p>
-            <Translate
-              id="theme.NotFound.p1"
-              description="The first paragraph of the 404 page"
-            >
-              We could not find what you were looking for.
-            </Translate>
+            We couldn't find the page you were looking for. The page might have
+            been moved, or there was an error in the link.
           </p>
-          <p>
-            <Translate
-              id="theme.NotFound.p2"
-              description="The 2nd paragraph of the 404 page"
-            >
-              Please contact the owner of the site that linked you to the
-              original URL and let them know their link is broken.
-            </Translate>
-          </p>
+          <p>Here are some things you can do:</p>
+          <ul>
+            <li>Go back and retry the link.</li>
+            <li>
+              Search for the document by its title or keywords from any UID2
+              page.
+            </li>
+            <li>
+              <Link to="/docs/intro">
+                Visit the UID2 documentation home page
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
     </main>

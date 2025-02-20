@@ -9,6 +9,7 @@ export default function Index(): JSX.Element {
     id: "theme.NotFound.title",
     message: "Page Not Found",
   });
+
   return (
     <>
       <PageMetadata title={title} />
