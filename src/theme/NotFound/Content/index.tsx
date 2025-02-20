@@ -20,12 +20,12 @@ export default function NotFoundContent({ className }: Props): JSX.Element {
           <ul>
             <li>Go back and retry the link.</li>
             <li>
-              Search for the document by its title or keywords from any UID2
+              Search for the document by its title or keywords from any EUID
               page.
             </li>
             <li>
               <Link to="/docs/intro">
-                Visit the UID2 documentation home page
+                Visit the EUID documentation home page.
               </Link>
             </li>
           </ul>
