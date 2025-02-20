@@ -19,24 +19,28 @@ function removeItems(sidebar, ...remove) {
 }
 
 const fullSidebar = [
-    {
-      type: 'category',
-      label: 'EUID Overview',
-      link: {
-        type: 'doc',
-        id: 'intro',
-      },
-      items: [
-        'overviews/overview-publishers',
-        'overviews/overview-advertisers',
-        'overviews/overview-dsps',
-        'overviews/overview-data-providers',
-      ],
-    },
 
-    {
-      type: 'category',
-      label: 'Getting Started',
+  'intro',
+
+  {
+    type: 'category',
+    label: 'EUID Participants',
+    link: {
+      type: 'generated-index',
+    },
+    collapsed: true,
+    items: [
+      'overviews/overview-publishers',
+      'overviews/overview-advertisers',
+      'overviews/overview-dsps',
+      'overviews/overview-data-providers',
+    ],
+  },
+
+
+  {
+    type: 'category',
+    label: 'Getting Started',
       link: {
         type: 'generated-index',
       },
