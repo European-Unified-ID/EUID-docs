@@ -28,6 +28,8 @@ Here are some key points about EUID tokens:
 - Publishers send EUID tokens in the bidstream.
 - Refreshing an EUID token does not invalidate/expire the original or previous EUID token. You can still use the earlier token until it expires.
 
+For more information, see [How the EUID Token Is Created](ref-how-uid-is-created.md).
+
 ## Refresh Tokens: Key Information
 
 Here are some key points about refresh tokens:
