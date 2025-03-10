@@ -37,17 +37,17 @@ To implement, you'll need to complete the following steps:
 
 ## SDK for JavaScript Version
 
-Support for client-side token generation is available in version 3.4.5 and above of the SDK. 
+Support for client-side token generation is available in version 4.0.1 and above of the SDK. 
 
 The URL for the SDK is:
 
-- [https://cdn.prod.euid.eu/euid-sdk-3.4.5.js](https://cdn.prod.euid.eu/euid-sdk-3.4.5.js)
+- [https://cdn.prod.euid.eu/euid-sdk-4.0.1.js](https://cdn.prod.euid.eu/euid-sdk-4.0.1.js)
 
 In the following code examples, the placeholder `{{ EUID_JS_SDK_URL }}` refers to this URL.
 
 If you want to use a debug build of the SDK, use the following URL instead:
 
-- [https://cdn.integ.euid.eu/euid-sdk-3.4.5.js](https://cdn.integ.euid.eu/euid-sdk-3.4.5.js)
+- [https://cdn.integ.euid.eu/euid-sdk-4.0.1.js](https://cdn.integ.euid.eu/euid-sdk-4.0.1.js)
 
 ## Sample Implementation
 
