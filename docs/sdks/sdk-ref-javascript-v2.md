@@ -1,6 +1,6 @@
 ---
-title: SDK for JavaScript (2.x and earlier versions)
-description: Reference information about earlier versions of the JavaScript client-side SDK.
+title: SDK for JavaScript (2.x and earlier)
+description: Reference information about 2.x and earlier versions of the JavaScript client-side SDK.
 hide_table_of_contents: false
 sidebar_position: 02
 ---
@@ -9,10 +9,10 @@ import Link from '@docusaurus/Link';
 import ChartSvg from './images/euid-js-sdk-workflow.svg';
 import ExampleEuidCookie from '../snippets/_example-euid-cookie.mdx';
 
-# SDK for JavaScript Reference Guide (2.x and earlier versions)
+# SDK for JavaScript Reference Guide (v2.x and earlier)
 
-:::tip
-This documentation is for earlier versions of the SDK for JavaScript. If you're using an earlier version, we recommend upgrading. See [SDK for JavaScript Reference Guide](sdk-ref-javascript.md), which includes a migration guide.
+:::important
+This documentation is for earlier versions of the SDK for JavaScript. If you're using an earlier version, we recommend upgrading. See [SDK for JavaScript Reference Guide](sdk-ref-javascript.md), which includes a migration guide to upgrade to the current version, v4.
 :::
 
 Use this SDK to facilitate the process of establishing client identity using EUID and retrieving advertising tokens. The following sections describe the high-level [workflow](#workflow-overview) for establishing EUID identity, provide the SDK [API reference](#api-reference), and explain the [EUID cookie format](#euid-cookie-format).
