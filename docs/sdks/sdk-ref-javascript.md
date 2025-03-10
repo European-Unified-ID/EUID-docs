@@ -163,7 +163,7 @@ Here's what you need to know about the token auto-refresh:
 
 ### Callback Function
 
-You can register functions to receive events from the EUID SDK using the [Array Push Pattern](#array-push-pattern). There are a number of events currently available:
+You can register functions to receive events from the EUID SDK using the [Array Push Pattern](#array-push-pattern). The following events are currently available:
 - `SdkLoaded` is raised after the SDK has been parsed and the global `__euid` object has been constructed. This is useful for calling `init()`, especially if your script loading order is not guaranteed (for example, if you are using `async` or `defer` script loading).
 - `InitCompleted` is raised when `init()` has finished and the SDK is ready for use. If an identity was provided in the `init` call, or the SDK was able to load a previously-provided identity, the identity is included in the payload.
 - `IdentityUpdated` is raised whenever there is a new identity available, or the existing identity is no longer available.
@@ -371,7 +371,7 @@ The `init()` function can throw the following errors.
 
 #### Legacy Callback Function
 
-This is provided only for backward compatibility between version 3 or 4 and earlier versions: new integrations should use the new-style [callback function](#callback-function). Note that the callback parameters are not compatible in either direction: legacy callbacks cannot be registered using the [Array Push Pattern](#array-push-pattern), and new-style callbacks cannot be provided to `init`.
+This is provided only for backward compatibility between version 3 or 4 and earlier versions: new integrations should use the newer [callback function](#callback-function). Note that the callback parameters are not compatible in either direction: legacy callbacks cannot be registered using the [Array Push Pattern](#array-push-pattern), and newer callbacks cannot be provided to `init`.
 
 For details, see [Legacy Callback Function](./sdk-ref-javascript-v2.md#callback-function) in the documentation for earlier versions of this SDK.
 
@@ -560,7 +560,7 @@ Version 3 of the SDK is fully backwards-compatible with earlier versions, but in
 
 In version 3:
 
-- The script is now distributed using the EUID CDN, and should therefore load faster.
+- The script is now distributed using the EUID CDN, and should therefore load faster than previous versions.
 - The SDK tries to use local storage instead of cookies for storing the identity. If the cookie provides a newer token than the one in local storage, the SDK still loads the identity from the cookie.
 
    Notes about this approach:
@@ -645,7 +645,7 @@ window.__euid.callbacks.push((eventType) => {
   // Each callback function you register with the SDK is invoked once with the `SdkLoaded` event type after the SDK has been loaded by the browser and is ready to use.
   if (eventType === 'SdkLoaded' { 
     __euid.init({
-      /* Provide the same options as in your previous code. If you're not using the legacy callback any more, remove it from here. */
+      / Provide the same options as in your previous code. If you're no longer using the legacy callback, remove it from here. */
     });
   })
 });
