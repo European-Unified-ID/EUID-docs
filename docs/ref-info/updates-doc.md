@@ -11,6 +11,27 @@ import Link from '@docusaurus/Link';
 
 Check out the latest updates to our EUID documentation resources.
 
+
+### New: JavaScript SDK Version 4
+
+March 10, 2025
+
+We've added documentation for the recently released update of the EUID SDK for JavaScript, version 4.
+
+For details, see [SDK for JavaScript Reference Guide](../sdks/sdk-ref-javascript.md).
+
+<!-- APIDOCS-2924 -->
+
+### New: How the EUID Token Is Created
+
+March 7, 2025
+
+We've added a page with high-level information about the steps for creating an EUID token, including steps, roles, and a diagram.
+
+For details, see [How the EUID Token Is Created](../ref-info/ref-how-uid-is-created.md).
+
+<!-- APIDOCS-2978 -->
+
 ### New: Snowflake Integration Guide
 
 February 4, 2025
