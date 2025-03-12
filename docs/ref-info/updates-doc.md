@@ -11,8 +11,11 @@ import Link from '@docusaurus/Link';
 
 Check out the latest updates to our EUID documentation resources.
 
+## Q1 2025
 
-### New: JavaScript SDK Version 4
+The following documents were released in this quarter.
+
+### JavaScript SDK Version 4
 
 March 10, 2025
 
@@ -22,7 +25,7 @@ For details, see [SDK for JavaScript Reference Guide](../sdks/sdk-ref-javascript
 
 <!-- APIDOCS-2924 -->
 
-### New: How the EUID Token Is Created
+### How the EUID Token Is Created
 
 March 7, 2025
 
@@ -32,7 +35,7 @@ For details, see [How the EUID Token Is Created](../ref-info/ref-how-uid-is-crea
 
 <!-- APIDOCS-2978 -->
 
-### New: Snowflake Integration Guide
+### Snowflake Integration Guide
 
 February 4, 2025
 
@@ -46,7 +49,7 @@ For details, see [Snowflake Integration Guide](../guides/integration-snowflake.m
 
 <!-- APIDOCS-2893  custom styling. -->
 
-### New: Expanded and Restructured Advertiser/Data Provider Doc
+### Advertiser/Data Provider Doc
 
 January 30, 2025
 
@@ -56,7 +59,7 @@ For details, including a summary of all integration options for advertisers and 
 
 <!-- APIDOCS-2873 -->
 
-### New: Publisher SSO Integration Page
+### Publisher SSO Integration Page
 
 January 10, 2025
 
@@ -66,7 +69,11 @@ For details, see [Publisher Integration with SSO Providers](ref-integration-sso-
 
 <!-- APIDOCS-2871 -->
 
-### New: EUID Sharing page
+## Q4 2024
+
+The following documents were released in the fourth quarter of 2024.
+
+### EUID Sharing page
 
 December 13, 2024
 
@@ -76,17 +83,17 @@ For details, see [EUID Sharing](../getting-started/gs-sharing.md).
 
 <!-- APIDOCS-2624 -->
 
-### New: Zoom-In Tool for Images
+### Zoom-In Tool for Images
 
 December 5, 2024
 
 The EUID docs site now includes a zoom-in tool for images.
 
-Just hover over the image and the tool appears as a magnifying glass... click to view a magnified version of the image.
+Just hover over the image and the tool appears as a magnifying glass, then click to view a magnified version of the image.
 
 <!-- APIDOCS-2237 for both -->
 
-### New: EUID Hashing Tool
+### EUID Hashing Tool
 
 November 26, 2024
 
@@ -96,7 +103,7 @@ For details, see [EUID Hashing Tool](../getting-started/gs-normalization-encodin
 
 <!-- APIDOCS-2772 -->
 
-### New: EUID Phone Number Support
+### EUID Phone Number Support
 
 November 22, 2024
 
@@ -106,7 +113,7 @@ All the EUID documentation has been updated to reflect this support, including r
 
 <!-- APIDOCS-2691 -->
 
-### New: LiveRamp Integration Tips
+### LiveRamp Integration Tips
 
 November 14, 2024
 
@@ -116,7 +123,7 @@ For details, see [LiveRamp Integration Tips](../guides/integration-liveramp-tips
 
 <!-- APIDOCS-2699 -->
 
-### New: GMA Android Doc
+### GMA Android Doc
 
 October 24, 2024
 
@@ -126,7 +133,11 @@ We've added the following new document to support EUID integration with GMA Andr
 
 <!-- APIDOCS-2390 -->
 
-### New: Mobile Docs
+## Q3 2024
+
+The following documents were released in the third quarter of 2024.
+
+### Mobile Docs
 
 September 16, 2024
 
@@ -151,7 +162,7 @@ Additional resources:
 
 <!-- APIDOCS-2554 -->
 
-### New: Private Operator Integrations Page
+### Private Operator Integrations Page
 
 September 13, 2024
 
@@ -161,7 +172,7 @@ For details, see [EUID Private Operator Integration Overview](../guides/integrat
 
 <!-- APIDOCS-2594 -->
 
-### New: Tokens Page
+### Tokens Page
 
 September 12, 2024
 
@@ -171,7 +182,7 @@ For details, see [EUID Tokens and Refresh Tokens](../ref-info/ref-tokens.md).
 
 <!-- APIDOCS-2534 -->
 
-### New: Google Ad Manager Secure Signals Integration Guide
+### Google Ad Manager Secure Signals Integration Guide
 
 September 11, 2024
 
@@ -181,7 +192,7 @@ For details, see [Google Ad Manager Secure Signals Integration Guide](../guides/
 
 <!-- APIDOCS-2495 -->
 
-### New: iOS SDK Guide
+### iOS SDK Guide
 
 August 29, 2024
 
@@ -191,7 +202,7 @@ For details, see [SDK for iOS Reference Guide](../sdks/sdk-ref-ios.md).
 
 <!-- APIDOCS-2526 -->
 
-### New: Server-Side Token Generation Page
+### Server-Side Token Generation Page
 
 July 26, 2024
 
@@ -201,7 +212,7 @@ For details, see [Server-Side Token Generation](ref-server-side-token-generation
 
 <!-- APIDOCS-2436 -->
 
-### New: Integration Approaches Page
+### Integration Approaches Page
 
 July 25, 2024
 
@@ -211,7 +222,11 @@ For details, see [Integration Approaches](ref-integration-approaches.md).
 
 <!-- APIDOCS-2424 -->
 
-### New: Opt-Out API
+## Q2 2024
+
+The following documents were released in the second quarter of 2024.
+
+### Opt-Out API
 
 May 24, 2024
 
