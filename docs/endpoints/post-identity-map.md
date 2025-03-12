@@ -120,8 +120,8 @@ A successful decrypted response returns the raw EUIDs and salt bucket IDs for th
                 "bucket_id": "a30od4mNRd"
             },
             {
-                "identifier": "FRx8SW4ZyKqbPypXmswDNuq0SPxStFXBTG/yvPns/2NQ=",
-                "advertising_id": "IbW4n6LIvtDj/8fCESlU0QG9K/fH63UdcTkJpAG8fIQ=",
+                "identifier": "Rx8SW4ZyKqbPypXmswDNuq0SPxStFXBTG/yvPns/2NQ=",
+                "advertising_id": "FIbW4n6LIvtDj/8fCESlU0QG9K/fH63UdcTkJpAG8fIQ=",
                 "bucket_id": "ad1ANEmVZ"
             }
         ]
