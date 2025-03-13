@@ -469,7 +469,7 @@ If false, an EUID [POST&nbsp;/token/generate](../endpoints/post-token-generate.m
 
 ```html
 <script>
-  __uid2.isIdentityAvailable();
+  __euid.isIdentityAvailable();
 </script>
 ```
 #### Return Values
