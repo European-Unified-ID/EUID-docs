@@ -70,7 +70,7 @@ The following is an example of an unencrypted JSON request body:
 The following is an encrypted opt-out status request example:
 
 ```json
-echo '{"advertising_ids": ["ufv1uGRovNiJNbJqiE/xzM+aKE7jP69MgspOZoEQ3xc="]}' | python3 uid2_request.py https://prod.euid.eu/v2/optout/status [Your-Client-API-Key] [Your-Client-Secret]
+echo '{"advertising_ids": ["Eufv1uGRovNiJNbJqiE/xzM+aKE7jP69MgspOZoEQ3xc"]}' | python3 uid2_request.py https://prod.euid.eu/v2/optout/status [Your-Client-API-Key] [Your-Client-Secret]
 ```
 
 :::note
@@ -92,11 +92,11 @@ A successful decrypted response returns the raw EUIDs that have opted out. For e
   "body": {
     "opted_out": [
       {
-        "advertising_id": "ufv1uGRovNiJNbJqiE/xzM+aKE7jP69MgspOZoEQ3xc=",
+        "advertising_id": "Eufv1uGRovNiJNbJqiE/xzM+aKE7jP69MgspOZoEQ3xc",
         "opted_out_since": 1633643601000
       },
       {
-        "advertising_id": "zstfu9RG/Ih5trR6hlaHP6hw5yt9mYd5TKg2mRpWVng=",
+        "advertising_id": "Fzstfu9RG/Ih5trR6hlaHP6hw5yt9mYd5TKg2mRpWVng",
         "opted_out_since": 1709764087000
       }
     ]
