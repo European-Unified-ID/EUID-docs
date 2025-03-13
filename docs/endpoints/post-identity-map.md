@@ -116,12 +116,12 @@ A successful decrypted response returns the raw EUIDs and salt bucket IDs for th
         "mapped": [
             {
                 "identifier": "EObwtHBUqDNZR33LNSMdtt5cafsYFuGmuY4ZLenlue4=",
-                "advertising_id": "FAdvIvSiaum0P5s3X/7X8h8sz+OhF2IG8DNbEnkWSbYM=",
+                "advertising_id": "FAdvIvSiaum0P5s3X/7X8h8sz+OhF2IG8DNbEnkWSbYM",
                 "bucket_id": "a30od4mNRd"
             },
             {
                 "identifier": "Rx8SW4ZyKqbPypXmswDNuq0SPxStFXBTG/yvPns/2NQ=",
-                "advertising_id": "FIbW4n6LIvtDj/8fCESlU0QG9K/fH63UdcTkJpAG8fIQ=",
+                "advertising_id": "FIbW4n6LIvtDj/8fCESlU0QG9K/fH63UdcTkJpAG8fIQ",
                 "bucket_id": "ad1ANEmVZ"
             }
         ]
@@ -138,7 +138,7 @@ If some identifiers are considered invalid, they are included in the response in
         "mapped": [
             {
                 "identifier": "EObwtHBUqDNZR33LNSMdtt5cafsYFuGmuY4ZLenlue4=",
-                "advertising_id": "FAdvIvSiaum0P5s3X/7X8h8sz+OhF2IG8DNbEnkWSbYM=",
+                "advertising_id": "FAdvIvSiaum0P5s3X/7X8h8sz+OhF2IG8DNbEnkWSbYM",
                 "bucket_id": "a30od4mNRd"
             }
         ],
@@ -161,7 +161,7 @@ If some identifiers have opted out from the EUID ecosystem, the opted-out identi
         "mapped": [
             {
                 "identifier": "EObwtHBUqDNZR33LNSMdtt5cafsYFuGmuY4ZLenlue4=",
-                "advertising_id": "FAdvIvSiaum0P5s3X/7X8h8sz+OhF2IG8DNbEnkWSbYM=",
+                "advertising_id": "FAdvIvSiaum0P5s3X/7X8h8sz+OhF2IG8DNbEnkWSbYM",
                 "bucket_id": "a30od4mNRd"
             }
         ],
