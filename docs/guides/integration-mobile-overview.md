@@ -53,18 +53,19 @@ For details, refer to one of the following guides:
 
 - [Client-Side Integration Guide for Mobile](integration-mobile-client-side.md)
 - [Client-Server Integration Guide for Mobile](integration-mobile-client-server.md)
+- [Client-Side Integration Guide for Mobile](integration-mobile-client-side.md)
 
 ## Mobile Integration Paths
 
 To determine the best integration path for your mobile scenario, consider these points:
 
-1. Do you want to retrieve the EUID token on the client side or on the server side? See [Client-Side or Client-Server Integration](#client-side-or-client-server-integration).
+1. Do you want to retrieve the EUID token on the client side or on the server side? See [Client-Side, Client-Server, or Server-Side Integration?](#client-side-client-server-or-server-side-integration).
 
 1. What do you want to use to retrieve and refresh the EUID token? See [Generating, Storing, and Refreshing the EUID Token](#generating-storing-and-refreshing-the-euid-token).
 
 1. How do you want to use the EUID tokens? See [Sending the Token to the Bidstream](#sending-the-token-to-the-bidstream).
 
-### Client-Side or Client-Server Integration?
+### Client-Side, Client-Server, or Server-Side Integration?
 
 The options for integrating with EUID using the EUID mobile SDKs are summarized in the following table. Choose the <Link href="../ref-info/glossary-uid#gl-integration-approaches">integration approach</Link> that's best for you.
 
@@ -73,7 +74,8 @@ For details, see [Integration Approaches](../ref-info/ref-integration-approaches
 | Scenario | Option | Integration Guide |
 | :--- | :--- | :--- |
 | You have access to <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> (email address or phone number) on the client side/within the mobile app, and want to keep changes within your app only. | Client-side integration | [EUID Client-Side Integration Guide for Mobile](integration-mobile-client-side.md) |
-| You have access to personal data on the server side only and can do the necessary development to generate EUID tokens server-side, or you are using a <Link href="../ref-info/glossary-uid#gl-private-operator">Private Operator</Link>. | Client-Server Integration | [EUID Client-Server Integration Guide for Mobile](integration-mobile-client-server.md) |
+| You have access to personal data on the server side only and can do the necessary development to generate EUID tokens server-side, but you want to refresh tokens on the client side&#8212;or you are using a <Link href="../ref-info/glossary-uid#gl-private-operator">Private Operator</Link>. | Client-Server Integration | [EUID Client-Server Integration Guide for Mobile](integration-mobile-client-server.md) |
+| You have access to personal data on the server side only and can do the necessary development to generate EUID tokens server-side, or you are using a <Link href="../ref-info/glossary-uid#gl-private-operator">Private Operator</Link>. | Server-Side Integration | [EUID Server-Side Integration Guide for Mobile](integration-mobile-server-side.md) |
 
 ### Generating, Storing, and Refreshing the EUID Token
 
