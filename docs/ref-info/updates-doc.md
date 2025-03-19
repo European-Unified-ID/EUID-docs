@@ -15,6 +15,16 @@ Check out the latest updates to our EUID documentation resources.
 
 The following documents were released in this quarter.
 
+### Server-Side Integration Guide for Mobile
+
+March 19, 2025
+
+We've added a guide for mobile app publishers who want to manage the EUID token entirely on the server side.
+
+For details, see [EUID Server-Side Integration Guide for Mobile](../guides/integration-mobile-server-side.md).
+
+<!-- APIDOCS-2932 -->
+
 ### JavaScript SDK Version 4
 
 March 10, 2025
