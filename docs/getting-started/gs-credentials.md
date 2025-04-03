@@ -62,6 +62,10 @@ Security of keys and client secrets is very important. Follow these guidelines:
 
 It's best to refresh your API key and client secret on a regular cadence&#8212;for example, yearly&#8212;to help reduce the risk of your credentials being compromised.
 
+## Separate Credentials for Each Environment
+
+If you want to use the integration environment as well as the production environment, you'll need a separate set of credentials for each environment. For details about the different environments, see [Environments](gs-environments.md).
+
 ## Refreshing Credentials
 
 To request new credentials at any time, ask your EUID contact.

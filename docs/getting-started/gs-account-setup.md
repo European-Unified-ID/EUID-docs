@@ -55,6 +55,10 @@ If you'll be requesting EUID tokens from the client side in [mobile apps](../gui
 
 When you've signed a contract for participating in EUID, we'll give you [EUID credentials](gs-credentials.md) and additional information for getting up and running with EUID.
 
+:::note
+If you want to use the integration environment as well as the production environment, you'll need a separate set of credentials for each environment. For details about the different environments, see [Environments](gs-environments.md).
+:::
+
 ## API Version
 
 The current version of the EUID API is v2.
