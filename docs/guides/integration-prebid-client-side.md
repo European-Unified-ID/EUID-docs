@@ -33,6 +33,10 @@ An example of the EUID Prebid.js client-side integration is available at the fol
 - Code: [Example Prebid.js EUID Integration](https://github.com/European-Unified-ID/EUID-docs/tree/main/static/examples/cstg-prebid-example)
 - Running site: [EUID Prebid.js Client-Side Integration Example](https://euid.eu/examples/cstg-prebid-example/)
 
+## Integrating with Single Sign-On (SSO)
+
+<IntegratingWithSSO />
+
 ## Integration Overview: High-Level Steps
 
 You'll need to complete the following steps:
@@ -41,19 +45,19 @@ You'll need to complete the following steps:
 2. [Add Prebid.js to your site](#add-prebidjs-to-your-site).
 3. [Configure the EUID module](#configure-the-euid-module).
 
-## Integrating with Single Sign-On (SSO)
-
-<IntegratingWithSSO />
-
 ### Complete EUID Account Setup
 
-Complete the EUID account setup by following the steps described in the [Account Setup](../getting-started/gs-account-setup.md) page. As part of the account setup process for a client-side implementation, you'll need to provide a list of domain names for the sites that you'll be using with Prebid.js.
+Complete the EUID account setup by following the steps described on the [Account Setup](../getting-started/gs-account-setup.md) page. As part of the account setup process for a client-side implementation, you'll need to provide a list of domain names for the sites that you'll be using with Prebid.js.
 
 :::tip
 Only root-level domains are required for account setup. For example, if you're going to use EUID with Prebid.js on example.com, shop.example.com, and example.org, you only need to provide the domain names example.com and example.org.
 :::
 
 When account setup is complete, you'll receive a client keypair consisting of two values that identify you to the EUID servers: Subscription ID and public key. These values are unique to you, and you'll use them to configure the EUID module. For details, see [Subscription ID and Public Key](../getting-started/gs-credentials.md#subscription-id-and-public-key).
+
+:::note
+If you want to use the integration environment as well as the production environment, you'll need a separate set of credentials for each environment. For details, see [EUID Credentials](../getting-started/gs-credentials.md) and [Environments](../getting-started/gs-environments.md).
+:::
 
 ### Add Prebid.js to Your Site
 
