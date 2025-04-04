@@ -20,22 +20,36 @@ function removeItems(sidebar, ...remove) {
 
 const fullSidebar = [
 
-  'intro',
-
   {
     type: 'category',
-    label: 'EUID Participants',
+    label: 'Overview',
     link: {
-      type: 'generated-index',
+      type: 'doc',
+      id: 'intro',
     },
-    collapsed: true,
+    collapsed: false,
     items: [
-      'overviews/overview-publishers',
-      'overviews/overview-advertisers',
-      'overviews/overview-dsps',
-      'overviews/overview-data-providers',
+      'ref-info/uid-identifier-types',
+      'ref-info/uid-components',
+      'ref-info/uid-workflows',
     ],
   },
+ 
+    {
+      type: 'category',
+      label: 'EUID Participants',
+      link: {
+        type: 'doc',
+        id: 'overviews/participants-overview',
+      },
+      collapsed: true,
+      items: [
+        'overviews/overview-publishers',
+        'overviews/overview-advertisers',
+        'overviews/overview-dsps',
+        'overviews/overview-data-providers',
+      ],
+    },
 
 
   {
