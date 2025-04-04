@@ -70,7 +70,7 @@ For information about key elements of the EUID infrastructure, and other aspects
 - [EUID Identifier Types](ref-info/uid-identifier-types.md)
 - [UID2 Components](ref-info/uid-components.md)
 - [EUID Participants](overviews/participants-overview.md)
-- [Workflows](ref-info/uid-workflows.md)
+- [EUID Workflows](ref-info/uid-workflows.md)
 
 ## FAQs
 
