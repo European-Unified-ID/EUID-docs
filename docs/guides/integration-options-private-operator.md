@@ -8,7 +8,7 @@ import Link from '@docusaurus/Link';
 
 # EUID Private Operator Integration Overview
 
-EUID participants that host their own <Link href="../ref-info/glossary-uid#gl-private-operator">Private Operator</Link> send their own first-party <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to their own, local EUID <Link href="../ref-info/glossary-uid#gl-operator">Operator</Link> service, running in a private environment.
+EUID participants that host their own <Link href="../ref-info/glossary-uid#gl-private-operator">Private Operator</Link> send their own first-party <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to their own local EUID <Link href="../ref-info/glossary-uid#gl-operator">Operator</Link> service, running in a private environment.
 
 A Private Operator runs in an <Link href="../ref-info/glossary-uid#gl-enclave">enclave</Link>&#8212;a virtual machine with additional security features to prevent unauthorized access, so that unauthorized individuals cannot download any configuration information or data from the virtual machine.
 

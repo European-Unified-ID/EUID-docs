@@ -82,7 +82,8 @@ const fullSidebar = [
           type: 'category',
           label: 'Publisher Integrations',
           link: {
-            type: 'generated-index',
+            type: 'doc',
+            id: 'guides/integration-options-publisher-all',
           },
           collapsed: true,
 
