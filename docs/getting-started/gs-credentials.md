@@ -9,7 +9,7 @@ import Link from '@docusaurus/Link';
 
 # EUID Credentials
 
-Each EUID <a href="../overviews/participants-overview.md">participant</a> gets a set of unique credentials. The set of credentials you get is determined by how you are participating in EUID, as shown in the following table.
+Each EUID <a href="../overviews/participants-overview">participant</a> gets a set of unique credentials. The set of credentials you get is determined by how you are participating in EUID, as shown in the following table.
 
 | Audience | Credentials | Integration |
 | :--- | :--- | :--- |

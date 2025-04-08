@@ -180,7 +180,7 @@ import MdxJumpAnchor from '@site/src/components/MdxJumpAnchor';
 
 <dt><MdxJumpAnchor id="gl-core-service"><a href="#gl-core-service">Core Service</a></MdxJumpAnchor></dt>
 <dd>The EUID Core Service is a centralized service that manages access to secret <a href="#gl-salt">salts</a>, encryption keys, and other relevant data in the EUID ecosystem.</dd>
-<dd>For an overview of all the EUID services, see <a href="uid-components.md">Components</a>.</dd>
+<dd>For an overview of all the EUID services, see <a href="uid-components">Components</a>.</dd>
 
 </dl>
 
@@ -216,7 +216,7 @@ import MdxJumpAnchor from '@site/src/components/MdxJumpAnchor';
 
 <dt><MdxJumpAnchor id="gl-euid-identifier"><a href="#gl-euid-identifier">EUID identifier</a></MdxJumpAnchor></dt>
 <dd>There are two European Unified ID (EUID) identifier types: <a href="#gl-raw-euid">raw EUIDs</a> and <a href="#gl-euid-token">EUID tokens</a> (also known as advertising tokens).</dd>
-<dd>For details, see <a href="uid-identifier-types.md">EUID Identifier Types</a>.</dd>
+<dd>For details, see <a href="uid-identifier-types">EUID Identifier Types</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-euid-service"><a href="#gl-euid-service">EUID service</a></MdxJumpAnchor></dt>
 <dd>The European Unified ID (EUID) service is a set of components, API endpoints, and other types of solutions that collectively implement the <a href="#gl-euid-framework">EUID framework</a> and provide clients with access to the relevant EUID functionality.</dd>
@@ -228,7 +228,7 @@ import MdxJumpAnchor from '@site/src/components/MdxJumpAnchor';
 <dd>The token value is opaque: No assumptions should be made about the format or about the length of the string.</dd>
 <dd>The token has a limited life, but can be refreshed in the background using the <a href="#gl-refresh-token">refresh token</a>.</dd>
 <dd>Publishers send EUID tokens in the bidstream.</dd>
-<dd>For details, see <a href="uid-identifier-types.md">EUID Identifier Types</a>, <a href="ref-tokens#euid-tokens-key-information">EUID Tokens: Key Information</a>, and <a href="ref-how-uid-is-created">How the EUID Token Is Created</a>.</dd>
+<dd>For details, see <a href="uid-identifier-types">EUID Identifier Types</a>, <a href="ref-tokens#euid-tokens-key-information">EUID Tokens: Key Information</a>, and <a href="ref-how-uid-is-created">How the EUID Token Is Created</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-euid"><a href="#gl-euid">European Unified ID</a></MdxJumpAnchor></dt>
 <dd>The term EUID can be used to mean the <a href="#gl-euid-framework">EUID framework</a>, the <a href="#gl-euid-service">EUID service</a>, a <a href="#gl-raw-euid">raw EUID</a>, or a <a href="#gl-euid-token">EUID token</a> (advertising token).</dd>
@@ -330,7 +330,7 @@ import MdxJumpAnchor from '@site/src/components/MdxJumpAnchor';
 
 <dt><MdxJumpAnchor id="gl-operator-service"><a href="#gl-operator-service">Operator Service</a></MdxJumpAnchor></dt>
 <dd>A service that enables all functions of the <a href="#gl-operator">Operator</a>.</dd>
-<dd>For an overview of all the EUID services, see <a href="uid-components.md">Components</a>.</dd>
+<dd>For an overview of all the EUID services, see <a href="uid-components">Components</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-opt-out"><a href="#gl-opt-out">Opt-out</a></MdxJumpAnchor></dt>
 <dd>An end user who participates in the EUID ecosystem can opt out at any time by going to the <a href="https://www.transparentadvertising.eu/">Transparency and Control Portal</a>.</dd>
@@ -338,7 +338,7 @@ import MdxJumpAnchor from '@site/src/components/MdxJumpAnchor';
 
 <dt><MdxJumpAnchor id="gl-opt-out-service"><a href="#gl-opt-out-service">Opt-Out Service</a></MdxJumpAnchor></dt>
 <dd>The Opt-Out Service is a global EUID service that manages and stores user opt-out requests.</dd>
-<dd>For an overview of all the EUID services, see <a href="uid-components.md">Components</a>.</dd>
+<dd>For an overview of all the EUID services, see <a href="uid-components">Components</a>.</dd>
 
 </dl>
 
@@ -348,7 +348,7 @@ import MdxJumpAnchor from '@site/src/components/MdxJumpAnchor';
 
 <dt><MdxJumpAnchor id="gl-participant"><a href="#gl-participant">Participant</a></MdxJumpAnchor></dt>
 <dd>An entity that fulfils a key role in EUID. Participants include the following: Core Administrator, Operator, DSP, data provider, advertiser, publisher, consumer.</dd>
-<dd>For details, see <a href="../overviews/participants-overview.md">participants</a>.</dd>
+<dd>For details, see <a href="../overviews/participants-overview">participants</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-personal-data"><a href="#gl-personal-data">Personal data</a></MdxJumpAnchor></dt>
 <dd>In general, personal data is information that relates to an identified or identifiable individual, including name, email address, or phone number.</dd>
@@ -377,7 +377,7 @@ import MdxJumpAnchor from '@site/src/components/MdxJumpAnchor';
 
 <dt><MdxJumpAnchor id="gl-raw-euid"><a href="#gl-raw-euid">Raw EUID</a></MdxJumpAnchor></dt>
 <dd>An unencrypted alphanumeric identifier created through the EUID APIs or SDKs with the user's <a href="#gl-personal-data">personal data</a> (email address or phone number) as input. The raw EUID is encrypted to create an <a href="#gl-euid-token">EUID token</a>. The raw EUID is a unique value; no two raw EUIDs are the same. Raw EUIDs, and their associated EUID tokens, are case sensitive.</dd>
-<dd>For details, see <a href="uid-identifier-types.md">EUID Identifier Types</a>.</dd>
+<dd>For details, see <a href="uid-identifier-types">EUID Identifier Types</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-refresh-token"><a href="#gl-refresh-token">Refresh token</a></MdxJumpAnchor></dt>
 <dd>A refresh token is an opaque string that is issued along with the <a href="#gl-euid-token">EUID token</a>. It is used to refresh the EUID token, which has a limited life.</dd>
