@@ -86,14 +86,14 @@ The SDK is published in these locations:
   This is the easiest way to include the SDK in your own build. Use this if you want to bundle the SDK along with your other JavaScript or TypeScript files.
 
   You can also use this for TypeScript type information and still load the script via the CDN. If you do this, ensure that the version of the NPM package that you have installed matches the version in the CDN URL.
-- CDN: `https://cdn.prod.uidapi.com/uid2-sdk-${VERSION_ID}.js`
 
-  >NOTE: This SDK is valid for UID2 and EUID. Some of the code naming and URLs are labelled as UID2. These apply equally to EUID.
+  >NOTE: This SDK is valid for both UID2 and EUID. The SDK, and some of its technical components, are named UID2, but are equally applicable for EUID.
+- CDN: `https://cdn.prod.uidapi.com/uid2-sdk-${VERSION_ID}.js`
 
   This is the easiest way to include the SDK in your site if you don't use a build pipeline to bundle your JavaScript.
 
-  As of the latest update to this document, the most recent version is [4.0.1](https://cdn.prod.uidapi.com/uid2-sdk-4.0.1.js). You can also see [the list of available versions](https://cdn.prod.uidapi.com/).
-- CDN (Integration): `https://cdn.integ.uidapi.com/uid2-sdk-${VERSION_ID}.js`
+  As of the latest update to this document, the most recent version is [4.0.1](https://cdn.prod.euid.eu/euid-sdk-4.0.1.js). You can also see [the list of available versions](https://cdn.prod.euid.eu/).
+- CDN (Integration): `https://cdn.integ.euid.eu/euid-sdk-${VERSION_ID}.js`
 
   This integration URL contains un-minified code and is intended for testing purposes only. Do not use this URL for your production site.
 
