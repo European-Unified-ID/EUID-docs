@@ -107,7 +107,7 @@ Whether decrypting with the `BidstreamClient` class<!--  or the `SharingClient` 
 | Methods            | Description                                                                                                                                     |
 |:-------------------|:------------------------------------------------------------------------------------------------------------------------------------------------|
 | `getStatus()`      | The decryption result status. For a list of possible values and definitions, see [Decryption Response Statuses](#decryption-response-statuses). |
-| `getSiteId()`      | The raw EUID for the corresponding EUID token.                                                                                                  |
+| `getUid()`         | The raw EUID for the corresponding EUID token.                                                                                                 |
 | `getEstablished()` | The timestamp indicating when a user first established the EUID with the publisher.                                                             |
 
 ### Decryption Response Statuses
