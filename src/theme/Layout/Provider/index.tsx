@@ -13,6 +13,7 @@ import {
   PluginHtmlClassNameProvider,
 } from "@docusaurus/theme-common/internal";
 import { DocsPreferredVersionContextProvider } from "@docusaurus/plugin-content-docs/client";
+import { CustomTagsContextProvider } from "@site/src/components/CustomTags/CustomTagsContext";
 
 const Provider = composeProviders([
   ColorModeProvider,
@@ -21,6 +22,7 @@ const Provider = composeProviders([
   DocsPreferredVersionContextProvider,
   PluginHtmlClassNameProvider,
   NavbarProvider,
+  CustomTagsContextProvider,
 ]);
 
 function RestoreTheme() {
