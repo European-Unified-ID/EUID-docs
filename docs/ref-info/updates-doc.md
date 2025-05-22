@@ -6,14 +6,20 @@ sidebar_position: 06
 ---
 
 import Link from '@docusaurus/Link';
+import CustomTagsFilters from "@site/src/components/CustomTags/CustomTagsFilters";
+import CustomTagsContainer from "@site/src/components/CustomTags/CustomTagsContainer";
 
 # Documentation Updates
+
+<CustomTagsFilters />
 
 Check out the latest updates to our EUID documentation resources.
 
 ## Q1 2025
 
 The following documents were released in this quarter.
+
+<CustomTagsContainer tags="All, Guides, Mobile">
 
 ### Server-Side Integration Guide for Mobile
 
@@ -25,6 +31,10 @@ For details, see [EUID Server-Side Integration Guide for Mobile](../guides/integ
 
 <!-- APIDOCS-2932 -->
 
+</CustomTagsContainer>
+
+<CustomTagsContainer tags="All, SDKs">
+
 ### JavaScript SDK Version 4
 
 March 10, 2025
@@ -35,6 +45,10 @@ For details, see [SDK for JavaScript Reference Guide](../sdks/sdk-ref-javascript
 
 <!-- APIDOCS-2924 -->
 
+</CustomTagsContainer>
+
+<CustomTagsContainer tags="All, Reference">
+
 ### How the EUID Token Is Created
 
 March 7, 2025
@@ -43,7 +57,11 @@ We've added a page with high-level information about the steps for creating an E
 
 For details, see [How the EUID Token Is Created](../ref-info/ref-how-uid-is-created.md).
 
-<!-- APIDOCS-2978 -->
+<!-- APIDOCS-978 -->
+
+</CustomTagsContainer>
+
+<CustomTagsContainer tags="All, Guides">
 
 ### Snowflake Integration Guide
 
@@ -59,6 +77,10 @@ For details, see [Snowflake Integration Guide](../guides/integration-snowflake.m
 
 <!-- APIDOCS-2893  custom styling. -->
 
+</CustomTagsContainer>
+
+<CustomTagsContainer tags="All, Guides">
+
 ### Advertiser/Data Provider Doc
 
 January 30, 2025
@@ -68,6 +90,10 @@ We've significantly expanded and restructured the Advertiser/Data Provider docum
 For details, including a summary of all integration options for advertisers and data providers, see [Advertiser/Data Provider Integration Overview](../guides/integration-advertiser-dataprovider-overview.md).
 
 <!-- APIDOCS-2873 -->
+
+</CustomTagsContainer>
+
+<CustomTagsContainer tags="All, Reference">
 
 ### Publisher SSO Integration Page
 
@@ -79,9 +105,13 @@ For details, see [Publisher Integration with SSO Providers](ref-integration-sso-
 
 <!-- APIDOCS-2871 -->
 
+</CustomTagsContainer>
+
 ## Q4 2024
 
 The following documents were released in the fourth quarter of 2024.
+
+<CustomTagsContainer tags="All, Sharing">
 
 ### EUID Sharing page
 
@@ -93,6 +123,10 @@ For details, see [EUID Sharing](../getting-started/gs-sharing.md).
 
 <!-- APIDOCS-2624 -->
 
+</CustomTagsContainer>
+
+<CustomTagsContainer tags="All, Infrastructure">
+
 ### Zoom-In Tool for Images
 
 December 5, 2024
@@ -102,6 +136,10 @@ The EUID docs site now includes a zoom-in tool for images.
 Just hover over the image and the tool appears as a magnifying glass, then click to view a magnified version of the image.
 
 <!-- APIDOCS-2237 for both -->
+
+</CustomTagsContainer>
+
+<CustomTagsContainer tags="All, Reference">
 
 ### EUID Hashing Tool
 
@@ -113,6 +151,10 @@ For details, see [EUID Hashing Tool](../getting-started/gs-normalization-encodin
 
 <!-- APIDOCS-2772 -->
 
+</CustomTagsContainer>
+
+<CustomTagsContainer tags="All, Reference">
+
 ### EUID Phone Number Support
 
 November 22, 2024
@@ -122,6 +164,10 @@ EUID now supports phone numbers, as well as email addresses, as valid <Link href
 All the EUID documentation has been updated to reflect this support, including reference information, procedures, and code samples. 
 
 <!-- APIDOCS-2691 -->
+
+</CustomTagsContainer>
+
+<CustomTagsContainer tags="All, Guides">
 
 ### LiveRamp Integration Tips
 
@@ -133,6 +179,10 @@ For details, see [LiveRamp Integration Tips](../guides/integration-liveramp-tips
 
 <!-- APIDOCS-2699 -->
 
+</CustomTagsContainer>
+
+<CustomTagsContainer tags="All, Guides, Mobile, SDKs">
+
 ### GMA Android Doc
 
 October 24, 2024
@@ -143,11 +193,15 @@ We've added the following new document to support EUID integration with GMA Andr
 
 <!-- APIDOCS-2390 -->
 
+</CustomTagsContainer>
+
 ## Q3 2024
 
 The following documents were released in the third quarter of 2024.
 
 ### Mobile Docs
+
+<CustomTagsContainer tags="All, Guides, CTV, Mobile, Prebid, SDKs">
 
 September 16, 2024
 
@@ -172,7 +226,11 @@ Additional resources:
 
 <!-- APIDOCS-2554 -->
 
-### Private Operator Integrations Page
+</CustomTagsContainer>
+
+<CustomTagsContainer tags="All, Guides, Private Operator">
+
+### Private Operator Integration Overview
 
 September 13, 2024
 
@@ -181,6 +239,10 @@ We've added a new page with information about Private Operator integrations.
 For details, see [EUID Private Operator Integration Overview](../guides/integration-options-private-operator).
 
 <!-- APIDOCS-2594 -->
+
+</CustomTagsContainer>
+
+<CustomTagsContainer tags="All, Reference">
 
 ### Tokens Page
 
@@ -192,6 +254,10 @@ For details, see [EUID Tokens and Refresh Tokens](../ref-info/ref-tokens.md).
 
 <!-- APIDOCS-2534 -->
 
+</CustomTagsContainer>
+
+<CustomTagsContainer tags="All, Guides">
+
 ### Google Ad Manager Secure Signals Integration Guide
 
 September 11, 2024
@@ -201,6 +267,10 @@ We've added a guide with integration steps for publishers using EUID with the Go
 For details, see [Google Ad Manager Secure Signals Integration Guide](../guides/integration-google-ss.md).
 
 <!-- APIDOCS-2495 -->
+
+</CustomTagsContainer>
+
+<CustomTagsContainer tags="All, Guides, Mobile, SDKs">
 
 ### iOS SDK Guide
 
@@ -212,6 +282,10 @@ For details, see [SDK for iOS Reference Guide](../sdks/sdk-ref-ios.md).
 
 <!-- APIDOCS-2526 -->
 
+</CustomTagsContainer>
+
+<CustomTagsContainer tags="All, Reference">
+
 ### Server-Side Token Generation Page
 
 July 26, 2024
@@ -221,6 +295,10 @@ We've added a new reference page with information for publishers generating the 
 For details, see [Server-Side Token Generation](ref-server-side-token-generation.md).
 
 <!-- APIDOCS-2436 -->
+
+</CustomTagsContainer>
+
+<CustomTagsContainer tags="All, Reference">
 
 ### Integration Approaches Page
 
@@ -232,9 +310,13 @@ For details, see [Integration Approaches](ref-integration-approaches.md).
 
 <!-- APIDOCS-2424 -->
 
+</CustomTagsContainer>
+
 ## Q2 2024
 
 The following documents were released in the second quarter of 2024.
+
+<CustomTagsContainer tags="All, Opt-Out">
 
 ### Opt-Out API
 
@@ -248,6 +330,10 @@ For details, see [POST&nbsp;/optout/status](../endpoints/post-optout-status.md).
 
 <!-- APIDOCS-2252 -->
 
+</CustomTagsContainer>
+
+<CustomTagsContainer tags="All, Infrastructure">
+
 ### EUID Documentation Website Release
 
 April 8, 2024
@@ -255,3 +341,5 @@ April 8, 2024
 On 8 April 2024, this documentation website was released!
 
 <!-- PR #79 -->
+
+</CustomTagsContainer>
