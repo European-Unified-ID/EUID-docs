@@ -6,8 +6,8 @@ sidebar_position: 06
 ---
 
 import Link from '@docusaurus/Link';
-import CustomTagsFilters from "@site/src/components/CustomTags/CustomTagsFilters";
-import CustomTagsContainer from "@site/src/components/CustomTags/CustomTagsContainer";
+import CustomTagsFilters from '@site/src/components/CustomTags/CustomTagsFilters';
+import CustomTagsContainer from '@site/src/components/CustomTags/CustomTagsContainer';
 
 # Documentation Updates
 
@@ -19,7 +19,7 @@ Check out the latest updates to our EUID documentation resources.
 
 The following documents were released in this quarter.
 
-<CustomTagsContainer tags="All, Guides, Mobile">
+<CustomTagsContainer tags="Guides, Mobile">
 
 ### Server-Side Integration Guide for Mobile
 
@@ -33,7 +33,7 @@ For details, see [EUID Server-Side Integration Guide for Mobile](../guides/integ
 
 </CustomTagsContainer>
 
-<CustomTagsContainer tags="All, SDKs">
+<CustomTagsContainer tags="SDKs">
 
 ### JavaScript SDK Version 4
 
@@ -47,7 +47,7 @@ For details, see [SDK for JavaScript Reference Guide](../sdks/sdk-ref-javascript
 
 </CustomTagsContainer>
 
-<CustomTagsContainer tags="All, Reference">
+<CustomTagsContainer tags="Reference">
 
 ### How the EUID Token Is Created
 
@@ -61,7 +61,7 @@ For details, see [How the EUID Token Is Created](../ref-info/ref-how-uid-is-crea
 
 </CustomTagsContainer>
 
-<CustomTagsContainer tags="All, Guides">
+<CustomTagsContainer tags="Guides">
 
 ### Snowflake Integration Guide
 
@@ -79,7 +79,7 @@ For details, see [Snowflake Integration Guide](../guides/integration-snowflake.m
 
 </CustomTagsContainer>
 
-<CustomTagsContainer tags="All, Guides">
+<CustomTagsContainer tags="Guides">
 
 ### Advertiser/Data Provider Doc
 
@@ -93,7 +93,7 @@ For details, including a summary of all integration options for advertisers and 
 
 </CustomTagsContainer>
 
-<CustomTagsContainer tags="All, Reference">
+<CustomTagsContainer tags="Reference">
 
 ### Publisher SSO Integration Page
 
@@ -111,7 +111,7 @@ For details, see [Publisher Integration with SSO Providers](ref-integration-sso-
 
 The following documents were released in the fourth quarter of 2024.
 
-<CustomTagsContainer tags="All, Sharing">
+<CustomTagsContainer tags="Sharing">
 
 ### EUID Sharing page
 
@@ -125,7 +125,7 @@ For details, see [EUID Sharing](../getting-started/gs-sharing.md).
 
 </CustomTagsContainer>
 
-<CustomTagsContainer tags="All, Infrastructure">
+<CustomTagsContainer tags="Infrastructure">
 
 ### Zoom-In Tool for Images
 
@@ -139,7 +139,7 @@ Just hover over the image and the tool appears as a magnifying glass, then click
 
 </CustomTagsContainer>
 
-<CustomTagsContainer tags="All, Reference">
+<CustomTagsContainer tags="Reference">
 
 ### EUID Hashing Tool
 
@@ -153,7 +153,7 @@ For details, see [EUID Hashing Tool](../getting-started/gs-normalization-encodin
 
 </CustomTagsContainer>
 
-<CustomTagsContainer tags="All, Reference">
+<CustomTagsContainer tags="Reference">
 
 ### EUID Phone Number Support
 
@@ -167,7 +167,7 @@ All the EUID documentation has been updated to reflect this support, including r
 
 </CustomTagsContainer>
 
-<CustomTagsContainer tags="All, Guides">
+<CustomTagsContainer tags="Guides">
 
 ### LiveRamp Integration Tips
 
@@ -181,7 +181,7 @@ For details, see [LiveRamp Integration Tips](../guides/integration-liveramp-tips
 
 </CustomTagsContainer>
 
-<CustomTagsContainer tags="All, Guides, Mobile, SDKs">
+<CustomTagsContainer tags="Guides, Mobile, SDKs">
 
 ### GMA Android Doc
 
@@ -201,7 +201,7 @@ The following documents were released in the third quarter of 2024.
 
 ### Mobile Docs
 
-<CustomTagsContainer tags="All, Guides, CTV, Mobile, Prebid, SDKs">
+<CustomTagsContainer tags="Guides, CTV, Mobile, Prebid, SDKs">
 
 September 16, 2024
 
@@ -228,7 +228,7 @@ Additional resources:
 
 </CustomTagsContainer>
 
-<CustomTagsContainer tags="All, Guides, Private Operator">
+<CustomTagsContainer tags="Guides, Private Operator">
 
 ### Private Operator Integration Overview
 
@@ -242,7 +242,7 @@ For details, see [EUID Private Operator Integration Overview](../guides/integrat
 
 </CustomTagsContainer>
 
-<CustomTagsContainer tags="All, Reference">
+<CustomTagsContainer tags="Reference">
 
 ### Tokens Page
 
@@ -256,7 +256,7 @@ For details, see [EUID Tokens and Refresh Tokens](../ref-info/ref-tokens.md).
 
 </CustomTagsContainer>
 
-<CustomTagsContainer tags="All, Guides">
+<CustomTagsContainer tags="Guides">
 
 ### Google Ad Manager Secure Signals Integration Guide
 
@@ -270,7 +270,7 @@ For details, see [Google Ad Manager Secure Signals Integration Guide](../guides/
 
 </CustomTagsContainer>
 
-<CustomTagsContainer tags="All, Guides, Mobile, SDKs">
+<CustomTagsContainer tags="Guides, Mobile, SDKs">
 
 ### iOS SDK Guide
 
@@ -284,7 +284,7 @@ For details, see [SDK for iOS Reference Guide](../sdks/sdk-ref-ios.md).
 
 </CustomTagsContainer>
 
-<CustomTagsContainer tags="All, Reference">
+<CustomTagsContainer tags="Reference">
 
 ### Server-Side Token Generation Page
 
@@ -298,7 +298,7 @@ For details, see [Server-Side Token Generation](ref-server-side-token-generation
 
 </CustomTagsContainer>
 
-<CustomTagsContainer tags="All, Reference">
+<CustomTagsContainer tags="Reference">
 
 ### Integration Approaches Page
 
@@ -316,7 +316,7 @@ For details, see [Integration Approaches](ref-integration-approaches.md).
 
 The following documents were released in the second quarter of 2024.
 
-<CustomTagsContainer tags="All, Opt-Out">
+<CustomTagsContainer tags="Opt-Out">
 
 ### Opt-Out API
 
@@ -332,7 +332,7 @@ For details, see [POST&nbsp;/optout/status](../endpoints/post-optout-status.md).
 
 </CustomTagsContainer>
 
-<CustomTagsContainer tags="All, Infrastructure">
+<CustomTagsContainer tags="Infrastructure">
 
 ### EUID Documentation Website Release
 
