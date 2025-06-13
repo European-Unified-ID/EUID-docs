@@ -13,7 +13,7 @@ import PrivateOperatorOption from '../snippets/_private-operator-option.mdx'
 
 # CTV Integration Guide
 
-If you're a CTV publisher, there are several ways that you can integrate with EUID to generate and refresh identity tokens to be passed into the RTB bidstream in the context of your CTV apps.
+If you're a Connected TV (CTV) publisher, there are several ways that you can integrate with EUID to generate and refresh identity tokens to be passed into the RTB bidstream in the context of your CTV apps.
 
 ## Key Integration Steps
 At a high level, to integrate with EUID, you'll implement these three key steps: 
