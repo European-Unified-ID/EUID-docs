@@ -93,7 +93,7 @@ The SDK is published in these locations:
 
   This is the easiest way to include the SDK in your site if you don't use a build pipeline to bundle your JavaScript.
 
-  As of the latest update to this document, the most recent version is [3.4.5](https://cdn.prod.euid.eu/euid-sdk-3.4.5.js). You can also see [the list of available versions](https://cdn.prod.euid.eu/).
+  As of the latest update to this document, the most recent version is [3.9.0](https://cdn.prod.euid.eu/euid-sdk-3.9.0.js). You can also see [the list of available versions](https://cdn.prod.euid.eu/).
 - CDN (Integration): `https://cdn.integ.euid.eu/euid-sdk-${VERSION_ID}.js`
 
   This integration URL contains un-minified code and is intended for testing purposes only. Do not use this URL for your production site.
@@ -111,7 +111,7 @@ In this document, the following terms apply:
 On every page where you want to use EUID for targeted advertising, include the following SDK script:
 
 ```html
-<script src="https://cdn.prod.euid.eu/euid-sdk-3.4.5.js" type="text/javascript"></script> 
+<script src="https://cdn.prod.euid.eu/euid-sdk-3.9.0.js" type="text/javascript"></script> 
 ```
 
 ### Async or Defer Loading the SDK Script
@@ -126,7 +126,7 @@ If you are using `async` or `defer` script loading on your site, do the followin
    ```html
    <head>
      <!-- ... -->
-     <script async src="https://cdn.prod.euid.eu/euid-sdk-3.4.5.js" type="text/javascript"></script>
+     <script async src="https://cdn.prod.euid.eu/euid-sdk-3.9.0.js" type="text/javascript"></script>
      <!-- ... -->
    </head>
    ```
