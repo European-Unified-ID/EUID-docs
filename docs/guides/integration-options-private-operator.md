@@ -5,6 +5,7 @@ hide_table_of_contents: false
 ---
 
 import Link from '@docusaurus/Link';
+import UpgradePolicy from '../snippets/_private-operator-upgrade-policy.mdx';
 
 # EUID Private Operator Integration Overview
 
@@ -79,6 +80,10 @@ Each supported Private Operator implementation must meet rigorous security stand
 There are a couple of limitations to Private Operator functionality:
 - Private Operators do not currently support <Link href="../ref-info/glossary-uid#gl-client-side">client-side integration</Link>.
 - Private Operator updates are released three times per year; Public Operator updates are released on a more frequent cadence.
+
+## Private Operator Upgrade Policy
+
+<UpgradePolicy />
 
 ## Getting Started
 

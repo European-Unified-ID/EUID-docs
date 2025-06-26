@@ -8,6 +8,7 @@ sidebar_position: 17
 ---
 
 import Link from '@docusaurus/Link';
+import UpgradePolicy from '../snippets/_private-operator-upgrade-policy.mdx';
 import AttestFailure from '../snippets/_private-operator-attest-failure.mdx';
 
 # EUID Private Operator for AWS Integration Guide
@@ -158,6 +159,10 @@ To deploy European Unified ID Operator on AWS Marketplace, complete the followin
 9. Click **Create stack**.
 
 It takes several minutes for the stack to be created. When you see an Auto Scaling Group (ASG) created, you can select it and check the EC2 instances. By default, there is only one instance to start with.
+
+### Private Operator Upgrade Policy
+
+<UpgradePolicy />
 
 ### Operator Version
 
