@@ -81,6 +81,10 @@ There are a couple of limitations to Private Operator functionality:
 - Private Operators do not currently support <Link href="../ref-info/glossary-uid#gl-client-side">client-side integration</Link>.
 - Private Operator updates are released three times per year; Public Operator updates are released on a more frequent cadence.
 
+## Private Operator Deprecation Schedule
+
+For information about supported versions and deprecation dates, see [Private Operator Versions](../ref-info/deprecation-schedule.md#private-operator-versions).
+
 ## Private Operator Upgrade Policy
 
 <UpgradePolicy />
