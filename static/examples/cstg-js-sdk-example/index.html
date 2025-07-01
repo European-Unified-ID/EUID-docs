@@ -87,6 +87,9 @@
     <p>
       This example demonstrates how a content publisher can follow the
       <a href="https://euid.eu/docs/guides/integration-javascript-client-side">Client-Side Integration Guide for JavaScript</a> to implement EUID integration and generate EUID tokens.
+      <strong>Note:</strong> This is a <em>test-only</em> integration environment—not for production use.
+      It does not perform real user authentication or generate production-level tokens.
+      Do not connect this site to real user traffic.
     </p>
     <table id="euid_state">
       <tr>
@@ -125,11 +128,11 @@
           value="test@example.com"
         />
       </div>
-      <div><button type="button" class="button" id="login">Log In</button>></div>
+      <div><button type="button" class="button" id="login">Generate UID2</button>></div>
     </div>
     <div id="logout_form" style="display: none" class="form">
       <form>
-        <button type="button" class="button" id="logout">Log Out</button>
+        <button type="button" class="button" id="logout">Clear UID2</button>
       </form>
     </div>
   </body>
