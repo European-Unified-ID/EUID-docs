@@ -20,7 +20,7 @@
       Reload the page in order to update Secure Signals in local storage.
       <strong>Note:</strong> This is a <em>test-only</em> integration environment—not for production use.
       It does not perform real user authentication or generate production-level tokens.
-      Do not connect this site to real user traffic.
+      Do not use real user data on this page.
     </p>
     <div id="page-content">
       <div id="video-container">
@@ -74,11 +74,11 @@
           value="test@example.com"
         />
       </div>
-      <div><button type="button" class="button" id="login">Generate UID2</button>></div>
+      <div><button type="button" class="button" id="login">Generate EUID</button>></div>
     </div>
     <div id="logout_form" style="display: none" class="form">
       <form>
-        <button type="button" class="button" id="logout">Clear UID2</button>
+        <button type="button" class="button" id="logout">Clear EUID</button>
       </form>
     </div>
     <script src="https://cdn.integ.euid.eu/euid-sdk-4.0.1.js"></script>
