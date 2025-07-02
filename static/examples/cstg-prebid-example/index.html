@@ -158,6 +158,9 @@
       <h1>EUID Prebid.js Client-Side Integration Example</h1>
       <p class="intro_euid">
         This example demonstrates how a content publisher can integrate with EUID and Prebid.js using the <a href="https://euid.eu/docs/guides/integration-prebid-client-side">EUID Client-Side Integration Guide for Prebid.js</a>, which includes generating EUID tokens within the browser.
+        <strong>Note:</strong> This is a <em>test-only</em> integration environment—not for production use.
+        It does not perform real user authentication or generate production-level tokens.
+        Do not use real user data on this page.
       </p>
       <table id="euid_state">
         <tr>
@@ -182,11 +185,11 @@
             value="test@example.com"
           />
         </div>
-        <div><button type="button" class="button" id="login_euid">Log In</button></div>
+        <div><button type="button" class="button" id="login_euid">Generate EUID</button></div>
       </div>
       <div id="clear_storage_form_euid" style="display: none" class="form">
         <form>
-          <button type="button" class="button" id="clear_storage_euid">Clear Storage</button>
+          <button type="button" class="button" id="clear_storage_euid">Clear EUID</button>
         </form>
       </div>
       </div>
