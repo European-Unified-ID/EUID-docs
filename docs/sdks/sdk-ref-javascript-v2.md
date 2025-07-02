@@ -56,7 +56,7 @@ In this document, the following terms apply:
 On every page where you want to use EUID for targeted advertising, include the following SDK script:
 
 ```html
-<script src="https://prod.euid.eu/static/js/euid-sdk-1.0.0.js" type="text/javascript"></script> TBD
+<script src="https://prod.euid.eu/static/js/euid-sdk-1.0.0.js" type="text/javascript"></script>
 ```
 
 ## Workflow Overview

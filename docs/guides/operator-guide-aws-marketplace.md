@@ -8,6 +8,7 @@ sidebar_position: 17
 ---
 
 import Link from '@docusaurus/Link';
+import UpgradePolicy from '../snippets/_private-operator-upgrade-policy.mdx';
 import AttestFailure from '../snippets/_private-operator-attest-failure.mdx';
 
 # EUID Private Operator for AWS Integration Guide
@@ -15,8 +16,6 @@ import AttestFailure from '../snippets/_private-operator-attest-failure.mdx';
 The EUID Operator is the API server in the EUID ecosystem. For details, see [The EUID Operator](../ref-info/ref-operators-public-private.md).
 
 For a <Link href="../ref-info/glossary-uid#gl-private-operator">Private Operator</Link> service running in AWS Marketplace, the EUID Operator solution is enhanced with [AWS Nitro](https://aws.amazon.com/ec2/nitro/) Enclave technology. This is an additional security measure to help protect EUID information from unauthorized access.
-
-## EUID Private Operator for AWS
 
 :::note
 [European Unified ID Private Operator for AWS](https://aws.amazon.com/marketplace/pp/prodview-hhxu72nnzzmnm) is a free product. The cost displayed on the product page is an estimated cost for the necessary infrastructure.
@@ -29,7 +28,23 @@ By subscribing to the European Unified ID Operator on AWS Marketplace product, y
 - [CloudFormation](https://aws.amazon.com/cloudformation/) template:<br/>
     The template deploys the EUID Operator AMI.
 
-### Prerequisites
+## Operator Version
+
+The latest ZIP file is linked in the Release Notes column in the following table.
+
+| Version Name | Version&nbsp;#/Release&nbsp;Notes | AWS Version |  Date |
+| ------- | ------ | ------ | ------ | 
+| Q2 2025 | [v5.55.9](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.55.9-r1) | 5.55.9 | July 1, 2025 |
+
+:::note
+For information about supported versions and deprecation dates, see [Private Operator Versions](../ref-info/deprecation-schedule.md#private-operator-versions).
+:::
+
+## Private Operator Upgrade Policy
+
+<UpgradePolicy />
+
+## Prerequisites
 
 To subscribe and deploy one or more EUID Operators on AWS, complete the following steps:
 
@@ -159,17 +174,6 @@ To deploy European Unified ID Operator on AWS Marketplace, complete the followin
 
 It takes several minutes for the stack to be created. When you see an Auto Scaling Group (ASG) created, you can select it and check the EC2 instances. By default, there is only one instance to start with.
 
-### Operator Version
-
-The latest ZIP file is linked in the Release Notes column in the following table.
-
-| Release | Version | Date | Release Notes | Version |
-| ------- | ------ | ------ | ------ | ------ |
-| Q2 2024 | 5.37.12 | June 12, 2024 | [v5.37.12](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.37.12) | 5.37.12 |
-| Q3 2024 | 5.38.104 | September 12, 2024 | [v5.38.104](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.38.104) | 5.38.104 |
-| Q3 2024 Out-of-band | 5.41.0 | October 29, 2024 | [v5.41.0](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.41.0) | 5.41.0 |
-| Q1 2025 | 5.49.7 | March 19, 2025 | [v5.49.7](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.49.7) | 5.49.7 |
-
 ### Stack Details
 
 The following images show the **Specify stack details** page in the Create stack wizard ([deployment](#deployment) step 5). The table that follows provides a parameter value reference.
@@ -243,7 +247,7 @@ To check the EUID Operator status of your Load Balancer, complete the following 
 1. Identify the DNS name of your load balancer by going to **EC2 > Load balancers** and looking at the **DNS name** column of your load balancer.
 2. In your browser, go to `https://{dns-name-of-your-load-balancer}/ops/healthcheck`. A response of `OK` indicates good operator status.
 
-## Private Operator Attestation Failure
+### Private Operator Attestation Failure
 
 <AttestFailure />
 
