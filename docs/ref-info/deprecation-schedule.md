@@ -21,6 +21,10 @@ The following table shows the Private Operator versions that are currently suppo
 If you're using an older version, refer to the Deprecation Date column for information about the support lifetime for your version. We recommend upgrading to the latest version as soon as possible to take advantage of new and improved features.
 :::
 
+### Private Operator Upgrade Policy
+
+<UpgradePolicy />
+
 ### Private Operator for AWS
 
 The latest ZIP file is available in the Assets section at the bottom of the linked Release Notes in the following table.
@@ -34,7 +38,3 @@ The latest ZIP file is available in the Assets section at the bottom of the link
 | Q2 2024 | [v5.37.12](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.37.12) | 5.37.12 | June 12, 2024 | Sep 30, 2025 |
 
 For documentation, see [EUID Private Operator for AWS Integration Guide](..\guides\operator-guide-aws-marketplace.md).
-
-## Private Operator Upgrade Policy
-
-<UpgradePolicy />
