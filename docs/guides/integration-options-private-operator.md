@@ -111,4 +111,4 @@ The following documentation resources are available for Private Operators to imp
 
 | Integration Type| Documentation | Content Description |
 | :--- | :--- | :--- |
-| AWS | [EUID Private Operator for AWS Integration Guide](../guides/operator-guide-aws-marketplace.md) | Instructions for setting up a Private Operator service for AWS Marketplace. |
+| AWS | [EUID Private Operator for AWS Integration Guide](operator-guide-aws-marketplace.md) | Instructions for setting up a Private Operator service for AWS Marketplace. |
