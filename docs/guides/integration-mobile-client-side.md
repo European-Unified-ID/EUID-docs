@@ -5,6 +5,7 @@ pagination_label: EUID Client-Side Integration Guide for Mobile
 description: Setting up a mobile integration with token generate and refresh both on the client side.
 hide_table_of_contents: false
 sidebar_position: 04
+displayed_sidebar: docs
 ---
 import Link from '@docusaurus/Link';
 import IntegratingWithSSO from '../snippets/_integrating-with-sso.mdx';

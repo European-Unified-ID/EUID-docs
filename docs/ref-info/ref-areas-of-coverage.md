@@ -3,6 +3,7 @@ title: EUID Areas of Coverage
 description: Information about the geographical areas that EUID supports.
 hide_table_of_contents: false
 sidebar_position: 06
+displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
