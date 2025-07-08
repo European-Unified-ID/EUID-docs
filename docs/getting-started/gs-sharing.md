@@ -3,6 +3,7 @@ title: EUID Sharing
 description: Information about EUID sharing.
 hide_table_of_contents: false
 sidebar_position: 24
+displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';

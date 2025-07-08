@@ -3,6 +3,7 @@ title: Encryption and Decryption
 description: Information about encrypting EUID requests and decrypting responses.
 hide_table_of_contents: false
 sidebar_position: 11
+displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';

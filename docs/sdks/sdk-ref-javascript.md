@@ -3,6 +3,7 @@ title: SDK for JavaScript
 description: Reference information about the JavaScript client-side SDK.
 hide_table_of_contents: false
 sidebar_position: 02
+displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
