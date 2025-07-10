@@ -103,6 +103,26 @@ const ArticleList: ArticleItem[] = [
     url: "https://www.adzine.de/2024/11/sell-side-schwergewichte-staerken-der-euid-den-ruecken/",
     date: "November 8, 2024",
   },
+  {
+    title: "Piemme",
+    url: "https://www.engage.it/programmatic/piemme-sceglie-la-nuova-tecnologia-di-identity-di-id5-e-the-trade-desk-per-il-targeting-cookieless.aspx",
+    date: "February 2, 2025",
+  },
+  {
+    title: "United Internet Media",
+    url: "https://www.united-internet-media.de/de/newsroom/vermarkterblog/blog/show/uim-bringt-euid-von-the-trade-desk-und-netid-zusammen/",
+    date: "February 11, 2025",
+  },
+  {
+    title: "Lockr",
+    url: "https://www.prnewswire.com/news-releases/lockr-boosts-open-internet-addressability-with-leading-identity-solutions-302433925.html",
+    date: "April 22, 2025",
+  },
+  {
+    title: "Snowflake",
+    url: "https://www.businesswire.com/news/home/20250506191798/en/The-Trade-Desk-Launches-European-Unified-ID-on-Snowflake-Marketplace-to-Enrich-First-Party-Data-and-Improve-Addressability-on-the-Open-Internet",
+    date: "May 6, 2025",
+  },
 ];
 
 function ArticleCard({ title, url, date }: ArticleItem) {
