@@ -16,9 +16,25 @@ import CustomTagsContainer from '@site/src/components/CustomTags/CustomTagsConta
 
 Check out the latest updates to our EUID documentation resources.
 
-## Q1 2025
+## Q3 2025
 
 The following documents were released in this quarter.
+
+<CustomTagsContainer tags="Endpoints, Guides, SDKs">
+
+### Identity Map v3
+
+July 16, 2025
+
+We've released a new version of the Identity Map API (v3) that provides significant improvements for advertisers and data providers. This update includes documentation for the [POST /identity/map](../endpoints/post-identity-map.md) endpoint, the [SDK for Java Reference Guide](../sdks/sdk-ref-java.md#usage-for-advertisersdata-providers), and the [Advertiser/Data Provider Integration Overview](../guides/integration-advertiser-dataprovider-overview.md).
+
+<!-- UID2-5558, UID2-5560, UID2-5559, APIDOCS-3318 -->
+
+</CustomTagsContainer>
+
+## Q1 2025
+
+The following documents were released in the first quarter of 2025.
 
 <CustomTagsContainer tags="Guides, Mobile">
 
