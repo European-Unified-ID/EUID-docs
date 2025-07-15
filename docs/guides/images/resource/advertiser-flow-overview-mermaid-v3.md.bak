@@ -1,0 +1,33 @@
+7/15/25: Fresh EUID advertiser overview diagram, copy from UID2, for V3 API Update: Updated diagram to use V3 identity map API with refresh timestamps instead of salt bucket monitoring. EUID naming, terminology, colors.
+
+     %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#0099F9', 'labelTextColor': '#FFF', 'actorTextColor': '#FFF'}}}%%
+
+  sequenceDiagram
+    participant ADP as Advertiser/Data Provider
+    participant UID as EUID Operator
+    participant DSP
+    Note over ADP,DSP: 1. Generate raw EUIDs from personal data.
+        loop 
+    ADP->>UID: 1-a. Send a request containing personal data using an SDK, Snowflake, or HTTP endpoint.
+    UID->>ADP: 1-b. Receive the raw EUID (u), refresh timestamp (r), and optionally previous EUID (p).
+    end
+    Note over ADP,DSP: 2. Store raw EUIDs and refresh timestamps.
+    Note over ADP,DSP: 3. Manipulate or combine raw EUIDs.
+     Note over ADP,DSP: 4. Send raw EUIDs to DSPs.
+    ADP-->>DSP: Send stored raw EUIDs to DSPs to create audiences and conversions, or use them for measurement.
+    Note over ADP,DSP: 5. Monitor for raw EUID refresh.
+    loop
+       ADP->>ADP: 5-a. Check current time against stored refresh timestamps.
+       ADP->>UID: 5-b. If refresh time reached, resend personal data to get updated raw EUID.
+       UID->>ADP: 5-c. Store the new raw EUID, refresh timestamp, and optionally previous EUID.
+    end
+    Note over ADP,DSP: 6. Monitor for opt-out status. Remove all opt-outs from local storage and do not use.
+    loop
+       ADP->>UID: 6-a. Monitor for optout status using the POST optout/status endpoint.
+       UID->>ADP: 6-b. Return optout status.
+    end
+
+
+URL 7/15/25:
+
+https://mermaid.live/edit#pako:eNqNVdtu00AQ_ZXRoipFck3a3Bw_IKGGAkJARAoPKC8be5KssHfNXnohyr8zYztJQ1uEX-ydnTkzc-bseiMyk6NIBfBzcrJRWvkUNh2_xhI7KXQW0mEngsbwXVolFwU62tlAp7KqlPb-0hTGsu-Lbnc8vhqzeyEXWFzjnT9sXl1d8Y7MvLGPd7bb7cnJXM81gMNfAXWGEyVXVpZsAqik9SpTldQe3kymIB28yW-QjA7tq4n0EqbW3Kgc7eOAbx8mHPCW318qtJJKeOw1mU0b42fjEQyBc6aIzCmcx_AONUciWHlbQzlYWlMC4TmjZQE5FRE3CPwUxlTQLAnm7PVrCiGgMxnDDHUOEiw36jxkRntJzOvVMRgExzapYTb5GMFMm9tlIX9iBMbC--vrKRBOZZT2bVrKQHkoG-dZxPAVM1Q3CDS8fdVwGl5GlHpp0a3Bq5IqkGUFp5bMkuoylVdcQnEPlcUbZULL3Gn1ss1DaZ9l6oLaI3of0sSojxK6-FmIXgyfpFZVKJhu6jUz5ULpB5A7mp8I7rf0HtJ7w6PdxfAsiKTat3Z0XO0T_vzOLHIJMuSKFdm0QuOijI5IcvUkgqsZLmFJixKlC5bOyn4oT9Q4oAYNnTTy55j9aFqS2kAW0F5OjYTq0Q5YQpdrzH5CFqylTDWrIFckIpLTrqHnGD8W5ICF8mF55E4Lma0xZ5045uhYlkTMCj2EilYPmDvAP9Dh4CzbCYJVqPF27_-ECv-twP9Q3_CYWUI6M4EpkT44PhAl-QNB77baQ1yYjLpj5uQK6yJyA9p4Hu7z46gJHPI4_kp6yNmeYe59-mV23W6-ajf_Or_H1A2bI-yD1ceYBx5EJEq0pVQ53eEbNs9FfVPPRUqfVA3xOhdzvSVPGbyZ3etMpN4GjIQ1YbUW6VIWjlbNNNs7d2_FnNv61Pwk6n9FJOiy_GFMuYNZWc7efDcgb-ugPQb5i3Qj7kQ66iXx6GI0OO-O-_1RvzuMxL1Ie8k4TnqjfjLoDgej_jjpbSPxu87QjYcX_aSbjC6S4bg_Ph8kVDb1jfbSBO1Fmpxv_wAorSnF

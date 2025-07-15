@@ -41,7 +41,7 @@ Personal data refers to a user's normalized email address or phone number, or th
 
 ![Advertiser Flow](images/advertiser-flow-endpoints-mermaid-v3.png)
 
-<!-- diagram source: resource/advertiser-flow-endpoints-v3-mermaid.mermaid -->
+<!-- diagram source: resource/advertiser-flow-endpoints-mermaid-v3.md.bak -->
 
 ### 1: Generate Raw EUIDs from Personal Data
 
@@ -129,9 +129,9 @@ All other steps (1, 3, 4, and 6) are the same as described in the v3 implementat
 
 The following diagram outlines the v2 integration flow. Note that the differences are in Step 2 (storing salt bucket IDs) and Step 5 (monitoring salt bucket rotations).
 
-![Advertiser Flow](images/advertiser-flow-endpoints-mermaid.png)
+![Advertiser Flow](images/advertiser-flow-endpoints-mermaid-v2.png)
 
-<!-- diagram source: resource/advertiser-flow-endpoints-v2-mermaid.md.bak -->
+<!-- diagram source: resource/advertiser-flow-endpoints-mermaid-v2.md.bak -->
 
 ### Store Raw EUIDs and Salt Bucket IDs (v2)
 

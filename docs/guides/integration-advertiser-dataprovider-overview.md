@@ -70,7 +70,7 @@ To keep your EUID-based audience information accurate and up to date, follow the
 
 ![Advertiser Flow](images/advertiser-flow-overview-mermaid-v3.png)
 
-<!-- diagram source: resource/advertiser-flow-overview-v3-mermaid.mermaid -->
+<!-- diagram source: resource/advertiser-flow-overview-mermaid-v3.md.bak -->
 
 For details about the different parts of the diagram, refer to the following sections.
 
@@ -158,9 +158,9 @@ All other steps (1, 3, 4, and 6) are the same as described in the v3 implementat
 
 The following diagram outlines the v2 integration flow. Note that the main differences are in Step 2 (storing salt bucket IDs) and Step 5 (monitoring salt bucket rotations).
 
-![Advertiser Flow](images/advertiser-flow-overview-mermaid.png)
+![Advertiser Flow](images/advertiser-flow-overview-mermaid-v2.png)
 
-<!-- diagram source: resource/advertiser-flow-overview-v2-mermaid.md.bak -->
+<!-- diagram source: resource/advertiser-flow-overview-mermaid-v2.md.bak -->
 
 ### Store Raw EUIDs and Salt Bucket IDs (v2)
 
