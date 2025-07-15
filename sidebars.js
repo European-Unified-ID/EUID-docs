@@ -282,7 +282,18 @@ const fullSidebar = [
         'endpoints/post-token-validate',
         'endpoints/post-token-refresh',
         'endpoints/post-identity-buckets',
-        'endpoints/post-identity-map',
+        {
+          type: 'category',
+          label: 'POST /identity/map',
+          link: {
+            type: 'doc',
+            id: 'endpoints/post-identity-map',
+          },
+          collapsed: true,
+          items: [
+            'endpoints/post-identity-map-v2',
+          ],
+        },
         'endpoints/post-optout-status',
       ],
     },
