@@ -13,7 +13,7 @@ import Link from '@docusaurus/Link';
 You can use the SDK for Java on the server side to facilitate the process of generating or establishing client identity using EUID, retrieving advertising tokens for <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link> use, and automatically refreshing EUID tokens. If you have the applicable permissions, you can also decrypt EUID tokens to access the raw EUID and map personal data to raw EUIDs.
 
 :::note
-This SDK is valid for UID2 and EUID. Some of the code naming and URLs are labelled as UID2. These apply equally to EUID.
+This SDK is valid for UID2 and EUID. The SDK, and some of its technical components, are named UID2, but are equally applicable for EUID.
 :::
 
 ## Functionality
@@ -47,7 +47,7 @@ This SDK is in the following open-source GitHub repository:
 - [SDK for Java](https://github.com/IABTechLab/uid2-client-java/blob/master/README.md)
 
 :::note
-This SDK is valid for both UID2 and EUID. The SDK, and some of its technical components, are named UID2, but are equally applicable for EUID.
+This SDK is valid for UID2 and EUID. The SDK, and some of its technical components, are named UID2, but are equally applicable for EUID.
 :::
 
 The binary is published on the Maven repository:
@@ -160,9 +160,9 @@ If you're using the SDK's HTTP implementation, follow these steps.
    ```
 
    :::important
-   - Be sure to call the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint only when you have a legal basis to convert the user’s <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to EUID tokens for targeted advertising.
+     - Be sure to call the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint only when you have a legal basis to convert the user’s <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to EUID tokens for targeted advertising.
 
-   - Always apply `doNotGenerateTokensForOptedOut()`. This applies a parameter similar to setting `optout_check=1` in the call to the POST&nbsp;/token/generate endpoint (see [Unencrypted JSON Body Parameters](../endpoints/post-token-generate.md#unencrypted-json-body-parameters)).
+     - Always apply `doNotGenerateTokensForOptedOut()`. This applies a parameter similar to setting `optout_check=1` in the call to the POST&nbsp;/token/generate endpoint (see [Unencrypted JSON Body Parameters](../endpoints/post-token-generate.md#unencrypted-json-body-parameters)).
    :::
 
    <!-- uid2_euid_diff re legal basis for admonition above (first bullet not in UID2) -->
@@ -244,7 +244,7 @@ If you're using server-side integration (see [Publisher Integration Guide, Serve
    :::important
    - Be sure to call the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint only when you have a legal basis to convert the user’s <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to EUID tokens for targeted advertising.
 
-   - Always apply `doNotGenerateTokensForOptedOut()`. This applies a parameter similar to setting `optout_check=1` in the call to the POST&nbsp;/token/generate endpoint (see [Unencrypted JSON Body Parameters](../endpoints/post-token-generate.md#unencrypted-json-body-parameters)).
+      - Always apply `doNotGenerateTokensForOptedOut()`. This applies a parameter similar to setting `optout_check=1` in the call to the POST&nbsp;/token/generate endpoint (see [Unencrypted JSON Body Parameters](../endpoints/post-token-generate.md#unencrypted-json-body-parameters)).
    :::
 
    <!-- uid2_euid_diff re legal basis for admonition above (first bullet not in UID2) -->
@@ -523,7 +523,7 @@ To use the earlier version, follow these instructions.
    IdentityMapResponse identityMapResponse = identityMapClient.generateIdentityMap(IdentityMapInput.fromEmails(Arrays.asList("email1@example.com", "email2@example.com")));
    ```
 
-   >**Note:** The SDK hashes input values before sending them. This ensures that raw email addresses and phone numbers do not leave your server.
+   >**Note**: The SDK hashes input values before sending them. This ensures that raw email addresses and phone numbers do not leave your server.
 
 3. Retrieve the mapped and unmapped results as follows:
    ```java
@@ -548,32 +548,32 @@ The following instructions provide an example of how a DSP can decode <Link href
 
 1. Create a `BidstreamClient`:
 
-```java
-BidstreamClient client = new BidstreamClient(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY);
-```
+   ```java
+   BidstreamClient client = new BidstreamClient(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY);
+   ```
 
 2. Refresh once at startup, and then periodically (recommended refresh interval is hourly):
 
-```java
-client.refresh();
-```
+   ```java
+   client.refresh();
+   ```
 
 3. Decrypt a token into a raw EUID. Pass the token, and then do one of the following:
    * If the bid request originated from a publisher's website, pass the domain name. The domain name must be all lower case, without spaces and without subdomain. For example, for `Subdomain.DOMAIN.com`, pass `domain.com` instead.
    * If the bid request originated from a mobile app, pass the <Link href="../ref-info/glossary-uid#gl-app-name">app name</Link>.
    * Otherwise, pass `null`.
 
-```java
-DecryptionResponse decrypted = client.decryptTokenIntoRawUid(uidToken, domainOrAppName); 
-//If decryption succeeded, use the raw EUID.
-if (decrypted.isSuccess()) 
-{
-    //Use decrypted.getUid()
-}
-else 
-{
-    // Check decrypted.getStatus() for the failure reason.
-}
-```
+   ```java
+   DecryptionResponse decrypted = client.decryptTokenIntoRawUid(uidToken, domainOrAppName); 
+   //If decryption succeeded, use the raw EUID.
+   if (decrypted.isSuccess()) 
+   {
+       //Use decrypted.getUid()
+   }
+   else 
+   {
+       // Check decrypted.getStatus() for the failure reason.
+   }
+   ```
 
 For a full example, see the `ExampleBidStreamClient` method in [test/IntegrationExamples.java](https://github.com/IABTechLab/uid2-client-java/blob/main/src/test/java/com/uid2/client/test/IntegrationExamples.java).
