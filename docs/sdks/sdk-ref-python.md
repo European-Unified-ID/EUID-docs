@@ -13,7 +13,7 @@ import Link from '@docusaurus/Link';
 You can use the SDK for Python on the server side to facilitate the process of generating or establishing client identity using EUID, retrieving advertising tokens for <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link> use, and automatically refreshing EUID tokens. If you have the applicable permissions, you can also decrypt EUID tokens to access the raw EUID, map personal data to raw EUIDs, and monitor rotated salt buckets.
 
 :::note
-This SDK is valid for UID2 and EUID. Some of the code naming and URLs are labelled as UID2. These apply equally to EUID.
+This SDK is valid for both UID2 and EUID. Some of the code naming and URLs are labeled as UID2. These apply equally to EUID.
 :::
 
 ## Functionality

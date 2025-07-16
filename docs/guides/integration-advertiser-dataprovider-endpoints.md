@@ -72,7 +72,7 @@ Use the raw EUIDs for some purpose such as:
    - Sending stored raw EUIDs to DSPs to create audiences and conversions.
    - Using the raw EUIDs for measurement.
 
-For example, you could send the (<Link href="../ref-info/glossary-uid#gl-raw-euid">raw EUID</Link>) (`u` field) returned in Step 1-b to a DSP while building your audiences. Each DSP has a unique integration process for building audiences; follow the integration guidance provided by the DSP for sending raw UID2s to build an audience.
+For example, you could send the (<Link href="../ref-info/glossary-uid#gl-raw-euid">raw EUID</Link>) (`u` field) returned in Step 1-b to a DSP while building your audiences. Each DSP has a unique integration process for building audiences; follow the integration guidance provided by the DSP for sending raw EUIDs to build an audience.
 
 You could also send conversion information via API or pixels for measurement (attribution) or for retargeting.
 

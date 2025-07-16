@@ -44,6 +44,6 @@ The following table summarizes the main types of external participant partners f
 
 An EUID consumer is a user who has had an EUID token or raw EUID created from an email address or phone number.
 
-UID2 leverages multiple layers of security to help protect user and other participant data. EUID is a privacy-compliant identifier. With EUIDEUID, consumers can enjoy more personalized advertising without compromising privacy.
+EUID leverages multiple layers of security to help protect user and other participant data. EUID is a privacy-compliant identifier. With EUID, consumers can enjoy more personalized advertising without compromising privacy.
 
 Consumers can opt out of EUID in the [EUID Transparency and Control Portal](https://transparentadvertising.eu).

@@ -13,7 +13,7 @@ import Link from '@docusaurus/Link';
 You can use the SDK for Java on the server side to facilitate the process of generating or establishing client identity using EUID, retrieving advertising tokens for <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link> use, and automatically refreshing EUID tokens. If you have the applicable permissions, you can also decrypt EUID tokens to access the raw EUID and map personal data to raw EUIDs.
 
 :::note
-This SDK is valid for UID2 and EUID. The SDK, and some of its technical components, are named UID2, but are equally applicable for EUID.
+This SDK is valid for both UID2 and EUID. The SDK, and some of its technical components, are named UID2, but are equally applicable for EUID.
 :::
 
 ## Functionality
@@ -47,7 +47,7 @@ This SDK is in the following open-source GitHub repository:
 - [SDK for Java](https://github.com/IABTechLab/uid2-client-java/blob/master/README.md)
 
 :::note
-This SDK is valid for UID2 and EUID. The SDK, and some of its technical components, are named UID2, but are equally applicable for EUID.
+This SDK is valid for both UID2 and EUID. The SDK, and some of its technical components, are named UID2, but are equally applicable for EUID.
 :::
 
 The binary is published on the Maven repository:
@@ -58,12 +58,12 @@ The binary is published on the Maven repository:
 
 The initialization step depends on the role, as shown in the following table.
 
-| Role                     | Create Instance of Class | Link to Instructions                                                         |
-|:-------------------------| :--- |:-----------------------------------------------------------------------------|
-| Publisher                | `PublisherUid2Client` | [Usage for Publishers](#usage-for-publishers)                                |
-| Advertiser/Data Provider | `IdentityMapClient` | [Usage for Advertisers/Data Providers](#usage-for-advertisersdata-providers) |
-| DSP                      | `BidstreamClient` | [Usage for DSPs](#usage-for-dsps)                                            |
-| Sharer (not currently supported for EUID) | `SharingClient` | Not applicable |
+| Role                                      | Create Instance of Class | Link to Instructions                                                         |
+|:------------------------------------------| :--- |:-----------------------------------------------------------------------------|
+| Publisher                                 | `PublisherUid2Client` | [Usage for Publishers](#usage-for-publishers)                                |
+| Advertiser/Data Provider                  | `IdentityMapClient` | [Usage for Advertisers/Data Providers](#usage-for-advertisersdata-providers) |
+| DSP                                       | `BidstreamClient` | [Usage for DSPs](#usage-for-dsps)                                            |
+| Sharer (not currently supported for EUID) | `SharingClient` | Not applicable                                                               |
 
 You will need to provide the values necessary for the SDK to authenticate with the EUID service.
 
@@ -73,7 +73,7 @@ You will need to provide the values necessary for the SDK to authenticate with t
 | `clientApiKey` | The API key. See [EUID Credentials](../getting-started/gs-credentials).                    | 
 | `base64SecretKey` | The client secret. See [EUID Credentials](../getting-started/gs-credentials).              | 
 
-### Interface 
+### Interface
 
 The `BidstreamClient` class allows you to decrypt EUID tokens into raw EUIDs.
 
