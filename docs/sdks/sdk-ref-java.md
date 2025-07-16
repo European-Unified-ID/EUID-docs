@@ -406,7 +406,7 @@ The following sections provide general information and guidance for migrating to
 
 ### Version 3 Improvements
 
-Version 3 of the `POST /identity/map` endpoint includes the following improvements:
+Version 3 of the `POST /identity/map` endpoint provides the following improvements over v2:
 
 - **Support for multiple identity types**: You can process both email addresses and phone numbers in a single request.
 - **Simpler refresh management**: You can just re-map any raw EUID when it reaches the refresh timestamp, rather than monitoring salt buckets, which is a separate API call.
