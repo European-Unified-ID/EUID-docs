@@ -433,7 +433,7 @@ Update the dependency version referenced in your code, as shown in the following
 </dependency>
 ```
 
-[**GWH__query. Should the above stay as UID2 or is it EUID?**]
+[**GWH__02 query. Should the above stay as UID2 or is it EUID?**]
 
 #### 2. Change client class
 

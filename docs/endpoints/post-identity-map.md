@@ -45,7 +45,7 @@ You must encrypt all requests using your secret. For details, and code examples 
 
 | Path Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
-| `{environment}` | string | Required | Testing (integration) environment: `https://operator-integ.uidapi.com`<br/>Production environment: The best choice depends on where your users are based. For information about how to choose the best URL for your use case, and a full list of valid base URLs, see [Environments](../getting-started/gs-environments.md). |
+| `{environment}` | string | Required | Testing (integration) environment: `https://operator-integ.euid.eu`<br/>Production environment: The best choice depends on where your users are based. For information about how to choose the best URL for your use case, and a full list of valid base URLs, see [Environments](../getting-started/gs-environments.md). |
 
 :::note
 The integration environment and the production environment require different <Link href="../ref-info/glossary-uid#gl-api-key">API keys</Link>. For information about getting credentials for each environment, see [Getting Your Credentials](../getting-started/gs-credentials.md#getting-your-credentials).
@@ -98,7 +98,7 @@ The following are unencrypted JSON request body examples to the `POST /identity/
 Here's an encrypted request example to the `POST /identity/map` endpoint for phone numbers:
 
 ```sh
-echo '{"phone": ["+12345678901", "+441234567890"]}' | python3 uid2_request.py https://prod.uidapi.com/v3/identity/map [YOUR_CLIENT_API_KEY] [YOUR_CLIENT_SECRET]
+echo '{"phone": ["+12345678901", "+441234567890"]}' | python3 uid2_request.py https://prod.euid.eu/v3/identity/map [YOUR_CLIENT_API_KEY] [YOUR_CLIENT_SECRET]
 ```
 
 [**GWH__01 query. Is UID2 in the prior request example valid for EUID or does it change?**]
@@ -115,7 +115,7 @@ A successful decrypted response returns the current raw EUIDs, previous raw EUID
 
 The response arrays preserve the order of input arrays. Each element in the response array maps directly to the element at the same index in the corresponding request array. This ensures that you can reliably associate results with their corresponding inputs based on array position.
 
-Input values that cannot be mapped to a raw EUID are mapped to an error object with the reason for unsuccessful mapping. An unsuccessful mapping occurs if the personal data is invalid or has been opted out from the EUID ecosystem. In these cases, the response status is `success` but no raw UID2 is returned.
+Input values that cannot be mapped to a raw EUID are mapped to an error object with the reason for unsuccessful mapping. An unsuccessful mapping occurs if the personal data is invalid or has been opted out from the EUID ecosystem. In these cases, the response status is `success` but no raw EUID is returned.
 
 The following example shows the input and corresponding response.
 
