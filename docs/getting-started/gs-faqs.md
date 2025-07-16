@@ -163,7 +163,6 @@ For details, see [Publisher Integration with SSO Providers](/docs/ref-info/ref-i
 Here are some frequently asked questions for advertisers and data providers using the EUID framework.
 
 - [How do I know when to refresh a raw EUID?](#how-do-i-know-when-to-refresh-a-raw-euid)
-- [Do refreshed emails get assigned to the same bucket with which they were previously associated?](#do-refreshed-emails-get-assigned-to-the-same-bucket-with-which-they-were-previously-associated)
 - [How often should raw EUIDs be refreshed for incremental updates?](#how-often-should-raw-euids-be-refreshed-for-incremental-updates)
 - [How should I generate the SHA-256 of personal data for mapping?](#how-should-i-generate-the-sha-256-of-personal-data-for-mapping)
 - [Should I store mapping of email addresses, phone numbers, or corresponding hashes to raw EUIDs in my own datasets?](#should-i-store-mapping-of-email-addresses-phone-numbers-or-corresponding-hashes-to-raw-euids-in-my-own-datasets)
@@ -184,14 +183,6 @@ To determine whether to refresh a raw EUID:
 
 :::note
 We recommend checking for refresh opportunities daily. It is guaranteed that the raw EUID won't refresh before the indicated timestamp. At some point on or after that time, the raw EUID is refreshed.
-:::
-
-#### Do refreshed emails get assigned to the same bucket with which they were previously associated?
-
-Not necessarily. After you remap emails associated with a particular bucket ID, the emails might be assigned to a different bucket ID. To check the bucket ID, see [Generate Raw EUIDs from Personal Data](../guides/integration-advertiser-dataprovider-overview.md#1-generate-raw-euids-from-personal-data) and save the returned raw EUID and bucket ID again.
-
-:::info
-When mapping and remapping emails, do not make any assumptions about the number of buckets, their rotation dates, or the specific bucket that an email gets assigned to.
 :::
 
 #### How often should raw EUIDs be refreshed for incremental updates?
