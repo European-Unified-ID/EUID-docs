@@ -20,6 +20,10 @@ Each EUID <a href="../overviews/participants-overview">participant</a> gets a se
 
 If you're using the integration environment as well as the production environment, you'll get a separate set of credentials for each environment.
 
+## Getting Your Credentials
+
+To get your credentials, ask your EUID contact.
+
 ## Subscription ID and Public Key
 
 If you're using a client-side implementation (see [EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md) or [Client-Side Integration Guide for JavaScript](../guides/integration-javascript-client-side.md)), you'll receive the following credentials:
