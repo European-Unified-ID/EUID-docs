@@ -7,14 +7,11 @@ displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
+import SDKsSameUID2EUID from '../snippets/_euid-sdk-same-for-all.mdx';
 
 # SDK for Java Reference Guide
 
 You can use the SDK for Java on the server side to facilitate the process of generating or establishing client identity using EUID, retrieving advertising tokens for <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link> use, and automatically refreshing EUID tokens. If you have the applicable permissions, you can also decrypt EUID tokens to access the raw EUID and map personal data to raw EUIDs.
-
-:::note
-This SDK is valid for both UID2 and EUID. The SDK, and some of its technical components, are named UID2, but are equally applicable for EUID.
-:::
 
 ## Functionality
 
@@ -46,13 +43,11 @@ This SDK is in the following open-source GitHub repository:
 
 - [SDK for Java](https://github.com/IABTechLab/uid2-client-java/blob/master/README.md)
 
-:::note
-This SDK is valid for both UID2 and EUID. The SDK, and some of its technical components, are named UID2, but are equally applicable for EUID.
-:::
-
 The binary is published on the Maven repository:
 
 - [https://central.sonatype.com/artifact/com.uid2/uid2-client](https://central.sonatype.com/artifact/com.uid2/uid2-client)
+
+<SDKsSameUID2EUID/>
 
 ## Initialization
 

@@ -7,6 +7,7 @@ displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
+import SDKsSameUID2EUID from '../snippets/_euid-sdk-same-for-all.mdx';
 import ChartSvg from './images/euid-js-sdk-workflow.svg';
 import ExampleEuidCookie from '../snippets/_example-euid-cookie.mdx';
 
@@ -45,6 +46,8 @@ This documentation is for version 2 of the SDK for JavaScript.
 This SDK is in the following open-source GitHub repository:
 
 - [https://github.com/iabtechlab/uid2-web-integrations](https://github.com/iabtechlab/uid2-web-integrations)
+
+<SDKsSameUID2EUID/>
 
 ## Terminology
 
