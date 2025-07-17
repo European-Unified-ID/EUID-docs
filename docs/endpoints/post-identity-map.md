@@ -101,8 +101,6 @@ Here's an encrypted request example to the `POST /identity/map` endpoint for pho
 echo '{"phone": ["+12345678901", "+441234567890"]}' | python3 uid2_request.py https://prod.euid.eu/v3/identity/map [YOUR_CLIENT_API_KEY] [YOUR_CLIENT_SECRET]
 ```
 
-[**GWH__01 query. Is UID2 in the prior request example valid for EUID or does it change?**]
-
 For details, and code examples in different programming languages, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
 
 ## Decrypted JSON Response Format
