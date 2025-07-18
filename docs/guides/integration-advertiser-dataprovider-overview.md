@@ -1,6 +1,6 @@
 ---
 title: Advertiser/Data Provider Integration Overview
-sidebar_label: Integration Overview
+sidebar_label: Advertiser/Data Provider Integration Overview
 description: Overview of integration options for organizations that collect user data and push it to other participants.
 hide_table_of_contents: false
 sidebar_position: 07
@@ -23,9 +23,9 @@ There are other ways that you can use EUID, outside these use cases. These are j
 
 | Send/Receive? | Action | Advantage/Result |
 | --- | --- | --- |
-| Send in audiences | Send EUIDs via API or pixels | Create audiences. |
-| Send&nbsp;in&nbsp;conversions | Send EUIDs as conversion information | Use conversion information for measurement (attribution) or for retargeting via API or pixels. |
-| Receive&nbsp;graph&nbsp;data | Receive EUIDs from graph/data providers via API or pixels | Build graph data. |
+| Send in audiences | Send raw EUIDs via API or pixels | Create audiences. |
+| Send&nbsp;in&nbsp;conversions | Send raw EUIDs as conversion information | Use conversion information for measurement (attribution) or for retargeting via API or pixels. |
+| Receive&nbsp;graph&nbsp;data | Receive raw EUIDs from graph/data providers via API or pixels | Build graph data. |
 
 ## High-Level Steps
 
@@ -33,15 +33,19 @@ At a high level, the steps for advertisers and data providers integrating with E
 
 1. [Generate Raw EUIDs from Personal Data](#1-generate-raw-euids-from-personal-data)
 
-2. [Store Raw EUIDs and Salt Bucket IDs](#2-store-raw-euids-and-salt-bucket-ids)
+2. [Store Raw EUIDs and Refresh Timestamps](#2-store-raw-euids-and-refresh-timestamps)
 
 3. [Manipulate or Combine Raw EUIDs](#3-manipulate-or-combine-raw-euids)
 
 4. [Send Stored Raw EUIDs to DSPs to Create Audiences or Conversions](#4-send-stored-raw-euids-to-dsps-to-create-audiences-or-conversions)
 
-5. [Monitor for Salt Bucket Rotations for Your Stored Raw EUIDs](#5-monitor-for-salt-bucket-rotations-for-your-stored-raw-euids)
+5. [Monitor for Raw EUID Refresh](#5-monitor-for-raw-euid-refresh)
 
 6. [Monitor for Opt-Out Status](#6-monitor-for-opt-out-status)
+
+:::note
+If your implementation uses a version of the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint earlier than version 3, see [Using POST /identity/map Version 2](#using-post-identitymap-version-2). If you're using this version, we recommend you upgrade as soon as possible to take advantage of the enhancements.
+:::
 
 ## Summary of Implementation Options
 
@@ -50,10 +54,10 @@ The following table shows the implementation options that are available for adve
 | High-Level Step | Implementation Options |
 | --- | --- |
 | [1: Generate Raw EUIDs from Personal Data](#1-generate-raw-euids-from-personal-data) | Use any of the following options to map personal data to raw EUIDs:<ul><li>One of these EUID SDKs:<ul><li>Python SDK: [Map Personal Data to Raw EUIDs](../sdks/sdk-ref-python.md#map-personal-data-to-raw-euids)</li><li>Java SDK: [Usage for Advertisers/Data Providers](../sdks/sdk-ref-java.md#usage-for-advertisersdata-providers)</li></ul></li><li>Snowflake: [Map Personal Data](integration-snowflake.md#map-personal-data)</li><li>HTTP endpoints: [POST&nbsp;/identity/map](../endpoints/post-identity-map.md)</li></ul> |
-| [2: Store Raw EUIDs and Salt Bucket IDs](#2-store-raw-euids-and-salt-bucket-ids) | Custom (your choice). |
+| [2: Store Raw EUIDs and Refresh Timestamps](#2-store-raw-euids-and-refresh-timestamps) | Custom (your choice). |
 | [3: Manipulate or Combine Raw EUIDs](#3-manipulate-or-combine-raw-euids) | Custom (your choice). |
 | [4: Send Stored Raw EUIDs to DSPs to Create Audiences or Conversions](#4-send-stored-raw-euids-to-dsps-to-create-audiences-or-conversions) | Custom (your choice). |
-| [5: Monitor for Salt Bucket Rotations for Your Stored Raw EUIDs](#5-monitor-for-salt-bucket-rotations-for-your-stored-raw-euids) | Any of the following options:<ul><li>Python SDK: see <Link href="../sdks/sdk-ref-python">SDK for Python Reference Guide</Link></li><li>Snowflake: see <Link href="integration-snowflake">Snowflake Integration Guide</Link>, section titled <Link href="integration-snowflake#monitor-for-salt-bucket-rotation-and-regenerate-raw-euids">Monitor for Salt Bucket Rotation and Regenerate Raw EUIDs</Link></li><li>Raw HTTP endpoint: <Link href="../endpoints/post-identity-buckets">POST /identity/buckets</Link></li></ul> |
+| [5: Monitor for Raw EUID Refresh](#5-monitor-for-raw-euid-refresh) | Use the refresh timestamp (`r` field) returned from the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint to determine when to refresh Raw EUIDs. |
 | [6: Monitor for Opt-Out Status](#6-monitor-for-opt-out-status) | API call to the [POST /optout/status](../endpoints/post-optout-status.md) endpoint. |
 
 ## Integration Diagram
@@ -64,9 +68,9 @@ Personal data refers to a user's normalized email address or phone number, or th
 
 To keep your EUID-based audience information accurate and up to date, follow these integration steps every day.
 
-![Advertiser Flow](images/advertiser-flow-overview-mermaid.png)
+![Advertiser Flow](images/advertiser-flow-overview-mermaid-v3.png)
 
-<!-- diagram source: resource/advertiser-flow-overview-mermaid.md.bak -->
+<!-- diagram source: resource/advertiser-flow-overview-mermaid-v3.md.bak -->
 
 For details about the different parts of the diagram, refer to the following sections.
 
@@ -85,19 +89,20 @@ To generate raw EUIDs, use one of the following options:
 
 - HTTP endpoints: [POST&nbsp;/identity/map](../endpoints/post-identity-map.md). For details, see [Generate Raw EUIDs from Personal Data](integration-advertiser-dataprovider-endpoints.md#1-generate-raw-euids-from-personal-data).
 
-### 2: Store Raw EUIDs and Salt Bucket IDs
+### 2: Store Raw EUIDs and Refresh Timestamps
 
 The response from Step 1, [Generate Raw EUIDs from Personal Data](#1-generate-raw-euids-from-personal-data), contains mapping information. We recommend that you store the following information returned in Step 1:
 
-- Cache the mapping between personal data (`identifier`), raw EUID (`advertising_id`), and salt bucket (`bucket_id`).
-- Store the timestamp for when you received the response data. Later, you can compare this timestamp with the `last_updated` timestamp returned in Step 5, [Monitor for Salt Bucket Rotations for Your Stored Raw EUIDs](#5-monitor-for-salt-bucket-rotations-for-your-stored-raw-euids).
+- Cache the mapping between personal data and raw EUID (`u` field).
+- Store the refresh timestamp (`r` field) to know when the raw EUID could refresh.
+- Optionally store the previous raw EUID (`p` field) if provided for users whose EUID was refreshed within the last 90 days.
 
 ### 3: Manipulate or Combine Raw EUIDs
 
-Use the EUIDs you received in Step 1. For example, you might do one or more of the following:
+Use the raw EUIDs you received in Step 1. For example, you might do one or more of the following:
 
-- Do some manipulation: for example, combine EUIDs you generated from personal data and EUIDs received from another participant such as an advertiser or data provider.
-- Add new EUIDs into an existing audience.
+- Do some manipulation: for example, combine raw EUIDs you generated from personal data and raw EUIDs received from another participant such as an advertiser or data provider.
+- Add new raw EUIDs into an existing audience.
 
 ### 4: Send Stored Raw EUIDs to DSPs to Create Audiences or Conversions
 
@@ -106,45 +111,27 @@ Use the raw EUIDs for some purpose such as:
    - Sending stored raw EUIDs to DSPs to create audiences and conversions.
    - Using the raw EUIDs for measurement.
 
-For example, you could send the `advertising_id` (<Link href="../ref-info/glossary-uid#gl-raw-euid">raw EUID</Link>) returned in Step 1-b to a DSP while building your audiences. Each DSP has a unique integration process for building audiences; follow the integration guidance provided by the DSP for sending raw EUIDs to build an audience.
+For example, you could send the (<Link href="../ref-info/glossary-uid#gl-raw-euid">raw EUID</Link> (`u` field) returned in Step 1 to a DSP while building your audiences. Each DSP has a unique integration process for building audiences; follow the integration guidance provided by the DSP for sending raw EUIDs to build an audience.
 
 You could also send conversion information via API or pixels for measurement (attribution) or for retargeting.
 
-### 5: Monitor for Salt Bucket Rotations for Your Stored Raw EUIDs
+### 5: Monitor for Raw EUID Refresh
 
-A raw EUID is an identifier for a user at a specific moment in time. The raw EUID for a specific user changes at least once per year, as a result of the <Link href="../ref-info/glossary-uid#gl-salt-bucket">salt bucket</Link> rotation. 
+A raw EUID is an identifier for a user at a specific moment in time. The raw EUID for a specific user changes roughly once per year as part of the EUID refresh process.
 
-Even though each salt bucket is updated approximately once per year, individual bucket updates are spread over the year. Approximately 1/365th of all salt buckets are rotated daily. Based on this, we recommend checking salt bucket rotation regularly, on a cadence that aligns with your audience refreshes. For example, if you refresh weekly, check for salt bucket updates weekly.
+The v3 Identity Map API provides a refresh timestamp (`r` field) in the response that indicates when each raw EUID might refresh. Use this timestamp to determine when to regenerate raw EUIDs for your stored data. It is guaranteed that it won't refresh before that time.
 
-If the salt bucket has been rotated, regenerate the raw EUID. For details, see [Determine whether the salt bucket has been rotated](#determine-whether-the-salt-bucket-has-been-rotated).
+We recommend checking for refresh opportunities daily. To determine whether to refresh a raw EUID:
 
-For instructions for monitoring for salt bucket rotations, refer to one of the following:
+1. Compare the current time with the refresh timestamp (`r` field) you stored from the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) response.
 
-- Python SDK: [Monitor Rotated Salt Buckets](../sdks/sdk-ref-python.md#monitor-rotated-salt-buckets).
+2. If the current time is greater than or equal to the refresh timestamp, regenerate the raw EUID by calling [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) again with the same personal data.
 
-- Snowflake: [Monitor for Salt Bucket Rotation and Regenerate Raw EUIDs](integration-snowflake.md#monitor-for-salt-bucket-rotation-and-regenerate-raw-euids).
-
-- HTTP endpoints: [Monitor for Salt Bucket Rotations for Your Stored Raw EUIDs](integration-advertiser-dataprovider-endpoints.md#5-monitor-for-salt-bucket-rotations-for-your-stored-raw-euids).
-
-:::note
-For AWS Entity Resolution, there is no way to do salt bucket monitoring. As an alternative, you could regenerate raw EUIDs periodically using the AWS Entity Resolution service.
-:::
-
-#### Determine whether the salt bucket has been rotated
-
-To determine whether the salt bucket ID for a specific raw EUID has changed, follow these steps.
-
-1. Compare these two values:
-
-   - The `last_updated` timestamp of each `bucket_id` returned as part of monitoring the salt bucket rotations (whatever option you choose).
-   
-   - The timestamp of the raw EUID generation of the same `bucket_id`, which was returned in Step 1 and stored in Step 2.
-
-1. If the `last_updated` timestamp is more recent than the timestamp you recorded earlier, the salt bucket has been rotated. As a result, you'll need to regenerate any raw EUIDs associated with this `bucket_id`, following Step 1, [Generate Raw EUIDs from Personal Data](#1-generate-raw-euids-from-personal-data).
+This approach ensures your raw EUIDs remain current and valid for audience targeting and measurement.
 
 ### 6: Monitor for Opt-Out Status
 
-It's important to honor user opt-out status. Periodically, monitor for opt-out status, to be sure that you don't continue using EUIDs for users that have recently opted out.
+It's important to honor user opt-out status. Periodically, monitor for opt-out status, to be sure that you don't continue using raw EUIDs for users that have recently opted out.
 
 There are two ways that you can check with the EUID <Link href="../ref-info/glossary-uid#gl-operator-service">Operator Service</Link> to make sure you have the latest opt-out information:
 
@@ -153,6 +140,70 @@ There are two ways that you can check with the EUID <Link href="../ref-info/glos
 - Check the opt-out status of raw EUIDs using the [POST&nbsp;/optout/status](../endpoints/post-optout-status.md) endpoint.
 
 For details about the EUID opt-out workflow and how users can opt out, see [User Opt-Out](../getting-started/gs-opt-out.md).
+
+## Using POST /identity/map Version 2
+
+:::note
+The following information is relevant only to integration approaches that use an earlier version of the `POST /identity/map` endpoint, version 2, and is provided for reference only. New implementations should use the latest version: see [High-Level Steps](#high-level-steps).
+:::
+
+The key differences when using v2 of the Identity Map API are:
+
+- **Step 2**: Store salt bucket IDs instead of refresh timestamps
+- **Step 5**: Monitor for salt bucket rotations instead of using refresh timestamps
+
+All other steps (1, 3, 4, and 6) are the same as described in the v3 implementation: see [High-Level Steps](#high-level-steps).
+
+### Integration Diagram (v2)
+
+The following diagram outlines the v2 integration flow. Note that the main differences are in Step 2 (storing salt bucket IDs) and Step 5 (monitoring salt bucket rotations).
+
+![Advertiser Flow](images/advertiser-flow-overview-mermaid-v2.png)
+
+<!-- diagram source: resource/advertiser-flow-overview-mermaid-v2.md.bak -->
+
+### Store Raw EUIDs and Salt Bucket IDs (v2)
+
+:::note
+This step replaces Step 2 in the v3 implementation.
+:::
+
+The response from Step 1 contains mapping information. We recommend that you store the following information returned in Step 1:
+
+- Cache the mapping between personal data (`identifier`), raw EUID (`advertising_id`), and salt bucket (`bucket_id`).
+- Store the timestamp for when you received the response data. Later, you can compare this timestamp with the `last_updated` timestamp returned in Step 5.
+
+### Monitor for Salt Bucket Rotations for Your Stored Raw EUIDs (v2)
+
+:::note
+This step replaces Step 5 in the v3 implementation.
+:::
+
+A raw EUID is an identifier for a user at a specific moment in time. The raw EUID for a specific user changes roughly once per year, as a result of the <Link href="../ref-info/glossary-uid#gl-salt-bucket">salt bucket</Link> rotation.
+
+Even though each salt bucket is updated approximately once per year, individual bucket updates are spread over the year. Approximately 1/365th of all salt buckets are rotated daily. Based on this, we recommend checking salt bucket rotation regularly, on a cadence that aligns with your audience refreshes. For example, if you refresh weekly, check for salt bucket updates weekly.
+
+If the salt bucket has been rotated, regenerate the raw EUID. For details, see [Determine whether the salt bucket has been rotated](#determine-whether-the-salt-bucket-has-been-rotated-v2).
+
+For instructions for monitoring for salt bucket rotations, refer to one of the following:
+
+- Python SDK: [Monitor Rotated Salt Buckets](../sdks/sdk-ref-python.md#monitor-rotated-salt-buckets).
+
+- Snowflake: [Monitor for Salt Bucket Rotation and Regenerate Raw EUIDs](integration-snowflake.md#monitor-for-salt-bucket-rotation-and-regenerate-raw-euids).
+
+- HTTP endpoints: [Monitor for Salt Bucket Rotations for Your Stored Raw EUIDs (v2)](integration-advertiser-dataprovider-endpoints.md#monitor-for-salt-bucket-rotations-for-your-stored-raw-euids-v2).
+
+##### Determine whether the salt bucket has been rotated (v2)
+
+To determine whether the salt bucket ID for a specific raw EUID has changed, follow these steps.
+
+1. Compare these two values:
+
+  - The `last_updated` timestamp of each `bucket_id` returned as part of monitoring the salt bucket rotations (whatever option you choose).
+
+  - The timestamp of the raw EUID generation of the same `bucket_id`, which was returned in Step 1 and stored in Step 2.
+
+1. If the `last_updated` timestamp is more recent than the timestamp you recorded earlier, the salt bucket has been rotated. As a result, you'll need to regenerate any raw EUIDs associated with this `bucket_id`, following Step 1, [Generate Raw EUIDs from Personal Data](#1-generate-raw-euids-from-personal-data).
 
 ## FAQs
 

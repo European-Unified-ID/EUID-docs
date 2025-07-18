@@ -162,36 +162,38 @@ For details, see [Publisher Integration with SSO Providers](/docs/ref-info/ref-i
 
 Here are some frequently asked questions for advertisers and data providers using the EUID framework.
 
-- [How do I know when to refresh the EUID due to salt bucket rotation?](#how-do-i-know-when-to-refresh-the-euid-due-to-salt-bucket-rotation)
-- [Do refreshed emails get assigned to the same bucket with which they were previously associated?](#do-refreshed-emails-get-assigned-to-the-same-bucket-with-which-they-were-previously-associated)
-- [How often should EUIDs be refreshed for incremental updates?](#how-often-should-euids-be-refreshed-for-incremental-updates)
+- [How do I know when to refresh a raw EUID?](#how-do-i-know-when-to-refresh-a-raw-euid)
+- [How often should raw EUIDs be refreshed for incremental updates?](#how-often-should-raw-euids-be-refreshed-for-incremental-updates)
 - [How should I generate the SHA-256 of personal data for mapping?](#how-should-i-generate-the-sha-256-of-personal-data-for-mapping)
 - [Should I store mapping of email addresses, phone numbers, or corresponding hashes to raw EUIDs in my own datasets?](#should-i-store-mapping-of-email-addresses-phone-numbers-or-corresponding-hashes-to-raw-euids-in-my-own-datasets)
 - [How should I handle user opt-outs?](#how-should-i-handle-user-opt-outs)
 - [Does the same personal data always result in the same raw EUID?](#does-the-same-personal-data-always-result-in-the-same-raw-euid)
 - [If two operators process the same personal data, are the results the same?](#if-two-operators-process-the-same-personal-data-are-the-results-the-same)
+- [How do I know when to refresh the EUID due to salt bucket rotation?](#how-do-i-know-when-to-refresh-the-euid-due-to-salt-bucket-rotation)
+- [Do refreshed emails get assigned to the same bucket with which they were previously associated?](#do-refreshed-emails-get-assigned-to-the-same-bucket-with-which-they-were-previously-associated)
 
-#### How do I know when to refresh the EUID due to salt bucket rotation?
+#### How do I know when to refresh a raw EUID?
 
-Metadata supplied with the EUID generation request indicates the <Link href="../ref-info/glossary-uid#gl-salt-bucket">salt bucket</Link> used for generating the EUID. Salt buckets persist and correspond to the underlying personal data used to generate an EUID. Use the [POST&nbsp;/identity/buckets](../endpoints/post-identity-buckets.md) endpoint to return which salt buckets rotated since a given timestamp. The returned rotated salt buckets inform you which EUIDs to refresh.
+The [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint provides a refresh timestamp in the response (`r` field) that indicates a timestamp, after which each raw EUID might refresh. Use this timestamp to determine when to regenerate raw EUIDs for your stored data.
+
+To determine whether to refresh a raw EUID:
+
+1. Compare the current time with the refresh timestamp you stored from the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) response.
+2. If the current time is greater than or equal to the refresh timestamp, regenerate the raw EUID by calling the identity map endpoint again with the same <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>.
 
 :::note
-We do not make any promises about when the rotation takes place. To stay as up-to-date as possible, we recommend doing the checks once per hour.
+We recommend checking for refresh opportunities daily. It is guaranteed that the raw EUID won't refresh before the indicated timestamp. At some point on or after that time, the raw EUID is refreshed.
 :::
 
-#### Do refreshed emails get assigned to the same bucket with which they were previously associated?
-
-Not necessarily. After you remap emails associated with a particular bucket ID, the emails might be assigned to a different bucket ID. To check the bucket ID, see [Generate Raw EUIDs from Personal Data](../guides/integration-advertiser-dataprovider-overview.md#1-generate-raw-euids-from-personal-data) and save the returned raw EUID and bucket ID again.
-
-:::info
-When mapping and remapping emails, do not make any assumptions about the number of buckets, their rotation dates, or the specific bucket that an email gets assigned to.
-:::
-
-#### How often should EUIDs be refreshed for incremental updates?
+#### How often should raw EUIDs be refreshed for incremental updates?
 
 The recommended cadence for updating audiences is daily.
 
-Even though each salt bucket is updated roughly once a year, individual bucket updates are spread over the year. This means that about 1/365th of all buckets are rotated daily. If fidelity is critical, consider calling the [POST&nbsp;/identity/buckets](../endpoints/post-identity-buckets.md) endpoint more frequently&#8212;for example, hourly.
+A raw EUID for a specific user changes roughly once per year. The latest version of the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint provides refresh timestamps that indicate a point after which each raw EUID might refresh. We recommend checking these timestamps daily to ensure your raw EUIDs remain current and valid for audience targeting.
+
+For implementations that reference earlier versions of this endpoint (see [POST&nbsp;/identity/map v2](../endpoints/post-identity-map-v2.md)):
+
+Even though each <Link href="../ref-info/glossary-uid#gl-salt-bucket">salt bucket</Link> is updated roughly once a year, individual bucket updates are spread over the year. This means that about 1/365th of all buckets are rotated daily. If fidelity is critical, consider calling the [POST&nbsp;/identity/buckets](../endpoints/post-identity-buckets.md) endpoint more frequently: for example, hourly.
 
 #### How should I generate the SHA-256 of personal data for mapping?
 
@@ -199,7 +201,7 @@ The system should follow the [email normalization rules](../getting-started/gs-n
 
 #### Should I store mapping of email addresses, phone numbers, or corresponding hashes to raw EUIDs in my own datasets?
 
-Yes. Not storing mappings may increase processing time drastically when you have to map millions of email addresses or phone numbers. Recalculating only those mappings that actually need to be updated, however, reduces the total processing time because only about 1/365th of EUIDs need to be updated daily.
+Yes. Not storing mappings might increase processing time drastically when you have to map millions of email addresses or phone numbers. Recalculating only those mappings that actually need to be updated, however, reduces the total processing time because only about 1/365th of raw EUIDs need to be updated daily.
 
 :::important
 Unless you are using a <Link href="../ref-info/glossary-uid#gl-private-operator">Private Operator</Link>, you must map email addresses, phone numbers, or hashes consecutively, using a single HTTP connection, with a maximum batch size of 5,000 items per batch. In other words, do your mapping without creating multiple parallel connections.
@@ -207,7 +209,7 @@ Unless you are using a <Link href="../ref-info/glossary-uid#gl-private-operator"
 
 #### How should I handle user opt-outs?
 
-When a user opts out of EUID-based targeted advertising through the [Transparency and Control Portal](https://www.transparentadvertising.eu/), the opt-out signal is sent to DSPs and publishers, who handle opt-outs at bid time. We recommend that advertisers and data providers regularly check whether a user has opted out, via the [POST /identity/map](../endpoints/post-identity-map.md) endpoint.
+When a user opts out of EUID-based targeted advertising through the [Transparency and Control Portal](https://www.transparentadvertising.eu/), the opt-out signal is sent to DSPs and publishers, who handle opt-outs at bid time. We recommend that advertisers and data providers regularly check whether a user has opted out, via the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint.
 
 Advertisers and data providers can also check the opt-out status of raw EUIDs using the [POST&nbsp;/optout/status](../endpoints/post-optout-status.md) endpoint.
 
@@ -217,9 +219,9 @@ If a user opts out through your website, you should follow your internal procedu
 
 In general yes, the process of generating a raw EUID from personal data is the same, and results in the same value, no matter who sent the request. If two EUID participants were to send the same email address to the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint at the same time, they would both get the same raw EUID in response.
 
-However, there is a variable factor, which is the secret <Link href="../ref-info/glossary-uid#gl-salt">salt</Link> value that's used in generating the raw EUID. The salt values are rotated roughly once per year (for details, see [How often should EUIDs be refreshed for incremental updates?](#how-often-should-euids-be-refreshed-for-incremental-updates)). If the salt value changes between one request and another, those two requests result in two different raw EUIDs, even when the personal data is the same.
+However, there is a variable factor that's used in generating the raw EUID. The underlying values are refreshed roughly once per year (for details, see [How often should raw EUIDs be refreshed for incremental updates?](#how-often-should-raw-euids-be-refreshed-for-incremental-updates)). If these values change between one request and another, those two requests result in two different raw EUIDs, even when the personal data is the same.
 
-For more information, see [Monitor for Salt Bucket Rotations for Your Stored Raw EUIDs](../guides/integration-advertiser-dataprovider-overview.md#5-monitor-for-salt-bucket-rotations-for-your-stored-raw-euids) in the *Advertiser/Data Provider Integration Guide*.
+For more information, see [Monitor for Raw EUID Refresh](../guides/integration-advertiser-dataprovider-overview.md#5-monitor-for-raw-euid-refresh) in the *Advertiser/Data Provider Integration Guide*.
 
 #### If two operators process the same personal data, are the results the same?
 
@@ -227,9 +229,33 @@ Yes, if the request is for a <Link href="../ref-info/glossary-uid#gl-raw-euid">r
 
 The result is the same, regardless of the <Link href="../ref-info/glossary-uid#gl-operator">Operator</Link> and whether it's a Private Operator or a Public Operator.
 
-The timing is important only because of salt bucket rotation. If the salt value changes between one request and another, the result is a different raw EUID.
+The timing is important only because of refresh cycles. If the underlying values change between one request and another, the result is a different raw EUID.
 
 However, if a publisher sends personal data in a request for an <Link href="../ref-info/glossary-uid#gl-euid-token">EUID token</Link>, via the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) or [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint or via an SDK, the resulting EUID token contains the same encrypted raw EUID, but the token itself is always unique.
+
+#### How do I know when to refresh the EUID due to salt bucket rotation?
+
+:::note
+This information relates only to implementations using an earlier version of the POST /identity/map endpoint (see [POST&nbsp;/identity/map v2](../endpoints/post-identity-map-v2.md)). We recommend using the latest version (see (see [POST&nbsp;/identity/map](../endpoints/post-identity-map.md))).
+:::
+
+Metadata supplied with the EUID generation request indicates the <Link href="../ref-info/glossary-uid#gl-salt-bucket">salt bucket</Link> used for generating the EUID. Salt buckets persist and correspond to the underlying <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> used to generate a raw EUID. Use the [POST&nbsp;/identity/buckets](../endpoints/post-identity-buckets.md) endpoint to return which salt buckets rotated since a given timestamp. The returned rotated salt buckets inform you which EUIDs to refresh.
+
+:::note
+We do not make any promises about when the rotation takes place. To stay as up-to-date as possible, we recommend doing the checks once per hour.
+:::
+
+#### Do refreshed emails get assigned to the same bucket with which they were previously associated?
+
+:::note
+This information relates only to implementations using an earlier version of the POST /identity/map endpoint (see [POST&nbsp;/identity/map v2](../endpoints/post-identity-map-v2.md)). We recommend using the latest version (see (see [POST&nbsp;/identity/map](../endpoints/post-identity-map.md))).
+:::
+
+Not necessarily. After you remap emails associated with a particular bucket ID, the emails might be assigned to a different bucket ID. To check the bucket ID, see [Generate Raw EUID from Personal Data](../guides/integration-advertiser-dataprovider-overview.md#1-generate-raw-euids-from-personal-data) and save the returned raw EUID and bucket ID again.
+
+:::info
+When mapping and remapping emails, do not make any assumptions about the number of buckets, their rotation dates, or the specific bucket that an email gets assigned to.
+:::
 
 ## FAQs for DSPs
 
@@ -238,7 +264,8 @@ Here are some frequently asked questions for demand-side platforms (DSPs).
 - [How do I know which decryption key to apply to an EUID?](#how-do-i-know-which-decryption-key-to-apply-to-an-euid)
 - [Where do I get the decryption keys?](#where-do-i-get-the-decryption-keys)
 - [How many decryption keys may be present in memory at any point?](#how-many-decryption-keys-may-be-present-in-memory-at-any-point)
-- [How do I know if/when the salt bucket has rotated?](#how-do-i-know-ifwhen-the-salt-bucket-has-rotated)
+- [How do I know when to refresh mapped raw EUIDs?](#how-do-i-know-when-to-refresh-mapped-raw-euids)
+- [How do I know if/when the raw EUID has rotated?](#how-do-i-know-ifwhen-the-raw-euid-has-rotated)
 - [Should the DSP be concerned with latency?](#should-the-dsp-be-concerned-with-latency)
 - [How should the DSP maintain proper frequency capping with EUID?](#how-should-the-dsp-maintain-proper-frequency-capping-with-euid)
 - [Will all user opt-out traffic be sent to the DSP?](#will-all-user-opt-out-traffic-be-sent-to-the-dsp)
@@ -263,9 +290,13 @@ You can use one of the server-side SDKs (see [SDKs: Summary](../sdks/summary-sdk
 
 There may be thousands of decryption keys present in the system at any given point.
 
-#### How do I know if/when the salt bucket has rotated?
+#### How do I know when to refresh mapped raw EUIDs?
 
-The DSP is not privy to when the EUID salt bucket rotates. This is similar to a DSP being unaware if users cleared their cookies. Salt bucket rotation has no significant impact on the DSP.
+See [How do I know when to refresh a raw EUID?](#how-do-i-know-when-to-refresh-a-raw-euid) in the FAQs for Advertisers and Data Providers.
+
+#### How do I know if/when the raw EUID has rotated?
+
+The DSP is not privy to when the raw EUID rotates. This is similar to a DSP being unaware if users cleared their cookies. Raw EUID rotation has no significant impact on the DSP.
 
 #### Should the DSP be concerned with latency?
 
@@ -273,7 +304,7 @@ The EUID service does not introduce latency into the bidding process. Any latenc
 
 #### How should the DSP maintain proper frequency capping with EUID?
 
-The EUID has the same chance as a cookie of becoming stale. Hence, the DSP can adapt the same infrastructure currently used for cookie or deviceID-based frequency capping for EUID. For details, see [How do I know when to refresh the EUID due to salt bucket rotation?](#how-do-i-know-when-to-refresh-the-euid-due-to-salt-bucket-rotation)
+The EUID has the same chance as a cookie of becoming stale. Hence, the DSP can adapt the same infrastructure currently used for cookie or deviceID-based frequency capping for EUID. For details, see [How do I know when to refresh a raw EUID?](#how-do-i-know-when-to-refresh-a-raw-euid)
 
 #### Will all user opt-out traffic be sent to the DSP?
 

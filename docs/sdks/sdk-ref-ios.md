@@ -7,6 +7,7 @@ displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
+import SDKsSameUID2EUID from '../snippets/_euid-sdk-same-for-all.mdx';
 
 # SDK for iOS Reference Guide
 
@@ -52,6 +53,8 @@ For current and past release notes information, see [https://github.com/IABTechL
 This SDK is in the following open-source GitHub repository:
 
 - [https://github.com/IABTechLab/uid2-ios-sdk](https://github.com/IABTechLab/uid2-ios-sdk)
+
+<SDKsSameUID2EUID/>
 
 ## Minimum Requirements
 

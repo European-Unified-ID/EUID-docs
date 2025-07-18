@@ -7,14 +7,11 @@ displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
+import SDKsSameUID2EUID from '../snippets/_euid-sdk-same-for-all.mdx';
 
 # SDK for Python Reference Guide
 
 You can use the SDK for Python on the server side to facilitate the process of generating or establishing client identity using EUID, retrieving advertising tokens for <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link> use, and automatically refreshing EUID tokens. If you have the applicable permissions, you can also decrypt EUID tokens to access the raw EUID, map personal data to raw EUIDs, and monitor rotated salt buckets.
-
-:::note
-This SDK is valid for UID2 and EUID. Some of the code naming and URLs are labelled as UID2. These apply equally to EUID.
-:::
 
 ## Functionality
 
@@ -42,11 +39,11 @@ This SDK is in the following open-source GitHub repository:
 
 - [SDK for Python](https://github.com/IABTechLab/uid2-client-python/blob/master/README.md)
 
-  >NOTE: This SDK is valid for both UID2 and EUID. The SDK, and some of its technical components, are named UID2, but are equally applicable for EUID.
-
 The package is published in this location:
 
 - [https://pypi.org/project/uid2-client/](https://pypi.org/project/uid2-client/)
+
+<SDKsSameUID2EUID/>
 
 ## Installation
 

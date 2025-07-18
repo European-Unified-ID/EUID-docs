@@ -7,14 +7,12 @@ displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
+import SDKsSameUID2EUID from '../snippets/_euid-sdk-same-for-all.mdx';
+import POSTIdentityMapImprovements from '../snippets/_post-identity-map-improvements-v3.mdx';
 
 # SDK for Java Reference Guide
 
 You can use the SDK for Java on the server side to facilitate the process of generating or establishing client identity using EUID, retrieving advertising tokens for <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link> use, and automatically refreshing EUID tokens. If you have the applicable permissions, you can also decrypt EUID tokens to access the raw EUID and map personal data to raw EUIDs.
-
-:::note
-This SDK is valid for UID2 and EUID. The SDK, and some of its technical components, are named UID2, but are equally applicable for EUID.
-:::
 
 ## Functionality
 
@@ -23,6 +21,10 @@ This SDK simplifies integration with EUID for any publishers, DSPs, advertisers,
 | Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to Raw EUIDs | Monitor Rotated Salt Buckets |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | &#9989; | &#9989; | &#9989; | &#9989; | &#9989; | &#8212; |
+
+## EUID Account Setup
+
+To integrate with EUID, you'll need to have an EUID account. If you haven't yet created an account, first follow the steps described on the [Account Setup](../getting-started/gs-account-setup.md) page.
 
 ## API Permissions
 
@@ -42,13 +44,11 @@ This SDK is in the following open-source GitHub repository:
 
 - [SDK for Java](https://github.com/IABTechLab/uid2-client-java/blob/master/README.md)
 
-:::note
-This SDK is valid for UID2 and EUID. The SDK, and some of its technical components, are named UID2, but are equally applicable for EUID.
-:::
-
 The binary is published on the Maven repository:
 
 - [https://central.sonatype.com/artifact/com.uid2/uid2-client](https://central.sonatype.com/artifact/com.uid2/uid2-client)
+
+<SDKsSameUID2EUID/>
 
 ## Initialization
 
@@ -57,7 +57,7 @@ The initialization step depends on the role, as shown in the following table.
 | Role                                      | Create Instance of Class | Link to Instructions                                                         |
 |:------------------------------------------| :--- |:-----------------------------------------------------------------------------|
 | Publisher                                 | `PublisherUid2Client` | [Usage for Publishers](#usage-for-publishers)                                |
-| Advertiser/Data Provider                  | `IdentityMapClient` | [Usage for Advertisers/Data Providers](#usage-for-advertisersdata-providers) |
+| Advertiser/Data Provider                  | `IdentityMapV3Client` | [Usage for Advertisers/Data Providers](#usage-for-advertisersdata-providers) |
 | DSP                                       | `BidstreamClient` | [Usage for DSPs](#usage-for-dsps)                                            |
 | Sharer (not currently supported for EUID) | `SharingClient` | Not applicable                                                               |
 
@@ -75,7 +75,7 @@ The `BidstreamClient` class allows you to decrypt EUID tokens into raw EUIDs.
 
 For details on the bidding logic for handling user opt-outs, see [DSP Integration Guide](../guides/dsp-guide.md).
 
-The `SharingClient` class allows you to encrypt raw EUIDs into EUID tokens and decrypt EUID tokens into raw EUIDs.
+The `SharingClient` class allows you to encrypt raw EUIDs into EUID tokens and decrypt EUID tokens into raw EUIDs (not currently supported).
 
 :::note
 When you use an SDK, you do not need to store or manage decryption keys.
@@ -136,6 +136,10 @@ As a publisher, there are two ways to use the SDK for Java:
 
 For an example application that demonstrates both Basic and Advanced usage, see [Java Integration Example](https://github.com/UnifiedID2/uid2-examples/tree/main/publisher/uid2-java-test-site#readme).
 
+:::note
+The integration example is labelled as UID2, but it applies equally to EUID.
+:::
+
 ### Basic Usage
 
 If you're using the SDK's HTTP implementation, follow these steps.
@@ -148,7 +152,7 @@ If you're using the SDK's HTTP implementation, follow these steps.
 
 2. Call a function that takes the user's email address or phone number as input and generates a `TokenGenerateResponse` object. The following example uses an email address:
    ```java
-   TokenGenerateResponse tokenGenerateResponse = publisherUid2Client.generateTokenResponse(TokenGenerateInput.fromEmail(emailAddress).doNotGenerateTokensForOptedOut());
+   TokenGenerateResponse tokenGenerateResponse = publisherUid2Client.generateTokenResponse(TokenGenerateInput.fromEmail("user@example.com").doNotGenerateTokensForOptedOut());
    ```
 
    :::important
@@ -196,7 +200,9 @@ If you're using server-side integration (see [Publisher Integration Guide, Serve
    2. Determine if the identity can be refreshed (that is, the refresh token hasn't expired):
 
       ```java
-      if (identity == null || !identity.isRefreshable()) { we must no longer use this identity (for example, remove this identity from the user's session) }
+      if (identity == null || !identity.isRefreshable()) { 
+          // we must no longer use this identity (for example, remove this identity from the user's session) 
+      }
       ```
    3. Determine if a refresh is needed:
 
@@ -223,21 +229,21 @@ If you're using server-side integration (see [Publisher Integration Guide, Serve
 2. Call a function that takes the user's email address or phone number as input and creates a secure request data envelope. See [Encrypting requests](../getting-started/gs-encryption-decryption.md#encrypting-requests). The following example uses an email address:
 
     ```java
-    EnvelopeV2 envelope = publisherUid2Helper.createEnvelopeForTokenGenerateRequest(TokenGenerateInput.fromEmail(emailAddress).doNotGenerateTokensForOptedOut());
+    EnvelopeV2 envelope = publisherUid2Helper.createEnvelopeForTokenGenerateRequest(TokenGenerateInput.fromEmail("user@example.com").doNotGenerateTokensForOptedOut());
     ```
 3. Using an HTTP client library of your choice, post this envelope to the [POST&nbsp;token/generate](../endpoints/post-token-generate.md) endpoint, including headers and body:
-   1. Headers: Depending on your HTTP library, this might look something like the following:
+   1. Headers: Depending on your HTTP library, this might look something like the following:  
     
-      `.putHeader("Authorization", "Bearer " + EUID_API_KEY)`
-      `.putHeader("X-UID2-Client-Version", PublisherUid2Helper.getVersionHeader())`
+      `.putHeader("Authorization", "Bearer " + EUID_API_KEY)`  
+      `.putHeader("X-UID2-Client-Version", PublisherUid2Helper.getVersionHttpHeader())`
    2. Body: `envelope.getEnvelope()`
    :::important
-      - Be sure to call the POST&nbsp;/token/generate endpoint only when you have a legal basis to convert the user’s <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to EUID tokens for targeted advertising.
+   - Be sure to call the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint only when you have a legal basis to convert the user’s <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to EUID tokens for targeted advertising.
 
       - Always apply `doNotGenerateTokensForOptedOut()`. This applies a parameter similar to setting `optout_check=1` in the call to the POST&nbsp;/token/generate endpoint (see [Unencrypted JSON Body Parameters](../endpoints/post-token-generate.md#unencrypted-json-body-parameters)).
    :::
 
-<!-- uid2_euid_diff re legal basis for admonition above (first bullet not in UID2) -->
+   <!-- uid2_euid_diff re legal basis for admonition above (first bullet not in UID2) -->
 
 4. If the HTTP response status code is _not_ 200, see [Response Status Codes](../endpoints/post-token-generate.md#response-status-codes) to determine next steps. Otherwise, convert the EUID identity response content into a `TokenGenerateResponse` object:
 
@@ -282,7 +288,9 @@ If you're using server-side integration (see [Publisher Integration Guide, Serve
    2. Determine whether the identity can be refreshed (that is, the refresh token hasn't expired): 
     
       ```java
-      if (identity == null || !identity.isRefreshable()) { we must no longer use this identity (for example, remove this identity from the user's session) }
+      if (identity == null || !identity.isRefreshable()) { 
+          // we must no longer use this identity (for example, remove this identity from the user's session) 
+      }
       ```
    3. Determine whether a refresh is needed:
    
@@ -292,8 +300,8 @@ If you're using server-side integration (see [Publisher Integration Guide, Serve
 4. If a refresh is needed, call the [POST token/refresh](../endpoints/post-token-refresh.md) endpoint, with the following:
    1. Headers: Depending on your HTTP library, this might look something like the following:
     
-      `.putHeader("Authorization", "Bearer " + EUID_API_KEY)`
-      `.putHeader("X-UID2-Client-Version", PublisherUid2Helper.getVersionHeader())`. 
+      `.putHeader("Authorization", "Bearer " + EUID_API_KEY)`  
+      `.putHeader("X-UID2-Client-Version", PublisherUid2Helper.getVersionHttpHeader())`. 
    2. Body: `identity.getRefreshToken()`
 5. If the refresh HTTP response status code is 200:
 
@@ -305,6 +313,194 @@ If you're using server-side integration (see [Publisher Integration Guide, Serve
    If the user has opted out, this method returns null, indicating that the user's identity should be removed from the session. To confirm optout, you can use the `tokenRefreshResponse.isOptout()` function.
 
 ## Usage for Advertisers/Data Providers
+
+1. Create an IdentityMapV3Client as an instance variable:
+   ```java
+   final private IdentityMapV3Client identityMapV3Client = new IdentityMapV3Client(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY);
+   ```
+
+2. Create an IdentityMapV3Input object. You can use emails, phone numbers, or both, hashed or raw:
+   ```java
+   IdentityMapV3Input input = IdentityMapV3Input.fromEmails(Arrays.asList("user@example.com", "user2@example.com"));
+   ```
+   
+   Or combine multiple identity types:
+   ```java
+   IdentityMapV3Input input = new IdentityMapV3Input()
+       .withEmail("user@example.com")
+       .withPhone("+12345678901")
+       .withHashedEmail("preHashedEmail")
+       .withHashedPhone("preHashedPhone");
+   ```
+
+3. Call a function that takes the `input` and generates an IdentityMapV3Response object:
+   ```java
+   IdentityMapV3Response identityMapResponse = identityMapV3Client.generateIdentityMap(input);
+   ```
+
+4. Retrieve the mapped and unmapped results:
+   ```java
+   HashMap<String, IdentityMapV3Response.MappedIdentity> mappedIdentities = identityMapResponse.getMappedIdentities();
+   HashMap<String, IdentityMapV3Response.UnmappedIdentity> unmappedIdentities = identityMapResponse.getUnmappedIdentities();
+   ```
+
+5. Process the results. For successfully mapped identities:
+   ```java
+   IdentityMapV3Response.MappedIdentity mappedIdentity = mappedIdentities.get("user@example.com");
+   if (mappedIdentity != null) {
+       String currentUid = mappedIdentity.getCurrentRawUid();     // Current raw EUID
+       String previousUid = mappedIdentity.getPreviousRawUid();   // Previous raw EUID (nullable, only available for 90 days after rotation)
+       Instant refreshFrom = mappedIdentity.getRefreshFrom();     // When to refresh this identity
+   } else {
+       IdentityMapV3Response.UnmappedIdentity unmappedIdentity = unmappedIdentities.get("user@example.com");
+       UnmappedIdentityReason reason = unmappedIdentity.getReason(); // OPTOUT, INVALID_IDENTIFIER, or UNKNOWN
+   }
+   ```
+
+>**Note:** The SDK automatically handles email normalization and hashing, ensuring that raw email addresses and phone numbers do not leave your server.
+
+### Usage Example
+
+```java
+IdentityMapV3Client client = new IdentityMapV3Client(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY);
+
+// Example 1: Single identity type
+IdentityMapV3Input emailInput = IdentityMapV3Input.fromEmails(
+    Arrays.asList("user@example.com", "optout@example.com")
+);
+IdentityMapV3Response emailResponse = client.generateIdentityMap(emailInput);
+
+// Process email results
+emailResponse.getMappedIdentities().forEach((email, identity) -> {
+    System.out.println("Email: " + email);
+    System.out.println("Current UID: " + identity.getCurrentRawUid());
+    System.out.println("Previous UID: " + identity.getPreviousRawUid());
+    System.out.println("Refresh from: " + identity.getRefreshFrom());
+});
+
+emailResponse.getUnmappedIdentities().forEach((email, identity) -> {
+    System.out.println("Unmapped email: " + email + " - Reason: " + identity.getReason());
+});
+
+// Example 2: Mixed identity types in single request
+IdentityMapV3Input mixedInput = new IdentityMapV3Input()
+    .withEmail("user1@example.com")
+    .withPhone("+12345678901")
+    .withHashedEmail("preHashedEmailValue")
+    .withHashedPhone("preHashedPhoneValue");
+
+IdentityMapV3Response mixedResponse = client.generateIdentityMap(mixedInput);
+```
+
+## Migration From Version Using v2 Identity Map
+
+The following sections provide general information and guidance for migrating to the latest version of this SDK, which references `POST /identity/map` version 3, including:
+
+- [Version 3 Improvements](#version-3-improvements)
+- [Required Changes](#required-changes)
+- [Recommended Changes](#recommended-changes)
+
+### Version 3 Improvements
+
+<POSTIdentityMapImprovements />
+
+### Required Changes
+
+To upgrade, follow these steps:
+
+1. [Update dependency version](#1-update-dependency-version)
+2. [Change client class](#2-change-client-class)
+3. [Update import statements](#3-update-import-statements)
+
+#### 1. Update dependency version
+
+Update the dependency version referenced in your code, as shown in the following example.
+
+```xml
+<dependency>
+  <groupId>com.uid2</groupId>
+  <artifactId>uid2-client</artifactId>
+  <version>4.8.0</version>
+</dependency>
+```
+
+#### 2. Change client class
+
+Update the client class referenced in your code, as shown in the following example.
+
+```java
+// Before
+IdentityMapClient identityMapClient = new IdentityMapClient(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY);
+
+// After
+IdentityMapV3Client identityMapClient = new IdentityMapV3Client(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY);
+```
+
+#### 3. Update import statements
+
+Update import statements, as shown in the following example.
+
+```java
+import com.uid2.client.IdentityMapV3Client;
+import com.uid2.client.IdentityMapV3Input;
+import com.uid2.client.IdentityMapV3Response;
+import com.uid2.client.UnmappedIdentityReason;
+```
+
+### Recommended Changes
+
+The following changes are **optional** but allow you to take advantage of new v3 features. The [required changes](#required-changes) are sufficient for basic functionality, but these recommended changes enable improved capabilities.
+
+1. **Mix identity types in a single request** - Process both email addresses and phone numbers together:
+   ```java
+   // Before - single identity type only
+   IdentityMapInput input = IdentityMapInput.fromEmails(Arrays.asList("user@example.com"));
+   
+   // After - can mix identity types (new v3 capability)
+   IdentityMapV3Input input = new IdentityMapV3Input()
+       .withEmail("user@example.com")
+       .withPhone("+12345678901")
+       .withHashedEmail("preHashedEmail")
+       .withHashedPhone("preHashedPhone");
+   ```
+
+2. **Access previous EUIDs** - Get both current and previous EUIDs for 90-day measurement continuity:
+   ```java
+   // Before - only current EUID available
+   IdentityMapResponse response = client.generateIdentityMap(input);
+   MappedIdentity mapped = response.getMappedIdentities().get("user@example.com");
+   String uid = mapped.getRawUid();
+   
+   // After - access to both current and previous EUIDs
+   IdentityMapV3Response response = client.generateIdentityMap(input);
+   IdentityMapV3Response.MappedIdentity mapped = response.getMappedIdentities().get("user@example.com");
+   String currentUid = mapped.getCurrentRawUid();
+   String previousUid = mapped.getPreviousRawUid();  // Available for 90 days after rotation
+   Instant refreshFrom = mapped.getRefreshFrom();
+   ```
+
+3. **Use structured error reasons** - Get unmapped reasons as strongly-typed enums instead of strings:
+   ```java
+   // Before - string-based error reasons
+   IdentityMapResponse.UnmappedIdentity unmapped = identityMapResponse.getUnmappedIdentities().get("user@example.com");
+   String reason = unmapped.getReason();
+   
+   // After - structured enum-based error reasons
+   IdentityMapV3Response.UnmappedIdentity unmapped = response.getUnmappedIdentities().get("user@example.com");
+   UnmappedIdentityReason reason = unmapped.getReason(); // Enum: OPTOUT, INVALID_IDENTIFIER, UNKNOWN
+   
+   // Or continue using string reasons if preferred
+   String rawReason = unmapped.getRawReason();
+   ```
+
+## Previous SDK Version (using POST /identity/map v2)
+
+:::note
+An earlier version of the SDK for Java, which references the `POST /identity/map` v2 endpoint is also available, for backwards compatibility. Migrate to the current SDK for improved performance, multi-identity type support, and better UID rotation management. New integrations should not use this version. 
+For details, see [Migration From Version Using v2 Identity Map](#migration-from-version-using-v2-identity-map).
+:::
+
+To use the earlier version, follow these instructions.
 
 1. Create an instance of IdentityMapClient as an instance variable.
    ```java
@@ -321,7 +517,7 @@ If you're using server-side integration (see [Publisher Integration Guide, Serve
 3. Retrieve the mapped and unmapped results as follows:
    ```java
    Map<String, IdentityMapResponse.MappedIdentity> mappedIdentities = identityMapResponse.getMappedIdentities();
-   Map<String, IdentityMapResponse.UnmappedIdentity> unmappedIdentities = identityMapResponse.getUnmappedIdentities();`
+   Map<String, IdentityMapResponse.UnmappedIdentity> unmappedIdentities = identityMapResponse.getUnmappedIdentities();
    ```
 
 4. Iterate through the mapped and unmapped results, or do a lookup. The following example does a lookup:
@@ -342,7 +538,7 @@ The following instructions provide an example of how a DSP can decode <Link href
 1. Create a `BidstreamClient`:
 
    ```java
-   Bidstream client = new BidstreamClient(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY);
+   BidstreamClient client = new BidstreamClient(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY);
    ```
 
 2. Refresh once at startup, and then periodically (recommended refresh interval is hourly):

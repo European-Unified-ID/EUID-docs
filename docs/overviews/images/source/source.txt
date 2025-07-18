@@ -4,3 +4,5 @@ Also, here is the figma file. It contains both UID2 and EUID workflows. They are
 SVG files updated 6 May 2024
 
 Note: Minor update done 1/23/25 and it is reflected in this file.
+
+Last update 15 July 25 for POST /identity/map updates

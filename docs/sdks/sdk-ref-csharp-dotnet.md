@@ -7,6 +7,7 @@ displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
+import SDKsSameUID2EUID from '../snippets/_euid-sdk-same-for-all.mdx';
 
 # SDK for C# / .NET Reference Guide
 
@@ -42,11 +43,11 @@ This SDK is in the following open-source GitHub repository:
 
 - [SDK for .NET](https://github.com/IABTechLab/uid2-client-net/blob/master/README.md)
 
-  >NOTE: This SDK is valid for both UID2 and EUID. The SDK, and some of its technical components, are named UID2, but are equally applicable for EUID.
-
 The binary is published in this location:
 
 - [https://www.nuget.org/packages/UID2.Client](https://www.nuget.org/packages/UID2.Client)
+
+<SDKsSameUID2EUID/>
 
 ## Initialization
 
