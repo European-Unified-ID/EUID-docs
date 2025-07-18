@@ -7,6 +7,7 @@ displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
+import POSTIdentityMapImprovements from '../snippets/_post-identity-map-improvements-v3.mdx';
 
 # POST /identity/map
 
@@ -206,12 +207,7 @@ The following sections provide general information and guidance for migrating to
 
 ### Version 3 Improvements
 
-Version 3 of the `POST /identity/map` endpoint provides the following improvements over v2:
-
-- **Support for multiple identity types**: You can process both email addresses and phone numbers in a single request.
-- **Simpler refresh management**: You can just re-map any raw EUID when it reaches the refresh timestamp, rather than monitoring salt buckets, which is a separate API call.
-- **Availability of previous raw EUID**: You can see the previous EUID for 90 days after rotation.
-- **Improved performance**: The new API version uses significantly less bandwidth for the same amount of personal data.
+<POSTIdentityMapImprovements />
 
 ### Key Differences Between v2 and v3
 
