@@ -39,3 +39,16 @@ The latest ZIP file is available in the Assets section at the bottom of the link
 | Q2 2024 | [v5.37.12](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.37.12) | 5.37.12 | June 12, 2024 | Sep 30, 2025 |
 
 For documentation, see [EUID Private Operator for AWS Integration Guide](..\guides\operator-guide-aws-marketplace.md).
+
+## Endpoint Versions
+
+Version 2 of the `POST /identity/map` endpoint has been superseded by version 3, which includes the additional advantages listed in [Version 3 Improvements](../endpoints/post-identity-map.md#version-3-improvements).
+
+With version 3 of the `POST /identity/map endpoint`, the `POST /identity/buckets` endpoint is no longer used at all.
+
+The following table shows the deprecation schedule for the v2 endpoints.
+
+Endpoint | Deprecation Date | 
+| ------- | ------ |
+| `POST /v2/identity/map` | June 30, 2026 |
+| `POST /v2/identity/buckets` | June 30, 2026 |
