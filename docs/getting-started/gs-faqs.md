@@ -170,7 +170,7 @@ Here are some frequently asked questions for advertisers and data providers usin
 - [Does the same personal data always result in the same raw EUID?](#does-the-same-personal-data-always-result-in-the-same-raw-euid)
 - [If two operators process the same personal data, are the results the same?](#if-two-operators-process-the-same-personal-data-are-the-results-the-same)
 - [How do I know when to refresh the EUID due to salt bucket rotation?](#how-do-i-know-when-to-refresh-the-euid-due-to-salt-bucket-rotation)
-- [Do refreshed emails get assigned to the same bucket with which they were previously associated?](#do-refreshed-emails-get-assigned-to-the-same-bucket-with-which-they-were-previously-associated)
+- [Do refreshed emails get assigned to the same bucket that they were previously associated with?](#do-refreshed-emails-get-assigned-to-the-same-bucket-that-they-were-previously-associated-with)
 
 #### How do I know when to refresh a raw EUID?
 
@@ -245,7 +245,7 @@ Metadata supplied with the EUID generation request indicates the <Link href="../
 We do not make any promises about when the rotation takes place. To stay as up-to-date as possible, we recommend doing the checks once per hour.
 :::
 
-#### Do refreshed emails get assigned to the same bucket with which they were previously associated?
+#### Do refreshed emails get assigned to the same bucket that they were previously associated with?
 
 :::note
 This information relates only to implementations using an earlier version of the POST /identity/map endpoint (see [POST&nbsp;/identity/map v2](../endpoints/post-identity-map-v2.md)). We recommend using the latest version (see (see [POST&nbsp;/identity/map](../endpoints/post-identity-map.md))).
