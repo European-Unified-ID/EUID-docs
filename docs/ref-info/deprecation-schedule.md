@@ -44,7 +44,7 @@ For documentation, see [EUID Private Operator for AWS Integration Guide](..\guid
 
 Version 2 of the `POST /identity/map` endpoint has been superseded by version 3, which includes the additional advantages listed in [Version 3 Improvements](../endpoints/post-identity-map.md#version-3-improvements).
 
-With version 3 of the `POST /identity/map endpoint`, the `POST /identity/buckets` endpoint is no longer used at all.
+With version 3 of the `POST /identity/map` endpoint, the `POST /identity/buckets` endpoint is no longer used at all.
 
 The following table shows the deprecation schedule for the v2 endpoints.
 
