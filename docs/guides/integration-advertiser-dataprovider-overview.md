@@ -189,7 +189,7 @@ For instructions for monitoring for salt bucket rotations, refer to one of the f
 
 - Python SDK: [Monitor Rotated Salt Buckets](../sdks/sdk-ref-python.md#monitor-rotated-salt-buckets).
 
-- Snowflake: [Monitor for Salt Bucket Rotation and Regenerate Raw EUIDs](integration-snowflake.md#monitor-for-salt-bucket-rotation-and-regenerate-raw-euids).
+- Snowflake: [Monitor for Salt Bucket Rotation and Regenerate Raw EUIDs](integration-snowflake-previous.md#monitor-for-salt-bucket-rotation-and-regenerate-raw-euids).
 
 - HTTP endpoints: [Monitor for Salt Bucket Rotations for Your Stored Raw EUIDs (v2)](integration-advertiser-dataprovider-endpoints.md#monitor-for-salt-bucket-rotations-for-your-stored-raw-euids-v2).
 
