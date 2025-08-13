@@ -175,7 +175,7 @@ For successfully mapped personal data, the mapped object includes the properties
 | Property | Data Type  | Description                                                                                                                           |
 |:---------|:-----------|:--------------------------------------------------------------------------------------------------------------------------------------|
 | `u`      | string     | The raw EUID corresponding to the email or phone number provided in the request.                                                                     |
-| `p`      | string     | One of the following:<ul><li>If the current raw EUID has been rotated in the last 90 days: the previous value.</li><li>If the current raw EUID is older than 90 days: `null`.</li></ul> |
+| `p`      | string     | One of the following:<ul><li>If the current raw EUID was rotated in the last 90 days: the previous raw EUID.</li><li>Otherwise: `null`.</li></ul> |
 | `r`      | number     | The Unix timestamp (in milliseconds) that indicates when the raw EUID might be refreshed. The raw EUID is guaranteed to be valid until this timestamp. |
 
 For unsuccessfully mapped input values, the mapped object includes the properties shown in the following table.
