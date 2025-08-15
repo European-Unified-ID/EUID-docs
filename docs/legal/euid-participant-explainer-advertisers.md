@@ -1,6 +1,6 @@
 ---
 title: Participant Explainer for Advertisers
-description: xxx
+description: Legal information for Advertisers.
 hide_table_of_contents: false
 sidebar_position: 06
 displayed_sidebar: docs

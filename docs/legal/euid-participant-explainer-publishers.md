@@ -1,6 +1,6 @@
 ---
 title: Participant Explainer for Publishers
-description: xxx
+description: Legal information for Publishers.
 hide_table_of_contents: false
 sidebar_position: 06
 displayed_sidebar: docs
