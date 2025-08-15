@@ -200,15 +200,11 @@ For the earlier version, see [Previous Version (v2 Identity Map)](#previous-vers
 
 ### Map Personal Data to Raw EUIDs
 
-[**GWH__GMS_01 there are a lot of placeholder values in the code that I think could be changed to EUID but not sure. For example: `UID2_BASE_URL, UID2_API_KEY, UID2_SECRET_KEY`**]
-
-[**GWH__GMS_02 What about code items that mention UID2? For example: `pip install --upgrade "uid2-client>=2.6.0"`.**]
-
 To map personal data to raw EUIDs, follow these steps:
 
 1. Create an `IdentityMapV3Client` as an instance variable:
    ```py
-    identity_map_v3_client = IdentityMapV3Client(UID2_BASE_URL, UID2_API_KEY, UID2_SECRET_KEY)
+    identity_map_v3_client = IdentityMapV3Client(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY)
    ```
 
 2. Create an `IdentityMapV3Input` object. You can use emails, phone numbers, or their hashed forms:
@@ -254,7 +250,7 @@ The SDK automatically handles email normalization and hashing, ensuring that raw
 #### Usage Example
 
 ```py
-client = IdentityMapV3Client(UID2_BASE_URL, UID2_API_KEY, UID2_SECRET_KEY)
+client = IdentityMapV3Client(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY)
 
 # Example 1: Single identity type
 email_input = IdentityMapV3Input.from_emails(["user@example.com", "optout@example.com"])
@@ -310,10 +306,10 @@ To upgrade your client to the latest version (version 3), follow these steps:
 2. **Change client class**:
    ```py
    # Before
-   client = IdentityMapClient(UID2_BASE_URL, UID2_API_KEY, UID2_SECRET_KEY)
+   client = IdentityMapClient(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY)
 
    # After
-   client = IdentityMapV3Client(UID2_BASE_URL, UID2_API_KEY, UID2_SECRET_KEY)
+   client = IdentityMapV3Client(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY)
    ```
 
 3. **Update import statements**:
