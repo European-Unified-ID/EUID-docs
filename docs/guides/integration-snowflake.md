@@ -135,7 +135,7 @@ All query examples use the following default values for each name variable:
 
 | Variable          | Default Value      | Comments                                                                                                                                  |
 |:------------------|:-------------------|:------------------------------------------------------------------------------------------------------------------------------------------|
-| `{DATABASE_NAME}` | `UID2_PROD_UID_SH` | If needed, you can change the default database name when creating a new database after you are granted access to the selected EUID Share. |
+| `{DATABASE_NAME}` | `EUID_PROD_UID_SH` | If needed, you can change the default database name when creating a new database after you are granted access to the selected EUID Share. |
 | `{SCHEMA_NAME}`   | `UID`              | This is an immutable name.    
 
 ### Map Personal Data
@@ -193,7 +193,7 @@ The input and output data in these examples is fictitious, for illustrative purp
 The following query illustrates how to map a single email address, using the [default database and schema names](#database-and-schema-names).
 
 ```sql
-select UID, PREV_UID, REFRESH_FROM, UNMAPPED from table(UID2_PROD_UID_SH.UID.FN_T_IDENTITY_MAP_V3('validate@example.com', 'email'));
+select UID, PREV_UID, REFRESH_FROM, UNMAPPED from table(EUID_PROD_UID_SH.UID.FN_T_IDENTITY_MAP_V3('validate@example.com', 'email'));
 ```
 
 Query results for a single email:
@@ -212,7 +212,7 @@ The following query illustrates how to map multiple email addresses, using the [
 
 ```sql
 select a.ID, a.EMAIL, m.UID, m.PREV_UID, m.REFRESH_FROM, m.UNMAPPED from AUDIENCE a LEFT JOIN(
-    select ID, t.* from AUDIENCE, lateral UID2_PROD_UID_SH.UID.FN_T_IDENTITY_MAP_V3(EMAIL, 'email') t) m
+    select ID, t.* from AUDIENCE, lateral EUID_PROD_UID_SH.UID.FN_T_IDENTITY_MAP_V3(EMAIL, 'email') t) m
     on a.ID=m.ID;
 ```
 
@@ -239,7 +239,7 @@ The following query illustrates how to map a phone number, using the [default da
 You must normalize phone numbers using the EUID [Phone Number Normalization](../getting-started/gs-normalization-encoding.md#phone-number-normalization) rules.
 
 ```sql
-select UID, PREV_UID, REFRESH_FROM, UNMAPPED from table(UID2_PROD_UID_SH.UID.FN_T_IDENTITY_MAP_V3('+12345678901', 'phone'));
+select UID, PREV_UID, REFRESH_FROM, UNMAPPED from table(EUID_PROD_UID_SH.UID.FN_T_IDENTITY_MAP_V3('+12345678901', 'phone'));
 ```
 
 Query results for a single phone number:
@@ -260,7 +260,7 @@ You must normalize phone numbers using the EUID [Phone Number Normalization](../
 
 ```sql
 select a.ID, a.PHONE, m.UID, m.PREV_UID, m.REFRESH_FROM, m.UNMAPPED from AUDIENCE a LEFT JOIN(
-    select ID, t.* from AUDIENCE, lateral UID2_PROD_UID_SH.UID.FN_T_IDENTITY_MAP_V3(PHONE, 'phone') t) m
+    select ID, t.* from AUDIENCE, lateral EUID_PROD_UID_SH.UID.FN_T_IDENTITY_MAP_V3(PHONE, 'phone') t) m
     on a.ID=m.ID;
 ```
 
@@ -285,7 +285,7 @@ The following table identifies each item in the response, including `NULL` value
 The following query illustrates how to map a single email address hash, using the [default database and schema names](#database-and-schema-names).
 
 ```sql
-select UID, PREV_UID, REFRESH_FROM, UNMAPPED from table(UID2_PROD_UID_SH.UID.FN_T_IDENTITY_MAP_V3(BASE64_ENCODE(SHA2_BINARY('validate@example.com', 256)), 'email_hash'));
+select UID, PREV_UID, REFRESH_FROM, UNMAPPED from table(EUID_PROD_UID_SH.UID.FN_T_IDENTITY_MAP_V3(BASE64_ENCODE(SHA2_BINARY('validate@example.com', 256)), 'email_hash'));
 ```
 
 Query results for a single hashed email:
@@ -304,7 +304,7 @@ The following query illustrates how to map multiple email address hashes, using 
 
 ```sql
 select a.ID, a.EMAIL_HASH, m.UID, m.PREV_UID, m.REFRESH_FROM, m.UNMAPPED from AUDIENCE a LEFT JOIN(
-    select ID, t.* from AUDIENCE, lateral UID2_PROD_UID_SH.UID.FN_T_IDENTITY_MAP_V3(EMAIL_HASH, 'email_hash') t) m
+    select ID, t.* from AUDIENCE, lateral EUID_PROD_UID_SH.UID.FN_T_IDENTITY_MAP_V3(EMAIL_HASH, 'email_hash') t) m
     on a.ID=m.ID;
 ```
 
@@ -328,7 +328,7 @@ The following table identifies each item in the response, including `NULL` value
 The following query illustrates how to map a single phone number hash, using the [default database and schema names](#database-and-schema-names).
 
 ```sql
-select UID, PREV_UID, REFRESH_FROM, UNMAPPED from table(UID2_PROD_UID_SH.UID.FN_T_IDENTITY_MAP_V3(BASE64_ENCODE(SHA2_BINARY('+12345678901', 256)), 'phone_hash'));
+select UID, PREV_UID, REFRESH_FROM, UNMAPPED from table(EUID_PROD_UID_SH.UID.FN_T_IDENTITY_MAP_V3(BASE64_ENCODE(SHA2_BINARY('+12345678901', 256)), 'phone_hash'));
 ```
 
 Query results for a single hashed phone number:
@@ -347,7 +347,7 @@ The following query illustrates how to map multiple phone number hashes, using t
 
 ```sql
 select a.ID, a.PHONE_HASH, m.UID, m.PREV_UID, m.REFRESH_FROM, m.UNMAPPED from AUDIENCE a LEFT JOIN(
-    select ID, t.* from AUDIENCE, lateral UID2_PROD_UID_SH.UID.FN_T_IDENTITY_MAP_V3(PHONE_HASH, 'phone_hash') t) m
+    select ID, t.* from AUDIENCE, lateral EUID_PROD_UID_SH.UID.FN_T_IDENTITY_MAP_V3(PHONE_HASH, 'phone_hash') t) m
     on a.ID=m.ID;
 ```
 
@@ -381,10 +381,10 @@ The following example shows an input table and the query used to find the EUIDs 
 
 #### Targeted Input Table
 
-In this example scenario, the advertiser/data provider has stored the EUIDs in a table named `AUDIENCE_WITH_UID2`. The `REFRESH_FROM` column contains the timestamp when each EUID should be refreshed. If no EUID has been generated, the value is `NULL`, as shown in the third example. The advertiser/data provider can compare these timestamps to the current time to determine which EUIDs need to be regenerated.
+In this example scenario, the advertiser/data provider has stored the EUIDs in a table named `AUDIENCE_WITH_EUID`. The `REFRESH_FROM` column contains the timestamp when each EUID should be refreshed. If no EUID has been generated, the value is `NULL`, as shown in the third example. The advertiser/data provider can compare these timestamps to the current time to determine which EUIDs need to be regenerated.
 
 ```sql
-select * from AUDIENCE_WITH_UID2;
+select * from AUDIENCE_WITH_EUID;
 ```
 ```
 +----+----------------------+----------------------------------------------+--------------+
@@ -399,7 +399,7 @@ select * from AUDIENCE_WITH_UID2;
 To find missing or outdated EUIDs, use the following query example.
 
 ```sql
-select * from AUDIENCE_WITH_UID2
+select * from AUDIENCE_WITH_EUID
   where REFRESH_FROM <= DATE_PART(epoch_second, CURRENT_TIMESTAMP()) or UID2 IS NULL;
 ```
 
@@ -433,147 +433,147 @@ The following table identifies each item in the response. The result includes EU
 
 
 
-### Encrypt Tokens
 
-To encrypt raw EUIDs to EUID tokens, use the `FN_T_ENCRYPT` function.
 
-|Argument|Data Type|Description|
-| :--- | :--- | :--- |
-| `RAW_UID2` | varchar(128) | The raw EUID to encrypt to an EUID token. |
 
-A successful query returns the following information for the specified raw EUID.
 
-|Column Name|Data Type|Description|
-| :--- | :--- | :--- |
-| `UID_TOKEN` | TEXT | The value is one of the following:<ul><li>Encryption successful: The EUID token containing the raw EUID.</li><li>Encryption not successful: `NULL`.</li></ul> |
-| `ENCRYPTION_STATUS` | TEXT | The value is one of the following:<ul><li>Encryption successful: `NULL`.</li><li>Encryption not successful: The reason why the raw EUID was not encrypted. For example: `INVALID_RAW_UID2` or `INVALID NOT_AUTHORIZED_FOR_MASTER_KEY`.<br/>For details, see [Values for the ENCRYPTION_STATUS Column](#values-for-the-encryption_status-column).</li></ul> |
 
-#### Values for the ENCRYPTION_STATUS Column
 
-The following table shows possible values for the `ENCRYPTION_STATUS` column.
 
-| Value | Meaning |
-| :-- | :-- |
-| `NULL` | The raw EUID was successfully encrypted. |
-| `MISSING_OR_INVALID_RAW_UID2` | The raw EUID is `NULL`. |
-| `INVALID_RAW_UID2` | The raw EUID is invalid. |
-| `MISMATCHING_IDENTITY_SCOPE` | The raw EUID belongs to an incorrect identity scope; for example, EUID is passed in where EUID is expected. |
-| `NOT_AUTHORIZED_FOR_MASTER_KEY` | The caller does not have access to the required <a href="../ref-info/glossary-uid#gl-encryption-key">encryption keys</a>. Contact the EUID administrator. |
-| `NOT_AUTHORIZED_FOR_SITE_KEY` | The caller does not have access to the required encryption keys. Contact the EUID administrator. |
 
-#### Encrypt Token Request Example - Single Raw EUID
 
-The following query illustrates how to encrypt a single raw EUID to an EUID token, using the [default database and schema names](#database-and-schema-names).
 
-```sql
-select UID_TOKEN, ENCRYPTION_STATUS from table(UID2_PROD_UID_SH.UID.FN_T_ENCRYPT('2ODl112/VS3x2vL+kG1439nPb7XNngLvOWiZGaMhdcU='));
-```
 
-Query results for a single raw EUID:
 
-```
-+------------------------+-------------------+
-| UID_TOKEN              | ENCRYPTION_STATUS |
-+--------------------------------------------+
-| A41234<rest of token>  | NULL              |
-+--------------------------------------------+
-```
 
-#### Encrypt Token Request Example - Multiple Raw EUIDs
 
-The following query illustrates how to encrypt multiple raw EUIDs, using the [default database and schema names](#database-and-schema-names).
 
-```sql
-select a.RAW_UID2, t.UID_TOKEN, t.ENCRYPTION_STATUS from AUDIENCE_WITH_UID2 a, lateral UID2_PROD_UID_SH.UID.FN_T_ENCRYPT(a.RAW_UID2) t;
-```
 
-Query results for multiple raw EUIDs:
 
-The following table identifies each item in the response, including `NULL` values for `NULL` raw EUIDs.
 
-```
-+----+----------------------------------------------+-----------------------+-----------------------------+
-| ID | RAW_UID2                                     | UID_TOKEN             | ENCRYPTION_STATUS           |
-+----+----------------------------------------------+-----------------------+-----------------------------+
-|  1 | 2ODl112/VS3x2vL+kG1439nPb7XNngLvOWiZGaMhdcU= | A41234<rest of token> | NULL                        |
-|  2 | NULL                                         | NULL                  | MISSING_OR_INVALID_RAW_UID2 |
-|  3 | BXJSTajB68SCUyuc3ePyxSLNhxrMKvJcjndq8TuwW5g5 | B45678<rest of token> | NULL                        |
-+----+----------------------------------------------+-----------------------+-----------------------------+
-```
 
-### Decrypt Tokens
 
-To decrypt EUID tokens to raw EUIDs, use the `FN_T_DECRYPT` function.
 
-| Argument    | Data Type    | Description                              |
-|:------------|:-------------|:-----------------------------------------|
-| `UID_TOKEN` | varchar(512) | The EUID token to decrypt to a raw EUID. |
 
-A successful query returns the following information for the specified EUID token.
 
-| Column Name         |Data Type|Description|
-|:--------------------| :--- | :--- |
-| `UID`               | TEXT | The value is one of the following:<ul><li>Decryption successful: The raw EUID corresponding to the EUID token.</li><li>Decryption not successful: `NULL`.</li></ul> |
-| `SITE_ID`           | INT | The value is one of the following:<ul><li>Decryption successful: The identifier of the EUID participant that encrypted the token.</li><li>Decryption not successful: `NULL`.</li></ul> |
-| `DECRYPTION_STATUS` | TEXT | The value is one of the following:<ul><li>Decryption successful: `NULL`.</li><li>Decryption not successful:  The reason why the EUID token was not decrypted; for example, `EXPIRED_TOKEN`.<br/>For details, see [Values for the DECRYPTION_STATUS Column](#values-for-the-decryption_status-column).</li></ul> |
 
-:::note
-In most circumstances where an EUID token cannot be successfully decrypted, the function will not return any rows at all.
-:::
 
-#### Values for the DECRYPTION_STATUS Column
 
-Possible values for `DECRYPTION_STATUS` are:
 
-| Value           | Meaning                                                                       |
-| :-------------- | :---------------------------------------------------------------------------- |
-| `NULL`          | The EUID token was successfully decrypted.                                    |
-| `EXPIRED_TOKEN` | The EUID token is beyond its designated lifetime&#8212;the token has expired. |
 
-#### Decrypt Token Request Example&#8212;Single EUID Token
 
-The following query illustrates how to decrypt a single EUID token to a raw EUID, using the [default database and schema names](#database-and-schema-names).
 
-```sql
-select UID, SITE_ID, DECRYPTION_STATUS from table(UID2_PROD_UID_SH.UID.FN_T_DECRYPT('A41234<rest of token>'));
-```
 
-Query results for a single EUID token:
 
-```
-+----------------------------------------------+-------------------+
-| UID                                          | DECRYPTION_STATUS |
-+----------------------------------------------+-------------------+
-| 2ODl112/VS3x2vL+kG1439nPb7XNngLvOWiZGaMhdcU= | NULL              |
-+----------------------------------------------+-------------------+
-```
 
-#### Decrypt Token Request Example&#8212;Multiple EUID Tokens
 
-The following query illustrates how to decrypt multiple EUID tokens, using the [default database and schema names](#database-and-schema-names).
 
-```sql
-select a.ID, b.UID, b.SITE_ID, CASE WHEN b.UID IS NULL THEN 'DECRYPT_FAILED' ELSE b.DECRYPTION_STATUS END as DECRYPTION_STATUS
-  from TEST_IMPRESSION_DATA a LEFT OUTER JOIN (
-    select ID, t.* from TEST_IMPRESSION_DATA, lateral UID2_PROD_UID_SH.UID.FN_T_DECRYPT(UID_TOKEN) t) b
-  on a.ID=b.ID;
-```
 
-Query results for multiple EUID tokens:
 
-The following table identifies each item in the response, including `NULL` values for `NULL` and expired EUID tokens.
 
-```
-+----+----------------------------------------------+----------+-------------------+
-| ID | UID                                          | SITE_ID  | DECRYPTION_STATUS |
-+----+----------------------------------------------+----------+-------------------+
-|  1 | 2ODl112/VS3x2vL+kG1439nPb7XNngLvOWiZGaMhdcU= | 12345    | NULL              |
-|  2 | NULL                                         | NULL     | DECRYPT_FAILED    |
-|  3 | BXJSTajB68SCUyuc3ePyxSLNhxrMKvJcjndq8TuwW5g5 | 23456    | NULL              |
-|  4 | NULL                                         | NULL     | EXPIRED_TOKEN     |
-|  5 | 2ODl112/VS3x2vL+kG1439nPb7XNngLvOWiZGaMhdcU= | 12345    | NULL              |
-+----+----------------------------------------------+----------+-------------------+
-```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -655,7 +655,7 @@ Before (using salt bucket monitoring):
 
 ```sql
 select a.*, b.LAST_SALT_UPDATE_UTC
-  from AUDIENCE_WITH_UID2 a LEFT OUTER JOIN {DATABASE_NAME}.{SCHEMA_NAME}.SALT_BUCKETS b
+  from AUDIENCE_WITH_EUID a LEFT OUTER JOIN {DATABASE_NAME}.{SCHEMA_NAME}.SALT_BUCKETS b
   on a.BUCKET_ID=b.BUCKET_ID
   where a.LAST_UID2_UPDATE_UTC < b.LAST_SALT_UPDATE_UTC or a.UID2 IS NULL;
 ```
@@ -663,6 +663,8 @@ select a.*, b.LAST_SALT_UPDATE_UTC
 After (using refresh timestamp monitoring):
 
 ```sql
-select * from AUDIENCE_WITH_UID2
+select * from AUDIENCE_WITH_EUID
   where REFRESH_FROM <= DATE_PART(epoch_second, CURRENT_TIMESTAMP()) or UID2 IS NULL;
 ```
+
+<!-- uid2_euid_diff when updating this file: EUID > UID2, DII > personal data, EUID no sharing. In code: placeholders updated: UID2_BASE_URL, UID2_API_KEY, UID2_SECRET_KEY, all to EUID. Also table name AUDIENCE_WITH_UID2 > AUDIENCE_WITH_EUID. UID2_PROD_UID_SH > EUID_PROD_UID_SH.  -->
