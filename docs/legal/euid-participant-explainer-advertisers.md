@@ -26,33 +26,23 @@ The GDPR explains that where there are two or more controllers, they are joint c
 
 Joint controllers must set out clearly how they are each responsible for data protection compliance. In the EUID Agreements, the responsibilities are set out in the Exhibit headed ‘Allocation of Responsibility’. It is set out in this section that:
 
-**text**
-
-
-    2.1 The Advertiser and The Trade Desk must let each other know if they receive requests from individuals or supervisory authorities that relate to EUID.
-
-    2.2 Each Advertiser must provide a point of contact for its own consumers. Individuals will be able to opt-out of EUID processing carried out by a specific Advertiser using this point of contact.
-
-    2.3 The Trade Desk, as the rule owner, will provide a central portal. This will allow individuals to opt-out of the use of EUIDs across the entire EUID ecosystem. This is important to help Advertisers demonstrate that EUID provides individuals with an easy way to exercise their rights.
-
-**Table**
-
-<table style={{ border: "0px solid", display: "flex", gap: "0.5em", padding: "0.5em" }}>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;</td>
-<td>2.1</td>
-<td>The Advertiser and The Trade Desk must let each other know if they receive requests from individuals or supervisory authorities that relate to EUID.</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;</td>
-<td>2.2</td>
-<td>Each Advertiser must provide a point of contact for its own consumers. Individuals will be able to opt-out of EUID processing carried out by a specific Advertiser using this point of contact.</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;</td>
-<td>2.3</td>
-<td>The Trade Desk, as the rule owner, will provide a central portal. This will allow individuals to opt-out of the use of EUIDs across the entire EUID ecosystem. This is important to help Advertisers demonstrate that EUID provides individuals with an easy way to exercise their rights.</td>
-</tr>
+<table style={{ border: "0px" }}>
+  <thead>
+  </thead>
+  <tbody>
+    <tr>
+      <td>&nbsp;2.1</td>
+      <td>The Advertiser and The Trade Desk must let each other know if they receive requests from individuals or supervisory authorities that relate to EUID.</td>
+    </tr>
+    <tr>
+      <td>&nbsp;2.2</td>
+      <td>Each Advertiser must provide a point of contact for its own consumers. Individuals will be able to opt-out of EUID processing carried out by a specific Advertiser using this point of contact.</td>
+    </tr>
+    <tr>
+      <td>&nbsp;2.3</td>
+      <td>The Trade Desk, as the rule owner, will provide a central portal. This will allow individuals to opt-out of the use of EUIDs across the entire EUID ecosystem. This is important to help Advertisers demonstrate that EUID provides individuals with an easy way to exercise their rights.</td>
+    </tr>
+  </tbody>
 </table>
 
 ## 3. Notice and EUID
