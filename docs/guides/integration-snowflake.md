@@ -657,14 +657,14 @@ Before (using salt bucket monitoring):
 select a.*, b.LAST_SALT_UPDATE_UTC
   from AUDIENCE_WITH_EUID a LEFT OUTER JOIN {DATABASE_NAME}.{SCHEMA_NAME}.SALT_BUCKETS b
   on a.BUCKET_ID=b.BUCKET_ID
-  where a.LAST_UID2_UPDATE_UTC < b.LAST_SALT_UPDATE_UTC or a.UID2 IS NULL;
+  where a.LAST_EUID_UPDATE_UTC < b.LAST_SALT_UPDATE_UTC or a.EUID IS NULL;
 ```
 
 After (using refresh timestamp monitoring):
 
 ```sql
 select * from AUDIENCE_WITH_EUID
-  where REFRESH_FROM <= DATE_PART(epoch_second, CURRENT_TIMESTAMP()) or UID2 IS NULL;
+  where REFRESH_FROM <= DATE_PART(epoch_second, CURRENT_TIMESTAMP()) or EUID IS NULL;
 ```
 
 <!-- uid2_euid_diff when updating this file: EUID > UID2, DII > personal data, EUID no sharing. In code: placeholders updated: UID2_BASE_URL, UID2_API_KEY, UID2_SECRET_KEY, all to EUID. Also table name AUDIENCE_WITH_UID2 > AUDIENCE_WITH_EUID. UID2_PROD_UID_SH > EUID_PROD_UID_SH.  -->
