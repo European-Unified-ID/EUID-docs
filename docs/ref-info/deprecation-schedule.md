@@ -38,7 +38,7 @@ The latest ZIP file is available in the Assets section at the bottom of the link
 | Q3 2024 | [v5.38.104](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.38.104) | 5.38.104 | September 12, 2024 | Mar 31, 2026 |
 | Q2 2024 | [v5.37.12](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.37.12) | 5.37.12 | June 12, 2024 | Sep 30, 2025 |
 
-For documentation, see [EUID Private Operator for AWS Integration Guide](..\guides\operator-guide-aws-marketplace.md).
+For documentation, see [EUID Private Operator for AWS Integration Guide](../guides/operator-guide-aws-marketplace.md).
 
 ## Endpoint Versions
 
