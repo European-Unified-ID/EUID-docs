@@ -1,6 +1,6 @@
 ---
 title: Publisher Agreement Information
-description: Legal information for Publishers.
+description: Legal information for publishers.
 hide_table_of_contents: false
 sidebar_position: 06
 displayed_sidebar: docs
