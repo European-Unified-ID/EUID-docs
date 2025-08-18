@@ -1,5 +1,5 @@
 ---
-title: Participant Explainer for Publishers
+title: Publisher Agreement Information
 description: Legal information for Publishers.
 hide_table_of_contents: false
 sidebar_position: 06
@@ -11,6 +11,8 @@ import Link from '@docusaurus/Link';
 # EUID Agreement&#8212;Guide to EUID Privacy Roles and Requirements for Publishers
 
 This guidance is provided to participating Publishers to explain how TTD has developed EUID with European data protection law in mind. This does not constitute legal advice, and Publishers should seek their own advice on their participation in EUID and compliance with applicable law.
+
+[**GWH__TL01 ^^^ generally in doc we don't use TTD as an abbreviation for The Trade Desk. Could we say it in full here?**]
 
 ## 1. Data processing in the EUID ecosystem
 
@@ -46,7 +48,7 @@ In order to succeed, we believe that EUID will need to meet – or, if possible,
  
 ### 4.2. What are the requirements for valid consent for EUID?
 
-We request that Publishers meet the requirements set out in the GDPR. In particular, consent to create a EUID should meet the following requirements. w [**GWH__TL this stray "w" was in the legal doc you gave me. Please advise. Not sure if this should come out or content is missing perhaps.**]
+We request that Publishers meet the requirements set out in the GDPR. In particular, consent to create a EUID should meet the following requirements. w [**GWH__TL02 this stray "w" was in the legal doc you gave me. Please advise. Not sure if this should come out or content is missing perhaps.**]
 
 - Be freely given (i.e. no cookie-walls)
 
@@ -78,9 +80,9 @@ Sample consent language is available at [https://euid.eu/docs/ref-info/ref-conse
 
 ### 4.3. Why can’t Publishers use existing consents?
 
-The Trade Desk’s legal position of the consent requirements specific for EUID, is that consent has to be specifically obtained for the conversion of the user’s email address to an EUID. Requests for consent through cookie consent management platforms are designed to obtain specific consent for purposes described in TCF2.2 and they will most likely not have included the use of email addresses in this way. Similarly, consents
+The Trade Desk’s legal position of the consent requirements specific for EUID, is that consent has to be specifically obtained for the conversion of the user’s email address to an EUID. Requests for consent through cookie consent management platforms are designed to obtain specific consent for purposes described in TCF2.2 and they will most likely not have included the use of email addresses in this way. Similarly, consents given for use of email addresses to send email marketing may not have described the creation of a consistent, unique ID for targeted online advertising.
 
-given for use of email addresses to send email marketing may not have described the creation of a consistent, unique ID for targeted online advertising.
+[**GWH__TL03 we should define what TCF 2.2 is. At least spell out TCF in full. Is it possible to link to somehting that will clarify this?**]
 
 ### 4.3. How long will consent last?
 
