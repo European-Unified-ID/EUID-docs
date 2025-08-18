@@ -47,7 +47,7 @@ Joint controllers must set out clearly how they are each responsible for data pr
 
 [**GWH__TL05 my styling doesn't support having procedure steps numbered 2.1 etc. I made it into a table. Hope this works for you. It's the closest I could get without Engineering help which would take longer.**]
 
-## 3. Notice andthe s 
+## 3. Notice and EUID 
 
 The EUID POC Agreement asks each Advertiser to provide certain minimum information about EUID to individuals, including information about the role of the joint controllers, and to provide a link to The Trade Desk’s EUID privacy notice. Advertisers seeking to rely on consent, may find this easier to supply alongside their consent language. Otherwise, we recommend that this is included within your privacy notice.
 
