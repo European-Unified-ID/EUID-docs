@@ -18,15 +18,98 @@ Review the SDK functionality to determine which SDK or SDKs you want to use, the
 
 The following table summarizes the functionality available with each SDK.
 
-| EUID SDK for... | Client-Side or Server-Side | Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to Raw EUIDs&ast; | Monitor Rotated Salt Buckets&ast;&ast; |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-|JavaScript | Client | &#8212; | &#8212; | &#9989; | &#9989; | &#8212; | &#8212; |
-|Java | Server | &#9989; | &#9989; | &#9989; | &#9989; | &#9989; | &#8212; |
-|Python | Server | &#9989; | &#9989; | &#9989; | &#9989; | &#9989; | &#9989; |
-|C# / .NET | Server | &#9989; | &#9989; | &#8212; | &#8212; | &#8212; | &#8212; |
-|C++ | Server | &#9989; | &#9989; | &#8212; | &#8212; | &#8212; | &#8212; |
-|Android | Client&nbsp;(Mobile) | &#8212; | &#8212; | &#9989; | &#9989; | &#8212; | &#8212; |
-|iOS | Client (Mobile) | &#8212; | &#8212; | &#9989;| &#9989; |&#8212; | &#8212; |
+<table>
+  <thead>
+    <tr>
+      <th colspan="2">Audience&nbsp;&nbsp;&gt;&nbsp;&gt;&nbsp;&gt;</th>
+      <th colspan="2">Publisher</th>
+      <th colspan="2">Advertiser&nbsp;/ Data Provider</th>
+      <th colspan="2">DSP</th>
+    </tr>
+    <tr>
+      <th> SDK for...</th>
+      <th>Client-Side or Server-Side</th>
+      <th>Generate EUID Token from Personal Data</th>
+      <th>Refresh EUID Token</th>
+      <th>Map Personal Data to Raw EUIDs&ast;</th>
+      <th>Monitor Rotated Salt Buckets&ast;&ast;</th>
+      <th>Encrypt Raw EUID to EUID Token for Sharing</th>
+      <th>Decrypt EUID Token to Raw UIDEUID2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>JavaScript</td>
+      <td>Client</td>
+      <td>&#9989;</td>
+      <td>&#9989;</td>
+      <td>&#8212;</td>
+      <td>&#8212;</td>
+      <td>&#8212;</td>
+      <td>&#8212;</td>
+    </tr>
+    <tr>
+      <td>Java</td>
+      <td>Server</td>
+      <td>&#9989;</td>
+      <td>&#9989;</td>
+      <td>&#9989;</td>
+      <td>&#8212;</td>
+      <td>&#9989;</td>
+      <td>&#9989;</td>
+    </tr>
+    <tr>
+      <td>Python</td>
+      <td>Server</td>
+      <td>&#9989;</td>
+      <td>&#9989;</td>
+      <td>&#9989;</td>
+      <td>&#9989;</td>
+      <td>&#9989;</td>
+      <td>&#9989;</td>
+    </tr>
+    <tr>
+      <td>C# / .NET</td>
+      <td>Server</td>
+      <td>&#8212;</td>
+      <td>&#8212;</td>
+      <td>&#8212;</td>
+      <td>&#8212;</td>
+      <td>&#9989;</td>
+      <td>&#9989;</td>
+    </tr>
+    <tr>
+      <td>C++</td>
+      <td>Server</td>
+      <td>&#8212;</td>
+      <td>&#8212;</td>
+      <td>&#8212;</td>
+      <td>&#8212;</td>
+      <td>&#9989;</td>
+      <td>&#9989;</td>
+    </tr>
+    <tr>
+      <td>Android</td>
+      <td>Client&nbsp;(Mobile)</td>
+      <td>&#9989;</td>
+      <td>&#9989;</td>
+      <td>&#8212;</td>
+      <td>&#8212;</td>
+      <td>&#8212;</td>
+      <td>&#8212;</td>
+    </tr>
+    <tr>
+      <td>iOS</td>
+      <td>Client&nbsp;(Mobile)</td>
+      <td>&#9989;</td>
+      <td>&#9989;</td>
+      <td>&#8212;</td>
+      <td>&#8212;</td>
+      <td>&#8212;</td>
+      <td>&#8212;</td>
+    </tr>
+  </tbody>
+</table>
 
 &ast; Advertisers and Data Providers who need to generate raw EUIDs from personal data can also do this via Snowflake (see [Snowflake Integration Guide](../guides/integration-snowflake.md)) or by using the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint.
 
