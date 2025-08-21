@@ -36,6 +36,8 @@ Joint controllers are required under the GDPR to set out clearly how they are ea
 
 The EUID Agreement asks each Publisher and advertiser to provide certain minimum information about EUID to individuals, including information about the role of the joint controllers, and to provide a link to The Trade Desk’s EUID privacy notice. Publishers may find this easier to supply alongside their consent language.
 
+[**GWH__TL02 (same comment in both docs) Isn’t it better not to use a possessive with our company name? Suggest: “and to provide a link to the EUID privacy notice from The Trade Desk.” Also we could add a link... we have a link in the Consent Samples.**]
+
 Otherwise, we recommend that this is included within your privacy notice.
 
 Short sample language that we provide as example of language is available at [https://euid.eu/docs/ref-info/ref-consent-samples](https://euid.eu/docs/ref-info/ref-consent-samples).
@@ -48,7 +50,7 @@ In order to succeed, we believe that EUID will need to meet – or, if possible,
  
 ### 4.2. What are the requirements for valid consent for EUID?
 
-We request that Publishers meet the requirements set out in the GDPR. In particular, consent to create a EUID should meet the following requirements. w [**GWH__TL02 this stray "w" was in the legal doc you gave me. Please advise. Not sure if this should come out or content is missing perhaps.**]
+We request that Publishers meet the requirements set out in the GDPR. In particular, consent to create a EUID should meet the following requirements. w [**GWH__TL03 this stray "w" was in the legal doc you gave me. Please advise. Not sure if this should come out or content is missing perhaps.**]
 
 - Be freely given (i.e. no cookie-walls)
 
@@ -82,7 +84,7 @@ Sample consent language is available at [https://euid.eu/docs/ref-info/ref-conse
 
 The Trade Desk’s legal position of the consent requirements specific for EUID, is that consent has to be specifically obtained for the conversion of the user’s email address to an EUID. Requests for consent through cookie consent management platforms are designed to obtain specific consent for purposes described in TCF2.2 and they will most likely not have included the use of email addresses in this way. Similarly, consents given for use of email addresses to send email marketing may not have described the creation of a consistent, unique ID for targeted online advertising.
 
-[**GWH__TL03 we should define what TCF 2.2 is. At least spell out TCF in full. Is it possible to link to somehting that will clarify this?**]
+[**GWH__TL04 we should define what TCF 2.2 is. At least spell out TCF in full. Is it possible to link to somehting that will clarify this?**]
 
 ### 4.3. How long will consent last?
 

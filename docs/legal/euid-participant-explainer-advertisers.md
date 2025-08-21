@@ -16,7 +16,7 @@ This guidance is provided to participating Advertisers to explain how The Trade 
 
 EUID starts from the premise that the creation and use of a EUID to serve targeted advertising involves the processing of personal data by EUID Advertisers. Under European data protection laws, each Publisher or Advertiser that submits an email address, or phone number, to be converted into a EUID will be considered a “controller” for that data, and for any subsequent use they make of that EUID.
 
-[**GWH__TL04 I think we shoudl say "an EUID" rather than "a EUID" -- multiple instances in both docs.**]
+[**GWH__TL05 I think we should say "an EUID" rather than "a EUID" -- multiple instances in both docs.**]
 
 The rule owner of the EUID ecosystem – currently The Trade Desk – is also a controller for the creation of a EUID and its subsequent return to the applicable publisher or Advertiser. This is because the rule owner plays an important role in the decision to facilitate the creation of consistent EUID identifiers and create the EUID ecosystem.
 
@@ -45,11 +45,13 @@ Joint controllers must set out clearly how they are each responsible for data pr
   </tbody>
 </table>
 
-[**GWH__TL05 my styling doesn't support having procedure steps numbered 2.1 etc. I made it into a table. Hope this works for you. It's the closest I could get without Engineering help which would take longer.**]
+[**GWH__TL06 my styling doesn't support having procedure steps numbered 2.1 etc. I made it into a table. Hope this works for you. It's the closest I could get without Engineering help which would take longer.**]
 
 ## 3. Notice and EUID 
 
 The EUID POC Agreement asks each Advertiser to provide certain minimum information about EUID to individuals, including information about the role of the joint controllers, and to provide a link to The Trade Desk’s EUID privacy notice. Advertisers seeking to rely on consent, may find this easier to supply alongside their consent language. Otherwise, we recommend that this is included within your privacy notice.
+
+[**GWH__TL07 (same comment in both docs) Isn’t it better not to use a possessive with our company name? Suggest: “and to provide a link to the EUID privacy notice from The Trade Desk.” Also we could add a link... we have a link in the Consent Samples.**]
 
 Short sample language that we provide as an example of language that could be included in a privacy notice is available online at [https://euid.eu/docs/ref-info/ref-consent-samples](https://euid.eu/docs/ref-info/ref-consent-samples).
 
@@ -79,7 +81,7 @@ We request that Advertisers meet the requirements set out in the GDPR In particu
 
 Advertisers relying on consent must also be able to provide proof of this consent if required. We ask that the s evidence must record the following:
 
-[**GWH__TL06 in the above sentence, "the s evidence" was in the original doc but I expect it's an error. What should it say?**]
+[**GWH__TL08 in the above sentence, "the s evidence" was in the original doc but I expect it's an error. What should it say?**]
 
 - the identifier in relation to which consent has been obtained;
 
@@ -99,7 +101,7 @@ For email addresses that were collected before the Advertiser was a participant 
 
 The Trade Desk acknowledges that the EDPB’s guidance on targeting social media users states that legitimate interests may in some circumstances be sufficient to justify the use of an email address collected by an Advertiser to identify and target users on a social media platform. Our view is that legitimate interests may be a legal basis for the the creation of an EUID from a user’s email address, provided that the appropriate balancing assessment and has taken appropriate steps to mitigate the risks to its data subjects.
 
-[**GWH__TL07 any chance we could define EDPB in the above? I don't think we can assume that everyone knows what this is. I don't.**]
+[**GWH__TL09 any chance we could define EDPB in the above? I don't think we can assume that everyone knows what this is. I don't.**]
 
 ### 4.4 How long will consent last?
 
@@ -121,7 +123,7 @@ The Trade Desk processes data for EUID in the EU and UK. EUID systems do not tra
 
 TTD CRM for EUID is set up in UK. It stores emails/hashes in UK and maps them to EUID using EUID public operator also in UK.
 
-[**GWH__TL08 ^^^ generally in doc we don't use TTD as an abbreviation for The Trade Desk. Could we say it in full here?**]
+[**GWH__TL10 ^^^ generally in doc we don't use TTD as an abbreviation for The Trade Desk. Could we say it in full here?**]
 
 Where raw EUIDs may potentially be stored or processed by TTD outside of the EU/UK in the US, there is a valid transfer mechanism (EU and UK Standard Contractual Clauses) for these transfers and the appropriate technical and organisational measures are in place.
 
