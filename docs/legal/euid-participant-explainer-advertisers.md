@@ -26,7 +26,7 @@ The GDPR explains that where there are two or more controllers, they are joint c
 
 Joint controllers must set out clearly how they are each responsible for data protection compliance. In the EUID Agreements, the responsibilities are set out in the Exhibit headed ‘Allocation of Responsibility’. It is set out in this section that:
 
-<table style={{ border: "0px" }}>
+<table class='no-border-no-hover-table'>
   <thead>
   </thead>
   <tbody>
