@@ -296,3 +296,12 @@
 .no-wrap-table-code table code {
   white-space: nowrap;
 }
+
+.no-border-no-hover-table {
+  td, tr {
+    border: none;
+  }
+  tr:hover {
+    background-color: initial!important;
+  }
+}
