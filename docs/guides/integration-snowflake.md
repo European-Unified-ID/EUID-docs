@@ -383,7 +383,7 @@ The following table identifies each item in the response, including `NULL` value
 +----+----------------------------------------------+----------------------------------------------+----------------------------------------------+--------------+--------------------+
 ```
 
-#### Monitor Raw EUID Refresh and Regenerate Raw EUIDs
+### Monitor Raw EUID Refresh and Regenerate Raw EUIDs
 
 The `FN_T_IDENTITY_MAP_V3` function returns refresh timestamps (`REFRESH_FROM`) that indicate when each EUID should be refreshed.
 
@@ -417,7 +417,7 @@ To find missing or outdated EUIDs, use the following query example.
 
 ```sql
 select * from AUDIENCE_WITH_EUID
-  where REFRESH_FROM <= DATE_PART(epoch_second, CURRENT_TIMESTAMP()) or UID2 IS NULL;
+  where REFRESH_FROM <= DATE_PART(epoch_second, CURRENT_TIMESTAMP()) or EUID IS NULL;
 ```
 
 Query results:
@@ -631,6 +631,10 @@ The following table identifies each item in the response. The result includes EU
 ## Migration Guide
 
 This section provides information to help you upgrade from the previous version to the new EUID Snowflake functionality with v3 functions.
+
+
+
+
 
 ### Changing Existing Code
 
