@@ -74,26 +74,43 @@ The following diagram and table illustrate the different parts of the EUID integ
 |As a partner, you set up a Snowflake account to host your data and engage in EUID integration by consuming functions and views through the EUID Share. | EUID integration, hosted in a Snowflake account, grants you access to authorized functions and views that draw data from private tables. You can't access the private tables. The EUID Share reveals only essential data needed for you to perform EUID-related tasks.<br/>**NOTE**: We store <Link href="../ref-info/glossary-uid#gl-salt">salts</Link> and encryption keys in the private tables. No <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> is stored at any point. |ETL (Extract Transform Load) jobs constantly update the EUID Core/Optout Snowflake storage with internal data that powers the EUID Operator Web Services. The data used by the Operator Web Services is also available through the EUID Share. |
 |When you use shared functions and views, you pay Snowflake for transactional computation costs. |These private tables, secured in the EUID Snowflake account, automatically synchronize with the EUID Core/Optout Snowflake storage that holds internal data used to complete EUID-related tasks. | |
 
-## Access the EUID Share
-
-Access to the EUID Share is available through the [Snowflake Data Marketplace](https://www.snowflake.com/data-marketplace/).
-
-For a link to the specific listing, see [Snowflake Marketplace Listing](#snowflake-marketplace-listing).
+## Summary of Integration Steps
 
 :::important
 To be able to request data, you must use the `ACCOUNTADMIN` role or another role with the `CREATE DATABASE` and `IMPORT SHARE` privileges in your Snowflake account.
 :::
 
-To request access to the EUID Share, complete the following steps:
+The following list summarizes the integration steps for EUID mapping in Snowflake in the production environment:
 
-1.	Log in to the Snowflake Data Marketplace and select the EUID share. For a link, see [Snowflake Marketplace Listing](#snowflake-marketplace-listing).
-2.	In the **Personalized Data** section, click **Request Data**.
-3.	Follow the onscreen instructions to verify and provide your contact details and other required information.
-4.	If you are an existing client of The Trade Desk, include your identifying IDs, such as partner and advertiser IDs issued by The Trade Desk, in the **Message** field of the data request form.
-5.	Submit the form.
+:::note
+If you want to try out an integration before using the production environment, see [Testing in the Integ Environment](#testing-in-the-integ-environment).
+:::
 
-After your request is received, an EUID administrator will contact you with the appropriate access instructions. For details about managing data requests in Snowflake, see the [Snowflake documentation](https://docs.snowflake.com/en/user-guide/data-marketplace-consumer.html).
+1. Make sure that the EUID POC paperwork is signed with your EUID contact. If you're not sure who to ask, see [Contact Info](../getting-started/gs-account-setup.md#contact-info).
 
+1. Request access to the EUID share:
+
+   - Request access through the [Snowflake Marketplace Listing](#snowflake-marketplace-listing). In your request, include your Snowflake account number and the region.
+
+   - Let your EUID contact know that you've requested access.
+
+1. Your EUID contact arranges for your Snowflake account to be provisioned with access to the EUID mapping share.
+
+:::note
+If you did any initial testing (see [Testing in the Integ Environment](#testing-in-the-integ-environment)), be sure to update the functions to reflect the production EUID share, along with your own relevant table names. 
+:::
+
+## Testing in the Integ Environment
+
+If you'd like to test the mapping share before signing an EUID POC, you can ask your EUID contact for access to the Snowflake share in the integ (integration) environment. This environment is for testing only, and has no production data. In the request, be sure to include your account number and region.
+
+In this scenario, the following steps occur:
+
+1. Your EUID contact provisions the share listing in the Snowflake Private Marketplace, and lets you know when this step is complete.
+
+2. You can then view the Private Marketplace listing and request access to the integ share.
+
+3. When you've requested access, your EUID contact provisions the integ share to your account.
 
 ## Shared Objects
 
@@ -366,7 +383,7 @@ The following table identifies each item in the response, including `NULL` value
 +----+----------------------------------------------+----------------------------------------------+----------------------------------------------+--------------+--------------------+
 ```
 
-#### Monitor Raw EUID Refresh and Regenerate Raw EUIDs
+### Monitor Raw EUID Refresh and Regenerate Raw EUIDs
 
 The `FN_T_IDENTITY_MAP_V3` function returns refresh timestamps (`REFRESH_FROM`) that indicate when each EUID should be refreshed.
 
@@ -400,7 +417,7 @@ To find missing or outdated EUIDs, use the following query example.
 
 ```sql
 select * from AUDIENCE_WITH_EUID
-  where REFRESH_FROM <= DATE_PART(epoch_second, CURRENT_TIMESTAMP()) or UID2 IS NULL;
+  where REFRESH_FROM <= DATE_PART(epoch_second, CURRENT_TIMESTAMP()) or EUID IS NULL;
 ```
 
 Query results:
@@ -614,6 +631,10 @@ The following table identifies each item in the response. The result includes EU
 ## Migration Guide
 
 This section provides information to help you upgrade from the previous version to the new EUID Snowflake functionality with v3 functions.
+
+
+
+
 
 ### Changing Existing Code
 
