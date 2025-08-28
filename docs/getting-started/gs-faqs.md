@@ -72,6 +72,7 @@ Here are some frequently asked questions for publishers using the EUID framework
 - [What is the uniqueness and rotation policy for EUID tokens?](#what-is-the-uniqueness-and-rotation-policy-for-euid-tokens)
 - [What does an EUID token look like in the bidstream?](#what-does-an-euid-token-look-like-in-the-bidstream)
 - [Can I integrate EUID with Single Sign-On (SSO)?](#can-i-integrate-euid-with-single-sign-on-sso)
+- [I'm using Prebid with a Mobile SDK&#8212;what atype value should I use?](#im-using-prebid-with-a-mobile-sdkwhat-atype-value-should-i-use)
 
 #### How can I test that the personal data sent and the returned token match up?
 
@@ -157,6 +158,16 @@ There are many ways to approach EUID implementation. Here is one example of a co
 Yes. With popular <a href="../ref-info/glossary-uid#gl-sso">SSO</a> integration options such as Sign in with Google, Facebook Login, Sign in with Apple, or OpenPass, you can retrieve the email address and use it to generate an EUID.
 
 For details, see [Publisher Integration with SSO Providers](/docs/ref-info/ref-integration-sso-providers.md).
+
+#### I'm using Prebid with a Mobile SDK&#8212;what atype value should I use?
+
+According to the IAB documentation, the `atype` (agent type) value indicates the type of user agent that the match is from. IAB recommends defining this property.
+
+If you're using Prebid with the [SDK for Android](../sdks/sdk-ref-android.md) or the [SDK for iOS](../sdks/sdk-ref-ios.md), use an `atype` value of `3`, indicating a person-based ID.
+
+For details, refer to these sections in the IAB documentation:
+- [Object: Extended Identifier UIDs](https://github.com/InteractiveAdvertisingBureau/AdCOM/blob/main/AdCOM%20v1.0%20FINAL.md#object_eid_uids)
+- [List: Agent Types](https://github.com/InteractiveAdvertisingBureau/AdCOM/blob/main/AdCOM%20v1.0%20FINAL.md#list_agenttypes)
 
 ## FAQs for Advertisers and Data Providers
 
