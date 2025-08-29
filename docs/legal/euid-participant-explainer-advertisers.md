@@ -45,7 +45,7 @@ Joint controllers must set out clearly how they are each responsible for data pr
 
 ## 3. Notice and EUID 
 
-The EUID POC Agreement asks each Advertiser to provide certain minimum information about EUID to individuals, including information about the role of the joint controllers, and to provide a link to the [EUID Privacy Notice](https://www.transparentadvertising.eu/privacy) from The Trade Desk. Advertisers seeking to rely on consent, may find this easier to supply alongside their consent language. Otherwise, we recommend that this is included within your privacy notice.
+The EUID POC Agreement asks each Advertiser to provide certain minimum information about EUID to individuals, including information about the role of the joint controllers, and to provide a link to the [EUID Privacy Notice](https://www.transparentadvertising.eu/privacy) from The Trade Desk. Advertisers seeking to rely on consent may find this easier to supply alongside their consent language. Otherwise, we recommend that this is included within your privacy notice.
 
 Short sample language that we provide as an example of language that could be included in a privacy notice is available online at [https://euid.eu/docs/ref-info/ref-consent-samples](https://euid.eu/docs/ref-info/ref-consent-samples).
 
@@ -91,7 +91,9 @@ For email addresses that were collected before the Advertiser was a participant 
 
 ### 4.3 What about legitimate interest?
 
-The Trade Desk acknowledges that the European Data Protection Board's guidance on targeting social media users states that legitimate interests may in some circumstances be sufficient to justify the use of an email address collected by an Advertiser to identify and target users on a social media platform. Our view is that legitimate interests may be a legal basis for the the creation of an EUID from a user’s email address, provided that the appropriate balancing assessment and has taken appropriate steps to mitigate the risks to its data subjects.
+The Trade Desk acknowledges that the European Data Protection Board's guidance on targeting social media users states that legitimate interests may in some circumstances be sufficient to justify the use of an email address collected by an Advertiser to identify and target users on a social media platform. Our view is that legitimate interests may be a legal basis for the creation of an EUID from a user’s email address, provided that the appropriate balancing assessment and has taken appropriate steps to mitigate the risks to its data subjects.
+
+[**GWH__TL10 from spellcheck: "provided that the appropriate balancing assessment and has taken appropriate steps to mitigate the risks to its data subjects" in the above -- is that as expected?**]
 
 ### 4.4 How long will consent last?
 
