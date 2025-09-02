@@ -91,9 +91,9 @@ For email addresses that were collected before the advertiser was an EUID partic
 
 ### 4.3 What about legitimate interest?
 
-The Trade Desk acknowledges that the European Data Protection Board's guidance on targeting social media users states that legitimate interests may in some circumstances be sufficient to justify the use of an email address collected by an advertiser to identify and target users on a social media platform. Our view is that legitimate interests may be a legal basis for the creation of an EUID from a user’s email address, provided that the appropriate balancing assessment and has taken appropriate steps to mitigate the risks to its data subjects.
+The Trade Desk acknowledges that the European Data Protection Board guidance on targeting social media users states that legitimate interests may in some circumstances be sufficient to justify the use of an email address collected by an advertiser to identify and target users on a social media platform.
 
-[**GWH__TL10: "provided that the appropriate balancing assessment and has taken appropriate steps to mitigate the risks to its data subjects" in the above -- is that as expected?**]
+Our position is that legitimate interests may be a legal basis for the creation of an EUID from a user’s email address, provided that the appropriate balancing assessment has been undertaken and the appropriate processes are in place.
 
 ### 4.4 How long will consent last?
 
