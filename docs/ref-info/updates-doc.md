@@ -20,6 +20,24 @@ Check out the latest updates to our EUID documentation resources.
 
 The following documents were released in this quarter.
 
+<CustomTagsContainer tags="Reference">
+
+### Legal Information for Publishers and Advertisers
+
+3 September, 2025
+
+We've added a new documentation section to help publishers and advertisers with legal information about using EUID. The documents cover legal guidelines and examples of wording for consent.
+
+For details, see:
+
+- [Publisher Information](../legal/euid-participant-information-publishers.md)
+- [Advertiser Information](../legal/euid-participant-information-advertisers.md)
+- [Consent Examples](../legal/legal-consent-examples.md)
+
+<!-- APIDOCS-2890 -->
+
+</CustomTagsContainer>
+
 <CustomTagsContainer tags="Endpoints, Guides, SDKs">
 
 ### Identity Map v3 (Python SDK, Snowflake)
