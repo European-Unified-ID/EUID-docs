@@ -34,7 +34,7 @@ Joint controllers must set out clearly how they are each responsible for data pr
 
 The EUID POC Agreement asks each advertiser to provide certain minimum information about EUID to individuals, including information about the role of the joint controllers, and to provide a link to the [EUID Privacy Notice](https://www.transparentadvertising.eu/privacy) from The Trade Desk. Advertisers seeking to rely on consent may find this easier to supply alongside their consent language. Otherwise, we recommend that this is included within your privacy notice.
 
-Short sample language that we provide as an example of language that could be included in a privacy notice is available online at [Consent Examples](../ref-info/ref-consent-samples).
+Short sample language that we provide as an example of language that could be included in a privacy notice is available online at [Consent Examples](legal-consent-examples.md).
 
 ## 4. Legal Basis and EUID
 
@@ -70,7 +70,7 @@ Advertisers relying on consent must also be able to provide proof of this consen
 
 - A copy of the language presented to the individual to request consent.
 
-Sample consent language is available: see [Consent Examples](../ref-info/ref-consent-samples).
+Sample consent language is available: see [Consent Examples](legal-consent-examples.md).
 
 ### 4.2 Can advertisers use the email addresses they have already obtained with marketing consent?
 

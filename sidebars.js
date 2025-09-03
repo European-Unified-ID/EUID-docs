@@ -344,9 +344,9 @@ const fullSidebar = [
       },
       collapsed: true,
       items: [
-        'legal/euid-participant-explainer-publishers',
-        'legal/euid-participant-explainer-advertisers',
-        'ref-info/ref-consent-samples',
+        'legal/euid-participant-information-publishers',
+        'legal/euid-participant-information-advertisers',
+        'legal/legal-consent-examples',
       ],
     },
 

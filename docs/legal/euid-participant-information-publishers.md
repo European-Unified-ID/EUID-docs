@@ -36,7 +36,7 @@ The EUID Agreement asks each publisher and advertiser to provide certain minimum
 
 Otherwise, we recommend that this is included within your privacy notice.
 
-Short sample language that we provide as an example of language that could be included in a privacy notice is available at [Consent Examples](../ref-info/ref-consent-samples).
+Short sample language that we provide as an example of language that could be included in a privacy notice is available at [Consent Examples](legal-consent-examples.md).
 
 ## 4. Consent and EUID
 
@@ -74,7 +74,7 @@ Publishers relying on consent must also be able to provide proof of this consent
 
 - A copy of the language presented to the individual to request consent.
 
-Sample consent language is available: see [Consent Examples](../ref-info/ref-consent-samples).
+Sample consent language is available: see [Consent Examples](legal-consent-examples.md).
 
 ### 4.3. Why can’t publishers use existing consents?
 
