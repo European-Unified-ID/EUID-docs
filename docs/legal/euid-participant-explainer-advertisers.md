@@ -24,30 +24,17 @@ The <Link href="../ref-info/glossary-uid#gl-gdpr">GDPR</Link> explains that wher
 
 Joint controllers must set out clearly how they are each responsible for data protection compliance. In the EUID Agreements, the responsibilities are set out in the Exhibit headed "Allocation of Responsibility." It is set out in this section that:
 
-<table class='no-border-no-hover-table'>
-  <thead>
-  </thead>
-  <tbody>
-    <tr>
-      <td>&nbsp;2.1</td>
-      <td>The advertiser and The Trade Desk must let each other know if they receive requests from individuals or supervisory authorities that relate to EUID.</td>
-    </tr>
-    <tr>
-      <td>&nbsp;2.2</td>
-      <td>Each advertiser must provide a point of contact for its own consumers. Individuals will be able to use this point of contact to opt out of EUID processing carried out by a specific advertiser.</td>
-    </tr>
-    <tr>
-      <td>&nbsp;2.3</td>
-      <td>The Trade Desk, as the rule owner, will provide a central portal. This will allow individuals to opt out of the use of EUIDs across the entire EUID ecosystem. This is important to help advertisers demonstrate that EUID provides individuals with an easy way to exercise their rights.</td>
-    </tr>
-  </tbody>
-</table>
+- The advertiser and The Trade Desk must let each other know if they receive requests from individuals or supervisory authorities that relate to EUID.
+
+- Each advertiser must provide a point of contact for its own consumers. Individuals will be able to use this point of contact to opt out of EUID processing carried out by a specific advertiser.
+
+- The Trade Desk, as the rule owner, will provide a central portal. This will allow individuals to opt out of the use of EUIDs across the entire EUID ecosystem. This is important to help advertisers demonstrate that EUID provides individuals with an easy way to exercise their rights.
 
 ## 3. Notice and EUID 
 
 The EUID POC Agreement asks each advertiser to provide certain minimum information about EUID to individuals, including information about the role of the joint controllers, and to provide a link to the [EUID Privacy Notice](https://www.transparentadvertising.eu/privacy) from The Trade Desk. Advertisers seeking to rely on consent may find this easier to supply alongside their consent language. Otherwise, we recommend that this is included within your privacy notice.
 
-Short sample language that we provide as an example of language that could be included in a privacy notice is available online at [Consent Samples](../ref-info/ref-consent-samples).
+Short sample language that we provide as an example of language that could be included in a privacy notice is available online at [Consent Examples](../ref-info/ref-consent-samples).
 
 ## 4. Legal Basis and EUID
 
@@ -69,7 +56,7 @@ We request that advertisers meet the requirements set out in the GDPR. In partic
 
 - It must be unambiguous.
 
-- It must be demonstrated by clear and affirmative action (it cannot be included in small print or in T&Cs).
+- It must be demonstrated by clear and affirmative action (it cannot be included in small print or in the Terms and Conditions).
 
 - It must explain that individuals can withdraw their consent.
 
@@ -83,7 +70,7 @@ Advertisers relying on consent must also be able to provide proof of this consen
 
 - A copy of the language presented to the individual to request consent.
 
-Sample consent language is available: see [Consent Samples](../ref-info/ref-consent-samples).
+Sample consent language is available: see [Consent Examples](../ref-info/ref-consent-samples).
 
 ### 4.2 Can advertisers use the email addresses they have already obtained with marketing consent?
 
@@ -101,7 +88,7 @@ This is a matter for each advertiser to determine, depending on the particular s
 
 ## 5. Restrictions on the use of EUID
 
-There are strict protections in place when special category data is processed. EUID is not designed for use with special category data, and our EUID Agreements require that advertisers do not associate an EUID with special category data.
+There are strict protections in place when special category data is processed. Special category data, as provided for in the GDPR, includes, for example, personal data that concerns health or reveals political opinions. EUID is not designed for use with special category data, and our EUID Agreements require that advertisers do not associate an EUID with special category data.
 
 Advertisers are also required to prevent the creation of an EUID for an individual under the age of 18.
 

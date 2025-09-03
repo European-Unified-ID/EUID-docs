@@ -338,7 +338,7 @@ const fullSidebar = [
 
     {
       type: 'category',
-      label: 'Legal',
+      label: 'Legal Information',
       link: {
         type: 'generated-index',
       },

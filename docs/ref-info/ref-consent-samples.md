@@ -1,6 +1,6 @@
 ---
-title: Consent Samples
-description: Consent samples for publishers, advertisers, or data providers.
+title: Consent Examples
+description: Consent examples for publishers, advertisers, or data providers.
 hide_table_of_contents: false
 sidebar_position: 06
 displayed_sidebar: docs
@@ -8,7 +8,7 @@ displayed_sidebar: docs
 
 import Link from '@docusaurus/Link';
 
-# Consent Samples
+# Consent Examples
 
 The following consent samples are intended to provide examples of wording that publishers, advertisers, or data providers could use as a basis for requesting user consent for EUID.
 

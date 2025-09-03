@@ -36,7 +36,7 @@ The EUID Agreement asks each publisher and advertiser to provide certain minimum
 
 Otherwise, we recommend that this is included within your privacy notice.
 
-Short sample language that we provide as an example of language that could be included in a privacy notice is available at [Consent Samples](../ref-info/ref-consent-samples).
+Short sample language that we provide as an example of language that could be included in a privacy notice is available at [Consent Examples](../ref-info/ref-consent-samples).
 
 ## 4. Consent and EUID
 
@@ -60,7 +60,7 @@ We request that publishers meet the requirements set out in the GDPR. In particu
 
 - It must be unambiguous.
 
-- It must be demonstrated by clear and affirmative action (it cannot be included in small print or in T&Cs).
+- It must be demonstrated by clear and affirmative action (it cannot be included in small print or in the Terms and Conditions).
 
 - It must explain that individuals can withdraw their consent.
 
@@ -74,7 +74,7 @@ Publishers relying on consent must also be able to provide proof of this consent
 
 - A copy of the language presented to the individual to request consent.
 
-Sample consent language is available: see [Consent Samples](../ref-info/ref-consent-samples).
+Sample consent language is available: see [Consent Examples](../ref-info/ref-consent-samples).
 
 ### 4.3. Why can’t publishers use existing consents?
 
@@ -86,7 +86,9 @@ This is a matter for each publisher to independently determine, depending on the
 
 ## 5. Restrictions on the use of EUID
 
-There are strict protections in place when special category data is processed. EUID is not designed for use with special category data, and our EUID Agreements require that publishers do not associate an EUID with special category data. Publishers are also required to prevent the creation of an EUID for an individual under the age of 18.
+There are strict protections in place when special category data is processed. Special category data, as provided for in the GDPR, includes, for example, personal data that concerns health or reveals political opinions. EUID is not designed for use with special category data, and our EUID Agreements require that publishers do not associate an EUID with special category data.
+
+Publishers are also required to prevent the creation of an EUID for an individual under the age of 18.
 
 ## 6. Reporting data breaches
 
