@@ -10,7 +10,7 @@ import Link from '@docusaurus/Link';
 
 # Consent Examples
 
-The following consent examples are intended to provide examples of wording that publishers, advertisers, or data providers could use as a basis for requesting user consent for EUID.
+The following consent examples are intended to provide samples of wording that publishers, advertisers, or data providers could use as a basis for requesting user consent for EUID.
 
 :::note
 These examples are provided for informational purposes only, and do not constitute legal advice.
