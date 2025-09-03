@@ -332,7 +332,21 @@ const fullSidebar = [
         'ref-info/ref-integration-sso-providers',
         'ref-info/deprecation-schedule',
         'ref-info/ref-areas-of-coverage',
-        'ref-info/ref-consent-samples',
+      ],
+    },
+
+
+    {
+      type: 'category',
+      label: 'Legal Information',
+      link: {
+        type: 'generated-index',
+      },
+      collapsed: true,
+      items: [
+        'legal/euid-participant-information-publishers',
+        'legal/euid-participant-information-advertisers',
+        'legal/legal-consent-examples',
       ],
     },
 

@@ -1,6 +1,6 @@
 ---
-title: Consent Samples
-description: Consent samples for publishers, advertisers, or data providers.
+title: Consent Examples
+description: Consent examples for publishers, advertisers, or data providers.
 hide_table_of_contents: false
 sidebar_position: 06
 displayed_sidebar: docs
@@ -8,12 +8,12 @@ displayed_sidebar: docs
 
 import Link from '@docusaurus/Link';
 
-# Consent Samples
+# Consent Examples
 
-The following consent samples are intended to provide examples of wording that publishers, advertisers, or data providers could use as a basis for requesting user consent for EUID.
+The following consent examples are intended to provide samples of wording that publishers, advertisers, or data providers could use as a basis for requesting user consent for EUID.
 
 :::note
-These samples are provided for informational purposes only, and do not constitute legal advice.
+These examples are provided for informational purposes only, and do not constitute legal advice.
 :::
 
 Consent language examples are in these sections:
@@ -50,7 +50,7 @@ The following consent sample copy is for content accessed via the **Customize Op
 
 ## Standalone EUID Consent
 
-The following consent samples could be used on an existing page where the user's email is collected: for example, on a login/sign-up page or on an email marketing sign-up page:
+The following consent examples could be used on an existing page where the user's email is collected: for example, on a login/sign-up page or on an email marketing sign-up page:
 
 - [Standalone EUID Consent Sample 1](#standalone-euid-consent-sample-1)
 - [Standalone EUID Consent Sample 2](#standalone-euid-consent-sample-2)
