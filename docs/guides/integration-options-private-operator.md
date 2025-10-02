@@ -2,9 +2,11 @@
 title: EUID Integrations for Private Operators
 description: Information summary for Private Operators.
 hide_table_of_contents: false
+displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
+import UpgradePolicy from '../snippets/_private-operator-upgrade-policy.mdx';
 
 # EUID Private Operator Integration Overview
 
@@ -80,6 +82,14 @@ There are a couple of limitations to Private Operator functionality:
 - Private Operators do not currently support <Link href="../ref-info/glossary-uid#gl-client-side">client-side integration</Link>.
 - Private Operator updates are released three times per year; Public Operator updates are released on a more frequent cadence.
 
+## Private Operator Deprecation Schedule
+
+For information about supported versions and deprecation dates, see [Private Operator Versions](../ref-info/deprecation-schedule.md#private-operator-versions).
+
+## Private Operator Upgrade Policy
+
+<UpgradePolicy />
+
 ## Getting Started
 
 To get started as a Private Operator, follow these steps:
@@ -102,4 +112,4 @@ The following documentation resources are available for Private Operators to imp
 
 | Integration Type| Documentation | Content Description |
 | :--- | :--- | :--- |
-| AWS | [EUID Private Operator for AWS Integration Guide](../guides/operator-guide-aws-marketplace.md) | Instructions for setting up a Private Operator service for AWS Marketplace. |
+| AWS | [EUID Private Operator for AWS Integration Guide](operator-guide-aws-marketplace.md) | Instructions for setting up a Private Operator service for AWS Marketplace. |

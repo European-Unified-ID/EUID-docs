@@ -3,9 +3,11 @@ title: SDK for C# / .NET
 description: Reference information about the C# / .NET server-side SDK.
 hide_table_of_contents: false
 sidebar_position: 08
+displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
+import SDKsSameUID2EUID from '../snippets/_euid-sdk-same-for-all.mdx';
 
 # SDK for C# / .NET Reference Guide
 
@@ -41,11 +43,11 @@ This SDK is in the following open-source GitHub repository:
 
 - [SDK for .NET](https://github.com/IABTechLab/uid2-client-net/blob/master/README.md)
 
-  >NOTE: This SDK is valid for both UID2 and EUID. The SDK, and some of its technical components, are named UID2, but are equally applicable for EUID.
-
 The binary is published in this location:
 
 - [https://www.nuget.org/packages/UID2.Client](https://www.nuget.org/packages/UID2.Client)
+
+<SDKsSameUID2EUID/>
 
 ## Initialization
 
@@ -108,9 +110,9 @@ client.Refresh();
 ```
 
 3. Decrypt a token into a raw EUID. Pass the token, and then do one of the following: 
- * If the bid request originated from a publisher's website, pass the domain name. The domain name must be all lower case, without spaces and without subdomain. For example, for `Subdomain.DOMAIN.com`, pass `domain.com` instead.
- * If the bid request originated from a mobile app, pass the <Link href="../ref-info/glossary-uid#gl-app-name">app name</Link>.
- * Otherwise, pass `null`.
+   * If the bid request originated from a publisher's website, pass the domain name. The domain name must be all lower case, without spaces and without subdomain. For example, for `Subdomain.DOMAIN.com`, pass `domain.com` instead.
+   * If the bid request originated from a mobile app, pass the <Link href="../ref-info/glossary-uid#gl-app-name">app name</Link>.
+   * Otherwise, pass `null`.
 
 
 ```cs
@@ -127,7 +129,3 @@ else
 ```
 
 For a full example, see the `ExampleBidStreamClient` method in [SampleApp/Program.cs](https://github.com/IABTechLab/uid2-client-net/blob/main/src/SampleApp/Program.cs).
-
-## FAQs
-
-For a list of frequently asked questions for DSPs, see [FAQs for DSPs](../getting-started/gs-faqs.md#faqs-for-dsps).

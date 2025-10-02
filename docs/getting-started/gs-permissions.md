@@ -3,6 +3,7 @@ title: API Permissions
 description: Information about EUID API permissions.
 hide_table_of_contents: false
 sidebar_position: 07
+displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
@@ -25,4 +26,4 @@ The following table lists the key permissions, the types of participants that co
 | :--- | :--- | :--- |
 | Generator | Publishers | Permission to call the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md), [POST&nbsp;/token/validate](../endpoints/post-token-validate.md), and [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoints, to generate EUID tokens from <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> and to refresh them, using one of these integration methods:<ul><li>A Prebid integration</li><li>The SDK for JavaScript</li><li>An integration that directly calls the applicable API endpoints for retrieving and managing EUID tokens.</li></ul> |
 | Bidder | DSPs | Permission to decrypt EUID tokens coming in from the <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link> from publishers into raw EUIDs for bidding purposes. |
-| Mapper | Advertisers<br/>Data Providers | Permission to use the [POST&nbsp;/identity/buckets](../endpoints/post-identity-buckets.md) endpoint to monitor rotated salt buckets and to use the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint to map multiple email addresses or their respective hashes to their raw EUIDs and salt bucket IDs. |
+| Mapper | Advertisers<br/>Data Providers | Permission to call the following endpoints to map multiple email addresses, phone numbers, or their respective hashes to their raw EUIDs, previous raw EUIDs, and refresh timestamps:<ul><li>[POST&nbsp;/identity/map](../endpoints/post-identity-map.md) (latest version)</li><li>The earlier v2 identity mapping endpoints: [POST&nbsp;/identity/map (v2)](../endpoints/post-identity-map.md) and [POST&nbsp;/identity/buckets](../endpoints/post-identity-buckets.md)</li></ul> |

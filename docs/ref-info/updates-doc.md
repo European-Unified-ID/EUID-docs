@@ -3,6 +3,7 @@ title: Documentation Updates
 description: A summary of significant EUID documentation updates.
 hide_table_of_contents: false
 sidebar_position: 06
+displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
@@ -15,9 +16,60 @@ import CustomTagsContainer from '@site/src/components/CustomTags/CustomTagsConta
 
 Check out the latest updates to our EUID documentation resources.
 
-## Q1 2025
+## Q3 2025
 
 The following documents were released in this quarter.
+
+<CustomTagsContainer tags="Reference">
+
+### Legal Information for Publishers and Advertisers
+
+3 September, 2025
+
+We've added a new documentation section to help publishers and advertisers with legal information about using EUID. The documents cover legal guidelines and examples of wording for consent.
+
+For details, see:
+
+- [Publisher Information](../legal/euid-participant-information-publishers.md)
+- [Advertiser Information](../legal/euid-participant-information-advertisers.md)
+- [Consent Examples](../legal/legal-consent-examples.md)
+
+<!-- APIDOCS-2890 -->
+
+</CustomTagsContainer>
+
+<CustomTagsContainer tags="Endpoints, Guides, SDKs">
+
+### Identity Map v3 (Python SDK, Snowflake)
+
+14 August, 2025
+
+We've released updated versions of two additional docs to reflect adoption of the new version of the Identity Map API (v3), announced on 16 July, which provides significant improvements for advertisers and data providers.
+
+We updated the following additional implementations and corresponding documentation:
+
+- Python SDK: see [SDK for Python Reference Guide](../sdks/sdk-ref-python.md)
+- Snowflake: see [Snowflake Integration Guide](../guides/integration-snowflake.md)
+
+<!-- APIDOCS-3346 -->
+
+</CustomTagsContainer>
+
+<CustomTagsContainer tags="Endpoints, Guides, SDKs">
+
+### Identity Map v3
+
+July 16, 2025
+
+We've released a new version of the Identity Map API (v3) that provides significant improvements for advertisers and data providers. This update includes documentation for the [POST /identity/map](../endpoints/post-identity-map.md) endpoint, the [SDK for Java Reference Guide](../sdks/sdk-ref-java.md#usage-for-advertisersdata-providers), and the [Advertiser/Data Provider Integration Overview](../guides/integration-advertiser-dataprovider-overview.md).
+
+<!-- UID2-5558, UID2-5560, UID2-5559, APIDOCS-3318 -->
+
+</CustomTagsContainer>
+
+## Q1 2025
+
+The following documents were released in the first quarter of 2025.
 
 <CustomTagsContainer tags="Guides, Mobile">
 

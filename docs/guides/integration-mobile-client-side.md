@@ -5,6 +5,7 @@ pagination_label: EUID Client-Side Integration Guide for Mobile
 description: Setting up a mobile integration with token generate and refresh both on the client side.
 hide_table_of_contents: false
 sidebar_position: 04
+displayed_sidebar: docs
 ---
 import Link from '@docusaurus/Link';
 import IntegratingWithSSO from '../snippets/_integrating-with-sso.mdx';
@@ -693,7 +694,9 @@ If `getAdvertisingToken()` returns null, and the identity status is not `OPT_OUT
 ## Optional: EUID Integration with Prebid Mobile SDK
 
 :::important
-The EUID integration with Prebid Mobile SDK requires version 1.6.0 or later of the EUID SDK for Android, or version 1.7.0 or later of the EUID SDK for iOS.
+The EUID integration with Prebid Mobile SDK vv2 requires version 1.6.0 or later of the EUID SDK for Android, or version 1.7.0 or later of the EUID SDK for iOS.
+
+If you are using Prebid Mobile SDK v3, version 2.0.0 of the EUID SDK for Android or iOS is required.
 :::
 
 <PrebidMobileSDK />

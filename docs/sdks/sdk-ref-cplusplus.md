@@ -3,9 +3,11 @@ title: SDK for C++
 description: Reference information about the C++ server-side SDK.
 hide_table_of_contents: false
 sidebar_position: 10
+displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
+import SDKsSameUID2EUID from '../snippets/_euid-sdk-same-for-all.mdx';
 
 # SDK for C++ Reference Guide
 
@@ -41,11 +43,11 @@ This SDK is in the following open-source GitHub repository:
 
 - [SDK for C++](https://github.com/IABTechLab/uid2-client-cpp11/blob/master/README.md).
 
-  >NOTE: This SDK is valid for both UID2 and EUID. The SDK, and some of its technical components, are named UID2, but are equally applicable for EUID.
-
 Release tags are available in the following GitHub location, but you must build your own binaries:
 
 - https://github.com/IABTechLab/uid2-client-cpp11/tags
+
+<SDKsSameUID2EUID/>
 
 ## Initialization
 
@@ -98,7 +100,3 @@ Available information returned through the SDK is outlined in the following tabl
 | `ExpiredToken` | The incoming EUID advertising token has expired. |
 | `KeysNotSynced` | The client has failed to synchronize keys from the EUID service. |
 | `VersionNotSupported` | The client library does not support the version of the encrypted token. |
-
-## FAQs
-
-For a list of frequently asked questions for DSPs, see [FAQs for DSPs](../getting-started/gs-faqs.md#faqs-for-dsps).

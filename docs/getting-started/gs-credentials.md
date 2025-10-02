@@ -3,6 +3,7 @@ title: EUID Credentials
 description: Learn about the credentials you'll need and how to get them.
 hide_table_of_contents: false
 sidebar_position: 03
+displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
@@ -18,6 +19,10 @@ Each EUID <a href="../overviews/participants-overview">participant</a> gets a se
 | Participants using a server-side implementation | Both of the following:<ul><li><Link href="../ref-info/glossary-uid#gl-api-key">API key</Link>, also called a client key</li><li><Link href="../ref-info/glossary-uid#gl-client-secret">Client secret</Link>, a value known only to the participant and the EUID service</li></ul> | Integrations using one of these: <ul><li>[Publisher Integration Guide, Server-Side](../guides/integration-publisher-server-side.md)</li><li>[Advertiser/Data Provider Integration Overview](../guides/integration-advertiser-dataprovider-overview.md)</li></ul> |
 
 If you're using the integration environment as well as the production environment, you'll get a separate set of credentials for each environment.
+
+## Getting Your Credentials
+
+To get your credentials, ask your EUID contact.
 
 ## Subscription ID and Public Key
 

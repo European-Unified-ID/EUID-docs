@@ -3,9 +3,11 @@ title: SDK for JavaScript (2.x and earlier)
 description: Reference information about 2.x and earlier versions of the JavaScript client-side SDK.
 hide_table_of_contents: false
 sidebar_position: 02
+displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
+import SDKsSameUID2EUID from '../snippets/_euid-sdk-same-for-all.mdx';
 import ChartSvg from './images/euid-js-sdk-workflow.svg';
 import ExampleEuidCookie from '../snippets/_example-euid-cookie.mdx';
 
@@ -45,6 +47,8 @@ This SDK is in the following open-source GitHub repository:
 
 - [https://github.com/iabtechlab/uid2-web-integrations](https://github.com/iabtechlab/uid2-web-integrations)
 
+<SDKsSameUID2EUID/>
+
 ## Terminology
 
 In this document, the following terms apply:
@@ -56,7 +60,7 @@ In this document, the following terms apply:
 On every page where you want to use EUID for targeted advertising, include the following SDK script:
 
 ```html
-<script src="https://prod.euid.eu/static/js/euid-sdk-1.0.0.js" type="text/javascript"></script> TBD
+<script src="https://prod.euid.eu/static/js/euid-sdk-1.0.0.js" type="text/javascript"></script>
 ```
 
 ## Workflow Overview

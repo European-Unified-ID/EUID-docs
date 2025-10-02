@@ -192,16 +192,28 @@ const fullSidebar = [
   collapsed: true,
 
   items: [
-  {
-    type: 'category',
-    label: 'Integration Overview',
-    link: {
-      type: 'doc',
-      id: 'guides/integration-advertiser-dataprovider-overview',
-    },
-    collapsed: true,
-    items: [
-      'guides/integration-snowflake',
+    {
+      type: 'category',
+      label: 'Integration Overview',
+      link: {
+        type: 'doc',
+        id: 'guides/integration-advertiser-dataprovider-overview',
+      },
+      collapsed: true,
+      items: [
+        {
+          type: 'category',
+          label: 'Snowflake',
+          link: {
+            type: 'doc',
+            id: 'guides/integration-snowflake',
+          },
+          collapsed: true,
+          items: [
+            'guides/integration-snowflake-previous',
+          ],
+        },
+
       'guides/integration-advertiser-dataprovider-endpoints',
     ],
   },
@@ -276,13 +288,24 @@ const fullSidebar = [
         type: 'doc',
         id: 'endpoints/summary-endpoints',
       },
-      collapsed: true,
+      collapsed: false,
       items: [
         'endpoints/post-token-generate',
         'endpoints/post-token-validate',
         'endpoints/post-token-refresh',
         'endpoints/post-identity-buckets',
-        'endpoints/post-identity-map',
+        {
+          type: 'category',
+          label: 'POST /identity/map',
+          link: {
+            type: 'doc',
+            id: 'endpoints/post-identity-map',
+          },
+          collapsed: true,
+          items: [
+            'endpoints/post-identity-map-v2',
+          ],
+        },
         'endpoints/post-optout-status',
       ],
     },
@@ -307,8 +330,23 @@ const fullSidebar = [
         'ref-info/ref-how-uid-is-created',
         'ref-info/ref-server-side-token-generation',
         'ref-info/ref-integration-sso-providers',
+        'ref-info/deprecation-schedule',
         'ref-info/ref-areas-of-coverage',
-        'ref-info/ref-consent-samples',
+      ],
+    },
+
+
+    {
+      type: 'category',
+      label: 'Legal Information',
+      link: {
+        type: 'generated-index',
+      },
+      collapsed: true,
+      items: [
+        'legal/euid-participant-information-publishers',
+        'legal/euid-participant-information-advertisers',
+        'legal/legal-consent-examples',
       ],
     },
 
@@ -327,6 +365,7 @@ const sidebars = {
     'Advertiser/Data Provider Integrations',
     'guides/integration-advertiser-dataprovider-overview',
     'guides/integration-snowflake',
+    'guides/integration-snowflake-previous',
     'guides/advertiser-dataprovider-endpoints',
     'DSP Integrations',
     'guides/dsp-guide',
@@ -409,6 +448,7 @@ const sidebars = {
     'Advertiser/Data Provider Integrations',
     'guides/integration-advertiser-dataprovider-overview',
     'guides/integration-snowflake',
+    'guides/integration-snowflake-previous',
     'guides/advertiser-dataprovider-endpoints',
     'sharing/sharing-bid-stream'
     ),

@@ -3,9 +3,11 @@ title: SDK for iOS
 description: Reference information about the iOS SDK.
 hide_table_of_contents: false
 sidebar_position: 14
+displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
+import SDKsSameUID2EUID from '../snippets/_euid-sdk-same-for-all.mdx';
 
 # SDK for iOS Reference Guide
 
@@ -40,9 +42,9 @@ You'll be granted permission to use specific functions offered by the SDK, and g
 
 ## SDK Version
 
-<!-- Updated 10 Sept 2024 -->
+<!-- As of 22 Oct 2024 -->
 
-This documentation is for the SDK for iOS version 1.7.0 or later.
+This documentation is for the SDK for iOS version 2.0.0 or later.
 
 For current and past release notes information, see [https://github.com/IABTechLab/uid2-ios-sdk/releases](https://github.com/IABTechLab/uid2-ios-sdk/releases).
 
@@ -51,6 +53,8 @@ For current and past release notes information, see [https://github.com/IABTechL
 This SDK is in the following open-source GitHub repository:
 
 - [https://github.com/IABTechLab/uid2-ios-sdk](https://github.com/IABTechLab/uid2-ios-sdk)
+
+<SDKsSameUID2EUID/>
 
 ## Minimum Requirements
 
@@ -79,7 +83,7 @@ Add the following dependency to Package.swift:
 
 ```js
 dependencies: [
-  .package(url: "https://github.com/IABTechLab/uid2-ios-sdk.git", from: "1.7.0"),
+  .package(url: "https://github.com/IABTechLab/uid2-ios-sdk.git", from: "2.0.0"),
 ]
 ```
 
@@ -89,14 +93,14 @@ In the XCode user interface, under Package Dependencies, add the following entry
 
 | Name | Location | Dependency Rule |
 | :--- | :--- | :--- |
-| uid2-ios-sdk | `git@github.com:IABTechLab/uid2-ios-sdk.git` | Up to next major version: 1.7.0 < 2.0.0 |
+| uid2-ios-sdk | `git@github.com:IABTechLab/uid2-ios-sdk.git` | Up to next major version: 2.0.0 < 3.0.0 |
 
 ### Installing with CocoaPods
 
 Add the following entry in your `Podfile`:
 
 ```
-pod 'UID2', '~> 1.7'
+pod 'UID2', '~> 2.0'
 ```
 
 ## Usage Guidelines

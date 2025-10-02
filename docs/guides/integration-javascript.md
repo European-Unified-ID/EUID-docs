@@ -5,6 +5,7 @@ pagination_label: EUID Integration Overview for JavaScript
 description: Overview of options for integrating with the SDK for JavaScript as part of your EUID implementation.
 hide_table_of_contents: false
 sidebar_position: 04
+displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';

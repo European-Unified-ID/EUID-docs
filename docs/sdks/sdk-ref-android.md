@@ -3,9 +3,11 @@ title: SDK for Android
 description: Reference information about the Android SDK.
 hide_table_of_contents: false
 sidebar_position: 12
+displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
+import SDKsSameUID2EUID from '../snippets/_euid-sdk-same-for-all.mdx';
 
 # SDK for Android Reference Guide
 
@@ -45,7 +47,7 @@ You'll be granted permission to use specific functions offered by the SDK, and g
 
 <!-- As of 23 Oct 2024 -->
 
-This documentation is for the SDK for Android version 1.6.0 and later.
+This documentation is for the SDK for Android version 2.0.0 and later.
 
 For current and past release notes information, see [https://github.com/IABTechLab/uid2-android-sdk/releases](https://github.com/IABTechLab/uid2-android-sdk/releases).
 
@@ -58,6 +60,8 @@ This SDK is in the following open-source GitHub repository:
 The binary is published on Sonatype:
 
 - [https://central.sonatype.com/artifact/com.uid2/uid2-android-sdk](https://central.sonatype.com/artifact/com.uid2/uid2-android-sdk)
+
+<SDKsSameUID2EUID/>
 
 ## Minimum Requirements
 
@@ -87,7 +91,7 @@ To install with Gradle, add the SDK as a dependency in the build.gradle
 file:
 
 ```js
-implementation 'com.uid2:uid2-android-sdk:1.6.0'
+implementation 'com.uid2:uid2-android-sdk:2.0.0'
 ```
 
 ### Installing with Maven 
@@ -98,7 +102,7 @@ To install with Maven, add the SDK as a dependency in the `pom.xml` file:
 <dependency> 
   <groupId>com.uid2</groupId> 
   <artifactId>uid2-android-sdk</artifactId> 
-  <version>1.6.0</version> 
+  <version>2.0.0</version> 
 </dependency> 
 ```
 

@@ -3,11 +3,13 @@ title: SDK for JavaScript v3
 description: Reference information about the JavaScript client-side SDK version 3.
 hide_table_of_contents: false
 sidebar_position: 02
+displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import SDKsSameUID2EUID from '../snippets/_euid-sdk-same-for-all.mdx';
 import ExampleEuidCookie from '../snippets/_example-euid-cookie.mdx';
 
 export const New = () => (
@@ -78,6 +80,8 @@ The source for this SDK is in the following open-source GitHub repository:
 
 - [https://github.com/iabtechlab/uid2-web-integrations](https://github.com/iabtechlab/uid2-web-integrations)
 
+<SDKsSameUID2EUID/>
+
 ## SDK Distribution
 
 The SDK is published in these locations:
@@ -88,7 +92,6 @@ The SDK is published in these locations:
 
   You can also use this for TypeScript type information and still load the script via the CDN. If you do this, ensure that the version of the NPM package that you have installed matches the version in the CDN URL.
 
-  >NOTE: This SDK is valid for both UID2 and EUID. The SDK, and some of its technical components, are named UID2, but are equally applicable for EUID.
 - CDN: `https://cdn.prod.uidapi.com/uid2-sdk-${VERSION_ID}.js`
 
   This is the easiest way to include the SDK in your site if you don't use a build pipeline to bundle your JavaScript.
