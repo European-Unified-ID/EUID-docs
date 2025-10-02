@@ -25,7 +25,7 @@ The security requirements are as follows:
 - [Accounting](#accounting)
 - [Secure Transport](#secure-transport)
 
-For an implementation example, see [Example Workflow](#example-workflow).
+<!-- (UID2/EUID diff: link to example Workflow section removed for EUID, APIDOCS-3494 -->
 
 ### Authentication
 
@@ -71,30 +71,4 @@ Secure transport helps protect raw EUIDs from being accessible or modifiable by 
 - HTTPS or TLS
 - Message-based encryption
 
-### Example Workflow
-The following is an example workflow for an online AAA (Authentication, Authorization, and Accounting) flow, with an additional human verification step for contract validation.
-
-1. Pre-Authentication:
-   - A sharing participant verifies the identity of an intended recipient (sharing receiver) and then issues a set of credentials, such as a username and password or an API key, to the recipient.
-
-2. Authentication:
-   - The intended recipient begins by providing their credentials, such as a username and password.
-   - To further secure the process, two-factor authentication might be required. The user would receive a code via SMS, email, or an authentication app, and must enter the code to proceed.
-
-3. Pre-Authorization:
-   - When authentication is complete, the system checks the user's role and permissions to determine whether they have initial clearance to access the requested resources or services.
-   
-     This step involves checking a database or directory service to confirm the user’s access rights based on the authenticated identity. It answers the question, "Is this person authorized to receive EUID data from me?"
-
-1. Post-Verification Authorization:
-   - When the verifier has confirmed the existence and validity of the contract, the sharing participant has permission to grant access to the data to be shared.
-
-1. Accounting:
-   - During the session, the system logs all transactions and access details for future auditing and monitoring. This includes logging the initial authentication, the authorization details, and any instances of human intervention.
-
-     The system also logs usage metrics such as access times, duration, and resource usage, to ensure compliance with the contract terms and for billing purposes if applicable.
-
-1. Feedback and Notification:
-   - Upon completion of the authorization process, the recipient receives a notification about their access status. If access is granted, they are notified and can proceed. If access is denied, they receive an explanation or steps for further action. For example, the sharing receiver might get an email notification that the download is ready. 
-
-   - The verifier might also receive a notification confirming that their intervention has been successfully recorded and acted upon.
+<!-- (UID2/EUID diff: example Workflow section removed for EUID, APIDOCS-3494 -->

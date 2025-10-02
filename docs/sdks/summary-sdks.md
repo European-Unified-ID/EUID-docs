@@ -34,7 +34,7 @@ The following table summarizes the functionality available with each SDK.
       <th>Map Personal Data to Raw EUIDs&ast;</th>
       <th>Monitor Rotated Salt Buckets&ast;&ast;</th>
       <th>Encrypt Raw EUID to EUID Token for Sharing</th>
-      <th>Decrypt EUID Token to Raw UIDEUID2</th>
+      <th>Decrypt EUID Token to Raw EUID</th>
     </tr>
   </thead>
   <tbody>
