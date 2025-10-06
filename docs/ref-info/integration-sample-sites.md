@@ -12,19 +12,19 @@ This page lists all official EUID sample implementations highlighting common int
 
 ## Web Integrations
 
-This section summarizes the sample integration available for publishers who want to integrate EUID directly into their websites. For a full summary of integration options for websites, see [Web Integration Overview](../guides/integration-options-publisher-web).
+This section summarizes the sample integration available for integrating EUID directly into websites. For integration options by participant type, see [Web Integration Overview](https://euid.eu/docs/guides/integration-options-publisher-web) or [Advertiser/Data Provider Integration Overview](https://euid.eu/docs/guides/integration-advertiser-dataprovider-overview).
 
 ### Client-Side Integration Using EUID SDK for JavaScript
 
-This sample is for publishers who prefer a fully client-side integration using the [SDK for JavaScript Reference Guide](../sdks/sdk-ref-javascript) to generate and manage tokens directly in the browser. This approach is ideal for fast prototyping with minimal back-end requirements.
+This sample is for publishers who prefer a fully client-side integration using the [SDK for JavaScript Reference Guide](https://euid.eu/docs/sdks/sdk-ref-javascript) to generate and manage tokens directly in the browser. This approach is ideal for fast prototyping with minimal back-end requirements.
 
 - Site: [EUID Publisher Client-Side Integration Example using JavaScript SDK](https://euid.eu/examples/cstg-js-sdk-example/)
 - Code: [EUID-docs/static/examples/cstg-js-sdk-example](https://github.com/European-Unified-ID/EUID-docs/tree/main/static/examples/cstg-js-sdk-example)
-- Doc: [Client-Side Integration Guide for JavaScript](../guides/integration-javascript-client-side)
+- Doc: [Client-Side Integration Guide for JavaScript](https://euid.eu/docs/guides/integration-javascript-client-side)
 
 ## Prebid.js Integrations
 
-This section includes a sample page for generating EUID tokens to be passed by Prebid.js in the RTB bidstream. For details, see [EUID Integration Overview for Prebid](../guides/integration-prebid).
+This section includes a sample page for generating EUID tokens to be passed by Prebid.js in the RTB bidstream. For details, see [EUID Integration Overview for Prebid](https://euid.eu/docs/guides/integration-prebid).
 
 ### Client-Side Integration with Prebid.js
 
@@ -32,11 +32,11 @@ This sample is for publishers who want to generate EUID tokens on the client sid
 
 - Site: [EUID Prebid.js Client-Side Integration Example](https://euid.eu/examples/cstg-prebid-example/)
 - Code: [EUID-docs/static/examples/cstg-prebid-example](https://github.com/European-Unified-ID/EUID-docs/tree/main/static/examples/cstg-prebid-example)
-- Doc: [EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side)
+- Doc: [EUID Client-Side Integration Guide for Prebid.js](https://euid.eu/docs/guides/integration-prebid-client-side)
 
 ## Google Secure Signals Integrations
 
-This section includes a sample page for passing EUID identity data to Google's advertising systems through their Secure Signals feature. For details, see [Google Ad Manager Secure Signals Integration Guide](../guides/integration-google-ss).
+This section includes a sample page for passing EUID identity data to Google's advertising systems through their Secure Signals feature. For details, see [Google Ad Manager Secure Signals Integration Guide](https://euid.eu/docs/guides/integration-google-ss).
 
 ### Client-Side Secure Signals
 
@@ -44,7 +44,7 @@ This sample is for publishers who want a purely client-side integration with GAM
 
 - Site: [EUID Publisher Client-Side Integration Example using EUID JavaScript SDK, Secure Signals](https://euid.eu/examples/cstg-secure-signals-example/)
 - Code: [EUID-docs/static/examples/cstg-secure-signals-example](https://github.com/European-Unified-ID/EUID-docs/tree/main/static/examples/cstg-secure-signals-example)
-- Doc: [Google Ad Manager Secure Signals Integration Guide](../guides/integration-google-ss)
+- Doc: [Google Ad Manager Secure Signals Integration Guide](https://euid.eu/docs/guides/integration-google-ss)
 
 ## EUID Hashing Tool
 
@@ -52,8 +52,8 @@ This tool is for developers or clients validating data preparation, such as hash
 
 - Site: [EUID Hashing Tool](https://euid.eu/examples/hashing-tool/)
 - Code: [EUID-docs/static/examples/hashing-tool](https://github.com/European-Unified-ID/EUID-docs/tree/main/static/examples/hashing-tool)
-- Doc: [Normalization and Encoding](../getting-started/gs-normalization-encoding)
+- Doc: [Normalization and Encoding](https://euid.eu/docs/getting-started/gs-normalization-encoding)
 
 :::note
-The sample sites in this file highlight some common integrations, but do not represent all available EUID integration options. For a summary of all the integration options available, see [EUID Integration Guides: Summary](../guides/summary-guides).
+The sample sites in this file highlight some common integrations, but do not represent all available EUID integration options. For a summary of all the integration options available, see [EUID Integration Guides: Summary](https://euid.eu/docs/guides/summary-guides).
 :::
