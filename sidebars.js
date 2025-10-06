@@ -326,6 +326,7 @@ const fullSidebar = [
         'getting-started/gs-opt-out',
         'ref-info/ref-operators-public-private',
         'ref-info/ref-integration-approaches',
+        'ref-info/integration-sample-sites',
         'ref-info/ref-tokens',
         'ref-info/ref-how-uid-is-created',
         'ref-info/ref-server-side-token-generation',

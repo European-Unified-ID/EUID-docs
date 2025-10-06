@@ -31,6 +31,8 @@ Publisher integrations fall into the following main categories:
 - [Prebid Integrations](#prebid-integrations)
 - [Google Ad Manager Integrations](#google-ad-manager-integrations)
 
+To explore live, working examples of EUID implementations with source code, see [EUID Integration Samples](../ref-info/integration-sample-sites.md).
+
 ### Web Integrations
 
 The following documentation resources are available for publisher web integrations.
