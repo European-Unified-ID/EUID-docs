@@ -22,7 +22,11 @@ This sample is for publishers who prefer a fully client-side integration using t
 - Code: [EUID-docs/static/examples/cstg-js-sdk-example](https://github.com/European-Unified-ID/EUID-docs/tree/main/static/examples/cstg-js-sdk-example)
 - Doc: [Client-Side Integration Guide for JavaScript](../guides/integration-javascript-client-side)
 
-## Prebid.js Client-Side Integration
+## Prebid.js Integrations
+
+This section includes a sample page for generating EUID tokens to be passed by Prebid.js in the RTB bidstream. For details, see [EUID Integration Overview for Prebid](../guides/integration-prebid).
+
+### Client-Side Integration with Prebid.js
 
 This sample is for publishers who want to generate EUID tokens on the client side and pass them into header bidding auctions using Prebid.js.
 
