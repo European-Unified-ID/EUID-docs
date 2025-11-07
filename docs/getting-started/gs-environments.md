@@ -10,7 +10,7 @@ import Link from '@docusaurus/Link';
 
 # Environments
 
-Learn about the different environments available, and tips to reduce latency by choosing the best base URL for your integration.
+Learn about the different environments available.
 
 ## EUID Integration and Production Environments
 
