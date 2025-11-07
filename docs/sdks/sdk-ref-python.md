@@ -47,6 +47,10 @@ The package is published in this location:
 
 <SDKsSameUID2EUID/>
 
+## Release Notes
+
+For detailed information about changes, bug fixes, and new features in each release, refer to the [release notes on GitHub](https://github.com/IABTechLab/uid2-client-python/releases).
+
 ## Installation
 
 You can use the [Pip](https://packaging.python.org/en/latest/guides/tool-recommendations/#installing-packages) package manager to install the SDK.
