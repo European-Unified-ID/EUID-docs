@@ -33,7 +33,11 @@ For details, see [API Permissions](../getting-started/gs-permissions.md).
 
 ## Version
 
-The SDK supports Python 3.6 and above.
+The minimum supported Python version depends on the [SDK for Python](https://pypi.org/project/uid2-client/) version:
+
+- **v2.8.0+**: Python 3.10 or higher
+- **v2.6.0**: Python 3.8 or higher  
+- **v2.5.0 and below**: Python 3.6 or higher
 
 ## GitHub Repository/Package
 
