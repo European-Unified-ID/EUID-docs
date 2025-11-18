@@ -95,7 +95,6 @@ For information about supported versions and deprecation dates, see [Private Ope
 
 <SnptRotatingTheKeys />
 
-
 ## Getting Started
 
 To get started as a Private Operator, follow these steps:
