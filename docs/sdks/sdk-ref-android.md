@@ -7,7 +7,7 @@ displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
-import SDKsSameUID2EUID from '../snippets/_euid-sdk-same-for-all.mdx';
+import SnptSDKsSameUID2EUID from '../snippets/_snpt-euid-sdk-same-for-all.mdx';
 
 # SDK for Android Reference Guide
 
@@ -61,7 +61,7 @@ The binary is published on Sonatype:
 
 - [https://central.sonatype.com/artifact/com.uid2/uid2-android-sdk](https://central.sonatype.com/artifact/com.uid2/uid2-android-sdk)
 
-<SDKsSameUID2EUID/>
+<SnptSDKsSameUID2EUID/>
 
 ## Minimum Requirements
 

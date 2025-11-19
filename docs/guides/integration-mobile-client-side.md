@@ -8,14 +8,14 @@ sidebar_position: 04
 displayed_sidebar: docs
 ---
 import Link from '@docusaurus/Link';
-import IntegratingWithSSO from '../snippets/_integrating-with-sso.mdx';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import ExampleAdvertisingToken from '../snippets/_example-advertising-token.mdx';
-import EnableLogging from '../snippets/_mobile-docs-enable-logging.mdx';
-import GMAIMA_Plugins from '../snippets/_mobile_docs_gmaima-plugin-gss.mdx';
-import PrebidMobileSDK from '../snippets/_mobile_docs_prebid-mobile.mdx';
-import ErrorResponseStates from '../snippets/_mobile-docs-error-response-states.mdx';
+import SnptIntegratingWithSSO from '../snippets/_snpt-integrating-with-sso.mdx';
+import SnptExampleAdvertisingToken from '../snippets/_snpt-example-advertising-token.mdx';
+import SnptEnableLogging from '../snippets/_snpt-mobile-docs-enable-logging.mdx';
+import SnptGMAIMA_Plugins from '../snippets/_snpt-mobile_docs_gmaima-plugin-gss.mdx';
+import SnptPrebidMobileSDK from '../snippets/_snpt-mobile_docs_prebid-mobile.mdx';
+import SnptErrorResponseStates from '../snippets/_snpt-mobile-docs-error-response-states.mdx';
 
 # EUID Client-Side Integration Guide for Mobile
 
@@ -193,7 +193,7 @@ If necessary, you can also change the default Subscription ID and public key to 
 
 ## Integrating with Single Sign-On (SSO)
 
-<IntegratingWithSSO />
+<SnptIntegratingWithSSO />
 
 ## Complete the EUID Account Setup
 
@@ -577,7 +577,7 @@ EUIDManager.shared.getAdvertisingToken()
 
 If successful, this method call returns the token&#8212;a non-null string object such as the following: 
 
-<ExampleAdvertisingToken />
+<SnptExampleAdvertisingToken />
 
 You can use this token to pass downstream for sending in the RTB bidstream.
 
@@ -685,11 +685,11 @@ If `getAdvertisingToken()` returns null, and the identity status is not `OPT_OUT
 
 ## Enable Logging
 
-<EnableLogging />
+<SnptEnableLogging />
 
 ## Optional: EUID GMA/IMA Plugin for GAM Secure Signals integration
 
-<GMAIMA_Plugins />
+<SnptGMAIMA_Plugins />
 
 ## Optional: EUID Integration with Prebid Mobile SDK
 
@@ -699,8 +699,8 @@ The EUID integration with Prebid Mobile SDK vv2 requires version 1.6.0 or later 
 If you are using Prebid Mobile SDK v3, version 2.0.0 of the EUID SDK for Android or iOS is required.
 :::
 
-<PrebidMobileSDK />
+<SnptPrebidMobileSDK />
 
 ## Error Response States
 
-<ErrorResponseStates />
+<SnptErrorResponseStates />

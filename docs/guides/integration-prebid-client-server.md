@@ -9,9 +9,9 @@ displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
-import IntegratingWithSSO from '../snippets/_integrating-with-sso.mdx';
-import AddPrebidjsToYourSite from '../snippets/_prebid-add-prebidjs-to-your-site.mdx';
-import StoreEUIDTokenInBrowser from '../snippets/_prebid-storing-euid-token-in-browser.mdx';
+import SnptIntegratingWithSSO from '../snippets/_snpt-integrating-with-sso.mdx';
+import SnptAddPrebidjsToYourSite from '../snippets/_snpt-prebid-add-prebidjs-to-your-site.mdx';
+import SnptStoreEUIDTokenInBrowser from '../snippets/_snpt-prebid-storing-euid-token-in-browser.mdx';
 
 # EUID Client-Server Integration Guide for Prebid.js
 
@@ -38,7 +38,7 @@ Information about how to integrate Prebid with EUID is also in the following loc
 
 ## Integrating with Single Sign-On (SSO)
 
-<IntegratingWithSSO />
+<SnptIntegratingWithSSO />
 
 ## Integration Overview: High-Level Steps
 
@@ -56,7 +56,7 @@ When account setup is complete, you'll receive your unique API key and client se
 
 ## Add Prebid.js to Your Site
 
-<AddPrebidjsToYourSite />
+<SnptAddPrebidjsToYourSite />
 
 ## Configure the EUID Module
 
@@ -251,7 +251,7 @@ In planning your Prebid implementation, consider the following:
 
 ## Storing the EUID Token in the Browser
 
-<StoreEUIDTokenInBrowser />
+<SnptStoreEUIDTokenInBrowser />
 
 ## Determining Whether the Module Has a Valid Token
 

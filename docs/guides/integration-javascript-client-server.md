@@ -9,9 +9,9 @@ displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
-import IntegratingWithSSO from '../snippets/_integrating-with-sso.mdx';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import SnptIntegratingWithSSO from '../snippets/_snpt-integrating-with-sso.mdx';
 
 # Client-Server Integration Guide for JavaScript
 
@@ -53,7 +53,7 @@ If you are using Google Ad Manager and want to use the secure signals feature, f
 
 ## Integrating with Single Sign-On (SSO)
 
-<IntegratingWithSSO />
+<SnptIntegratingWithSSO />
 
 ## Integration Steps
 

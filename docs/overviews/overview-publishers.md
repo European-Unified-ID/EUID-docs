@@ -15,9 +15,9 @@ displayed_sidebar: sidebarPublishers
 ---
 
 import Link from '@docusaurus/Link';
-import IntegratingWithSSO from '../snippets/_integrating-with-sso.mdx';
-import PrivateOperatorOption from '../snippets/_private-operator-option.mdx';
-import PublisherImplementationResources from '../snippets/_publisher-implementation-resources.mdx';
+import SnptIntegratingWithSSO from '../snippets/_snpt-integrating-with-sso.mdx';
+import SnptPrivateOperatorOption from '../snippets/_snpt-private-operator-option.mdx';
+import SnptPublisherImplementationResources from '../snippets/_snpt-publisher-implementation-resources.mdx';
 
 As a publisher, you can benefit from the cross-device presence of European Unified ID (EUID) and take advantage of a consistent identity fabric on all your inventory.
 
@@ -71,11 +71,11 @@ The following steps provide a high-level outline of the workflow intended for or
 
 ## Integrating with Single Sign-On (SSO)
 
-<IntegratingWithSSO />
+<SnptIntegratingWithSSO />
 
 ## Private Operator Option
 
-<PrivateOperatorOption/>
+<SnptPrivateOperatorOption/>
 
 ## Getting Started
 
@@ -103,7 +103,7 @@ To get started, follow these steps:
 
 ## Implementation Resources
 
-<PublisherImplementationResources/>
+<SnptPublisherImplementationResources/>
 
 ## FAQs for Publishers
 

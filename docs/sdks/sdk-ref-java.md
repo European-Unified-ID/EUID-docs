@@ -7,8 +7,8 @@ displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
-import SDKsSameUID2EUID from '../snippets/_euid-sdk-same-for-all.mdx';
-import POSTIdentityMapImprovements from '../snippets/_post-identity-map-improvements-v3.mdx';
+import SnptSDKsSameUID2EUID from '../snippets/_snpt-euid-sdk-same-for-all.mdx';
+import SnptPOSTIdentityMapImprovements from '../snippets/_snpt-post-identity-map-improvements-v3.mdx';
 
 # SDK for Java Reference Guide
 
@@ -48,7 +48,7 @@ The binary is published on the Maven repository:
 
 - [https://central.sonatype.com/artifact/com.uid2/uid2-client](https://central.sonatype.com/artifact/com.uid2/uid2-client)
 
-<SDKsSameUID2EUID/>
+<SnptSDKsSameUID2EUID/>
 
 ## Initialization
 
@@ -406,7 +406,7 @@ The following sections provide general information and guidance for migrating to
 
 ### Version 3 Improvements
 
-<POSTIdentityMapImprovements />
+<SnptPOSTIdentityMapImprovements />
 
 ### Required Changes
 

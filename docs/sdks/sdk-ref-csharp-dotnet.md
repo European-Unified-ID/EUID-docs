@@ -7,7 +7,7 @@ displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
-import SDKsSameUID2EUID from '../snippets/_euid-sdk-same-for-all.mdx';
+import SnptSDKsSameUID2EUID from '../snippets/_snpt-euid-sdk-same-for-all.mdx';
 
 # SDK for C# / .NET Reference Guide
 
@@ -47,7 +47,7 @@ The binary is published in this location:
 
 - [https://www.nuget.org/packages/UID2.Client](https://www.nuget.org/packages/UID2.Client)
 
-<SDKsSameUID2EUID/>
+<SnptSDKsSameUID2EUID/>
 
 ## Initialization
 
