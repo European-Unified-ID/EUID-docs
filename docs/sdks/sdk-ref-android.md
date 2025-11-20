@@ -61,7 +61,7 @@ The binary is published on Sonatype:
 
 - [https://central.sonatype.com/artifact/com.uid2/uid2-android-sdk](https://central.sonatype.com/artifact/com.uid2/uid2-android-sdk)
 
-<SnptSDKsSameUID2EUID/>
+<SnptSDKsSameUID2EUID />
 
 ## Minimum Requirements
 

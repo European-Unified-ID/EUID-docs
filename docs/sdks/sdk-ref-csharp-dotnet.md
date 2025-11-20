@@ -47,7 +47,7 @@ The binary is published in this location:
 
 - [https://www.nuget.org/packages/UID2.Client](https://www.nuget.org/packages/UID2.Client)
 
-<SnptSDKsSameUID2EUID/>
+<SnptSDKsSameUID2EUID />
 
 ## Initialization
 

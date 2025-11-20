@@ -31,7 +31,7 @@ To determine how you'll implement these steps, choose from the [CTV Integration 
 
 ## Private Operator Option
 
-<SnptPrivateOperatorOption/>
+<SnptPrivateOperatorOption />
 
 ## CTV Integration Options
 

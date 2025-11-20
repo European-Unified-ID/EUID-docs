@@ -47,7 +47,7 @@ This SDK is in the following open-source GitHub repository:
 
 - [https://github.com/iabtechlab/uid2-web-integrations](https://github.com/iabtechlab/uid2-web-integrations)
 
-<SnptSDKsSameUID2EUID/>
+<SnptSDKsSameUID2EUID />
 
 ## Terminology
 

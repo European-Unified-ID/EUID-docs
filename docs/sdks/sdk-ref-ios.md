@@ -54,7 +54,7 @@ This SDK is in the following open-source GitHub repository:
 
 - [https://github.com/IABTechLab/uid2-ios-sdk](https://github.com/IABTechLab/uid2-ios-sdk)
 
-<SnptSDKsSameUID2EUID/>
+<SnptSDKsSameUID2EUID />
 
 ## Minimum Requirements
 

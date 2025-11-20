@@ -47,7 +47,7 @@ Release tags are available in the following GitHub location, but you must build 
 
 - https://github.com/IABTechLab/uid2-client-cpp11/tags
 
-<SnptSDKsSameUID2EUID/>
+<SnptSDKsSameUID2EUID />
 
 ## Initialization
 

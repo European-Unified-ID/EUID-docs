@@ -9,9 +9,9 @@ displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
-import SnptIntegratingWithSSO from '../snippets/_snpt-integrating-with-sso.mdx';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import SnptIntegratingWithSSO from '../snippets/_snpt-integrating-with-sso.mdx';
 import SnptExampleAdvertisingToken from '../snippets/_snpt-example-advertising-token.mdx';
 import SnptEnableLogging from '../snippets/_snpt-mobile-docs-enable-logging.mdx';
 import SnptGMAIMA_Plugins from '../snippets/_snpt-mobile_docs_gmaima-plugin-gss.mdx';

@@ -75,7 +75,7 @@ The following steps provide a high-level outline of the workflow intended for or
 
 ## Private Operator Option
 
-<SnptPrivateOperatorOption/>
+<SnptPrivateOperatorOption />
 
 ## Getting Started
 
@@ -103,7 +103,7 @@ To get started, follow these steps:
 
 ## Implementation Resources
 
-<SnptPublisherImplementationResources/>
+<SnptPublisherImplementationResources />
 
 ## FAQs for Publishers
 
