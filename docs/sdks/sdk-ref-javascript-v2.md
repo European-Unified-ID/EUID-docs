@@ -7,8 +7,8 @@ displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
-import SnptSDKsSameUID2EUID from '../snippets/_snpt-euid-sdk-same-for-all.mdx';
 import ChartSvg from './images/euid-js-sdk-workflow.svg';
+import SnptSDKsSameUID2EUID from '../snippets/_snpt-euid-sdk-same-for-all.mdx';
 import SnptExampleEuidCookie from '../snippets/_snpt-example-euid-cookie.mdx';
 
 # SDK for JavaScript Reference Guide (v2.x and earlier)
