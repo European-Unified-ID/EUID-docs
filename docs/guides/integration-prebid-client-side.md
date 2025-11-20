@@ -9,9 +9,9 @@ displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
-import IntegratingWithSSO from '../snippets/_integrating-with-sso.mdx';
-import AddPrebidjsToYourSite from '../snippets/_prebid-add-prebidjs-to-your-site.mdx';
-import StoreEUIDTokenInBrowser from '../snippets/_prebid-storing-euid-token-in-browser.mdx';
+import SnptIntegratingWithSSO from '../snippets/_snpt-integrating-with-sso.mdx';
+import SnptAddPrebidjsToYourSite from '../snippets/_snpt-prebid-add-prebidjs-to-your-site.mdx';
+import SnptStoreEUIDTokenInBrowser from '../snippets/_snpt-prebid-storing-euid-token-in-browser.mdx';
 
 # EUID Client-Side Integration Guide for Prebid.js
 
@@ -36,7 +36,7 @@ An example of the EUID Prebid.js client-side integration is available at the fol
 
 ## Integrating with Single Sign-On (SSO)
 
-<IntegratingWithSSO />
+<SnptIntegratingWithSSO />
 
 ## Integration Overview: High-Level Steps
 
@@ -62,7 +62,7 @@ If you want to use the integration environment as well as the production environ
 
 ### Add Prebid.js to Your Site
 
-<AddPrebidjsToYourSite />
+<SnptAddPrebidjsToYourSite />
 
 ### Configure the EUID Module
 
@@ -118,7 +118,7 @@ This example assumes that you're using the EUID production environment. During i
 
 ## Storing the EUID Token in the Browser
 
-<StoreEUIDTokenInBrowser />
+<SnptStoreEUIDTokenInBrowser />
 
 ## When to Pass Personal Data to the EUID Module
 

@@ -10,8 +10,8 @@ displayed_sidebar: sidebarPublishers
 ---
 
 import Link from '@docusaurus/Link';
-import IntegratingWithSSO from '../snippets/_integrating-with-sso.mdx';
-import StoreEUIDTokenInBrowser from '../snippets/_prebid-storing-euid-token-in-browser.mdx';
+import SnptIntegratingWithSSO from '../snippets/_snpt-integrating-with-sso.mdx';
+import SnptStoreEUIDTokenInBrowser from '../snippets/_snpt-prebid-storing-euid-token-in-browser.mdx';
 
 # EUID Integration Overview for Prebid
 
@@ -36,7 +36,7 @@ EUID is designed to be used only where <Link href="../ref-info/glossary-uid#gl-g
 
 ## Integrating with Single Sign-On (SSO)
 
-<IntegratingWithSSO />
+<SnptIntegratingWithSSO />
 
 ### Generating the EUID Token
 
@@ -55,7 +55,7 @@ The Prebid.js EUID module can automatically refresh the EUID tokens. If you pref
 
 ### Storing the EUID Token in the Browser
 
-<StoreEUIDTokenInBrowser />
+<SnptStoreEUIDTokenInBrowser />
 
 ### Passing the EUID Token to the Bidstream
 

@@ -7,9 +7,9 @@ displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
-import SDKsSameUID2EUID from '../snippets/_euid-sdk-same-for-all.mdx';
 import ChartSvg from './images/euid-js-sdk-workflow.svg';
-import ExampleEuidCookie from '../snippets/_example-euid-cookie.mdx';
+import SnptSDKsSameUID2EUID from '../snippets/_snpt-euid-sdk-same-for-all.mdx';
+import SnptExampleEuidCookie from '../snippets/_snpt-example-euid-cookie.mdx';
 
 # SDK for JavaScript Reference Guide (v2.x and earlier)
 
@@ -47,7 +47,7 @@ This SDK is in the following open-source GitHub repository:
 
 - [https://github.com/iabtechlab/uid2-web-integrations](https://github.com/iabtechlab/uid2-web-integrations)
 
-<SDKsSameUID2EUID/>
+<SnptSDKsSameUID2EUID />
 
 ## Terminology
 
@@ -342,7 +342,7 @@ The EUID cookie contents are a URI-encoded string representation of a JSON objec
 
 The following is an example of the EUID cookie structure:
 
-<ExampleEuidCookie />
+<SnptExampleEuidCookie />
 
 :::important
 The contents of the `private` object are explicitly unspecified and are left for the SDK to interpret. Do not make any assumptions about the structure, semantics, or compatibility of this object. Any updates to the cookie must retain its structure.

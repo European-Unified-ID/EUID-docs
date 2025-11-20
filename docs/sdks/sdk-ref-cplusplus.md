@@ -7,7 +7,7 @@ displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
-import SDKsSameUID2EUID from '../snippets/_euid-sdk-same-for-all.mdx';
+import SnptSDKsSameUID2EUID from '../snippets/_snpt-euid-sdk-same-for-all.mdx';
 
 # SDK for C++ Reference Guide
 
@@ -47,7 +47,7 @@ Release tags are available in the following GitHub location, but you must build 
 
 - https://github.com/IABTechLab/uid2-client-cpp11/tags
 
-<SDKsSameUID2EUID/>
+<SnptSDKsSameUID2EUID />
 
 ## Initialization
 

@@ -7,7 +7,7 @@ displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
-import UpgradePolicy from '../snippets/_private-operator-upgrade-policy.mdx';
+import SnptUpgradePolicy from '../snippets/_snpt-private-operator-upgrade-policy.mdx';
 
 # Deprecation Schedule
 
@@ -24,7 +24,7 @@ If you're using an older version, refer to the Deprecation Date column for infor
 
 ### Private Operator Upgrade Policy
 
-<UpgradePolicy />
+<SnptUpgradePolicy />
 
 ### Private Operator for AWS
 

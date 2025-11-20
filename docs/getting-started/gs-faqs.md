@@ -7,7 +7,7 @@ displayed_sidebar: docs
 ---
 
 import Link from '@docusaurus/Link';
-import ExampleTokenInBidstream from '../snippets/_example-token-in-bidstream.mdx';
+import SnptExampleTokenInBidstream from '../snippets/_snpt-example-token-in-bidstream.mdx';
 
 # Frequently Asked Questions
 
@@ -151,7 +151,7 @@ The EUID service encrypts EUID tokens using random initialization vectors. The E
 
 There are many ways to approach EUID implementation. Here is one example of a code snippet showing how an EUID token is passed in the <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link>:
 
-<ExampleTokenInBidstream />
+<SnptExampleTokenInBidstream />
 
 #### Can I integrate EUID with Single Sign-On (SSO)?
 
