@@ -143,6 +143,10 @@ To configure the SDK, call one of the following methods, with an object containi
 *  `__euid.setIdentityFromPhone` <New370 />
 *  `__euid.setIdentityFromPhoneHash` <New370 />
 
+:::important
+For `__euid.setIdentityFromEmailHash` or `__euid.setIdentityFromPhoneHash`, the `emailHash` or `PhoneHash` argument must be the Base64-encoded value. For details, see [Email Address Hash Encoding](../getting-started/gs-normalization-encoding.md/#email-address-hash-encoding) and [Phone Number Hash Encoding](../getting-started/gs-normalization-encoding.md#phone-number-hash-encoding).
+:::
+
 The following sections include coding examples for each scenario.
 
 Once it's configured, the EUID SDK takes care of the following:
