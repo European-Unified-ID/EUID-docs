@@ -144,7 +144,6 @@ Make sure that the normalized phone number is UTF-8, not another encoding system
 
 A phone number hash is a Base64-encoded SHA-256 hash of a normalized phone number. The phone number is first normalized, then hashed using the SHA-256 hashing algorithm, and then the resulting bytes of the hash value are encoded using Base64 encoding. Note that the Base64 encoding is applied to the bytes of the hash value, not the hex-encoded string representation.
 
-
 The following table shows an example of a simple input phone number, and the result as each step is applied to arrive at a secure, opaque value.
 
 The final value, the hex to Base64 encoded representation of the SHA-256 hash, is the value to provide to the EUID Operator endpoint.
