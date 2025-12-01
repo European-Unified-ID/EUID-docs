@@ -58,6 +58,14 @@ For examples of various scenarios, see [Normalization Examples for Email](#norma
 
 An email hash is a Base64-encoded <Link href="../ref-info/glossary-uid#gl-sha-256">SHA-256</Link> hash of a normalized email address. The email address is first normalized, then hashed using the SHA-256 hashing algorithm, and then the resulting bytes of the hash value are encoded using Base64 encoding. Note that the Base64 encoding is applied to the bytes of the hash value, not the hex-encoded string representation.
 
+The following table shows an example of a simple input email address, and the result as each step is applied to arrive at a secure, opaque value.
+
+The final value, the hex to Base64 encoded representation of the SHA-256 hash, is the value to provide to the EUID Operator endpoint.
+
+:::warning
+When applying Base64 encoding, be sure to Base64-encode the raw bytes of the hash or use a Base64 encoder that takes a hex-encoded value as input. If you use a function that takes text as input, the result is a longer string which is invalid for the purposes of EUID.
+:::
+
 | Type | Example | Comments and Usage |
 | :--- | :--- | :--- |
 | Raw email address | `USER@example.com` | N/A |
