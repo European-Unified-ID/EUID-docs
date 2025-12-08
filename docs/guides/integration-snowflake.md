@@ -387,6 +387,10 @@ The following table identifies each item in the response, including `NULL` value
 
 The `FN_T_IDENTITY_MAP_V3` function returns refresh timestamps (`REFRESH_FROM`) that indicate when each EUID should be refreshed.
 
+:::note
+The raw EUID does not change before the refresh timestamp. After the refresh timestamp, remapping the personal data returns a new refresh timestamp, but the raw EUID might or might not change. It is possible for the raw EUID to remain unchanged for multiple refresh intervals.
+:::
+
 To determine which EUIDs need regeneration, compare the current time to the `REFRESH_FROM` timestamps returned by the function.
 
 | Column Name       | Data Type     | Description                                                                                                                                                                                                               |

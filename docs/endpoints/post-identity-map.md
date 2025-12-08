@@ -178,6 +178,10 @@ For successfully mapped personal data, the mapped object includes the properties
 | `p`      | string     | One of the following:<ul><li>If the current raw EUID was rotated in the last 90 days: the previous raw EUID.</li><li>Otherwise: `null`.</li></ul> |
 | `r`      | number     | The Unix timestamp (in milliseconds) that indicates when the raw EUID might be refreshed. The raw EUID is guaranteed to be valid until this timestamp. |
 
+:::note
+The raw EUID does not change before the refresh timestamp. After the refresh timestamp, remapping the personal data returns a new refresh timestamp, but the raw EUID might or might not change. It is possible for the raw EUID to remain unchanged for multiple refresh intervals.
+:::
+
 For unsuccessfully mapped input values, the mapped object includes the properties shown in the following table.
 
 | Property | Data Type | Description                                                                                                      |

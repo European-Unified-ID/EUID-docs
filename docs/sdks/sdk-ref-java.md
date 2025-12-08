@@ -337,6 +337,10 @@ For the earlier version, see [Previous SDK Version (using POST /identity/map v2)
        .withHashedPhone("preHashedPhone");
    ```
 
+   :::note
+   The SDK automatically handles email normalization and hashing, ensuring that raw email addresses and phone numbers do not leave your server.
+   :::
+
 3. Call a function that takes the `input` and generates an IdentityMapV3Response object:
    ```java
    IdentityMapV3Response identityMapResponse = identityMapV3Client.generateIdentityMap(input);
@@ -361,7 +365,9 @@ For the earlier version, see [Previous SDK Version (using POST /identity/map v2)
    }
    ```
 
->**Note:** The SDK automatically handles email normalization and hashing, ensuring that raw email addresses and phone numbers do not leave your server.
+   :::note
+   The raw EUID does not change before the refresh timestamp. After the refresh timestamp, remapping the personal data returns a new refresh timestamp, but the raw EUID might or might not change. It is possible for the raw EUID to remain unchanged for multiple refresh intervals.
+   :::
 
 ### Usage Example
 

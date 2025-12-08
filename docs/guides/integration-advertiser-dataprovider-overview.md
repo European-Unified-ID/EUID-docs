@@ -121,6 +121,8 @@ A raw EUID is an identifier for a user at a specific moment in time. The raw EUI
 
 The v3 Identity Map API provides a refresh timestamp (`r` field) in the response that indicates when each raw EUID might refresh. Use this timestamp to determine when to regenerate raw EUIDs for your stored data. It is guaranteed that it won't refresh before that time.
 
+The raw EUID does not change before the refresh timestamp. After the refresh timestamp, remapping the personal data returns a new refresh timestamp, but the raw EUID might or might not change. It is possible for the raw EUID to remain unchanged for multiple refresh intervals.
+
 We recommend checking for refresh opportunities daily. To determine whether to refresh a raw EUID:
 
 1. Compare the current time with the refresh timestamp (`r` field) you stored from the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) response.
