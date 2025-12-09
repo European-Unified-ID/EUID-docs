@@ -25,7 +25,12 @@ const config = {
   trailingSlash: false,
 
   onBrokenLinks: "warn",
-  onBrokenMarkdownLinks: "warn",
+
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: "warn",
+    },
+  },
 
   scripts: [
     // String format.
@@ -197,13 +202,13 @@ const config = {
                     </a>`,
               },
               {
-                html: `<a class="truevault-polaris-optout footer__link-item" 
+                html: `<a class="truevault-polaris-optout footer__link-item"
                     href="https://www.adsrvr.org/"
-                    target="_blank" 
+                    target="_blank"
                     rel="noreferrer noopener">
-                    <img src="https://polaris.truevaultcdn.com/static/assets/icons/optout-icon-black.svg" 
-                    alt="California Consumer Privacy Act (CCPA) Opt-Out Icon" 
-                    height="14px" 
+                    <img src="https://polaris.truevaultcdn.com/static/assets/icons/optout-icon-black.svg"
+                    alt="California Consumer Privacy Act (CCPA) Opt-Out Icon"
+                    height="14px"
                     style="vertical-align:middle" />
                     Your Privacy Choices
                     </a>`,
