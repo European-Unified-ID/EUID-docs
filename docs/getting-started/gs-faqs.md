@@ -193,7 +193,7 @@ To determine whether to refresh a raw EUID:
 2. If the current time is greater than or equal to the refresh timestamp, regenerate the raw EUID by calling the identity map endpoint again with the same <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>.
 
 :::note
-We recommend checking for refresh opportunities daily. It is guaranteed that the raw EUID won't refresh before the indicated timestamp. At some point on or after that time, the raw EUID is refreshed.
+The raw EUID does not change before the refresh timestamp. After the refresh timestamp, remapping the personal data returns a new refresh timestamp, but the raw EUID might or might not change. It is possible for the raw EUID to remain unchanged for multiple refresh intervals.
 :::
 
 #### How often should raw EUIDs be refreshed for incremental updates?
