@@ -129,7 +129,7 @@ Here is an example response when the user has opted out.
 | `advertising_token` | string | An encrypted advertising (EUID) token for the user. |
 | `refresh_token` | string | An encrypted token that can be exchanged with the EUID Service for the latest set of identity tokens. |
 | `identity_expires` | number | The <a href="../ref-info/glossary-uid#gl-unix-time">Unix</a> timestamp (in milliseconds) that indicates when the advertising token expires. |
-| `refresh_from` | number | The Unix timestamp (in milliseconds) that indicates the point at which you should consider refreshing the UID2 token. |
+| `refresh_from` | number | The Unix timestamp (in milliseconds) that indicates the point at which you should consider refreshing the EUID token. |
 | `refresh_expires` | number | The Unix timestamp (in milliseconds) that indicates when the refresh token expires. |
 | `refresh_response_key` | string | A key to be used in a [POST&nbsp;/token/refresh](post-token-refresh.md) request for response decryption. |
 
