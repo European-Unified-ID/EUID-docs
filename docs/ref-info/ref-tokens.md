@@ -20,13 +20,12 @@ Here are some key points about EUID tokens:
 
 - The EUID token is a unique value: no two EUID tokens are the same.
 - EUID tokens are case sensitive.
+- Publishers send EUID tokens in the bidstream.
 - The token value is an <a href="glossary-uid#gl-opaque">opaque</a> string: do not make any assumptions about the format or length of the string.
 - EUID tokens representing different instances of user activity, on browsers, CTV, and electronic devices such as phones and tablets, can still be matched to the same raw EUID.
 - The token generation logic checks for user opt-out. If the user has opted out of EUID, no EUID token is generated. For details, see [User Opt-Out](../getting-started/gs-opt-out.md).
 - The token has a limited life, but can be refreshed using the refresh token.
 - You can refresh many times, to get a new EUID token and corresponding new refresh token, as long as the current EUID token is always refreshed before the current refresh token expires.
-- If the token has expired, or as an alternative to refreshing an existing token, you can generate a new EUID token from the original hashed or unhashed email address or phone number.
-- Publishers send EUID tokens in the bidstream.
 - Refreshing an EUID token does not invalidate/expire the original or previous EUID token. You can still use the earlier token until it expires.
 
 For more information, see [How the EUID Token Is Created](ref-how-uid-is-created.md).
@@ -47,6 +46,14 @@ Here are some key points about refresh tokens:
 - When a new EUID token is generated and returned in response to the refresh token, a new refresh token is returned along with it.
 - In most cases, you can refresh tokens on the client side, even if the token was generated on the server side. For details about refresh functionality for the various SDKs, see [SDK Functionality](../sdks/summary-sdks.md#sdk-functionality) (*Refresh EUID Token* column).
 - When the EUID <Link href="../ref-info/glossary-uid#gl-operator-service">Operator Service</Link> receives the refresh token with a request for a new EUID token, it checks for user opt-out. If the user has opted out of EUID, no new EUID token is generated. For details, see [User Opt-Out](../getting-started/gs-opt-out.md).
+
+### Keeping the Token Current
+
+It's very important to keep your EUID tokens current (not expired). You get the advantages of EUID only if the token is current.
+
+There are two options for keeping your EUID tokens current:
+- Refresh frequently, using the [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint or the token refresh feature of many EUID SDKs. For details, see [Recommended Token Refresh Frequency](#recommended-token-refresh-frequency).
+- As an alternative to refreshing an existing token, generate a new token each time, using the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint or the token generate feature of many EUID SDKs.
 
 ### Recommended Token Refresh Frequency
 
@@ -96,6 +103,7 @@ The following examples show how you could first check if the token can be refres
    ```
 
 1. Determine if a refresh is needed:
+
    ```py
     if identity.is_due_for_refresh()):
     ```
