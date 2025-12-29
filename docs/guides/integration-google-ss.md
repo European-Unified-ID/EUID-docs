@@ -130,15 +130,25 @@ For details, see [Client-Side Integration Guide for JavaScript](integration-java
 
 <!-- A sample implementation is also available for integration using the SDK for JavaScript. See [Sample Implementation](#sample-implementation). -->
 
-## Sample Implementation
+## Sample Implementations
 
-The following sample implementation is available to illustrate how to integrate with the Google Ad Manager secure signals feature:
+The following sample implementations are available to illustrate how to integrate with the Google Ad Manager secure signals feature:
 
-- Client-Side EUID SDK Integration Example:
-  - [Sample implementation](https://euid.eu/examples/cstg-secure-signals-example/)
-  - [Code repository](https://github.com/European-Unified-ID/EUID-docs/tree/main/static/examples/cstg-secure-signals-example)
-
-<!-- EUID Server-Side SDK integration example to come. gwh 12/9/24. And client-server. gwh 1/29/25. -->
+- Client-side integration example using the EUID JavaScript SDK with Google Secure Signals:
+  - Site: [Client-Side EUID Integration with Google Secure Signals](https://secure-signals-client-side.samples.integ.euid.eu/)
+  - Code: [uid2-examples/web-integrations/google-secure-signals/client-side](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/google-secure-signals/client-side)
+- Client-server integration example using the EUID JavaScript SDK with Google Secure Signals:
+  - Site: [Client-Server EUID SDK Integration Example with Google Secure Signals](https://secure-signals-client-server.samples.integ.euid.eu/)
+  - Code: [uid2-examples/web-integrations/google-secure-signals/client-server](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/google-secure-signals/client-server)
+- Server-side integration example using the EUID JavaScript SDK with Google Secure Signals:
+  - Site: [Server-Side EUID Integration with Google Secure Signals](https://secure-signals-server-side.samples.integ.euid.eu/)
+  - Code: [uid2-examples/web-integrations/google-secure-signals/server-side](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/google-secure-signals/server-side)
+- Client-side integration example using React, the EUID JavaScript SDK, and Google Secure Signals:
+  - Site: [React Client-Side EUID Integration with Google Secure Signals](https://secure-signals-react.samples.integ.euid.eu/)
+  - Code: [uid2-examples/web-integrations/google-secure-signals/react-client-side](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/google-secure-signals/react-client-side)
+- Client-side integration example using Prebid.js with Google Secure Signals:
+  - Site: [Client-Side EUID Integration with Prebid.js (with Google Secure Signals)](https://prebid-secure-signals.samples.integ.euid.eu/)
+  - Code: [uid2-examples/web-integrations/prebid-secure-signals](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/prebid-secure-signals)
 
 Each sample implementation has its own instructions.
 

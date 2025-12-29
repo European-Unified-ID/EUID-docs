@@ -27,12 +27,21 @@ This implementation requires Prebid.js version 8.42.0 or later. For version info
 
 If you need to use an earlier version of Prebid.js, use the implementation solution presented in the [EUID Client-Server Integration Guide for Prebid.js](integration-prebid-client-server.md) instead.
 
-## Integration Example
+## Sample Implementations
 
-An example of the EUID Prebid.js client-side integration is available at the following links:
+The following sample implementations are available to illustrate how to integrate EUID with Prebid.js on the client side:
 
-- Code: [Example Prebid.js EUID Integration](https://github.com/European-Unified-ID/EUID-docs/tree/main/static/examples/cstg-prebid-example)
-- Running site: [EUID Prebid.js Client-Side Integration Example](https://euid.eu/examples/cstg-prebid-example/)
+- Client-side integration example using Prebid.js:
+  - Site: [Client-Side EUID Integration with Prebid.js](https://prebid-client.samples.integ.euid.eu/)
+  - Code: [uid2-examples/web-integrations/prebid-integrations/client-side](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/prebid-integrations/client-side)
+- Deferred client-side integration example using Prebid.js:
+  - Site: [Deferred Client-Side EUID Integration with Prebid.js](https://prebid-deferred.samples.integ.euid.eu/)
+  - Code: [uid2-examples/web-integrations/prebid-integrations/client-side-deferred](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/prebid-integrations/client-side-deferred)
+- Client-side integration example using Prebid.js with Google Secure Signals:
+  - Site: [Client-Side EUID Integration with Prebid.js (with Google Secure Signals)](https://prebid-secure-signals.samples.integ.euid.eu/)
+  - Code: [uid2-examples/web-integrations/prebid-secure-signals](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/prebid-secure-signals)
+
+Each sample implementation has its own instructions.
 
 ## Integrating with Single Sign-On (SSO)
 
@@ -178,6 +187,48 @@ An example of a tool for validating and debugging Prebid.js configuration is Pro
 - Documentation on prebid.org: [Professor Prebid User Guide](https://docs.prebid.org/tools/professor-prebid.html)
 
 <!-- Reduce Latency by Setting the API Base URL for the Production Environment not applicable for EUID -->
+
+## Optional: Deferred Client-Side EUID Configuration with mergeConfig
+
+If you already have Prebid.js configured but didn't include EUID in the initial setup, you can still add the EUID module using two functions provided by Prebid.js:
+
+- [mergeConfig()](https://docs.prebid.org/dev-docs/publisher-api-reference/mergeConfig.html): Merges new configuration into the existing Prebid config without overwriting other settings. Use this to add the EUID module to your existing `userSync.userIds` array.
+- [refreshUserIds()](https://docs.prebid.org/dev-docs/publisher-api-reference/refreshUserIds.html): Reruns the user ID submodules to fetch the latest IDs. Call this after `mergeConfig()` to trigger EUID token generation.
+
+You still pass the same configuration information as described above (API base URL, credentials, and personal data) so that Prebid can handle the entire EUID token lifecycle:
+
+```js
+// Step 1: Define the EUID configuration
+const euidConfig = {
+  userSync: {
+    userIds: [{
+      name: 'euid',
+      params: {
+        euidApiBase: 'https://integ.euid.eu/',
+        email: 'user@example.com',
+        subscriptionId: subscriptionId,
+        serverPublicKey: publicKey
+      }
+    }]
+  }
+};
+
+// Step 2: Merge EUID config into existing Prebid config (additive, won't overwrite)
+pbjs.mergeConfig(euidConfig);
+
+// Step 3: Trigger user ID refresh to generate the token
+await pbjs.refreshUserIds({ submoduleNames: ['euid'] });
+```
+
+:::note
+Once you add EUID to your configuration, Prebid does not provide functionality to remove individual submodules without overwriting the entire `userIds` array. For client-side integrations where Prebid has access to the EUID token in localStorage, it is important to clear localStorage where the token is stored after the user logs out and reload the page to clear caches. This prevents future bid requests from using the identity.
+
+If you are managing the EUID SDK separately, use `window.__euid.disconnect()` which handles all logout functionality—clearing both memory and storage—without requiring a page refresh.
+:::
+
+### Deferred Client-Side Integration Example
+
+A sample implementation for deferred configuration is also available. For details, see [Sample Implementations](#sample-implementations).
 
 ## Optional: Prebid.js Integration with Google Secure Signals
 

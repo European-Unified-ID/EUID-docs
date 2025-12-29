@@ -105,15 +105,6 @@ For details about the EUID opt-out workflow and how users can opt out, see [User
 Refresh tokens starting from the `refresh_from` timestamp, which is part of the identity returned by the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) or [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoints.
 :::
 
-<!-- ## Sample Implementation
-
-A sample implementation is available for server-side integration. See:
-
-- Server-Side EUID Integration Example (sample implementation)
-- Server-Side EUID Integration Example (readme) -->
-
-<!-- EUID Server-Side SDK Integration Example to come. gwh 12/9/24 -->
-
 ### Clear Identity: User Logout
 
 If the user logs out, do not use the EUID token.
@@ -122,6 +113,13 @@ If the user logs out, do not use the EUID token.
 | :--- | :--- | :--- |
 | 4-a | N/A | The user logs out from a publisher asset. |
 | 4-b | N/A | Remove the EUID token you've stored for that user. No interaction with the EUID service is required. |
+
+## Sample Implementation
+
+A sample implementation is available for server-side integration:
+
+- Site: [Server-Side EUID Integration Example](https://server-side.samples.integ.euid.eu/)
+- Code: [uid2-examples/web-integrations/server-side](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/server-side)
 
 ## FAQs
 
