@@ -27,22 +27,6 @@ This implementation requires Prebid.js version 8.42.0 or later. For version info
 
 If you need to use an earlier version of Prebid.js, use the implementation solution presented in the [EUID Client-Server Integration Guide for Prebid.js](integration-prebid-client-server.md) instead.
 
-## Sample Implementations
-
-The following sample implementations are available to illustrate how to integrate EUID with Prebid.js on the client side:
-
-- Client-side integration example using Prebid.js:
-  - Site: [Client-Side EUID Integration with Prebid.js](https://prebid-client.samples.integ.euid.eu/)
-  - Code: [uid2-examples/web-integrations/prebid-integrations/client-side](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/prebid-integrations/client-side)
-- Deferred client-side integration example using Prebid.js:
-  - Site: [Deferred Client-Side EUID Integration with Prebid.js](https://prebid-deferred.samples.integ.euid.eu/)
-  - Code: [uid2-examples/web-integrations/prebid-integrations/client-side-deferred](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/prebid-integrations/client-side-deferred)
-- Client-side integration example using Prebid.js with Google Secure Signals:
-  - Site: [Client-Side EUID Integration with Prebid.js (with Google Secure Signals)](https://prebid-secure-signals.samples.integ.euid.eu/)
-  - Code: [uid2-examples/web-integrations/prebid-secure-signals](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/prebid-secure-signals)
-
-Each sample implementation has its own instructions.
-
 ## Integrating with Single Sign-On (SSO)
 
 <SnptIntegratingWithSSO />
@@ -236,3 +220,21 @@ if you're using Prebid.js, and you're planning to pass EUID tokens to Google usi
 
 - In your Google Ad Manager account, make sure that encrypted signals are properly shared with third-party bidders: see [Allow Secure Signals Sharing](integration-google-ss.md#allow-secure-signals-sharing).
 - Update your Prebid.js configuration: see [Optional: Enable Secure Signals in Prebid.js](integration-google-ss.md#optional-enable-secure-signals-in-prebidjs).
+
+A sample implementation for Prebid.js with Secure Signals is also available. For details, see [Sample Implementations](#sample-implementations).
+
+## Sample Implementations
+
+The following sample implementations are available to illustrate how to integrate EUID with Prebid.js on the client side:
+
+- Client-side integration example using Prebid.js:
+  - Site: [Client-Side EUID Integration with Prebid.js](https://prebid-client.samples.integ.euid.eu/)
+  - Code: [uid2-examples/web-integrations/prebid-integrations/client-side](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/prebid-integrations/client-side)
+- Deferred client-side integration example using Prebid.js:
+  - Site: [Deferred Client-Side EUID Integration with Prebid.js](https://prebid-deferred.samples.integ.euid.eu/)
+  - Code: [uid2-examples/web-integrations/prebid-integrations/client-side-deferred](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/prebid-integrations/client-side-deferred)
+- Client-side integration example using Prebid.js with Google Secure Signals:
+  - Site: [Client-Side EUID Integration with Prebid.js (with Google Secure Signals)](https://prebid-secure-signals.samples.integ.euid.eu/)
+  - Code: [uid2-examples/web-integrations/prebid-secure-signals](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/prebid-secure-signals)
+
+Each sample implementation has its own instructions.
