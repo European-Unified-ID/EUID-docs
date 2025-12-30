@@ -357,3 +357,11 @@ if you're using Prebid.js, and you're planning to pass EUID tokens to Google usi
 
 - In your Google Ad Manager account, make sure that encrypted signals are properly shared with third-party bidders: see [Allow Secure Signals Sharing](integration-google-ss.md#allow-secure-signals-sharing).
 - Update your Prebid.js configuration: see [Optional: Enable Secure Signals in Prebid.js](integration-google-ss.md#optional-enable-secure-signals-in-prebidjs).
+
+## Sample Implementation
+
+The following sample implementation is available to illustrate how to integrate EUID with Prebid.js using client-server integration:
+
+- Client-server integration example using Prebid.js:
+  - Site: [Client-Server EUID Integration with Prebid.js](https://prebid-client-server.samples.integ.euid.eu/)
+  - Code: [uid2-examples/web-integrations/prebid-integrations/client-server](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/prebid-integrations/client-server)

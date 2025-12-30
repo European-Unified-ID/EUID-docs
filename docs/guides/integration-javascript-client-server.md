@@ -39,7 +39,7 @@ For a workflow diagram, see [Integration Steps](#integration-steps). See also [F
 
 For details about the EUID opt-out workflow and how users can opt out, see [User Opt-Out](../getting-started/gs-opt-out.md).
 
-<!-- To facilitate the process of establishing client identity using EUID and retrieving advertising tokens, the web integration steps provided in this guide rely on the SDK for JavaScript. Here's an [example application](https://example-jssdk-integ.uidapi.com/) that illustrates the integration steps described in this guide and the usage of the SDK (currently only for email addresses). For the application documentation, see [SDK Integration Example](https://github.com/IABTechLab/uid2-examples/blob/main/publisher/standard/README.md). Note 1/29/25 EUID version does not yet exist. -->
+To facilitate the process of establishing client identity using EUID and retrieving advertising tokens, the web integration steps provided in this guide rely on the SDK for JavaScript. For an example, see [Sample Implementation](#sample-implementation).
 
 :::tip
 The first-party cookie and local storage implementation details might change in the future. To avoid potential issues, be sure to rely on the functionality documented in the [SDK for JavaScript API Reference](../sdks/sdk-ref-javascript.md#api-reference) for your identity management.
@@ -237,6 +237,13 @@ The client lifecycle is complete when the user decides to log out from the publi
   __euid.disconnect();
 </script>
 ```
+
+## Sample Implementation
+
+A sample implementation is available for client-server integration using the EUID SDK for JavaScript:
+
+- Site: [Client-Server EUID Integration Example using JavaScript SDK](https://js-client-server.samples.integ.euid.eu/)
+- Code: [uid2-examples/web-integrations/javascript-sdk/client-server](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/javascript-sdk/client-server)
 
 ## FAQs
 
