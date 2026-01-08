@@ -32,6 +32,7 @@ The latest ZIP file is available in the Assets section at the bottom of the link
 
 | Version Name | Version&nbsp;#/Release&nbsp;Notes | AWS Version |  Date | Deprecation Date |
 | ------- | ------ | ------ | ------ | ------ |
+| Q4 2025 | [v5.62.24-r2](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.62.24-r2) | 5.62.24-r2 | January 15, 2026 | January 15, 2027 |
 | Q2 2025 | [v5.55.9](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.55.9-r1) | 5.55.9 | July 1, 2025 | July 1, 2026 |
 | Q1 2025 | [v5.49.7](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.49.7) | 5.49.7 | Mar 19, 2025 | Mar 31, 2026 |
 | Q3 2024 Out-of-band | [v5.41.0](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.41.0) | 5.41.0 | October 29, 2024 | Mar 31, 2026 |
