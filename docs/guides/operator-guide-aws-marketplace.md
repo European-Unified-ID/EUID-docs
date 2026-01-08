@@ -36,7 +36,7 @@ The latest ZIP file is linked in the Release Notes column in the following table
 
 | Version Name | Version&nbsp;#/Release&nbsp;Notes | AWS Version |  Date |
 | ------- | ------ | ------ | ------ | 
-| Q2 2025 | [v5.55.9](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.55.9-r1) | 5.55.9 | July 1, 2025 |
+| Q4 2025 | [v5.62.24](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.62.24-r2) | 5.62.24 | January 15, 2026 |
 
 :::note
 For information about supported versions and deprecation dates, see [Private Operator Versions](../ref-info/deprecation-schedule.md#private-operator-versions).
@@ -364,11 +364,15 @@ The following table includes some additional commands that might help you manage
 
 ## EUID Operator Error Codes
 
-The following table lists errors that might occur during a Private Operator's startup sequence.
+The following sections list error codes that might occur during a Private Operator's startup or runtime.
 
 :::note
-Error codes for Private Operator startup issues are applicable only to release v5.49.7 and later.
+Error codes for Private Operator issues are applicable only to release v5.49.7 and later.
 :::
+
+### Startup Errors
+
+The following errors might occur during operator startup:
 
 | Error Code | Issue | Steps to Resolve |
 | :--- | :--- | :--- |
@@ -378,6 +382,14 @@ Error codes for Private Operator startup issues are applicable only to release v
 | E04 | ConfigurationValueError | A configuration value is invalid. Verify that the configuration values in the AWS Secrets Manager align with the required format and environment. Note `debug = true` is allowed only in the `integ` environment. Check the logs for more details. |
 | E05 | OperatorKeyValidationError | Ensure the operator key is correct for the environment and matches the one provided to you. |
 | E06 | UID2ServicesUnreachableError | Allow EUID core and opt-out service IP addresses in the egress firewall. For IP addresses and DNS details, refer to the logs.  |
+
+### Runtime Errors
+
+The following errors might occur during operator runtime:
+
+| Error Code | Issue | How to Identify in Logs | Steps to Resolve |
+| :--- | :--- | :--- | :--- |
+| E12 | Data Download Failure | Look for log messages containing `E12: Data Download Failure` or `Failed to load` errors from `RotatingStoreVerticle`. These messages include HTTP status codes (for example, `HTTP response code 403`) or exception types (for example, `exception: IOException`). | Check the HTTP status code or exception in the error message and resolve accordingly:<br/>**404 errors**: Verify that the operator key is valid for the environment.<br/>**403 errors**: Verify that the operator key and credentials are correct.<br/>**Timeout errors**: Verify network connectivity, check that firewall/security group settings allow outbound HTTPS (port 443), and ensure that the EUID service endpoints are accessible.<br/>**500/503 errors**: This code indicates a temporary EUID service issue. Retry, and if the error persists contact EUID support. |
 
 ## Technical Support
 
