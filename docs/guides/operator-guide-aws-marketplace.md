@@ -364,11 +364,15 @@ The following table includes some additional commands that might help you manage
 
 ## EUID Operator Error Codes
 
-The following table lists errors that might occur during a Private Operator's startup sequence.
+The following sections list error codes that might occur during a Private Operator's startup or runtime.
 
 :::note
-Error codes for Private Operator startup issues are applicable only to release v5.49.7 and later.
+Error codes for Private Operator issues are applicable only to release v5.49.7 and later.
 :::
+
+### Startup Errors
+
+The following errors occur during operator startup:
 
 | Error Code | Issue | Steps to Resolve |
 | :--- | :--- | :--- |
