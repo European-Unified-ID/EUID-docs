@@ -372,7 +372,7 @@ Error codes for Private Operator issues are applicable only to release v5.49.7 a
 
 ### Startup Errors
 
-The following errors occur during operator startup:
+The following errors might occur during operator startup:
 
 | Error Code | Issue | Steps to Resolve |
 | :--- | :--- | :--- |
@@ -385,7 +385,7 @@ The following errors occur during operator startup:
 
 ### Runtime Errors
 
-The following errors occur during operator runtime:
+The following errors might occur during operator runtime:
 
 | Error Code | Issue | How to Identify in Logs | Steps to Resolve |
 | :--- | :--- | :--- | :--- |
