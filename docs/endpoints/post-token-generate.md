@@ -51,7 +51,6 @@ You must include only **one** of the following four conditional parameters, plus
 | `email_hash` | string | Conditionally Required | The [Base64-encoded SHA-256](../getting-started/gs-normalization-encoding.md#email-address-hash-encoding) hash of a [normalized](../getting-started/gs-normalization-encoding.md#email-address-normalization) email address. |
 | `phone` | string | Conditionally Required | The [normalized](../getting-started/gs-normalization-encoding.md#phone-number-normalization) phone number for which to generate tokens. |
 | `phone_hash` | string | Conditionally Required | The [Base64-encoded SHA-256](../getting-started/gs-normalization-encoding.md#phone-number-hash-encoding) hash of a [normalized](../getting-started/gs-normalization-encoding.md#phone-number-normalization) phone number. |
-| `tcf_consent_string` | string | Optional | The [Transparency and Consent String](https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework) from the end user whose identity is used to generate the token. |
 | `optout_check` | number | Required | Checks whether the user has opted out. Include this parameter with a value of `1`.|
 
 ### Request Examples
@@ -139,9 +138,9 @@ The following table lists the `status` property values and their HTTP status cod
 
 | Status | HTTP Status Code | Description |
 | :--- | :--- | :--- |
-| `success` | 200 | The request was successful. The response will be encrypted.<br/>IMPORTANT: This status may be returned without a generated token.<br/>For example, if the `tcf_consent_string` parameter value is included, but does not contain [sufficient information](https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20Consent%20string%20and%20vendor%20list%20formats%20v2.md#what-information-is-stored-in-a-tc-string) to generate a token, an `insufficient_user_consent` message is returned. |
+| `success` | 200 | The request was successful. The response will be encrypted.<br/>IMPORTANT: This status may be returned without a generated token. |
 | `optout` | 200 | The request was successful. Could not generate token because the user has opted out. |
-| `client_error` | 400 | The request had missing or invalid parameters, including an invalid `tcf_consent_string` value. |
+| `client_error` | 400 | The request had missing or invalid parameters. |
 | `unauthorized` | 401 | The request did not include a bearer token, included an invalid bearer token, or included a bearer token unauthorized to perform the requested operation. |
 
 If the `status` value is anything other than `success`, the `message` field provides additional information about the issue.
