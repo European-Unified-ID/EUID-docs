@@ -157,8 +157,6 @@ If you're using the SDK's HTTP implementation, follow these steps.
 
    :::important
      - Be sure to call the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint only when you have a legal basis to convert the user’s <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to EUID tokens for targeted advertising.
-
-     - Always apply `doNotGenerateTokensForOptedOut()`. This applies a parameter similar to setting `optout_check=1` in the call to the POST&nbsp;/token/generate endpoint (see [Unencrypted JSON Body Parameters](../endpoints/post-token-generate.md#unencrypted-json-body-parameters)).
    :::
 
    <!-- uid2_euid_diff re legal basis for admonition above (first bullet not in UID2) -->
@@ -239,8 +237,6 @@ If you're using server-side integration (see [Publisher Integration Guide, Serve
    2. Body: `envelope.getEnvelope()`
    :::important
    - Be sure to call the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint only when you have a legal basis to convert the user’s <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to EUID tokens for targeted advertising.
-
-      - Always apply `doNotGenerateTokensForOptedOut()`. This applies a parameter similar to setting `optout_check=1` in the call to the POST&nbsp;/token/generate endpoint (see [Unencrypted JSON Body Parameters](../endpoints/post-token-generate.md#unencrypted-json-body-parameters)).
    :::
 
    <!-- uid2_euid_diff re legal basis for admonition above (first bullet not in UID2) -->

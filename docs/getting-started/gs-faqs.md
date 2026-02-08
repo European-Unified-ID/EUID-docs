@@ -87,7 +87,7 @@ No, publishers do not need to decrypt <Link href="../ref-info/glossary-uid#gl-eu
 #### How will I be notified of user opt-out?
 
 If the user has opted out, the API response notifies you in either of these cases:
-- When you generate the EUID token by a call to the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint, either directly or via one of the EUID SDKs, using the required `optout_check` parameter with a value of `1`.
+- When you generate the EUID token by a call to the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint, either directly or via one of the EUID SDKs.
 - When you refresh the EUID token by a call to the [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint, either directly or via one of the EUID SDKs.
 
 #### Where should I make token generation calls&#8212;from the server side or the client side?
