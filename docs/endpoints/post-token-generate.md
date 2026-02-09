@@ -62,22 +62,22 @@ The following are unencrypted JSON request body examples for each parameter, one
 
 ```json
 {
-    "email": "username@example.com",
+    "email": "username@example.com"
 }
 ```
 ```json
 {
-    "email_hash": "tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ=",
+    "email_hash": "tMmiiTI7IaAcPpQPFQ65uMVCWH8av9jw4cwf/F5HVRQ="
 }
 ```
 ```json
 {
-    "phone": "+12345678901",
+    "phone": "+12345678901"
 }
 ```
 ```json
 {
-    "phone_hash": "wdN1alhrbw1Bmz49GzKGdPvGxLhCNn7n3teAOQ/FSK4=",
+    "phone_hash": "wdN1alhrbw1Bmz49GzKGdPvGxLhCNn7n3teAOQ/FSK4="
 }
 ```
 
