@@ -20,7 +20,7 @@ Check out the latest updates to our EUID documentation resources.
 
 The following documents were released in the first quarter of 2026.
 
-<CustomTagsContainer tags="Endpoints, SDKs">
+<CustomTagsContainer tags="Endpoints, SDKs, Opt-Out">
 
 ### Removal of optout_check Parameter
 
