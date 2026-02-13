@@ -19,7 +19,7 @@ Used by: This endpoint is used mainly by publishers.
 Be sure to call this endpoint only when you have a legal basis to convert the user’s personal data to an EUID token for targeted advertising.
 :::
 
-<!-- uid2_euid_diff re legal basis for admonition above -->
+<!-- uid2_euid_diff re legal basis for admonition above (not in UID2)-->
 
 Rather than calling this endpoint directly, you could use one of the SDKs to manage it for you. For a summary of options, see [SDKs: Summary](../sdks/summary-sdks.md).
 

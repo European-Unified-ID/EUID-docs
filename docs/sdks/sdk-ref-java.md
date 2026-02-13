@@ -156,10 +156,10 @@ If you're using the SDK's HTTP implementation, follow these steps.
    ```
 
    :::important
-     - Be sure to call the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint only when you have a legal basis to convert the user’s <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to EUID tokens for targeted advertising.
+     Be sure to call the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint only when you have a legal basis to convert the user’s <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to EUID tokens for targeted advertising.
    :::
 
-   <!-- uid2_euid_diff re legal basis for admonition above (first bullet not in UID2) -->
+   <!-- uid2_euid_diff re legal basis for admonition above (not in UID2) -->
 
 #### Basic Usage, Client-Server Integration
 
@@ -236,10 +236,10 @@ If you're using server-side integration (see [Publisher Integration Guide, Serve
       `.putHeader("X-UID2-Client-Version", PublisherUid2Helper.getVersionHttpHeader())`
    2. Body: `envelope.getEnvelope()`
    :::important
-   - Be sure to call the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint only when you have a legal basis to convert the user’s <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to EUID tokens for targeted advertising.
+   Be sure to call the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint only when you have a legal basis to convert the user’s <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to EUID tokens for targeted advertising.
    :::
 
-   <!-- uid2_euid_diff re legal basis for admonition above (first bullet not in UID2) -->
+   <!-- uid2_euid_diff re legal basis for admonition above (not in UID2) -->
 
 4. If the HTTP response status code is _not_ 200, see [Response Status Codes](../endpoints/post-token-generate.md#response-status-codes) to determine next steps. Otherwise, convert the EUID identity response content into a `TokenGenerateResponse` object:
 
