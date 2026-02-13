@@ -54,10 +54,10 @@ This SDK simplifies development for publishers who want to build their own custo
 ## Sample Implementations
 
 For sample implementations with associated documentation, see:
-  - Client-Side Integration Using EUID SDK v4 for JavaScript:
+  - Client-Side Integration Using EUID SDK for JavaScript:
     - [Code](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/javascript-sdk/client-side)
     - Running site: [Client-Side EUID Integration Example](https://js-client-side.samples.integ.euid.eu/)
-  - Client-Server Integration Using EUID SDK v4 for JavaScript:
+  - Client-Server Integration Using EUID SDK for JavaScript:
     - [Code](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/javascript-sdk/client-server)
     - Running site: [Client-Server EUID Integration Example](https://js-client-server.samples.integ.euid.eu/)
 
