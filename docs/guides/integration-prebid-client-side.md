@@ -159,6 +159,14 @@ The response for a user that has opted out can be seen below:
 }
 ```
 
+The decoded EUID userId object will look like:
+
+```json
+euid: {
+  optout: true
+}
+```
+
 ## Checking the Integration
 
 To check that the EUID module has successfully generated an EUID token, call `pbjs.getUserIds().euid`. If a value is returned, a valid EUID token exists in the EUID module.
