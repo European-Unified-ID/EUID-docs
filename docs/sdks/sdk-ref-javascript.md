@@ -51,14 +51,15 @@ This SDK simplifies development for publishers who want to build their own custo
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | &#8212; | &#8212; | &#9989; | &#9989; | &#8212; | &#8212; |
 
-## Sample Implementation
+## Sample Implementations
 
-For a sample implementation with associated documentation, see:
-  - The EUID Google Secure Signals with SDK v3 example:
-    - [Code and docs](https://github.com/European-Unified-ID/EUID-docs/tree/main/static/examples/cstg-js-sdk-example )
-    - Running site: [Client-Side EUID SDK Integration Example](https://euid.eu/examples/cstg-js-sdk-example/).
-
-<!-- EUID client-server JavaScript client-side implementation example corresponding to the UID2 example to come. gwh 12/9/24 -->
+For sample implementations with associated documentation, see:
+  - Client-Side Integration Using EUID SDK for JavaScript:
+    - [Code](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/javascript-sdk/client-side)
+    - Running site: [Client-Side EUID Integration Example](https://js-client-side.samples.integ.euid.eu/)
+  - Client-Server Integration Using EUID SDK for JavaScript:
+    - [Code](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/javascript-sdk/client-server)
+    - Running site: [Client-Server EUID Integration Example](https://js-client-server.samples.integ.euid.eu/)
 
 ## API Permissions
 
