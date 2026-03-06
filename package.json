@@ -51,10 +51,13 @@
   "overrides": {
     "image-size@1": "^1.2.1",
     "body-parser@1": "^1.20.3",
-    "minimatch": "^10.2.1",
+    "immutable": "^4.3.8",
+    "minimatch": "^10.2.3",
     "path-to-regexp@0": "^0.1.12",
     "path-to-regexp@1": "^1.9.0",
-    "path-to-regexp@2": "^8.0.0"
+    "path-to-regexp@2": "^8.0.0",
+    "serialize-javascript": "^7.0.3",
+    "svgo": "^3.3.3"
   },
   "browserslist": {
     "production": [
