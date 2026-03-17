@@ -8,6 +8,7 @@ displayed_sidebar: sidebarAdvertisers
 ---
 
 import Link from '@docusaurus/Link';
+import SnptPreparingEmailsAndPhoneNumbers from '../snippets/_snpt-preparing-emails-and-phone-numbers.mdx';
 
 # Advertiser/Data Provider Integration Overview
 
@@ -26,6 +27,10 @@ There are other ways that you can use EUID, outside these use cases. These are j
 | Send in audiences | Send raw EUIDs via API or pixels | Create audiences. |
 | Send&nbsp;in&nbsp;conversions | Send raw EUIDs as conversion information | Use conversion information for measurement (attribution) or for retargeting via API or pixels. |
 | Receive&nbsp;graph&nbsp;data | Receive raw EUIDs from graph/data providers via API or pixels | Build graph data. |
+
+## Preparing Personal Data for Processing
+
+<SnptPreparingEmailsAndPhoneNumbers />
 
 ## High-Level Steps
 

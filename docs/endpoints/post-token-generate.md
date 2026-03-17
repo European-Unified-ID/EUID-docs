@@ -23,6 +23,10 @@ Be sure to call this endpoint only when you have a legal basis to convert the us
 
 Rather than calling this endpoint directly, you could use one of the SDKs to manage it for you. For a summary of options, see [SDKs: Summary](../sdks/summary-sdks.md).
 
+:::important
+Whatever option you use, the data that you send for generating EUIDs must be normalized, hashed, and encoded before sending. For details, see [Normalization and Encoding](../getting-started/gs-normalization-encoding.md).
+:::
+
 ## Request Format 
 
 `POST '{environment}/v2/token/generate'`

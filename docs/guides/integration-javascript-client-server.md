@@ -12,6 +12,7 @@ import Link from '@docusaurus/Link';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import SnptIntegratingWithSSO from '../snippets/_snpt-integrating-with-sso.mdx';
+import SnptPreparingEmailsAndPhoneNumbers from '../snippets/_snpt-preparing-emails-and-phone-numbers.mdx';
 
 # Client-Server Integration Guide for JavaScript
 
@@ -55,6 +56,10 @@ If you are using Google Ad Manager and want to use the secure signals feature, f
 
 <SnptIntegratingWithSSO />
 
+## Preparing Personal Data for Processing
+
+<SnptPreparingEmailsAndPhoneNumbers />
+
 ## Integration Steps
 
 The following diagram outlines the steps required for establishing a user's EUID token with a publisher and how the EUID token integrates with the RTB bidstream.
@@ -94,6 +99,8 @@ For security reasons, the API key and secret used in token generation must be ca
 :::
 
 #### Sending the EUID Token to the SDK
+
+<!-- UID2_euid_diff_in_this_section_for_research GWH 3/17/26 -->
 
 The following code examples illustrate steps 1-f and 1-g, in JavaScript and TypeScript.
 

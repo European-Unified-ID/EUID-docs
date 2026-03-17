@@ -191,7 +191,7 @@ You can use this tool to verify that your internal processes are set up to corre
 
 In all scenarios, follow the steps on your side to prepare your personal data for processing, and then check your resulting values by using the [EUID hashing tool](https://euid.eu/examples/hashing-tool). If the results don't match, check each step to find the error.
 
-If you're having trouble or getting errors, or even if you just want to be sure you're following the steps correctly, here are some things you can check:
+If you're having trouble or getting errors, or if you just want to be sure you're following the steps correctly, here are some things you can check:
 
 - **Phone numbers**: Make sure you're normalizing&#8212;and normalizing correctly&#8212;as the first step.
 
