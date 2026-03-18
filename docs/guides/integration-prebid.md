@@ -18,6 +18,14 @@ import SnptStoreEUIDTokenInBrowser from '../snippets/_snpt-prebid-storing-euid-t
 
 This guide is an overview of integration options for publishers who want to integrate with EUID and generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) to be passed by Prebid.js or the Prebid Mobile SDK in the RTB <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link>.
 
+## Integrating with Single Sign-On (SSO)
+
+<SnptIntegratingWithSSO />
+
+## Preparing Personal Data for Processing
+
+<SnptPreparingEmailsAndPhoneNumbers />
+
 ## Prebid.js Support for Web
 
 EUID provides a Prebid.js module that supports the following:
@@ -34,14 +42,6 @@ EUID is designed to be used only where <Link href="../ref-info/glossary-uid#gl-g
 :::
 
 <!-- GDPR statement difference for UID2/EUID | UID2 is not designed to be used where GDPR applies | EUID is designed to be used only where GDPR applies. -->
-
-## Integrating with Single Sign-On (SSO)
-
-<SnptIntegratingWithSSO />
-
-## Preparing Personal Data for Processing
-
-<SnptPreparingEmailsAndPhoneNumbers />
 
 ### Generating the EUID Token
 
