@@ -8,6 +8,7 @@ displayed_sidebar: sidebarAdvertisers
 ---
 
 import Link from '@docusaurus/Link';
+import SnptPreparingEmailsAndPhoneNumbers from '../snippets/_snpt-preparing-emails-and-phone-numbers.mdx';
 
 # Advertiser/Data Provider Integration to HTTP Endpoints
 
@@ -16,6 +17,10 @@ This guide covers integration steps for advertisers and data providers to integr
 :::tip
 For a summary of all integration options and steps for advertisers and data providers, see [Advertiser/Data Provider Integration Overview](integration-advertiser-dataprovider-overview.md).
 :::
+
+## Preparing Personal Data for Processing
+
+<SnptPreparingEmailsAndPhoneNumbers />
 
 ## High-Level Steps
 

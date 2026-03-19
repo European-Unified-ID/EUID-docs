@@ -12,6 +12,7 @@ import Link from '@docusaurus/Link';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import SnptIntegratingWithSSO from '../snippets/_snpt-integrating-with-sso.mdx';
+import SnptPreparingEmailsAndPhoneNumbers from '../snippets/_snpt-preparing-emails-and-phone-numbers.mdx';
 
 export const New370 = () => (
   <span className='pill'>New in version 3.7.0</span>
@@ -53,6 +54,10 @@ If you want to use a debug build of the SDK, use the following URL instead:
 ## Integrating with Single Sign-On (SSO)
 
 <SnptIntegratingWithSSO />
+
+## Preparing Personal Data for Processing
+
+<SnptPreparingEmailsAndPhoneNumbers />
 
 ## Complete EUID Account Setup
 
