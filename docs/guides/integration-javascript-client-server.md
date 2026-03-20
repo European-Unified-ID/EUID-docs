@@ -100,7 +100,7 @@ For security reasons, the API key and secret used in token generation must be ca
 
 #### Sending the EUID Token to the SDK
 
-<!-- UID2_euid_diff_in_this_section_for_research GWH 3/17/26 -->
+<!-- UID2_euid_diff_in_this_section: 3/18/26 SW confirmed "the code snippets look the same to me". For UID2, the code is in a snippet. For EUID it's inline. Minor formatting difference not affecting content. There are necessary differences in the code but that's all. -->
 
 The following code examples illustrate steps 1-f and 1-g, in JavaScript and TypeScript.
 
