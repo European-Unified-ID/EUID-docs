@@ -134,6 +134,14 @@ This tool is for developers or clients validating data preparation, such as hash
 - Code: [uid2-examples/tools/hashing-tool](https://github.com/IABTechLab/uid2-examples/tree/main/tools/hashing-tool)
 - Doc: [Normalization and Encoding](https://euid.eu/docs/getting-started/gs-normalization-encoding)
 
+### UID Verify Chrome Extension
+
+UID Verify is a Google Chrome browser extension for debugging EUID integrations. It inspects EUID SDK information on websites, tracks events and event history, and monitors storage (cookies and local storage). It also supports Prebid.js and Google Secure Signals integrations.
+
+- Site: [UID Verify on Chrome Web Store](https://chromewebstore.google.com/detail/uid-verify/cfpjjmdagnkmmolcddnoagffeoekkmle)
+- Code: [uid2-detective](https://github.com/IABTechLab/uid2-detective)
+- Doc: [UID Verify Chrome Extension](https://euid.eu/docs/ref-info/ref-uid-verify)
+
 :::note
 The sample sites on this page highlight some common integrations, but do not represent all available EUID integration options. For a summary of all the integration options available, see [EUID Integration Guides: Summary](https://euid.eu/docs/guides/summary-guides).
 :::
