@@ -38,7 +38,7 @@ Server-side integrations are not currently supported. UID Verify works by readin
 
 ## Installing the Extension
 
-Install UID Verify from the Chrome Web Store:
+To install UID Verify from the Chrome Web Store, follow these steps:
 
 1. Go to the [UID Verify listing](https://chromewebstore.google.com/detail/uid-verify/cfpjjmdagnkmmolcddnoagffeoekkmle) in the Chrome Web Store.
 2. Click **Add to Chrome**.
@@ -46,6 +46,8 @@ Install UID Verify from the Chrome Web Store:
 4. Pin the extension to your toolbar for easy access: click the Extensions icon in your browser, then click the pin icon next to UID Verify.
 
 ## Using UID Verify
+
+Once installed, follow these steps to inspect an EUID integration:
 
 1. Navigate to a web page that has an EUID integration.
 2. Click the **UID Verify** icon in your browser toolbar to open the extension popup.
@@ -57,9 +59,11 @@ UID Verify supports both UID2 and EUID. A page should use either UID2 (for North
 
 ## Interpreting Results
 
+The following sections describe the information available in each tab of the UID Verify popup. The content of each tab varies depending on the integration type detected.
+
 ### Config Tab
 
-The **Config** tab provides a snapshot of the integration's current state, including status banners for successful token generation, errors, opt-out identities, and other configuration states. The information displayed depends on the integration type:
+The **Config** tab provides a snapshot of the integration's current state, including status banners for successful token generation, errors, opt-out identities, and other configuration states. The information displayed depends on the integration type, as shown in the following sections.
 
 **EUID SDK integrations:**
 
@@ -88,25 +92,27 @@ The **Config** tab provides a snapshot of the integration's current state, inclu
 
 The **Storage** tab shows the raw identity data stored in the browser for the current integration.
 
-**For EUID SDK and Prebid.js integrations:**
+**EUID SDK and Prebid.js integrations**
+
+EUID SDK and Prebid.js integrations include the fields shown in the following table.
 
 | Field | Description |
 |---|---|
-| Storage Type | Whether the identity is stored in a cookie or `localStorage`. |
+| Storage Type | Indicates whether the identity is stored in a cookie or `localStorage`. |
 | Storage Key | The name of the cookie or `localStorage` key. For EUID SDK integrations: `__euid` or `EUID-sdk-identity`. For Prebid.js integrations: `__euid_advertising_token`. |
 | Stored Value | The raw identity JSON, including `advertising_token`, `refresh_token`, `identity_expires`, `refresh_expires`, `refresh_from`, and `refresh_response_key`. |
-| Valid Identity | Whether the stored identity is currently valid — that is, the advertising token has not expired and the user has not opted out. |
-| Optout Identity | Whether the identity reflects an opted-out user. |
+| Valid Identity | Indicates whether the stored identity is currently valid — that is, the advertising token has not expired and the user has not opted out. |
+| Optout Identity | Indicates whether the identity reflects an opted-out user. |
 
-**For Google Secure Signals integrations**, the tab shows the status of the secure signal and the current EUID advertising token. If no signal has been generated yet, it indicates that neither a cached signal nor an EUID SDK advertising token is available. Once the token is available, it confirms that it will be included in bid requests to Google Ad Manager.
+For Google Secure Signals integrations, the tab shows the status of the secure signal and the current EUID advertising token. If no signal has been generated yet, it indicates that neither a cached signal nor an EUID SDK advertising token is available. When the collector function has run successfully, the extension displays a "Secure signal is cached" status message and shows the cached value stored under `_GESPSK-euid.eu`. The cached signal is in the format `[providerId, advertisingToken, expiryTimestamp]`. The current EUID advertising token is also displayed separately.
 
 ### Callbacks Tab
 
-The **Callbacks** tab is available for EUID SDK integrations only. It displays the source code of all callback functions registered with the EUID SDK, with syntax highlighting. This is useful for confirming that the correct callbacks are wired up and identifying where events are being handled in the page code.
+The **Callbacks** tab is available for EUID SDK integrations only. It displays the source code of all callback functions registered with the EUID SDK, with syntax highlighting. This is useful for confirming that the correct callbacks are registered and identifying where events are being handled in the page code.
 
 ### Event History Tab
 
-The **Event History** tab shows a searchable, real-time log of EUID SDK events as they occur on the page. Each row in the table includes:
+The **Event History** tab shows a searchable, real-time log of EUID SDK events as they occur on the page. It includes the columns shown in the following table.
 
 | Column | Description |
 |---|---|
@@ -117,6 +123,11 @@ The **Event History** tab shows a searchable, real-time log of EUID SDK events a
 
 Use the search bar to filter by event type or token value.
 
-This tab also includes an **Error Log** when errors are detected. The extension captures several categories of errors: failed network requests to the EUID operator, failed resource loads (such as the EUID SDK script), `console.error` calls from EUID SDK code, and errors thrown by EUID SDK methods.
+This tab also includes an **Error Log** when errors are detected. The extension captures several categories of errors:
+
+- Failed network requests to the EUID operator
+- Failed resource loads (such as the EUID SDK script)
+- `console.error` calls from EUID SDK code
+- Errors thrown by EUID SDK methods
 
 For known error patterns, the extension displays contextual troubleshooting guidance alongside the error.
