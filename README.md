@@ -35,3 +35,5 @@ The body of my tagged section. <a href="">An example link.</a>
 ```
 
 4. All added tags should now appear as clickable tag buttons at the top of the page. Clicking a tag will filter only results that match that tag. Clicking the tag again should toggle all content to be visible.
+
+.
