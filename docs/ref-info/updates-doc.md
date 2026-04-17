@@ -16,6 +16,26 @@ import CustomTagsContainer from '@site/src/components/CustomTags/CustomTagsConta
 
 Check out the latest updates to our EUID documentation resources.
 
+## Q2 2026
+
+The following documents were released in the second quarter of 2026.
+
+<CustomTagsContainer tags="Endpoints">
+
+### Request Parallelization Updates for POST /identity/map
+
+April 17, 2026
+
+The [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint documentation has been updated with the following changes:
+
+- Added a recommendation to send up to 20 /identity/map batches in parallel.
+
+These changes apply to both [v2](../endpoints/post-identity-map-v2.md) and [v3](../endpoints/post-identity-map.md) endpoints.
+
+<!-- UID2-6917 -->
+
+</CustomTagsContainer>
+
 ## Q1 2026
 
 The following documents were released in the first quarter of 2026.
