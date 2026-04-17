@@ -165,7 +165,7 @@ For an example of how to generate email and phone hashes in JavaScript, see [Exa
 
 ## EUID Hashing Tool
 
-To check that you're correctly normalizing, hashing, and encoding, you can test with the [EUID hashing tool](https://euid.eu/examples/hashing-tool).
+To check that you're correctly normalizing, hashing, and encoding, you can test with the [EUID hashing tool](https://hashing-tool.samples.integ.euid.eu/).
 
 Choose Email or Phone Number, type or paste the value, and then click **Enter**.
 
@@ -189,7 +189,7 @@ You can use this tool to verify that your internal processes are set up to corre
 
 ## Troubleshooting
 
-In all scenarios, follow the steps on your side to prepare your personal data for processing, and then check your resulting values by using the [EUID hashing tool](https://euid.eu/examples/hashing-tool). If the results don't match, check each step to find the error.
+In all scenarios, follow the steps on your side to prepare your personal data for processing, and then check your resulting values by using the [EUID hashing tool](https://hashing-tool.samples.integ.euid.eu/). If the results don't match, check each step to find the error.
 
 If you're having trouble or getting errors, or if you just want to be sure you're following the steps correctly, here are some things you can check:
 
@@ -201,4 +201,4 @@ If you're having trouble or getting errors, or if you just want to be sure you'r
 
 - **Use the Base64-encoded value**: The process includes normalizing, then hashing, then Base64-encoding the bytes of the hash value. When generating EUIDs, the input is the Base64-encoded value. Make sure you're using this 44-character string value.
 
-- You might see the following error message: "The hashing value must be 44 characters." In this scenario, there is an error with the hashing function you're using. Use the hex to Base64 encoding of the SHA-256 hash. For details, see [Email Address Hash Encoding](#email-address-hash-encoding) or [Phone Number Hash Encoding](#phone-number-hash-encoding). To cross-check, test using the [EUID hashing tool](https://euid.eu/examples/hashing-tool).
+- You might see the following error message: "The hashing value must be 44 characters." In this scenario, there is an error with the hashing function you're using. Use the hex to Base64 encoding of the SHA-256 hash. For details, see [Email Address Hash Encoding](#email-address-hash-encoding) or [Phone Number Hash Encoding](#phone-number-hash-encoding). To cross-check, test using the [EUID hashing tool](https://hashing-tool.samples.integ.euid.eu/).
