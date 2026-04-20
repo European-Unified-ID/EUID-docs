@@ -10,7 +10,7 @@ import Link from '@docusaurus/Link';
 
 # EUID Token Validator
 
-The [EUID Token Validator](https://token-validator.euid.eu/) is a web-based tool that validates <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> against their source <Link href="../ref-info/glossary-uid#gl-dii">directly identifying information (DII)</Link> to confirm that your token generation process is correct.
+The [EUID Token Validator](https://token-validator.euid.eu/) is a web-based tool that validates <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> against their source personal data to confirm that your token generation process is correct.
 
 ## Overview
 

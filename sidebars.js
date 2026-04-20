@@ -402,8 +402,9 @@ const sidebars = {
     'endpoints/post-token-generate',
     'endpoints/post-token-validate',
     'endpoints/post-token-refresh',
-    'sharing/sharing-bid-stream'
-    ),
+    'sharing/sharing-bid-stream',
+    'ref-info/ref-token-validator'
+  ),
 
   sidebarDSPs: removeItems(fullSidebar, 
     'overviews/overview-publishers',
@@ -481,7 +482,8 @@ const sidebars = {
     'endpoints/post-token-generate',
     'endpoints/post-token-validate',
     'endpoints/post-token-refresh',
-    'sharing/sharing-bid-stream'
+    'sharing/sharing-bid-stream',
+    'ref-info/ref-token-validator'
   ),
 
 };
