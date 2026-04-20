@@ -14,7 +14,7 @@ The [EUID Token Validator](https://token-validator.euid.eu/) is a web-based tool
 
 ## Overview
 
-Publishers who generate EUID tokens by providing personal data sometimes receive tokens that appear valid but are unusable in the EUID ecosystem. This happens when the normalization or hashing steps are not performed correctly. Because EUID uses the normalized and hashed form of personal data to derive the token, an error in either step produces a raw EUID that is unique to that publisher. This mismatched raw EUID will not correspond to the one used by other participants for the same personal data, meaning the publisher's tokens will not match up with those from other publishers, data providers, or advertisers' CRM uploads.
+Publishers who generate EUID tokens by providing personal data sometimes receive tokens that appear valid but are unusable in the EUID ecosystem. This happens when the normalization or hashing steps are not performed correctly. Because EUID uses the normalized and hashed form of personal data to derive the token, an error in either step produces a <Link href="../ref-info/glossary-uid#gl-raw-euid">raw EUID</Link> that is unique to that publisher. This mismatched raw EUID will not correspond to the one used by other participants for the same personal data, meaning the publisher's tokens will not match up with those from other publishers, data providers, or advertisers' CRM uploads.
 
 ## Prerequisites
 
