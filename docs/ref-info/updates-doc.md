@@ -16,9 +16,9 @@ import CustomTagsContainer from '@site/src/components/CustomTags/CustomTagsConta
 
 Check out the latest updates to our EUID documentation resources.
 
-## Q1 2026
+## Q2 2026
 
-The following documents were released in the first quarter of 2026.
+The following documents were released in the second quarter of 2026.
 
 <CustomTagsContainer tags="Endpoints">
 
@@ -36,6 +36,10 @@ These changes apply to both [v2](../endpoints/post-identity-map-v2.md) and [v3](
 <!-- UID2-6642 -->
 
 </CustomTagsContainer>
+
+## Q1 2026
+
+The following documents were released in the first quarter of 2026.
 
 <CustomTagsContainer tags="Endpoints, SDKs, Opt-Out">
 
