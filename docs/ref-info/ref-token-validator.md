@@ -14,7 +14,7 @@ The [EUID Token Validator](https://token-validator.euid.eu/) is a web-based tool
 
 ## Overview
 
-Publishers who generate EUID tokens by providing personal data sometimes receive tokens that appear valid but are unusable in the EUID ecosystem. This happens when the normalization or hashing steps are not performed correctly. Because EUID uses the normalized and hashed form of personal data to derive the token, an error in either step produces a <Link href="../ref-info/glossary-uid#gl-raw-euid">raw EUID</Link> that is unique to that publisher. This mismatched raw EUID will not correspond to the one used by other participants for the same personal data, meaning the publisher's tokens will not match up with those from other publishers, data providers, or advertisers' CRM uploads.
+When publishers generate EUID tokens by providing personal data, in some cases the resulting EUID token appears valid but is not. This is because the normalization or hashing steps are not performed correctly. Because EUID uses the normalized and hashed form of personal data to derive the token, an error in either step produces an EUID token and underlying <Link href="../ref-info/glossary-uid#gl-raw-euid">raw EUID</Link> that do not correspond to the correct values generated from the same personal data by other participants.
 
 ## Prerequisites
 
@@ -23,29 +23,32 @@ To use the EUID Token Validator, you need:
 - An **EUID API Key** (Client Key)
 - An **EUID Client Secret**
 
-If you do not have these, contact your EUID contact. For details, see [EUID Credentials](../getting-started/gs-credentials.md).
+If you do not have these, ask your EUID contact. For details, see [EUID Credentials](../getting-started/gs-credentials.md).
 
 ## Using the Token Validator
 
-Enter your **API Key** (Client Key) and **Client Secret** in the fields at the top of the Token Validation section.
+To use the token validator, follow these steps:
 
-Select the **Operator** (environment) you want to validate against. For information about EUID environments, see [Environments](../getting-started/gs-environments.md).
+1. In the fields at the top of the Token Validation section, enter your **API Key** (Client Key) and **Client Secret**.
+2. Select the **Operator** (environment) you want to validate against. For information about EUID environments, see [Environments](../getting-started/gs-environments.md).
 
 ### Validate a Single Token
+
+To validate a single token, follow these steps:
 
 1. Under **Input Mode**, select **Single Validation**.
 2. In the **Identifier** field, enter the personal data you used to generate the token. This can be:
    - A raw email address
    - A raw phone number
-   - A Base64-encoded email hash
-   - A Base64-encoded phone hash
+   - A normalized and then Base64-encoded email hash
+   - A normalized and then Base64-encoded phone hash
 3. Select the identifier type that matches your input.
 4. In the **Token** field, paste the EUID token you want to validate.
 5. Click **Validate Tokens**.
 
 ### Validate Multiple Tokens (CSV)
 
-To validate a batch of token-identifier pairs:
+To validate a batch of token-identifier pairs, follow these steps:
 
 1. Under **Input Mode**, select **CSV**.
 2. Prepare a CSV file with the following columns:
@@ -77,5 +80,5 @@ The **Validation** column reflects the response from the [POST&nbsp;/token/valid
 | `Failed: {"status":"unauthorized"}` | The API credentials provided are invalid or unauthorized. |
 
 :::tip
-If the result is **Failed: Token does not match identifier**, compare the **Normalized Hash** shown in the results with the value your own implementation produced for the same personal data. If they differ, the issue is in your normalization or hashing steps. For details, see [Normalization and Encoding](../getting-started/gs-normalization-encoding.md) and [Preparing Personal Data for Processing](ref-preparing-emails-and-phone-numbers-for-processing.md).
+If the result is **Failed: Token does not match identifier**, compare the **Normalized Hash** shown in the results with the value your own implementation produced for the same personal data. If they differ, the issue is in your normalization or hashing steps. For details, see [Normalization and Encoding](../getting-started/gs-normalization-encoding.md) and [Preparing Emails and Phone Numbers for Processing](ref-preparing-emails-and-phone-numbers-for-processing.md).
 :::

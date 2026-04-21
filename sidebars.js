@@ -402,7 +402,6 @@ const sidebars = {
     'endpoints/post-token-generate',
     'endpoints/post-token-validate',
     'endpoints/post-token-refresh',
-    'sharing/sharing-bid-stream',
     'ref-info/ref-token-validator'
   ),
 
@@ -443,8 +442,8 @@ const sidebars = {
     'guides/integration-snowflake',
     'guides/integration-snowflake-previous',
     'guides/advertiser-dataprovider-endpoints',
-    'sharing/sharing-bid-stream'
-    ),
+    'ref-info/ref-token-validator'
+  ),
 
   sidebarDataProviders: removeItems(fullSidebar, 
     'overviews/overview-publishers',
@@ -482,7 +481,6 @@ const sidebars = {
     'endpoints/post-token-generate',
     'endpoints/post-token-validate',
     'endpoints/post-token-refresh',
-    'sharing/sharing-bid-stream',
     'ref-info/ref-token-validator'
   ),
 
