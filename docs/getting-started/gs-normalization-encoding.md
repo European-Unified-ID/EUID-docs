@@ -187,6 +187,14 @@ If the input data doesn't have a valid email or phone number format, or if the p
 
 You can use this tool to verify that your internal processes are set up to correctly create normalized, hashed, and encoded values for EUID.
 
+## EUID Token Validator
+
+:::note
+This section is for publishers only. Publishers are the only participants who generate [EUID tokens](../ref-info/glossary-uid.md#gl-euid-token) using personal data.
+:::
+
+To validate the full token generation pipeline end to end, confirming that <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> generated from your normalized, hashed, and encoded values are correct, use the [EUID Token Validator](../ref-info/ref-token-validator.md).
+
 ## Troubleshooting
 
 In all scenarios, follow the steps on your side to prepare your personal data for processing, and then check your resulting values by using the [EUID hashing tool](https://hashing-tool.samples.integ.euid.eu/). If the results don't match, check each step to find the error.
