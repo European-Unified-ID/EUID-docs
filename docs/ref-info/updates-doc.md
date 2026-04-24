@@ -20,6 +20,20 @@ Check out the latest updates to our EUID documentation resources.
 
 The following documents were released in the second quarter of 2026.
 
+<CustomTagsContainer tags="Reference">
+
+### EUID Token Validator
+
+April 24, 2026
+
+We've added a new reference page for the [EUID Token Validator](ref-token-validator.md), a web-based tool that validates EUID tokens against their source personal data so you can confirm that your token generation process is correct.
+
+For details, see [EUID Token Validator](ref-token-validator.md).
+
+<!-- UID2-6700 -->
+
+</CustomTagsContainer>
+
 <CustomTagsContainer tags="Endpoints">
 
 ### Rate Limiting and Parallel Request Updates for POST /identity/map
