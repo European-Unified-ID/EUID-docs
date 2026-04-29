@@ -22,7 +22,7 @@ The following table shows the EUID endpoints, with the audience for each. For de
 | [POST&nbsp;/token/validate](post-token-validate.md) | Publishers | [EUID Tokens](#euid-tokens) |
 | [POST&nbsp;/token/refresh](post-token-refresh.md) | Publishers | [EUID Tokens](#euid-tokens) |
 | [POST&nbsp;/identity/map](post-identity-map.md) | Advertisers, data providers | [Identity Map](#identity-map) |
-| [POST&nbsp;/optout/status](post-optout-status.md)  | Advertisers, data providers, DSPs<!-- , sharers --> | [Opt-Out Status](#opt-out-status)|
+| [POST&nbsp;/optout/status](post-optout-status.md) | Advertisers, data providers, DSPs<!-- , sharers --> | [Opt-Out Status](#opt-out-status)|
 
 ## EUID Tokens
 
@@ -54,7 +54,7 @@ The latest identity map integration uses the following endpoint:
 
 ### Earlier Identity Map Endpoints (v2)
 
-The following endpoints are part of the earlier identity map integration (version 2).  
+The following endpoints are part of the earlier identity map integration (version 2).
 
 | Endpoint | Description | Request Encryption | Response Decryption |
 | :--- | :--- | :--- | :--- |
