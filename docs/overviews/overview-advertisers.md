@@ -4,7 +4,7 @@ description: Information summary for advertisers.
 hide_table_of_contents: false
 sidebar_position: 04
 use_banner: true
-banner_title: EUID Overview for Advertisers
+banner_title: EUID overview for advertisers
 banner_description: Upgrade campaign activation with European Unified ID.
 banner_icon: 'advertisers'
 banner_text_color: 'white'
