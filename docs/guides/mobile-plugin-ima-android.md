@@ -1,5 +1,5 @@
 ---
-title: EUID IMA Plugin for Android
+title: EUID IMA plugin for Android
 description: A guide for publishers using GIA for ad requests on Android apps.
 hide_table_of_contents: false
 sidebar_position: 14

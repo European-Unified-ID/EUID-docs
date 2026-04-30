@@ -1,5 +1,5 @@
 ---
-title: EUID Client-Server Integration Guide for Mobile
+title: EUID client-server integration guide for mobile
 sidebar_label: Client-Server Integration for Mobile
 pagination_label: EUID Client-Server Integration Guide for Mobile
 description: Setting up a mobile integration with token generate on server and refresh on client.

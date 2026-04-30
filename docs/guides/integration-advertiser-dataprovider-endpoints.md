@@ -1,5 +1,5 @@
 ---
-title: Advertiser/Data Provider Integration to HTTP Endpoints
+title: Advertiser/data provider integration to HTTP endpoints
 sidebar_label: HTTP Endpoints
 description: Integration for organizations that collect user data and push it to other participants, coding to HTTP endpoints rather than an SDK or Snowflake.
 hide_table_of_contents: false

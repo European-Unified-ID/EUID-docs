@@ -1,5 +1,5 @@
 ---
-title: Overview of EUID Participants
+title: Overview of EUID participants
 description: An overview of different types of EUID participants.
 hide_table_of_contents: false
 sidebar_position: 06

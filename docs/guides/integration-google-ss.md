@@ -1,5 +1,5 @@
 ---
-title: Google Ad Manager Secure Signals Integration
+title: Google Ad Manager Secure Signals integration
 sidebar_label: GAM Secure Signals
 pagination_label: Google Ad Manager Secure Signals Integration
 description: Covers integration steps for publishers using EUID with the Google Ad ManagerSecure Signals feature.

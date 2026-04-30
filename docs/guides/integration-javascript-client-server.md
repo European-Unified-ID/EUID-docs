@@ -1,6 +1,6 @@
 ---
-title: Client-Server Integration Guide for JavaScript
-sidebar_label: Client-Server Integration for JavaScript
+title: Client-server integration guide for JavaScript
+sidebar_label: Client-server integration for JavaScript
 pagination_label: Client-Server Integration Guide for JavaScript
 description: Information for publishers about using EUID to generate identity tokens for the RTB bidstream, generating tokens on the server side and refreshing on the client side.
 hide_table_of_contents: false

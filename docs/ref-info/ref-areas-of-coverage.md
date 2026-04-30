@@ -1,5 +1,5 @@
 ---
-title: EUID Areas of Coverage
+title: EUID areas of coverage
 description: Information about the geographical areas that EUID supports.
 hide_table_of_contents: false
 sidebar_position: 06

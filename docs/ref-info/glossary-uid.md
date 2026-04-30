@@ -1,5 +1,5 @@
 ---
-title: EUID Glossary
+title: EUID glossary
 description: Definitions for some EUID terms.
 hide_table_of_contents: false
 sidebar_position: 10
@@ -205,7 +205,7 @@ import MdxJumpAnchor from '@site/src/components/MdxJumpAnchor';
 
 <dt><MdxJumpAnchor id="gl-enclave"><a href="#gl-enclave">Enclave</a></MdxJumpAnchor></dt>
 <dd>An enclave is a secure subsection of a computing environment. The enclave has additional business logic and security measures applied to it, to prevent anyone from tampering with it.</dd>
-<dd>In the context of EUID, a <a href="#gl-private-operator">Private Operator</a> must run inside an enclave. For a summary of the enclave versions supported, see <a href="../guides/integration-options-private-operator#hosting-options-for-private-operators">Hosting Options for Private Operators</a>.</dd>
+<dd>In the context of EUID, a <a href="#gl-private-operator">Private Operator</a> must run inside an enclave. For a summary of the enclave versions supported, see <a href="../guides/integration-options-private-operator#hosting-options-for-private-operators">Hosting options for Private Operators</a>.</dd>
 <dd>In an enclave, the operator image must be a very specific, predefined version, and additional constraints are applied to ensure security.</dd>
 
 <dt><MdxJumpAnchor id="gl-encryption-key"><a href="#gl-encryption-key">Encryption key</a></MdxJumpAnchor></dt>

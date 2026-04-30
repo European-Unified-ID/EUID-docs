@@ -8,13 +8,13 @@ displayed_sidebar: docs
 
 import Link from '@docusaurus/Link';
 
-# The EUID operator
+# The EUID Operator
 
 The EUID Operator Service enables the management and storage of <a href="../ref-info/glossary-uid#gl-encryption-key">encryption keys</a> and [salts](../ref-info/glossary-uid.md#gl-salt) from the EUID Core Service, hashing of users' <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>, encryption of [raw EUIDs](../ref-info/glossary-uid.md#gl-raw-euid), and decryption of <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link>.
 
 All instances of the Operator Service are designed with rigorous protections in place to keep critical EUID data secure and interoperable, regardless of who operates the service.
 
-## EUID operator: Overview
+## EUID Operator: Overview
 
 There can be multiple instances of the Operator Service, operated by multiple participants. Each of these participants is known as an EUID Operator.
 
@@ -29,12 +29,12 @@ An EUID Operator is an organization that runs the Operator Service. Operators pe
 
 EUID Operators fall into two categories:
 
-- [Public operators](#public-operators)
+- [Public Operators](#public-operators)
 - [Private Operators](#private-operators)
 
 The Operator is the operational code of EUID&#8212;the code that turns an email into a raw EUID or an EUID token.
 
-## Public operators
+## Public Operators
 
 A Public Operator is an EUID Operator instance that is available to all relevant EUID participants. Public Operators run publicly available instances of the Operator Service and make them available to participants.
 
@@ -42,7 +42,7 @@ In most cases, EUID participants use a Public Operator.
 
 The Public Operator is owned and managed by the EUID administration. For example, The Trade Desk currently serves as a Public Operator for the EUID framework, available to all participants. If other Public Operators are available, a participant can choose which operator to work with.
 
-## Public operator: Benefits
+## Public Operator: Benefits
 
 When you use a Public Operator, there is no additional work for you to do to host, configure, maintain, or update the Operator. All you need to do is configure your integration to use an SDK or to call the EUID endpoints.
 

@@ -1,7 +1,7 @@
 ---
-title: EUID Integration Guides - Summary
+title: EUID integration guides - summary
 sidebar_label: Summary
-pagination_label: EUID Integration Guides - Summary
+pagination_label: EUID integration Guides - summary
 description: Summary of all the integration guides available.
 hide_table_of_contents: false
 sidebar_position: 01

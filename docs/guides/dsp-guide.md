@@ -1,5 +1,5 @@
 ---
-title: DSP Integration
+title: DSP integration
 sidebar_label: DSP Integration Guide
 description: A guide for DSPs who transact on EUIDs in the bidstream.
 hide_table_of_contents: false

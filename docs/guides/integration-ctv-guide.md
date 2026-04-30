@@ -1,5 +1,5 @@
 ---
-title: CTV Integration Guide
+title: CTV integration guide
 sidebar_label: CTV
 pagination_label: CTV Integration Guide
 description: Summary of options for EUID mobile integration.
