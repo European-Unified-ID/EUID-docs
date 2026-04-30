@@ -1,5 +1,5 @@
 ---
-title: Preparing Personal Data for Processing
+title: Preparing personal data for processing
 description: Summary of key steps to prepare your input data for conversion to EUIDs.
 hide_table_of_contents: false
 sidebar_position: 01

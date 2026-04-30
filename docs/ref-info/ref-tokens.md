@@ -1,5 +1,5 @@
 ---
-title: EUID Tokens and Refresh Tokens
+title: EUID tokens and refresh tokens
 description: Information for publishers about EUID tokens and refresh tokens.
 hide_table_of_contents: false
 sidebar_position: 06

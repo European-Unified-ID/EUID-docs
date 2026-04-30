@@ -1,5 +1,5 @@
 ---
-title: Documentation Updates
+title: Documentation updates
 description: A summary of significant EUID documentation updates.
 hide_table_of_contents: false
 sidebar_position: 06
