@@ -9,32 +9,32 @@ displayed_sidebar: docs
 import Link from '@docusaurus/Link';
 import SnptExampleTokenInBidstream from '../snippets/_snpt-example-token-in-bidstream.mdx';
 
-# Frequently Asked Questions
+# Frequently asked questions
 
 Frequently asked questions for EUID in this document are grouped by audience, into the following general categories:
 
-- [FAQs&#8212;General](#faqsgeneral)
-- [FAQs for Publishers](#faqs-for-publishers)
-- [FAQs for Advertisers and Data Providers](#faqs-for-advertisers-and-data-providers)
+- [FAQs&#8212;general](#faqsgeneral)
+- [FAQs for publishers](#faqs-for-publishers)
+- [FAQs for advertisers and data providers](#faqs-for-advertisers-and-data-providers)
 - [FAQs for DSPs](#faqs-for-dsps)
 
 The following additional FAQ information for publishers is also available:
-- [FAQs for Mobile Integrations](../guides/integration-mobile-overview.md#faqs-for-mobile-integrations)
+- [FAQs for mobile integrations](../guides/integration-mobile-overview.md#faqs-for-mobile-integrations)
 
-## FAQs&#8212;General
+## FAQs&#8212;general
 
 Here are some frequently asked questions regarding the EUID framework.
 
-- [Will all integration partners in the UID2 infrastructure (SSPs, third-party data providers, measurement providers) be automatically integrated with EUID?](#will-all-integration-partners-in-the-uid2-infrastructure-ssps-third-party-data-providers-measurement-providers-be-automatically-integrated-with-euid)
+- [Will all integration partners in the UID2 infrastructure (ssps, third-party data providers, measurement providers) be automatically integrated with EUID?](#will-all-integration-partners-in-the-uid2-infrastructure-ssps-third-party-data-providers-measurement-providers-be-automatically-integrated-with-euid)
 - [Can users opt out of targeted advertising tied to their EUID?](#can-users-opt-out-of-targeted-advertising-tied-to-their-euid)
 - [When I send personal data to EUID, does EUID store the information?](#when-i-send-personal-data-to-euid-does-euid-store-the-information)
-- [Should I use a Public Operator or a Private Operator?](#should-i-use-a-public-operator-or-a-private-operator)
+- [Should I use a public operator or a Private Operator?](#should-i-use-a-public-operator-or-a-private-operator)
 
 :::note
-For FAQs relating to mobile publisher integrations, see [FAQs for Mobile Integrations](../guides/integration-mobile-overview.md#faqs-for-mobile-integrations).
+For FAQs relating to mobile publisher integrations, see [FAQs for mobile integrations](../guides/integration-mobile-overview.md#faqs-for-mobile-integrations).
 :::
 
-#### Will all integration partners in the UID2 infrastructure (SSPs, third-party data providers, measurement providers) be automatically integrated with EUID?
+#### Will all integration partners in the UID2 infrastructure (ssps, third-party data providers, measurement providers) be automatically integrated with EUID?
 
 No. EUID has its own framework, which is separate from UID2. As such, paperwork relating to accessing and using the UID2 framework does not automatically grant usage and access to the EUID framework. New contracts are required to be signed for EUID.
 
@@ -48,17 +48,17 @@ No. None of the components of the <Link href="../ref-info/glossary-uid#gl-euid-s
 
 In addition, in almost all cases, EUID doesn't store any values at all once the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md), [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md), or [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) call is complete. A necessary exception is the case where a user has opted out. In this scenario, EUID stores a hashed, opaque value to indicate the opted-out user. The stored value cannot be reverse engineered back to the original value of the personal data, but can be used to identify future requests for an EUID generated from the same personal data, which are therefore denied.
 
-#### Should I use a Public Operator or a Private Operator?
+#### Should I use a public operator or a Private Operator?
 
 For most participants, <Link href="../ref-info/glossary-uid#gl-public-operator">Public Operator</Link> is the simplest solution. A Public Operator integration is a much easier option than hosting your own <Link href="../ref-info/glossary-uid#gl-private-operator">Private Operator</Link>. Having a Private Operator instance has some advantages, but adds extra complexities and costs.
 
 The best choice depends on your unique scenario and needs. For more information to help you arrive at a decision, refer to the following:
 
-- [The EUID Operator](../ref-info/ref-operators-public-private.md)
+- [The EUID operator](../ref-info/ref-operators-public-private.md)
 
-- [EUID Private Operator Integration Overview](../guides/integration-options-private-operator.md)
+- [EUID Private Operator integration overview](../guides/integration-options-private-operator.md)
 
-## FAQs for Publishers
+## FAQs for publishers
 
 Here are some frequently asked questions for publishers using the EUID framework.
 
@@ -71,14 +71,14 @@ Here are some frequently asked questions for publishers using the EUID framework
 - [How can I test the refresh token workflow?](#how-can-i-test-the-refresh-token-workflow)
 - [What is the uniqueness and rotation policy for EUID tokens?](#what-is-the-uniqueness-and-rotation-policy-for-euid-tokens)
 - [What does an EUID token look like in the bidstream?](#what-does-an-euid-token-look-like-in-the-bidstream)
-- [Can I integrate EUID with Single Sign-On (SSO)?](#can-i-integrate-euid-with-single-sign-on-sso)
+- [Can I integrate EUID with single sign-on (SSO)?](#can-i-integrate-euid-with-single-sign-on-sso)
 - [I'm using Prebid with a Mobile SDK&#8212;what atype value should I use?](#im-using-prebid-with-a-mobile-sdkwhat-atype-value-should-i-use)
 
 #### How can I test that the personal data sent and the returned token match up?
 
 You can use the [POST&nbsp;/token/validate](../endpoints/post-token-validate.md) endpoint to check whether the <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> that you are sending through [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) is valid. `POST /token/validate` is used primarily for testing purposes. 
 
-For details, see [Using POST&nbsp;/token/validate to Test](../endpoints/post-token-validate.md#using-post-tokenvalidate-to-test).
+For details, see [Using POST&nbsp;/token/validate to test](../endpoints/post-token-validate.md#using-post-tokenvalidate-to-test).
 
 #### Do I need to decrypt tokens?
 
@@ -93,9 +93,9 @@ If the user has opted out, the API response notifies you in either of these case
 #### Where should I make token generation calls&#8212;from the server side or the client side?
 
 You can generate EUID tokens from either the client side or the server side. For more information, see:
-- Generating tokens from the client side using Prebid.js: [EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md).
-- Generating tokens from the server side using Prebid.js: [EUID Client-Server Integration Guide for Prebid.js](../guides/integration-prebid-client-server.md).
-- Other server-side options: [Publisher Integrations](../guides/summary-guides.md#publisher-integrations).
+- Generating tokens from the client side using Prebid.js: [EUID client-side integration guide for Prebid.js](../guides/integration-prebid-client-side.md).
+- Generating tokens from the server side using Prebid.js: [EUID client-server integration guide for Prebid.js](../guides/integration-prebid-client-server.md).
+- Other server-side options: [Publisher integrations](../guides/summary-guides.md#publisher-integrations).
 
 #### Can I make token refresh calls from the client side?
 
@@ -105,18 +105,18 @@ Yes. The [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) can be c
 
 The recommended refresh interval is hourly.
 
-To determine when to refresh, you can use the timestamp of the `refresh_from` field in the response to the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint (see [Successful Response](../endpoints/post-token-generate.md#successful-response)) or [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint (see [Successful Response With Tokens](../endpoints/post-token-refresh.md#successful-response-with-tokens)).
+To determine when to refresh, you can use the timestamp of the `refresh_from` field in the response to the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint (see [Successful response](../endpoints/post-token-generate.md#successful-response)) or [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint (see [Successful response with tokens](../endpoints/post-token-refresh.md#successful-response-with-tokens)).
 
 You could also use one of the SDKs that has a function to check if <a href="../ref-info/glossary-uid#gl-token-refresh">token refresh</a> is needed.
 
-For details, see [Recommended Token Refresh Frequency](../ref-info/ref-tokens.md#recommended-token-refresh-frequency) and [Managing Token Refresh with an SDK](../ref-info/ref-tokens.md#managing-token-refresh-with-an-sdk).
+For details, see [Recommended token refresh frequency](../ref-info/ref-tokens.md#recommended-token-refresh-frequency) and [Managing token refresh with an SDK](../ref-info/ref-tokens.md#managing-token-refresh-with-an-sdk).
 
 #### How can I test the refresh token workflow?
 
 You can use the `refresh-optout@example.com` email address or the `+00000000002` phone number to test your token refresh workflow. Using either parameter value in a request always generates an identity response with a `refresh_token` that results in a logout response.
 
 :::tip
-To get the normalized, hashed, and Base64-encoded hashed values for any email address, or the hashed and Base64-encoded hashed values for a phone number, you can use the hashing tool: see [EUID Hashing Tool](gs-normalization-encoding.md#euid-hashing-tool).
+To get the normalized, hashed, and Base64-encoded hashed values for any email address, or the hashed and Base64-encoded hashed values for a phone number, you can use the hashing tool: see [EUID hashing tool](gs-normalization-encoding.md#euid-hashing-tool).
 :::
 
 The procedure is a little different depending on whether or not you are using an SDK.
@@ -153,11 +153,11 @@ There are many ways to approach EUID implementation. Here is one example of a co
 
 <SnptExampleTokenInBidstream />
 
-#### Can I integrate EUID with Single Sign-On (SSO)?
+#### Can I integrate EUID with single sign-on (SSO)?
 
 Yes. With popular <a href="../ref-info/glossary-uid#gl-sso">SSO</a> integration options such as Sign in with Google, Facebook Login, Sign in with Apple, or OpenPass, you can retrieve the email address and use it to generate an EUID.
 
-For details, see [Publisher Integration with SSO Providers](/docs/ref-info/ref-integration-sso-providers.md).
+For details, see [Publisher integration with SSO providers](/docs/ref-info/ref-integration-sso-providers.md).
 
 #### I'm using Prebid with a Mobile SDK&#8212;what atype value should I use?
 
@@ -169,7 +169,7 @@ For details, refer to these sections in the IAB documentation:
 - [Object: Extended Identifier UIDs](https://github.com/InteractiveAdvertisingBureau/AdCOM/blob/main/AdCOM%20v1.0%20FINAL.md#object_eid_uids)
 - [List: Agent Types](https://github.com/InteractiveAdvertisingBureau/AdCOM/blob/main/AdCOM%20v1.0%20FINAL.md#list_agenttypes)
 
-## FAQs for Advertisers and Data Providers
+## FAQs for advertisers and data providers
 
 Here are some frequently asked questions for advertisers and data providers using the EUID framework.
 
@@ -229,7 +229,7 @@ In general yes, the process of generating a raw EUID from personal data is the s
 
 However, there is a variable factor that's used in generating the raw EUID. The underlying values are refreshed roughly once per year (for details, see [How often should raw EUIDs be refreshed for incremental updates?](#how-often-should-raw-euids-be-refreshed-for-incremental-updates)). If these values change between one request and another, those two requests result in two different raw EUIDs, even when the personal data is the same.
 
-For more information, see [Monitor for Raw EUID Refresh](../guides/integration-advertiser-dataprovider-overview.md#5-monitor-for-raw-euid-refresh) in the *Advertiser/Data Provider Integration Guide*.
+For more information, see [Monitor for raw EUID refresh](../guides/integration-advertiser-dataprovider-overview.md#5-monitor-for-raw-euid-refresh) in the *Advertiser/Data Provider Integration Guide*.
 
 #### If two operators process the same personal data, are the results the same?
 
@@ -259,7 +259,7 @@ We do not make any promises about when the rotation takes place. To stay as up-t
 This information relates only to implementations using an earlier version of the POST /identity/map endpoint (see [POST&nbsp;/identity/map v2](../endpoints/post-identity-map-v2.md)). We recommend using the latest version (see (see [POST&nbsp;/identity/map](../endpoints/post-identity-map.md))).
 :::
 
-Not necessarily. After you remap emails associated with a particular bucket ID, the emails might be assigned to a different bucket ID. To check the bucket ID, see [Generate Raw EUID from Personal Data](../guides/integration-advertiser-dataprovider-overview.md#1-generate-raw-euids-from-personal-data) and save the returned raw EUID and bucket ID again.
+Not necessarily. After you remap emails associated with a particular bucket ID, the emails might be assigned to a different bucket ID. To check the bucket ID, see [Generate raw EUID from personal data](../guides/integration-advertiser-dataprovider-overview.md#1-generate-raw-euids-from-personal-data) and save the returned raw EUID and bucket ID again.
 
 :::info
 When mapping and remapping emails, do not make any assumptions about the number of buckets, their rotation dates, or the specific bucket that an email gets assigned to.
@@ -320,7 +320,7 @@ Yes, all opt-outs from the EUID [Transparency and Control Portal](https://transp
 
 #### Is the DSP expected to handle opt-out signals only for the EUID that they already store?
 
-In some cases a DSP may receive an EUID token for a newly-stored EUID where the token is generated before the opt-out timestamp. The DSP is not allowed to bid on such tokens. It is therefore recommended to store all opt-out signals regardless of whether the corresponding EUID is currently stored by the DSP or not. For details, see the diagram in [Bidding Opt-Out Logic](../guides/dsp-guide.md#bidding-opt-out-logic).
+In some cases a DSP may receive an EUID token for a newly-stored EUID where the token is generated before the opt-out timestamp. The DSP is not allowed to bid on such tokens. It is therefore recommended to store all opt-out signals regardless of whether the corresponding EUID is currently stored by the DSP or not. For details, see the diagram in [Bidding opt-out logic](../guides/dsp-guide.md#bidding-opt-out-logic).
 
 #### How long should the DSP keep the opt-out list?
 
@@ -334,7 +334,7 @@ No. It is sent as an unencrypted (raw) EUID.
 
 If a user has opted out, the EUID Operator returns the raw EUIDs as URL-encoded query parameters.
 
-For details about the opt-out process for DSPs, see [Honor User Opt-Outs](../guides/dsp-guide.md#honor-user-opt-outs).
+For details about the opt-out process for DSPs, see [Honor user opt-outs](../guides/dsp-guide.md#honor-user-opt-outs).
 
 #### What request type do opt-outs use? 
 

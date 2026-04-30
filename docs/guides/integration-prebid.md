@@ -14,19 +14,19 @@ import SnptIntegratingWithSSO from '../snippets/_snpt-integrating-with-sso.mdx';
 import SnptPreparingEmailsAndPhoneNumbers from '../snippets/_snpt-preparing-emails-and-phone-numbers.mdx';
 import SnptStoreEUIDTokenInBrowser from '../snippets/_snpt-prebid-storing-euid-token-in-browser.mdx';
 
-# EUID Integration Overview for Prebid
+# EUID integration overview for Prebid
 
 This guide is an overview of integration options for publishers who want to integrate with EUID and generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) to be passed by Prebid.js or the Prebid Mobile SDK in the RTB <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link>.
 
-## Integrating with Single Sign-On (SSO)
+## Integrating with single sign-on (SSO)
 
 <SnptIntegratingWithSSO />
 
-## Preparing Personal Data for Processing
+## Preparing personal data for processing
 
 <SnptPreparingEmailsAndPhoneNumbers />
 
-## Prebid.js Support for Web
+## Prebid.js support for web
 
 EUID provides a Prebid.js module that supports the following:
 
@@ -43,7 +43,7 @@ EUID is designed to be used only where <Link href="../ref-info/glossary-uid#gl-g
 
 <!-- GDPR statement difference for UID2/EUID | UID2 is not designed to be used where GDPR applies | EUID is designed to be used only where GDPR applies. -->
 
-### Generating the EUID Token
+### Generating the EUID token
 
 Depending on access to personal data, there are two methods to generate EUID tokens for use with Prebid.js, as shown in the following table.
 
@@ -51,29 +51,29 @@ Determine which method is best for you, and then follow the applicable integrati
 
 | Scenario | Integration Guide |
 | :--- | :--- |
-| You have access to personal data on the client side and want to do front-end development only | [EUID Client-Side Integration Guide for Prebid.js](integration-prebid-client-side.md) |
-| You have access to personal data on the server side and can do server-side development | [EUID Client-Server Integration Guide for Prebid.js](integration-prebid-client-server.md) |
+| You have access to personal data on the client side and want to do front-end development only | [EUID client-side integration guide for Prebid.js](integration-prebid-client-side.md) |
+| You have access to personal data on the server side and can do server-side development | [EUID client-server integration guide for Prebid.js](integration-prebid-client-server.md) |
 
-### Refreshing the EUID Token
+### Refreshing the EUID token
 
-The Prebid.js EUID module can automatically refresh the EUID tokens. If you prefer to implement manual refresh outside Prebid.js, see [Refreshing an EUID Token](integration-prebid-client-server.md#refreshing-an-euid-token) in the Server-Side Integration Guide. The client-side integration solution includes automated token refresh.
+The Prebid.js EUID module can automatically refresh the EUID tokens. If you prefer to implement manual refresh outside Prebid.js, see [Refreshing an EUID token](integration-prebid-client-server.md#refreshing-an-euid-token) in the Server-Side Integration Guide. The client-side integration solution includes automated token refresh.
 
-### Storing the EUID Token in the Browser
+### Storing the EUID token in the browser
 
 <SnptStoreEUIDTokenInBrowser />
 
-### Passing the EUID Token to the Bidstream
+### Passing the EUID token to the bidstream
 
 To configure the EUID module, call `pbjs.setConfig`. For details on supported parameters, refer to the guide that applies to your implementation:
 
-- [EUID Client-Side Integration Guide for Prebid.js](integration-prebid-client-side.md)
-- [EUID Client-Server Integration Guide for Prebid.js](integration-prebid-client-server.md)
+- [EUID client-side integration guide for Prebid.js](integration-prebid-client-side.md)
+- [EUID client-server integration guide for Prebid.js](integration-prebid-client-server.md)
 
 When the EUID module is configured, it manages an EUID token for the user and stores it in the user's browser. 
 
-When generating tokens with Client Refresh mode on the client side or on the server side, the module automatically takes care of refreshing the token as long as your site is open in the user's browser. However, you also have the option to manage the token refresh on the server side. For details, see [Refreshing an EUID Token](integration-prebid-client-server.md#refreshing-an-euid-token) in the Server-Side Integration Guide. The client-side integration solution includes automated token refresh.
+When generating tokens with Client Refresh mode on the client side or on the server side, the module automatically takes care of refreshing the token as long as your site is open in the user's browser. However, you also have the option to manage the token refresh on the server side. For details, see [Refreshing an EUID token](integration-prebid-client-server.md#refreshing-an-euid-token) in the Server-Side Integration Guide. The client-side integration solution includes automated token refresh.
 
-### Integration Overview: High-Level Steps
+### Integration overview: High-level steps
 
 At a high level, to integrate your site with EUID using Prebid.js, you'll need to complete the following steps:
 
@@ -83,9 +83,9 @@ At a high level, to integrate your site with EUID using Prebid.js, you'll need t
 
 For detailed instructions, refer to one of the following integration guides:
 
-- [EUID Client-Side Integration Guide for Prebid.js](integration-prebid-client-side.md)
-- [EUID Client-Server Integration Guide for Prebid.js](integration-prebid-client-server.md)
+- [EUID client-side integration guide for Prebid.js](integration-prebid-client-side.md)
+- [EUID client-server integration guide for Prebid.js](integration-prebid-client-server.md)
 
-## EUID Integration with Prebid Mobile SDK for Mobile Devices
+## EUID integration with Prebid Mobile SDK for mobile devices
 
-EUID integration with Prebid is supported for Android and iOS mobile devices using the [EUID Mobile Integration with Prebid Mobile SDK](integration-prebid-mobile-summary.md).
+EUID integration with Prebid is supported for Android and iOS mobile devices using the [EUID mobile integration with Prebid Mobile SDK](integration-prebid-mobile-summary.md).

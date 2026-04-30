@@ -11,21 +11,21 @@ displayed_sidebar: docs
 import Link from '@docusaurus/Link';
 import SnptPreparingEmailsAndPhoneNumbers from '../snippets/_snpt-preparing-emails-and-phone-numbers.mdx';
 
-# Snowflake Integration Guide
+# Snowflake integration guide
 
 [Snowflake](https://www.snowflake.com/) is a cloud data warehousing solution, where you as a partner can store your data and integrate with the EUID framework. Using Snowflake, EUID enables you to securely share consumer identifier data without exposing sensitive <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>. Even though you have the option to query the Operator Web Services directly for the consumer identifier data, the Snowflake EUID integration offers a more seamless experience.
 
 :::important
-This document is for those using the latest [Snowflake marketplace listing](#snowflake-marketplace-listing). If you're using an earlier version, see [Snowflake Integration Guide (Pre-July 2025)](integration-snowflake-previous.md). If you're using the earlier implementation, we recommend that you migrate to the newer version to take advantage of the updates and enhancements: for details, see [Changes from Previous Version](#changes-from-previous-version). For migration information, see [Migration Guide](#migration-guide).
+This document is for those using the latest [Snowflake marketplace listing](#snowflake-marketplace-listing). If you're using an earlier version, see [Snowflake integration guide (pre-July 2025)](integration-snowflake-previous.md). If you're using the earlier implementation, we recommend that you migrate to the newer version to take advantage of the updates and enhancements: for details, see [Changes from previous version](#changes-from-previous-version). For migration information, see [Migration guide](#migration-guide).
 :::
 
-## Snowflake Marketplace Listing
+## Snowflake marketplace listing
 
 The following listing for EUID is available on the Snowflake Marketplace:
 - [European Unified ID Advertiser and Data Provider Identity Solution](https://app.snowflake.com/marketplace/listing/GZTDZJ7404/european-unified-id-european-unified-id-advertiser-and-data-provider-identity-solution)
 
 :::tip
-For a summary of all integration options and steps for advertisers and data providers, see [Advertiser/Data Provider Integration Overview](integration-advertiser-dataprovider-overview.md).
+For a summary of all integration options and steps for advertisers and data providers, see [Advertiser/data provider integration overview](integration-advertiser-dataprovider-overview.md).
 :::
 
 ## Functionality
@@ -42,44 +42,44 @@ The following table summarizes the functionality available with the EUID Snowfla
 
 
 
-## Changes from Previous Version
+## Changes from previous version
 
 The July 2025 update to the EUID Snowflake Marketplace integration introduces a new identity mapping function that simplifies EUID refresh management and allows accessing previous raw EUIDs for 90 days after rotation.
 
 :::note
-These changes assume that your code integration uses the version of Snowflake functions published before July 2025: see [Snowflake Integration Guide (Pre-July 2025)](integration-snowflake-previous.md). For details on migrating to this version, see [Migration Guide](#migration-guide).
+These changes assume that your code integration uses the version of Snowflake functions published before July 2025: see [Snowflake integration guide (pre-July 2025)](integration-snowflake-previous.md). For details on migrating to this version, see [Migration guide](#migration-guide).
 :::
 
 The following table shows the differences between the old and new identity mapping functions.
 
 | Function | Version | Return Fields | Key Differences | Comments |
 | :-- | :-- | :-- | :-- | :-- |
-| `FN_T_IDENTITY_MAP` | Previous | `UID`, `BUCKET_ID`, `UNMAPPED` | Basic identity mapping with salt bucket tracking | Legacy function using salt bucket monitoring for refresh management. For details, see [Snowflake Integration Guide (Pre-July 2025)](integration-snowflake-previous.md).|
-| `FN_T_IDENTITY_MAP_V3` | Current | `UID`, `PREV_UID`, `REFRESH_FROM`, `UNMAPPED` | Enhanced with previous EUID access and refresh timestamps | Returns previous EUID for 90 days after rotation and uses refresh timestamps instead of salt bucket monitoring. For details, see [Map Personal Data](#map-personal-data).|
+| `FN_T_IDENTITY_MAP` | Previous | `UID`, `BUCKET_ID`, `UNMAPPED` | Basic identity mapping with salt bucket tracking | Legacy function using salt bucket monitoring for refresh management. For details, see [Snowflake integration guide (pre-July 2025)](integration-snowflake-previous.md).|
+| `FN_T_IDENTITY_MAP_V3` | Current | `UID`, `PREV_UID`, `REFRESH_FROM`, `UNMAPPED` | Enhanced with previous EUID access and refresh timestamps | Returns previous EUID for 90 days after rotation and uses refresh timestamps instead of salt bucket monitoring. For details, see [Map personal data](#map-personal-data).|
 
-### Key Benefits
+### Key benefits
 
 This update provides two major benefits:
 
 - **Simplified Refresh Management**: You can monitor for EUIDs reaching `REFRESH_FROM` timestamps instead of polling <Link href="../ref-info/glossary-uid#gl-salt-bucket-id">salt buckets</Link> for rotation.
 - **Previous EUID Access**: You have access to previous raw EUIDs for 90 days after rotation for campaign measurement.
 
-## Workflow Diagram
+## Workflow diagram
 
 The following diagram and table illustrate the different parts of the EUID integration process in Snowflake, and the workflow.
 
-![Snowflake Integration Architecture](images/euid-snowflake-integration-architecture-drawio.png)
+![Snowflake integration architecture](images/euid-snowflake-integration-architecture-drawio.png)
 
 | Partner Snowflake Account | EUID Snowflake Account | EUID Core Opt-Out Cloud Setup |
 | :--- | :--- | :--- |
 |As a partner, you set up a Snowflake account to host your data and engage in EUID integration by consuming functions and views through the EUID Share. | EUID integration, hosted in a Snowflake account, grants you access to authorized functions and views that draw data from private tables. You can't access the private tables. The EUID Share reveals only essential data needed for you to perform EUID-related tasks.<br/>**NOTE**: We store <Link href="../ref-info/glossary-uid#gl-salt">salts</Link> and encryption keys in the private tables. No <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> is stored at any point. |ETL (Extract Transform Load) jobs constantly update the EUID Core/Optout Snowflake storage with internal data that powers the EUID Operator Web Services. The data used by the Operator Web Services is also available through the EUID Share. |
 |When you use shared functions and views, you pay Snowflake for transactional computation costs. |These private tables, secured in the EUID Snowflake account, automatically synchronize with the EUID Core/Optout Snowflake storage that holds internal data used to complete EUID-related tasks. | |
 
-## Preparing Personal Data for Processing
+## Preparing personal data for processing
 
 <SnptPreparingEmailsAndPhoneNumbers />
 
-## Summary of Integration Steps
+## Summary of integration steps
 
 :::important
 To be able to request data, you must use the `ACCOUNTADMIN` role or another role with the `CREATE DATABASE` and `IMPORT SHARE` privileges in your Snowflake account.
@@ -88,24 +88,24 @@ To be able to request data, you must use the `ACCOUNTADMIN` role or another role
 The following list summarizes the integration steps for EUID mapping in Snowflake in the production environment:
 
 :::note
-If you want to try out an integration before using the production environment, see [Testing in the Integ Environment](#testing-in-the-integ-environment).
+If you want to try out an integration before using the production environment, see [Testing in the integ environment](#testing-in-the-integ-environment).
 :::
 
-1. Make sure that the EUID POC paperwork is signed with your EUID contact. If you're not sure who to ask, see [Contact Info](../getting-started/gs-account-setup.md#contact-info).
+1. Make sure that the EUID POC paperwork is signed with your EUID contact. If you're not sure who to ask, see [Contact info](../getting-started/gs-account-setup.md#contact-info).
 
 1. Request access to the EUID share:
 
-   - Request access through the [Snowflake Marketplace Listing](#snowflake-marketplace-listing). In your request, include your Snowflake account number and the region.
+   - Request access through the [Snowflake marketplace listing](#snowflake-marketplace-listing). In your request, include your Snowflake account number and the region.
 
    - Let your EUID contact know that you've requested access.
 
 1. Your EUID contact arranges for your Snowflake account to be provisioned with access to the EUID mapping share.
 
 :::note
-If you did any initial testing (see [Testing in the Integ Environment](#testing-in-the-integ-environment)), be sure to update the functions to reflect the production EUID share, along with your own relevant table names. 
+If you did any initial testing (see [Testing in the integ environment](#testing-in-the-integ-environment)), be sure to update the functions to reflect the production EUID share, along with your own relevant table names. 
 :::
 
-## Testing in the Integ Environment
+## Testing in the integ environment
 
 If you'd like to test the mapping share before signing an EUID POC, you can ask your EUID contact for access to the Snowflake share in the integ (integration) environment. This environment is for testing only, and has no production data. In the request, be sure to include your account number and region.
 
@@ -117,21 +117,21 @@ In this scenario, the following steps occur:
 
 3. When you've requested access, your EUID contact provisions the integ share to your account.
 
-## Shared Objects
+## Shared objects
 
 You can map personal data to EUIDs by using the following function:
 
-- `FN_T_IDENTITY_MAP_V3` (for details, see [Map Personal Data](#map-personal-data))
+- `FN_T_IDENTITY_MAP_V3` (for details, see [Map personal data](#map-personal-data))
 
-The following function is deprecated in favor of `FN_T_IDENTITY_MAP_V3`. You can still use it if you are on the previous Snowflake version (see [Snowflake Integration Guide (Pre-July 2025)](integration-snowflake-previous.md)), but we recommend upgrading as soon as possible:
+The following function is deprecated in favor of `FN_T_IDENTITY_MAP_V3`. You can still use it if you are on the previous Snowflake version (see [Snowflake integration guide (pre-July 2025)](integration-snowflake-previous.md)), but we recommend upgrading as soon as possible:
 
 - `FN_T_IDENTITY_MAP` (deprecated)
 
 :::note
-If you are using the deprecated function, and need help migrating to the newer function, see [Migration Guide](#migration-guide).
+If you are using the deprecated function, and need help migrating to the newer function, see [Migration guide](#migration-guide).
 :::
 
-To identify the EUIDs that you must regenerate, monitor the `REFRESH_FROM` timestamps returned by the `FN_T_IDENTITY_MAP_V3` function. For details, see [Monitor Raw EUID Refresh and Regenerate Raw EUIDs](#monitor-raw-euid-refresh-and-regenerate-raw-euids).
+To identify the EUIDs that you must regenerate, monitor the `REFRESH_FROM` timestamps returned by the `FN_T_IDENTITY_MAP_V3` function. For details, see [Monitor raw EUID refresh and regenerate raw EUIDs](#monitor-raw-euid-refresh-and-regenerate-raw-euids).
 
 
 
@@ -139,7 +139,7 @@ To identify the EUIDs that you must regenerate, monitor the `REFRESH_FROM` times
 
 
 
-### Database and Schema Names
+### Database and schema names
 
 The following sections include query examples for each solution, which are identical except for the database and schema name variables:
 
@@ -160,13 +160,13 @@ All query examples use the following default values for each name variable:
 | `{DATABASE_NAME}` | `EUID_PROD_UID_SH` | If needed, you can change the default database name when creating a new database after you are granted access to the selected EUID Share. |
 | `{SCHEMA_NAME}`   | `UID`              | This is an immutable name.    
 
-### Map Personal Data
+### Map personal data
 
 To map all types of <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>, use the `FN_T_IDENTITY_MAP_V3` function.
 
-If the personal data is an email address, the service normalizes the data using the EUID [Email Address Normalization](../getting-started/gs-normalization-encoding.md#email-address-normalization) rules.
+If the personal data is an email address, the service normalizes the data using the EUID [Email address normalization](../getting-started/gs-normalization-encoding.md#email-address-normalization) rules.
 
-If the personal data is a phone number, you must normalize it before sending it to the service, using the EUID [Phone Number Normalization](../getting-started/gs-normalization-encoding.md#phone-number-normalization) rules.
+If the personal data is a phone number, you must normalize it before sending it to the service, using the EUID [Phone number normalization](../getting-started/gs-normalization-encoding.md#phone-number-normalization) rules.
 
 | Argument     | Data Type    | Description                                                                                 |
 |:-------------|:-------------|:--------------------------------------------------------------------------------------------|
@@ -180,9 +180,9 @@ A successful query returns the following information for the specified personal 
 | `UID`          | TEXT      | The value is one of the following:<ul><li>Personal data was successfully mapped: The EUID associated with the personal data.</li><li>Otherwise: `NULL`.</li></ul>                                                                                                                                                    |
 | `PREV_UID`     | TEXT      | The value is one of the following:<ul><li>Personal data was successfully mapped and the current raw EUID was rotated in the last 90 days: the previous raw EUID.</li><li>Otherwise: `NULL`.</li></ul>                                                                                                                |
 | `REFRESH_FROM` | NUMBER    | The value is one of the following:<ul><li>Personal data was successfully mapped: The timestamp (in epoch seconds) indicating when this EUID should be refreshed.</li><li>Otherwise: `NULL`.</li></ul>                                                                                                                |
-| `UNMAPPED`     | TEXT      | The value is one of the following:<ul><li>Personal data was successfully mapped: `NULL`.</li><li>Otherwise: The reason why the identifier was not mapped: `OPTOUT`, `INVALID IDENTIFIER`, or `INVALID INPUT TYPE`.<br/>For details, see [Values for the UNMAPPED Column](#values-for-the-unmapped-column).</li></ul> |
+| `UNMAPPED`     | TEXT      | The value is one of the following:<ul><li>Personal data was successfully mapped: `NULL`.</li><li>Otherwise: The reason why the identifier was not mapped: `OPTOUT`, `INVALID IDENTIFIER`, or `INVALID INPUT TYPE`.<br/>For details, see [Values for the unmapped column](#values-for-the-unmapped-column).</li></ul> |
 
-#### Values for the UNMAPPED Column
+#### Values for the unmapped column
 
 The following table shows possible values for the `UNMAPPED` column.
 
@@ -197,20 +197,20 @@ The following table shows possible values for the `UNMAPPED` column.
 
 Mapping request examples in this section:
 
-- [Single Unhashed Email](#mapping-request-example---single-unhashed-email)
-- [Multiple Unhashed Emails](#mapping-request-example---multiple-unhashed-emails)
-- [Single Unhashed Phone Number](#mapping-request-example---single-unhashed-phone-number)
-- [Multiple Unhashed Phone Numbers](#mapping-request-example---multiple-unhashed-phone-numbers)
-- [Single Hashed Email](#mapping-request-example---single-hashed-email)
-- [Multiple Hashed Emails](#mapping-request-example---multiple-hashed-emails)
-- [Single Hashed Phone Number](#mapping-request-example---single-hashed-phone-number)
-- [Multiple Hashed Phone Numbers](#mapping-request-example---multiple-hashed-phone-numbers)
+- [Single unhashed email](#mapping-request-example---single-unhashed-email)
+- [Multiple unhashed emails](#mapping-request-example---multiple-unhashed-emails)
+- [Single unhashed phone number](#mapping-request-example---single-unhashed-phone-number)
+- [Multiple unhashed phone numbers](#mapping-request-example---multiple-unhashed-phone-numbers)
+- [Single hashed email](#mapping-request-example---single-hashed-email)
+- [Multiple hashed emails](#mapping-request-example---multiple-hashed-emails)
+- [Single hashed phone number](#mapping-request-example---single-hashed-phone-number)
+- [Multiple hashed phone numbers](#mapping-request-example---multiple-hashed-phone-numbers)
 
 :::note
 The input and output data in these examples is fictitious, for illustrative purposes only. The values provided are not real values.
 :::
 
-#### Mapping Request Example - Single Unhashed Email
+#### Mapping request example - single unhashed email
 
 The following query illustrates how to map a single email address, using the [default database and schema names](#database-and-schema-names).
 
@@ -228,7 +228,7 @@ Query results for a single email:
 +----------------------------------------------+--------------------------------------------------+--------------+----------+
 ```
 
-#### Mapping Request Example - Multiple Unhashed Emails
+#### Mapping request example - multiple unhashed emails
 
 The following query illustrates how to map multiple email addresses, using the [default database and schema names](#database-and-schema-names).
 
@@ -254,11 +254,11 @@ The following table identifies each item in the response, including `NULL` value
 +----+----------------------+----------------------------------------------+----------------------------------------------+--------------+--------------------+
 ```
 
-#### Mapping Request Example - Single Unhashed Phone Number
+#### Mapping request example - single unhashed phone number
 
 The following query illustrates how to map a phone number, using the [default database and schema names](#database-and-schema-names).
 
-You must normalize phone numbers using the EUID [Phone Number Normalization](../getting-started/gs-normalization-encoding.md#phone-number-normalization) rules.
+You must normalize phone numbers using the EUID [Phone number normalization](../getting-started/gs-normalization-encoding.md#phone-number-normalization) rules.
 
 ```sql
 select UID, PREV_UID, REFRESH_FROM, UNMAPPED from table(EUID_PROD_UID_SH.UID.FN_T_IDENTITY_MAP_V3('+12345678901', 'phone'));
@@ -274,11 +274,11 @@ Query results for a single phone number:
 +----------------------------------------------+----------+--------------+----------+
 ```
 
-#### Mapping Request Example - Multiple Unhashed Phone Numbers
+#### Mapping request example - multiple unhashed phone numbers
 
 The following query illustrates how to map multiple phone numbers, using the [default database and schema names](#database-and-schema-names).
 
-You must normalize phone numbers using the EUID [Phone Number Normalization](../getting-started/gs-normalization-encoding.md#phone-number-normalization) rules.
+You must normalize phone numbers using the EUID [Phone number normalization](../getting-started/gs-normalization-encoding.md#phone-number-normalization) rules.
 
 ```sql
 select a.ID, a.PHONE, m.UID, m.PREV_UID, m.REFRESH_FROM, m.UNMAPPED from AUDIENCE a LEFT JOIN(
@@ -302,7 +302,7 @@ The following table identifies each item in the response, including `NULL` value
 +----+--------------+----------------------------------------------+----------------------------------------------+--------------+--------------------+
 ```
 
-#### Mapping Request Example - Single Hashed Email
+#### Mapping request example - single hashed email
 
 The following query illustrates how to map a single email address hash, using the [default database and schema names](#database-and-schema-names).
 
@@ -320,7 +320,7 @@ Query results for a single hashed email:
 +----------------------------------------------+----------------------------------------------+--------------+----------+
 ```
 
-#### Mapping Request Example - Multiple Hashed Emails
+#### Mapping request example - multiple hashed emails
 
 The following query illustrates how to map multiple email address hashes, using the [default database and schema names](#database-and-schema-names).
 
@@ -345,7 +345,7 @@ The following table identifies each item in the response, including `NULL` value
 +----+----------------------------------------------+----------------------------------------------+----------------------------------------------+--------------+--------------------+
 ```
 
-#### Mapping Request Example - Single Hashed Phone Number
+#### Mapping request example - single hashed phone number
 
 The following query illustrates how to map a single phone number hash, using the [default database and schema names](#database-and-schema-names).
 
@@ -363,7 +363,7 @@ Query results for a single hashed phone number:
 +----------------------------------------------+----------------------------------------------+--------------+----------+
 ```
 
-#### Mapping Request Example - Multiple Hashed Phone Numbers
+#### Mapping request example - multiple hashed phone numbers
 
 The following query illustrates how to map multiple phone number hashes, using the [default database and schema names](#database-and-schema-names).
 
@@ -388,7 +388,7 @@ The following table identifies each item in the response, including `NULL` value
 +----+----------------------------------------------+----------------------------------------------+----------------------------------------------+--------------+--------------------+
 ```
 
-### Monitor Raw EUID Refresh and Regenerate Raw EUIDs
+### Monitor raw EUID refresh and regenerate raw EUIDs
 
 The `FN_T_IDENTITY_MAP_V3` function returns refresh timestamps (`REFRESH_FROM`) that indicate when each EUID should be refreshed.
 
@@ -405,7 +405,7 @@ To determine which EUIDs need regeneration, compare the current time to the `REF
 
 The following example shows an input table and the query used to find the EUIDs in the table that must be regenerated because their refresh time has been reached.
 
-#### Targeted Input Table
+#### Targeted input table
 
 In this example scenario, the advertiser/data provider has stored the EUIDs in a table named `AUDIENCE_WITH_EUID`. The `REFRESH_FROM` column contains the timestamp when each EUID should be refreshed. If no EUID has been generated, the value is `NULL`, as shown in the third example. The advertiser/data provider can compare these timestamps to the current time to determine which EUIDs need to be regenerated.
 
@@ -637,7 +637,7 @@ The following table identifies each item in the response. The result includes EU
 
 
 
-## Migration Guide
+## Migration guide
 
 This section provides information to help you upgrade from the previous version to the new EUID Snowflake functionality with v3 functions.
 
@@ -645,11 +645,11 @@ This section provides information to help you upgrade from the previous version 
 
 
 
-### Changing Existing Code
+### Changing existing code
 
-For a summary of changes, see [Changes from Previous Version](#changes-from-previous-version). The code snippets in this section are before/after examples of how the earlier functions might be implemented, and how you could update to use the new function. The key change is migrating from `FN_T_IDENTITY_MAP` to `FN_T_IDENTITY_MAP_V3`, which provides refresh timestamps instead of salt bucket IDs and includes previous EUID access.
+For a summary of changes, see [Changes from previous version](#changes-from-previous-version). The code snippets in this section are before/after examples of how the earlier functions might be implemented, and how you could update to use the new function. The key change is migrating from `FN_T_IDENTITY_MAP` to `FN_T_IDENTITY_MAP_V3`, which provides refresh timestamps instead of salt bucket IDs and includes previous EUID access.
 
-#### Example for Mapping Unhashed Emails
+#### Example for mapping unhashed emails
 
 Before:
 
@@ -663,7 +663,7 @@ After:
 select UID, PREV_UID, REFRESH_FROM, UNMAPPED from table({DATABASE_NAME}.{SCHEMA_NAME}.FN_T_IDENTITY_MAP_V3(EMAIL, 'email'));
 ```
 
-#### Example for Mapping Unhashed Phone Numbers
+#### Example for mapping unhashed phone numbers
 
 Before:
 
@@ -677,7 +677,7 @@ After:
 select UID, PREV_UID, REFRESH_FROM, UNMAPPED from table({DATABASE_NAME}.{SCHEMA_NAME}.FN_T_IDENTITY_MAP_V3(PHONE_NUMBER, 'phone'));
 ```
 
-#### Example for Monitoring EUID Refresh and Regenerating Raw EUIDs
+#### Example for monitoring EUID refresh and regenerating raw EUIDs
 
 The v3 function provides refresh timestamps directly, eliminating the need to monitor salt buckets. Instead of joining with salt bucket views, you can compare the current timestamp against the `REFRESH_FROM` timestamp returned by the function.
 

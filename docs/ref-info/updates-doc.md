@@ -10,7 +10,7 @@ import Link from '@docusaurus/Link';
 import CustomTagsFilters from '@site/src/components/CustomTags/CustomTagsFilters';
 import CustomTagsContainer from '@site/src/components/CustomTags/CustomTagsContainer';
 
-# Documentation Updates
+# Documentation updates
 
 <CustomTagsFilters />
 
@@ -22,13 +22,13 @@ The following documents were released in the second quarter of 2026.
 
 <CustomTagsContainer tags="Reference">
 
-### EUID Token Validator
+### EUID token validator
 
 April 24, 2026
 
-We've added a new reference page for the [EUID Token Validator](ref-token-validator.md), a web-based tool that validates EUID tokens against their source personal data so you can confirm that your token generation process is correct.
+We've added a new reference page for the [EUID token validator](ref-token-validator.md), a web-based tool that validates EUID tokens against their source personal data so you can confirm that your token generation process is correct.
 
-For details, see [EUID Token Validator](ref-token-validator.md).
+For details, see [EUID token validator](ref-token-validator.md).
 
 <!-- UID2-6700 -->
 
@@ -36,13 +36,13 @@ For details, see [EUID Token Validator](ref-token-validator.md).
 
 <CustomTagsContainer tags="Endpoints">
 
-### Rate Limiting and Parallel Request Updates for POST /identity/map
+### Rate limiting and parallel request updates for POST /identity/map
 
 April 1, 2026
 
 The [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint documentation has been updated with the following changes:
 
-- Added a new [Rate Limiting](../endpoints/post-identity-map.md#rate-limiting) section documenting that the endpoint enforces rate limits to safeguard against bursts of incoming traffic.
+- Added a new [Rate limiting](../endpoints/post-identity-map.md#rate-limiting) section documenting that the endpoint enforces rate limits to safeguard against bursts of incoming traffic.
 - Removed the previous recommendation to send batches sequentially over a single HTTP connection.
 
 These changes apply to both [v2](../endpoints/post-identity-map-v2.md) and [v3](../endpoints/post-identity-map.md) endpoints.
@@ -57,7 +57,7 @@ The following documents were released in the first quarter of 2026.
 
 <CustomTagsContainer tags="Endpoints, SDKs, Opt-Out">
 
-### Removal of optout_check Parameter
+### Removal of optout_check parameter
 
 February 10, 2026
 
@@ -79,7 +79,7 @@ The following documents were released in this quarter.
 
 <CustomTagsContainer tags="Reference">
 
-### Legal Information for Publishers and Advertisers
+### Legal information for publishers and advertisers
 
 3 September, 2025
 
@@ -87,9 +87,9 @@ We've added a new documentation section to help publishers and advertisers with 
 
 For details, see:
 
-- [Publisher Information](../legal/euid-participant-information-publishers.md)
-- [Advertiser Information](../legal/euid-participant-information-advertisers.md)
-- [Consent Examples](../legal/legal-consent-examples.md)
+- [Publisher information](../legal/euid-participant-information-publishers.md)
+- [Advertiser information](../legal/euid-participant-information-advertisers.md)
+- [Consent examples](../legal/legal-consent-examples.md)
 
 <!-- APIDOCS-2890 -->
 
@@ -97,7 +97,7 @@ For details, see:
 
 <CustomTagsContainer tags="Endpoints, Guides, SDKs">
 
-### Identity Map v3 (Python SDK, Snowflake)
+### Identity map v3 (Python SDK, Snowflake)
 
 14 August, 2025
 
@@ -105,8 +105,8 @@ We've released updated versions of two additional docs to reflect adoption of th
 
 We updated the following additional implementations and corresponding documentation:
 
-- Python SDK: see [SDK for Python Reference Guide](../sdks/sdk-ref-python.md)
-- Snowflake: see [Snowflake Integration Guide](../guides/integration-snowflake.md)
+- Python SDK: see [SDK for Python reference guide](../sdks/sdk-ref-python.md)
+- Snowflake: see [Snowflake integration guide](../guides/integration-snowflake.md)
 
 <!-- APIDOCS-3346 -->
 
@@ -114,11 +114,11 @@ We updated the following additional implementations and corresponding documentat
 
 <CustomTagsContainer tags="Endpoints, Guides, SDKs">
 
-### Identity Map v3
+### Identity map v3
 
 July 16, 2025
 
-We've released a new version of the Identity Map API (v3) that provides significant improvements for advertisers and data providers. This update includes documentation for the [POST /identity/map](../endpoints/post-identity-map.md) endpoint, the [SDK for Java Reference Guide](../sdks/sdk-ref-java.md#usage-for-advertisersdata-providers), and the [Advertiser/Data Provider Integration Overview](../guides/integration-advertiser-dataprovider-overview.md).
+We've released a new version of the Identity Map API (v3) that provides significant improvements for advertisers and data providers. This update includes documentation for the [POST /identity/map](../endpoints/post-identity-map.md) endpoint, the [SDK for Java reference guide](../sdks/sdk-ref-java.md#usage-for-advertisersdata-providers), and the [Advertiser/data provider integration overview](../guides/integration-advertiser-dataprovider-overview.md).
 
 <!-- UID2-5558, UID2-5560, UID2-5559, APIDOCS-3318 -->
 
@@ -130,13 +130,13 @@ The following documents were released in the first quarter of 2025.
 
 <CustomTagsContainer tags="Guides, Mobile">
 
-### Server-Side Integration Guide for Mobile
+### Server-side integration guide for mobile
 
 March 19, 2025
 
 We've added a guide for mobile app publishers who want to manage the EUID token entirely on the server side.
 
-For details, see [EUID Server-Side Integration Guide for Mobile](../guides/integration-mobile-server-side.md).
+For details, see [EUID server-side integration guide for mobile](../guides/integration-mobile-server-side.md).
 
 <!-- APIDOCS-2932 -->
 
@@ -144,13 +144,13 @@ For details, see [EUID Server-Side Integration Guide for Mobile](../guides/integ
 
 <CustomTagsContainer tags="SDKs">
 
-### JavaScript SDK Version 4
+### JavaScript SDK version 4
 
 March 10, 2025
 
 We've added documentation for the recently released update of the EUID SDK for JavaScript, version 4.
 
-For details, see [SDK for JavaScript Reference Guide](../sdks/sdk-ref-javascript.md).
+For details, see [SDK for JavaScript reference guide](../sdks/sdk-ref-javascript.md).
 
 <!-- APIDOCS-2924 -->
 
@@ -158,13 +158,13 @@ For details, see [SDK for JavaScript Reference Guide](../sdks/sdk-ref-javascript
 
 <CustomTagsContainer tags="Reference">
 
-### How the EUID Token Is Created
+### How the EUID token is created
 
 March 7, 2025
 
 We've added a page with high-level information about the steps for creating an EUID token, including steps, roles, and a diagram.
 
-For details, see [How the EUID Token Is Created](../ref-info/ref-how-uid-is-created.md).
+For details, see [How the EUID token is created](../ref-info/ref-how-uid-is-created.md).
 
 <!-- APIDOCS-978 -->
 
@@ -172,7 +172,7 @@ For details, see [How the EUID Token Is Created](../ref-info/ref-how-uid-is-crea
 
 <CustomTagsContainer tags="Guides">
 
-### Snowflake Integration Guide
+### Snowflake integration guide
 
 February 4, 2025
 
@@ -180,7 +180,7 @@ EUID now supports Snowflake, the cloud data warehousing solution.
 
 Using Snowflake, EUID enables advertisers and data providers to securely share consumer identifier data without exposing sensitive personal data.
 
-For details, see [Snowflake Integration Guide](../guides/integration-snowflake.md).
+For details, see [Snowflake integration guide](../guides/integration-snowflake.md).
 
 <!-- APIDOCS-2747. 1/31 is doc date, 2/4 is marketplace listing -->
 
@@ -190,13 +190,13 @@ For details, see [Snowflake Integration Guide](../guides/integration-snowflake.m
 
 <CustomTagsContainer tags="Guides">
 
-### Advertiser/Data Provider Doc
+### Advertiser/data provider doc
 
 January 30, 2025
 
 We've significantly expanded and restructured the Advertiser/Data Provider documentation. We now have one significantly updated overview doc, and separate docs for each main integration option.
 
-For details, including a summary of all integration options for advertisers and data providers, see [Advertiser/Data Provider Integration Overview](../guides/integration-advertiser-dataprovider-overview.md).
+For details, including a summary of all integration options for advertisers and data providers, see [Advertiser/data provider integration overview](../guides/integration-advertiser-dataprovider-overview.md).
 
 <!-- APIDOCS-2873 -->
 
@@ -204,13 +204,13 @@ For details, including a summary of all integration options for advertisers and 
 
 <CustomTagsContainer tags="Reference">
 
-### Publisher SSO Integration Page
+### Publisher SSO integration page
 
 January 10, 2025
 
 We've added a new reference page for publishers who integrate with one or more SSO providers to offer SSO login, and want to retrieve the logged-in user's email address from the SSO provider to generate EUID tokens.
 
-For details, see [Publisher Integration with SSO Providers](ref-integration-sso-providers.md).
+For details, see [Publisher integration with SSO providers](ref-integration-sso-providers.md).
 
 <!-- APIDOCS-2871 -->
 
@@ -222,13 +222,13 @@ The following documents were released in the fourth quarter of 2024.
 
 <CustomTagsContainer tags="Sharing">
 
-### EUID Sharing page
+### EUID sharing page
 
 December 13, 2024
 
 We've added a page with information about <Link href="glossary-uid#gl-sharing">sharing</Link> EUIDs.
 
-For details, see [EUID Sharing](../getting-started/gs-sharing.md).
+For details, see [EUID sharing](../getting-started/gs-sharing.md).
 
 <!-- APIDOCS-2624 -->
 
@@ -236,7 +236,7 @@ For details, see [EUID Sharing](../getting-started/gs-sharing.md).
 
 <CustomTagsContainer tags="Infrastructure">
 
-### Zoom-In Tool for Images
+### Zoom-in tool for images
 
 December 5, 2024
 
@@ -250,13 +250,13 @@ Just hover over the image and the tool appears as a magnifying glass, then click
 
 <CustomTagsContainer tags="Reference">
 
-### EUID Hashing Tool
+### EUID hashing tool
 
 November 26, 2024
 
 We've added a new EUID hashing tool so that you can check that you're normalizing and encoding correctly.
 
-For details, see [EUID Hashing Tool](../getting-started/gs-normalization-encoding#euid-hashing-tool) in the *Normalization and Encoding* documentation.
+For details, see [EUID hashing tool](../getting-started/gs-normalization-encoding#euid-hashing-tool) in the *Normalization and Encoding* documentation.
 
 <!-- APIDOCS-2772 -->
 
@@ -264,7 +264,7 @@ For details, see [EUID Hashing Tool](../getting-started/gs-normalization-encodin
 
 <CustomTagsContainer tags="Reference">
 
-### EUID Phone Number Support
+### EUID phone number support
 
 November 22, 2024
 
@@ -278,13 +278,13 @@ All the EUID documentation has been updated to reflect this support, including r
 
 <CustomTagsContainer tags="Guides">
 
-### LiveRamp Integration Tips
+### LiveRamp integration tips
 
 November 14, 2024
 
 We've added a new reference page with tips for publishers who are using LiveRamp's Authenticated Traffic Solution (ATS) to generate EUID tokens to be passed in the bid request.
 
-For details, see [LiveRamp Integration Tips](../guides/integration-liveramp-tips.md).
+For details, see [LiveRamp integration tips](../guides/integration-liveramp-tips.md).
 
 <!-- APIDOCS-2699 -->
 
@@ -292,13 +292,13 @@ For details, see [LiveRamp Integration Tips](../guides/integration-liveramp-tips
 
 <CustomTagsContainer tags="Guides, Mobile, SDKs">
 
-### GMA Android Doc
+### GMA Android doc
 
 October 24, 2024
 
 We've added the following new document to support EUID integration with GMA Android for mobile ads:
 
-- [EUID GMA Plugin for Android Integration Guide](../guides/mobile-plugin-gma-android)
+- [EUID GMA plugin for Android integration guide](../guides/mobile-plugin-gma-android)
 
 <!-- APIDOCS-2390 -->
 
@@ -308,7 +308,7 @@ We've added the following new document to support EUID integration with GMA Andr
 
 The following documents were released in the third quarter of 2024.
 
-### Mobile Docs
+### Mobile docs
 
 <CustomTagsContainer tags="Guides, CTV, Mobile, Prebid, SDKs">
 
@@ -317,21 +317,21 @@ September 16, 2024
 We've added the following new documents to support EUID integration for mobile devices:
 
 SDK doc:
-- [SDK for Android Reference Guide](../sdks/sdk-ref-android)
+- [SDK for Android reference guide](../sdks/sdk-ref-android)
 
 Mobile plugin guides:
-- [EUID GMA Plugin for iOS Integration Guide](../guides/mobile-plugin-gma-ios)
-- [EUID IMA Plugin for Android Integration Guide](../guides/mobile-plugin-ima-android)
-- [EUID IMA Plugin for iOS Integration Guide](../guides/mobile-plugin-ima-ios)
+- [EUID GMA plugin for iOS integration guide](../guides/mobile-plugin-gma-ios)
+- [EUID IMA plugin for Android integration guide](../guides/mobile-plugin-ima-android)
+- [EUID IMA plugin for iOS integration guide](../guides/mobile-plugin-ima-ios)
 
 Mobile integration guides:
-- [EUID Mobile Integration Overview for Android and iOS](../guides/integration-mobile-overview)
-- [EUID Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side)
-- [EUID Client-Server Integration Guide for Mobile](../guides/integration-mobile-client-server)
+- [EUID mobile integration overview for Android and iOS](../guides/integration-mobile-overview)
+- [EUID client-side integration guide for mobile](../guides/integration-mobile-client-side)
+- [EUID client-server integration guide for mobile](../guides/integration-mobile-client-server)
 
 Additional resources:
-- [CTV Integration Guide](../guides/integration-ctv-guide)
-- [EUID Mobile Integration for Prebid Mobile SDK](../guides/integration-prebid-mobile-summary)
+- [CTV integration guide](../guides/integration-ctv-guide)
+- [EUID mobile integration for Prebid Mobile SDK](../guides/integration-prebid-mobile-summary)
 
 <!-- APIDOCS-2554 -->
 
@@ -339,13 +339,13 @@ Additional resources:
 
 <CustomTagsContainer tags="Guides, Private Operator">
 
-### Private Operator Integration Overview
+### Private Operator integration overview
 
 September 13, 2024
 
 We've added a new page with information about Private Operator integrations.
 
-For details, see [EUID Private Operator Integration Overview](../guides/integration-options-private-operator).
+For details, see [EUID Private Operator integration overview](../guides/integration-options-private-operator).
 
 <!-- APIDOCS-2594 -->
 
@@ -353,13 +353,13 @@ For details, see [EUID Private Operator Integration Overview](../guides/integrat
 
 <CustomTagsContainer tags="Reference">
 
-### Tokens Page
+### Tokens page
 
 September 12, 2024
 
 We've added a new reference page with information about tokens.
 
-For details, see [EUID Tokens and Refresh Tokens](../ref-info/ref-tokens.md).
+For details, see [EUID tokens and refresh tokens](../ref-info/ref-tokens.md).
 
 <!-- APIDOCS-2534 -->
 
@@ -367,13 +367,13 @@ For details, see [EUID Tokens and Refresh Tokens](../ref-info/ref-tokens.md).
 
 <CustomTagsContainer tags="Guides">
 
-### Google Ad Manager Secure Signals Integration Guide
+### Google Ad Manager Secure Signals integration guide
 
 September 11, 2024
 
 We've added a guide with integration steps for publishers using EUID with the Google Ad Manager secure signals feature.
 
-For details, see [Google Ad Manager Secure Signals Integration Guide](../guides/integration-google-ss.md).
+For details, see [Google Ad Manager Secure Signals integration guide](../guides/integration-google-ss.md).
 
 <!-- APIDOCS-2495 -->
 
@@ -387,7 +387,7 @@ August 29, 2024
 
 A new guide for publishers that provides information about the SDK for iOS, an SDK that facilitates the process of establishing client identity using EUID and retrieving EUID tokens for publishers who need to support iOS apps.
 
-For details, see [SDK for iOS Reference Guide](../sdks/sdk-ref-ios.md).
+For details, see [SDK for iOS reference guide](../sdks/sdk-ref-ios.md).
 
 <!-- APIDOCS-2526 -->
 
@@ -395,13 +395,13 @@ For details, see [SDK for iOS Reference Guide](../sdks/sdk-ref-ios.md).
 
 <CustomTagsContainer tags="Reference">
 
-### Server-Side Token Generation Page
+### Server-side token generation page
 
 July 26, 2024
 
 We've added a new reference page with information for publishers generating the EUID token on the server side.
 
-For details, see [Server-Side Token Generation](ref-server-side-token-generation.md).
+For details, see [Server-side token generation](ref-server-side-token-generation.md).
 
 <!-- APIDOCS-2436 -->
 
@@ -409,13 +409,13 @@ For details, see [Server-Side Token Generation](ref-server-side-token-generation
 
 <CustomTagsContainer tags="Reference">
 
-### Integration Approaches Page
+### Integration approaches page
 
 July 25, 2024
 
 We've added a new page with information about the different integration approaches: client-side, client-server, and server-side.
 
-For details, see [Integration Approaches](ref-integration-approaches.md).
+For details, see [Integration approaches](ref-integration-approaches.md).
 
 <!-- APIDOCS-2424 -->
 
@@ -427,7 +427,7 @@ The following documents were released in the second quarter of 2024.
 
 <CustomTagsContainer tags="Opt-Out">
 
-### Opt-Out API
+### Opt-out API
 
 May 24, 2024
 
@@ -443,7 +443,7 @@ For details, see [POST&nbsp;/optout/status](../endpoints/post-optout-status.md).
 
 <CustomTagsContainer tags="Infrastructure">
 
-### EUID Documentation Website Release
+### EUID documentation website release
 
 April 8, 2024
 

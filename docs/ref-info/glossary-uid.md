@@ -9,7 +9,7 @@ displayed_sidebar: docs
 import Link from '@docusaurus/Link';
 import MdxJumpAnchor from '@site/src/components/MdxJumpAnchor';
 
-# EUID Glossary
+# EUID glossary
 <p>This page defines some key terms used in the EUID documentation.</p>
 
 <!-- 

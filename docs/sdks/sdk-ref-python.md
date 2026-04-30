@@ -9,7 +9,7 @@ displayed_sidebar: docs
 import Link from '@docusaurus/Link';
 import SnptSDKsSameUID2EUID from '../snippets/_snpt-euid-sdk-same-for-all.mdx';
 
-# SDK for Python Reference Guide
+# SDK for Python reference guide
 
 You can use the SDK for Python on the server side to facilitate the process of generating or establishing client identity using EUID, retrieving advertising tokens for <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link> use, and automatically refreshing EUID tokens. If you have the applicable permissions, you can also decrypt EUID tokens to access the raw EUID and map personal data to raw EUIDs.
 
@@ -23,13 +23,13 @@ This SDK simplifies integration with EUID for any DSPs who are using Python for 
 
 &ast; Only applicable to SDK versions referencing versions of the `POST /identity/map` endpoint prior to version 3.
 
-## API Permissions
+## API permissions
 
-To use this SDK, you'll need to complete the EUID account setup by following the steps described in the [Account Setup](../getting-started/gs-account-setup.md) page.
+To use this SDK, you'll need to complete the EUID account setup by following the steps described in the [Account setup](../getting-started/gs-account-setup.md) page.
 
 You'll be granted permission to use specific functions offered by the SDK, and given credentials for that access. Bear in mind that there might be functions in the SDK that you don't have permission to use. For example, publishers get a specific API permission to generate and refresh tokens, but the SDK might support other activities that require a different API permission.
 
-For details, see [API Permissions](../getting-started/gs-permissions.md).
+For details, see [API permissions](../getting-started/gs-permissions.md).
 
 ## Version
 
@@ -39,7 +39,7 @@ The minimum supported Python version depends on the [SDK for Python](https://pyp
 - **v2.6.0**: Python 3.8 or higher  
 - **v2.5.0 and below**: Python 3.6 or higher
 
-## GitHub Repository/Package
+## Github repository/package
 
 This SDK is in the following open-source GitHub repository:
 
@@ -51,7 +51,7 @@ The package is published in this location:
 
 <SnptSDKsSameUID2EUID />
 
-## Release Notes
+## Release notes
 
 For detailed information about changes, bug fixes, and new features in each release, refer to the [release notes on GitHub](https://github.com/IABTechLab/uid2-client-python/releases).
 
@@ -69,8 +69,8 @@ The initialization step depends on the role, as shown in the following table.
 
 | Role                                      | Create Instance of Class | Link to Instructions                                                         |
 |:------------------------------------------|:-------------------------|:-----------------------------------------------------------------------------|
-| Publisher                                 | `Uid2PublisherClient`    | [Usage for Publishers](#usage-for-publishers)                                |
-| Advertiser/Data Provider                  | `IdentityMapV3Client`      | [Usage for Advertisers/Data Providers](#usage-for-advertisersdata-providers) |
+| Publisher                                 | `Uid2PublisherClient`    | [Usage for publishers](#usage-for-publishers)                                |
+| Advertiser/Data Provider                  | `IdentityMapV3Client`      | [Usage for advertisers/data providers](#usage-for-advertisersdata-providers) |
 | DSP                                       | `BidstreamClient`        | [Usage for DSPs](#usage-for-dsps)                                            |
 | Sharer (not currently supported for EUID) | `SharingClient`          | Not applicable                                                               |
 
@@ -79,31 +79,31 @@ You will need to provide the values necessary for the SDK to authenticate with t
 | Parameter    | Description                                                                                |
 |:-------------|:-------------------------------------------------------------------------------------------|
 | `base_url`   | The endpoint for the EUID service. See [Environments](../getting-started/gs-environments). |
-| `auth_key`   | The API key. See [EUID Credentials](../getting-started/gs-credentials).                    |
-| `secret_key` | The client secret. See [EUID Credentials](../getting-started/gs-credentials).              |
+| `auth_key`   | The API key. See [EUID credentials](../getting-started/gs-credentials).                    |
+| `secret_key` | The client secret. See [EUID credentials](../getting-started/gs-credentials).              |
 
 ## Interface
 
 The `BidstreamClient` class allows you to decrypt EUID tokens into raw EUIDs.
 
-For details on the bidding logic for handling user opt-outs, see [DSP Integration Guide](../guides/dsp-guide.md).
+For details on the bidding logic for handling user opt-outs, see [DSP integration guide](../guides/dsp-guide.md).
 
 :::note
 When you use an SDK, you do not need to store or manage decryption keys.
 :::
 
-### Decryption Response Content
+### Decryption response content
 
 Whether decrypting with the `BidstreamClient` class<!--  or the `SharingClient` class -->, the SDK returns the information shown in the following table.
 
 | Property      | Description                                                                                                                                     |
 |:--------------|:------------------------------------------------------------------------------------------------------------------------------------------------|
-| `status`      | The decryption result status. For a list of possible values and definitions, see [Decryption Response Statuses](#decryption-response-statuses). |
+| `status`      | The decryption result status. For a list of possible values and definitions, see [Decryption response statuses](#decryption-response-statuses). |
 | `uid`         | The raw EUID for the corresponding EUID token.                                                                                                  |
 | `established` | The timestamp indicating when a user first established the EUID with the publisher.                                                             |
 
 
-### Decryption Response Statuses
+### Decryption response statuses
 
 Decryption response codes, and their meanings, are shown in the following table.
 
@@ -120,7 +120,7 @@ Decryption response codes, and their meanings, are shown in the following table.
 | `INVALID_TOKEN_LIFETIME`   | The token has an invalid timestamp.                                     |
 
 
-## Usage for Publishers
+## Usage for publishers
 
 1. Create an instance of Uid2PublisherClient:
 
@@ -140,9 +140,9 @@ Decryption response codes, and their meanings, are shown in the following table.
 
 <!-- uid2_euid_diff re legal basis for admonition above (not in UID2) -->
 
-### Client-Server Integration
+### Client-server integration
 
-If you're using client-server integration (see [Client-Server Integration Guide for JavaScript](../guides/integration-javascript-client-server.md)), follow this step:
+If you're using client-server integration (see [Client-server integration guide for JavaScript](../guides/integration-javascript-client-server.md)), follow this step:
 
 * Send this identity as a JSON string back to the client (to use in the [identity field](../sdks/sdk-ref-javascript.md#initopts-object-void)) using the following:
 
@@ -154,9 +154,9 @@ If you're using client-server integration (see [Client-Server Integration Guide 
   If the user has opted out, this method returns None, so be sure to handle that case.
   :::
 
-### Server-Side Integration
+### Server-side integration
 
-If you're using server-side integration (see [Publisher Integration Guide, Server-Side](../guides/integration-publisher-server-side.md)):
+If you're using server-side integration (see [Publisher integration guide, server-side](../guides/integration-publisher-server-side.md)):
 
 1. Store this identity as a JSON string in the user's session, using the `token_generate_response.get_identity_json_string()` function.
 
@@ -198,13 +198,13 @@ If you're using server-side integration (see [Publisher Integration Guide, Serve
 
    If the user has opted out, this method returns `None`, indicating that the user's identity should be removed from the session. To confirm optout, you can use the `token_refresh_response.is_optout()` function.
 
-## Usage for Advertisers/Data Providers
+## Usage for advertisers/data providers
 
 The following instructions provide an example of how to map personal data to raw EUIDs using the latest version of the `POST /identity/map` endpoint.
 
-For the earlier version, see [Previous Version (v2 Identity Map)](#previous-version-v2-identity-map). For migration steps to the latest version, see [Migration From Version Using v2 Identity Map](#migration-from-version-using-v2-identity-map).
+For the earlier version, see [Previous version (v2 identity map)](#previous-version-v2-identity-map). For migration steps to the latest version, see [Migration from version using v2 identity map](#migration-from-version-using-v2-identity-map).
 
-### Map Personal Data to Raw EUIDs
+### Map personal data to raw EUIDs
 
 To map personal data to raw EUIDs, follow these steps:
 
@@ -257,7 +257,7 @@ To map personal data to raw EUIDs, follow these steps:
    The raw EUID does not change before the refresh timestamp. After the refresh timestamp, remapping the personal data returns a new refresh timestamp, but the raw EUID might or might not change. It is possible for the raw EUID to remain unchanged for multiple refresh intervals.
    :::
 
-#### Usage Example
+#### Usage example
 
 ```py
 client = IdentityMapV3Client(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY)
@@ -286,15 +286,15 @@ mixed_input = IdentityMapV3Input()
 mixed_response = client.generate_identity_map(mixed_input)
 ```
 
-## Migration From Version Using v2 Identity Map
+## Migration from version using v2 identity map
 
 The following sections provide general information and guidance for migrating to the latest version of this SDK, which references `POST /identity/map` version 3, including:
 
-- [Version 3 Improvements](#version-3-improvements)
-- [Upgrading Client Version](#upgrading-client-version)
-- [Updating Personal Data Mapping](#updating-personal-data-mapping)
+- [Version 3 improvements](#version-3-improvements)
+- [Upgrading client version](#upgrading-client-version)
+- [Updating personal data mapping](#updating-personal-data-mapping)
 
-### Version 3 Improvements
+### Version 3 improvements
 
 The `POST /v3/identity/map` provides the following improvements over v2:
 
@@ -304,7 +304,7 @@ The `POST /v3/identity/map` provides the following improvements over v2:
 - **Multiple Identity Types in One Request**: You can process both emails and phone numbers in a single request.
 - **Improved Performance**: The updated version uses significantly less bandwidth to process the same amount of personal data.
 
-### Upgrading Client Version
+### Upgrading client version
 
 To upgrade your client to the latest version (version 3), follow these steps:
 
@@ -327,7 +327,7 @@ To upgrade your client to the latest version (version 3), follow these steps:
    from uid2_client import IdentityMapV3Client, IdentityMapV3Input, IdentityMapV3Response, UnmappedIdentityReason
    ```
 
-### Updating Personal Data Mapping
+### Updating personal data mapping
 
 To update personal data mapping from version 2 to version 3 of the `POST /identity/map` endpoint, follow these steps:
 
@@ -374,23 +374,23 @@ To update personal data mapping from version 2 to version 3 of the `POST /identi
    raw_reason = unmapped.raw_reason
    ```
 
-### Previous Version (v2 Identity Map)
+### Previous version (v2 identity map)
 
 :::note
 The v2 Identity Map SDK is an earlier version maintained for backwards compatibility. Migrate to the current SDK for improved performance, multi-identity type support, and better EUID rotation management.
 
 New integrations should not use this version.
 
-For instructions, see [Migration From Version Using v2 Identity Map](#migration-from-version-using-v2-identity-map).
+For instructions, see [Migration from version using v2 identity map](#migration-from-version-using-v2-identity-map).
 :::
 
 To map email addresses, phone numbers, or their respective hashes to their raw EUIDs and salt bucket IDs, if you're using an earlier SDK version that uses `POST /identity/map` version 2, follow these steps.
 
-#### Monitor Rotated Salt Buckets
+#### Monitor rotated salt buckets
 
 To monitor salt buckets, follow these steps.
 
-1. Create an instance of `IdentityMapClient` as an instance variable or reuse the one from [Map Personal Data to Raw EUIDs:](#map-personal-data-to-raw-euids)
+1. Create an instance of `IdentityMapClient` as an instance variable or reuse the one from [Map personal data to raw EUIDs:](#map-personal-data-to-raw-euids)
 
    ```py
    client = IdentityMapClient(base_url, api_key, client_secret)

@@ -8,7 +8,7 @@ displayed_sidebar: docs
 
 import Link from '@docusaurus/Link';
 
-# EUID Components
+# EUID components
 
 The EUID framework consists of the following components, all of which are currently managed by The Trade Desk.
 

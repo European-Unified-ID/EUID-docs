@@ -23,7 +23,7 @@ As a publisher, you can benefit from the cross-device presence of European Unifi
 
 Learn about benefits, workflow, documentation, and other resources for publishers adopting EUID, as well as instructions for getting started.
 
-## Benefits of EUID for Publishers
+## Benefits of EUID for publishers
 
 Here are just some of the intended benefits for publishers integrating with EUID:
 - Addressable audience targeting on desktop, mobile, and CTV with a single identifier.
@@ -32,7 +32,7 @@ Here are just some of the intended benefits for publishers integrating with EUID
 - The ability to provide personalized ad experiences with relevant content.
 - The ability to offer opt-out, with the goal of improving consumer privacy controls.
 
-## Workflow for Publishers
+## Workflow for publishers
 
 The following steps provide a high-level outline of the workflow intended for organizations that propagate EUID tokens to the <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link> via SSPs&#8212;for example, identity providers, publishers, and SSO providers. Publishers can choose to work with an SSO provider or an independent ID provider that is interoperable with EUID and can handle the EUID integration on behalf of publishers.
 
@@ -67,32 +67,32 @@ The following steps provide a high-level outline of the workflow intended for or
 
 <!-- The publisher requests updated EUID tokens using a refresh token. When applicable, the refresh token includes a user’s opt-out request. -->
 
-![Publisher Workflow](images/EUIDPublisherAndSSPWorkflow.svg)
+![Publisher workflow](images/EUIDPublisherAndSSPWorkflow.svg)
 
-## Integrating with Single Sign-On (SSO)
+## Integrating with single sign-on (SSO)
 
 <SnptIntegratingWithSSO />
 
-## Private Operator Option
+## Private Operator option
 
 <SnptPrivateOperatorOption />
 
-## Getting Started
+## Getting started
 
 To get started, follow these steps:
 
-1. Request access to EUID by filling out the form on the [Request Access](/request-access) page.
+1. Request access to EUID by filling out the form on the [Request access](/request-access) page.
 1. Identify the properties that you want to integrate with EUID.
 1. Sign the EUID contract.
 1. Determine whether you want a <Link href="../ref-info/glossary-uid#gl-client-side">client-side</Link>, <Link href="../ref-info/glossary-uid#gl-client-server">client-server</Link>, or <Link href="../ref-info/glossary-uid#gl-server-side">server-side</Link> integration, and tell your EUID contact.
 
-   For more information about these options, see [Integration Approaches](../ref-info/ref-integration-approaches.md).
+   For more information about these options, see [Integration approaches](../ref-info/ref-integration-approaches.md).
 
 1. Receive the [EUID credentials](../getting-started/gs-credentials.md).
 1. Build your integration to EUID via an SDK or direct integration with the EUID APIs, using the applicable [implementation resources](#implementation-resources).
 
    :::note
-   Be sure to encrypt request messages to EUID. For details, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
+   Be sure to encrypt request messages to EUID. For details, see [Encrypting requests and decrypting responses](../getting-started/gs-encryption-decryption.md).
    :::
 
 1. Test: 
@@ -101,10 +101,10 @@ To get started, follow these steps:
     - Troubleshoot as needed, and work with SSPs to properly pass EUID tokens in bid requests.
 1. Go live.
 
-## Implementation Resources
+## Implementation resources
 
 <SnptPublisherImplementationResources />
 
-## FAQs for Publishers
+## FAQs for publishers
 
-For a list of frequently asked questions for publishers using the EUID framework, see [FAQs for Publishers](/docs/getting-started/gs-faqs.md#faqs-for-publishers).
+For a list of frequently asked questions for publishers using the EUID framework, see [FAQs for publishers](/docs/getting-started/gs-faqs.md#faqs-for-publishers).

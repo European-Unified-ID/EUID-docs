@@ -9,7 +9,7 @@ displayed_sidebar: docs
 import Link from '@docusaurus/Link';
 import SnptSDKsSameUID2EUID from '../snippets/_snpt-euid-sdk-same-for-all.mdx';
 
-# SDK for C++ Reference Guide
+# SDK for C++ reference guide
 
 You can use the SDK for C++ on the server side to decrypt EUID tokens to access the raw EUID.
 
@@ -25,19 +25,19 @@ This SDK simplifies integration with EUID for any DSPs who are using C++ for the
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | &#9989; | &#9989; | &#8212; | &#8212; | &#8212; | &#8212; |
 
-## API Permissions
+## API permissions
 
-To use this SDK, you'll need to complete the EUID account setup by following the steps described in the [Account Setup](../getting-started/gs-account-setup.md) page.
+To use this SDK, you'll need to complete the EUID account setup by following the steps described in the [Account setup](../getting-started/gs-account-setup.md) page.
 
 You'll be granted permission to use specific functions offered by the SDK, and given credentials for that access. Bear in mind that there might be functions in the SDK that you don't have permission to use. For example, publishers get a specific API permission to generate and refresh tokens, but the SDK might support other activities that require a different API permission.
 
-For details, see [API Permissions](../getting-started/gs-permissions.md).
+For details, see [API permissions](../getting-started/gs-permissions.md).
 
 ## Version
 
 The SDK requires C++ version 11.
 
-## GitHub Repository/Binary
+## Github repository/binary
 
 This SDK is in the following open-source GitHub repository:
 
@@ -56,7 +56,7 @@ The initialization function configures the parameters necessary for the SDK to a
 | Parameter | Description | Recommended Value |
 | :--- | :--- | :--- |
 | `endpoint` | The endpoint for the EUID service. | N/A |
-| `authKey` | The authentication token that belongs to the client. For access to EUID, see [Contact Info](../getting-started/gs-account-setup.md#contact-info). | N/A |
+| `authKey` | The authentication token that belongs to the client. For access to EUID, see [Contact info](../getting-started/gs-account-setup.md#contact-info). | N/A |
 
 ## Interface 
 
@@ -66,7 +66,7 @@ The interface allows you to decrypt EUID advertising tokens and return the corre
 When you use an SDK, you do not need to store or manage decryption keys.
 :::
 
-If you're a DSP, for bidding, call the interface to decrypt an EUID advertising token and return the EUID. For details on the bidding logic for handling user opt-outs, see [DSP Integration Guide](../guides/dsp-guide.md).
+If you're a DSP, for bidding, call the interface to decrypt an EUID advertising token and return the EUID. For details on the bidding logic for handling user opt-outs, see [DSP integration guide](../guides/dsp-guide.md).
 
 The following is the decrypt method in C++:
 
@@ -79,17 +79,17 @@ client->Refresh(); //Note that Refresh() should be called once after create(), a
 const auto result = client->Decrypt(adToken);
 ```
 
-### Response Content
+### Response content
 
 Available information returned through the SDK is outlined in the following table.
 
 | Function | Description |
 | :--- | :--- |
-| `GetStatus()` | The decryption result status. For a list of possible values and definitions, see [Response Statuses](#response-statuses). |
+| `GetStatus()` | The decryption result status. For a list of possible values and definitions, see [Response statuses](#response-statuses). |
 | `GetUid()` | The raw EUID for the corresponding EUID advertising token. |
 | `GetEstablished()` | The timestamp indicating when a user first established the EUID with the publisher. |
 
-### Response Statuses
+### Response statuses
 
 | Value | Description |
 | :--- | :--- |
