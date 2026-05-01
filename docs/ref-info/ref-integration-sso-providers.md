@@ -93,7 +93,7 @@ Request authorization, making sure to request the `email` scope. For details, se
 
 If authentication succeeds, retrieve the user's email address from the `email` property of the `ASAuthorizationAppleIDCredential` object.
 
-### Sign in with Apple js on a webpage
+### Sign in with Apple JS on a webpage
 
 Refer to the section [Handle the Authorization Response](https://developer.apple.com/documentation/sign_in_with_apple/sign_in_with_apple_js/configuring_your_webpage_for_sign_in_with_apple#3331292) of the page [Configure your webpage for Sign in with Apple](https://developer.apple.com/documentation/sign_in_with_apple/sign_in_with_apple_js/configuring_your_webpage_for_sign_in_with_apple).
 
