@@ -80,7 +80,7 @@ Sample consent language is available: see [Consent Examples](legal-consent-examp
 
 The legal position of The Trade Desk, with regard to the consent requirements specific for EUID, is that consent has to be specifically obtained for the conversion of the user’s email address to an EUID. Requests for consent through cookie consent management platforms are designed to obtain specific consent for purposes described in the IAB EU's Transparency and Consent Framework Policies, and they will most likely not have included the use of email addresses in this way. Similarly, consents given for use of email addresses to send email marketing may not have described the creation of a consistent, unique ID for targeted online advertising.
 
-### 4.3. How long will consent last?
+### 4.4. How long will consent last?
 
 This is a matter for each publisher to independently determine, depending on the particular situation and on guidance from data protection authorities relevant to that publisher. You should ensure that you only share email addresses or phone numbers for conversion to an EUID where you are confident that the consent on which they rely remains valid, and you must not continue to use or share an EUID where any underlying consent is no longer valid.
 

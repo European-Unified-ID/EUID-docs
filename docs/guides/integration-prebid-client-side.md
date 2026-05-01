@@ -26,7 +26,7 @@ This implementation requires Prebid.js version 8.42.0 or later. For version info
 
 <!-- Diff in Prebid.js supported version for UID2/EUID is fine: verif SS 11/19/24 -->
 
-If you need to use an earlier version of Prebid.js, use the implementation solution presented in the [EUID Client-Server Integration Guide for Prebid.js](integration-prebid-client-server.md) instead.
+If you need to use an earlier version of Prebid.js, use the implementation solution presented in the [Client-Server Integration Guide for Prebid.js](integration-prebid-client-server.md) instead.
 
 ## Integrating with Single Sign-On (SSO)
 

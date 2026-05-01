@@ -169,13 +169,13 @@ import MdxJumpAnchor from '@site/src/components/MdxJumpAnchor';
 <dt><MdxJumpAnchor id="gl-client-server"><a href="#gl-client-server">Client-server integration</a></MdxJumpAnchor></dt>
 <dd>One of the EUID <a href="#gl-integration-approaches">integration approaches</a> is to integrate partially on the client side and partially on the server side (client-server).</dd>
 <dd>For example, in a client-server integration for a publisher, the EUID token is generated on the server side and refreshed on the client side.</dd>
-<dd>Examples of documentation for publisher client-server integrations:<br/>- <a href="../guides/integration-prebid-client-server">EUID Client-Server Integration Guide for Prebid.js</a><br/>- <a href="../guides/integration-javascript-client-server">Client-Server Integration Guide for JavaScript</a><br/>- <a href="../guides/integration-mobile-client-server">EUID Client-Server Integration Guide for Mobile</a></dd>
+<dd>Examples of documentation for publisher client-server integrations:<br/>- <a href="../guides/integration-prebid-client-server">Client-Server Integration Guide for Prebid.js</a><br/>- <a href="../guides/integration-javascript-client-server">Client-Server Integration Guide for JavaScript</a><br/>- <a href="../guides/integration-mobile-client-server">Client-Server Integration Guide for Mobile</a></dd>
 
 <dt><MdxJumpAnchor id="gl-client-side"><a href="#gl-client-side">Client-side integration</a></MdxJumpAnchor></dt>
 <dd>One of the EUID <a href="#gl-integration-approaches">integration approaches</a> is to integrate entirely on the client side.</dd>
 <dd>In a client-side integration, EUID tokens are generated and refreshed on the client side.</dd>
 <dd>For example, in a client-side integration, advertisers generate EUID tokens on the client side for tracking pixels, and publishers generate EUID tokens on the client side for bidstream use, as well as refreshing the tokens.</dd>
-<dd>Examples of documentation for publisher client-side integrations:<br/>- <a href="../guides/integration-prebid-client-side">EUID Client-Side Integration Guide for Prebid.js</a><br/>- <a href="../guides/integration-javascript-client-side">Client-Side Integration Guide for JavaScript</a><br/>- <a href="../guides/integration-mobile-client-side">EUID Client-Side Integration Guide for Mobile</a></dd>
+<dd>Examples of documentation for publisher client-side integrations:<br/>- <a href="../guides/integration-prebid-client-side">Client-Side Integration Guide for Prebid.js</a><br/>- <a href="../guides/integration-javascript-client-side">Client-Side Integration Guide for JavaScript</a><br/>- <a href="../guides/integration-mobile-client-side">Client-Side Integration Guide for Mobile</a></dd>
 
 <dt><MdxJumpAnchor id="gl-closed-operator"><a href="#gl-closed-operator">Closed Operator</a></MdxJumpAnchor></dt>
 <dd>Closed Operator is another term for a <a href="#gl-private-operator">Private Operator</a>.</dd>
@@ -365,7 +365,7 @@ import MdxJumpAnchor from '@site/src/components/MdxJumpAnchor';
 
 <dt><MdxJumpAnchor id="gl-public-key"><a href="#gl-public-key">Public key</a></MdxJumpAnchor></dt>
 <dd>For client-side publisher integrations, the public key is one of the two values issued to publishers to uniquely identify the account. For details, see <a href="../getting-started/gs-credentials#subscription-id-and-public-key">Subscription ID and Public Key</a>.</dd>
-<dd>In EUID integrations, this value is often represented as <b>serverPublicKey</b>: for example, in the <a href="../guides/integration-prebid-client-side">EUID Client-Side Integration Guide for Prebid.js</a>, the <a href="../guides/integration-javascript-client-side">Client-Side Integration Guide for JavaScript</a>, and the <a href="../guides/integration-mobile-client-side">EUID Client-Side Integration Guide for Mobile</a>.</dd>
+<dd>In EUID integrations, this value is often represented as <b>serverPublicKey</b>: for example, in the <a href="../guides/integration-prebid-client-side">Client-Side Integration Guide for Prebid.js</a>, the <a href="../guides/integration-javascript-client-side">Client-Side Integration Guide for JavaScript</a>, and the <a href="../guides/integration-mobile-client-side">Client-Side Integration Guide for Mobile</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-public-operator"><a href="#gl-public-operator">Public Operator</a></MdxJumpAnchor></dt>
 <dd>A Public <a href="#gl-operator">Operator</a> is an entity that runs a public instance of the EUID Operator Service. For example, The Trade Desk currently serves as a Public Operator for the EUID framework, available to all participants.</dd>

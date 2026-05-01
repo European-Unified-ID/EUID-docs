@@ -38,7 +38,7 @@ The following endpoints are for retrieving and managing EUID tokens (identity to
 
 The following endpoints are used by advertisers and third-party data providers. Publishers do not need to use these endpoints.
 
-### Latest Identity Map Endpoint (v3)
+### Latest POST /identity/map Endpoint (v3)
 
 In the latest identity map integration, you only need to call one endpoint, `POST /identity/map`. The `POST /identity/buckets` endpoint is not part of the workflow.
 
@@ -52,7 +52,7 @@ The latest identity map integration uses the following endpoint:
 | :--- | :--- | :--- | :--- |
 | [POST&nbsp;/identity/map](post-identity-map.md) | Maps raw EUIDs, previous raw EUIDs, and refresh timestamps for one or more email addresses, phone numbers, or their respective hashes.  | Required | Required |
 
-### Earlier Identity Map Endpoints (v2)
+### Earlier POST /identity/map Endpoints (v2)
 
 The following endpoints are part of the earlier identity map integration (version 2).
 
