@@ -12,12 +12,12 @@ import Link from '@docusaurus/Link';
 import SnptIntegratingWithSSO from '../snippets/_snpt-integrating-with-sso.mdx';
 import SnptPreparingEmailsAndPhoneNumbers from '../snippets/_snpt-preparing-emails-and-phone-numbers.mdx';
 
-# Google Ad Manager Secure Signals Integration Guide
+# Google Ad Manager Secure Signals integration guide
 
 This guide covers integration steps for publishers using EUID with the Google Ad Manager secure signals feature (previously known as Encrypted Signals for Publishers, ESP).
 
 :::note
-To use the EUID Google Ad Manager secure signals integration, if you are using an SDK you must have your EUID integration already set up. This does not apply if you are using server-side integration. For a summary of all the integration options available, see [EUID Integration Guides: Summary](summary-guides.md).
+To use the EUID Google Ad Manager secure signals integration, if you are using an SDK you must have your EUID integration already set up. This does not apply if you are using server-side integration. For a summary of all the integration options available, see [EUID integration guides: Summary](summary-guides.md).
 :::
 
 ## Overview
@@ -30,7 +30,7 @@ With this framework, the following steps occur:
 2. The secure signals feature caches them on the client side and then transparently passes them to Google Ad Manager.
 3. Google Ad Manager uses the EUID tokens to make bid requests, forwarding the tokens to approved bidders within Google AdX based on the publisher's preferences.
 
-## Allow Secure Signals Sharing
+## Allow Secure Signals sharing
 
 For your Google Ad Manager account to be eligible to receive encrypted EUID tokens, you must make sure that encrypted signals are properly shared with third-party bidders on your Google Ad Manager account.
 
@@ -63,15 +63,15 @@ If you want to use Secure Signals with Prebid.js, you must complete both these a
 
    For details, see [ESP Configurations](https://docs.prebid.org/dev-docs/modules/userId.html#esp-configurations) in the Prebid documentation.
 
-## Integrating with Single Sign-On (SSO)
+## Integrating with single sign-on (SSO)
 
 <SnptIntegratingWithSSO />
 
-## Preparing Personal Data for Processing
+## Preparing personal data for processing
 
 <SnptPreparingEmailsAndPhoneNumbers />
 
-## Publisher Integration
+## Publisher integration
 
 When an encrypted signal is cached, the secure signals feature does not execute the handler to generate a new signal. Because of this, it is necessary to clear the cache before and after data capture.
 
@@ -88,14 +88,14 @@ window.googletag.cmd.push(function () {
 });
 ```
 
-## Publisher Integration Options
+## Publisher integration options
 
 There are three integration options for Google Secure Signals publisher integration with EUID:
-- [Server-Side Integration](#server-side-integration)
-- [SDK for JavaScript Client-Server Integration](#sdk-for-javascript-client-server-integration)
-- [SDK for JavaScript Client-Side Integration](#sdk-for-javascript-client-side-integration)
+- [Server-side integration](#server-side-integration)
+- [SDK for JavaScript client-server integration](#sdk-for-javascript-client-server-integration)
+- [SDK for JavaScript client-side integration](#sdk-for-javascript-client-side-integration)
 
-### Server-Side Integration
+### Server-side integration
 
 So that it can share encrypted signals, the hosted auto-loaded secure signals script must be able to make an asynchronous call to the `window.getEuidAdvertisingToken` function and, in response, receive `advertising_token` as a string.
 
@@ -111,21 +111,21 @@ window.getEuidAdvertisingToken = async () => {
 }
 ```
 
-For details, see [Publisher Integration Guide, Server-Side](integration-publisher-server-side.md).
+For details, see [Publisher integration guide, server-side](integration-publisher-server-side.md).
 
-<!-- A sample implementation is also available for server-side integration. See [Sample Implementations](#sample-implementations). -->
+<!-- A sample implementation is also available for server-side integration. See [Sample implementations](#sample-implementations). -->
 
-### SDK for JavaScript Client-Server Integration
+### SDK for JavaScript client-server integration
 
 If you're using the SDK for JavaScript version 3.4.5 or later, the EUID secure signals script uses the `getAdvertisingTokenAsync` function provided in the SDK to get the fresh advertising token, and then pushes the token to Google Ad Manager.
 
 This script is hosted on CDN, and GPT automatically loads it with the secure signals feature. 
 
-For details, see [Client-Server Integration Guide for JavaScript](integration-javascript-client-server.md).
+For details, see [Client-server integration guide for JavaScript](integration-javascript-client-server.md).
 
-<!-- A sample implementation is also available for integration using the SDK for JavaScript. See [Sample Implementations](#sample-implementations). -->
+<!-- A sample implementation is also available for integration using the SDK for JavaScript. See [Sample implementations](#sample-implementations). -->
 
-### SDK for JavaScript Client-Side Integration
+### SDK for JavaScript client-side integration
 
 If you're using the SDK for JavaScript version 3.4.5 or later, the EUID secure signals script uses the `getAdvertisingTokenAsync` function provided in the SDK to get the fresh advertising token, and then pushes the token to Google Ad Manager.
 
@@ -133,11 +133,11 @@ If you're using the SDK for JavaScript version 3.4.5 or later, the EUID secure s
 
 This script is hosted on CDN, and GPT automatically loads it with the secure signals feature. 
 
-For details, see [Client-Side Integration Guide for JavaScript](integration-javascript-client-side.md).
+For details, see [Client-side integration guide for JavaScript](integration-javascript-client-side.md).
 
-<!-- A sample implementation is also available for integration using the SDK for JavaScript. See [Sample Implementation](#sample-implementation). -->
+<!-- A sample implementation is also available for integration using the SDK for JavaScript. See [Sample implementation](#sample-implementation). -->
 
-## Sample Implementations
+## Sample implementations
 
 The following sample implementations are available to illustrate how to integrate with the Google Ad Manager secure signals feature:
 
@@ -171,4 +171,4 @@ In some cases, after choosing Secure Signals within Google Ad Manager, successfu
 
 If your EUIDs are not being passed through Google, make sure that you chose the correct Web Signal Deployment Method during setup.
 
-For details, see the **Important** note in [Allow Secure Signals Sharing](#allow-secure-signals-sharing).
+For details, see the **Important** note in [Allow Secure Signals sharing](#allow-secure-signals-sharing).

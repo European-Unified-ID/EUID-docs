@@ -10,11 +10,11 @@ displayed_sidebar: sidebarAdvertisers
 import Link from '@docusaurus/Link';
 import SnptPreparingEmailsAndPhoneNumbers from '../snippets/_snpt-preparing-emails-and-phone-numbers.mdx';
 
-# Advertiser/Data Provider Integration Overview
+# Advertiser/data provider integration overview
 
 This guide provides an overview of integration options for organizations that collect user data and push it to other EUID participants. Data collectors include advertisers, data on-boarders, measurement providers, identity graph providers, third-party data providers, and any other organizations that send data to other participants.
 
-## Advertiser/Data Provider Routes to Use EUID
+## Advertiser/data provider routes to use EUID
 
 Within the ad tech industry, advertisers use identity to build audiences, track conversions, and generate their graphs. As an advertiser, or as a data provider acting on behalf of an advertiser, the following table shows some examples of how you can accomplish some of these goals with EUID.
 
@@ -28,44 +28,44 @@ There are other ways that you can use EUID, outside these use cases. These are j
 | Send&nbsp;in&nbsp;conversions | Send raw EUIDs as conversion information | Use conversion information for measurement (attribution) or for retargeting via API or pixels. |
 | Receive&nbsp;graph&nbsp;data | Receive raw EUIDs from graph/data providers via API or pixels | Build graph data. |
 
-## Preparing Personal Data for Processing
+## Preparing personal data for processing
 
 <SnptPreparingEmailsAndPhoneNumbers />
 
-## High-Level Steps
+## High-level steps
 
 At a high level, the steps for advertisers and data providers integrating with EUID are as follows:
 
-1. [Generate Raw EUIDs from Personal Data](#1-generate-raw-euids-from-personal-data)
+1. [Generate raw EUIDs from personal data](#1-generate-raw-euids-from-personal-data)
 
-2. [Store Raw EUIDs and Refresh Timestamps](#2-store-raw-euids-and-refresh-timestamps)
+2. [Store raw EUIDs and refresh timestamps](#2-store-raw-euids-and-refresh-timestamps)
 
-3. [Manipulate or Combine Raw EUIDs](#3-manipulate-or-combine-raw-euids)
+3. [Manipulate or combine raw EUIDs](#3-manipulate-or-combine-raw-euids)
 
-4. [Send Stored Raw EUIDs to DSPs to Create Audiences or Conversions](#4-send-stored-raw-euids-to-dsps-to-create-audiences-or-conversions)
+4. [Send stored raw EUIDs to DSPs to create audiences or conversions](#4-send-stored-raw-euids-to-dsps-to-create-audiences-or-conversions)
 
-5. [Monitor for Raw EUID Refresh](#5-monitor-for-raw-euid-refresh)
+5. [Monitor for raw EUID refresh](#5-monitor-for-raw-euid-refresh)
 
-6. [Monitor for Opt-Out Status](#6-monitor-for-opt-out-status)
+6. [Monitor for opt-out status](#6-monitor-for-opt-out-status)
 
 :::note
-If your implementation uses a version of the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint earlier than version 3, see [Using POST /identity/map Version 2](#using-post-identitymap-version-2). If you're using this version, we recommend you upgrade as soon as possible to take advantage of the enhancements.
+If your implementation uses a version of the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint earlier than version 3, see [Using POST /identity/map version 2](#using-post-identitymap-version-2). If you're using this version, we recommend you upgrade as soon as possible to take advantage of the enhancements.
 :::
 
-## Summary of Implementation Options
+## Summary of implementation options
 
 The following table shows the implementation options that are available for advertisers and data providers, for each of the high-level steps. Some steps are managed solely as part of your own custom implementation; some steps can be managed by one or more of the EUID implementation options available. For details, click the link on each step.
 
 | High-Level Step | Implementation Options |
 | --- | --- |
-| [1: Generate Raw EUIDs from Personal Data](#1-generate-raw-euids-from-personal-data) | Use any of the following options to map personal data to raw EUIDs:<ul><li>One of these EUID SDKs:<ul><li>Python SDK: [Map Personal Data to Raw EUIDs](../sdks/sdk-ref-python.md#map-personal-data-to-raw-euids)</li><li>Java SDK: [Usage for Advertisers/Data Providers](../sdks/sdk-ref-java.md#usage-for-advertisersdata-providers)</li></ul></li><li>Snowflake: [Map Personal Data](integration-snowflake.md#map-personal-data)</li><li>HTTP endpoints: [POST&nbsp;/identity/map](../endpoints/post-identity-map.md)</li></ul> |
-| [2: Store Raw EUIDs and Refresh Timestamps](#2-store-raw-euids-and-refresh-timestamps) | Custom (your choice). |
-| [3: Manipulate or Combine Raw EUIDs](#3-manipulate-or-combine-raw-euids) | Custom (your choice). |
-| [4: Send Stored Raw EUIDs to DSPs to Create Audiences or Conversions](#4-send-stored-raw-euids-to-dsps-to-create-audiences-or-conversions) | Custom (your choice). |
-| [5: Monitor for Raw EUID Refresh](#5-monitor-for-raw-euid-refresh) | Use the refresh timestamp (`r` field) returned from the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint to determine when to refresh Raw EUIDs. |
-| [6: Monitor for Opt-Out Status](#6-monitor-for-opt-out-status) | API call to the [POST /optout/status](../endpoints/post-optout-status.md) endpoint. |
+| [1: Generate raw EUIDs from personal data](#1-generate-raw-euids-from-personal-data) | Use any of the following options to map personal data to raw EUIDs:<ul><li>One of these EUID SDKs:<ul><li>Python SDK: [Map personal data to raw EUIDs](../sdks/sdk-ref-python.md#map-personal-data-to-raw-euids)</li><li>Java SDK: [Usage for advertisers/data providers](../sdks/sdk-ref-java.md#usage-for-advertisersdata-providers)</li></ul></li><li>Snowflake: [Map personal data](integration-snowflake.md#map-personal-data)</li><li>HTTP endpoints: [POST&nbsp;/identity/map](../endpoints/post-identity-map.md)</li></ul> |
+| [2: Store raw EUIDs and refresh timestamps](#2-store-raw-euids-and-refresh-timestamps) | Custom (your choice). |
+| [3: Manipulate or combine raw EUIDs](#3-manipulate-or-combine-raw-euids) | Custom (your choice). |
+| [4: Send stored raw EUIDs to DSPs to create audiences or conversions](#4-send-stored-raw-euids-to-dsps-to-create-audiences-or-conversions) | Custom (your choice). |
+| [5: Monitor for raw EUID refresh](#5-monitor-for-raw-euid-refresh) | Use the refresh timestamp (`r` field) returned from the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint to determine when to refresh Raw EUIDs. |
+| [6: Monitor for opt-out status](#6-monitor-for-opt-out-status) | API call to the [POST /optout/status](../endpoints/post-optout-status.md) endpoint. |
 
-## Integration Diagram
+## Integration diagram
 
 The following diagram outlines the steps that data collectors must complete to map personal data to raw EUIDs for audience building and targeting.
 
@@ -73,13 +73,13 @@ Personal data refers to a user's normalized email address or phone number, or th
 
 To keep your EUID-based audience information accurate and up to date, follow these integration steps every day.
 
-![Advertiser Flow](images/advertiser-flow-overview-mermaid-v3.png)
+![Advertiser flow](images/advertiser-flow-overview-mermaid-v3.png)
 
 <!-- diagram source: resource/advertiser-flow-overview-mermaid-v3.md.bak -->
 
 For details about the different parts of the diagram, refer to the following sections.
 
-### 1: Generate Raw EUIDs from Personal Data
+### 1: Generate raw EUIDs from personal data
 
 You can generate raw EUIDs from <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>, or receive EUIDs from another EUID participant such as a data provider acting on your behalf.
 
@@ -87,29 +87,29 @@ To generate raw EUIDs, use one of the following options:
 
 - One of the EUID SDKs:
 
-  - Python SDK: See [Map Personal Data to Raw EUIDs](../sdks/sdk-ref-python.md#map-personal-data-to-raw-euids).
-  - Java SDK: See [Usage for Advertisers/Data Providers](../sdks/sdk-ref-java.md#usage-for-advertisersdata-providers).
+  - Python SDK: See [Map personal data to raw EUIDs](../sdks/sdk-ref-python.md#map-personal-data-to-raw-euids).
+  - Java SDK: See [Usage for advertisers/data providers](../sdks/sdk-ref-java.md#usage-for-advertisersdata-providers).
 
-- Snowflake: See [Map Personal Data](integration-snowflake.md#map-personal-data).
+- Snowflake: See [Map personal data](integration-snowflake.md#map-personal-data).
 
-- HTTP endpoints: [POST&nbsp;/identity/map](../endpoints/post-identity-map.md). For details, see [Generate Raw EUIDs from Personal Data](integration-advertiser-dataprovider-endpoints.md#1-generate-raw-euids-from-personal-data).
+- HTTP endpoints: [POST&nbsp;/identity/map](../endpoints/post-identity-map.md). For details, see [Generate raw EUIDs from personal data](integration-advertiser-dataprovider-endpoints.md#1-generate-raw-euids-from-personal-data).
 
-### 2: Store Raw EUIDs and Refresh Timestamps
+### 2: Store raw EUIDs and refresh timestamps
 
-The response from Step 1, [Generate Raw EUIDs from Personal Data](#1-generate-raw-euids-from-personal-data), contains mapping information. We recommend that you store the following information returned in Step 1:
+The response from Step 1, [Generate raw EUIDs from personal data](#1-generate-raw-euids-from-personal-data), contains mapping information. We recommend that you store the following information returned in Step 1:
 
 - Cache the mapping between personal data and raw EUID (`u` field).
 - Store the refresh timestamp (`r` field) to know when the raw EUID could refresh.
 - Optionally store the previous raw EUID (`p` field) if provided for users whose EUID was refreshed within the last 90 days.
 
-### 3: Manipulate or Combine Raw EUIDs
+### 3: Manipulate or combine raw EUIDs
 
 Use the raw EUIDs you received in Step 1. For example, you might do one or more of the following:
 
 - Do some manipulation: for example, combine raw EUIDs you generated from personal data and raw EUIDs received from another participant such as an advertiser or data provider.
 - Add new raw EUIDs into an existing audience.
 
-### 4: Send Stored Raw EUIDs to DSPs to Create Audiences or Conversions
+### 4: Send stored raw EUIDs to DSPs to create audiences or conversions
 
 Use the raw EUIDs for some purpose such as:
 
@@ -120,7 +120,7 @@ For example, you could send the (<Link href="../ref-info/glossary-uid#gl-raw-eui
 
 You could also send conversion information via API or pixels for measurement (attribution) or for retargeting.
 
-### 5: Monitor for Raw EUID Refresh
+### 5: Monitor for raw EUID refresh
 
 A raw EUID is an identifier for a user at a specific moment in time. The raw EUID for a specific user changes roughly once per year as part of the EUID refresh process.
 
@@ -136,7 +136,7 @@ We recommend checking for refresh opportunities daily. To determine whether to r
 
 This approach ensures your raw EUIDs remain current and valid for audience targeting and measurement.
 
-### 6: Monitor for Opt-Out Status
+### 6: Monitor for opt-out status
 
 It's important to honor user opt-out status. Periodically, monitor for opt-out status, to be sure that you don't continue using raw EUIDs for users that have recently opted out.
 
@@ -146,12 +146,12 @@ There are two ways that you can check with the EUID <Link href="../ref-info/glos
 
 - Check the opt-out status of raw EUIDs using the [POST&nbsp;/optout/status](../endpoints/post-optout-status.md) endpoint.
 
-For details about the EUID opt-out workflow and how users can opt out, see [User Opt-Out](../getting-started/gs-opt-out.md).
+For details about the EUID opt-out workflow and how users can opt out, see [User opt-out](../getting-started/gs-opt-out.md).
 
-## Using POST /identity/map Version 2
+## Using POST /identity/map version 2
 
 :::note
-The following information is relevant only to integration approaches that use an earlier version of the `POST /identity/map` endpoint, version 2, and is provided for reference only. New implementations should use the latest version: see [High-Level Steps](#high-level-steps).
+The following information is relevant only to integration approaches that use an earlier version of the `POST /identity/map` endpoint, version 2, and is provided for reference only. New implementations should use the latest version: see [High-level steps](#high-level-steps).
 :::
 
 The key differences when using v2 of the Identity Map API are:
@@ -159,17 +159,17 @@ The key differences when using v2 of the Identity Map API are:
 - **Step 2**: Store salt bucket IDs instead of refresh timestamps
 - **Step 5**: Monitor for salt bucket rotations instead of using refresh timestamps
 
-All other steps (1, 3, 4, and 6) are the same as described in the v3 implementation: see [High-Level Steps](#high-level-steps).
+All other steps (1, 3, 4, and 6) are the same as described in the v3 implementation: see [High-level steps](#high-level-steps).
 
-### Integration Diagram (v2)
+### Integration diagram (v2)
 
 The following diagram outlines the v2 integration flow. Note that the main differences are in Step 2 (storing salt bucket IDs) and Step 5 (monitoring salt bucket rotations).
 
-![Advertiser Flow](images/advertiser-flow-overview-mermaid-v2.png)
+![Advertiser flow](images/advertiser-flow-overview-mermaid-v2.png)
 
 <!-- diagram source: resource/advertiser-flow-overview-mermaid-v2.md.bak -->
 
-### Store Raw EUIDs and Salt Bucket IDs (v2)
+### Store raw EUIDs and salt bucket IDs (v2)
 
 :::note
 This step replaces Step 2 in the v3 implementation.
@@ -180,7 +180,7 @@ The response from Step 1 contains mapping information. We recommend that you sto
 - Cache the mapping between personal data (`identifier`), raw EUID (`advertising_id`), and salt bucket (`bucket_id`).
 - Store the timestamp for when you received the response data. Later, you can compare this timestamp with the `last_updated` timestamp returned in Step 5.
 
-### Monitor for Salt Bucket Rotations for Your Stored Raw EUIDs (v2)
+### Monitor for salt bucket rotations for your stored raw EUIDs (v2)
 
 :::note
 This step replaces Step 5 in the v3 implementation.
@@ -194,11 +194,11 @@ If the salt bucket has been rotated, regenerate the raw EUID. For details, see [
 
 For instructions for monitoring for salt bucket rotations, refer to one of the following:
 
-- Python SDK: [Monitor Rotated Salt Buckets](../sdks/sdk-ref-python.md#monitor-rotated-salt-buckets).
+- Python SDK: [Monitor rotated salt buckets](../sdks/sdk-ref-python.md#monitor-rotated-salt-buckets).
 
-- Snowflake: [Monitor for Salt Bucket Rotation and Regenerate Raw EUIDs](integration-snowflake-previous.md#monitor-for-salt-bucket-rotation-and-regenerate-raw-euids).
+- Snowflake: [Monitor for salt bucket rotation and regenerate raw EUIDs](integration-snowflake-previous.md#monitor-for-salt-bucket-rotation-and-regenerate-raw-euids).
 
-- HTTP endpoints: [Monitor for Salt Bucket Rotations for Your Stored Raw EUIDs (v2)](integration-advertiser-dataprovider-endpoints.md#monitor-for-salt-bucket-rotations-for-your-stored-raw-euids-v2).
+- HTTP endpoints: [Monitor for salt bucket rotations for your stored raw EUIDs (v2)](integration-advertiser-dataprovider-endpoints.md#monitor-for-salt-bucket-rotations-for-your-stored-raw-euids-v2).
 
 ##### Determine whether the salt bucket has been rotated (v2)
 
@@ -210,8 +210,8 @@ To determine whether the salt bucket ID for a specific raw EUID has changed, fol
 
   - The timestamp of the raw EUID generation of the same `bucket_id`, which was returned in Step 1 and stored in Step 2.
 
-1. If the `last_updated` timestamp is more recent than the timestamp you recorded earlier, the salt bucket has been rotated. As a result, you'll need to regenerate any raw EUIDs associated with this `bucket_id`, following Step 1, [Generate Raw EUIDs from Personal Data](#1-generate-raw-euids-from-personal-data).
+1. If the `last_updated` timestamp is more recent than the timestamp you recorded earlier, the salt bucket has been rotated. As a result, you'll need to regenerate any raw EUIDs associated with this `bucket_id`, following Step 1, [Generate raw EUIDs from personal data](#1-generate-raw-euids-from-personal-data).
 
 ## FAQs
 
-For a list of frequently asked questions for advertisers and data providers using the EUID framework, see [FAQs for Advertisers and Data Providers](../getting-started/gs-faqs.md#faqs-for-advertisers-and-data-providers).
+For a list of frequently asked questions for advertisers and data providers using the EUID framework, see [FAQs for advertisers and data providers](../getting-started/gs-faqs.md#faqs-for-advertisers-and-data-providers).

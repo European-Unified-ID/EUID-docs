@@ -9,11 +9,11 @@ displayed_sidebar: docs
 import Link from '@docusaurus/Link';
 import SnptUpgradePolicy from '../snippets/_snpt-private-operator-upgrade-policy.mdx';
 
-# Deprecation Schedule
+# Deprecation schedule
 
 The following sections provide information about supported versions and, where applicable, the deprecation timeline.
 
-## Private Operator Versions
+## Private Operator versions
 
 The following table shows the Private Operator versions that are currently supported:
 - [Private Operator for AWS](#private-operator-for-aws)
@@ -22,7 +22,7 @@ The following table shows the Private Operator versions that are currently suppo
 If you're using an older version, refer to the Deprecation Date column for information about the support lifetime for your version. We recommend upgrading to the latest version as soon as possible to take advantage of new and improved features.
 :::
 
-### Private Operator Upgrade Policy
+### Private Operator upgrade policy
 
 <SnptUpgradePolicy />
 
@@ -39,11 +39,11 @@ The latest ZIP file is available in the Assets section at the bottom of the link
 | Q3 2024 | [v5.38.104](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.38.104) | 5.38.104 | September 12, 2024 | Mar 31, 2026 |
 | Q2 2024 | [v5.37.12](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.37.12) | 5.37.12 | June 12, 2024 | Sep 30, 2025 |
 
-For documentation, see [EUID Private Operator for AWS Integration Guide](../guides/operator-guide-aws-marketplace.md).
+For documentation, see [EUID Private Operator for AWS integration guide](../guides/operator-guide-aws-marketplace.md).
 
-## Endpoint Versions
+## Endpoint versions
 
-Version 2 of the `POST /identity/map` endpoint has been superseded by version 3, which includes the additional advantages listed in [Version 3 Improvements](../endpoints/post-identity-map.md#version-3-improvements).
+Version 2 of the `POST /identity/map` endpoint has been superseded by version 3, which includes the additional advantages listed in [Version 3 improvements](../endpoints/post-identity-map.md#version-3-improvements).
 
 With version 3 of the `POST /identity/map` endpoint, the `POST /identity/buckets` endpoint is no longer used at all.
 

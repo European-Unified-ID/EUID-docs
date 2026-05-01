@@ -12,11 +12,11 @@ import Link from '@docusaurus/Link';
 import SnptIntegratingWithSSO from '../snippets/_snpt-integrating-with-sso.mdx';
 import SnptPreparingEmailsAndPhoneNumbers from '../snippets/_snpt-preparing-emails-and-phone-numbers.mdx';
 
-# EUID Integration Overview for JavaScript
+# EUID integration overview for JavaScript
 
 This guide is an overview of integration options for publishers who want to integrate with EUID and generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) using the SDK for JavaScript.
 
-For a summary of all web options, including Prebid.js and additional SDK options, see [Web Integration Overview](integration-options-publisher-web.md).
+For a summary of all web options, including Prebid.js and additional SDK options, see [Web integration overview](integration-options-publisher-web.md).
 
 ## Introduction
 
@@ -28,47 +28,47 @@ EUID provides an SDK for JavaScript that supports the following:
 
 For additional flexibility, EUID also provides alternative methods for some of the features and complementary products, such as a Prebid integration.
 
-## Integrating with Single Sign-On (SSO)
+## Integrating with single sign-on (SSO)
 
 <SnptIntegratingWithSSO />
 
-## Preparing Personal Data for Processing
+## Preparing personal data for processing
 
 <SnptPreparingEmailsAndPhoneNumbers />
 
-## Client-Side or Client-Server Integration
+## Client-side or client-server integration
 
 The options for integrating with EUID using the SDK for JavaScript are summarized in the following table. Choose the option that's best for you.
 
 | Scenario | Option | Integration Guide |
 | :--- | :--- | :--- |
-| You have access to personal data on the client side and want to do front-end development only. | Client-side integration | [Client-Side Integration Guide for JavaScript](integration-javascript-client-side.md) |
-| You have access to personal data on the server side and can do server-side development, or you are using a <Link href="../ref-info/glossary-uid#gl-private-operator">Private Operator</Link>. | Server-side integration | [Client-Server Integration Guide for JavaScript](integration-javascript-client-server.md) |
+| You have access to personal data on the client side and want to do front-end development only. | Client-side integration | [Client-side integration guide for JavaScript](integration-javascript-client-side.md) |
+| You have access to personal data on the server side and can do server-side development, or you are using a <Link href="../ref-info/glossary-uid#gl-private-operator">Private Operator</Link>. | Server-side integration | [Client-server integration guide for JavaScript](integration-javascript-client-server.md) |
 
-## Generating the EUID Token
+## Generating the EUID token
 
 Depending on access to <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>, there are two methods to generate EUID tokens using the SDK for JavaScript: client-side or server-side.
 
-From the table in [Client-Side or Client-Server Integration](#client-side-or-client-server-integration), determine which option is best for you, and then follow the applicable integration guide.
+From the table in [Client-side or client-server integration](#client-side-or-client-server-integration), determine which option is best for you, and then follow the applicable integration guide.
 
-## Refreshing the EUID Token
+## Refreshing the EUID token
 
 The SDK for JavaScript includes automated <a href="../ref-info/glossary-uid#gl-token-refresh">token refresh</a>.
 
-## Storing the EUID Token in the Browser
+## Storing the EUID token in the browser
 <!-- GWH check corresponding (not identical) section in integration-prebid.md, integration-prebid-client-side.md, integration-prebid-client-side.md, for consistency -->
 
-The client-side option stores data using local storage. The client-server option uses local storage by default, but you can also choose to use a cookie instead. For details, see [EUID Storage Format](../sdks/sdk-ref-javascript.md#euid-storage-format) in the *SDK for JavaScript Reference Guide*.
+The client-side option stores data using local storage. The client-server option uses local storage by default, but you can also choose to use a cookie instead. For details, see [EUID storage format](../sdks/sdk-ref-javascript.md#euid-storage-format) in the *SDK for JavaScript Reference Guide*.
 
 The cookie size can be significant, which could be a problem. However, if local storage is not an option, this is one possible approach.
 
-## Passing the EUID Token to the Bidstream
+## Passing the EUID token to the bidstream
 
 The JavaScript SDK manages generating, refreshing, and storing the EUID token, but it does not manage passing the token to the <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link>.
 
-You can pass the token into the bidstream using any option you choose&#8212;for example, Prebid.js. For some suggestions, see [Pass the Token Into the Bidstream](integration-options-publisher-web.md#pass-the-token-into-the-bidstream) in the *Web Integration Overview*.
+You can pass the token into the bidstream using any option you choose&#8212;for example, Prebid.js. For some suggestions, see [Pass the token into the bidstream](integration-options-publisher-web.md#pass-the-token-into-the-bidstream) in the *Web Integration Overview*.
 
-## JavaScript Integration Overview: High-Level Steps
+## JavaScript integration overview: High-level steps
 
 At a high level, to integrate your site with EUID using the SDK for JavaScript, you'll need to complete the following steps:
 
@@ -78,5 +78,5 @@ At a high level, to integrate your site with EUID using the SDK for JavaScript, 
 
 For detailed instructions, refer to one of the following integration guides:
 
-- [Client-Side Integration Guide for JavaScript](integration-javascript-client-side.md)
-- [Client-Server Integration Guide for JavaScript](integration-javascript-client-server.md)
+- [Client-side integration guide for JavaScript](integration-javascript-client-side.md)
+- [Client-server integration guide for JavaScript](integration-javascript-client-server.md)
