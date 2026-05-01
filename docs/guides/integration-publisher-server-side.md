@@ -1,7 +1,7 @@
 ---
-title: Publisher Integration Guide, Server-Side
-sidebar_label: Server-Side
-pagination_label: Publisher Integration Guide, Server-Side
+title: Publisher integration guide, server-side
+sidebar_label: Server-side
+pagination_label: Publisher integration guide, server-side
 description: Information about generating identity tokens using EUID for the RTB bidstream, with all integration activity on the server side.
 hide_table_of_contents: false
 sidebar_position: 03

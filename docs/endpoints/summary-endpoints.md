@@ -1,5 +1,5 @@
 ---
-title: EUID Endpoints - Summary
+title: EUID endpoints - summary
 description: Summary of the endpoints available in the EUID service.
 hide_table_of_contents: false
 sidebar_position: 01

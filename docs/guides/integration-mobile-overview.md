@@ -1,7 +1,7 @@
 ---
-title: EUID Mobile Integration Overview for Android and iOS
-sidebar_label: Integration Overview for Mobile
-pagination_label: Mobile Integration Overview for Android and iOS
+title: Mobile integration overview for Android and iOS
+sidebar_label: Integration overview for mobile
+pagination_label: Mobile integration overview for Android and iOS
 description: Overview of options for EUID mobile integration.
 hide_table_of_contents: false
 sidebar_position: 04
@@ -12,7 +12,7 @@ import Link from '@docusaurus/Link';
 import SnptIntegratingWithSSO from '../snippets/_snpt-integrating-with-sso.mdx';
 import SnptPreparingEmailsAndPhoneNumbers from '../snippets/_snpt-preparing-emails-and-phone-numbers.mdx';
 
-# EUID mobile integration overview for Android and iOS
+# Mobile integration overview for Android and iOS
 
 This guide is an overview of integration options for mobile app publishers who want to integrate with EUID using the SDK for Android or the SDK for iOS.
 

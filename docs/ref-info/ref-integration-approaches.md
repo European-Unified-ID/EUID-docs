@@ -1,5 +1,5 @@
 ---
-title: Integration Approaches
+title: Integration approaches
 description: Information about the approaches available for EUID integration.
 hide_table_of_contents: false
 sidebar_position: 06

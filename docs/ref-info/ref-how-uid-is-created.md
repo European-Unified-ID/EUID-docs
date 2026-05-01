@@ -1,5 +1,5 @@
 ---
-title: How the EUID Token Is Created
+title: How the EUID token is created
 description: Reference information about the process for generating an EUID token.
 hide_table_of_contents: false
 sidebar_position: 06

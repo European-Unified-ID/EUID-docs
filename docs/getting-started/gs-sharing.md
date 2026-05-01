@@ -1,5 +1,5 @@
 ---
-title: EUID Sharing
+title: EUID sharing
 description: Information about EUID sharing.
 hide_table_of_contents: false
 sidebar_position: 24

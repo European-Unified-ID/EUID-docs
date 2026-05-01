@@ -1,5 +1,5 @@
 ---
-title: Consent Examples
+title: Consent examples
 description: Consent examples for publishers, advertisers, or data providers.
 hide_table_of_contents: false
 sidebar_position: 06

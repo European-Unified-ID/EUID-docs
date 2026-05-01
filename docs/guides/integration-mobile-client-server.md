@@ -1,7 +1,7 @@
 ---
-title: EUID Client-Server Integration Guide for Mobile
-sidebar_label: Client-Server Integration for Mobile
-pagination_label: EUID Client-Server Integration Guide for Mobile
+title: Client-server integration guide for mobile
+sidebar_label: Client-server integration for mobile
+pagination_label: Client-server integration guide for mobile
 description: Setting up a mobile integration with token generate on server and refresh on client.
 hide_table_of_contents: false
 sidebar_position: 04
@@ -19,7 +19,7 @@ import SnptGMAIMA_Plugins from '../snippets/_snpt-mobile_docs_gmaima-plugin-gss.
 import SnptPrebidMobileSDK from '../snippets/_snpt-mobile_docs_prebid-mobile.mdx';
 import SnptErrorResponseStates from '../snippets/_snpt-mobile-docs-error-response-states.mdx';
 
-# EUID client-server integration guide for mobile
+# Client-server integration guide for mobile
 
 This guide is for mobile app publishers who want to integrate with EUID by generating EUID tokens server-side via a <Link href="../ref-info/glossary-uid#gl-public-operator">Public Operator</Link> or <Link href="../ref-info/glossary-uid#gl-private-operator">Private Operator</Link> and then passing the tokens and user identities into their mobile apps, which will in turn pass the tokens for <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link> use.  
 

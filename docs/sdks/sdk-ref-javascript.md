@@ -1,5 +1,5 @@
 ---
-title: SDK for JavaScript
+title: SDK for JavaScript reference guide
 description: Reference information about the JavaScript client-side SDK.
 hide_table_of_contents: false
 sidebar_position: 02

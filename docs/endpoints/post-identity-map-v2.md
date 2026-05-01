@@ -1,5 +1,5 @@
 ---
-title: POST /identity/map
+title: POST /identity/map (v2)
 description: Maps personal data to raw EUIDs and salt bucket IDs.
 hide_table_of_contents: false
 sidebar_position: 08

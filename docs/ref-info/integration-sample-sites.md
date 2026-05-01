@@ -1,5 +1,5 @@
 ---
-title: Integration Samples and Tools
+title: Integration samples and tools
 description: Overview and reference for all EUID sample site examples.
 hide_table_of_contents: false
 ---

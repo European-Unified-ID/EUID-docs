@@ -1,5 +1,5 @@
 ---
-title: EUID Workflows
+title: EUID workflows
 description: A detailed summary of EUID workflows.
 hide_table_of_contents: false
 sidebar_position: 01

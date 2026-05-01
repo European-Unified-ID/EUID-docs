@@ -1,7 +1,7 @@
 ---
-title: Client-Server Integration Guide for Prebid.js
-sidebar_label: Client-Server Integration for Prebid.js
-pagination_label: EUID Client-Server Integration for Prebid.js
+title: Client-server integration guide for Prebid.js
+sidebar_label: Client-server integration for Prebid.js
+pagination_label: Client-server integration for Prebid.js
 description: Information about setting up a client-server Prebid.js integration.
 hide_table_of_contents: false
 sidebar_position: 04
@@ -14,7 +14,7 @@ import SnptPreparingEmailsAndPhoneNumbers from '../snippets/_snpt-preparing-emai
 import SnptAddPrebidjsToYourSite from '../snippets/_snpt-prebid-add-prebidjs-to-your-site.mdx';
 import SnptStoreEUIDTokenInBrowser from '../snippets/_snpt-prebid-storing-euid-token-in-browser.mdx';
 
-# EUID client-server integration guide for Prebid.js
+# Client-server integration guide for Prebid.js
 
 This guide is for publishers who have access to <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> (email address or phone number) on the server side and want to integrate with EUID and generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) to be passed by Prebid.js in the RTB <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link>.
 

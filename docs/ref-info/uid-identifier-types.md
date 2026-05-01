@@ -1,5 +1,5 @@
 ---
-title: EUID Identifier Types
+title: EUID identifier types
 description: Information about EUID identifier types (raw EUIDs and EUID tokens).
 hide_table_of_contents: false
 sidebar_position: 01

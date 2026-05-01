@@ -1,5 +1,5 @@
 ---
-title: EUID Credentials
+title: EUID credentials
 description: Learn about the credentials you'll need and how to get them.
 hide_table_of_contents: false
 sidebar_position: 03

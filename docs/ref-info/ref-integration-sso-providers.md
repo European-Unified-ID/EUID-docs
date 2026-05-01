@@ -1,6 +1,6 @@
 ---
-title: Publisher Integration with SSO Providers
-sidebar_label: Publisher SSO Integration
+title: Publisher integration with SSO providers
+sidebar_label: Publisher SSO integration
 description: Information for publishers for using single sign-on (SSO) providers with EUID.
 hide_table_of_contents: false
 sidebar_position: 06

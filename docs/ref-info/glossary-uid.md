@@ -1,5 +1,5 @@
 ---
-title: EUID Glossary
+title: EUID glossary
 description: Definitions for some EUID terms.
 hide_table_of_contents: false
 sidebar_position: 10
