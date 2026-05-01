@@ -1,5 +1,5 @@
 ---
-title: EUID GMA plugin for iOS
+title: EUID GMA Plugin for iOS
 description: A guide for publishers using GMA for ad requests on iOS apps.
 hide_table_of_contents: false
 sidebar_position: 13
@@ -8,7 +8,7 @@ displayed_sidebar: docs
 
 import Link from '@docusaurus/Link';
 
-# EUID GMA plugin for iOS integration guide
+# EUID GMA Plugin for iOS Integration Guide
 
 The EUID Google Mobile Ads (GMA) Plugin for iOS enables publishers that use the [Google Mobile Ads (GMA) SDK](https://developers.google.com/ad-manager/mobile-ads-sdk) to send <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> as [secure signals](https://support.google.com/admob/answer/11556288) in ad requests from iOS apps. This is done automatically, with no direct coding needed from the app developer.
 
@@ -22,7 +22,7 @@ This plugin simplifies integration with Google Mobile Ads (GMA) for any publishe
 
 This documentation is for the EUID GMA Plugin for iOS version 1.0.0 or later.
 
-## Github repository
+## GitHub Repository
 
 This plugin is in the following open-source GitHub repository:
 
@@ -37,7 +37,7 @@ To run this plugin, install the following:
    - [Release Notes](https://developers.google.com/admob/ios/rel-notes)
 1. SDK for iOS v1.7.0 or later:
    - [SDK](https://github.com/IABTechLab/uid2-ios-sdk)
-   - [SDK for iOS reference guide](../sdks/sdk-ref-ios.md)
+   - [SDK for iOS Reference Guide](../sdks/sdk-ref-ios.md)
 1. [EUID GMA Plugin for iOS v1.0.0](https://github.com/IABTechLab/uid2-ios-plugin-google-gma)
 
 ## Installation
@@ -48,11 +48,11 @@ Install the EUID iOS GMA Plugin via Swift Package Manager or CocoaPods to an exi
 
 There are three installation options:
 
--   [Package.Swift](#installing-with-packageswift)
+-   [Package.swift](#installing-with-packageswift)
 -   [Xcode](#installing-with-xcode)
--   [Cocoapods](#installing-with-cocoapods)
+-   [CocoaPods](#installing-with-cocoapods)
 
-### Installing with package.Swift
+### Installing with Package.swift
 
 Add the following dependency to Package.swift:
 
@@ -62,7 +62,7 @@ dependencies: [
 ]
 ```
 
-### Installing with xcode
+### Installing with Xcode
 
 In the XCode user interface, under Package Dependencies, add the following entry for your apps:
 
@@ -70,7 +70,7 @@ In the XCode user interface, under Package Dependencies, add the following entry
 | :--- | :--- | :--- |
 | uid2-ios-plugin-google-gma | `git@github.com:IABTechLab/uid2-ios-plugin-google-gma.git` | Exact Version: 1.0.0 |
 
-### Installing with cocoapods
+### Installing with CocoaPods
 
 Add the following entry in your `Podfile`:
 

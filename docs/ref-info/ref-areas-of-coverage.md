@@ -1,5 +1,5 @@
 ---
-title: EUID areas of coverage
+title: EUID Areas of Coverage
 description: Information about the geographical areas that EUID supports.
 hide_table_of_contents: false
 sidebar_position: 06
@@ -8,13 +8,13 @@ displayed_sidebar: docs
 
 import Link from '@docusaurus/Link';
 
-# EUID areas of coverage
+# EUID Areas of Coverage
 
 EUID is supported for use in the following geographical areas listed in this document:
 
-- [Eu countries](#eu-countries)
-- [Non-eu eea members](#non-eu-eea-members)
-- [Additional countries/regions](#additional-countriesregions)
+- [EU Countries](#eu-countries)
+- [Non-EU EEA Members](#non-eu-eea-members)
+- [Additional Countries/Regions](#additional-countriesregions)
 
 :::note
 This information is accurate as of the date of publication, 18 July 2024, and will be updated from time to time.
@@ -28,7 +28,7 @@ This information is accurate as of the date of publication, 18 July 2024, and wi
 </tr>
 </table> -->
 
-## Eu countries
+## EU Countries
 
 EUID is supported for use in the following European Union countries:
 
@@ -60,7 +60,7 @@ EUID is supported for use in the following European Union countries:
 - Spain
 - Sweden
 
-## Non-eu eea members
+## Non-EU EEA Members
 
 EUID is supported for use in the following countries which are members of the European Economic Area (EEA) but not members of the European Union (EU):
 
@@ -68,7 +68,7 @@ EUID is supported for use in the following countries which are members of the Eu
 - Liechtenstein
 - Norway
 
-## Additional countries/regions
+## Additional Countries/Regions
 
 EUID is supported for use in the following additional countries or regions:
 

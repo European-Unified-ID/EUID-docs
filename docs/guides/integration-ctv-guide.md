@@ -1,7 +1,7 @@
 ---
-title: CTV integration guide
+title: CTV Integration Guide
 sidebar_label: CTV
-pagination_label: CTV integration guide
+pagination_label: CTV Integration Guide
 description: Summary of options for EUID mobile integration.
 hide_table_of_contents: false
 sidebar_position: 04
@@ -13,44 +13,44 @@ import SnptIntegratingWithSSO from '../snippets/_snpt-integrating-with-sso.mdx';
 import SnptPreparingEmailsAndPhoneNumbers from '../snippets/_snpt-preparing-emails-and-phone-numbers.mdx';
 import SnptPrivateOperatorOption from '../snippets/_snpt-private-operator-option.mdx'
 
-# CTV integration guide
+# CTV Integration Guide
 
 If you're a Connected TV (CTV) publisher, there are several ways that you can integrate with EUID to generate and refresh identity tokens to be passed into the RTB bidstream in the context of your CTV apps.
 
-## Key integration steps
+## Key Integration Steps
 At a high level, to integrate with EUID, you'll implement these three key steps: 
 
 1. Generate the EUID token.
 1. Refresh or regenerate the EUID token frequently to ensure the token stays current.
 
-   For details, see [Keeping the token current](../ref-info/ref-tokens.md#keeping-the-token-current) and [Recommended token refresh frequency](../ref-info/ref-tokens.md#recommended-token-refresh-frequency).
+   For details, see [Keeping the Token Current](../ref-info/ref-tokens.md#keeping-the-token-current) and [Recommended Token Refresh Frequency](../ref-info/ref-tokens.md#recommended-token-refresh-frequency).
 1. Pass the EUID token into the bidstream.
 
-To determine how you'll implement these steps, choose from the [CTV integration options](#ctv-integration-options).
+To determine how you'll implement these steps, choose from the [CTV Integration Options](#ctv-integration-options).
 
-## Integrating with single sign-on (SSO)
+## Integrating with Single Sign-On (SSO)
 
 <SnptIntegratingWithSSO />
 
-## Preparing personal data for processing
+## Preparing Personal Data for Processing
 
 <SnptPreparingEmailsAndPhoneNumbers />
 
-## Private Operator option
+## Private Operator Option
 
 <SnptPrivateOperatorOption />
 
-## CTV integration options
+## CTV Integration Options
 
 You can decide on the integration option that's best for you based on where you want to generate and refresh the EUID token. There are three options, as shown in the following table.
 
 | Option | Details |
 | :--- | :--- |
-| [Client-side integration](#client-side-integration-for-ctv-apps) | The token is generated and refreshed on the client side. |
-| [Server-side integration](#server-side-integration-for-ctv-apps) | The token is generated and refreshed on the server side. |
-| [Client-server integration](#client-server-integration-for-ctv-apps) | The token is generated on the server side and refreshed on the client side. |
+| [Client-Side Integration](#client-side-integration-for-ctv-apps) | The token is generated and refreshed on the client side. |
+| [Server-Side Integration](#server-side-integration-for-ctv-apps) | The token is generated and refreshed on the server side. |
+| [Client-Server Integration](#client-server-integration-for-ctv-apps) | The token is generated on the server side and refreshed on the client side. |
 
-## Client-side integration for CTV apps
+## Client-Side Integration for CTV Apps
 
 The client-side option is for publishers who want to manage the EUID token entirely on the client side:
 
@@ -59,16 +59,16 @@ The client-side option is for publishers who want to manage the EUID token entir
 
 This setup requires that all code changes are done within the CTV app.
 
-To implement using this approach, follow the instructions in the [EUID client-side integration guide for mobile](integration-mobile-client-side.md).
+To implement using this approach, follow the instructions in the [EUID Client-Side Integration Guide for Mobile](integration-mobile-client-side.md).
 
 The following table shows supported operating systems, with links to applicable documentation resources.
 
 | Operating System | Integration Guide | Link to SDK Guide |
 | :--- | :--- | :--- |
-| [Apple tvOS](https://developer.apple.com/tvos/) | [EUID client-side integration guide for mobile](../guides/integration-mobile-client-side.md) | [SDK for iOS reference guide](../sdks/sdk-ref-ios.md) |
-| [Android TV](https://www.android.com/tv/) | [EUID client-side integration guide for mobile](../guides/integration-mobile-client-side.md) | [SDK for Android reference guide](../sdks/sdk-ref-android.md) |
+| [Apple tvOS](https://developer.apple.com/tvos/) | [EUID Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side.md) | [SDK for iOS Reference Guide](../sdks/sdk-ref-ios.md) |
+| [Android TV](https://www.android.com/tv/) | [EUID Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side.md) | [SDK for Android Reference Guide](../sdks/sdk-ref-android.md) |
 
-## Server-side integration for CTV apps
+## Server-Side Integration for CTV Apps
 
 The server-side option is for publishers who want to manage the EUID token entirely on the server side:
 
@@ -79,30 +79,30 @@ This setup requires that most of the code changes are done on the server side, w
 
 Another advantage of this approach is that if you're dealing with multiple platforms (Web / CTV / mobile), doing everything on the server side can reduce platform-specific efforts.
 
-To implement using this approach, follow the instructions in [Publisher integration guide, server-side](integration-publisher-server-side.md).
+To implement using this approach, follow the instructions in [Publisher Integration Guide, Server-Side](integration-publisher-server-side.md).
 
 If your server-side code is in Java or Python, you can use one of the EUID SDKs to make the HTTP requests to EUID, instead of writing your own source code. For details, refer to one of the following SDK guides:
 
-- [SDK for Java reference guide: Usage for publishers](../sdks/sdk-ref-java.md#usage-for-publishers)
-- [SDK for Python reference guide: Usage for publishers](../sdks/sdk-ref-python.md#usage-for-publishers)
+- [SDK for Java Reference Guide: Usage for Publishers](../sdks/sdk-ref-java.md#usage-for-publishers)
+- [SDK for Python Reference Guide: Usage for Publishers](../sdks/sdk-ref-python.md#usage-for-publishers)
 
-## Client-server integration for CTV apps
+## Client-Server Integration for CTV Apps
 
 This option is for publishers who want to manage the EUID tokens with a client-server approach:
 
 - The token is generated on the server side.
 - The token is refreshed as needed on the client side, from within the CTV app.
 
-To implement using this approach, follow the instructions in the [EUID client-server integration guide for mobile](integration-mobile-client-server.md).
+To implement using this approach, follow the instructions in the [EUID Client-Server Integration Guide for Mobile](integration-mobile-client-server.md).
 
 The following table shows supported operating systems, with links to applicable documentation resources.
 
 | Operating System | Integration Guide | Link to SDK Guide |
 | :--- | :--- | :--- |
-| [Apple tvOS](https://developer.apple.com/tvos/) | [EUID client-server integration guide for mobile](../guides/integration-mobile-client-server.md) | [SDK for iOS reference guide](../sdks/sdk-ref-ios.md) |
-| [Android TV](https://www.android.com/tv/) | [EUID client-server integration guide for mobile](../guides/integration-mobile-client-server.md) | [SDK for Android reference guide](../sdks/sdk-ref-android.md) |
+| [Apple tvOS](https://developer.apple.com/tvos/) | [EUID Client-Server Integration Guide for Mobile](../guides/integration-mobile-client-server.md) | [SDK for iOS Reference Guide](../sdks/sdk-ref-ios.md) |
+| [Android TV](https://www.android.com/tv/) | [EUID Client-Server Integration Guide for Mobile](../guides/integration-mobile-client-server.md) | [SDK for Android Reference Guide](../sdks/sdk-ref-android.md) |
 
-## Best practices
+## Best Practices
 
 The following points are best practices for CTV integrations:
 

@@ -1,5 +1,5 @@
 ---
-title: EUID token validator
+title: EUID Token Validator
 description: How to use the EUID Token Validator to validate EUID tokens against source personal data and confirm that your token generation workflow is correct.
 hide_table_of_contents: false
 sidebar_position: 02
@@ -8,7 +8,7 @@ displayed_sidebar: docs
 
 import Link from '@docusaurus/Link';
 
-# EUID token validator
+# EUID Token Validator
 
 The [EUID Token Validator](https://token-validator.euid.eu/) is a web-based tool that validates <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> against their source personal data to confirm that your token generation process is correct.
 
@@ -23,16 +23,16 @@ To use the EUID Token Validator, you need:
 - An **EUID API Key** (Client Key)
 - An **EUID Client Secret**
 
-If you do not have these, ask your EUID contact. For details, see [EUID credentials](../getting-started/gs-credentials.md).
+If you do not have these, ask your EUID contact. For details, see [EUID Credentials](../getting-started/gs-credentials.md).
 
-## Using the token validator
+## Using the Token Validator
 
 To use the token validator, follow these steps:
 
 1. In the fields at the top of the Token Validation section, enter your **API Key** (Client Key) and **Client Secret**.
 2. Select the **Operator** (environment) you want to validate against. For information about EUID environments, see [Environments](../getting-started/gs-environments.md).
 
-### Validate a single token
+### Validate a Single Token
 
 To validate a single token, follow these steps:
 
@@ -46,7 +46,7 @@ To validate a single token, follow these steps:
 4. In the **Token** field, paste the EUID token you want to validate.
 5. Click **Validate Tokens**.
 
-### Validate multiple tokens (csv)
+### Validate Multiple Tokens (CSV)
 
 To validate a batch of token-identifier pairs, follow these steps:
 
@@ -58,7 +58,7 @@ To validate a batch of token-identifier pairs, follow these steps:
 3. Upload the CSV file.
 4. Click **Validate Tokens**.
 
-## Interpret validation results
+## Interpret Validation Results
 
 When you click **Validate Tokens**, the **Validation Results** table displays a row for each token-identifier pair, in the format shown in the following table.
 
@@ -80,5 +80,5 @@ The **Validation** column reflects the response from the [POST&nbsp;/token/valid
 | `Failed: {"status":"unauthorized"}` | The API credentials provided are invalid or unauthorized. |
 
 :::tip
-If the result is **Failed: Token does not match identifier**, compare the **Normalized Hash** shown in the results with the value your own implementation produced for the same personal data. If they differ, the issue is in your normalization or hashing steps. For details, see [Normalization and encoding](../getting-started/gs-normalization-encoding.md) and [Preparing emails and phone numbers for processing](ref-preparing-emails-and-phone-numbers-for-processing.md).
+If the result is **Failed: Token does not match identifier**, compare the **Normalized Hash** shown in the results with the value your own implementation produced for the same personal data. If they differ, the issue is in your normalization or hashing steps. For details, see [Normalization and Encoding](../getting-started/gs-normalization-encoding.md) and [Preparing Emails and Phone Numbers for Processing](ref-preparing-emails-and-phone-numbers-for-processing.md).
 :::

@@ -1,5 +1,5 @@
 ---
-title: Consent examples
+title: Consent Examples
 description: Consent examples for publishers, advertisers, or data providers.
 hide_table_of_contents: false
 sidebar_position: 06
@@ -8,7 +8,7 @@ displayed_sidebar: docs
 
 import Link from '@docusaurus/Link';
 
-# Consent examples
+# Consent Examples
 
 The following consent examples are intended to provide samples of wording that publishers, advertisers, or data providers could use as a basis for requesting user consent for EUID.
 
@@ -18,17 +18,17 @@ These examples are provided for informational purposes only, and do not constitu
 
 Consent language examples are in these sections:
 
-- [EUID consent example included as part of cmp/cookie consent overlay](#euid-consent-example-included-as-part-of-cmpcookie-consent-overlay)
-- [Standalone EUID consent](#standalone-euid-consent)
+- [EUID Consent Example Included as Part of CMP/Cookie Consent Overlay](#euid-consent-example-included-as-part-of-cmpcookie-consent-overlay)
+- [Standalone EUID Consent](#standalone-euid-consent)
 
-## EUID consent example included as part of cmp/cookie consent overlay
+## EUID Consent Example Included as Part of CMP/Cookie Consent Overlay
 
 The following consent sample provides suggestions for wording you could include as part of a CMP/cookie consent overlay, to request your users' consent for EUID. It includes:
 
-- [Primary overlay](#primary-overlay)
-- [Second-layer introductory language (in the "customize options" link)](#second-layer-introductory-language-in-the-customize-options-link)
+- [Primary Overlay](#primary-overlay)
+- [Second-Layer Introductory Language (in the "Customize Options" Link)](#second-layer-introductory-language-in-the-customize-options-link)
 
-### Primary overlay
+### Primary Overlay
 
 The following table includes consent sample copy for the primary overlay.
 
@@ -40,7 +40,7 @@ The following table includes consent sample copy for the primary overlay.
 | Mandatory consent lead-in. Withdrawal of consent language may be refined (links to the [EUID Transparency and Control Portal](https://transparentadvertising.eu/) / further information concerning data subject rights). | To see more detail and make granular choices, choose **Customize Options**. You can withdraw consent at any time. |
 | Consent buttons | <ul><li>Yes to all</li><li>No to all</li><li>Customize options</li></ul> |
 
-### Second-layer introductory language (in the "customize options" link)
+### Second-Layer Introductory Language (in the "Customize Options" Link)
 
 The following consent sample copy is for content accessed via the **Customize Options** link.
 
@@ -48,15 +48,15 @@ The following consent sample copy is for content accessed via the **Customize Op
     <span><ol><li>We and our partners store or access information on devices, such as cookies, and process personal information for the purposes described below. Where we have your email address, we and The Trade Desk (our advertising partner) will use it to create a unique advertising identifier (the EUID), which, subject to your choices, may then be used for the purposes described below.</li><li>You can customize your consent choices for the use of cookies and your personal information for the specific purposes listed below. Click **Yes to all** or **No to all**, or use the toggles to turn some choices on and off. Some processing of your personal information might not require your consent, but you have the right to object to such processing. You can also withdraw or change your consent preferences at any time.</li></ol></span>
 </div>
 
-## Standalone EUID consent
+## Standalone EUID Consent
 
 The following consent examples could be used on an existing page where the user's email is collected: for example, on a login/sign-up page or on an email marketing sign-up page:
 
-- [Standalone EUID consent sample 1](#standalone-euid-consent-sample-1)
-- [Standalone EUID consent sample 2](#standalone-euid-consent-sample-2)
-- [Standalone EUID consent sample 3](#standalone-euid-consent-sample-3)
+- [Standalone EUID Consent Sample 1](#standalone-euid-consent-sample-1)
+- [Standalone EUID Consent Sample 2](#standalone-euid-consent-sample-2)
+- [Standalone EUID Consent Sample 3](#standalone-euid-consent-sample-3)
 
-### Standalone EUID consent sample 1
+### Standalone EUID Consent Sample 1
 
 <div style={{ border: "1px solid", display: "flex", gap: "0.5em", padding: "0.5em", margin: "0.8em" }}>
   <input style={{ alignSelf: "flex-start", marginTop: "5px" }} type="checkbox" />
@@ -73,7 +73,7 @@ Notes:
 - The **Privacy Policy** link goes to the participant privacy policy, which contains further links to the EUID privacy notice and the EUID Transparency and Control Portal.
 - To give consent, the user must check the box.
 
-### Standalone EUID consent sample 2
+### Standalone EUID Consent Sample 2
 
 <div style={{ border: "1px solid", display: "flex", gap: "0.5em", padding: "0.5em", margin: "0.8em" }}>
   <input style={{ alignSelf: "flex-start" }} type="checkbox" />
@@ -90,14 +90,14 @@ Notes:
 - The **Privacy Policy** link goes to the participant privacy policy, which contains further links to the EUID privacy notice and the EUID Transparency and Control Portal.
 - To give consent, the user must enter the email address and check the box.
 
-### Standalone EUID consent sample 3
+### Standalone EUID Consent Sample 3
 
 The following sample offers a layered approach to consent, in two parts:
 
-- [First layer of consent](#first-layer-of-consent)
-- [Second layer of consent](#second-layer-of-consent)
+- [First Layer of Consent](#first-layer-of-consent)
+- [Second Layer of Consent](#second-layer-of-consent)
 
-#### First layer of consent
+#### First Layer of Consent
 
 <div style={{ border: "1px solid", display: "flex", gap: "0.5em", padding: "0.5em", margin: "0.8em" }}>
   <div>
@@ -108,7 +108,7 @@ The following sample offers a layered approach to consent, in two parts:
   </div>
 </div>
 
-#### Second layer of consent
+#### Second Layer of Consent
 
 In this example, the link in the first layer of consent under "advertising partners" links to a second layer of consent with this sample wording:
 

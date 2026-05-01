@@ -1,5 +1,5 @@
 ---
-title: EUID tokens and refresh tokens
+title: EUID Tokens and Refresh Tokens
 description: Information for publishers about EUID tokens and refresh tokens.
 hide_table_of_contents: false
 sidebar_position: 06
@@ -10,11 +10,11 @@ import Link from '@docusaurus/Link';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# EUID tokens and refresh tokens
+# EUID Tokens and Refresh Tokens
 
 When a publisher sends a user's <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>&#8212;hashed or unhashed email addresses or phone numbers&#8212;to the EUID Operator, whether via one of the EUID SDKs or the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint, the EUID Operator converts the personal data to a <a href="glossary-uid#gl-raw-euid">raw EUID</a>, encrypts it into an <a href="glossary-uid#gl-euid-token">EUID token</a>, and returns the EUID token with associated values, including a refresh token. The publisher can then use the EUID token in the bidstream.
 
-## EUID tokens: Key information
+## EUID Tokens: Key Information
 
 Here are some key points about EUID tokens:
 
@@ -23,14 +23,14 @@ Here are some key points about EUID tokens:
 - Publishers send EUID tokens in the bidstream.
 - The token value is an <a href="glossary-uid#gl-opaque">opaque</a> string: do not make any assumptions about the format or length of the string.
 - EUID tokens representing different instances of user activity, on browsers, CTV, and electronic devices such as phones and tablets, can still be matched to the same raw EUID.
-- The token generation logic checks for user opt-out. If the user has opted out of EUID, no EUID token is generated. For details, see [User opt-out](../getting-started/gs-opt-out.md).
+- The token generation logic checks for user opt-out. If the user has opted out of EUID, no EUID token is generated. For details, see [User Opt-Out](../getting-started/gs-opt-out.md).
 - The token has a limited life, but can be refreshed using the refresh token.
 - You can refresh many times, to get a new EUID token and corresponding new refresh token, as long as the current EUID token is always refreshed before the current refresh token expires.
 - Refreshing an EUID token does not invalidate/expire the original or previous EUID token. You can still use the earlier token until it expires.
 
-For more information, see [How the EUID token is created](ref-how-uid-is-created.md).
+For more information, see [How the EUID Token Is Created](ref-how-uid-is-created.md).
 
-## Refresh tokens: Key information
+## Refresh Tokens: Key Information
 
 Here are some key points about refresh tokens:
 
@@ -40,29 +40,29 @@ Here are some key points about refresh tokens:
 - You can use the refresh token to generate a new EUID token and new refresh token before the current refresh token expires.
 - Using refresh tokens is optional: you could choose to generate a new token from personal data each time rather than refreshing an existing token. 
 - You can manage <a href="../ref-info/glossary-uid#gl-token-refresh">token refresh</a> in a variety of ways, such as:
-  - With an EUID SDK (see [SDK functionality](../sdks/summary-sdks.md#sdk-functionality))
+  - With an EUID SDK (see [SDK Functionality](../sdks/summary-sdks.md#sdk-functionality))
   - By calling the [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint
-  - By using the EUID Prebid.js module (see [EUID integration overview for Prebid](../guides/integration-prebid.md))
+  - By using the EUID Prebid.js module (see [EUID Integration Overview for Prebid](../guides/integration-prebid.md))
 - When a new EUID token is generated and returned in response to the refresh token, a new refresh token is returned along with it.
-- In most cases, you can refresh tokens on the client side, even if the token was generated on the server side. For details about refresh functionality for the various SDKs, see [SDK functionality](../sdks/summary-sdks.md#sdk-functionality) (*Refresh EUID Token* column).
-- When the EUID <Link href="../ref-info/glossary-uid#gl-operator-service">Operator Service</Link> receives the refresh token with a request for a new EUID token, it checks for user opt-out. If the user has opted out of EUID, no new EUID token is generated. For details, see [User opt-out](../getting-started/gs-opt-out.md).
+- In most cases, you can refresh tokens on the client side, even if the token was generated on the server side. For details about refresh functionality for the various SDKs, see [SDK Functionality](../sdks/summary-sdks.md#sdk-functionality) (*Refresh EUID Token* column).
+- When the EUID <Link href="../ref-info/glossary-uid#gl-operator-service">Operator Service</Link> receives the refresh token with a request for a new EUID token, it checks for user opt-out. If the user has opted out of EUID, no new EUID token is generated. For details, see [User Opt-Out](../getting-started/gs-opt-out.md).
 
-### Keeping the token current
+### Keeping the Token Current
 
 It's very important to keep your EUID tokens current (not expired). You get the advantages of EUID only if the token is current.
 
 There are two options for keeping your EUID tokens current:
-- Refresh frequently, using the [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint or the token refresh feature of many EUID SDKs. For details, see [Recommended token refresh frequency](#recommended-token-refresh-frequency).
+- Refresh frequently, using the [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint or the token refresh feature of many EUID SDKs. For details, see [Recommended Token Refresh Frequency](#recommended-token-refresh-frequency).
 - As an alternative to refreshing an existing token, generate a new token each time, using the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint or the token generate feature of many EUID SDKs.
 
-### Recommended token refresh frequency
+### Recommended Token Refresh Frequency
 
 Currently, the recommended refresh interval is hourly. An hourly interval helps ensure that the token doesn't get close to being expired, and is ready to be sent to the bidstream. In addition, since user opt-out is checked before a new token is generated, this helps ensure that user opt-out preferences are implemented promptly.
 
 To determine when to refresh, you can use the timestamp of the `refresh_from` field in the response to a call to one of the following EUID API endpoints:
 
-- [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint (see [Successful response](../endpoints/post-token-generate.md#successful-response))
-- [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint (see [Successful response with tokens](../endpoints/post-token-refresh.md#successful-response-with-tokens))
+- [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) endpoint (see [Successful Response](../endpoints/post-token-generate.md#successful-response))
+- [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoint (see [Successful Response With Tokens](../endpoints/post-token-refresh.md#successful-response-with-tokens))
 
 The `refresh_from` field is a <a href="../ref-info/glossary-uid#gl-unix-time">Unix</a> timestamp, and the value is one hour from the time that the token was generated, expressed in milliseconds.
 
@@ -70,7 +70,7 @@ The `refresh_from` field is a <a href="../ref-info/glossary-uid#gl-unix-time">Un
 The recommended refresh interval could change in the future. Rather than using a fixed value, it's best to calculate based on the `refresh_from` value.
 :::
 
-### Managing token refresh with an SDK
+### Managing Token Refresh with an SDK
 
 An easy way to manage token refresh is to use one of the EUID SDKs that have a function for the purpose: either the Java or Python SDK.
 
@@ -113,9 +113,9 @@ The following examples show how you could first check if the token can be refres
 
 Before using the code example, check the prerequisites and notes for the language you're using. For details, refer to the doc for the applicable SDK:
 
-- [SDK for Java, usage for publishers, basic usage server-side integration section](../sdks/sdk-ref-java.md#basic-usage-server-side-integration)
-- [SDK for Python, usage for publishers, server-side integration section](../sdks/sdk-ref-python.md#server-side-integration)
+- [SDK for Java, Usage for Publishers, Basic Usage Server-Side Integration section](../sdks/sdk-ref-java.md#basic-usage-server-side-integration)
+- [SDK for Python, Usage for Publishers, Server-Side Integration section](../sdks/sdk-ref-python.md#server-side-integration)
 
 ## FAQs
 
-There are some frequently asked questions relating to token refresh: see [FAQs for publishers](../getting-started/gs-faqs.md#faqs-for-publishers).
+There are some frequently asked questions relating to token refresh: see [FAQs for Publishers](../getting-started/gs-faqs.md#faqs-for-publishers).

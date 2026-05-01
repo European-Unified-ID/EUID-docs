@@ -4,7 +4,7 @@ description: Information summary for advertisers.
 hide_table_of_contents: false
 sidebar_position: 04
 use_banner: true
-banner_title: EUID overview for advertisers
+banner_title: EUID Overview for Advertisers
 banner_description: Upgrade campaign activation with European Unified ID.
 banner_icon: 'advertisers'
 banner_text_color: 'white'
@@ -20,7 +20,7 @@ As an advertiser, you can upgrade your first-party data tactics with European Un
 
 Learn about benefits, workflow, documentation, and other resources for advertisers adopting EUID, as well as instructions for getting started.
 
-## Benefits of EUID for advertisers
+## Benefits of EUID for Advertisers
 
 Here are just some of the intended benefits of using EUID as part of your advertising strategy:
 - Use a privacy-conscious form of CRM data in media-buying platforms.
@@ -30,7 +30,7 @@ Here are just some of the intended benefits of using EUID as part of your advert
 - Target and measure campaigns more holistically.
 - Offer opt-out, with the goal of improving consumer privacy controls.
 
-## Workflow for advertisers
+## Workflow for Advertisers
 
 The following steps provide a high-level outline of the workflow intended for organizations that collect user data and push it to DSPs—for example, advertisers, identity graph providers, and third-party data providers.
 
@@ -45,35 +45,35 @@ The following steps are an example of how an advertiser can integrate with EUID:
 
    Server-side: The advertiser stores the EUID and refresh timestamp in a mapping table, DMP, data lake, or other server-side application.
 
-![Data provider workflow](images/EUIDAdvertiserAndThirdPartyDataProviderWorkflow.svg)
+![Data Provider Workflow](images/EUIDAdvertiserAndThirdPartyDataProviderWorkflow.svg)
 
-## Getting started
+## Getting Started
 
 To get started, follow these steps:
 
-1. Request access to EUID by filling out the form on the [Request access](/request-access) page.
+1. Request access to EUID by filling out the form on the [Request Access](/request-access) page.
 
    Someone will contact you to discuss your needs and advise on appropriate next steps.
 1. Decide on your [participant](participants-overview.md#euid-external-participants) role or roles.
 1. Decide which implementation option you want to use.
-1. Receive your credentials (see [EUID credentials](../getting-started/gs-credentials.md)) and follow the instructions in the implementation guide for the option you chose.
+1. Receive your credentials (see [EUID Credentials](../getting-started/gs-credentials.md)) and follow the instructions in the implementation guide for the option you chose.
 
    :::note
-   Be sure to encrypt request messages to EUID. For details, see [Encrypting requests and decrypting responses](../getting-started/gs-encryption-decryption.md).
+   Be sure to encrypt request messages to EUID. For details, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
    :::
 1. Test.
 1. Go live.
 
-## Implementation resources
+## Implementation Resources
 
 The following documentation resources are available for advertisers and data providers to implement EUID.
 
 | Integration Type| Documentation | Content Description |
 | :--- | :--- | :--- |
-| Overview of integration options for organizations that collect user data and push it to other EUID participants | [Advertiser/data provider integration overview](../guides/integration-advertiser-dataprovider-overview.md) | This guide covers integration workflows for mapping identity for audience building and targeting. |
-| Snowflake | [Snowflake integration guide](../guides/integration-snowflake.md) | This guide provides instructions for generating EUIDs from emails within Snowflake. |
-| Integration steps for organizations that collect user data and push it to other EUID participants, using EUID HTTP endpoints only | [Advertiser/data provider integration to HTTP endpoints](../guides/integration-advertiser-dataprovider-endpoints.md) | This guide covers integration steps for advertisers and data providers to integrate with EUID by writing code to call EUID HTTP endpoints, rather than using another implementation option such as an SDK or Snowflake. |
+| Overview of integration options for organizations that collect user data and push it to other EUID participants | [Advertiser/Data Provider Integration Overview](../guides/integration-advertiser-dataprovider-overview.md) | This guide covers integration workflows for mapping identity for audience building and targeting. |
+| Snowflake | [Snowflake Integration Guide](../guides/integration-snowflake.md) | This guide provides instructions for generating EUIDs from emails within Snowflake. |
+| Integration steps for organizations that collect user data and push it to other EUID participants, using EUID HTTP endpoints only | [Advertiser/Data Provider Integration to HTTP Endpoints](../guides/integration-advertiser-dataprovider-endpoints.md) | This guide covers integration steps for advertisers and data providers to integrate with EUID by writing code to call EUID HTTP endpoints, rather than using another implementation option such as an SDK or Snowflake. |
 
-## FAQs for advertisers
+## FAQs for Advertisers
 
-For a list of frequently asked questions for advertisers using the EUID framework, see [FAQs for advertisers and data providers](../getting-started/gs-faqs.md#faqs-for-advertisers-and-data-providers).
+For a list of frequently asked questions for advertisers using the EUID framework, see [FAQs for Advertisers and Data Providers](../getting-started/gs-faqs.md#faqs-for-advertisers-and-data-providers).

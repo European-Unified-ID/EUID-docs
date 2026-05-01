@@ -1,5 +1,5 @@
 ---
-title: Publisher information
+title: Publisher Information
 description: Legal information for publishers.
 hide_table_of_contents: false
 sidebar_position: 06
@@ -8,7 +8,7 @@ displayed_sidebar: docs
 
 import Link from '@docusaurus/Link';
 
-# Publisher information
+# Publisher Information
 
 This guidance is provided to participating publishers to explain how The Trade Desk has developed EUID with European data protection law in mind. This does not constitute legal advice, and publishers should seek their own advice on their participation in EUID and compliance with applicable law.
 
@@ -20,7 +20,7 @@ The rule owner of the EUID ecosystem&#8212;currently The Trade Desk&#8212;is als
 
 The <Link href="../ref-info/glossary-uid#gl-gdpr">GDPR</Link> explains that where there are two or more controllers, they are joint controllers where they jointly determine the purposes and means of processing. In the EUID ecosystem, the rule owner is a joint controller with each publisher that submits an identifier for conversion into an EUID. The rule owner’s responsibility as a controller is limited and does not extend to the subsequent use of an EUID by the publisher for advertising purposes.
 
-## 2. What does this mean for the EUID agreement?
+## 2. What does this mean for the EUID Agreement?
 
 Joint controllers are required under the GDPR to set out clearly how they are each responsible for data protection compliance. In the EUID Agreements, the responsibilities are set out in the Exhibit headed "Allocation of Responsibility." It is set out in this section that:
 
@@ -36,7 +36,7 @@ The EUID Agreement asks each publisher and advertiser to provide certain minimum
 
 Otherwise, we recommend that this is included within your privacy notice.
 
-Short sample language that we provide as an example of language that could be included in a privacy notice is available at [Consent examples](legal-consent-examples.md).
+Short sample language that we provide as an example of language that could be included in a privacy notice is available at [Consent Examples](legal-consent-examples.md).
 
 ## 4. Consent and EUID
 
@@ -74,7 +74,7 @@ Publishers relying on consent must also be able to provide proof of this consent
 
 - A copy of the language presented to the individual to request consent.
 
-Sample consent language is available: see [Consent examples](legal-consent-examples.md).
+Sample consent language is available: see [Consent Examples](legal-consent-examples.md).
 
 ### 4.3. Why can’t publishers use existing consents?
 
@@ -94,7 +94,7 @@ Publishers are also required to prevent the creation of an EUID for an individua
 
 We require publishers to notify The Trade Desk in a timely manner of any personal data breach involving an EUID. In the event that a publisher believes that a data breach must be notified to any appropriate authorities or data subject, we ask that the publisher first consult with The Trade Desk.
  
-## 7. Data transfers
+## 7. Data Transfers
 
 The Trade Desk processes data for EUID in the EU. Where there are international transfers, we ensure that there is a valid transfer mechanism for these transfers with the appropriate technical and organizational measures in place.
 
@@ -102,7 +102,7 @@ The Trade Desk processes data for EUID in the EU. Where there are international 
 
 We recommend that publishers ensure that they have taken all necessary actions to comply with their wider GDPR obligations. This includes, for example, ensuring that they have carried out their own assessment of participation in EUID, ensuring the security of their processing connected with EUID, and ensuring that their record of processing activities is up to date.
 
-## 9. Options to "consent or pay"
+## 9. Options to "Consent or Pay"
 
 We recommend seeking independent legal advice prior to the implementation of any options for the user to either consent to the use of trackers or identity solutions, or to pay, in order to access content.
 

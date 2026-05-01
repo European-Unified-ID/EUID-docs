@@ -25,7 +25,7 @@ An EUID Operator is an organization that runs the Operator Service. Operators pe
 - Encrypt raw EUIDs to generate EUID tokens.
 - Distribute EUID token decryption keys to server-side SDKs (see [SDKs: Summary](../sdks/summary-sdks.md)).
 - Download the latest user opt-out information from the EUID <a href="glossary-uid#gl-opt-out-service">Opt-Out Service</a>.
-- Support a number of EUID endpoints. For details, see [EUID endpoints: Summary](../endpoints/summary-endpoints.md).
+- Support a number of EUID endpoints. For details, see [EUID Endpoints: Summary](../endpoints/summary-endpoints.md).
 
 EUID Operators fall into two categories:
 
@@ -48,7 +48,7 @@ When you use a Public Operator, there is no additional work for you to do to hos
 
 There is no cost, to the participant, for using a Public Operator.
 
-The participant must sign a contract (see [Account setup](../getting-started/gs-account-setup.md)) to get the applicable credentials (see [EUID credentials](../getting-started/gs-credentials.md)) to use the EUID APIs hosted on the Public Operator.
+The participant must sign a contract (see [Account Setup](../getting-started/gs-account-setup.md)) to get the applicable credentials (see [EUID Credentials](../getting-started/gs-credentials.md)) to use the EUID APIs hosted on the Public Operator.
 
 :::note
 With a Public Operator, data leaves the participant's infrastructure and is sent to the Operator. Rigorous security measures are in place to help protect the data within the Public Operator.
@@ -60,7 +60,7 @@ A Private Operator is a private instance of the EUID Operator. This means that a
 
 Any participant can also choose to become a Private Operator to generate and manage their EUIDs. However, becoming a Private Operator includes several additional steps, and uses resources that the participant must provide.
 
-For details, see [Private Operator integrations](../guides/integration-options-private-operator.md).
+For details, see [Private Operator Integrations](../guides/integration-options-private-operator.md).
 
 ## Summary
 

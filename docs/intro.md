@@ -1,5 +1,5 @@
 ---
-title: EUID overview
+title: EUID Overview
 description: Introduction to EUID documentation.
 hide_table_of_contents: false
 sidebar_position: 01
@@ -8,7 +8,7 @@ displayed_sidebar: docs
 
 import Link from '@docusaurus/Link';
 
-# European unified ID overview
+# European Unified ID Overview
 
 European Unified ID (EUID) is a framework that enables deterministic identity for advertising opportunities on the open internet for many [participants](overviews/participants-overview.md#euid-external-participants) across the advertising ecosystem. The EUID framework enables publisher websites, mobile apps, and Connected TV (CTV) apps to monetize through programmatic workflows. Built on the [UID2 framework](https://unifiedid.com/docs/intro), EUID offers privacy controls designed to help participants meet market requirements in many European countries and some other regions such as the UK.
 
@@ -33,7 +33,7 @@ The following table summarizes the key differences between the two frameworks.
 | Personal data used | Email addresses, phone numbers | Email addresses, phone numbers |
 | Consent | Based on local regulations such as the California Privacy Rights Act (CPRA) and the California Consumer Privacy Act (CCPA). | Driven by the General Data Protection Regulation (GDPR), the Transparency and Consent Framework (TCF) operated by IAB, and local regulatory guidance. |
 
-## Guiding principles
+## Guiding Principles
 
 The EUID framework has the following principles as its foundation:
 
@@ -41,7 +41,7 @@ The EUID framework has the following principles as its foundation:
 
 - **Non-proprietary (universal) standard**: All [participants](overviews/participants-overview.md#euid-external-participants) in the advertising ecosystem who execute an appropriate participation agreement can access EUID.
 
-- **Open source**: The source code for the [EUID component services](overviews/participants-overview.md#euid-component-services) is publicly available.
+- **Open source**: The source code for the [EUID Component Services](overviews/participants-overview.md#euid-component-services) is publicly available.
 
 - **Interoperable**: The framework allows other identity solutions (commercial and proprietary) to integrate and provide EUID tokens with their offerings.
 
@@ -49,7 +49,7 @@ The EUID framework has the following principles as its foundation:
 
 - **Consumer control**: Consumers can opt out of EUID at any time through the [Transparency and Control Portal](https://transparentadvertising.eu).
 
-## Technical design principles
+## Technical Design Principles
 
 The EUID framework is built on the following technical principles:
 
@@ -63,18 +63,18 @@ The EUID framework is built on the following technical principles:
 
 - **Self-reliant**: EUID does not rely on external services for the processing of real-time bidding (RTB) data.
 
-## Elements of the EUID infrastructure
+## Elements of the EUID Infrastructure
 
 For information about key elements of the EUID infrastructure, and other aspects of EUID, refer to the following pages:
 
-- [EUID identifier types](ref-info/uid-identifier-types.md)
-- [UID2 components](ref-info/uid-components.md)
-- [EUID participants](overviews/participants-overview.md)
-- [EUID workflows](ref-info/uid-workflows.md)
+- [EUID Identifier Types](ref-info/uid-identifier-types.md)
+- [UID2 Components](ref-info/uid-components.md)
+- [EUID Participants](overviews/participants-overview.md)
+- [EUID Workflows](ref-info/uid-workflows.md)
 
 ## FAQs
 
-See [Frequently asked questions](getting-started/gs-faqs.md).
+See [Frequently Asked Questions](getting-started/gs-faqs.md).
 
 ## License
 All work and artifacts are licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt).

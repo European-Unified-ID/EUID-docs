@@ -1,5 +1,5 @@
 ---
-title: Advertiser information
+title: Advertiser Information
 description: Legal information for advertisers.
 hide_table_of_contents: false
 sidebar_position: 06
@@ -8,7 +8,7 @@ displayed_sidebar: docs
 
 import Link from '@docusaurus/Link';
 
-# Advertiser information
+# Advertiser Information
 
 This guidance is provided to participating advertisers to explain how The Trade Desk has developed EUID with European data protection law in mind. This does not constitute legal advice, and advertisers should seek their own advice on their participation in EUID and compliance with applicable law.
 
@@ -20,7 +20,7 @@ The rule owner of the EUID ecosystem&#8212;currently The Trade Desk&#8212;is als
 
 The <Link href="../ref-info/glossary-uid#gl-gdpr">GDPR</Link> explains that where there are two or more controllers, they are joint controllers where they jointly determine the purposes and means of processing. In the EUID ecosystem, the rule owner is a joint controller with each advertiser that submits an identifier for conversion into an EUID. The rule owner’s responsibility as a controller is limited and does not extend to the subsequent use of an EUID by the advertiser for advertising purposes.
 
-## 2. What does this mean for the EUID agreement?
+## 2. What does this mean for the EUID Agreement?
 
 Joint controllers must set out clearly how they are each responsible for data protection compliance. In the EUID Agreements, the responsibilities are set out in the Exhibit headed "Allocation of Responsibility." It is set out in this section that:
 
@@ -34,9 +34,9 @@ Joint controllers must set out clearly how they are each responsible for data pr
 
 The EUID POC Agreement asks each advertiser to provide certain minimum information about EUID to individuals, including information about the role of the joint controllers, and to provide a link to the [EUID Privacy Notice](https://www.transparentadvertising.eu/privacy) from The Trade Desk. Advertisers seeking to rely on consent may find this easier to supply alongside their consent language. Otherwise, we recommend that this is included within your privacy notice.
 
-Short sample language that we provide as an example of language that could be included in a privacy notice is available online at [Consent examples](legal-consent-examples.md).
+Short sample language that we provide as an example of language that could be included in a privacy notice is available online at [Consent Examples](legal-consent-examples.md).
 
-## 4. Legal basis and EUID
+## 4. Legal Basis and EUID
 
 Advertisers participating in EUID are required to have a valid legal basis for their processing of personal data. The Trade Desk recognizes that this is the responsibility of the advertiser as allocated under the EUID Agreement. The Trade Desk expects that many advertisers will choose to rely on consent. If this is an advertiser’s preferred approach, they must ensure that their consent is valid and we recommend following the guidance provided below.
 
@@ -70,7 +70,7 @@ Advertisers relying on consent must also be able to provide proof of this consen
 
 - A copy of the language presented to the individual to request consent.
 
-Sample consent language is available: see [Consent examples](legal-consent-examples.md).
+Sample consent language is available: see [Consent Examples](legal-consent-examples.md).
 
 ### 4.2 Can advertisers use the email addresses they have already obtained with marketing consent?
 
@@ -96,7 +96,7 @@ Advertisers are also required to prevent the creation of an EUID for an individu
 
 We require advertisers to notify The Trade Desk in a timely manner of any personal data breach involving an EUID. In the event that an advertiser believes that a data breach must be notified to any appropriate authorities or data subject, we ask that the advertiser first consult with The Trade Desk.
 
-## 7. Data transfers
+## 7. Data Transfers
 
 The Trade Desk processes data for EUID in the EU and UK. EUID systems do not transfer or store emails or their derivatives outside of EU/UK. EUID private operators are available on AWS in EU, UK, Switzerland.
 

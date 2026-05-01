@@ -12,43 +12,43 @@ import Link from '@docusaurus/Link';
 
 Maps multiple email addresses, phone numbers, or their respective hashes to their raw EUIDs and <Link href="../ref-info/glossary-uid#gl-salt-bucket-id">salt bucket IDs</Link>. You can also use this endpoint to check for updates to opt-out information.
 
-Used by: This endpoint is used mainly by advertisers and data providers. For details, see [Advertiser/data provider integration overview](../guides/integration-advertiser-dataprovider-overview.md).
+Used by: This endpoint is used mainly by advertisers and data providers. For details, see [Advertiser/Data Provider Integration Overview](../guides/integration-advertiser-dataprovider-overview.md).
 
-For details about the EUID opt-out workflow and how users can opt out, see [User opt-out](../getting-started/gs-opt-out.md).
+For details about the EUID opt-out workflow and how users can opt out, see [User Opt-Out](../getting-started/gs-opt-out.md).
 
 ## Version
 
 This documentation is for version 2 of this endpoint, which is not the latest version. For the latest version, v3, see [POST /identity/map](post-identity-map.md).
 
 :::note
-If you're using an earlier version, we recommend that you upgrade as soon as possible, to take advantage of improvements. For migration guidance, see [Migration from v2 identity map](post-identity-map.md#migration-from-v2-identity-map). For deprecation information, see [Deprecation schedule: Endpoint versions](../ref-info/deprecation-schedule.md#endpoint-versions).
+If you're using an earlier version, we recommend that you upgrade as soon as possible, to take advantage of improvements. For migration guidance, see [Migration from v2 Identity Map](post-identity-map.md#migration-from-v2-identity-map). For deprecation information, see [Deprecation Schedule: Endpoint Versions](../ref-info/deprecation-schedule.md#endpoint-versions).
 :::
 
-## Batch size and request parallelization requirements
+## Batch Size and Request Parallelization Requirements
 
 Here's what you need to know:
 
 - The maximum request size is 1MB.
 - To map a large number of email addresses, phone numbers, or their respective hashes, send them in batches with a maximum of 5,000 items per batch. We recommend sending no more than 20 batches in parallel.
-- Be sure to store mappings of email addresses, phone numbers, or their respective hashes.<br/>Not storing mappings could increase processing time drastically when you have to map millions of email addresses. Recalculating only those mappings that actually need to be updated, however, reduces the total processing time because only about 1/365th of raw EUIDs need to be updated daily. See also [Advertiser/data provider integration overview](../guides/integration-advertiser-dataprovider-overview.md) and [FAQs for advertisers and data providers](../getting-started/gs-faqs.md#faqs-for-advertisers-and-data-providers).
+- Be sure to store mappings of email addresses, phone numbers, or their respective hashes.<br/>Not storing mappings could increase processing time drastically when you have to map millions of email addresses. Recalculating only those mappings that actually need to be updated, however, reduces the total processing time because only about 1/365th of raw EUIDs need to be updated daily. See also [Advertiser/Data Provider Integration Overview](../guides/integration-advertiser-dataprovider-overview.md) and [FAQs for Advertisers and Data Providers](../getting-started/gs-faqs.md#faqs-for-advertisers-and-data-providers).
 
-## Rate limiting
+## Rate Limiting
 
 To ensure fair usage and platform stability, the `POST /identity/map` endpoint enforces rate limits to safeguard against bursts of incoming traffic. If you send many requests in quick succession, you might receive `429` error responses.
 
 To handle rate limit errors gracefully, we recommend implementing [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff) with random jitter when retrying requests. To maximize throughput within the limit, use the maximum batch size of 5,000 items per request rather than sending many small requests.
 
-## Request format
+## Request Format
 
 `POST '{environment}/v2/identity/map'`
 
-For authentication details, see [Authentication and authorization](../getting-started/gs-auth.md).
+For authentication details, see [Authentication and Authorization](../getting-started/gs-auth.md).
 
 :::important
-You must encrypt all requests using your secret. For details, and code examples in different programming languages, see [Encrypting requests and decrypting responses](../getting-started/gs-encryption-decryption.md).
+You must encrypt all requests using your secret. For details, and code examples in different programming languages, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
 :::
 
-### Path parameters
+### Path Parameters
 
 | Path Parameter | Data Type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
@@ -58,7 +58,7 @@ You must encrypt all requests using your secret. For details, and code examples 
 The integration environment and the production environment require different <Link href="../ref-info/glossary-uid#gl-api-key">API keys</Link>.
 :::
 
-### Unencrypted JSON body parameters
+### Unencrypted JSON Body Parameters
 
 :::important
 You must include only **one** of the following four conditional parameters as a key-value pair in the JSON body of the request when encrypting it.
@@ -71,7 +71,7 @@ You must include only **one** of the following four conditional parameters as a 
 | `phone` | string array | Conditionally Required | The list of [normalized](../getting-started/gs-normalization-encoding.md#phone-number-normalization) phone numbers to be mapped. |
 | `phone_hash` | string array | Conditionally Required | The list of [Base64-encoded SHA-256](../getting-started/gs-normalization-encoding.md#phone-number-hash-encoding) hashes of [normalized](../getting-started/gs-normalization-encoding.md#phone-number-normalization) phone numbers to be mapped. |
 
-### Request examples
+### Request Examples
 
 The following are unencrypted JSON request body examples for each parameter, one of which you should include in your requests to the `POST /identity/map` endpoint:
 
@@ -114,9 +114,9 @@ Here's an encrypted request example to the `POST /identity/map` endpoint for a p
 echo '{"phone": ["+12345678901", "+441234567890"]}' | python3 uid2_request.py https://prod.euid.eu/v2/identity/map [Your-Client-API-Key] [Your-Client-Secret]
 ```
 
-For details, and code examples in different programming languages, see [Encrypting requests and decrypting responses](../getting-started/gs-encryption-decryption.md).
+For details, and code examples in different programming languages, see [Encrypting Requests and Decrypting Responses](../getting-started/gs-encryption-decryption.md).
 
-## Decrypted JSON response format
+## Decrypted JSON Response Format
 
 :::note
 The response is encrypted only if the HTTP status code is 200. Otherwise, the response is not encrypted.
@@ -190,7 +190,7 @@ If some identifiers have opted out from the EUID ecosystem, the opted-out identi
 }
 ```
 
-### Response body properties
+### Response Body Properties
 
 The response body includes the properties shown in the following table.
 
@@ -200,7 +200,7 @@ The response body includes the properties shown in the following table.
 | `advertising_id` | string | The corresponding advertising ID (raw EUID). |
 | `bucket_id` | string | The ID of the salt bucket used to generate the EUID. |
 
-### Response status codes
+### Response Status Codes
 
 The following table lists the `status` property values and their HTTP status code equivalents.
 

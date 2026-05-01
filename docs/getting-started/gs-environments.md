@@ -12,7 +12,7 @@ import Link from '@docusaurus/Link';
 
 Learn about the different environments available.
 
-## EUID integration and production environments
+## EUID Integration and Production Environments
 
 The following table lists all current testing and production environments for EUID.
 
@@ -30,10 +30,10 @@ Notes:
 - The expiration time of the <Link href="../ref-info/glossary-uid#gl-euid-token">EUID token</Link> returned by the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) or [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoints is subject to change, but is always significantly shorter in the integration environment than it is in the production environment.
 - The integration environment and the production environments produce different EUID values. You cannot use them interchangeably. Use the integration environment only for testing. When you're ready to go live, generate EUIDs for bidstream use.
 
-## Getting credentials for each environment
+## Getting Credentials for Each Environment
 
 If you're using the integration environment as well as the production environment, you'll need to get a separate set of credentials for each environment.
 
-For details about getting the values you need to access each environment, see [Getting your credentials](gs-credentials.md#getting-your-credentials).
+For details about getting the values you need to access each environment, see [Getting Your Credentials](gs-credentials.md#getting-your-credentials).
 
 <!-- uid2_euid_diff: "Specifying the Base URL to Reduce Latency" (section in UID2 docs) not applicable for EUID. -->
