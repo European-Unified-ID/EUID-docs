@@ -8,7 +8,7 @@ displayed_sidebar: docs
 
 import Link from '@docusaurus/Link';
 
-# POST /identity/map (v2)
+# POST /v2/identity/map
 
 Maps multiple email addresses, phone numbers, or their respective hashes to their raw EUIDs and <Link href="../ref-info/glossary-uid#gl-salt-bucket-id">salt bucket IDs</Link>. You can also use this endpoint to check for updates to opt-out information.
 
@@ -18,10 +18,10 @@ For details about the EUID opt-out workflow and how users can opt out, see [User
 
 ## Version
 
-This documentation is for version 2 of this endpoint, which is not the latest version. For the latest version, v3, see [POST /identity/map](post-identity-map.md).
+This documentation is for version 2 of this endpoint, which is not the latest version. For the latest version, v3, see [POST /v3/identity/map](post-identity-map.md).
 
 :::note
-If you're using an earlier version, we recommend that you upgrade as soon as possible, to take advantage of improvements. For migration guidance, see [Migration from v2 POST /identity/map](post-identity-map.md#migration-from-v2-post-identitymap). For deprecation information, see [Deprecation Schedule: Endpoint Versions](../ref-info/deprecation-schedule.md#endpoint-versions).
+If you're using an earlier version, we recommend that you upgrade as soon as possible, to take advantage of improvements. For migration guidance, see [Migration from POST /v2/identity/map](post-identity-map.md#migration-from-post-v2identitymap). For deprecation information, see [Deprecation Schedule: Endpoint Versions](../ref-info/deprecation-schedule.md#endpoint-versions).
 :::
 
 ## Batch Size and Request Parallelization Requirements

@@ -1,5 +1,5 @@
 ---
-title: POST /identity/map
+title: POST /v3//identity/map
 description: Maps personal data to raw EUIDs.
 hide_table_of_contents: false
 sidebar_position: 08
@@ -9,7 +9,7 @@ displayed_sidebar: docs
 import Link from '@docusaurus/Link';
 import SnptPOSTIdentityMapImprovements from '../snippets/_snpt-post-identity-map-improvements-v3.mdx';
 
-# POST /identity/map
+# POST /v3/identity/map
 
 Maps multiple email addresses, phone numbers, or their respective hashes to their raw EUIDs. You can also use this endpoint to check for updates to opt-out information, check when a raw EUID can be refreshed, or view the previous EUID if the current EUID is less than 90 days old.
 
@@ -21,7 +21,7 @@ For details about the EUID opt-out workflow and how users can opt out, see [User
 
 This documentation is for the latest version of this endpoint, version 3.
 
-If needed, documentation is also available for the previous version: see [POST /identity/map (v2)](post-identity-map-v2.md).
+If needed, documentation is also available for the previous version: see [POST /v2/identity/map](post-identity-map-v2.md).
 
 ## Batch Size and Request Parallelization Requirements
 
@@ -210,7 +210,7 @@ If the `status` value is anything other than `success`, the `message` field prov
 429 responses do not include a JSON response body.
 :::
 
-## Migration from v2 POST /identity/map
+## Migration from POST /v2/identity/map
 
 The following sections provide general information and guidance for migrating to version 3 from earlier versions, including:
 

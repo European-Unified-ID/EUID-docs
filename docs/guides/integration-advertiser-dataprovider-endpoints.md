@@ -119,7 +119,7 @@ There are two ways that you can check with the EUID <Link href="../ref-info/glos
 
 For details about the EUID opt-out workflow and how users can opt out, see [User Opt-Out](../getting-started/gs-opt-out.md).
 
-## Using POST /identity/map Version 2
+## Using POST /v2/identity/map
 
 :::note
 The following information is relevant only if you are using version 2 or earlier of the `POST /identity/map` endpoint, and is provided for reference only. New implementations should use the latest version. For instructions, see [High-Level Steps](#high-level-steps).

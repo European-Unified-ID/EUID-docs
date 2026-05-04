@@ -49,7 +49,7 @@ At a high level, the steps for advertisers and data providers integrating with E
 6. [Monitor for Opt-Out Status](#6-monitor-for-opt-out-status)
 
 :::note
-If your implementation uses a version of the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint earlier than version 3, see [Using POST /identity/map Version 2](#using-post-identitymap-version-2). If you're using this version, we recommend you upgrade as soon as possible to take advantage of the enhancements.
+If your implementation uses a version of the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint earlier than version 3, see [Using POST /v2/identity/map](#using-post-v2identitymap). If you're using this version, we recommend you upgrade as soon as possible to take advantage of the enhancements.
 :::
 
 ## Summary of Implementation Options
@@ -148,7 +148,7 @@ There are two ways that you can check with the EUID <Link href="../ref-info/glos
 
 For details about the EUID opt-out workflow and how users can opt out, see [User Opt-Out](../getting-started/gs-opt-out.md).
 
-## Using POST /identity/map Version 2
+## Using POST /v2/identity/map
 
 :::note
 The following information is relevant only to integration approaches that use an earlier version of the `POST /identity/map` endpoint, version 2, and is provided for reference only. New implementations should use the latest version: see [High-Level Steps](#high-level-steps).
