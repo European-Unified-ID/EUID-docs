@@ -1,5 +1,5 @@
 ---
-title: POST /v3//identity/map
+title: POST /v3/identity/map
 description: Maps personal data to raw EUIDs.
 hide_table_of_contents: false
 sidebar_position: 08
