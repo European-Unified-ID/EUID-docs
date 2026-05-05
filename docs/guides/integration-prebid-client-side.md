@@ -1,7 +1,7 @@
 ---
-title: EUID Client-Side Integration Guide for Prebid.js
-sidebar_label: Client-Side Integration for Prebid.js
-pagination_label: EUID Client-Side Integration for Prebid.js
+title: Client-side integration guide for Prebid.js
+sidebar_label: Client-side integration for Prebid.js
+pagination_label: Client-side integration for Prebid.js
 description: Information about setting up a client-side Prebid.js integration.
 hide_table_of_contents: false
 sidebar_position: 04
@@ -14,29 +14,29 @@ import SnptPreparingEmailsAndPhoneNumbers from '../snippets/_snpt-preparing-emai
 import SnptAddPrebidjsToYourSite from '../snippets/_snpt-prebid-add-prebidjs-to-your-site.mdx';
 import SnptStoreEUIDTokenInBrowser from '../snippets/_snpt-prebid-storing-euid-token-in-browser.mdx';
 
-# EUID Client-Side Integration Guide for Prebid.js
+# Client-side integration guide for Prebid.js
 
 This guide is for publishers who have access to <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> (email address or phone number) on the client side and want to integrate with EUID and generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) to be passed by Prebid.js in the RTB <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link>.
 
 To integrate with EUID using Prebid.js, you'll need to make changes to the HTML and JavaScript on your site. No server-side work is required if you follow this guide.
 
-## Prebid.js Version
+## Prebid.js version
 
 This implementation requires Prebid.js version 8.42.0 or later. For version information, see [https://github.com/prebid/Prebid.js/releases](https://github.com/prebid/Prebid.js/releases).
 
 <!-- Diff in Prebid.js supported version for UID2/EUID is fine: verif SS 11/19/24 -->
 
-If you need to use an earlier version of Prebid.js, use the implementation solution presented in the [EUID Client-Server Integration Guide for Prebid.js](integration-prebid-client-server.md) instead.
+If you need to use an earlier version of Prebid.js, use the implementation solution presented in the [EUID client-server integration guide for Prebid.js](integration-prebid-client-server.md) instead.
 
-## Integrating with Single Sign-On (SSO)
+## Integrating with single sign-on (SSO)
 
 <SnptIntegratingWithSSO />
 
-## Preparing Personal Data for Processing
+## Preparing personal data for processing
 
 <SnptPreparingEmailsAndPhoneNumbers />
 
-## Integration Overview: High-Level Steps
+## Integration overview: High-level steps
 
 You'll need to complete the following steps:
 
@@ -44,25 +44,25 @@ You'll need to complete the following steps:
 2. [Add Prebid.js to your site](#add-prebidjs-to-your-site).
 3. [Configure the EUID module](#configure-the-euid-module).
 
-### Complete EUID Account Setup
+### Complete EUID account setup
 
-Complete the EUID account setup by following the steps described on the [Account Setup](../getting-started/gs-account-setup.md) page. As part of the account setup process for a client-side implementation, you'll need to provide a list of domain names for the sites that you'll be using with Prebid.js.
+Complete the EUID account setup by following the steps described on the [Account setup](../getting-started/gs-account-setup.md) page. As part of the account setup process for a client-side implementation, you'll need to provide a list of domain names for the sites that you'll be using with Prebid.js.
 
 :::tip
 Only root-level domains are required for account setup. For example, if you're going to use EUID with Prebid.js on example.com, shop.example.com, and example.org, you only need to provide the domain names example.com and example.org.
 :::
 
-When account setup is complete, you'll receive a client keypair consisting of two values that identify you to the EUID servers: Subscription ID and public key. These values are unique to you, and you'll use them to configure the EUID module. For details, see [Subscription ID and Public Key](../getting-started/gs-credentials.md#subscription-id-and-public-key).
+When account setup is complete, you'll receive a client keypair consisting of two values that identify you to the EUID servers: Subscription ID and public key. These values are unique to you, and you'll use them to configure the EUID module. For details, see [Subscription ID and public key](../getting-started/gs-credentials.md#subscription-id-and-public-key).
 
 :::note
-If you want to use the integration environment as well as the production environment, you'll need a separate set of credentials for each environment. For details, see [EUID Credentials](../getting-started/gs-credentials.md) and [Environments](../getting-started/gs-environments.md).
+If you want to use the integration environment as well as the production environment, you'll need a separate set of credentials for each environment. For details, see [EUID credentials](../getting-started/gs-credentials.md) and [Environments](../getting-started/gs-environments.md).
 :::
 
-### Add Prebid.js to Your Site
+### Add Prebid.js to your site
 
 <SnptAddPrebidjsToYourSite />
 
-### Configure the EUID Module
+### Configure the EUID module
 
 To configure the EUID module, call `pbjs.setConfig` with an object containing the **public key** and **Subscription ID** that you received during account setup, as well as the user's hashed or unhashed email address.
 
@@ -83,11 +83,11 @@ Notes:
   1. Then hash the result using the SHA-256 hashing algorithm.
   1. Then encode the resulting bytes of the hash value using Base64 encoding.
   
-  For details, see [Normalization and Encoding](../getting-started/gs-normalization-encoding.md). For an example, see [Configuring the EUID Module: Code Example](#configuring-the-euid-module-code-example).
+  For details, see [Normalization and encoding](../getting-started/gs-normalization-encoding.md). For an example, see [Configuring the EUID module: Code example](#configuring-the-euid-module-code-example).
 - The EUID module encrypts the hashed personal data before sending it to the EUID service.
 - If the module is configured multiple times, it uses the most recent configuration values.
 
-#### Configuring the EUID Module: Code Example
+#### Configuring the EUID module: Code example
 
 The following code snippet demonstrates the different ways that you can configure the EUID module.
 
@@ -114,11 +114,11 @@ const baseConfig = {
 This example assumes that you're using the EUID production environment. During integration testing, use the EUID integration environment by setting `params.euidApiBase` to `'https://integ.euid.eu/'`. Tokens from the EUID integration environment are not valid for passing to the bidstream. For the integration environment, you will have different **Subscription ID** and **public key** values.
 :::
 
-## Storing the EUID Token in the Browser
+## Storing the EUID token in the browser
 
 <SnptStoreEUIDTokenInBrowser />
 
-## When to Pass Personal Data to the EUID Module
+## When to pass personal data to the EUID module
 
 When the EUID module is configured, it checks for an existing EUID token in the user's browser. If there is a token that was generated from the same personal data, and either it's still valid or it can be refreshed, the module uses it, and refreshes if needed.
 
@@ -174,7 +174,7 @@ The following example shows the decoded EUID userId object:
 }
 ```
 
-## Checking the Integration
+## Checking the integration
 
 To check that the EUID module has successfully generated an EUID token, call `pbjs.getUserIds().euid`. If a value is returned, a valid EUID token exists in the EUID module.
 
@@ -196,7 +196,7 @@ An example of a tool for validating and debugging Prebid.js configuration is Pro
 
 <!-- Reduce Latency by Setting the API Base URL for the Production Environment not applicable for EUID -->
 
-## Optional: Deferred Client-Side EUID Configuration with mergeConfig
+## Optional: Deferred client-side EUID configuration with mergeConfig
 
 If you already have Prebid.js configured but didn't include EUID in the initial setup, you can still add the EUID module using two functions provided by Prebid.js:
 
@@ -234,20 +234,20 @@ Once you add EUID to your configuration, Prebid does not provide functionality t
 If you are managing the EUID SDK separately, use `window.__euid.disconnect()` which handles all logout functionality—clearing both memory and storage—without requiring a page refresh.
 :::
 
-### Deferred Client-Side Integration Example
+### Deferred client-side integration example
 
-A sample implementation for deferred configuration is also available. For details, see [Sample Implementations](#sample-implementations).
+A sample implementation for deferred configuration is also available. For details, see [Sample implementations](#sample-implementations).
 
-## Optional: Prebid.js Integration with Google Secure Signals
+## Optional: Prebid.js integration with Google Secure Signals
 
 if you're using Prebid.js, and you're planning to pass EUID tokens to Google using Google Secure Signals, there are a couple of additional configuration steps:
 
-- In your Google Ad Manager account, make sure that encrypted signals are properly shared with third-party bidders: see [Allow Secure Signals Sharing](integration-google-ss.md#allow-secure-signals-sharing).
+- In your Google Ad Manager account, make sure that encrypted signals are properly shared with third-party bidders: see [Allow Secure Signals sharing](integration-google-ss.md#allow-secure-signals-sharing).
 - Update your Prebid.js configuration: see [Optional: Enable Secure Signals in Prebid.js](integration-google-ss.md#optional-enable-secure-signals-in-prebidjs).
 
-A sample implementation for Prebid.js with Secure Signals is also available. For details, see [Sample Implementations](#sample-implementations).
+A sample implementation for Prebid.js with Secure Signals is also available. For details, see [Sample implementations](#sample-implementations).
 
-## Sample Implementations
+## Sample implementations
 
 The following sample implementations are available to illustrate how to integrate EUID with Prebid.js on the client side:
 

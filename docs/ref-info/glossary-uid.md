@@ -1,5 +1,5 @@
 ---
-title: EUID Glossary
+title: EUID glossary
 description: Definitions for some EUID terms.
 hide_table_of_contents: false
 sidebar_position: 10
@@ -9,7 +9,7 @@ displayed_sidebar: docs
 import Link from '@docusaurus/Link';
 import MdxJumpAnchor from '@site/src/components/MdxJumpAnchor';
 
-# EUID Glossary
+# EUID glossary
 <p>This page defines some key terms used in the EUID documentation.</p>
 
 <!-- 

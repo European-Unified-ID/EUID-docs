@@ -1,5 +1,5 @@
 ---
-title: EUID Sharing
+title: EUID sharing
 description: Information about EUID sharing.
 hide_table_of_contents: false
 sidebar_position: 24
@@ -8,13 +8,13 @@ displayed_sidebar: docs
 
 import Link from '@docusaurus/Link';
 
-# EUID Sharing
+# EUID sharing
 
 In the context of EUID, sharing is a process for distributing [raw EUIDs](../ref-info/glossary-uid.md#gl-raw-euid) from one EUID [sharing participant](../ref-info/glossary-uid.md#gl-sharing-participant) to another.
 
 For EUID, a sharing participant is a company that takes part in sharing, either as a sender or a receiver.
 
-## Security Requirements for EUID Sharing 
+## Security requirements for EUID sharing 
 
 All EUID participants have a core responsibility to ensure that the EUID ecosystem is safe. The following are standard security practices for all EUID participants and their sharing recipients. If you are sharing raw EUIDs with recipients the below security requirements are required and must all be met consistently.
 
@@ -23,7 +23,7 @@ The security requirements are as follows:
 - [Authentication](#authentication)
 - [Authorization](#authorization)
 - [Accounting](#accounting)
-- [Secure Transport](#secure-transport)
+- [Secure transport](#secure-transport)
 
 <!-- (UID2/EUID diff: link to example Workflow section removed for EUID, APIDOCS-3494 -->
 
@@ -64,7 +64,7 @@ The following table shows the key fields you should consider including in the tr
 
 Additional logs, such as network logs, application logs, and cloud audit logs, can also help by providing additional information such as source and destination IP addresses or cloud platform account IDs.
 
-### Secure Transport
+### Secure transport
 
 Secure transport helps protect raw EUIDs from being accessible or modifiable by an onlooker during the transition of data from sender to receiver, end to end. Examples of secure transport include:
 

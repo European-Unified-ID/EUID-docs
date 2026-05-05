@@ -1,7 +1,7 @@
 ---
-title: EUID Client-Side Integration Guide for Mobile
-sidebar_label: Client-Side Integration for Mobile
-pagination_label: EUID Client-Side Integration Guide for Mobile
+title: Client-side integration guide for mobile
+sidebar_label: Client-side integration for mobile
+pagination_label: Client-side integration guide for mobile
 description: Setting up a mobile integration with token generate and refresh both on the client side.
 hide_table_of_contents: false
 sidebar_position: 04
@@ -18,11 +18,11 @@ import SnptGMAIMA_Plugins from '../snippets/_snpt-mobile_docs_gmaima-plugin-gss.
 import SnptPrebidMobileSDK from '../snippets/_snpt-mobile_docs_prebid-mobile.mdx';
 import SnptErrorResponseStates from '../snippets/_snpt-mobile-docs-error-response-states.mdx';
 
-# EUID Client-Side Integration Guide for Mobile
+# EUID client-side integration guide for mobile
 
 This guide is for mobile app publishers who want to integrate with EUID with changes only within their mobile app.
 
-These instructions do not apply to publishers who want to use a Private Operator, or who want to generate tokens server-side. Those publishers should follow the [Client-Server Integration Guide for Mobile](integration-mobile-client-server.md).
+These instructions do not apply to publishers who want to use a Private Operator, or who want to generate tokens server-side. Those publishers should follow the [Client-server integration guide for mobile](integration-mobile-client-server.md).
 
 This page provides a high-level overview of integration steps and links to additional documentation.
 
@@ -35,7 +35,7 @@ EUID provides mobile SDKs for [Android](../sdks/sdk-ref-android.md) and [iOS](..
 This guide uses the group term **EUID mobile SDKs** to include both the SDK for Android and the SDK for iOS.
 :::
 
-For FAQs relating to mobile publisher integrations, see [FAQs for Mobile Integrations](integration-mobile-overview.md#faqs-for-mobile-integrations).
+For FAQs relating to mobile publisher integrations, see [FAQs for mobile integrations](integration-mobile-overview.md#faqs-for-mobile-integrations).
 
 To integrate with EUID client-side, you'll need to complete the following steps:
 
@@ -47,18 +47,18 @@ To integrate with EUID client-side, you'll need to complete the following steps:
 
 1. [Check that the token was successfully generated and then pass it for bidstream use](#pass-generated-token-for-bidstream-use).
 
-1. [Optionally, integrate the EUID GMA/IMA Plugin for GAM Secure Signals integration](#optional-euid-gmaima-plugin-for-gam-secure-signals-integration).
+1. [Optionally, integrate the EUID GMA/IMA plugin for GAM Secure Signals integration](#optional-euid-gmaima-plugin-for-gam-secure-signals-integration).
 
-## Mobile SDK Version
+## Mobile SDK version
 
 This guide provides instructions for using either of these EUID mobile SDKs:
 
 - SDK for Android (version 1.6.0 or later)
 - SDK for iOS (version 1.7.0 or later)
 
-For instructions for installing the correct SDK/version into your mobile app, see [Add the EUID Mobile SDK to Your Mobile App](#add-the-euid-mobile-sdk-to-your-mobile-app).
+For instructions for installing the correct SDK/version into your mobile app, see [Add the EUID mobile SDK to your mobile app](#add-the-euid-mobile-sdk-to-your-mobile-app).
 
-## Client-Side Integration Example
+## Client-side integration example
 
 For an example of how to configure an EUID mobile SDK, and how to generate tokens using client-side integration for mobile, you can try out the EUID development app.
 
@@ -68,7 +68,7 @@ Follow the applicable instructions, for Android or iOS:
 <TabItem value='android' label='Android'>
 
 1. Check out the main branch of the [SDK for Android source code repository on GitHub](https://github.com/IABTechLab/uid2-android-sdk/tree/main).
-1. In Android Studio (check the version required in the [Minimum Requirements](../sdks/sdk-ref-android.md#minimum-requirements) section in the SDK for Android Reference Guide), open the directory that you checked out.
+1. In Android Studio (check the version required in the [Minimum requirements](../sdks/sdk-ref-android.md#minimum-requirements) section in the SDK for Android Reference Guide), open the directory that you checked out.
 1. In [AndroidManifest.xml](https://github.com/IABTechLab/uid2-android-sdk/blob/main/dev-app/src/main/AndroidManifest.xml), set `uid2_environment_euid` to `true`.
 1. Run the **dev-app** app.
 1. When you've started the app, make sure that the **Client Side** checkbox is checked.
@@ -148,9 +148,9 @@ EUIDManager.shared.getAdvertisingToken()
 </TabItem>
 </Tabs>
 
-This method call returns the value that you need to make an ad request: see [Pass Generated Token for Bidstream Use](#pass-generated-token-for-bidstream-use).
+This method call returns the value that you need to make an ad request: see [Pass generated token for bidstream use](#pass-generated-token-for-bidstream-use).
 
-### Testing With Your Own Configuration
+### Testing with your own configuration
 
 By default, the development app uses default values for Subscription ID and public key, which are stored in the following object:
 
@@ -190,36 +190,36 @@ see UID2SDKDevelopmentApp/UID2SDKDevelopmentApp/Info.plist
 </TabItem>
 </Tabs>
 
-If necessary, you can also change the default Subscription ID and public key to values assigned to you, and connect to the EUID Production environment. For details, see [Optional: Specifying the API Base URL to Reduce Latency](#optional-specifying-the-api-base-url-to-reduce-latency).
+If necessary, you can also change the default Subscription ID and public key to values assigned to you, and connect to the EUID Production environment. For details, see [Optional: Specifying the API base URL to reduce latency](#optional-specifying-the-api-base-url-to-reduce-latency).
 
-## Integrating with Single Sign-On (SSO)
+## Integrating with single sign-on (SSO)
 
 <SnptIntegratingWithSSO />
 
-## Preparing Personal Data for Processing
+## Preparing personal data for processing
 
 <SnptPreparingEmailsAndPhoneNumbers />
 
-## Complete the EUID Account Setup
+## Complete the EUID account setup
 
-To set up your account, follow the steps described in [Account Setup](../getting-started/gs-account-setup.md). As part of the account setup process, you'll need to provide a list of <Link href="../ref-info/glossary-uid#gl-app-name">app names</Link> for all the mobile apps that you'll be integrating with the EUID mobile SDKs, including any of these values that apply:
+To set up your account, follow the steps described in [Account setup](../getting-started/gs-account-setup.md). As part of the account setup process, you'll need to provide a list of <Link href="../ref-info/glossary-uid#gl-app-name">app names</Link> for all the mobile apps that you'll be integrating with the EUID mobile SDKs, including any of these values that apply:
 
 - Android Application ID
 - iOS Bundle Identifier
 - iOS App Store ID
 
-When account setup is complete, you'll receive a client keypair consisting of two values that identify you to the EUID servers: Subscription ID and public key. These values are unique to you, and you'll use them when you [configure the EUID mobile SDK](#configure-the-euid-mobile-sdk). For details, see [Subscription ID and Public Key](../getting-started/gs-credentials.md#subscription-id-and-public-key).
+When account setup is complete, you'll receive a client keypair consisting of two values that identify you to the EUID servers: Subscription ID and public key. These values are unique to you, and you'll use them when you [configure the EUID mobile SDK](#configure-the-euid-mobile-sdk). For details, see [Subscription ID and public key](../getting-started/gs-credentials.md#subscription-id-and-public-key).
 
-## Add the EUID Mobile SDK to Your Mobile App
+## Add the EUID mobile SDK to your mobile app
 
 To add the mobile SDK to your app, follow the applicable documentation:
 
-- [SDK for Android Reference Guide](../sdks/sdk-ref-android.md)
-- [SDK for iOS Reference Guide](../sdks/sdk-ref-ios.md)
+- [SDK for Android reference guide](../sdks/sdk-ref-android.md)
+- [SDK for iOS reference guide](../sdks/sdk-ref-ios.md)
 
 At this point, you are ready to start generating EUID tokens using the SDK.
 
-### Using the EUID Integration Environment
+### Using the EUID integration environment
 
 By default, the SDK is configured to work with the EUID production environment: `https://prod.euid.eu/v2`. If you want to use the integration environment instead, provide the following URL in your call to initialize `EUIDManager`:
 
@@ -252,7 +252,7 @@ Bear in mind the following differences between environments:
 - You'll have a different set of Subscription ID and public key values for each environment (integration and production). Be sure to use the correct values for each environment.
 :::
 
-### Optional: Specifying the API Base URL to Reduce Latency
+### Optional: Specifying the API base URL to reduce latency
 
 By default, this SDK makes calls to an EUID production environment server in the USA.
 
@@ -285,7 +285,7 @@ UID2Settings.shared.euidEnvironment = .london
 </TabItem>
 </Tabs>
 
-## Configure the EUID Mobile SDK
+## Configure the EUID mobile SDK
 
 EUID provides the publisher with the following values, which are needed for generating the EUID token on the client side:
 
@@ -330,10 +330,10 @@ Once it's configured, the EUID mobile SDK does the following:
 - Automatically refreshes the token as required while your app is open.
 
 :::tip
-You can pass the user’s <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to the EUID mobile SDK either hashed or unhashed. If you pass the personal data unhashed, the SDK hashes it for you. If you want to pass the personal data to the SDK already hashed, you must normalize it before hashing. For details, see [Normalization and Encoding](../getting-started/gs-normalization-encoding.md).
+You can pass the user’s <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to the EUID mobile SDK either hashed or unhashed. If you pass the personal data unhashed, the SDK hashes it for you. If you want to pass the personal data to the SDK already hashed, you must normalize it before hashing. For details, see [Normalization and encoding](../getting-started/gs-normalization-encoding.md).
 :::
 
-### Format Examples for Personal Data
+### Format examples for personal data
 
 The SDK encrypts the hashed personal data before sending it to the EUID service.
 
@@ -445,7 +445,7 @@ Task<Void, Never> {
 
 In this scenario:
 
-- The publisher is responsible for normalizing and hashing the email address. For details, see [Email Address Normalization](../getting-started/gs-normalization-encoding.md#email-address-normalization).
+- The publisher is responsible for normalizing and hashing the email address. For details, see [Email address normalization](../getting-started/gs-normalization-encoding.md#email-address-normalization).
 - The EUID mobile SDK encrypts the hashed personal data before sending it to the EUID service.
 
 </TabItem>
@@ -497,7 +497,7 @@ Task<Void, Never> {
 
 In this scenario:
 
-- The publisher is responsible for normalizing the phone number. For details, see [Phone Number Normalization](../getting-started/gs-normalization-encoding.md#phone-number-normalization).
+- The publisher is responsible for normalizing the phone number. For details, see [Phone number normalization](../getting-started/gs-normalization-encoding.md#phone-number-normalization).
 - The EUID mobile SDK hashes the phone number before sending the encrypted hash to the EUID service.
 
 </TabItem>
@@ -545,21 +545,21 @@ Task<Void, Never> {
 
 In this scenario: 
 
-- The publisher is responsible for normalizing and hashing the phone number. For details, see [Phone Number Hash Encoding](../getting-started/gs-normalization-encoding.md#phone-number-hash-encoding).
+- The publisher is responsible for normalizing and hashing the phone number. For details, see [Phone number hash encoding](../getting-started/gs-normalization-encoding.md#phone-number-hash-encoding).
 - The EUID mobile SDK encrypts the hashed personal data before sending it to the EUID service.
 
 </TabItem>
 </Tabs>
 
-## Token Storage and Refresh
+## Token storage and refresh
 
-After a call to the applicable method listed in [Format Examples for Personal Data](#format-examples-for-personal-data) is successful, an identity is generated and stored in local file storage. The EUID mobile SDK refreshes the EUID token periodically.
+After a call to the applicable method listed in [Format examples for personal data](#format-examples-for-personal-data) is successful, an identity is generated and stored in local file storage. The EUID mobile SDK refreshes the EUID token periodically.
 
 :::warning
 The format of the file stored in the local file storage, or the filename itself, could change without notice. We recommend that you do not read or update the file directly.
 :::
  
-## Pass Generated Token for Bidstream Use
+## Pass generated token for bidstream use
 
 In your mobile app, if the call to `generateIdentity` was successful, it returned an identity. The next step is to call the `getAdvertisingToken()` method, as follows:
 
@@ -597,15 +597,15 @@ Some possible reasons for this, and some things you could do to troubleshoot, ar
     - **Android Kotlin**: `EUIDManager.getInstance().currentIdentityStatus()`
     - **iOS**: `EUIDManager.shared.identityStatus`
 
-    It's possible that the personal data has been opted out of EUID: for details, see [When to Pass Personal Data into the SDK](#when-to-pass-personal-data-into-the-sdk).
-- You could enable logging (set `isLoggingEnabled` to `true`) to get more information: see [Enable Logging](#enable-logging).
+    It's possible that the personal data has been opted out of EUID: for details, see [When to pass personal data into the SDK](#when-to-pass-personal-data-into-the-sdk).
+- You could enable logging (set `isLoggingEnabled` to `true`) to get more information: see [Enable logging](#enable-logging).
 - The advertising token inside the EUID identity has expired, and the refresh token has also expired, so the SDK cannot refresh the token.
 
-If there is no identity, you'll need to call the `generateIdentity` method again: see [Configure the EUID Mobile SDK](#configure-the-euid-mobile-sdk).
+If there is no identity, you'll need to call the `generateIdentity` method again: see [Configure the EUID mobile SDK](#configure-the-euid-mobile-sdk).
 
-For more information, see [When to Pass Personal Data into the SDK](#when-to-pass-personal-data-into-the-sdk) (next section).
+For more information, see [When to pass personal data into the SDK](#when-to-pass-personal-data-into-the-sdk) (next section).
 
-## When to Pass Personal Data into the SDK
+## When to pass personal data into the SDK
 
 The first time a new user opens the app, no EUID identity exists. You'll need to call the `generateIdentity` method, with the personal data, to start the token generation:
 
@@ -688,15 +688,15 @@ EUIDManager.shared.getAdvertisingToken()
 
 If `getAdvertisingToken()` returns null, and the identity status is not `OPT_OUT`/`optOut`, you'll need to generate a new token. To do this, pass the personal data into the `generateIdentity` method again. For details, see [Configure the EUID mobile SDK](#configure-the-euid-mobile-sdk).
 
-## Enable Logging
+## Enable logging
 
 <SnptEnableLogging />
 
-## Optional: EUID GMA/IMA Plugin for GAM Secure Signals integration
+## Optional: EUID GMA/IMA plugin for GAM Secure Signals integration
 
 <SnptGMAIMA_Plugins />
 
-## Optional: EUID Integration with Prebid Mobile SDK
+## Optional: EUID integration with Prebid mobile SDK
 
 :::important
 The EUID integration with Prebid Mobile SDK vv2 requires version 1.6.0 or later of the EUID SDK for Android, or version 1.7.0 or later of the EUID SDK for iOS.
@@ -706,6 +706,6 @@ If you are using Prebid Mobile SDK v3, version 2.0.0 of the EUID SDK for Android
 
 <SnptPrebidMobileSDK />
 
-## Error Response States
+## Error response states
 
 <SnptErrorResponseStates />

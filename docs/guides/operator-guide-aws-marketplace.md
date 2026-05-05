@@ -1,7 +1,7 @@
 ---
-title: EUID Private Operator for AWS Integration Guide
+title: EUID Private Operator for AWS
 sidebar_label: AWS Marketplace
-pagination_label: EUID Private Operator for AWS Integration Guide
+pagination_label: EUID Private Operator for AWS integration guide
 description: Integration information for Private Operator in AWS.
 hide_table_of_contents: false
 sidebar_position: 17
@@ -14,7 +14,7 @@ import SnptPreparingEmailsAndPhoneNumbers from '../snippets/_snpt-preparing-emai
 import SnptAttestFailure from '../snippets/_snpt-private-operator-attest-failure.mdx';
 import SnptRotatingTheKeys from '../snippets/_snpt-private-operator-rotating-the-keys.mdx';
 
-# EUID Private Operator for AWS Integration Guide
+# EUID Private Operator for AWS integration guide
 
 The EUID Operator is the API server in the EUID ecosystem. For details, see [The EUID Operator](../ref-info/ref-operators-public-private.md).
 
@@ -31,7 +31,7 @@ By subscribing to the European Unified ID Operator on AWS Marketplace product, y
 - [CloudFormation](https://aws.amazon.com/cloudformation/) template:<br/>
     The template deploys the EUID Operator AMI.
 
-## Operator Version
+## Operator version
 
 The latest ZIP file is linked in the Release Notes column in the following table.
 
@@ -40,10 +40,10 @@ The latest ZIP file is linked in the Release Notes column in the following table
 | Q4 2025 | [v5.62.24](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.62.24-r2) | 5.62.24 | January 15, 2026 |
 
 :::note
-For information about supported versions and deprecation dates, see [Private Operator Versions](../ref-info/deprecation-schedule.md#private-operator-versions).
+For information about supported versions and deprecation dates, see [Private Operator versions](../ref-info/deprecation-schedule.md#private-operator-versions).
 :::
 
-## Private Operator Upgrade Policy
+## Private Operator upgrade policy
 
 <SnptUpgradePolicy />
 
@@ -54,7 +54,7 @@ To subscribe and deploy one or more EUID Operators on AWS, complete the followin
 1. Register your organization as an EUID Operator.
 2. Create an AWS account with an [IAM](https://aws.amazon.com/iam/) role that has the [minimal privileges](#minimal-iam-role-privileges).
 
-#### Minimal IAM Role Privileges
+#### Minimal IAM role privileges
 
 To succeed in a one-click deployment, your AWS account **must** have the privileges to run the following actions:
 
@@ -119,7 +119,7 @@ To succeed in a one-click deployment, your AWS account **must** have the privile
 }
 ```
 
-### Resources Created
+### Resources created
 
 The following table lists all resources that are created during the [deployment](#deployment).
 
@@ -130,11 +130,11 @@ The following table lists all resources that are created during the [deployment]
 | `TokenSecret` | `AWS::SecretsManager::Secret` | A Secrets Manager secret to store the operator key. |
 | `WorkerRole` | `AWS::IAM::Role` | The IAM role that your EUID Operators run as. The role provides access to AWS Secrets Manager to retrieve operator keys. |
 | `WorkerInstanceProfile` | `AWS::IAM::InstanceProfile` | The instance profile with Worker Role to attach to Operator EC2 instances. |
-| `SecurityGroup` | `AWS::EC2::SecurityGroup` | A security group policy that provides rules for operator instances. See also [Security Group Policy](#security-group-policy).|
+| `SecurityGroup` | `AWS::EC2::SecurityGroup` | A security group policy that provides rules for operator instances. See also [Security group policy](#security-group-policy).|
 | `LaunchTemplate` | `AWS::EC2::LaunchTemplate` | A launch template with all configurations in place. You can spawn new EUID Operator instances from it. |
 | `AutoScalingGroup` | `AWS::AutoScaling::AutoScalingGroup` | An auto-scaling group (ASG) to which the launch template is attached. You can use this to update the desired number of instances later, if needed. |
 
-### Customization Options
+### Customization options
 
 Here's what you can customize during or after the [deployment](#deployment):
 
@@ -143,7 +143,7 @@ Here's what you can customize during or after the [deployment](#deployment):
 - SSH key: This is the SSH key that you use to access the EUID Operator EC2 instances.
 - [Instance type](https://aws.amazon.com/ec2/instance-types/): m5.2xlarge, m5.4xlarge, and so on. If there is no customization, the default value, m5.2xlarge, is recommended.
 
-### Security Group Policy
+### Security group policy
 
 :::note
 To avoid passing certificates associated with your domain into the enclave, inbound HTTP is allowed instead of HTTPS. This also avoids the cost of a secure layer, if used in a private network that is internal to your organization.
@@ -151,17 +151,17 @@ To avoid passing certificates associated with your domain into the enclave, inbo
 
 | Port Number | Direction | Protocol | Description |
 | ----------- | --------- | -------- | ------ |
-| 80 | Inbound | HTTP | Serves all EUID APIs, including the healthcheck endpoint `/ops/healthcheck`.<br/>When everything is up and running, the endpoint returns HTTP 200 with a response body of `OK`. For details, see [Checking EUID Operator Status](#checking-euid-operator-status). |
+| 80 | Inbound | HTTP | Serves all EUID APIs, including the healthcheck endpoint `/ops/healthcheck`.<br/>When everything is up and running, the endpoint returns HTTP 200 with a response body of `OK`. For details, see [Checking EUID Operator status](#checking-euid-operator-status). |
 | 9080 | Inbound | HTTP | Serves Prometheus metrics (`/metrics`). |
 | 443 | Outbound | HTTPS | Calls the EUID Core Service, AWS S3, to download files for opt-out data and key store. |
 
-### VPC Chart
+### VPC chart
 
 The following diagram illustrates the virtual private cloud that hosts private operators.
 
-![EUID Operator VPC Chart](images/aws-vpc-chart-euid.png)
+![EUID Operator VPC chart](images/aws-vpc-chart-euid.png)
 
-## Preparing Personal Data for Processing
+## Preparing personal data for processing
 
 <SnptPreparingEmailsAndPhoneNumbers />
 
@@ -181,15 +181,15 @@ To deploy European Unified ID Operator on AWS Marketplace, complete the followin
 
 It takes several minutes for the stack to be created. When you see an Auto Scaling Group (ASG) created, you can select it and check the EC2 instances. By default, there is only one instance to start with.
 
-### Stack Details
+### Stack details
 
 The following images show the **Specify stack details** page in the Create stack wizard ([deployment](#deployment) step 5). The table that follows provides a parameter value reference.
 
-![Application Configuration](images/cloudformation-step-2-euid.png) 
+![Application configuration](images/cloudformation-step-2-euid.png) 
 
 Lower part of the page:
 
-![Infrastructure Configuration](images/cloudformation-step-2-2.png)
+![Infrastructure configuration](images/cloudformation-step-2-2.png)
 
 The following table explains the parameter values that you need to provide in step 5 during the [deployment](#deployment).
 
@@ -206,11 +206,11 @@ The following table explains the parameter values that you need to provide in st
 |VpcSubnet1 |The existing VPC AZ1 Subnet ID. |
 |VpcSubnet2 |The existing VPC AZ2 Subnet ID. |
 
-### Stack Configuration Options
+### Stack configuration options
 
 The following image shows the **Configure stack options** page in the Create stack wizard ([deployment](#deployment) step 6).
 
-![Configure Stack Options](images/cloudformation-step-3.png)
+![Configure stack options](images/cloudformation-step-3.png)
 
 The following table explains the parameter values that you need to provide in step 6 during the [deployment](#deployment).
 
@@ -221,7 +221,7 @@ The following table explains the parameter values that you need to provide in st
 |Stack failure options |Choose what happens when deployment fails. The `Roll back all stack resources` option is recommended. |
 |Advanced options | These are optional. |
 
-## Creating a Load Balancer
+## Creating a load balancer
 
 To create a load balancer and a target operator auto-scaling group, complete the following steps:
 
@@ -245,16 +245,16 @@ To create a load balancer and a target operator auto-scaling group, complete the
 10. Go back to the Load Balancer page, and under **Listeners and routing**, select `EUIDALBTG` as the target group to forward to as a default action. Note that you may have to refresh the target groups for your newly created target group to appear. Change the listener **Port** value to `443`.
 11. Set up an HTTPS listener by following the instructions in the [AWS user guide](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html).
 12. Click **Create load balancer**.
-13. To verify the status of this load balancer, please continue in the below section: [Checking EUID Operator Status](#checking-euid-operator-status).
+13. To verify the status of this load balancer, please continue in the below section: [Checking EUID Operator status](#checking-euid-operator-status).
 
-## Checking EUID Operator Status
+## Checking EUID Operator status
 
 To check the EUID Operator status of your Load Balancer, complete the following steps:
 
 1. Identify the DNS name of your load balancer by going to **EC2 > Load balancers** and looking at the **DNS name** column of your load balancer.
 2. In your browser, go to `https://{dns-name-of-your-load-balancer}/ops/healthcheck`. A response of `OK` indicates good operator status.
 
-### Private Operator Attestation Failure
+### Private Operator attestation failure
 
 <SnptAttestFailure />
 
@@ -271,30 +271,30 @@ Here's what you need to know about upgrading:
 For a smooth transition, create the new stack first. After the new stack is bootstrapped and ready to serve, delete the old stack. If you are using a load balancer, first get the new instances up and running and then convert the DNS name from the previous one to the new one.
 :::
 
-## Managing the Logs
+## Managing the logs
 Use the following sections to help you make the best use of your logs:
 
-- [Where to Read Logs](#where-to-read-logs)
-- [Default Log Settings](#default-log-settings)
-- [Changing the Log Rotation Schedule](#changing-the-log-rotation-schedule)
-- [Additional Commands for Logging](#additional-commands-for-logging)
+- [Where to read logs](#where-to-read-logs)
+- [Default log settings](#default-log-settings)
+- [Changing the log rotation schedule](#changing-the-log-rotation-schedule)
+- [Additional commands for logging](#additional-commands-for-logging)
 
-### Where to Read Logs
+### Where to read logs
 To access the logs, ssh into the EC2 instance. The logs are located at `/var/logs/` and are in the format `operator.log-<timestamp rotated>`.
 
-### Default Log Settings
+### Default log settings
 The EUID system uses `syslog-ng` for log generation and employs `logrotate` with cron jobs to manage log rotation and prevent excessive log size. The following sections provide information on the default settings and the reasons behind them, and give guidance for customizing the log rotation configuration to meet your specific requirements:
 
-- [Log Rotation Configuration](#log-rotation-configuration)
-- [Log Rotation Default Settings](#log-rotation-default-settings)
+- [Log rotation configuration](#log-rotation-configuration)
+- [Log rotation default settings](#log-rotation-default-settings)
 - [cronjob Configuration](#cronjob-configuration)
 
-#### Log Rotation Configuration
+#### Log rotation configuration
 When the operator instance has been deployed, the default log rotation settings are applied, as follows:
 - Logs are rotated daily and 30 log entries are kept, so the log history is equivalent to 30 days of data if the log entries are not abnormally large.
 - If log entries are very large, and the log size reaches 30 MB within a 24-hour period, the log is rotated at that point.
 
-#### Log Rotation Default Settings
+#### Log rotation default settings
 
 The following are the default logrotate settings, defined in `/etc/logrotate.d/operator-logrotate.conf`:
 
@@ -343,7 +343,7 @@ These are the default settings for the following reasons:
 - The script ensure that the `maxsize` condition is checked frequently.
 - The command refers to `/var/lib/logrotate/logrotate.status` to check the log status and see if it has reached the rotation condition, so that it won't make extra rotations when `logrotate` is run every minute.
 
-### Changing the Log Rotation Schedule
+### Changing the log rotation schedule
 
 To change the log rotation schedule, update the `etc/logrotate.d/operator-logrotate.conf` file.
 
@@ -353,7 +353,7 @@ Follow the instructions in the logrotate documentation: see [logrotate(8) - Linu
 The service does NOT need to be restarted to pick up the change.
 :::
 
-### Additional Commands for Logging
+### Additional commands for logging
 
 The following table includes some additional commands that might help you manage logs.
 
@@ -363,11 +363,11 @@ The following table includes some additional commands that might help you manage
 | Runs one iteration of `logrotate` manually, without changing the scheduled interval. | `sudo logrotate -f /etc/logrotate.conf --force` |
 | Reloads `syslog-ng`. | `sudo /usr/sbin/syslog-ng-ctl reload` |
 
-## Keeping the Operator Key Secure
+## Keeping the operator key secure
 
 <SnptRotatingTheKeys />
 
-## EUID Operator Error Codes
+## EUID Operator error codes
 
 The following sections list error codes that might occur during a Private Operator's startup or runtime.
 
@@ -375,7 +375,7 @@ The following sections list error codes that might occur during a Private Operat
 Error codes for Private Operator issues are applicable only to release v5.49.7 and later.
 :::
 
-### Startup Errors
+### Startup errors
 
 The following errors might occur during operator startup:
 
@@ -388,7 +388,7 @@ The following errors might occur during operator startup:
 | E05 | OperatorKeyValidationError | Ensure the operator key is correct for the environment and matches the one provided to you. |
 | E06 | UID2ServicesUnreachableError | Allow EUID core and opt-out service IP addresses in the egress firewall. For IP addresses and DNS details, refer to the logs.  |
 
-### Runtime Errors
+### Runtime errors
 
 The following errors might occur during operator runtime:
 
@@ -396,6 +396,6 @@ The following errors might occur during operator runtime:
 | :--- | :--- | :--- | :--- |
 | E12 | Data Download Failure | Look for log messages containing `E12: Data Download Failure` or `Failed to load` errors from `RotatingStoreVerticle`. These messages include HTTP status codes (for example, `HTTP response code 403`) or exception types (for example, `exception: IOException`). | Check the HTTP status code or exception in the error message and resolve accordingly:<br/>**404 errors**: Verify that the operator key is valid for the environment.<br/>**403 errors**: Verify that the operator key and credentials are correct.<br/>**Timeout errors**: Verify network connectivity, check that firewall/security group settings allow outbound HTTPS (port 443), and ensure that the EUID service endpoints are accessible.<br/>**500/503 errors**: This code indicates a temporary EUID service issue. Retry, and if the error persists contact EUID support. |
 
-## Technical Support
+## Technical support
 
 If you have trouble subscribing to the product, or deploying, [contact us](mailto:aws-mktpl-uid@thetradedesk.com).

@@ -1,5 +1,5 @@
 ---
-title: EUID Identifier Types
+title: EUID identifier types
 description: Information about EUID identifier types (raw EUIDs and EUID tokens).
 hide_table_of_contents: false
 sidebar_position: 01
@@ -8,7 +8,7 @@ displayed_sidebar: docs
 
 import Link from '@docusaurus/Link';
 
-# EUID Identifier Types
+# EUID identifier types
 
 EUID is a deterministic ID that is based on <Link href="glossary-uid#gl-personal-data">personal data</Link>, such as email address or phone number. There are two types of EUIDs: raw EUIDs and EUID tokens (also known as advertising tokens). The following table explains each type.
 

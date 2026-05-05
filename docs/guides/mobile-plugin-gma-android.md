@@ -1,5 +1,5 @@
 ---
-title: EUID GMA Plugin for Android
+title: EUID GMA plugin for Android
 description: A guide for publishers using GMA for ad requests on Android apps.
 hide_table_of_contents: false
 sidebar_position: 12
@@ -8,7 +8,7 @@ displayed_sidebar: docs
 
 import Link from '@docusaurus/Link';
 
-# EUID GMA Plugin for Android Integration Guide
+# EUID GMA plugin for Android integration guide
 
 The EUID Google Mobile Ads (GMA) Plugin for Android enables publishers that use the [Google Mobile Ads (GMA) SDK](https://developers.google.com/ad-manager/mobile-ads-sdk) to send <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> as [secure signals](https://support.google.com/admob/answer/11556288) in ad requests from Android apps. This is done automatically, with no direct coding needed from the app developer.
 
@@ -22,7 +22,7 @@ This plugin simplifies integration with Google Mobile Ads (GMA) for any publishe
 
 This documentation is for the EUID GMA Plugin for Android version 2.0.0 and later.
 
-## GitHub Repository
+## GitHub repository
 
 This plugin is in the following open-source GitHub repository:
 
@@ -37,9 +37,9 @@ To run this plugin, install the following:
    - [Release notes](https://developers.google.com/admob/android/rel-notes)
 1. SDK for Android v2.0.0 or later:
    - [SDK](https://central.sonatype.com/artifact/com.uid2/uid2-android-sdk)
-   - [SDK for Android Reference Guide](../sdks/sdk-ref-android.md)
+   - [SDK for Android reference guide](../sdks/sdk-ref-android.md)
 1. [EUID Android GMA Plugin v2.0.0](https://central.sonatype.com/artifact/com.uid2/uid2-android-sdk-gma/)
-1. If you are using R8 or Proguard, add the applicable option specified in [Notes for Using R8 or ProGuard](#notes-for-using-r8-or-proguard)
+1. If you are using R8 or Proguard, add the applicable option specified in [Notes for using R8 or ProGuard](#notes-for-using-r8-or-proguard)
 
 ## Installation
 
@@ -70,7 +70,7 @@ To install with Maven, add the SDK as a dependency in the `pom.xml` file:
 </dependency>
 ```
 
-## Notes for Using R8 or ProGuard
+## Notes for using R8 or ProGuard
 
 If you are using R8, the shrinking and obfuscation rules are included automatically.
 
