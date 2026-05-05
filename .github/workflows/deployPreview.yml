@@ -62,9 +62,9 @@ jobs:
           token: ${{ secrets.GH_MERGE_TOKEN }}
           branch: ci-deploy-preview
           delete-branch: true
-          commit-message: "[CI Pipeline] Deploy preview from EUID-docs ${{ inputs.source_ref }} @ ${{ steps.source-sha.outputs.sha }}"
-          title: "[CI Pipeline] Deploy preview from EUID-docs ${{ inputs.source_ref }}"
-          body: "Automated preview deployment from `EUID-docs` ref `${{ inputs.source_ref }}` (SHA `${{ steps.source-sha.outputs.sha }}`)."
+          commit-message: "[CI Pipeline] Deploy preview from ${{ github.repository }} ${{ inputs.source_ref }} @ ${{ steps.source-sha.outputs.sha }}"
+          title: "[CI Pipeline] Deploy preview from ${{ github.repository }} ${{ inputs.source_ref }}"
+          body: "Automated preview deployment from `${{ github.repository }}` ref `${{ inputs.source_ref }}` (SHA `${{ steps.source-sha.outputs.sha }}`)."
 
       - name: Merge PR as UID2SourceAdmin
         if: steps.cpr.outputs.pull-request-number != ''
