@@ -22,20 +22,46 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: ci-auto-merge
     steps:
-      - name: Checkout
+      - name: Checkout source
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           persist-credentials: false
-      - name: Clone to preview folder (excluding actions)
-        run: rsync -arv --delete --delete-excluded --exclude=".github" --exclude="preview-output" --exclude="preview-output" --exclude=".git" ./ preview-output/
-      - name: Push to staging repository
-        uses: cpina/github-action-push-to-another-repository@55306faa4ed53b815ae49e564af8cfb359d32ae2 # main
-        env:
-            SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+
+      - name: Checkout target preview repo
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
-            source-directory: 'preview-output'
-            destination-github-username: 'European-Unified-ID'
-            destination-repository-name: 'euid-docs-preview'
-            target-branch: main
-            target-directory: preview
+          repository: European-Unified-ID/euid-docs-preview
+          token: ${{ secrets.GH_MERGE_TOKEN }}
+          path: preview-target
+
+      - name: Sync source into preview/ subdir of target
+        run: |
+          rsync -arv --delete --delete-excluded \
+            --exclude=".github" \
+            --exclude=".git" \
+            --exclude="preview-target" \
+            ./ preview-target/preview/
+
+      - name: Create PR with sync changes
+        id: cpr
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        with:
+          path: preview-target
+          token: ${{ secrets.GH_MERGE_TOKEN }}
+          branch: ci-deploy-preview
+          delete-branch: true
+          commit-message: "[CI Pipeline] Deploy preview from ${{ github.sha }}"
+          title: "[CI Pipeline] Deploy preview from ${{ github.sha }}"
+          body: "Automated preview deployment from ${{ github.repository }}@${{ github.sha }}"
+
+      - name: Merge PR as UID2SourceAdmin
+        if: steps.cpr.outputs.pull-request-number != ''
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_MERGE_TOKEN }}
+          PR_NUMBER: ${{ steps.cpr.outputs.pull-request-number }}
+        run: |
+          gh api --method PUT \
+            "repos/European-Unified-ID/euid-docs-preview/pulls/$PR_NUMBER/merge" \
+            -f merge_method="merge"
