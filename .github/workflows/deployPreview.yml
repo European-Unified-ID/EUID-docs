@@ -8,6 +8,11 @@ on:
   #push:
     #branches: []
   workflow_dispatch:
+    inputs:
+      source_ref:
+        description: "Ref of EUID-docs to deploy as preview (branch name, tag, or full SHA). Defaults to main."
+        type: string
+        default: main
 
 permissions:
   contents: read
@@ -24,9 +29,11 @@ jobs:
     runs-on: ubuntu-latest
     environment: ci-auto-merge
     steps:
-      - name: Checkout source
+      - name: Checkout source at requested ref
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
+          ref: ${{ inputs.source_ref }}
+          path: source
           persist-credentials: false
 
       - name: Checkout target preview repo
@@ -41,8 +48,11 @@ jobs:
           rsync -arv --delete --delete-excluded \
             --exclude=".github" \
             --exclude=".git" \
-            --exclude="preview-target" \
-            ./ preview-target/preview/
+            source/ preview-target/preview/
+
+      - name: Resolve source SHA for traceability
+        id: source-sha
+        run: echo "sha=$(git -C source rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Create PR with sync changes
         id: cpr
@@ -52,9 +62,9 @@ jobs:
           token: ${{ secrets.GH_MERGE_TOKEN }}
           branch: ci-deploy-preview
           delete-branch: true
-          commit-message: "[CI Pipeline] Deploy preview from ${{ github.sha }}"
-          title: "[CI Pipeline] Deploy preview from ${{ github.sha }}"
-          body: "Automated preview deployment from ${{ github.repository }}@${{ github.sha }}"
+          commit-message: "[CI Pipeline] Deploy preview from ${{ github.repository }} ${{ inputs.source_ref }} @ ${{ steps.source-sha.outputs.sha }}"
+          title: "[CI Pipeline] Deploy preview from ${{ github.repository }} ${{ inputs.source_ref }}"
+          body: "Automated preview deployment from `${{ github.repository }}` ref `${{ inputs.source_ref }}` (SHA `${{ steps.source-sha.outputs.sha }}`)."
 
       - name: Merge PR as UID2SourceAdmin
         if: steps.cpr.outputs.pull-request-number != ''
