@@ -202,7 +202,7 @@ If you're using server-side integration (see [Publisher Integration Guide, Serve
 
 The following instructions provide an example of how to map personal data to raw EUIDs using the latest version of the `POST /identity/map` endpoint.
 
-For the earlier version, see [Previous Version (v2 Identity Map)](#previous-version-v2-identity-map). For migration steps to the latest version, see [Migration From Version Using v2 Identity Map](#migration-from-version-using-v2-identity-map).
+For the earlier version, see [Previous Version (Using POST /v2/identity/map)](#previous-version-using-post-v2identitymap). For migration steps to the latest version, see [Migration From Version Using POST /v2/identity/map](#migration-from-version-using-post-v2identitymap).
 
 ### Map Personal Data to Raw EUIDs
 
@@ -286,7 +286,7 @@ mixed_input = IdentityMapV3Input()
 mixed_response = client.generate_identity_map(mixed_input)
 ```
 
-## Migration From Version Using v2 Identity Map
+##  Migration From Version Using POST /v2/identity/map
 
 The following sections provide general information and guidance for migrating to the latest version of this SDK, which references `POST /identity/map` version 3, including:
 
@@ -374,14 +374,14 @@ To update personal data mapping from version 2 to version 3 of the `POST /identi
    raw_reason = unmapped.raw_reason
    ```
 
-### Previous Version (v2 Identity Map)
+### Previous Version (Using POST /v2/identity/map)
 
 :::note
 The v2 Identity Map SDK is an earlier version maintained for backwards compatibility. Migrate to the current SDK for improved performance, multi-identity type support, and better EUID rotation management.
 
 New integrations should not use this version.
 
-For instructions, see [Migration From Version Using v2 Identity Map](#migration-from-version-using-v2-identity-map).
+For instructions, see [Migration From Version Using POST /v2/identity/map](#migration-from-version-using-post-v2identitymap).
 :::
 
 To map email addresses, phone numbers, or their respective hashes to their raw EUIDs and salt bucket IDs, if you're using an earlier SDK version that uses `POST /identity/map` version 2, follow these steps.

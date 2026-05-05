@@ -70,7 +70,7 @@ This sample is for publishers who have access to personal data on the server sid
 
 - Site: [Client-Server EUID Integration with Prebid.js](https://prebid-client-server.samples.integ.euid.eu/)
 - Code: [uid2-examples/web-integrations/prebid-integrations/client-server](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/prebid-integrations/client-server)
-- Doc: [EUID Client-Server Integration Guide for Prebid.js](https://euid.eu/docs/guides/integration-prebid-client-server)
+- Doc: [Client-Server Integration Guide for Prebid.js](https://euid.eu/docs/guides/integration-prebid-client-server)
 
 ### Deferred Client-Side Integration with Prebid.js
 
