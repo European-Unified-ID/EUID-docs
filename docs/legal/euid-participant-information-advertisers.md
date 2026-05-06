@@ -40,7 +40,7 @@ Short sample language that we provide as an example of language that could be in
 
 Advertisers participating in EUID are required to have a valid legal basis for their processing of personal data. The Trade Desk recognizes that this is the responsibility of the advertiser as allocated under the EUID Agreement. The Trade Desk expects that many advertisers will choose to rely on consent. If this is an advertiser’s preferred approach, they must ensure that their consent is valid and we recommend following the guidance provided below.
 
-### 4.1 What are the requirements for valid consent for EUID?
+### 4.1. What are the requirements for valid consent for EUID?
 
 We request that advertisers meet the requirements set out in the GDPR. In particular, consent to create an EUID should meet the following requirements:
 
@@ -72,17 +72,17 @@ Advertisers relying on consent must also be able to provide proof of this consen
 
 Sample consent language is available: see [Consent Examples](legal-consent-examples.md).
 
-### 4.2 Can advertisers use the email addresses they have already obtained with marketing consent?
+### 4.2. Can advertisers use the email addresses they have already obtained with marketing consent?
 
 For email addresses that were collected before the advertiser was an EUID participant, advertisers should consider whether they can rely on legitimate interest as a lawful basis for using those email addresses. This is a legal assessment for the advertiser to assess. Ideally, the advertiser should undertake efforts to provide notice of EUID and how to opt out to customers, even when the email addresses have already been collected from their customer.
 
-### 4.3 What about legitimate interest?
+### 4.3. What about legitimate interest?
 
 The Trade Desk acknowledges that the European Data Protection Board guidance on targeting social media users states that legitimate interests may in some circumstances be sufficient to justify the use of an email address collected by an advertiser to identify and target users on a social media platform.
 
 Our position is that legitimate interests may be a legal basis for the creation of an EUID from a user’s email address, provided that the appropriate balancing assessment has been undertaken and the appropriate processes are in place.
 
-### 4.4 How long will consent last?
+### 4.4. How long will consent last?
 
 This is a matter for each advertiser to determine, depending on the particular situation and on guidance from data protection authorities relevant to that advertiser. Advertisers must ensure that they only share email addresses or phone numbers for conversion to an EUID where they are confident that the consent on which they rely remains valid, and must not continue to use or share an EUID where any underlying consent is no longer valid.
 
@@ -92,15 +92,15 @@ There are strict protections in place when special category data is processed. S
 
 Advertisers are also required to prevent the creation of an EUID for an individual under the age of 18.
 
-##  6. Reporting data breaches
+## 6. Reporting data breaches
 
 We require advertisers to notify The Trade Desk in a timely manner of any personal data breach involving an EUID. In the event that an advertiser believes that a data breach must be notified to any appropriate authorities or data subject, we ask that the advertiser first consult with The Trade Desk.
 
 ## 7. Data Transfers
 
-The Trade Desk processes data for EUID in the EU and UK. EUID systems do not transfer or store emails or their derivatives outside of EU/UK. EUID private operators are available on AWS in EU, UK, Switzerland.
+The Trade Desk processes data for EUID in the EU and UK. EUID systems do not transfer or store emails or their derivatives outside of EU/UK. EUID Private Operators are available on AWS in EU, UK, Switzerland.
 
-The Trade Desk CRM for EUID is set up in UK. It stores emails/hashes in UK and maps them to EUID using EUID public operator also in UK.
+The Trade Desk CRM for EUID is set up in UK. It stores emails/hashes in UK and maps them to EUID using EUID Public Operator also in UK.
 
 Where raw EUIDs may potentially be stored or processed by The Trade Desk outside of the EU/UK in the US, there is a valid transfer mechanism (EU and UK Standard Contractual Clauses) for these transfers and the appropriate technical and organizational measures are in place.
 

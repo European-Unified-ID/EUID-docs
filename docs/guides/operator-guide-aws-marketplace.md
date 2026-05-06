@@ -157,7 +157,7 @@ To avoid passing certificates associated with your domain into the enclave, inbo
 
 ### VPC Chart
 
-The following diagram illustrates the virtual private cloud that hosts private operators.
+The following diagram illustrates the virtual private cloud that hosts the Private Operator.
 
 ![EUID Operator VPC Chart](images/aws-vpc-chart-euid.png)
 
@@ -260,7 +260,7 @@ To check the EUID Operator status of your Load Balancer, complete the following 
 
 ## Upgrading the EUID Operator
 
-For each operator version update, each private operator receives an email notification with an upgrade window. After the upgrade window, the old version is deactivated and is no longer supported.
+For each operator version update, each Private Operator receives an email notification with an upgrade window. After the upgrade window, the old version is deactivated and is no longer supported.
 
 Here's what you need to know about upgrading:
 

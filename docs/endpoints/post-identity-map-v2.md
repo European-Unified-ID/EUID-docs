@@ -8,7 +8,7 @@ displayed_sidebar: docs
 
 import Link from '@docusaurus/Link';
 
-# POST /identity/map (v2)
+# POST /v2/identity/map
 
 Maps multiple email addresses, phone numbers, or their respective hashes to their raw EUIDs and <Link href="../ref-info/glossary-uid#gl-salt-bucket-id">salt bucket IDs</Link>. You can also use this endpoint to check for updates to opt-out information.
 
@@ -18,10 +18,10 @@ For details about the EUID opt-out workflow and how users can opt out, see [User
 
 ## Version
 
-This documentation is for version 2 of this endpoint, which is not the latest version. For the latest version, v3, see [POST /identity/map](post-identity-map.md).
+This documentation is for version 2 of this endpoint, which is not the latest version. For the latest version, v3, see [POST /v3/identity/map](post-identity-map.md).
 
 :::note
-If you're using an earlier version, we recommend that you upgrade as soon as possible, to take advantage of improvements. For migration guidance, see [Migration from v2 Identity Map](post-identity-map.md#migration-from-v2-identity-map). For deprecation information, see [Deprecation Schedule: Endpoint Versions](../ref-info/deprecation-schedule.md#endpoint-versions).
+If you're using an earlier version, we recommend that you upgrade as soon as possible, to take advantage of improvements. For migration guidance, see [Migration from POST /v2/identity/map](post-identity-map.md#migration-from-post-v2identitymap). For deprecation information, see [Deprecation Schedule: Endpoint Versions](../ref-info/deprecation-schedule.md#endpoint-versions).
 :::
 
 ## Batch Size and Request Parallelization Requirements
@@ -34,7 +34,7 @@ Here's what you need to know:
 
 ## Rate Limiting
 
-To ensure fair usage and platform stability, the `POST /identity/map` endpoint enforces rate limits to safeguard against bursts of incoming traffic. If you send many requests in quick succession, you might receive `429` error responses.
+To ensure fair usage and platform stability, the `POST /v2/identity/map` endpoint enforces rate limits to safeguard against bursts of incoming traffic. If you send many requests in quick succession, you might receive `429` error responses.
 
 To handle rate limit errors gracefully, we recommend implementing [exponential backoff](https://en.wikipedia.org/wiki/Exponential_backoff) with random jitter when retrying requests. To maximize throughput within the limit, use the maximum batch size of 5,000 items per request rather than sending many small requests.
 
@@ -73,7 +73,7 @@ You must include only **one** of the following four conditional parameters as a 
 
 ### Request Examples
 
-The following are unencrypted JSON request body examples for each parameter, one of which you should include in your requests to the `POST /identity/map` endpoint:
+The following are unencrypted JSON request body examples for each parameter, one of which you should include in your requests to the `POST /v2/identity/map` endpoint:
 
 ```json
 {
@@ -108,7 +108,7 @@ The following are unencrypted JSON request body examples for each parameter, one
 }
 ```
 
-Here's an encrypted request example to the `POST /identity/map` endpoint for a phone number:
+Here's an encrypted request example to the `POST /v2/identity/map` endpoint for a phone number:
 
 ```sh
 echo '{"phone": ["+12345678901", "+441234567890"]}' | python3 uid2_request.py https://prod.euid.eu/v2/identity/map [Your-Client-API-Key] [Your-Client-Secret]

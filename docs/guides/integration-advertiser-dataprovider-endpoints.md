@@ -85,7 +85,7 @@ You could also send conversion information via API or pixels for measurement (at
 
 A raw EUID is an identifier for a user at a specific moment in time. The raw EUID for a specific user changes roughly once per year as part of the EUID refresh process.
 
-The v3 Identity Map API provides a refresh timestamp (`r` field) in the response that indicates when each raw EUID might refresh. Use this timestamp to determine when to regenerate raw EUIDs for your stored data.
+The v3 `POST /identity/map` API provides a refresh timestamp (`r` field) in the response that indicates when each raw EUID might refresh. Use this timestamp to determine when to regenerate raw EUIDs for your stored data.
 
 The raw EUID does not change before the refresh timestamp. After the refresh timestamp, remapping the personal data returns a new refresh timestamp, but the raw EUID might or might not change. It is possible for the raw EUID to remain unchanged for multiple refresh intervals.
 
@@ -119,7 +119,7 @@ There are two ways that you can check with the EUID <Link href="../ref-info/glos
 
 For details about the EUID opt-out workflow and how users can opt out, see [User Opt-Out](../getting-started/gs-opt-out.md).
 
-## Using POST /identity/map Version 2
+## Using POST /v2/identity/map
 
 :::note
 The following information is relevant only if you are using version 2 or earlier of the `POST /identity/map` endpoint, and is provided for reference only. New implementations should use the latest version. For instructions, see [High-Level Steps](#high-level-steps).

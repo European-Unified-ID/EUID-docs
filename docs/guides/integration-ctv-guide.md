@@ -59,14 +59,14 @@ The client-side option is for publishers who want to manage the EUID token entir
 
 This setup requires that all code changes are done within the CTV app.
 
-To implement using this approach, follow the instructions in the [EUID Client-Side Integration Guide for Mobile](integration-mobile-client-side.md).
+To implement using this approach, follow the instructions in the [Client-Side Integration Guide for Mobile](integration-mobile-client-side.md).
 
 The following table shows supported operating systems, with links to applicable documentation resources.
 
 | Operating System | Integration Guide | Link to SDK Guide |
 | :--- | :--- | :--- |
-| [Apple tvOS](https://developer.apple.com/tvos/) | [EUID Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side.md) | [SDK for iOS Reference Guide](../sdks/sdk-ref-ios.md) |
-| [Android TV](https://www.android.com/tv/) | [EUID Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side.md) | [SDK for Android Reference Guide](../sdks/sdk-ref-android.md) |
+| [Apple tvOS](https://developer.apple.com/tvos/) | [Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side.md) | [SDK for iOS Reference Guide](../sdks/sdk-ref-ios.md) |
+| [Android TV](https://www.android.com/tv/) | [Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side.md) | [SDK for Android Reference Guide](../sdks/sdk-ref-android.md) |
 
 ## Server-Side Integration for CTV Apps
 
@@ -93,14 +93,14 @@ This option is for publishers who want to manage the EUID tokens with a client-s
 - The token is generated on the server side.
 - The token is refreshed as needed on the client side, from within the CTV app.
 
-To implement using this approach, follow the instructions in the [EUID Client-Server Integration Guide for Mobile](integration-mobile-client-server.md).
+To implement using this approach, follow the instructions in the [Client-Server Integration Guide for Mobile](integration-mobile-client-server.md).
 
 The following table shows supported operating systems, with links to applicable documentation resources.
 
 | Operating System | Integration Guide | Link to SDK Guide |
 | :--- | :--- | :--- |
-| [Apple tvOS](https://developer.apple.com/tvos/) | [EUID Client-Server Integration Guide for Mobile](../guides/integration-mobile-client-server.md) | [SDK for iOS Reference Guide](../sdks/sdk-ref-ios.md) |
-| [Android TV](https://www.android.com/tv/) | [EUID Client-Server Integration Guide for Mobile](../guides/integration-mobile-client-server.md) | [SDK for Android Reference Guide](../sdks/sdk-ref-android.md) |
+| [Apple tvOS](https://developer.apple.com/tvos/) | [Client-Server Integration Guide for Mobile](../guides/integration-mobile-client-server.md) | [SDK for iOS Reference Guide](../sdks/sdk-ref-ios.md) |
+| [Android TV](https://www.android.com/tv/) | [Client-Server Integration Guide for Mobile](../guides/integration-mobile-client-server.md) | [SDK for Android Reference Guide](../sdks/sdk-ref-android.md) |
 
 ## Best Practices
 

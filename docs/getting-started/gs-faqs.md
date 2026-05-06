@@ -93,8 +93,8 @@ If the user has opted out, the API response notifies you in either of these case
 #### Where should I make token generation calls&#8212;from the server side or the client side?
 
 You can generate EUID tokens from either the client side or the server side. For more information, see:
-- Generating tokens from the client side using Prebid.js: [EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md).
-- Generating tokens from the server side using Prebid.js: [EUID Client-Server Integration Guide for Prebid.js](../guides/integration-prebid-client-server.md).
+- Generating tokens from the client side using Prebid.js: [Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md).
+- Generating tokens from the server side using Prebid.js: [Client-Server Integration Guide for Prebid.js](../guides/integration-prebid-client-server.md).
 - Other server-side options: [Publisher Integrations](../guides/summary-guides.md#publisher-integrations).
 
 #### Can I make token refresh calls from the client side?

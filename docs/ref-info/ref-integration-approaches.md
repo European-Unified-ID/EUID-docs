@@ -29,9 +29,9 @@ For example:
 
 Examples of documentation for publisher client-side integrations:
 
-- [EUID Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md)
+- [Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md)
 - [Client-Side Integration Guide for JavaScript](../guides/integration-javascript-client-side.md)
-- [EUID Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side.md)
+- [Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side.md)
 
 Advertisers integrating on the client side can use the JavaScript SDK:
 
@@ -56,9 +56,9 @@ For example, in a client-server integration for a publisher, the EUID token is g
 
 Examples of documentation for publisher client-server integrations:
 
-- [EUID Client-Server Integration Guide for Prebid.js](../guides/integration-prebid-client-server.md)
+- [Client-Server Integration Guide for Prebid.js](../guides/integration-prebid-client-server.md)
 - [Client-Server Integration Guide for JavaScript](../guides/integration-javascript-client-server.md)
-- [EUID Client-Server Integration Guide for Mobile](../guides/integration-mobile-client-server.md)
+- [Client-Server Integration Guide for Mobile](../guides/integration-mobile-client-server.md)
 
 ### Client-Server Integration: Credentials
 
