@@ -85,7 +85,7 @@ The following table summarizes the options for publishers who want to generate t
 
 | Option | Documentation |
 | :--- | :--- |
-| Prebid.js client-side implementation (8.21.0 or later) | [EUID Client-Side Integration Guide for Prebid.js](integration-prebid-client-side.md) |
+| Prebid.js client-side implementation (8.21.0 or later) | [Client-Side Integration Guide for Prebid.js](integration-prebid-client-side.md) |
 | SDK for JavaScript, client-side implementation | [Client-Side Integration Guide for JavaScript](integration-javascript-client-side.md) |
 
 ### Server-Side Integration Options
