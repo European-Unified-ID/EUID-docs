@@ -22,13 +22,13 @@ The following documents were released in the second quarter of 2026.
 
 <CustomTagsContainer tags="Reference">
 
-### EUID token validator
+### EUID Token Validator
 
 April 24, 2026
 
-We've added a new reference page for the [EUID token validator](ref-token-validator.md), a web-based tool that validates EUID tokens against their source personal data so you can confirm that your token generation process is correct.
+We've added a new reference page for the [EUID Token Validator](ref-token-validator.md), a web-based tool that validates EUID tokens against their source personal data so you can confirm that your token generation process is correct.
 
-For details, see [EUID token validator](ref-token-validator.md).
+For details, see [EUID Token Validator](ref-token-validator.md).
 
 <!-- UID2-6700 -->
 
@@ -118,7 +118,7 @@ We updated the following additional implementations and corresponding documentat
 
 July 16, 2025
 
-We've released a new version of the POST /v3/identity/map API that provides significant improvements for advertisers and data providers. This update includes documentation for the [POST /v3/identity/map](../endpoints/post-identity-map.md) endpoint, the [SDK for Java Reference Guide](../sdks/sdk-ref-java.md#usage-for-advertisersdata-providers), and the [Advertiser/Data Provider Integration Overview](../guides/integration-advertiser-dataprovider-overview.md).
+We've released a new version of the POST /v3/identity/map API that provides significant improvements for advertisers and data providers. This update includes documentation for the [POST /v3/identity/map](../endpoints/post-identity-map.md) endpoint, the [SDK for Java reference guide](../sdks/sdk-ref-java.md#usage-for-advertisersdata-providers), and the [Advertiser/data provider integration overview](../guides/integration-advertiser-dataprovider-overview.md).
 
 <!-- UID2-5558, UID2-5560, UID2-5559, APIDOCS-3318 -->
 
@@ -325,9 +325,9 @@ Mobile plugin guides:
 - [EUID IMA plugin for iOS integration guide](../guides/mobile-plugin-ima-ios)
 
 Mobile integration guides:
-- [Mobile Integration Overview for Android and iOS](../guides/integration-mobile-overview)
-- [Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side)
-- [Client-Server Integration Guide for Mobile](../guides/integration-mobile-client-server)
+- [Mobile integration overview for Android and iOS](../guides/integration-mobile-overview)
+- [Client-side integration guide for mobile](../guides/integration-mobile-client-side)
+- [Client-server integration guide for mobile](../guides/integration-mobile-client-server)
 
 Additional resources:
 - [CTV integration guide](../guides/integration-ctv-guide)

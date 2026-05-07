@@ -93,9 +93,9 @@ If the user has opted out, the API response notifies you in either of these case
 #### Where should I make token generation calls&#8212;from the server side or the client side?
 
 You can generate EUID tokens from either the client side or the server side. For more information, see:
-- Generating tokens from the client side using Prebid.js: [Client-Side Integration Guide for Prebid.js](../guides/integration-prebid-client-side.md).
-- Generating tokens from the server side using Prebid.js: [Client-Server Integration Guide for Prebid.js](../guides/integration-prebid-client-server.md).
-- Other server-side options: [Publisher Integrations](../guides/summary-guides.md#publisher-integrations).
+- Generating tokens from the client side using Prebid.js: [Client-side integration guide for Prebid.js](../guides/integration-prebid-client-side.md).
+- Generating tokens from the server side using Prebid.js: [Client-server integration guide for Prebid.js](../guides/integration-prebid-client-server.md).
+- Other server-side options: [Publisher integrations](../guides/summary-guides.md#publisher-integrations).
 
 #### Can I make token refresh calls from the client side?
 
@@ -271,7 +271,7 @@ Here are some frequently asked questions for demand-side platforms (DSPs).
 
 - [How do I know which decryption key to apply to an EUID?](#how-do-i-know-which-decryption-key-to-apply-to-an-euid)
 - [Where do I get the decryption keys?](#where-do-i-get-the-decryption-keys)
-- [How many decryption keys may be present in memory at any point?](#how-many-decryption-keys-may-be-present-in-memory-at-any-point)
+- [How many decryption keys might be present in memory at any point?](#how-many-decryption-keys-might-be-present-in-memory-at-any-point)
 - [How do I know when to refresh mapped raw EUIDs?](#how-do-i-know-when-to-refresh-mapped-raw-euids)
 - [How do I know if/when the raw EUID has rotated?](#how-do-i-know-ifwhen-the-raw-euid-has-rotated)
 - [Should the DSP be concerned with latency?](#should-the-dsp-be-concerned-with-latency)
@@ -294,7 +294,7 @@ Each of the server-side SDKs (see [SDKs: Summary](../sdks/summary-sdks.md)) upda
 
 You can use one of the server-side SDKs (see [SDKs: Summary](../sdks/summary-sdks.md)) to communicate with the EUID service and fetch the latest keys. To make sure that the keys remain up-to-date, it is recommended to fetch them periodically; for example, once every hour. 
 
-#### How many decryption keys may be present in memory at any point?
+#### How many decryption keys might be present in memory at any point?
 
 There may be thousands of decryption keys present in the system at any given point.
 

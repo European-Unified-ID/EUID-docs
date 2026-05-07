@@ -25,9 +25,9 @@ To use the EUID Token Validator, you need:
 
 If you do not have these, ask your EUID contact. For details, see [EUID credentials](../getting-started/gs-credentials.md).
 
-## Using the token validator
+## Using the Token Validator
 
-To use the token validator, follow these steps:
+To use the Token Validator, follow these steps:
 
 1. In the fields at the top of the Token Validation section, enter your **API Key** (Client Key) and **Client Secret**.
 2. Select the **Operator** (environment) you want to validate against. For information about EUID environments, see [Environments](../getting-started/gs-environments.md).

@@ -18,7 +18,7 @@ import SnptGMAIMA_Plugins from '../snippets/_snpt-mobile_docs_gmaima-plugin-gss.
 import SnptPrebidMobileSDK from '../snippets/_snpt-mobile_docs_prebid-mobile.mdx';
 import SnptErrorResponseStates from '../snippets/_snpt-mobile-docs-error-response-states.mdx';
 
-# Client-Side Integration Guide for Mobile
+# Client-side integration guide for mobile
 
 This guide is for mobile app publishers who want to integrate with EUID with changes only within their mobile app.
 

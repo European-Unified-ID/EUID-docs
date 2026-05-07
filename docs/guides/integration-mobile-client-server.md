@@ -19,13 +19,13 @@ import SnptGMAIMA_Plugins from '../snippets/_snpt-mobile_docs_gmaima-plugin-gss.
 import SnptPrebidMobileSDK from '../snippets/_snpt-mobile_docs_prebid-mobile.mdx';
 import SnptErrorResponseStates from '../snippets/_snpt-mobile-docs-error-response-states.mdx';
 
-# Client-Server Integration Guide for Mobile
+# Client-server integration guide for mobile
 
 This guide is for mobile app publishers who want to integrate with EUID by generating EUID tokens server-side via a <Link href="../ref-info/glossary-uid#gl-public-operator">Public Operator</Link> or <Link href="../ref-info/glossary-uid#gl-private-operator">Private Operator</Link> and then passing the tokens and user identities into their mobile apps, which will in turn pass the tokens for <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link> use.  
 
 This is called client-server integration because some integration steps are client-side and some are server-side.
 
-If you want to integrate with EUID via client-side only changes (that is, all integration changes required are within the mobile apps), refer to the [Client-Side Integration Guide for Mobile](integration-mobile-client-side.md) instead.
+If you want to integrate with EUID via client-side only changes (that is, all integration changes required are within the mobile apps), refer to the [Client-side integration guide for mobile](integration-mobile-client-side.md) instead.
 
 This page provides a high-level overview of integration steps and links to additional documentation.
 
