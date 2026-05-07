@@ -18,15 +18,15 @@ The sample implementations on this page demonstrate email-based integrations; ho
 
 ## JavaScript SDK integrations
 
-This section summarizes sample integrations using the EUID SDK for JavaScript directly, without Prebid.js or Google Secure Signals. For integration options by participant type, see [Web Integration Overview](https://euid.eu/docs/guides/integration-options-publisher-web) or [Advertiser/Data Provider Integration Overview](https://euid.eu/docs/guides/integration-advertiser-dataprovider-overview).
+This section summarizes sample integrations using the EUID SDK for JavaScript directly, without Prebid.js or Google Secure Signals. For integration options by participant type, see [Web integration overview](https://euid.eu/docs/guides/integration-options-publisher-web) or [Advertiser/data provider integration overview](https://euid.eu/docs/guides/integration-advertiser-dataprovider-overview).
 
 ### Client-side integration using EUID SDK for JavaScript
 
-This sample is for publishers who prefer a fully client-side integration using the [SDK for JavaScript Reference Guide](https://euid.eu/docs/sdks/sdk-ref-javascript) to generate and manage tokens directly in the browser. This approach is ideal for fast prototyping with minimal back-end requirements.
+This sample is for publishers who prefer a fully client-side integration using the [SDK for JavaScript reference guide](https://euid.eu/docs/sdks/sdk-ref-javascript) to generate and manage tokens directly in the browser. This approach is ideal for fast prototyping with minimal back-end requirements.
 
 - Site: [Client-Side EUID Integration Example using JavaScript SDK](https://js-client-side.samples.integ.euid.eu/)
 - Code: [uid2-examples/web-integrations/javascript-sdk/client-side](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/javascript-sdk/client-side)
-- Doc: [Client-Side Integration Guide for JavaScript](https://euid.eu/docs/guides/integration-javascript-client-side)
+- Doc: [Client-side integration guide for JavaScript](https://euid.eu/docs/guides/integration-javascript-client-side)
 
 ### Client-server integration using EUID SDK for JavaScript
 
@@ -34,7 +34,7 @@ This sample is for publishers who want more control over EUID token creation (ha
 
 - Site: [Client-Server EUID Integration Example using JavaScript SDK](https://js-client-server.samples.integ.euid.eu/)
 - Code: [uid2-examples/web-integrations/javascript-sdk/client-server](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/javascript-sdk/client-server)
-- Doc: [Client-Server Integration Guide for JavaScript](https://euid.eu/docs/guides/integration-javascript-client-server)
+- Doc: [Client-Server integration guide for JavaScript](https://euid.eu/docs/guides/integration-javascript-client-server)
 
 ### React client-side integration using EUID SDK for JavaScript
 
@@ -42,7 +42,7 @@ This sample is for publishers with React apps who want to integrate EUID directl
 
 - Site: [React Client-Side EUID Integration Example using JavaScript SDK](https://js-react.samples.integ.euid.eu/)
 - Code: [uid2-examples/web-integrations/javascript-sdk/react-client-side](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/javascript-sdk/react-client-side)
-- Doc: [Client-Side Integration Guide for JavaScript](https://euid.eu/docs/guides/integration-javascript-client-side)
+- Doc: [Client-side integration guide for JavaScript](https://euid.eu/docs/guides/integration-javascript-client-side)
 
 ### EUID server-only (server-side)
 
@@ -50,11 +50,11 @@ This sample is for publishers who want all EUID operations to occur on the serve
 
 - Site: [Server-Side EUID Integration Example](https://server-side.samples.integ.euid.eu/)
 - Code: [uid2-examples/web-integrations/server-side](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/server-side)
-- Doc: [Publisher Integration Guide, Server-Side](https://euid.eu/docs/guides/integration-publisher-server-side)
+- Doc: [Publisher integration guide, server-side](https://euid.eu/docs/guides/integration-publisher-server-side)
 
 ## Prebid.js integrations
 
-This section includes sample pages for generating EUID tokens to be passed by Prebid.js in the RTB bidstream. For details, see [EUID Integration Overview for Prebid](https://euid.eu/docs/guides/integration-prebid).
+This section includes sample pages for generating EUID tokens to be passed by Prebid.js in the RTB bidstream. For details, see [EUID integration overview for Prebid](https://euid.eu/docs/guides/integration-prebid).
 
 ### Client-side integration with Prebid.js
 
@@ -62,7 +62,7 @@ This sample is for publishers who have access to personal data on the client sid
 
 - Site: [Client-Side EUID Integration with Prebid.js](https://prebid-client.samples.integ.euid.eu/)
 - Code: [uid2-examples/web-integrations/prebid-integrations/client-side](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/prebid-integrations/client-side)
-- Doc: [Client-Side Integration Guide for Prebid.js](https://euid.eu/docs/guides/integration-prebid-client-side)
+- Doc: [Client-side integration guide for Prebid.js](https://euid.eu/docs/guides/integration-prebid-client-side)
 
 ### Client-server integration with Prebid.js
 
@@ -70,7 +70,7 @@ This sample is for publishers who have access to personal data on the server sid
 
 - Site: [Client-Server EUID Integration with Prebid.js](https://prebid-client-server.samples.integ.euid.eu/)
 - Code: [uid2-examples/web-integrations/prebid-integrations/client-server](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/prebid-integrations/client-server)
-- Doc: [Client-Server Integration Guide for Prebid.js](https://euid.eu/docs/guides/integration-prebid-client-server)
+- Doc: [Client-Server integration guide for Prebid.js](https://euid.eu/docs/guides/integration-prebid-client-server)
 
 ### Deferred client-side integration with Prebid.js
 
@@ -78,7 +78,7 @@ This sample demonstrates how publishers who already have Prebid.js configured ca
 
 - Site: [Deferred Client-Side EUID Integration with Prebid.js](https://prebid-deferred.samples.integ.euid.eu/)
 - Code: [uid2-examples/web-integrations/prebid-integrations/client-side-deferred](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/prebid-integrations/client-side-deferred)
-- Doc: [Client-Side Integration Guide for Prebid.js](https://euid.eu/docs/guides/integration-prebid-client-side)
+- Doc: [Client-side integration guide for Prebid.js](https://euid.eu/docs/guides/integration-prebid-client-side)
 
 ### Prebid.js with Secure Signals
 
@@ -86,11 +86,11 @@ This sample demonstrates how to configure Prebid.js with both EUID and Google Se
 
 - Site: [Client-Side EUID Integration with Prebid.js (with Google Secure Signals)](https://prebid-secure-signals.samples.integ.euid.eu/)
 - Code: [uid2-examples/web-integrations/prebid-secure-signals](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/prebid-secure-signals)
-- Doc: [Google Ad Manager Secure Signals Integration Guide](https://euid.eu/docs/guides/integration-google-ss)
+- Doc: [Google Ad Manager Secure Signals integration guide](https://euid.eu/docs/guides/integration-google-ss)
 
 ## Google Secure Signals integrations
 
-This section includes sample pages for passing EUID identity data to Google's advertising systems through their Secure Signals feature. For details, see [Google Ad Manager Secure Signals Integration Guide](https://euid.eu/docs/guides/integration-google-ss).
+This section includes sample pages for passing EUID identity data to Google's advertising systems through their Secure Signals feature. For details, see [Google Ad Manager Secure Signals integration guide](https://euid.eu/docs/guides/integration-google-ss).
 
 ### Client-side Secure Signals
 
@@ -98,7 +98,7 @@ This sample is for publishers who want a client-side integration with Google Ad 
 
 - Site: [Client-Side EUID Integration with Google Secure Signals](https://secure-signals-client-side.samples.integ.euid.eu/)
 - Code: [uid2-examples/web-integrations/google-secure-signals/client-side](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/google-secure-signals/client-side)
-- Doc: [Google Ad Manager Secure Signals Integration Guide](https://euid.eu/docs/guides/integration-google-ss)
+- Doc: [Google Ad Manager Secure Signals integration guide](https://euid.eu/docs/guides/integration-google-ss)
 
 ### Client-server Secure Signals
 
@@ -106,7 +106,7 @@ This sample is for publishers who want to generate EUID tokens on the server sid
 
 - Site: [Client-Server EUID SDK Integration Example with Google Secure Signals](https://secure-signals-client-server.samples.integ.euid.eu/)
 - Code: [uid2-examples/web-integrations/google-secure-signals/client-server](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/google-secure-signals/client-server)
-- Doc: [Google Ad Manager Secure Signals Integration Guide](https://euid.eu/docs/guides/integration-google-ss)
+- Doc: [Google Ad Manager Secure Signals integration guide](https://euid.eu/docs/guides/integration-google-ss)
 
 ### Server-side Secure Signals
 
@@ -114,7 +114,7 @@ This sample is for publishers who want all EUID token logic handled server-side.
 
 - Site: [Server-Side EUID Integration with Google Secure Signals](https://secure-signals-server-side.samples.integ.euid.eu/)
 - Code: [uid2-examples/web-integrations/google-secure-signals/server-side](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/google-secure-signals/server-side)
-- Doc: [Google Ad Manager Secure Signals Integration Guide](https://euid.eu/docs/guides/integration-google-ss)
+- Doc: [Google Ad Manager Secure Signals integration guide](https://euid.eu/docs/guides/integration-google-ss)
 
 ### React client-side Secure Signals
 
@@ -122,7 +122,7 @@ This sample is for publishers with React apps who want a client-side integration
 
 - Site: [React Client-Side EUID Integration with Google Secure Signals](https://secure-signals-react.samples.integ.euid.eu/)
 - Code: [uid2-examples/web-integrations/google-secure-signals/react-client-side](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/google-secure-signals/react-client-side)
-- Doc: [Google Ad Manager Secure Signals Integration Guide](https://euid.eu/docs/guides/integration-google-ss)
+- Doc: [Google Ad Manager Secure Signals integration guide](https://euid.eu/docs/guides/integration-google-ss)
 
 ## Tools
 
@@ -132,7 +132,7 @@ This tool is for developers or clients validating data preparation, such as hash
 
 - Site: [EUID Hashing Tool](https://hashing-tool.samples.integ.euid.eu/)
 - Code: [uid2-examples/tools/hashing-tool](https://github.com/IABTechLab/uid2-examples/tree/main/tools/hashing-tool)
-- Doc: [Normalization and Encoding](https://euid.eu/docs/getting-started/gs-normalization-encoding)
+- Doc: [Normalization and encoding](https://euid.eu/docs/getting-started/gs-normalization-encoding)
 
 ### UID Verify Chrome extension
 
@@ -140,8 +140,8 @@ UID Verify is a Google Chrome browser extension for debugging EUID integrations.
 
 - Site: [UID Verify on Chrome Web Store](https://chromewebstore.google.com/detail/uid-verify/cfpjjmdagnkmmolcddnoagffeoekkmle)
 - Code: [uid2-detective](https://github.com/IABTechLab/uid2-detective)
-- Doc: [UID Verify Chrome Extension](https://euid.eu/docs/ref-info/ref-uid-verify)
+- Doc: [UID Verify Chrome extension](https://euid.eu/docs/ref-info/ref-uid-verify)
 
 :::note
-The sample sites on this page highlight some common integrations, but do not represent all available EUID integration options. For a summary of all the integration options available, see [EUID Integration Guides: Summary](https://euid.eu/docs/guides/summary-guides).
+The sample sites on this page highlight some common integrations, but do not represent all available EUID integration options. For a summary of all the integration options available, see [EUID Integration guides: Summary](https://euid.eu/docs/guides/summary-guides).
 :::
