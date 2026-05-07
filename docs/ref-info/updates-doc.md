@@ -97,11 +97,11 @@ For details, see:
 
 <CustomTagsContainer tags="Endpoints, Guides, SDKs">
 
-### Identity map v3 (Python SDK, Snowflake)
+### POST /v3/identity/map (Python SDK, Snowflake)
 
 14 August, 2025
 
-We've released updated versions of two additional docs to reflect adoption of the new version of the Identity Map API (v3), announced on 16 July, which provides significant improvements for advertisers and data providers.
+We've released updated versions of two additional docs to reflect adoption of the new version of the POST /v3/identity/map API, announced on 16 July, which provides significant improvements for advertisers and data providers.
 
 We updated the following additional implementations and corresponding documentation:
 
@@ -114,11 +114,11 @@ We updated the following additional implementations and corresponding documentat
 
 <CustomTagsContainer tags="Endpoints, Guides, SDKs">
 
-### Identity map v3
+### POST /v3/identity/map
 
 July 16, 2025
 
-We've released a new version of the Identity Map API (v3) that provides significant improvements for advertisers and data providers. This update includes documentation for the [POST /identity/map](../endpoints/post-identity-map.md) endpoint, the [SDK for Java reference guide](../sdks/sdk-ref-java.md#usage-for-advertisersdata-providers), and the [Advertiser/data provider integration overview](../guides/integration-advertiser-dataprovider-overview.md).
+We've released a new version of the POST /v3/identity/map API that provides significant improvements for advertisers and data providers. This update includes documentation for the [POST /v3/identity/map](../endpoints/post-identity-map.md) endpoint, the [SDK for Java Reference Guide](../sdks/sdk-ref-java.md#usage-for-advertisersdata-providers), and the [Advertiser/Data Provider Integration Overview](../guides/integration-advertiser-dataprovider-overview.md).
 
 <!-- UID2-5558, UID2-5560, UID2-5559, APIDOCS-3318 -->
 
@@ -325,9 +325,9 @@ Mobile plugin guides:
 - [EUID IMA plugin for iOS integration guide](../guides/mobile-plugin-ima-ios)
 
 Mobile integration guides:
-- [EUID mobile integration overview for Android and iOS](../guides/integration-mobile-overview)
-- [EUID client-side integration guide for mobile](../guides/integration-mobile-client-side)
-- [EUID client-server integration guide for mobile](../guides/integration-mobile-client-server)
+- [Mobile Integration Overview for Android and iOS](../guides/integration-mobile-overview)
+- [Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side)
+- [Client-Server Integration Guide for Mobile](../guides/integration-mobile-client-server)
 
 Additional resources:
 - [CTV integration guide](../guides/integration-ctv-guide)

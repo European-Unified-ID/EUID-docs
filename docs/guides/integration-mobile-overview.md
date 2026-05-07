@@ -1,7 +1,7 @@
 ---
-title: Mobile integration overview for Android and iOS
-sidebar_label: Integration overview for mobile
-pagination_label: Mobile integration overview for Android and iOS
+title: Mobile Integration Overview for Android and iOS
+sidebar_label: Integration Overview for Mobile
+pagination_label: Mobile Integration Overview for Android and iOS
 description: Overview of options for EUID mobile integration.
 hide_table_of_contents: false
 sidebar_position: 04
@@ -12,7 +12,7 @@ import Link from '@docusaurus/Link';
 import SnptIntegratingWithSSO from '../snippets/_snpt-integrating-with-sso.mdx';
 import SnptPreparingEmailsAndPhoneNumbers from '../snippets/_snpt-preparing-emails-and-phone-numbers.mdx';
 
-# Mobile integration overview for Android and iOS
+# Mobile Integration Overview for Android and iOS
 
 This guide is an overview of integration options for mobile app publishers who want to integrate with EUID using the SDK for Android or the SDK for iOS.
 
@@ -78,9 +78,9 @@ For details, see [Integration approaches](../ref-info/ref-integration-approaches
 
 | Scenario | Option | Integration Guide |
 | :--- | :--- | :--- |
-| You have access to <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> (email address or phone number) on the client side/within the mobile app, and want to keep changes within your app only. | Client-side integration | [EUID client-side integration guide for mobile](integration-mobile-client-side.md) |
-| You have access to personal data on the server side only and can do the necessary development to generate EUID tokens server-side, but you want to refresh tokens on the client side&#8212;or you are using a <Link href="../ref-info/glossary-uid#gl-private-operator">Private Operator</Link>. | Client-Server Integration | [EUID client-server integration guide for mobile](integration-mobile-client-server.md) |
-| You have access to personal data on the server side only and can do the necessary development to generate EUID tokens server-side, or you are using a <Link href="../ref-info/glossary-uid#gl-private-operator">Private Operator</Link>. | Server-Side Integration | [EUID server-side integration guide for mobile](integration-mobile-server-side.md) |
+| You have access to <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> (email address or phone number) on the client side/within the mobile app, and want to keep changes within your app only. | Client-side integration | [Client-Side Integration Guide for Mobile](integration-mobile-client-side.md) |
+| You have access to personal data on the server side only and can do the necessary development to generate EUID tokens server-side, but you want to refresh tokens on the client side&#8212;or you are using a <Link href="../ref-info/glossary-uid#gl-private-operator">Private Operator</Link>. | Client-Server Integration | [Client-Server Integration Guide for Mobile](integration-mobile-client-server.md) |
+| You have access to personal data on the server side only and can do the necessary development to generate EUID tokens server-side, or you are using a <Link href="../ref-info/glossary-uid#gl-private-operator">Private Operator</Link>. | Server-Side Integration | [EUID Server-Side Integration Guide for Mobile](integration-mobile-server-side.md) |
 
 ### Generating, storing, and refreshing the EUID token
 
@@ -97,13 +97,13 @@ The following table summarizes the mobile integration options for managing the E
   <tbody>
     <tr>
       <td>EUID Android SDK</td>
-      <td>[SDK for Android reference guide](../sdks/sdk-ref-android.md)</td>
-      <td>One of the following:<ul><li>[EUID client-side integration guide for mobile](../guides/integration-mobile-client-side.md)</li><li>[EUID client-server integration guide for mobile](../guides/integration-mobile-client-server.md)</li></ul></td>
+      <td>[SDK for Android Reference Guide](../sdks/sdk-ref-android.md)</td>
+      <td>One of the following:<ul><li>[Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side.md)</li><li>[Client-Server Integration Guide for Mobile](../guides/integration-mobile-client-server.md)</li></ul></td>
     </tr>
     <tr>
       <td>EUID iOS SDK</td>
-      <td>[SDK for iOS reference guide](../sdks/sdk-ref-ios.md)</td>
-      <td>One of the following:<ul><li>[EUID client-side integration guide for mobile](../guides/integration-mobile-client-side.md)</li><li>[EUID client-server integration guide for mobile](../guides/integration-mobile-client-server.md)</li></ul></td>
+      <td>[SDK for iOS Reference Guide](../sdks/sdk-ref-ios.md)</td>
+      <td>One of the following:<ul><li>[Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side.md)</li><li>[Client-Server Integration Guide for Mobile](../guides/integration-mobile-client-server.md)</li></ul></td>
     </tr>
   </tbody>
 </table>

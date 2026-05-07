@@ -51,8 +51,8 @@ Determine which method is best for you, and then follow the applicable integrati
 
 | Scenario | Integration Guide |
 | :--- | :--- |
-| You have access to personal data on the client side and want to do front-end development only | [EUID client-side integration guide for Prebid.js](integration-prebid-client-side.md) |
-| You have access to personal data on the server side and can do server-side development | [EUID client-server integration guide for Prebid.js](integration-prebid-client-server.md) |
+| You have access to personal data on the client side and want to do front-end development only | [Client-Side Integration Guide for Prebid.js](integration-prebid-client-side.md) |
+| You have access to personal data on the server side and can do server-side development | [Client-Server Integration Guide for Prebid.js](integration-prebid-client-server.md) |
 
 ### Refreshing the EUID token
 
@@ -66,8 +66,8 @@ The Prebid.js EUID module can automatically refresh the EUID tokens. If you pref
 
 To configure the EUID module, call `pbjs.setConfig`. For details on supported parameters, refer to the guide that applies to your implementation:
 
-- [EUID client-side integration guide for Prebid.js](integration-prebid-client-side.md)
-- [EUID client-server integration guide for Prebid.js](integration-prebid-client-server.md)
+- [Client-Side Integration Guide for Prebid.js](integration-prebid-client-side.md)
+- [Client-Server Integration Guide for Prebid.js](integration-prebid-client-server.md)
 
 When the EUID module is configured, it manages an EUID token for the user and stores it in the user's browser. 
 
@@ -83,9 +83,9 @@ At a high level, to integrate your site with EUID using Prebid.js, you'll need t
 
 For detailed instructions, refer to one of the following integration guides:
 
-- [EUID client-side integration guide for Prebid.js](integration-prebid-client-side.md)
-- [EUID client-server integration guide for Prebid.js](integration-prebid-client-server.md)
+- [Client-Side Integration Guide for Prebid.js](integration-prebid-client-side.md)
+- [Client-Server Integration Guide for Prebid.js](integration-prebid-client-server.md)
 
 ## EUID integration with Prebid mobile SDK for mobile devices
 
-EUID integration with Prebid is supported for Android and iOS mobile devices using the [EUID mobile integration with Prebid mobile SDK](integration-prebid-mobile-summary.md).
+EUID integration with Prebid is supported for Android and iOS mobile devices using the [Mobile Integration with Prebid Mobile SDK](integration-prebid-mobile-summary.md).
