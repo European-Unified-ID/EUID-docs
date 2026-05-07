@@ -34,7 +34,7 @@ This sample is for publishers who want more control over EUID token creation (ha
 
 - Site: [Client-Server EUID Integration Example using JavaScript SDK](https://js-client-server.samples.integ.euid.eu/)
 - Code: [uid2-examples/web-integrations/javascript-sdk/client-server](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/javascript-sdk/client-server)
-- Doc: [Client-Server integration guide for JavaScript](https://euid.eu/docs/guides/integration-javascript-client-server)
+- Doc: [Client-server integration guide for JavaScript](https://euid.eu/docs/guides/integration-javascript-client-server)
 
 ### React client-side integration using EUID SDK for JavaScript
 
@@ -70,7 +70,7 @@ This sample is for publishers who have access to personal data on the server sid
 
 - Site: [Client-Server EUID Integration with Prebid.js](https://prebid-client-server.samples.integ.euid.eu/)
 - Code: [uid2-examples/web-integrations/prebid-integrations/client-server](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/prebid-integrations/client-server)
-- Doc: [Client-Server integration guide for Prebid.js](https://euid.eu/docs/guides/integration-prebid-client-server)
+- Doc: [Client-server integration guide for Prebid.js](https://euid.eu/docs/guides/integration-prebid-client-server)
 
 ### Deferred client-side integration with Prebid.js
 
@@ -143,5 +143,5 @@ UID Verify is a Google Chrome browser extension for debugging EUID integrations.
 - Doc: [UID Verify Chrome extension](https://euid.eu/docs/ref-info/ref-uid-verify)
 
 :::note
-The sample sites on this page highlight some common integrations, but do not represent all available EUID integration options. For a summary of all the integration options available, see [EUID Integration guides: Summary](https://euid.eu/docs/guides/summary-guides).
+The sample sites on this page highlight some common integrations, but do not represent all available EUID integration options. For a summary of all the integration options available, see [EUID integration guides: Summary](https://euid.eu/docs/guides/summary-guides).
 :::

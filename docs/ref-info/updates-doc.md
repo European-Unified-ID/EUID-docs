@@ -381,7 +381,7 @@ For details, see [Google Ad Manager Secure Signals integration guide](../guides/
 
 <CustomTagsContainer tags="Guides, Mobile, SDKs">
 
-### iOS SDK Guide
+### iOS SDK guide
 
 August 29, 2024
 
