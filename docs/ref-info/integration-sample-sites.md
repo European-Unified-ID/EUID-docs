@@ -62,7 +62,7 @@ This sample is for publishers who have access to personal data on the client sid
 
 - Site: [Client-Side EUID Integration with Prebid.js](https://prebid-client.samples.integ.euid.eu/)
 - Code: [uid2-examples/web-integrations/prebid-integrations/client-side](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/prebid-integrations/client-side)
-- Doc: [EUID Client-Side Integration Guide for Prebid.js](https://euid.eu/docs/guides/integration-prebid-client-side)
+- Doc: [Client-Side Integration Guide for Prebid.js](https://euid.eu/docs/guides/integration-prebid-client-side)
 
 ### Client-Server Integration with Prebid.js
 
@@ -78,7 +78,7 @@ This sample demonstrates how publishers who already have Prebid.js configured ca
 
 - Site: [Deferred Client-Side EUID Integration with Prebid.js](https://prebid-deferred.samples.integ.euid.eu/)
 - Code: [uid2-examples/web-integrations/prebid-integrations/client-side-deferred](https://github.com/IABTechLab/uid2-examples/tree/main/web-integrations/prebid-integrations/client-side-deferred)
-- Doc: [EUID Client-Side Integration Guide for Prebid.js](https://euid.eu/docs/guides/integration-prebid-client-side)
+- Doc: [Client-Side Integration Guide for Prebid.js](https://euid.eu/docs/guides/integration-prebid-client-side)
 
 ### Prebid.js with Secure Signals
 
