@@ -4,7 +4,7 @@ description: Information summary for demand-side platforms (DSPs).
 hide_table_of_contents: false
 sidebar_position: 06
 use_banner: true
-banner_title: EUID Overview for DSPs
+banner_title: EUID overview for DSPs
 banner_description: Enable data strategies with a more durable identifier.
 banner_icon: 'dsps'
 banner_text_color: 'white'
