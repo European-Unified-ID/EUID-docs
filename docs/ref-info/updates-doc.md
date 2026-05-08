@@ -136,7 +136,7 @@ March 19, 2025
 
 We've added a guide for mobile app publishers who want to manage the EUID token entirely on the server side.
 
-For details, see [EUID server-side integration guide for mobile](../guides/integration-mobile-server-side.md).
+For details, see [Server-side integration guide for mobile](../guides/integration-mobile-server-side.md).
 
 <!-- APIDOCS-2932 -->
 

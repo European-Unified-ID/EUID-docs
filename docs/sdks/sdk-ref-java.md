@@ -398,7 +398,7 @@ IdentityMapV3Input mixedInput = new IdentityMapV3Input()
 IdentityMapV3Response mixedResponse = client.generateIdentityMap(mixedInput);
 ```
 
-##  migration from version using POST /v2/identity/map
+## Migration from version using POST /v2/identity/map
 
 The following sections provide general information and guidance for migrating to the latest version of this SDK, which references `POST /identity/map` version 3, including:
 

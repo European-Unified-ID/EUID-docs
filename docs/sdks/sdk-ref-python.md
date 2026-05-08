@@ -286,7 +286,7 @@ mixed_input = IdentityMapV3Input()
 mixed_response = client.generate_identity_map(mixed_input)
 ```
 
-##  migration from version using POST /v2/identity/map
+## Migration from version using POST /v2/identity/map
 
 The following sections provide general information and guidance for migrating to the latest version of this SDK, which references `POST /identity/map` version 3, including:
 
@@ -442,7 +442,7 @@ client.refresh()
 decrypted = client.decrypt_token_into_raw_uid(uid_token, domainOrAppName)
 # If decryption succeeded, use the raw EUID.
 if decrypted.success:
-    #  Use decrypted.uid
+    # Use decrypted.uid
 else:
    # Check decrypted.status for the failure reason.
 ```

@@ -229,7 +229,7 @@ In general yes, the process of generating a raw EUID from personal data is the s
 
 However, there is a variable factor that's used in generating the raw EUID. The underlying values are refreshed roughly once per year (for details, see [How often should raw EUIDs be refreshed for incremental updates?](#how-often-should-raw-euids-be-refreshed-for-incremental-updates)). If these values change between one request and another, those two requests result in two different raw EUIDs, even when the personal data is the same.
 
-For more information, see [Monitor for raw EUID refresh](../guides/integration-advertiser-dataprovider-overview.md#5-monitor-for-raw-euid-refresh) in the *Advertiser/Data Provider Integration Guide*.
+For more information, see [Monitor for raw EUID refresh](../guides/integration-advertiser-dataprovider-overview.md#5-monitor-for-raw-euid-refresh) in the *Advertiser/data provider integration guide*.
 
 #### If two operators process the same personal data, are the results the same?
 
