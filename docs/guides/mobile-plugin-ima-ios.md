@@ -48,11 +48,11 @@ Install the EUID iOS IMA Plugin via Swift Package Manager or CocoaPods to an exi
 
 There are three installation options:
 
--   [Package.Swift](#installing-with-packageswift)
+-   [Package.swift](#installing-with-packageswift)
 -   [Xcode](#installing-with-xcode)
 -   [CocoaPods](#installing-with-cocoapods)
 
-### Installing with Package.Swift
+### Installing with Package.swift
 
 Add the following dependency to Package.swift:
 

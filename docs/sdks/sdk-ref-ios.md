@@ -74,11 +74,11 @@ Minimum requirements for this SDK are as follows:
 
 Install the iOS SDK via Swift Package Manager (SPM) or CocoaPods. There are three installation options:
 
--   [Package.Swift](#installing-with-packageswift)
+-   [Package.swift](#installing-with-packageswift)
 -   [Xcode](#installing-with-xcode)
 -   [CocoaPods](#installing-with-cocoapods)
 
-### Installing with Package.Swift
+### Installing with Package.swift
 
 Add the following dependency to Package.swift:
 
