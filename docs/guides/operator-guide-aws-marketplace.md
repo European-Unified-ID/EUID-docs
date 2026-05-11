@@ -1,5 +1,5 @@
 ---
-title: EUID Private Operator for AWS
+title: EUID Private Operator for AWS integration guide
 sidebar_label: AWS Marketplace
 pagination_label: EUID Private Operator for AWS integration guide
 description: Integration information for Private Operator in AWS.
