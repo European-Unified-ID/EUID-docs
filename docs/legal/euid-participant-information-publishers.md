@@ -20,7 +20,7 @@ The rule owner of the EUID ecosystem&#8212;currently The Trade Desk&#8212;is als
 
 The <Link href="../ref-info/glossary-uid#gl-gdpr">GDPR</Link> explains that where there are two or more controllers, they are joint controllers where they jointly determine the purposes and means of processing. In the EUID ecosystem, the rule owner is a joint controller with each publisher that submits an identifier for conversion into an EUID. The rule owner’s responsibility as a controller is limited and does not extend to the subsequent use of an EUID by the publisher for advertising purposes.
 
-## 2. What does this mean for the EUID agreement?
+## 2. What does this mean for the EUID Agreement?
 
 Joint controllers are required under the GDPR to set out clearly how they are each responsible for data protection compliance. In the EUID Agreements, the responsibilities are set out in the Exhibit headed "Allocation of Responsibility." It is set out in this section that:
 

@@ -26,7 +26,7 @@ Consent language examples are in these sections:
 The following consent sample provides suggestions for wording you could include as part of a CMP/cookie consent overlay, to request your users' consent for EUID. It includes:
 
 - [Primary overlay](#primary-overlay)
-- [Second-layer introductory language (in the "customize options" link)](#second-layer-introductory-language-in-the-customize-options-link)
+- [Second-layer introductory language (in the "Customize Options" link)](#second-layer-introductory-language-in-the-customize-options-link)
 
 ### Primary overlay
 
@@ -40,7 +40,7 @@ The following table includes consent sample copy for the primary overlay.
 | Mandatory consent lead-in. Withdrawal of consent language may be refined (links to the [EUID Transparency and Control Portal](https://transparentadvertising.eu/) / further information concerning data subject rights). | To see more detail and make granular choices, choose **Customize Options**. You can withdraw consent at any time. |
 | Consent buttons | <ul><li>Yes to all</li><li>No to all</li><li>Customize options</li></ul> |
 
-### Second-layer introductory language (in the "customize options" link)
+### Second-layer introductory language (in the "Customize Options" link)
 
 The following consent sample copy is for content accessed via the **Customize Options** link.
 
