@@ -82,11 +82,11 @@ The following documentation resources are available for DSPs to implement EUID.
 
 | Type| Documentation | Content Description |
 | :--- | :--- | :--- |
-|SDK for Java | [SDK for Java reference guide](../sdks/sdk-ref-java.md) | An SDK for anyone using Java server-side and who wants to decrypt EUID advertising tokens to access the raw EUID.|
-|SDK for Python | [SDK for Python reference guide](../sdks/sdk-ref-python.md) | An SDK for anyone using Python server-side and who wants to decrypt EUID advertising tokens to access the raw EUID.|
-|SDK for C# / .NET | [SDK for C# / .NET reference guide](../sdks/sdk-ref-csharp-dotnet.md) | An SDK for anyone using .NET server-side and who wants to decrypt EUID advertising tokens to access the raw EUID.|
-|SDK for C++ | [SDK for C++ reference guide](../sdks/sdk-ref-cplusplus.md) | An SDK for anyone using C++ server-side and who wants to decrypt EUID advertising tokens to access the raw EUID.|
-| Integration Guide | [DSP integration guide](../guides/dsp-guide.md) | This integration guide for DSPs covers handling EUIDs for bidding and honoring user opt-outs. |
+| SDK for Java | [SDK for Java reference guide](../sdks/sdk-ref-java.md) | An SDK for anyone using Java server-side and who wants to decrypt EUID advertising tokens to access the raw EUID.|
+| SDK for Python | [SDK for Python reference guide](../sdks/sdk-ref-python.md) | An SDK for anyone using Python server-side and who wants to decrypt EUID advertising tokens to access the raw EUID.|
+| SDK for C# / .NET | [SDK for C# / .NET reference guide](../sdks/sdk-ref-csharp-dotnet.md) | An SDK for anyone using .NET server-side and who wants to decrypt EUID advertising tokens to access the raw EUID.|
+| SDK for C++ | [SDK for C++ reference guide](../sdks/sdk-ref-cplusplus.md) | An SDK for anyone using C++ server-side and who wants to decrypt EUID advertising tokens to access the raw EUID.|
+| Integration guide | [DSP integration guide](../guides/dsp-guide.md) | This integration guide for DSPs covers handling EUIDs for bidding and honoring user opt-outs. |
 
 <!-- ## Integration Requirements
 
