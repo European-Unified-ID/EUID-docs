@@ -161,10 +161,11 @@ The following functions are available as part of the EUIDManager API:
 
 #### generateIdentity()
 
-Generate an EUID Identity using <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>. For details, see [Configure the EUID mobile SDK](../guides/integration-mobile-client-side.md#configure-the-euid-mobile-sdk) in the *Client-Server Integration Guide for Mobile*.
+Generate an EUID Identity using <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>. For details, see [Configure the EUID mobile SDK](../guides/integration-mobile-client-side.md#configure-the-euid-mobile-sdk) in the *Client-side integration guide for mobile*.
+
 #### setIdentity()
 
-Sets an EUID Identity, created server-side, to be managed by the SDK. For details, see [Configure the EUID mobile SDK](../guides/integration-mobile-client-server.md#configure-the-euid-mobile-sdk) in the *Client-Server Integration Guide for Mobile*.
+Sets an EUID Identity, created server-side, to be managed by the SDK. For details, see [Configure the EUID mobile SDK](../guides/integration-mobile-client-server.md#configure-the-euid-mobile-sdk) in the *Client-server integration guide for mobile*.
 
 #### resetIdentity()
 
