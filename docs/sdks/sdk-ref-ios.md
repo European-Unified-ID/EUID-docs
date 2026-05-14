@@ -17,8 +17,8 @@ The following iOS-related plugins, and associated documentation, are also availa
 
 | Purpose | Product/Documentation |
 | :--- | :--- |
-| To use the Google Mobile Ads (GMA) SDK to send <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> as [secure signals](https://support.google.com/admob/answer/11556288) in ad requests from iOS/tvOS apps | [EUID GMA plugin for iOS integration guide](../guides/mobile-plugin-gma-ios.md) |
-| To use the Google Interactive Media Ads SDK for iOS to send <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> as [secure signals](https://support.google.com/admob/answer/11556288) in ad requests from iOS/tvOS apps | [EUID IMA plugin for iOS integration guide](../guides/mobile-plugin-ima-ios.md) |
+| To use the Google Mobile Ads (GMA) SDK to send <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> as [secure signals](https://support.google.com/admob/answer/11556288) in ad requests from iOS/tvOS apps | [EUID GMA Plugin for iOS integration guide](../guides/mobile-plugin-gma-ios.md) |
+| To use the Google Interactive Media Ads SDK for iOS to send <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> as [secure signals](https://support.google.com/admob/answer/11556288) in ad requests from iOS/tvOS apps | [EUID IMA Plugin for iOS integration guide](../guides/mobile-plugin-ima-ios.md) |
 
 ## tvOS support
 

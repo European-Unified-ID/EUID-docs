@@ -298,7 +298,7 @@ October 24, 2024
 
 We've added the following new document to support EUID integration with GMA Android for mobile ads:
 
-- [EUID GMA plugin for Android integration guide](../guides/mobile-plugin-gma-android)
+- [EUID GMA Plugin for Android integration guide](../guides/mobile-plugin-gma-android)
 
 <!-- APIDOCS-2390 -->
 
@@ -320,9 +320,9 @@ SDK doc:
 - [SDK for Android reference guide](../sdks/sdk-ref-android)
 
 Mobile plugin guides:
-- [EUID GMA plugin for iOS integration guide](../guides/mobile-plugin-gma-ios)
-- [EUID IMA plugin for Android integration guide](../guides/mobile-plugin-ima-android)
-- [EUID IMA plugin for iOS integration guide](../guides/mobile-plugin-ima-ios)
+- [EUID GMA Plugin for iOS integration guide](../guides/mobile-plugin-gma-ios)
+- [EUID IMA Plugin for Android integration guide](../guides/mobile-plugin-ima-android)
+- [EUID IMA Plugin for iOS integration guide](../guides/mobile-plugin-ima-ios)
 
 Mobile integration guides:
 - [Mobile integration overview for Android and iOS](../guides/integration-mobile-overview)

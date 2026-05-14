@@ -111,7 +111,7 @@ Here's what you need to know about the token auto-refresh:
 
 ## API reference
 
-All interactions with the Client-Side JavaScript SDK are done through the global `__euid` object, which is a member of the `EUID` class. All of the following JavaScript functions are members of the `EUID` class:
+All interactions with the Client-side JavaScript SDK are done through the global `__euid` object, which is a member of the `EUID` class. All of the following JavaScript functions are members of the `EUID` class:
 
 - [constructor()](#constructor)
 - [init()](#initopts-object-void)
@@ -278,7 +278,7 @@ If the `getAdvertisingTokenAsync()` function is called *after* the initializatio
 ```
 
 :::tip
-You can use this function to be notified of the completion of the Client-Side JavaScript SDK initialization from a component that might not be the one that called `init()`.
+You can use this function to be notified of the completion of the client-side JavaScript SDK initialization from a component that might not be the one that called `init()`.
 :::
 
 ### isLoginRequired(): boolean
