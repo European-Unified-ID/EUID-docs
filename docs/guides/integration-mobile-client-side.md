@@ -696,7 +696,7 @@ If `getAdvertisingToken()` returns null, and the identity status is not `OPT_OUT
 
 <SnptGMAIMA_Plugins />
 
-## Optional: EUID integration with Prebid mobile SDK
+## Optional: EUID integration with Prebid Mobile SDK
 
 :::important
 The EUID integration with Prebid Mobile SDK vv2 requires version 1.6.0 or later of the EUID SDK for Android, or version 1.7.0 or later of the EUID SDK for iOS.

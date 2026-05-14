@@ -312,7 +312,7 @@ EUIDManager.shared.automaticRefreshEnabled = false
 
 <SnptGMAIMA_Plugins />
 
-## Optional: EUID integration with Prebid mobile SDK
+## Optional: EUID integration with Prebid Mobile SDK
 
 :::important
 The EUID integration with Prebid Mobile SDK v2 requires version 1.6.0 or later of the EUID SDK for Android, or version 1.7.0 or later of the EUID SDK for iOS.

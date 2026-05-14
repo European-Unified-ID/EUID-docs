@@ -331,7 +331,7 @@ Mobile integration guides:
 
 Additional resources:
 - [CTV integration guide](../guides/integration-ctv-guide)
-- [EUID mobile integration for Prebid mobile SDK](../guides/integration-prebid-mobile-summary)
+- [EUID mobile integration for Prebid Mobile SDK](../guides/integration-prebid-mobile-summary)
 
 <!-- APIDOCS-2554 -->
 
