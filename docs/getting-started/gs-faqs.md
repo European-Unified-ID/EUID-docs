@@ -300,7 +300,7 @@ There may be thousands of decryption keys present in the system at any given poi
 
 #### How do I know when to refresh mapped raw EUIDs?
 
-See [How do I know when to refresh a raw EUID?](#how-do-i-know-when-to-refresh-a-raw-euid) in the FAQs for Advertisers and Data Providers.
+See [How do I know when to refresh a raw EUID?](#how-do-i-know-when-to-refresh-a-raw-euid) in the FAQs for sdvertisers and data providers.
 
 #### How do I know if/when the raw EUID has rotated?
 

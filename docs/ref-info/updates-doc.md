@@ -256,7 +256,7 @@ November 26, 2024
 
 We've added a new EUID hashing tool so that you can check that you're normalizing and encoding correctly.
 
-For details, see [EUID hashing tool](../getting-started/gs-normalization-encoding#euid-hashing-tool) in the *Normalization and Encoding* documentation.
+For details, see [EUID hashing tool](../getting-started/gs-normalization-encoding#euid-hashing-tool) in the *Normalization and encoding* documentation.
 
 <!-- APIDOCS-2772 -->
 
