@@ -271,7 +271,7 @@ Here are some frequently asked questions for demand-side platforms (DSPs).
 
 - [How do I know which decryption key to apply to an EUID?](#how-do-i-know-which-decryption-key-to-apply-to-an-euid)
 - [Where do I get the decryption keys?](#where-do-i-get-the-decryption-keys)
-- [How many decryption keys may be present in memory at any point?](#how-many-decryption-keys-might-be-present-in-memory-at-any-point)
+- [How many decryption keys may be present in memory at any point?](#how-many-decryption-keys-may-be-present-in-memory-at-any-point)
 - [How do I know when to refresh mapped raw EUIDs?](#how-do-i-know-when-to-refresh-mapped-raw-euids)
 - [How do I know if/when the raw EUID has rotated?](#how-do-i-know-ifwhen-the-raw-euid-has-rotated)
 - [Should the DSP be concerned with latency?](#should-the-dsp-be-concerned-with-latency)
