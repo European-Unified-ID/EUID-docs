@@ -1,5 +1,5 @@
 ---
-title: EUID Components
+title: EUID components
 description: Summary of key components of the EUID technical infrastructure.
 hide_table_of_contents: false
 sidebar_position: 01
@@ -8,7 +8,7 @@ displayed_sidebar: docs
 
 import Link from '@docusaurus/Link';
 
-# EUID Components
+# EUID components
 
 The EUID framework consists of the following components, all of which are currently managed by The Trade Desk.
 

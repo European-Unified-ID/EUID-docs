@@ -8,7 +8,7 @@ displayed_sidebar: docs
 
 import Link from '@docusaurus/Link';
 
-# EUID IMA Plugin for iOS Integration Guide
+# EUID IMA Plugin for iOS integration guide
 
 The EUID Interactive Media Ads (IMA) Plugin for iOS enables publishers that use the [Google IMA SDK for iOS](https://developers.google.com/interactive-media-ads/docs/sdks/ios/client-side) to send <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> as [secure signals](https://support.google.com/admob/answer/11556288) in ad requests from iOS apps. This is done automatically, with no direct coding needed from the app developer.
 
@@ -22,7 +22,7 @@ This plugin simplifies integration with Google Interactive Media Ads (IMA) for a
 
 This documentation is for the EUID IMA Plugin for iOS version 1.0.0 or later.
 
-## GitHub Repository
+## GitHub repository
 
 This plugin is in the following open-source GitHub repository:
 
@@ -37,7 +37,7 @@ To run this plugin, install the following:
    - [Release history](https://developers.google.com/interactive-media-ads/docs/sdks/ios/client-side/history)
 1. SDK for iOS v1.7.0 or later:
    - [SDK](https://github.com/IABTechLab/uid2-ios-sdk)
-   - [SDK for iOS Reference Guide](../sdks/sdk-ref-ios.md)
+   - [SDK for iOS reference guide](../sdks/sdk-ref-ios.md)
 1. [EUID IMA Plugin for iOS v1.0.0](https://github.com/IABTechLab/uid2-ios-plugin-google-ima)
 
 ## Installation
@@ -64,7 +64,7 @@ dependencies: [
 
 ### Installing with Xcode
 
-In the XCode user interface, under Package Dependencies, add the following entry for your apps:
+In the Xcode user interface, under Package Dependencies, add the following entry for your apps:
 
 | Name | Location | Dependency Rule |
 | :--- | :--- | :--- |

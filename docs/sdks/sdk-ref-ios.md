@@ -9,7 +9,7 @@ displayed_sidebar: docs
 import Link from '@docusaurus/Link';
 import SnptSDKsSameUID2EUID from '../snippets/_snpt-euid-sdk-same-for-all.mdx';
 
-# SDK for iOS Reference Guide
+# SDK for iOS reference guide
 
 You can use the SDK for iOS to facilitate the process of generating or establishing client identity using EUID, retrieving advertising tokens for <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link> use, and automatically refreshing EUID tokens.
 
@@ -17,11 +17,12 @@ The following iOS-related plugins, and associated documentation, are also availa
 
 | Purpose | Product/Documentation |
 | :--- | :--- |
-| To use the Google Mobile Ads (GMA) SDK to send <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> as [secure signals](https://support.google.com/admob/answer/11556288) in ad requests from iOS/tvOS apps | [EUID GMA Plugin for iOS Integration Guide](../guides/mobile-plugin-gma-ios.md) |
-| To use the Google Interactive Media Ads SDK for iOS to send <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> as [secure signals](https://support.google.com/admob/answer/11556288) in ad requests from iOS/tvOS apps | [EUID IMA Plugin for iOS Integration Guide](../guides/mobile-plugin-ima-ios.md) |
+| To use the Google Mobile Ads (GMA) SDK to send <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> as [secure signals](https://support.google.com/admob/answer/11556288) in ad requests from iOS/tvOS apps | [EUID GMA Plugin for iOS integration guide](../guides/mobile-plugin-gma-ios.md) |
+| To use the Google Interactive Media Ads SDK for iOS to send <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> as [secure signals](https://support.google.com/admob/answer/11556288) in ad requests from iOS/tvOS apps | [EUID IMA Plugin for iOS integration guide](../guides/mobile-plugin-ima-ios.md) |
 
-## tvOS Support
-Although this page refers to SDK for iOS, this SDK also supports tvOS. For the required tvOS version, see [Minimum Requirements](#minimum-requirements).
+## tvOS support
+
+Although this page refers to SDK for iOS, this SDK also supports tvOS. For the required tvOS version, see [Minimum requirements](#minimum-requirements).
 
 ## Functionality
 
@@ -35,12 +36,12 @@ The SDK for iOS is designed to generate and/or manage EUID identity on behalf of
 
 By default, the SDK automatically refreshes EUID identity based on expiration dates. However, you can disable this to allow implementing apps to manage the EUID identity lifecycle manually.
 
-## API Permissions
+## API permissions
 
-To use this SDK, you'll need to complete the EUID account setup by following the steps described in the [Account Setup](../getting-started/gs-account-setup.md) page.
+To use this SDK, you'll need to complete the EUID account setup by following the steps described in the [Account setup](../getting-started/gs-account-setup.md) page.
 You'll be granted permission to use specific functions offered by the SDK, and given credentials for that access.
 
-## SDK Version
+## SDK version
 
 <!-- As of 22 Oct 2024 -->
 
@@ -48,7 +49,7 @@ This documentation is for the SDK for iOS version 2.0.0 or later.
 
 For current and past release notes information, see [https://github.com/IABTechLab/uid2-ios-sdk/releases](https://github.com/IABTechLab/uid2-ios-sdk/releases).
 
-## GitHub Open-Source Repository
+## GitHub open-source repository
 
 This SDK is in the following open-source GitHub repository:
 
@@ -56,7 +57,7 @@ This SDK is in the following open-source GitHub repository:
 
 <SnptSDKsSameUID2EUID />
 
-## Minimum Requirements
+## Minimum requirements
 
 Minimum requirements for this SDK are as follows:
 
@@ -89,7 +90,7 @@ dependencies: [
 
 ### Installing with Xcode
 
-In the XCode user interface, under Package Dependencies, add the following entry for your apps:
+In the Xcode user interface, under Package Dependencies, add the following entry for your apps:
 
 | Name | Location | Dependency Rule |
 | :--- | :--- | :--- |
@@ -103,7 +104,7 @@ Add the following entry in your `Podfile`:
 pod 'UID2', '~> 2.0'
 ```
 
-## Usage Guidelines
+## Usage guidelines
 
 The **EUIDManager** singleton is the primary developer API for the SDK for iOS. It is responsible for storing, refreshing, and retrieving the EUID Identity including the EUID token.
 
@@ -111,18 +112,18 @@ For iOS, the `EUIDManager` is initialized automatically the first time it is acc
 
 There are two ways to establish an initial EUID Identity:
 
-1. Generate the EUID identity using personal data&#8212;email (hashed or unhashed) or phone number (hashed or unhashed). For integration instructions, see [Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side.md).
+1. Generate the EUID identity using personal data&#8212;email (hashed or unhashed) or phone number (hashed or unhashed). For integration instructions, see [Client-side integration guide for mobile](../guides/integration-mobile-client-side.md).
 
-2. Create an EUID identity from your server's back end and then pass it to the EUID SDK. For integration instructions, see [Client-Server Integration Guide for Mobile](../guides/integration-mobile-client-server.md).
+2. Create an EUID identity from your server's back end and then pass it to the EUID SDK. For integration instructions, see [Client-server integration guide for mobile](../guides/integration-mobile-client-server.md).
 
 The EUID Mobile SDKs can perform refreshes of EUID identities, after an Identity is established. This is because the refresh functionality relies on the refresh tokens that are part of the EUID Identity.
 
 
-## Code Samples
+## Code samples
 
 The following code samples provide examples of performing specific activities relating to managing EUID with the SDK for iOS.
 
-Generate an initial EUID Identity (for instructions, see [Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side.md#configure-the-euid-mobile-sdk)):
+Generate an initial EUID Identity (for instructions, see [Client-side integration guide for mobile](../guides/integration-mobile-client-side.md#configure-the-euid-mobile-sdk)):
 
 ```js
 EUIDManager.shared.generateIdentity(
@@ -132,7 +133,7 @@ EUIDManager.shared.generateIdentity(
     appName: String? = nil
 )
 ```
-Set the Initial EUID Identity (for instructions, see [Client-Side Integration Guide for Mobile](../guides/integration-mobile-client-side.md#configure-the-euid-mobile-sdk)):
+Set the Initial EUID Identity (for instructions, see [Client-side integration guide for mobile](../guides/integration-mobile-client-side.md#configure-the-euid-mobile-sdk)):
 
 ``` javascript
 EUIDManager.shared.setIdentity(_ identity: UID2Identity)
@@ -160,10 +161,11 @@ The following functions are available as part of the EUIDManager API:
 
 #### generateIdentity()
 
-Generate an EUID Identity using <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>. For details, see [Configure the EUID Mobile SDK](../guides/integration-mobile-client-side.md#configure-the-euid-mobile-sdk) in the *Client-Server Integration Guide for Mobile*.
+Generate an EUID Identity using <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link>. For details, see [Configure the EUID mobile SDK](../guides/integration-mobile-client-side.md#configure-the-euid-mobile-sdk) in the *Client-side integration guide for mobile*.
+
 #### setIdentity()
 
-Sets an EUID Identity, created server-side, to be managed by the SDK. For details, see [Configure the EUID Mobile SDK](../guides/integration-mobile-client-server.md#configure-the-euid-mobile-sdk) in the *Client-Server Integration Guide for Mobile*.
+Sets an EUID Identity, created server-side, to be managed by the SDK. For details, see [Configure the EUID mobile SDK](../guides/integration-mobile-client-server.md#configure-the-euid-mobile-sdk) in the *Client-server integration guide for mobile*.
 
 #### resetIdentity()
 

@@ -9,7 +9,7 @@ displayed_sidebar: docs
 import Link from '@docusaurus/Link';
 import SnptSDKsSameUID2EUID from '../snippets/_snpt-euid-sdk-same-for-all.mdx';
 
-# SDK for C# / .NET Reference Guide
+# SDK for C# / .NET reference guide
 
 You can use the SDK for C# / .NET on the server side to decrypt EUID tokens to access the raw EUID.
 
@@ -25,19 +25,19 @@ This SDK simplifies integration with EUID for any DSPs who are using C# / .NET f
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | &#9989; | &#9989; | &#8212; | &#8212; | &#8212; | &#8212; |
 
-## API Permissions
+## API permissions
 
-To use this SDK, you'll need to complete the EUID account setup by following the steps described in the [Account Setup](../getting-started/gs-account-setup.md) page.
+To use this SDK, you'll need to complete the EUID account setup by following the steps described in the [Account setup](../getting-started/gs-account-setup.md) page.
 
 You'll be granted permission to use specific functions offered by the SDK, and given credentials for that access. Bear in mind that there might be functions in the SDK that you don't have permission to use.
 
-For details, see [API Permissions](../getting-started/gs-permissions.md).
+For details, see [API permissions](../getting-started/gs-permissions.md).
 
 ## Version
 
 The library uses .NET Standard 2.1. unit tests. The sample app uses .NET 5.0.
 
-## GitHub Repository/Binary
+## GitHub repository/binary
 
 This SDK is in the following open-source GitHub repository:
 
@@ -58,30 +58,30 @@ You will need to provide the values necessary for the SDK to authenticate with t
 | Parameter | Description |
 | :--- | :--- |
 | `endpoint` | The endpoint for the EUID service. See [Environments](../getting-started/gs-environments). | 
-| `authKey` | The API key. See [EUID Credentials](../getting-started/gs-credentials). |
-| `secretKey` | The client secret. See [EUID Credentials](../getting-started/gs-credentials). |
+| `authKey` | The API key. See [EUID credentials](../getting-started/gs-credentials). |
+| `secretKey` | The client secret. See [EUID credentials](../getting-started/gs-credentials). |
 
 ## Interface 
 
 The `BidstreamClient` class allows you to decrypt EUID tokens into raw EUIDs.
 
-For details on the bidding logic for handling user opt-outs, see [DSP Integration Guide](../guides/dsp-guide.md).
+For details on the bidding logic for handling user opt-outs, see [DSP integration guide](../guides/dsp-guide.md).
 
 :::note
 When you use an SDK, you do not need to store or manage decryption keys.
 :::
 
-### Decryption Response Content
+### Decryption response content
 
 Whether decrypting with the `BidstreamClient`, the SDK returns the following information:
 
 | Property | Description |
 | :--- | :--- |
-| `Status` | The decryption result status. For a list of possible values and definitions, see [Decryption Response Statuses](#decryption-response-statuses). |
+| `Status` | The decryption result status. For a list of possible values and definitions, see [Decryption response statuses](#decryption-response-statuses). |
 | `Uid` | The raw EUID for the corresponding EUID token. |
 | `Established` | The timestamp indicating when a user first established the EUID with the publisher. |
 
-### Decryption Response Statuses
+### Decryption response statuses
 
 | Value | Description |
 | :--- | :--- |
