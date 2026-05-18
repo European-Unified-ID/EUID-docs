@@ -157,9 +157,9 @@ A successful query returns the following information for the specified personal 
 | :--- | :--- | :--- |
 | `UID` | TEXT | The value is one of the following:<ul><li>Personal data was successfully mapped: The EUID associated with the personal data.</li><li>Personal data was not successfully mapped: `NULL`.</li></ul> |
 | `BUCKET_ID` | TEXT | The value is one of the following:<ul><li>Personal data was successfully mapped: The ID of the <Link href="../ref-info/glossary-uid#gl-salt-bucket">salt bucket</Link> used to generate the EUID. This ID maps to the bucket ID in the `SALT_BUCKETS` view.</li><li>Personal data was not successfully mapped: `NULL`.</li></ul> |
-| `UNMAPPED` | TEXT | The value is one of the following:<ul><li>Personal data was successfully mapped: `NULL`.</li><li>Personal data was not successfully mapped:  The reason why the identifier was not mapped: `OPTOUT`, `INVALID IDENTIFIER`, or `INVALID INPUT TYPE`.<br/>For details, see [Values for the unmapped column](#values-for-the-unmapped-column).</li></ul> |
+| `UNMAPPED` | TEXT | The value is one of the following:<ul><li>Personal data was successfully mapped: `NULL`.</li><li>Personal data was not successfully mapped:  The reason why the identifier was not mapped: `OPTOUT`, `INVALID IDENTIFIER`, or `INVALID INPUT TYPE`.<br/>For details, see [Values for the UNMAPPED column](#values-for-the-unmapped-column).</li></ul> |
 
-#### Values for the unmapped column
+#### Values for the UNMAPPED column
 
 The following table shows possible values for the `UNMAPPED` column.
 
