@@ -65,7 +65,7 @@ The following sections provide additional details for each step in the diagram:
 1. [Establish identity: capture user data](#establish-identity-capture-user-data)
 2. [Bid using an EUID token](#bid-using-an-euid-token)
 3. [Refresh an EUID token](#refresh-an-euid-token)
-4. [Clear identity: user logout](#clear-identity-user-logout)
+4. [Clear identity: User logout](#clear-identity-user-logout)
 
 ### Establish identity: Capture user data
 
