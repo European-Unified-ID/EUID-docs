@@ -298,7 +298,7 @@ October 24, 2024
 
 We've added the following new document to support EUID integration with GMA Android for mobile ads:
 
-- [EUID GMA Plugin for Android integration guide](../guides/mobile-plugin-gma-android)
+- [GMA Plugin for Android integration guide](../guides/mobile-plugin-gma-android)
 
 <!-- APIDOCS-2390 -->
 
@@ -320,9 +320,9 @@ SDK doc:
 - [SDK for Android reference guide](../sdks/sdk-ref-android)
 
 Mobile plugin guides:
-- [EUID GMA Plugin for iOS integration guide](../guides/mobile-plugin-gma-ios)
-- [EUID IMA Plugin for Android integration guide](../guides/mobile-plugin-ima-android)
-- [EUID IMA Plugin for iOS integration guide](../guides/mobile-plugin-ima-ios)
+- [GMA Plugin for iOS integration guide](../guides/mobile-plugin-gma-ios)
+- [IMA Plugin for Android integration guide](../guides/mobile-plugin-ima-android)
+- [IMA Plugin for iOS integration guide](../guides/mobile-plugin-ima-ios)
 
 Mobile integration guides:
 - [Mobile integration overview for Android and iOS](../guides/integration-mobile-overview)
@@ -331,7 +331,7 @@ Mobile integration guides:
 
 Additional resources:
 - [CTV integration guide](../guides/integration-ctv-guide)
-- [EUID mobile integration for Prebid Mobile SDK](../guides/integration-prebid-mobile-summary)
+- [Mobile integration with Prebid Mobile SDK](../guides/integration-prebid-mobile-summary)
 
 <!-- APIDOCS-2554 -->
 
@@ -345,7 +345,7 @@ September 13, 2024
 
 We've added a new page with information about Private Operator integrations.
 
-For details, see [EUID Private Operator integration overview](../guides/integration-options-private-operator).
+For details, see [Private Operator integration overview](../guides/integration-options-private-operator).
 
 <!-- APIDOCS-2594 -->
 
