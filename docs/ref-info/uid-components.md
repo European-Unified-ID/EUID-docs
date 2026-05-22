@@ -1,5 +1,6 @@
 ---
 title: EUID components
+sidebar_label: Components
 description: Summary of key components of the EUID technical infrastructure.
 hide_table_of_contents: false
 sidebar_position: 01
