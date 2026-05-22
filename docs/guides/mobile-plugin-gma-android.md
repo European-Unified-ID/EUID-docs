@@ -1,5 +1,5 @@
 ---
-title: EUID GMA Plugin for Android
+title: GMA Plugin for Android
 description: A guide for publishers using GMA for ad requests on Android apps.
 hide_table_of_contents: false
 sidebar_position: 12
@@ -8,7 +8,7 @@ displayed_sidebar: docs
 
 import Link from '@docusaurus/Link';
 
-# EUID GMA Plugin for Android integration guide
+# GMA Plugin for Android integration guide
 
 The EUID Google Mobile Ads (GMA) Plugin for Android enables publishers that use the [Google Mobile Ads (GMA) SDK](https://developers.google.com/ad-manager/mobile-ads-sdk) to send <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> as [secure signals](https://support.google.com/admob/answer/11556288) in ad requests from Android apps. This is done automatically, with no direct coding needed from the app developer.
 

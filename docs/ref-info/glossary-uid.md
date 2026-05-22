@@ -1,5 +1,6 @@
 ---
 title: EUID glossary
+sidebar_label: Glossary
 description: Definitions for some EUID terms.
 hide_table_of_contents: false
 sidebar_position: 10
@@ -182,7 +183,7 @@ import MdxJumpAnchor from '@site/src/components/MdxJumpAnchor';
 
 <dt><MdxJumpAnchor id="gl-core-service"><a href="#gl-core-service">Core Service</a></MdxJumpAnchor></dt>
 <dd>The EUID Core Service is a centralized service that manages access to secret <a href="#gl-salt">salts</a>, encryption keys, and other relevant data in the EUID ecosystem.</dd>
-<dd>For an overview of all the EUID services, see <a href="uid-components">Components</a>.</dd>
+<dd>For an overview of all the EUID services, see <a href="uid-components">EUID components</a>.</dd>
 
 </dl>
 
@@ -332,7 +333,7 @@ import MdxJumpAnchor from '@site/src/components/MdxJumpAnchor';
 
 <dt><MdxJumpAnchor id="gl-operator-service"><a href="#gl-operator-service">Operator Service</a></MdxJumpAnchor></dt>
 <dd>A service that enables all functions of the <a href="#gl-operator">Operator</a>.</dd>
-<dd>For an overview of all the EUID services, see <a href="uid-components">Components</a>.</dd>
+<dd>For an overview of all the EUID services, see <a href="uid-components">EUID components</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-opt-out"><a href="#gl-opt-out">Opt-out</a></MdxJumpAnchor></dt>
 <dd>An end user who participates in the EUID ecosystem can opt out at any time by going to the <a href="https://www.transparentadvertising.eu/">Transparency and Control Portal</a>.</dd>
@@ -340,7 +341,7 @@ import MdxJumpAnchor from '@site/src/components/MdxJumpAnchor';
 
 <dt><MdxJumpAnchor id="gl-opt-out-service"><a href="#gl-opt-out-service">Opt-Out Service</a></MdxJumpAnchor></dt>
 <dd>The Opt-Out Service is a global EUID service that manages and stores user opt-out requests.</dd>
-<dd>For an overview of all the EUID services, see <a href="uid-components">Components</a>.</dd>
+<dd>For an overview of all the EUID services, see <a href="uid-components">EUID components</a>.</dd>
 
 </dl>
 

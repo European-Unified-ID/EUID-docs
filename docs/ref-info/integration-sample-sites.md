@@ -54,7 +54,7 @@ This sample is for publishers who want all EUID operations to occur on the serve
 
 ## Prebid.js integrations
 
-This section includes sample pages for generating EUID tokens to be passed by Prebid.js in the RTB bidstream. For details, see [EUID integration overview for Prebid](https://euid.eu/docs/guides/integration-prebid).
+This section includes sample pages for generating EUID tokens to be passed by Prebid.js in the RTB bidstream. For details, see [Integration overview for Prebid](https://euid.eu/docs/guides/integration-prebid).
 
 ### Client-side integration with Prebid.js
 
@@ -143,5 +143,5 @@ UID Verify is a Google Chrome browser extension for debugging EUID integrations.
 - Doc: [UID Verify Chrome extension](https://euid.eu/docs/ref-info/ref-uid-verify)
 
 :::note
-The sample sites on this page highlight some common integrations, but do not represent all available EUID integration options. For a summary of all the integration options available, see [EUID integration guides: Summary](https://euid.eu/docs/guides/summary-guides).
+The sample sites on this page highlight some common integrations, but do not represent all available EUID integration options. For a summary of all the integration options available, see [Integration guides: Summary](https://euid.eu/docs/guides/summary-guides).
 :::

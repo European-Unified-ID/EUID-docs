@@ -1,5 +1,5 @@
 ---
-title: EUID integrations for Private Operators
+title: Private Operator integration overview
 description: Information summary for Private Operators.
 hide_table_of_contents: false
 displayed_sidebar: docs
@@ -10,7 +10,7 @@ import SnptUpgradePolicy from '../snippets/_snpt-private-operator-upgrade-policy
 import SnptRotatingTheKeys from '../snippets/_snpt-private-operator-rotating-the-keys.mdx';
 import SnptPreparingEmailsAndPhoneNumbers from '../snippets/_snpt-preparing-emails-and-phone-numbers.mdx';
 
-# EUID Private Operator integration overview
+# Private Operator integration overview
 
 EUID participants that host their own <Link href="../ref-info/glossary-uid#gl-private-operator">Private Operator</Link> send their own first-party <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to their own local EUID <Link href="../ref-info/glossary-uid#gl-operator">Operator</Link> service, running in a private environment.
 
@@ -126,4 +126,4 @@ The following documentation resources are available for Private Operators to imp
 
 | Integration Type| Documentation | Content Description |
 | :--- | :--- | :--- |
-| AWS | [EUID Private Operator for AWS integration guide](operator-guide-aws-marketplace.md) | Instructions for setting up a Private Operator service for AWS Marketplace. |
+| AWS | [Private Operator for AWS integration guide](operator-guide-aws-marketplace.md) | Instructions for setting up a Private Operator service for AWS Marketplace. |

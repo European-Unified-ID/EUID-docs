@@ -68,7 +68,7 @@ The EUID framework is built on the following technical principles:
 For information about key elements of the EUID infrastructure, and other aspects of EUID, refer to the following pages:
 
 - [EUID identifier types](ref-info/uid-identifier-types.md)
-- [UID2 components](ref-info/uid-components.md)
+- [EUID components](ref-info/uid-components.md)
 - [EUID participants](overviews/participants-overview.md)
 - [EUID workflows](ref-info/uid-workflows.md)
 

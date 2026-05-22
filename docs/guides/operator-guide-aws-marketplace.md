@@ -1,7 +1,7 @@
 ---
-title: EUID Private Operator for AWS integration guide
+title: Private Operator for AWS integration guide
 sidebar_label: AWS Marketplace
-pagination_label: EUID Private Operator for AWS integration guide
+pagination_label: Private Operator for AWS integration guide
 description: Integration information for Private Operator in AWS.
 hide_table_of_contents: false
 sidebar_position: 17
@@ -14,7 +14,7 @@ import SnptPreparingEmailsAndPhoneNumbers from '../snippets/_snpt-preparing-emai
 import SnptAttestFailure from '../snippets/_snpt-private-operator-attest-failure.mdx';
 import SnptRotatingTheKeys from '../snippets/_snpt-private-operator-rotating-the-keys.mdx';
 
-# EUID Private Operator for AWS integration guide
+# Private Operator for AWS integration guide
 
 The EUID Operator is the API server in the EUID ecosystem. For details, see [The EUID Operator](../ref-info/ref-operators-public-private.md).
 

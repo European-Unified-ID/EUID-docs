@@ -1,7 +1,7 @@
 ---
-title: EUID integration overview for Prebid
-sidebar_label: EUID integration overview for Prebid
-pagination_label: EUID integration overview for Prebid
+title: Integration overview for Prebid
+sidebar_label: Integration overview for Prebid
+pagination_label: Integration overview for Prebid
 description: Overview of options for integrating with Prebid as part of your EUID implementation.
 hide_table_of_contents: false
 sidebar_position: 04
@@ -14,7 +14,7 @@ import SnptIntegratingWithSSO from '../snippets/_snpt-integrating-with-sso.mdx';
 import SnptPreparingEmailsAndPhoneNumbers from '../snippets/_snpt-preparing-emails-and-phone-numbers.mdx';
 import SnptStoreEUIDTokenInBrowser from '../snippets/_snpt-prebid-storing-euid-token-in-browser.mdx';
 
-# EUID integration overview for Prebid
+# Integration overview for Prebid
 
 This guide is an overview of integration options for publishers who want to integrate with EUID and generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) to be passed by Prebid.js or the Prebid Mobile SDK in the RTB <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link>.
 

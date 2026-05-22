@@ -1,7 +1,7 @@
 ---
-title: EUID integration overview for JavaScript
-sidebar_label: EUID integration overview for JavaScript
-pagination_label: EUID integration overview for JavaScript
+title: Integration overview for JavaScript
+sidebar_label: Integration overview for JavaScript
+pagination_label: Integration overview for JavaScript
 description: Overview of options for integrating with the SDK for JavaScript as part of your EUID implementation.
 hide_table_of_contents: false
 sidebar_position: 04
@@ -12,7 +12,7 @@ import Link from '@docusaurus/Link';
 import SnptIntegratingWithSSO from '../snippets/_snpt-integrating-with-sso.mdx';
 import SnptPreparingEmailsAndPhoneNumbers from '../snippets/_snpt-preparing-emails-and-phone-numbers.mdx';
 
-# EUID integration overview for JavaScript
+# Integration overview for JavaScript
 
 This guide is an overview of integration options for publishers who want to integrate with EUID and generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) using the SDK for JavaScript.
 
