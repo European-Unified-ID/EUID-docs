@@ -47,7 +47,7 @@ To integrate with EUID client-side, you'll need to complete the following steps:
 
 1. [Check that the token was successfully generated and then pass it for bidstream use](#pass-generated-token-for-bidstream-use).
 
-1. [Optionally, integrate the EUID GMA/IMA Plugin for GAM Secure Signals integration](#optional-euid-gmaima-plugin-for-gam-secure-signals-integration).
+1. [Optionally, integrate the GMA/IMA Plugin for GAM Secure Signals integration](#optional-gmaima-plugin-for-gam-secure-signals-integration).
 
 ## Mobile SDK version
 
@@ -692,11 +692,11 @@ If `getAdvertisingToken()` returns null, and the identity status is not `OPT_OUT
 
 <SnptEnableLogging />
 
-## Optional: EUID GMA/IMA Plugin for GAM Secure Signals integration
+## Optional: GMA/IMA Plugin for GAM Secure Signals integration
 
 <SnptGMAIMA_Plugins />
 
-## Optional: EUID integration with Prebid Mobile SDK
+## Optional: Integration with Prebid Mobile SDK
 
 :::important
 The EUID integration with Prebid Mobile SDK vv2 requires version 1.6.0 or later of the EUID SDK for Android, or version 1.7.0 or later of the EUID SDK for iOS.

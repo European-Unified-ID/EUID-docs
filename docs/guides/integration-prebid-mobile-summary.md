@@ -16,5 +16,5 @@ EUID integration with Prebid is also supported for Android and iOS mobile device
 
 For details, see the following sections of the mobile integration guides:
 
-- [Client-side integration guide for mobile: EUID integration with Prebid Mobile SDK](../guides/integration-mobile-client-side#optional-euid-integration-with-prebid-mobile-sdk)
-- [Client-server integration guide for mobile: EUID integration with Prebid Mobile SDK](../guides/integration-mobile-client-server#optional-euid-integration-with-prebid-mobile-sdk)
+- [Client-side integration guide for mobile: EUID integration with Prebid Mobile SDK](../guides/integration-mobile-client-side#optional-integration-with-prebid-mobile-sdk)
+- [Client-server integration guide for mobile: EUID integration with Prebid Mobile SDK](../guides/integration-mobile-client-server#optional-integration-with-prebid-mobile-sdk)
