@@ -88,19 +88,6 @@ The following documentation resources are available for DSPs to implement EUID.
 | SDK for C++ | [SDK for C++ reference guide](../sdks/sdk-ref-cplusplus.md) | An SDK for anyone using C++ server-side and who wants to decrypt EUID advertising tokens to access the raw EUID.|
 | Integration guide | [DSP integration guide](../guides/dsp-guide.md) | This integration guide for DSPs covers handling EUIDs for bidding and honoring user opt-outs. |
 
-<!-- ## Integration Requirements
-
-To integrate with EUID to receive EUIDs from brands (as first-party data) and data providers (as third-party data) and leverage them to inform bidding on EUIDs in the bidstream, the buy-side participants must meet the following requirements:
-
-- Accept data in the form of EUIDs
-- Bid on data in the form of EUIDs
-- Build a webhook for honoring opt-out requests
-- Sync <a href="../ref-info/glossary-uid#gl-encryption-key">encryption keys</a> daily with the EUID Administrator
-
-For details, see [DSP integration guide](../guides/dsp-guide.md).
-
-Optionally, if DSPs want to generate EUIDs themselves from personal data, they can also follow the [Third-party data provider workflow](overview-data-providers.md#workflow-for-data-providers). -->
-
 ## FAQs for DSPs
 
 For a list of frequently asked questions for DSPs using the EUID framework, see [FAQs for DSPs](../getting-started/gs-faqs.md#faqs-for-dsps).
