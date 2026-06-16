@@ -232,6 +232,7 @@ const fullSidebar = [
           collapsed: true,
           items: [
             'guides/operator-guide-aws-marketplace',
+            'guides/operator-private-network-requirements',
           ],
         },
       ],
