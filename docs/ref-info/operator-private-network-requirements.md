@@ -34,4 +34,4 @@ If your environment restricts outbound network traffic, you must allow outbound 
 | `euid-core-prod-store.s3.eu-west-2.amazonaws.com` | Core data storage |
 | `euid-optout-prod-store.s3.eu-west-2.amazonaws.com` | Opt-out data storage |
 
-Allow these by hostname rather than by IP address, as the underlying addresses change.
+Allow these by hostname rather than by IP address, because the underlying addresses might change.
