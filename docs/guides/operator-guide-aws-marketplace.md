@@ -153,7 +153,11 @@ To avoid passing certificates associated with your domain into the enclave, inbo
 | ----------- | --------- | -------- | ------ |
 | 80 | Inbound | HTTP | Serves all EUID APIs, including the healthcheck endpoint `/ops/healthcheck`.<br/>When everything is up and running, the endpoint returns HTTP 200 with a response body of `OK`. For details, see [Checking EUID Operator status](#checking-euid-operator-status). |
 | 9080 | Inbound | HTTP | Serves Prometheus metrics (`/metrics`). |
-| 443 | Outbound | HTTPS | Calls the EUID Core Service, AWS S3, to download files for opt-out data and key store. |
+| 443 | Outbound | HTTPS | Calls the EUID Core Service and AWS S3, to download files for opt-out data and key store. |
+
+:::note
+If your environment restricts outbound network traffic, you must allow outbound access to the destinations listed in [Private Operator network egress](../ref-info/operator-private-network-requirements.md).
+:::
 
 ### VPC chart
 

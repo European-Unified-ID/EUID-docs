@@ -320,6 +320,7 @@ const fullSidebar = [
         'ref-info/ref-how-uid-is-created',
         'ref-info/ref-server-side-token-generation',
         'ref-info/ref-integration-sso-providers',
+        'ref-info/operator-private-network-requirements',
         'ref-info/deprecation-schedule',
         'ref-info/ref-areas-of-coverage',
       ],

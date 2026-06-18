@@ -127,3 +127,7 @@ The following documentation resources are available for Private Operators to imp
 | Integration Type| Documentation | Content Description |
 | :--- | :--- | :--- |
 | AWS | [Private Operator for AWS integration guide](operator-guide-aws-marketplace.md) | Instructions for setting up a Private Operator service for AWS Marketplace. |
+
+:::note
+All Private Operators must be allowed to access the destinations in [Private Operator network egress](../ref-info/operator-private-network-requirements.md). If your organization is secured with a firewall or proxy, these domains must be added to the allowlist.
+:::
