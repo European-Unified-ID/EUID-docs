@@ -13,6 +13,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import SnptIntegratingWithSSO from '../snippets/_snpt-integrating-with-sso.mdx';
 import SnptPreparingEmailsAndPhoneNumbers from '../snippets/_snpt-preparing-emails-and-phone-numbers.mdx';
+import SnptUidVerifyDebugTip from '../snippets/_snpt-uid-verify-debug-tip.mdx';
 
 export const New370 = () => (
   <span className='pill'>New in version 3.7.0</span>
@@ -29,6 +30,8 @@ EUID provides an SDK for JavaScript (see [SDK for JavaScript reference guide](..
 - EUID token generation
 - Automatic refreshing of EUID tokens
 - Automatic storage of EUID tokens in the browser
+
+<SnptUidVerifyDebugTip />
 
 To implement, you'll need to complete the following steps:
 

@@ -13,6 +13,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import SnptIntegratingWithSSO from '../snippets/_snpt-integrating-with-sso.mdx';
 import SnptPreparingEmailsAndPhoneNumbers from '../snippets/_snpt-preparing-emails-and-phone-numbers.mdx';
+import SnptUidVerifyDebugTip from '../snippets/_snpt-uid-verify-debug-tip.mdx';
 
 # Client-server integration guide for JavaScript
 
@@ -23,6 +24,8 @@ This is called client-server integration because the JavaScript integration step
 If you prefer to integrate with EUID via **only** client-side JavaScript changes, see [Client-side integration guide for JavaScript](integration-javascript-client-side.md).
 
 For technical details about the SDK, see [SDK for JavaScript reference guide](../sdks/sdk-ref-javascript.md).
+
+<SnptUidVerifyDebugTip />
 
 <!-- ## Sample Implementation
 

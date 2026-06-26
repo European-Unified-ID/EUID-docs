@@ -8,6 +8,7 @@ displayed_sidebar: sidebarPublishers
 
 import Link from '@docusaurus/Link';
 import SnptPreparingEmailsAndPhoneNumbers from '../snippets/_snpt-preparing-emails-and-phone-numbers.mdx';
+import SnptUidVerifyDebugTip from '../snippets/_snpt-uid-verify-debug-tip.mdx';
 
 # Publisher web integration overview
 
@@ -138,3 +139,7 @@ The following table shows integration options that support passing EUID tokens i
 :::note
 As long as you generate the token and keep it refreshed, you can also use other options for passing the EUID token into the bidstream.
 :::
+
+## Debug your integration
+
+<SnptUidVerifyDebugTip />
