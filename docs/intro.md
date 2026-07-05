@@ -2,7 +2,6 @@
 title: EUID overview
 description: Introduction to EUID documentation.
 hide_table_of_contents: false
-sidebar_position: 01
 displayed_sidebar: docs
 ---
 
