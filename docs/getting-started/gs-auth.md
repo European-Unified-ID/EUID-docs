@@ -2,7 +2,6 @@
 title: Authentication and authorization
 description: Authentication requirements for the EUID endpoints.
 hide_table_of_contents: false
-sidebar_position: 05
 displayed_sidebar: docs
 ---
 

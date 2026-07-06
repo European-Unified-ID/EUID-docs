@@ -2,7 +2,6 @@
 title: POST /token/generate
 description: Generates an EUID token (advertising token) from personal data. 
 hide_table_of_contents: false
-sidebar_position: 02
 displayed_sidebar: docs
 ---
 

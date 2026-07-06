@@ -2,7 +2,6 @@
 title: Publisher integration resources
 description: Overview of the resources available for publishers integrating with EUID.
 hide_table_of_contents: false
-sidebar_position: 02
 displayed_sidebar: sidebarPublishers
 ---
 

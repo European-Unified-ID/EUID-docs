@@ -2,7 +2,6 @@
 title: EUID Token Validator
 description: How to use the EUID Token Validator to validate EUID tokens against source personal data and confirm that your token generation workflow is correct.
 hide_table_of_contents: false
-sidebar_position: 02
 displayed_sidebar: docs
 ---
 

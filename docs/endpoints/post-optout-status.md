@@ -2,7 +2,6 @@
 title: POST /optout/status
 description: Checks the opt-out status of raw EUIDs.
 hide_table_of_contents: false
-sidebar_position: 03
 displayed_sidebar: docs
 ---
 
