@@ -14,10 +14,10 @@ You can use the SDK for Android to facilitate the process of generating or estab
 
 The following Android-related plugins, and associated documentation, are also available.
 
-| Purpose | Product/Documentation |
+| Purpose | Product/documentation |
 | :--- | :--- |
 | To use the Google Mobile Ads (GMA) SDK to send <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> as [secure signals](https://support.google.com/admob/answer/11556288) in ad requests from Android apps | [GMA Plugin for Android integration guide](../guides/mobile-plugin-gma-android.md) |
-| To use the Google Interactive Media Ads (IMA) SDK for Android to send <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> as [secure signals](https://support.google.com/admob/answer/11556288) in ad requests from Android apps | [IMA Plugin for Android integration guide](../guides/mobile-plugin-ima-android.md) |
+| To use the Google Interactive Media Ads (IMA)aws SDK for Android to send <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> as [secure signals](https://support.google.com/admob/answer/11556288) in ad requests from Android apps | [IMA Plugin for Android integration guide](../guides/mobile-plugin-ima-android.md) |
 
 For FAQs relating to mobile publisher integrations, see [FAQs for mobile integrations](../guides/integration-mobile-overview.md#faqs-for-mobile-integrations).
 
@@ -29,7 +29,7 @@ This SDK for Android can be used for non-mobile devices for Android platforms as
 
 This SDK simplifies integration with EUID for any publishers who want to support EUID for apps running on Android devices. The following table shows the functions it supports.
 
-| Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to Raw EUIDs | Monitor Rotated Salt Buckets |
+| Encrypt raw EUID to EUID token | Decrypt EUID token to raw EUID | Generate EUID token from personal data | Refresh EUID token | Map personal data to raw EUIDs | Monitor rotated salt buckets |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | &#8212; | &#8212; | &#9989; | &#9989; | &#8212; | &#8212; |
 

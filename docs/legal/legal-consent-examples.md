@@ -31,7 +31,7 @@ The following consent sample provides suggestions for wording you could include 
 
 The following table includes consent sample copy for the primary overlay.
 
-| Content Type | Consent Language |
+| Content type | Consent language |
 | --- | --- |
 | Consent to EUID identifier<br/>**Learn more** should link to the Participant's privacy policy which contains further links to the [EUID Privacy Notice](https://www.transparentadvertising.eu/privacy) and the [EUID Transparency and Control Portal](https://transparentadvertising.eu/). | Where we have your email address, we and The Trade Desk (our advertising partner) will use it to create a unique advertising identifier (the EUID). Your identifier will be encrypted and shared with different sites and advertisers who may, subject to your choices, use it to show you personalized ads.<br/>**Learn more** |
 | TCF purposes | We and our partners will store and/or access information on your device and will use the unique advertising identifier and other personal information for personalized ads (creating and using profiles for personalized ads), ad measurement, audience insights, and to develop and improve our products. To do this, personal information may be used to match and combine offline data sources. |

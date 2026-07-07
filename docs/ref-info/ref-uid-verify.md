@@ -97,7 +97,7 @@ EUID SDK and Prebid.js integrations include the fields shown in the following ta
 
 | Field | Description |
 |---|---|
-| Storage Type | Indicates whether the identity is stored in a cookie or `localStorage`. |
+ Storage Type | Indicates whether the identity is stored in a cookie or `localStorage`. |
 | Storage Key | The name of the cookie or `localStorage` key. For EUID SDK integrations: `__euid` or `EUID-sdk-identity`. For Prebid.js integrations: `__euid_advertising_token`. |
 | Stored Value | The raw identity JSON, including `advertising_token`, `refresh_token`, `identity_expires`, `refresh_expires`, `refresh_from`, and `refresh_response_key`. |
 | Valid Identity | Indicates whether the stored identity is currently valid — that is, the advertising token has not expired and the user has not opted out. |
@@ -118,7 +118,7 @@ The **Event History** tab shows a searchable, real-time log of EUID SDK events a
 | Date | The date the event was recorded. |
 | Time | The time the event was recorded. |
 | Event | The event type (for example, `SdkLoaded`, `InitCompleted`, `TokenUpdated`). |
-| Advertising Token | The advertising token associated with the event, if present. |
+| Advertising token | The advertising token associated with the event, if present. |
 
 Use the search bar to filter by event type or token value.
 

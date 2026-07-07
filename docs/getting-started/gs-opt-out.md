@@ -45,7 +45,7 @@ The following steps provide a high-level outline of the opt-out workflow intende
 2. The Transparency and Control Portal sends the opt-out request to the EUID <Link href="../ref-info/glossary-uid#gl-operator-service">Operator Service</Link>.
 3. If the user has opted out, the EUID Operator Service distributes the opt-out information to EUID participants, as shown in the following table.
 
-   | Participant | Distribution Method |
+   | Participant | Distribution method |
    | :--- | :--- | 
    | Publishers | A publisher calling [POST&nbsp;/token/generate](../endpoints/post-token-generate.md), or [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md), receives the opt-out response instead of the EUID token. |
    | DSPs | The EUID Operator Service distributes information on all opted-out users to DSPs via a webhook provided for the purpose. For details, see [Honor user opt-outs](../guides/dsp-guide#honor-user-opt-outs).<br/>DSPs can also check the opt-out status of raw EUIDs using the [POST&nbsp;/optout/status](../endpoints/post-optout-status.md) endpoint. |

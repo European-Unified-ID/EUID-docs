@@ -39,7 +39,7 @@ For additional flexibility, EUID also provides alternative methods for some of t
 
 The options for integrating with EUID using the SDK for JavaScript are summarized in the following table. Choose the option that's best for you.
 
-| Scenario | Option | Integration Guide |
+| Scenario | Option | Integration guide |
 | :--- | :--- | :--- |
 | You have access to personal data on the client side and want to do front-end development only. | Client-side integration | [Client-side integration guide for JavaScript](integration-javascript-client-side.md) |
 | You have access to personal data on the server side and can do server-side development, or you are using a <Link href="../ref-info/glossary-uid#gl-private-operator">Private Operator</Link>. | Server-side integration | [Client-server integration guide for JavaScript](integration-javascript-client-server.md) |

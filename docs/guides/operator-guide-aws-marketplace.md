@@ -34,7 +34,7 @@ By subscribing to the European Unified ID Operator on AWS Marketplace product, y
 
 The latest ZIP file is linked in the Release Notes column in the following table.
 
-| Version Name | Version&nbsp;#/Release&nbsp;Notes | AWS Version |  Date |
+| Version name | Version&nbsp;#/release&nbsp;notes | AWS version |  Date |
 | ------- | ------ | ------ | ------ | 
 | H1 2026 | [v5.70.159](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.70.159-r0) | 5.70.159 | June 23, 2026 |
 
@@ -148,7 +148,7 @@ Here's what you can customize during or after the [deployment](#deployment):
 To avoid passing certificates associated with your domain into the enclave, inbound HTTP is allowed instead of HTTPS. This also avoids the cost of a secure layer, if used in a private network that is internal to your organization.
 :::
 
-| Port Number | Direction | Protocol | Description |
+| Port number | Direction | Protocol | Description |
 | ----------- | --------- | -------- | ------ |
 | 80 | Inbound | HTTP | Serves all EUID APIs, including the healthcheck endpoint `/ops/healthcheck`.<br/>When everything is up and running, the endpoint returns HTTP 200 with a response body of `OK`. For details, see [Checking EUID Operator status](#checking-euid-operator-status). |
 | 9080 | Inbound | HTTP | Serves Prometheus metrics (`/metrics`). |
@@ -384,7 +384,7 @@ Error codes for Private Operator issues are applicable only to release v5.49.7 a
 
 The following errors might occur during operator startup:
 
-| Error Code | Issue | Steps to Resolve |
+| Error code | Issue | Steps to resolve |
 | :--- | :--- | :--- |
 | E01 | InstanceProfileMissingError |  Attach an IAM instance profile to the EC2 instance with the required permissions. The EUID Operator needs these permissions to access configurations from AWS Secrets Manager. |
 | E02 | OperatorKeyNotFoundError | Make sure that the secret referenced by the Private Operator exists in AWS Secrets Manager in the same region as the operator, and that the IAM instance profile has permission to access the secret. If needed, you can check the logs for the specific secret name and region. |
@@ -397,7 +397,7 @@ The following errors might occur during operator startup:
 
 The following errors might occur during operator runtime:
 
-| Error Code | Issue | How to Identify in Logs | Steps to Resolve |
+| Error code | Issue | How to identify in logs | Steps to resolve |
 | :--- | :--- | :--- | :--- |
 | E12 | Data Download Failure | Look for log messages containing `E12: Data Download Failure` or `Failed to load` errors from `RotatingStoreVerticle`. These messages include HTTP status codes (for example, `HTTP response code 403`) or exception types (for example, `exception: IOException`). | Check the HTTP status code or exception in the error message and resolve accordingly:<br/>**404 errors**: Verify that the operator key is valid for the environment.<br/>**403 errors**: Verify that the operator key and credentials are correct.<br/>**Timeout errors**: Verify network connectivity, check that firewall/security group settings allow outbound HTTPS (port 443), and ensure that the EUID service endpoints are accessible.<br/>**500/503 errors**: This code indicates a temporary EUID service issue. Retry, and if the error persists contact EUID support. |
 

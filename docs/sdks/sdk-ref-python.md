@@ -16,7 +16,7 @@ You can use the SDK for Python on the server side to facilitate the process of g
 
 This SDK simplifies integration with EUID for any DSPs who are using Python for their server-side coding. The following table shows the functions it supports.
 
-| Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to Raw EUIDs | Monitor Rotated Salt Buckets&ast; |
+| Encrypt raw EUID to EUID token | Decrypt EUID token to raw EUID | Generate EUID token from personal data | Refresh EUID token | Map personal data to raw EUIDs | Monitor rotated salt buckets&ast; |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | &#9989; | &#9989; | &#9989; | &#9989; | &#9989; | &#9989; |
 
@@ -66,10 +66,10 @@ pip install uid2-client
 
 The initialization step depends on the role, as shown in the following table.
 
-| Role                                      | Create Instance of Class | Link to Instructions                                                         |
+| Role                                      | Create instance of class | Link to instructions                                                         |
 |:------------------------------------------|:-------------------------|:-----------------------------------------------------------------------------|
 | Publisher                                 | `Uid2PublisherClient`    | [Usage for publishers](#usage-for-publishers)                                |
-| Advertiser/Data Provider                  | `IdentityMapV3Client`      | [Usage for advertisers/data providers](#usage-for-advertisersdata-providers) |
+| Advertiser/data provider                  | `IdentityMapV3Client`      | [Usage for advertisers/data providers](#usage-for-advertisersdata-providers) |
 | DSP                                       | `BidstreamClient`        | [Usage for DSPs](#usage-for-dsps)                                            |
 | Sharer (not currently supported for EUID) | `SharingClient`          | Not applicable                                                               |
 

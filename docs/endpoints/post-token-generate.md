@@ -38,7 +38,7 @@ Here's what you need to know about sending requests to this endpoint:
 
 ### Path parameters
 
-| Path Parameter | Data Type | Attribute | Description |
+| Path parameter | Data type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
 | `{environment}` | string | Required | Testing (integration) environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu`<br/>For a full list, including regional operators, see [Environments](../getting-started/gs-environments.md).<br/>Notes:<ul><li>The `integ` environment and the `prod` environment require different <Link href="../ref-info/glossary-uid#gl-api-key">API keys</Link>.</li><li>Token expiration time is subject to change, but is always significantly shorter in the `integ` environment than it is in the `prod` environment.</li></ul> |
 
@@ -48,7 +48,7 @@ Here's what you need to know about sending requests to this endpoint:
 You must include only **one** of the following four conditional parameters as key-value pairs in the JSON body of the request when encrypting it.
 :::
 
-| Body Parameter | Data Type | Attribute | Description | 
+| Body parameter | Data type | Attribute | Description | 
 | :--- | :--- | :--- | :--- |
 | `email` | string | Conditionally Required | The email address for which to generate tokens. | 
 | `email_hash` | string | Conditionally Required | The [Base64-encoded SHA-256](../getting-started/gs-normalization-encoding.md#email-address-hash-encoding) hash of a [normalized](../getting-started/gs-normalization-encoding.md#email-address-normalization) email address. |
@@ -121,7 +121,7 @@ Here is an example response when the user has opted out.
 
 ### Response body properties
 
-| Property | Data Type | Description |
+| Property | Data type | Description |
 | :--- | :--- | :--- |
 | `advertising_token` | string | An encrypted advertising (EUID) token for the user. |
 | `refresh_token` | string | An encrypted token that can be exchanged with the EUID Service for the latest set of identity tokens. |
@@ -134,7 +134,7 @@ Here is an example response when the user has opted out.
 
 The following table lists the `status` property values and their HTTP status code equivalents.
 
-| Status | HTTP Status Code | Description |
+| Status | HTTP status code | Description |
 | :--- | :--- | :--- |
 | `success` | 200 | The request was successful. The response will be encrypted.<br/>IMPORTANT: This status may be returned without a generated token. |
 | `optout` | 200 | The request was successful. Could not generate token because the user has opted out. |
@@ -145,7 +145,7 @@ If the `status` value is anything other than `success`, the `message` field prov
 
 ## Test identities
 
-| Type  | Identity                     | Purpose                                                                                                                                    | Next Endpoint                                       |
+| Type  | Identity                     | Purpose                                                                                                                                    | Next endpoint                                       |
 |:------|:-----------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------|
 | Email | `validate@example.com`       | Test that the `advertising_token` you've cached matches the `advertising_token` for the specified email address.                           | [POST&nbsp;/token/validate](post-token-validate.md) |
 | Email | `optout@example.com`         | Using this email for the request always generates an `optout` response.                                                                    | [POST&nbsp;/token/generate](post-token-generate.md) |

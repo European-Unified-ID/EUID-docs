@@ -128,6 +128,6 @@ Whatever option you use, the data that you send for generating EUIDs must be nor
 
 The following documentation resources are available for Private Operators to implement EUID.
 
-| Integration Type| Documentation | Content Description |
+| Integration type| Documentation | Content description |
 | :--- | :--- | :--- |
 | AWS | [Private Operator for AWS integration guide](operator-guide-aws-marketplace.md) | Instructions for setting up a Private Operator service for AWS Marketplace. |

@@ -21,7 +21,7 @@ A participant can have one or several sets of API credentials with associated pe
 
 The following table lists the key permissions, the types of participants that commonly use them, and a summary of the key associated activities.
 
-| Name | Participant Type | Permissions |
+| Name | Participant type | Permissions |
 | :--- | :--- | :--- |
 | Generator | Publishers | Permission to call the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md), [POST&nbsp;/token/validate](../endpoints/post-token-validate.md), and [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) endpoints, to generate EUID tokens from <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> and to refresh them, using one of these integration methods:<ul><li>A Prebid integration</li><li>The SDK for JavaScript</li><li>An integration that directly calls the applicable API endpoints for retrieving and managing EUID tokens.</li></ul> |
 | Bidder | DSPs | Permission to decrypt EUID tokens coming in from the <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link> from publishers into raw EUIDs for bidding purposes. |

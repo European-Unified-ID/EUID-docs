@@ -25,7 +25,7 @@ Even though it is built on the UID2 framework, EUID is a separate framework.
 
 The following table summarizes the key differences between the two frameworks.
 
-| Comparison Aspect | UID2 | EUID |
+| Comparison aspect | UID2 | EUID |
 | :--- | :--- | :--- |
 | Open-sourced framework | Yes | Yes |
 | Interoperability | Yes | Yes |

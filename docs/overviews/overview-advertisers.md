@@ -67,7 +67,7 @@ To get started, follow these steps:
 
 The following documentation resources are available for advertisers and data providers to implement EUID.
 
-| Integration Type| Documentation | Content Description |
+| Integration type| Documentation | Content description |
 | :--- | :--- | :--- |
 | Overview of integration options for organizations that collect user data and push it to other EUID participants | [Advertiser/data provider integration overview](../guides/integration-advertiser-dataprovider-overview.md) | This guide covers integration workflows for mapping identity for audience building and targeting. |
 | Snowflake | [Snowflake integration guide](../guides/integration-snowflake.md) | This guide provides instructions for generating EUIDs from emails within Snowflake. |

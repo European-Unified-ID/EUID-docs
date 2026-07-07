@@ -21,10 +21,10 @@ If you have an existing relationship with The Trade Desk (the current EUID Admin
 Contacting The Trade Desk for access is temporary. When the system is moved to independent governance, the governing organizations will manage access requests.
 :::
 
-| Your Role | Contact Email |
+| Your role | Contact email |
 | :--- | :--- |
-| Publisher, App Developer | [dl-EUID-publishers@thetradedesk.com](mailto:dl-EUID-publishers@thetradedesk.com) |
-| Agency, Brand, DSP, SSP, customer data platform (CDP), Data Provider | [dl-EUID-partners@thetradedesk.com](mailto:dl-EUID-partners@thetradedesk.com) |
+| Publisher, app developer | [dl-EUID-publishers@thetradedesk.com](mailto:dl-EUID-publishers@thetradedesk.com) |
+| Agency, brand, DSP, SSP, customer data platform (CDP), data provider | [dl-EUID-partners@thetradedesk.com](mailto:dl-EUID-partners@thetradedesk.com) |
 
 ## Account setup details
 
