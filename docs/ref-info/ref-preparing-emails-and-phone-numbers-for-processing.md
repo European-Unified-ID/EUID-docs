@@ -34,8 +34,8 @@ If you're using an EUID SDK, or other integration solution such as the Prebid.js
 <table>
   <thead>
     <tr>
-      <th>Type of Personal Data</th>
-      <th>Input Format</th>
+      <th>Type of personal data</th>
+      <th>Input format</th>
       <th>Instructions</th>
     </tr>
   </thead>

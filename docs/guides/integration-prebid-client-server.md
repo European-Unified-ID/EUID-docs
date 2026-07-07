@@ -71,7 +71,7 @@ When account setup is complete, you'll receive your unique API key and client se
 
 You'll need to configure the EUID Prebid module to complete the following two actions:
 
-| Step | Action | Link to Instructions |
+| Step | Action | Link to instructions |
 | --- | --- | --- |
 | 1 | Send a server-side API call to generate an EUID token. | [Generating an EUID token on the server](#generating-an-euid-token-on-the-server) |
 | 2 | Store the response value, so that the Prebid module can manage token refresh as well as opt-out if needed. | [Refreshing an EUID token](#refreshing-an-euid-token) |
@@ -92,7 +92,7 @@ For security reasons, the API key and secret used in token generation must be ca
 
 There are two ways to refresh an EUID token, as shown in the following table.
 
-| Mode | Description | Link to Section | 
+| Mode | Description | Link to section | 
 | --- | --- | --- |
 | Client Refresh mode | Prebid.js automatically refreshes the tokens internally.<br/>This is the simplest approach. | [Client Refresh mode](#client-refresh-mode) |
 | Server-only mode | Prebid.js doesn't automatically refresh the token. It is up to the publisher to manage token refresh.<br/>Examples of why you might want to choose this option:<ul><li>If you want to use the [SDK for JavaScript](../sdks/sdk-ref-javascript.md) to refresh the token, and Prebid.js to send the token to the bidstream.</li><li>If you want to send the token to the bidstream via multiple avenues (such as Prebid.js and also Google).</li></ul> | [Server-only mode](#server-only-mode) |
@@ -118,7 +118,7 @@ This section includes the following information:
 
 When you configure the module to use Client Refresh mode, you must choose **one** of the following options for providing the token to the Prebid module.
 
-| Option | Details | Use Case | 
+| Option | Details | Use case | 
 | --- | --- | --- |
 | Set `params.euidCookie` to the name of the cookie that contains the response body as a JSON string. | See [Client Refresh mode cookie example](#client-refresh-mode-cookie-example) | Use this option only if you're sure that there is enough space left in your cookie to store the response body. If you're not sure, or the cookie storage needs might vary, choose the other option. |
 | Set `params.euidToken` to the response body as a JavaScript object. | See [Client Refresh mode euidToken example](#client-refresh-mode-euidtoken-example) | You might choose to provide the response body via `params.euidToken` in either of these cases:<ul><li>If you are already storing a lot of data in the cookie and adding the response body might exceed the cookie size limit.</li><li>If you prefer to have the Prebid module store the token value for you.</li></ul> |
@@ -183,7 +183,7 @@ In server-only mode, only the advertising token is provided to the module. The m
 
 To configure the module to use server-only mode, do **one** of the following:
 
-| Implementation Method | Link to Example |
+| Implementation method | Link to example |
 | --- | --- |
 | Set a cookie named `__euid_advertising_token` and store the advertising token value in it. | [Server-only mode cookie example](#server-only-mode-cookie-example) |
 | Set `value` to an ID block containing the advertising token. | [Server-only mode value example](#server-only-mode-value-example) |
@@ -315,7 +315,7 @@ The following parameters apply only to the EUID Prebid User ID Module integratio
 
 In this table, CR = Client Refresh mode, SO = Server-Only mode, and N/A = not applicable.
 
-| Param under userSync.userIds[] | Mode/Scope | Type | Description | Example |
+| Param under userSync.userIds[] | Mode/scope | Type | Description | Example |
 | --- | --- | --- | --- | --- |
 | name | CR: Required<br/>SO:&nbsp;Required | String | ID value for the EUID module. Always `"euid"`. | `"euid"` |
 | value | CR: N/A<br/>SO: Optional | Object | An object containing the value for the advertising token. | See [Configuration parameter examples: Value](#configuration-parameter-examples-value) |

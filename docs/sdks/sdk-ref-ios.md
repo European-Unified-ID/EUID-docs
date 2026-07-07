@@ -14,10 +14,10 @@ You can use the SDK for iOS to facilitate the process of generating or establish
 
 The following iOS-related plugins, and associated documentation, are also available:
 
-| Purpose | Product/Documentation |
+| Purpose | Product/documentation |
 | :--- | :--- |
-| To use the Google Mobile Ads (GMA) SDK to send <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> as [secure signals](https://support.google.com/admob/answer/11556288) in ad requests from iOS/tvOS apps | [GMA Plugin for iOS integration guide](../guides/mobile-plugin-gma-ios.md) |
-| To use the Google Interactive Media Ads SDK for iOS to send <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> as [secure signals](https://support.google.com/admob/answer/11556288) in ad requests from iOS/tvOS apps | [IMA Plugin for iOS integration guide](../guides/mobile-plugin-ima-ios.md) |
+| To use the Google mobile ads (GMA) SDK to send <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> as [Secure Signals](https://support.google.com/admob/answer/11556288) in ad requests from iOS/tvOS apps | [GMA Plugin for iOS integration guide](../guides/mobile-plugin-gma-ios.md) |
+| To use the Google interactive media ads SDK for iOS to send <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> as [Secure Signals](https://support.google.com/admob/answer/11556288) in ad requests from iOS/tvOS apps | [IMA Plugin for iOS integration guide](../guides/mobile-plugin-ima-ios.md) |
 
 ## tvOS support
 
@@ -27,7 +27,7 @@ Although this page refers to SDK for iOS, this SDK also supports tvOS. For the r
 
 This SDK simplifies integration with EUID for any publishers who want to support EUID for apps running on iOS devices. The following table shows the functions it supports.
 
-| Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to Raw EUIDs | Monitor Rotated Salt Buckets |
+| Encrypt raw EUID to EUID token | Decrypt EUID token to raw EUID | Generate EUID token from personal data | Refresh EUID token | Map personal data to raw EUIDs | Monitor rotated salt buckets |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | &#8212; | &#8212; | &#9989; | &#9989; | &#8212; | &#8212; |
 
@@ -91,9 +91,9 @@ dependencies: [
 
 In the Xcode user interface, under Package Dependencies, add the following entry for your apps:
 
-| Name | Location | Dependency Rule |
+| Name | Location | Dependency rule |
 | :--- | :--- | :--- |
-| uid2-ios-sdk | `git@github.com:IABTechLab/uid2-ios-sdk.git` | Up to next major version: 2.0.0 < 3.0.0 |
+| UID2-iOS-SDK | `git@github.com:IABTechLab/uid2-ios-sdk.git` | Up to next major version: 2.0.0 < 3.0.0 |
 
 ### Installing with CocoaPods
 

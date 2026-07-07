@@ -29,13 +29,13 @@ If you're using an older version, refer to the Deprecation Date column for infor
 
 The latest ZIP file is available in the Assets section at the bottom of the linked Release Notes in the following table.
 
-| Version Name | Version&nbsp;#/Release&nbsp;Notes | AWS Version |  Date | Deprecation Date |
+| Version name | Version&nbsp;#/release&nbsp;notes | AWS version |  Date | Deprecation date |
 | ------- | ------ | ------ | ------ | ------ |
 | H1 2026 | [v5.70.159](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.70.159-r0) | 5.70.159 | June 23, 2026 | June 30, 2027 |
 | Q4 2025 | [v5.62.24](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.62.24-r2) | 5.62.24 | January 15, 2026 | January 15, 2027 |
 | Q2 2025 | [v5.55.9](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.55.9-r1) | 5.55.9 | July 1, 2025 | July 1, 2026 |
 | Q1 2025 | [v5.49.7](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.49.7) | 5.49.7 | Mar 19, 2025 | Mar 31, 2026 |
-| Q3 2024 Out-of-band | [v5.41.0](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.41.0) | 5.41.0 | October 29, 2024 | Mar 31, 2026 |
+| Q3 2024 out-of-band | [v5.41.0](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.41.0) | 5.41.0 | October 29, 2024 | Mar 31, 2026 |
 | Q3 2024 | [v5.38.104](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.38.104) | 5.38.104 | September 12, 2024 | Mar 31, 2026 |
 | Q2 2024 | [v5.37.12](https://github.com/IABTechLab/uid2-operator/releases/tag/v5.37.12) | 5.37.12 | June 12, 2024 | Sep 30, 2025 |
 

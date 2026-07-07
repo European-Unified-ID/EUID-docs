@@ -21,7 +21,7 @@ Within the ad tech industry, advertisers use identity to build audiences, track 
 There are other ways that you can use EUID, outside these use cases. These are just some examples.
 :::
 
-| Send/Receive? | Action | Advantage/Result |
+| Send/receive? | Action | Advantage/result |
 | --- | --- | --- |
 | Send in audiences | Send raw EUIDs via API or pixels | Create audiences. |
 | Send&nbsp;in&nbsp;conversions | Send raw EUIDs as conversion information | Use conversion information for measurement (attribution) or for retargeting via API or pixels. |
@@ -55,7 +55,7 @@ If your implementation uses a version of the [POST&nbsp;/identity/map](../endpoi
 
 The following table shows the implementation options that are available for advertisers and data providers, for each of the high-level steps. Some steps are managed solely as part of your own custom implementation; some steps can be managed by one or more of the EUID implementation options available. For details, click the link on each step.
 
-| High-Level Step | Implementation Options |
+| High-level step | Implementation options |
 | --- | --- |
 | [1: Generate raw EUIDs from personal data](#1-generate-raw-euids-from-personal-data) | Use any of the following options to map personal data to raw EUIDs:<ul><li>One of these EUID SDKs:<ul><li>Python SDK: [Map personal data to raw EUIDs](../sdks/sdk-ref-python.md#map-personal-data-to-raw-euids)</li><li>Java SDK: [Usage for advertisers/data providers](../sdks/sdk-ref-java.md#usage-for-advertisersdata-providers)</li></ul></li><li>Snowflake: [Map personal data](integration-snowflake.md#map-personal-data)</li><li>HTTP endpoints: [POST&nbsp;/identity/map](../endpoints/post-identity-map.md)</li></ul> |
 | [2: Store raw EUIDs and refresh timestamps](#2-store-raw-euids-and-refresh-timestamps) | Custom (your choice). |

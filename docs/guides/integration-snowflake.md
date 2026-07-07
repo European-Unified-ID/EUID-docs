@@ -31,7 +31,7 @@ For a summary of all integration options and steps for advertisers and data prov
 
 The following table summarizes the functionality available with the EUID Snowflake integration.
 
-| Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to Raw EUID |
+| Encrypt raw EUID to EUID token | Decrypt EUID token to raw EUID | Generate EUID token from personal data | Refresh EUID token | Map personal data to raw EUID |
 | :--- | :--- | :--- | :--- | :--- |
 | &#8212; | &#8212; | &#8212; | &#8212;* | &#9989; |
 
@@ -51,7 +51,7 @@ These changes assume that your code integration uses the version of Snowflake fu
 
 The following table shows the differences between the old and new identity mapping functions.
 
-| Function | Version | Return Fields | Key Differences | Comments |
+| Function | Version | Return fields | Key differences | Comments |
 | :-- | :-- | :-- | :-- | :-- |
 | `FN_T_IDENTITY_MAP` | Previous | `UID`, `BUCKET_ID`, `UNMAPPED` | Basic identity mapping with salt bucket tracking | Legacy function using salt bucket monitoring for refresh management. For details, see [Snowflake integration guide (pre-July 2025)](integration-snowflake-previous.md).|
 | `FN_T_IDENTITY_MAP_V3` | Current | `UID`, `PREV_UID`, `REFRESH_FROM`, `UNMAPPED` | Enhanced with previous EUID access and refresh timestamps | Returns previous EUID for 90 days after rotation and uses refresh timestamps instead of salt bucket monitoring. For details, see [Map personal data](#map-personal-data).|
@@ -69,9 +69,9 @@ The following diagram and table illustrate the different parts of the EUID integ
 
 ![Snowflake integration architecture](images/euid-snowflake-integration-architecture-drawio.png)
 
-| Partner Snowflake Account | EUID Snowflake Account | EUID Core Opt-Out Cloud Setup |
+| Partner Snowflake account | EUID Snowflake account | EUID core opt-out cloud setup |
 | :--- | :--- | :--- |
-|As a partner, you set up a Snowflake account to host your data and engage in EUID integration by consuming functions and views through the EUID Share. | EUID integration, hosted in a Snowflake account, grants you access to authorized functions and views that draw data from private tables. You can't access the private tables. The EUID Share reveals only essential data needed for you to perform EUID-related tasks.<br/>**NOTE**: We store <Link href="../ref-info/glossary-uid#gl-salt">salts</Link> and encryption keys in the private tables. No <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> is stored at any point. |ETL (Extract Transform Load) jobs constantly update the EUID Core/Optout Snowflake storage with internal data that powers the EUID Operator Web Services. The data used by the Operator Web Services is also available through the EUID Share. |
+|As a partner, you set up a Snowflake account to host your data and engage in EUID integration by consuming functions and views through the EUID share. | EUID integration, hosted in a Snowflake account, grants you access to authorized functions and views that draw data from private tables. You can't access the private tables. The EUID Share reveals only essential data needed for you to perform EUID-related tasks.<br/>**NOTE**: We store <Link href="../ref-info/glossary-uid#gl-salt">salts</Link> and encryption keys in the private tables. No <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> is stored at any point. |ETL (Extract Transform Load) jobs constantly update the EUID Core/Optout Snowflake storage with internal data that powers the EUID Operator Web Services. The data used by the Operator Web Services is also available through the EUID Share. |
 |When you use shared functions and views, you pay Snowflake for transactional computation costs. |These private tables, secured in the EUID Snowflake account, automatically synchronize with the EUID Core/Optout Snowflake storage that holds internal data used to complete EUID-related tasks. | |
 
 ## Preparing personal data for processing
@@ -154,7 +154,7 @@ select UID, PREV_UID, REFRESH_FROM, UNMAPPED from table({DATABASE_NAME}.{SCHEMA_
 
 All query examples use the following default values for each name variable:
 
-| Variable          | Default Value      | Comments                                                                                                                                  |
+| Variable          | Default value      | Comments                                                                                                                                  |
 |:------------------|:-------------------|:------------------------------------------------------------------------------------------------------------------------------------------|
 | `{DATABASE_NAME}` | `EUID_PROD_UID_SH` | If needed, you can change the default database name when creating a new database after you are granted access to the selected EUID Share. |
 | `{SCHEMA_NAME}`   | `UID`              | This is an immutable name.    
@@ -167,14 +167,14 @@ If the personal data is an email address, the service normalizes the data using 
 
 If the personal data is a phone number, you must normalize it before sending it to the service, using the EUID [Phone number normalization](../getting-started/gs-normalization-encoding.md#phone-number-normalization) rules.
 
-| Argument     | Data Type    | Description                                                                                 |
+| Argument     | Data type    | Description                                                                                 |
 |:-------------|:-------------|:--------------------------------------------------------------------------------------------|
 | `INPUT`      | varchar(256) | The personal data to map to the EUID, refresh timestamp and previous EUID for 90 days after rotation. |
 | `INPUT_TYPE` | varchar(256) | The type of personal data to map. Allowed values: `email`, `email_hash`, `phone`, and `phone_hash`.   |
 
 A successful query returns the following information for the specified personal data.
 
-| Column Name    | Data Type | Description                                                                                                                                                                                                                                                                                                          |
+| Column name    | Data type | Description                                                                                                                                                                                                                                                                                                          |
 |:---------------|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `UID`          | TEXT      | The value is one of the following:<ul><li>Personal data was successfully mapped: The EUID associated with the personal data.</li><li>Otherwise: `NULL`.</li></ul>                                                                                                                                                    |
 | `PREV_UID`     | TEXT      | The value is one of the following:<ul><li>Personal data was successfully mapped and the current raw EUID was rotated in the last 90 days: the previous raw EUID.</li><li>Otherwise: `NULL`.</li></ul>                                                                                                                |
@@ -397,7 +397,7 @@ The raw EUID does not change before the refresh timestamp. After the refresh tim
 
 To determine which EUIDs need regeneration, compare the current time to the `REFRESH_FROM` timestamps returned by the function.
 
-| Column Name       | Data Type     | Description                                                                                                                                                                                                               |
+| Column name       | Data type     | Description                                                                                                                                                                                                               |
 |:------------------|:--------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `UID`             | TEXT          | The EUID associated with the personal data. This is the current EUID value returned by the identity mapping function.                                                                                                              |
 | `REFRESH_FROM`    | NUMBER        | The timestamp (in epoch seconds) indicating when this EUID should be refreshed. Compare this value to the current time to determine if regeneration is needed.                                                         |

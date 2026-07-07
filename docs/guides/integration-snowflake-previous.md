@@ -29,7 +29,7 @@ For a summary of all integration options and steps for advertisers and data prov
 
 The following table summarizes the functionality available with the EUID Snowflake integration.
 
-| Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to Raw EUID |
+| Encrypt raw EUID to EUID token | Decrypt EUID token to raw EUID | Generate EUID token from personal data | Refresh EUID token | Map personal data to raw EUID |
 | :--- | :--- | :--- | :--- | :--- |
 | &#8212; | &#8212; | &#8212; | &#8212; | &#9989; |
 
@@ -68,9 +68,9 @@ The following diagram and table illustrate the different parts of the EUID integ
 
 ![Snowflake integration architecture](images/euid-snowflake-integration-architecture-drawio.png)
 
-| Partner Snowflake Account | EUID Snowflake Account | EUID Core Opt-Out Cloud Setup |
+| Partner Snowflake account | EUID Snowflake account | EUID core opt-out cloud setup |
 | :--- | :--- | :--- |
-|As a partner, you set up a Snowflake account to host your data and engage in EUID integration by consuming functions and views through the EUID Share. | EUID integration, hosted in a Snowflake account, grants you access to authorized functions and views that draw data from private tables. You can't access the private tables. The EUID Share reveals only essential data needed for you to perform EUID-related tasks.<br/>**NOTE**: We store <Link href="../ref-info/glossary-uid#gl-salt">salts</Link> and encryption keys in the private tables. No <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> is stored at any point. |ETL (Extract Transform Load) jobs constantly update the EUID Core/Optout Snowflake storage with internal data that powers the EUID Operator Web Services. The data used by the Operator Web Services is also available through the EUID Share. |
+|As a partner, you set up a Snowflake account to host your data and engage in EUID integration by consuming functions and views through the EUID share. | EUID integration, hosted in a Snowflake account, grants you access to authorized functions and views that draw data from private tables. You can't access the private tables. The EUID Share reveals only essential data needed for you to perform EUID-related tasks.<br/>**NOTE**: We store <Link href="../ref-info/glossary-uid#gl-salt">salts</Link> and encryption keys in the private tables. No <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> is stored at any point. |ETL (Extract Transform Load) jobs constantly update the EUID Core/Optout Snowflake storage with internal data that powers the EUID Operator Web Services. The data used by the Operator Web Services is also available through the EUID Share. |
 |When you use shared functions and views, you pay Snowflake for transactional computation costs.  |These private tables, secured in the EUID Snowflake account, automatically synchronize with the EUID Core/Optout Snowflake storage that holds internal data used to complete EUID-related tasks.  | |
 
 ## Access the EUID share
@@ -132,7 +132,7 @@ select UID, BUCKET_ID, UNMAPPED from table({DATABASE_NAME}.{SCHEMA_NAME}.FN_T_ID
 
 All query examples use the following default values for each name variable:
 
-| Variable | Default Value | Comments |
+| Variable | Default value | Comments |
 | :--- | :--- | :--- |
 | `{DATABASE_NAME}` | `EUID_PROD_UID_SH` | If needed, you can change the default database name when creating a new database after you are granted access to the selected EUID Share. |
 | `{SCHEMA_NAME}`| `UID` | This is an immutable name. |
@@ -145,14 +145,14 @@ If the personal data is an email address, the service normalizes the data using 
 
 If the personal data is a phone number, you must normalize it before sending it to the service, using the EUID [Phone number normalization](../getting-started/gs-normalization-encoding.md#phone-number-normalization) rules.
 
-|Argument|Data Type|Description|
+|Argument|Data type|Description|
 | :--- | :--- | :--- |
 | `INPUT` | varchar(256) | The personal data to map to the EUID and <Link href="../ref-info/glossary-uid#gl-salt-bucket-id">salt bucket ID</Link>. |
 | `INPUT_TYPE` | varchar(256) | The type of personal data to map. Allowed values: `email`, `email_hash`, `phone`, and `phone_hash`.
 
 A successful query returns the following information for the specified personal data.
 
-|Column Name|Data Type|Description|
+|Column name|Data type|Description|
 | :--- | :--- | :--- |
 | `UID` | TEXT | The value is one of the following:<ul><li>Personal data was successfully mapped: The EUID associated with the personal data.</li><li>Personal data was not successfully mapped: `NULL`.</li></ul> |
 | `BUCKET_ID` | TEXT | The value is one of the following:<ul><li>Personal data was successfully mapped: The ID of the <Link href="../ref-info/glossary-uid#gl-salt-bucket">salt bucket</Link> used to generate the EUID. This ID maps to the bucket ID in the `SALT_BUCKETS` view.</li><li>Personal data was not successfully mapped: `NULL`.</li></ul> |
@@ -366,7 +366,7 @@ The `SALT_BUCKETS` view query returns the date and time when the <Link href="../
 
 To determine which EUIDs need to be regenerated, compare the timestamps of when they were generated to the most recent timestamp of the salt bucket update.
 
-|Column Name|Data Type|Description|
+|Column name|Data type|Description|
 | :--- | :--- | :--- |
 | `BUCKET_ID` | TEXT | The salt bucket ID. This ID parallels the `BUCKET_ID` returned by the identity map function. Use the `BUCKET_ID` as the key to do a join query between the function call results and results from this view call.  |
 | `LAST_SALT_UPDATE_UTC` | TIMESTAMP_NTZ | The last time the salt in the bucket was updated. This value is expressed in UTC. |

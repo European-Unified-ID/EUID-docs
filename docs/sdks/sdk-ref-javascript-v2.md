@@ -24,7 +24,7 @@ For integration steps for content publishers, see [Client-server integration gui
 
 This SDK simplifies integration with EUID for any publishers who want to support EUID. The following table shows the functions it supports.
 
-| Encrypt Raw EUID to EUID Token | Decrypt EUID Token to Raw EUID | Generate EUID Token from Personal Data | Refresh EUID Token | Map Personal Data to Raw EUIDs | Monitor Rotated Salt Buckets |
+| Encrypt raw EUID to EUID token | Decrypt EUID token to raw EUID | Generate EUID token from personal data | Refresh EUID token | Map personal data to raw EUIDs | Monitor rotated salt buckets |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | &#8212; | &#8212; | &#8212; | &#9989; | &#8212; |
 
@@ -83,12 +83,12 @@ For web integration steps, see [Client-server integration guide for JavaScript](
 
 The following table outlines the four main states that the SDK can be in, based on the combination of values returned by two main functions, [getAdvertisingToken()](#getadvertisingtoken-string) and [isLoginRequired()](#isloginrequired-boolean), and indicates the appropriate action that you, as a developer, can take in each state. 
 
-| Workflow State | Advertising Token | Login Required | Description| Identity Status Value |
+| Workflow state | Advertising token | Login required | Description| Identity status value |
 | :--- | :--- | :---| :---| :---|
 | Initialization | `undefined`| `undefined`| Initial state until the callback is invoked. | N/A |
-| Identity Is Available | available |`false` | A valid identity has been successfully established or refreshed. You can use the advertising token in targeted advertising. |`ESTABLISHED` or `REFRESHED` |
-| Identity Is Temporarily Unavailable |`undefined` | `false`| The advertising token has expired, therefore automatic refresh failed. [Background auto-refresh](#background-token-auto-refresh) attempts will continue until the refresh token expires or the user opts out.<br/>You can do either of the following:<br/>- Redirect the user, asking for the email or phone number.<br/>- Use untargeted advertising.<br/>NOTE: Identity might be successfully refreshed at a later time&#8212;for example, if the EUID service is temporarily unavailable.| `EXPIRED` |
-| Identity Is Not Available  | `undefined`| `false`| The identity is not available and cannot be refreshed. The SDK clears the first-party cookie.<br/>To use EUID-based targeted advertising again, you must obtain the email or phone number from the consumer. | `INVALID`, `NO_IDENTITY`, `REFRESH_EXPIRED`, or `OPTOUT` |
+| Identity is available | available |`false` | A valid identity has been successfully established or refreshed. You can use the advertising token in targeted advertising. |`ESTABLISHED` or `REFRESHED` |
+| Identity is temporarily unavailable |`undefined` | `false`| The advertising token has expired, therefore automatic refresh failed. [Background auto-refresh](#background-token-auto-refresh) attempts will continue until the refresh token expires or the user opts out.<br/>You can do either of the following:<br/>- Redirect the user, asking for the email or phone number.<br/>- Use untargeted advertising.<br/>NOTE: Identity might be successfully refreshed at a later time&#8212;for example, if the EUID service is temporarily unavailable.| `EXPIRED` |
+| Identity is not available  | `undefined`| `false`| The identity is not available and cannot be refreshed. The SDK clears the first-party cookie.<br/>To use EUID-based targeted advertising again, you must obtain the email or phone number from the consumer. | `INVALID`, `NO_IDENTITY`, `REFRESH_EXPIRED`, or `OPTOUT` |
 
 The following diagram illustrates the four states, including the corresponding identity [status values](#identity-status-values), and possible transitions between them. The SDK invokes the [callback function](#callback-function) on each transition.
 
@@ -183,7 +183,7 @@ The following is an example of an `init()` call that uses identity from a first-
 
 The `opts` object supports the following properties.
 
-| Property | Data Type | Attribute | Description | Default Value |
+| Property | Data type | Attribute | Description | Default value |
 | :--- | :--- | :--- | :--- | :--- |
 | `callback` | `function(object): void` | Required | The function that the SDK should invoke after validating the passed identity. For details, see [Callback function](#callback-function).| N/A |
 | `identity` | object | Optional | The `body` property value from a successful [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) or [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) call that has been run on the server to generate an identity.<br/>To use the identity from a [first-party cookie](#euid-cookie-format), leave this property empty. | N/A |
@@ -209,7 +209,7 @@ For details on when the callback function is called, see [Background token auto-
 
 The `object` parameter includes the following properties.
 
-| Property | Data Type | Description |
+| Property | Data type | Description |
 | :--- | :--- | :--- |
 | `advertisingToken` | string | The token to be passed to SSPs for targeted advertising. If the token/identity is invalid or unavailable, the value is `undefined`. |
 | `status` | `EUID.IdentityStatus` enum | The numeric value that indicates the status of the identity. For details, see [Identity status values](#identity-status-values). |
@@ -223,7 +223,7 @@ The [callback function](#callback-function) returns the `status` field values as
 The following values are intended only to inform you of identity availability. Do not use them in conditional logic.
 :::
 
-| Status | Advertising Token Availability | Description |
+| Status | Advertising token availability | Description |
 | :--- | :--- | :--- |
 | `ESTABLISHED` | Available | The identity is valid, was set from the passed value or the first-party cookie, and is now available for targeted advertising. |
 | `REFRESHED` | Available | The identity was successfully refreshed by a call to the EUID operator, and is now available for targeted advertising. |
@@ -328,7 +328,7 @@ The SDK uses a first-party cookie to store the user's identity.
 
 The following table lists the cookie properties.
 
-| Properties | Default Value | Comments |
+| Properties | Default value | Comments |
 | :--- | :--- | :--- |
 | `Name` | `__euid` | N/A |
 | `Expiry` | N/A | The value is the refresh token expiration timestamp as specified in the [POST&nbsp;/token/generate](../endpoints/post-token-generate.md) or [POST&nbsp;/token/refresh](../endpoints/post-token-refresh.md) response. |

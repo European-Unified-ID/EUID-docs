@@ -37,7 +37,7 @@ You must encrypt all requests using your secret. For details, and code examples 
 
 ### Path parameters
 
-| Path Parameter | Data Type | Attribute | Description |
+| Path parameter | Data type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
 | `{environment}` | string | Required | Integration environment: `https://integ.euid.eu`.<br/>Production environment: `https://prod.euid.eu`.<br/>For a full list, including regional operators, see [Environments](../getting-started/gs-environments.md). |
 
@@ -49,7 +49,7 @@ The integration environment and the production environment require different <Li
 
 There is a single body parameter.
 
-| Body Parameter | Data Type | Attribute | Description |
+| Body parameter | Data type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
 | `advertising_ids` |	string array |	Required |	The list of raw EUIDs for which you want to check the opt-out status.<br/>Include a maximum of 5,000 entries in one API call. |
 
@@ -118,7 +118,7 @@ The response body includes the following properties.
 
 The following table lists the status property values and their HTTP status code equivalents.
 
-| Status | HTTP Status Code | Description |
+| Status | HTTP status code | Description |
 | :--- | :--- | :--- |
 | `success` | 200 | The request was successful. The response will be encrypted. |
 | `client_error` | 400 | The request had missing or invalid parameters. |

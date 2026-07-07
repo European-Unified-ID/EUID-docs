@@ -97,11 +97,11 @@ EUID SDK and Prebid.js integrations include the fields shown in the following ta
 
 | Field | Description |
 |---|---|
-| Storage Type | Indicates whether the identity is stored in a cookie or `localStorage`. |
-| Storage Key | The name of the cookie or `localStorage` key. For EUID SDK integrations: `__euid` or `EUID-sdk-identity`. For Prebid.js integrations: `__euid_advertising_token`. |
-| Stored Value | The raw identity JSON, including `advertising_token`, `refresh_token`, `identity_expires`, `refresh_expires`, `refresh_from`, and `refresh_response_key`. |
-| Valid Identity | Indicates whether the stored identity is currently valid — that is, the advertising token has not expired and the user has not opted out. |
-| Optout Identity | Indicates whether the identity reflects an opted-out user. |
+| Storage type | Indicates whether the identity is stored in a cookie or `localStorage`. |
+| Storage key | The name of the cookie or `localStorage` key. For EUID SDK integrations: `__euid` or `EUID-sdk-identity`. For Prebid.js integrations: `__euid_advertising_token`. |
+| Stored value | The raw identity JSON, including `advertising_token`, `refresh_token`, `identity_expires`, `refresh_expires`, `refresh_from`, and `refresh_response_key`. |
+| Valid identity | Indicates whether the stored identity is currently valid — that is, the advertising token has not expired and the user has not opted out. |
+| Optout identity | Indicates whether the identity reflects an opted-out user. |
 
 For Google Secure Signals integrations, the tab shows the status of the secure signal and the current EUID advertising token. If no signal has been generated yet, it indicates that neither a cached signal nor an EUID SDK advertising token is available. When the collector function has run successfully, the extension displays a "Secure signal is cached" status message and shows the cached value stored under `_GESPSK-euid.eu`. The cached signal is in the format `[providerId, advertisingToken, expiryTimestamp]`. The current EUID advertising token is also displayed separately.
 
@@ -118,7 +118,7 @@ The **Event History** tab shows a searchable, real-time log of EUID SDK events a
 | Date | The date the event was recorded. |
 | Time | The time the event was recorded. |
 | Event | The event type (for example, `SdkLoaded`, `InitCompleted`, `TokenUpdated`). |
-| Advertising Token | The advertising token associated with the event, if present. |
+| Advertising token | The advertising token associated with the event, if present. |
 
 Use the search bar to filter by event type or token value.
 

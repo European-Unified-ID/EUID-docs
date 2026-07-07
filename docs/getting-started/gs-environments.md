@@ -15,9 +15,9 @@ Learn about the different environments available.
 
 The following table lists all current testing and production environments for EUID.
 
-| Environment | Cloud Region | Code | Base URL |
+| Environment | Cloud region | Code | Base URL |
 | :--- | :--- | :--- | :--- |
-| Integration Testing | AWS Europe (London) | `eu-west-2` | `https://integ.euid.eu/v2` |
+| Integration testing | AWS Europe (London) | `eu-west-2` | `https://integ.euid.eu/v2` |
 | Production | AWS Europe (London) | `eu-west-2` | `https://prod.euid.eu/v2` |
 
 For example, `https://integ.euid.eu/v2/token/generate`.

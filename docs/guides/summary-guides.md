@@ -40,7 +40,7 @@ The following documentation resources are available for publisher web integratio
 For a detailed summary of web integration options, see [Web integration overview](integration-options-publisher-web.md).
 :::
 
-| Integration Guide | Content Description |
+| Integration guide | Content description |
 | :--- | :--- |
 | [Integration overview for Prebid](integration-prebid.md) | An overview of options for publishers who want to integrate with EUID and generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) to be passed by Prebid.js in the RTB <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link>. |
 | [Client-side integration guide for Prebid.js](integration-prebid-client-side.md) | An integration guide for publishers who want to integrate with EUID and want Prebid.js to manage token generation and automatic token refresh as well as passing the tokens into the RTB bidstream. This guide is for publishers who want to request EUID tokens client-side, which is the easiest implementation approach. |
@@ -55,7 +55,7 @@ For a detailed summary of web integration options, see [Web integration overview
 
 The following documentation resources are available for publishers integrating with Android or iOS devices.
 
-| Integration Guide | Content Description |
+| Integration guide | Content description |
 | :--- | :--- |
 | [Mobile integration overview for Android and iOS](integration-mobile-overview.md) | An overview of options for mobile app publishers who want to integrate with EUID using the SDK for Android or the SDK for iOS. |
 | [Client-side integration guide for mobile](integration-mobile-client-side.md) | An integration guide for mobile app publishers who want to integrate with EUID with changes only within the mobile app (no server-side changes). |
@@ -66,7 +66,7 @@ The following documentation resources are available for publishers integrating w
 
 The following documentation resources are available for publisher integrations supporting CTV.
 
-| Integration Guide | Content Description |
+| Integration guide | Content description |
 | :--- | :--- |
 | [CTV integration guide](../guides/integration-ctv-guide.md) | A summary of CTV integration options, with links to additional information and instructions. |
 
@@ -74,7 +74,7 @@ The following documentation resources are available for publisher integrations s
 
 The following documentation resources are available for publishers integrating with Prebid.
 
-| Integration Guide | Content Description |
+| Integration guide | Content description |
 | :--- | :--- |
 | [Integration overview for Prebid](integration-prebid.md) | An overview of options for publishers who want to integrate with EUID and generate <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> (advertising tokens) to be passed by Prebid.js or the Prebid Mobile SDK in the RTB bidstream. |
 | [Client-side integration guide for Prebid.js](integration-prebid-client-side.md) | An integration guide for publishers who want to integrate with EUID and want Prebid.js to manage token generation and automatic token refresh as well as passing the tokens into the RTB bidstream. This guide is for publishers who want to request EUID tokens client-side, which is the easiest implementation approach. |
@@ -85,7 +85,7 @@ The following documentation resources are available for publishers integrating w
 
 The following documentation resources are available for publishers integrating with Google Ad Manager.
 
-| Integration Guide | Content Description |
+| Integration guide | Content description |
 | :--- | :--- |
 | [Google Ad Manager Secure Signals integration guide](integration-google-ss.md) | This integration guide covers the additional steps needed for publishers using EUID with the Google Ad Manager Secure Signals feature (previously known as Encrypted Signals for Publishers, ESP). |
 | [GMA Plugin for Android integration guide](mobile-plugin-gma-android.md) | The EUID Google Mobile Ads (GMA) Plugin for Android enables publishers that use the [Google GMA SDK](https://developers.google.com/ad-manager/mobile-ads-sdk) to send <Link href="../ref-info/glossary-uid#gl-euid-token">EUID tokens</Link> as [secure signals](https://support.google.com/admob/answer/11556288) in ad requests from Android apps. |
@@ -97,7 +97,7 @@ The following documentation resources are available for publishers integrating w
 
 The following documentation resources are available for advertisers and data providers integrating with EUID.
 
-| Integration Guide | Content Description |
+| Integration guide | Content description |
 | :--- | :--- |
 | [Advertiser/data provider overview](integration-advertiser-dataprovider-overview.md) | This guide provides an overview of integration options for organizations that collect user data and push it to other EUID participants. |
 | [Snowflake integration guide](integration-snowflake.md) | Instructions for generating raw EUIDs from emails within Snowflake. |
@@ -107,7 +107,7 @@ The following documentation resources are available for advertisers and data pro
 
 The following documentation resources are available for DSPs integrating with EUID.
 
-| Integration Guide | Content Description |
+| Integration guide | Content description |
 | :--- | :--- |
 | [DSP integration guide](dsp-guide.md) | This integration guide for DSPs covers handling EUIDs for bidding and honoring user opt-outs. |
 
@@ -115,6 +115,6 @@ The following documentation resources are available for DSPs integrating with EU
 
 The following documentation resources are available for <Link href="../ref-info/glossary-uid#gl-private-operator">Private Operator</Link> integrations.
  
-| Integration Guide | Content Description |
+| Integration guide | Content description |
 | :--- | :--- |
 | [Private Operator for AWS](operator-guide-aws-marketplace.md) | Instructions for setting up a Private Operator service for AWS Marketplace. |

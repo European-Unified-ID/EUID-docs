@@ -31,7 +31,7 @@ You must encrypt all requests using your secret. For details, and code examples 
 
 ### Path parameters
 
-| Path Parameter | Data Type | Attribute | Description |
+| Path parameter | Data type | Attribute | Description |
 | :--- | :--- | :--- | :--- |
 | `{environment}` | string | Required | Integration environment: `https://integ.euid.eu`<br/>Production environment: `https://prod.euid.eu`<br/>For a full list, including regional operators, see [Environments](../getting-started/gs-environments.md). |
 
@@ -45,7 +45,7 @@ The integration environment and the production environment require different <Li
 You must include the following parameter as a key-value pair in the JSON body of a request when encrypting it.
 :::
 
-| Body Parameter | Data Type | Attribute | Description | Format |
+| Body parameter | Data type | Attribute | Description | Format |
 | :--- | :--- | :--- | :--- | :--- |
 | `since_timestamp` | date-time or integer | Required | Specify the date and time to which to compare the last updated UTC timestamps of the buckets to be returned. | ISO 8601 format:<br/>`YYYY-MM-DDThh:mm:ss` |
 
@@ -106,7 +106,7 @@ The response body includes the properties shown in the following table.
 
 The following table lists the `status` property values and their HTTP status code equivalents.
 
-| Status | HTTP Status Code | Description |
+| Status | HTTP status code | Description |
 | :--- | :--- | :--- |
 | `success` | 200 | The request was successful. The response will be encrypted. |
 | `client_error` | 400 | The request had missing or invalid parameters. |
