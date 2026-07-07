@@ -25,7 +25,7 @@ For a diagram of how the different services work together, see [EUID workflows](
 
 | Participant | Role description |
 | :--- | :--- |
-| **Core administrator** | An organization (currently, The Trade Desk) that manages the EUID Core Service and other component services. For example, it distributes encryption keys and salts to EUID operators and sends user opt-out requests to operators and DSPs. |
+| **Core Administrator** | An organization (currently, The Trade Desk) that manages the EUID Core Service and other component services. For example, it distributes encryption keys and salts to EUID operators and sends user opt-out requests to operators and DSPs. |
 | **Operators** | Organizations that run the <Link href="../ref-info/glossary-uid#gl-operator-service">Operator Service</Link> (via the EUID APIs). Operators periodically receive and store up-to-date encryption keys and salts from the EUID Core Service, salt and hash <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> to return raw EUIDs, encrypt raw EUIDs to generate EUID tokens, and distribute EUID token decryption keys.<br/>Public Operators (Open Operators) run public instances of the Operator Service. For example, The Trade Desk currently serves as a Public Operator for the EUID framework, available to all participants. If other Public Operators are available, a participant can choose which operator to work with.<br/>Any participant can also choose to become a Private Operator to generate and manage EUIDs. |
 
 ## EUID external participants
