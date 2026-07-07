@@ -131,10 +131,10 @@ All options support either client-side or server-side integration.
 | :--- | :--- | :--- | :--- | :--- |
 | EUID SDK for Android | &#9989; | &#9989; | Android | &ast; |
 | EUID SDK for iOS | &#9989;| &#9989; | iOS | &ast; |
-| GMA plugin for Android<br/>(requires EUID SDK for Android) | &#8212; | &#8212; | Android | &#9989;&ast;&ast; |
-| GMA plugin for iOS<br/>(requires EUID SDK for iOS) | &#8212; | &#8212; | iOS | &#9989;&ast;&ast; |
-| IMA plugin for Android <br/>(requires EUID SDK for Android)| &#8212; | &#8212; | Android | &#9989;&ast;&ast; |
-| IMA plugin for iOS<br/>(requires EUID SDK for iOS)| &#8212; | &#8212; | iOS | &#9989;&ast;&ast; |
+| GMA Plugin for Android<br/>(requires EUID SDK for Android) | &#8212; | &#8212; | Android | &#9989;&ast;&ast; |
+| GMA Plugin for iOS<br/>(requires EUID SDK for iOS) | &#8212; | &#8212; | iOS | &#9989;&ast;&ast; |
+| IMA Plugin for Android <br/>(requires EUID SDK for Android)| &#8212; | &#8212; | Android | &#9989;&ast;&ast; |
+| IMA Plugin for iOS<br/>(requires EUID SDK for iOS)| &#8212; | &#8212; | iOS | &#9989;&ast;&ast; |
 | EUID integration with Prebid Mobile SDK | &#8212; | &#8212; | Either | &#9989;&ast;&ast;&ast; |
 
 &ast;You can combine the SDK with the IMA/GMA Plugin or the EUID Integration with Prebid Mobile SDK to send the token to the bidstream via Google or Prebid Server, or you can retrieve the token manually from the SDK and pass it to the bidstream in another way, according to your preference.
