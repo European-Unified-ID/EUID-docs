@@ -9,10 +9,10 @@
 # via overrides in package.json:69; no source import of fast-uri; Docusaurus static-site build
 # tooling, no host-policy/fetch path
 # See: UID2-7633
-CVE-2026-18446 exp:2026-09-06
+CVE-2026-18446 exp:2026-11-06
 
 # CVE-2026-69152 — brace-expansion (npm, transitive via minimatch) (HIGH).
 # Not exploitable here: package-lock.json:6277 brace-expansion@5.0.8 via minimatch; Docusaurus
 # static-docs build tooling only; no runtime import
 # See: UID2-7619
-CVE-2026-69152 exp:2026-09-06
+CVE-2026-69152 exp:2026-11-06
