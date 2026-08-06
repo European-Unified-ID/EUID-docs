@@ -4,3 +4,10 @@
 # e.g. 
 # CVE-2022-3996
 
+# CVE-2026-18446 — fast-uri (npm) (HIGH).
+# Not exploitable here: package.json:69 pins fast-uri ^3.1.4 in overrides block only; lock
+# resolves to 3.1.4 solely as transitive dep of ajv (node_modules/ajv-
+# formats/node_modules/fast-uri, schema-utils). No import/require of fast-uri in any source
+# file.
+# See: UID2-7633
+CVE-2026-18446 exp:2026-09-06
