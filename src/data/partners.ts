@@ -26,6 +26,10 @@ export const partnersData: PartnersDataType = [
     logo: "evolution.png",
   },
   {
+    name: "Fetch",
+    logo: "fetch-logo.png",
+  },
+  {
     name: "Funke Digital",
     logo: "funke.png",
   },
@@ -88,6 +92,10 @@ export const partnersData: PartnersDataType = [
   {
     name: "Rakuten",
     logo: "rakuten_logo.svg",
+  },
+  {
+    name: "Roku",
+    logo: "roku-logo.png",
   },
   {
     name: "Reach plc",
