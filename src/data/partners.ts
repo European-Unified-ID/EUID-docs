@@ -26,6 +26,10 @@ export const partnersData: PartnersDataType = [
     logo: "evolution.png",
   },
   {
+    name: "Fetch",
+    logo: "fetch-logo.png",
+  },
+  {
     name: "Funke Digital",
     logo: "funke.png",
   },
