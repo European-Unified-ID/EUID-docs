@@ -90,6 +90,10 @@ export const partnersData: PartnersDataType = [
     logo: "rakuten_logo.svg",
   },
   {
+    name: "Roku",
+    logo: "roku-logo.png",
+  },
+  {
     name: "Reach plc",
     logo: "reach-logo.png",
   },
