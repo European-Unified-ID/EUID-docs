@@ -58,3 +58,18 @@ CVE-2026-67213 exp:2026-11-18
 # path.
 # See: UID2-7705
 GHSA-5p4m-2wfm-xmqj exp:2026-11-18
+
+# CVE-2026-73088 — browserslist (HIGH).
+# Not exploitable here: browserslist@4.28.1 is transitive-only (package-lock deps of
+# webpack/autoprefixer/postcss); package.json has a trusted browserslist query array, no
+# browserslist-stats.json in tree, no --stats flag, no opts.stats call
+# See: UID2-7802
+CVE-2026-73088 exp:2026-12-02
+
+# CVE-2026-73089 — browserslist (HIGH).
+# Not exploitable here: package-lock.json:6301 browserslist@4.28.1 present transitively;
+# package.json is a @docusaurus/core 3.9.2 static-site project (scripts: docusaurus build).
+# browserslist runs only at build time with fixed config queries; no source import and no
+# runtime service exposes browserslist() to attacker input.
+# See: UID2-7803
+CVE-2026-73089 exp:2026-12-02
