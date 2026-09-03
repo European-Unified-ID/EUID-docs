@@ -73,3 +73,39 @@ CVE-2026-73088 exp:2026-12-02
 # runtime service exposes browserslist() to attacker input.
 # See: UID2-7803
 CVE-2026-73089 exp:2026-12-02
+
+# CVE-2026-75899 — fast-uri (HIGH).
+# Not exploitable here: package-lock.json resolves fast-uri 3.1.4 only under node_modules/ajv-
+# formats/node_modules/fast-uri and node_modules/schema-utils/node_modules/fast-uri (Docusaurus
+# build tooling). No *.js/ts/tsx source imports fast-uri; grep for fast-uri outside
+# package.json/lock/.trivyignore returns nothing. package.json entry is an overrides pin, not
+# an app dependency.
+# See: UID2-7812
+CVE-2026-75899 exp:2026-12-03
+
+# CVE-2026-75931 — fast-uri (HIGH).
+# Not exploitable here: package-lock.json pins fast-uri@3.1.4 only under node_modules/ajv-
+# formats and node_modules/schema-utils (transitive via ajv). Also an overrides pin in
+# package.json. No require('fast-uri')/import of fast-uri or ajv in any non-node_modules
+# source; no fastify (count 0). Repo is a static Docusaurus site (@docusaurus/core), so
+# ajv/fast-uri run only in build-time JSON-schema tooling on trusted schemas.
+# See: UID2-7813
+CVE-2026-75931 exp:2026-12-03
+
+# CVE-2026-75975 — fast-uri (HIGH).
+# Not exploitable here: fast-uri@3.1.4 present only as transitive dep of ajv (node_modules/ajv-
+# formats/node_modules/ajv and schema-utils/ajv); pinned via package.json overrides ^3.1.4. No
+# direct import of fast-uri or ajv in any .js/.ts source. Docusaurus static docs site — ajv
+# used by webpack/schema-utils at build time for JSON Schema $ref parsing, not to normalize
+# untrusted URLs for outbound requests.
+# See: UID2-7814
+CVE-2026-75975 exp:2026-12-03
+
+# CVE-2026-76172 — fast-uri (HIGH).
+# Not exploitable here: package-lock.json pins fast-uri@3.1.4 only under node_modules/ajv-
+# formats/node_modules/ajv and node_modules/schema-utils/node_modules/ajv (Docusaurus build
+# tooling). No fast-uri or ajv import in any source file (grep of *.ts/js/tsx/jsx returned
+# none). ajv uses fast-uri to parse developer-authored JSON Schema $ref/$id URIs at build time,
+# not untrusted URLs for redirect/SSRF.
+# See: UID2-7815
+CVE-2026-76172 exp:2026-12-03
