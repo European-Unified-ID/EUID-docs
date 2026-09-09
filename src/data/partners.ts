@@ -14,6 +14,10 @@ export const partnersData: PartnersDataType = [
     logo: "bcn-logo.png",
   },
   {
+    name: "Ciao People",
+    logo: "ciaopeople-logo.png",
+  },
+  {
     name: "ElDiario.es",
     logo: "eldiario-logo.png",
   },
