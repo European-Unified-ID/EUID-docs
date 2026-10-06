@@ -117,3 +117,12 @@ CVE-2026-84375 exp:2026-10-10
 # svgo runs only at build time optimizing repo-owned static SVGs; no user-upload/sanitization path exists in this static docs site
 # See: UID2-7852
 CVE-2026-84370 exp:2026-10-10
+
+# CVE-2026-93748 — http-cache-semantics (HIGH). Required attack preconditions are absent in this
+# configuration.
+# See: UID2-8027
+CVE-2026-93748 exp:2027-01-06
+
+# CVE-2026-85393 — node-forge (HIGH). Vulnerable code path is not reachable in this configuration.
+# See: UID2-8028
+CVE-2026-85393 exp:2027-01-06
