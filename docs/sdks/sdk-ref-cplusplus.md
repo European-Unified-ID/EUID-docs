@@ -65,7 +65,7 @@ The interface allows you to decrypt EUID advertising tokens and return the corre
 When you use an SDK, you do not need to store or manage decryption keys.
 :::
 
-If you're a DSP, for bidding, call the interface to decrypt an EUID advertising token and return the EUID. For details on the bidding logic for handling user opt-outs, see [DSP integration guide](../guides/dsp-guide.md).
+If you're a DSP, for bidding, call the interface to decrypt an EUID advertising token and return the EUID.
 
 The following is the decrypt method in C++:
 

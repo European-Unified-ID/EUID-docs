@@ -64,8 +64,6 @@ You will need to provide the values necessary for the SDK to authenticate with t
 
 The `BidstreamClient` class allows you to decrypt EUID tokens into raw EUIDs.
 
-For details on the bidding logic for handling user opt-outs, see [DSP integration guide](../guides/dsp-guide.md).
-
 :::note
 When you use an SDK, you do not need to store or manage decryption keys.
 :::

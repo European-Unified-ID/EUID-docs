@@ -315,11 +315,11 @@ The EUID has the same chance as a cookie of becoming stale. Hence, the DSP can a
 
 #### Will all user opt-out traffic be sent to the DSP?
 
-Yes, all opt-outs from the EUID [Transparency and Control Portal](https://transparentadvertising.eu/) hit the opt-out endpoint, which the DSP must configure to [honor user opt-outs](../guides/dsp-guide.md#honor-user-opt-outs).
+Yes, all opt-outs from the EUID [Transparency and Control Portal](https://transparentadvertising.eu/) hit the opt-out endpoint, which the DSP must configure to honor user opt-outs.
 
 #### Is the DSP expected to handle opt-out signals only for the EUID that they already store?
 
-In some cases a DSP may receive an EUID token for a newly-stored EUID where the token is generated before the opt-out timestamp. The DSP is not allowed to bid on such tokens. It is therefore recommended to store all opt-out signals regardless of whether the corresponding EUID is currently stored by the DSP or not. For details, see the diagram in [Bidding opt-out logic](../guides/dsp-guide.md#bidding-opt-out-logic).
+In some cases a DSP may receive an EUID token for a newly-stored EUID where the token is generated before the opt-out timestamp. The DSP is not allowed to bid on such tokens. It is therefore recommended to store all opt-out signals regardless of whether the corresponding EUID is currently stored by the DSP or not.
 
 #### How long should the DSP keep the opt-out list?
 
@@ -332,8 +332,6 @@ No. It is sent as an unencrypted (raw) EUID.
 #### In what format is the EUID of an opted-out user sent to the webhook?
 
 If a user has opted out, the EUID Operator returns the raw EUIDs as URL-encoded query parameters.
-
-For details about the opt-out process for DSPs, see [Honor user opt-outs](../guides/dsp-guide.md#honor-user-opt-outs).
 
 #### What request type do opt-outs use? 
 

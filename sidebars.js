@@ -212,18 +212,6 @@ const fullSidebar = [
 
         {
           type: 'category',
-          label: 'DSP integrations',
-          link: {
-            type: 'generated-index',
-          },
-          collapsed: true,
-          items: [
-            'guides/dsp-guide',
-          ],
-        },
-
-        {
-          type: 'category',
           label: 'Private Operator integrations',
           link: {
             type: 'doc',
@@ -356,8 +344,6 @@ const sidebars = {
     'guides/integration-snowflake',
     'guides/integration-snowflake-previous',
     'guides/integration-advertiser-dataprovider-endpoints',
-    'DSP integrations',
-    'guides/dsp-guide',
     'endpoints/post-identity-buckets',
     'endpoints/post-identity-map',
     'endpoints/post-optout-status'
@@ -390,8 +376,6 @@ const sidebars = {
     'guides/mobile-plugin-gma-ios',
     'guides/mobile-plugin-ima-android',
     'guides/mobile-plugin-ima-ios',
-    'DSP integrations',
-    'guides/dsp-guide',
     'endpoints/post-token-generate',
     'endpoints/post-token-validate',
     'endpoints/post-token-refresh',
@@ -461,8 +445,6 @@ const sidebars = {
     'guides/mobile-plugin-gma-ios',
     'guides/mobile-plugin-ima-android',
     'guides/mobile-plugin-ima-ios',
-    'DSP integrations',
-    'guides/dsp-guide',  
     'endpoints/post-token-generate',
     'endpoints/post-token-validate',
     'endpoints/post-token-refresh',
