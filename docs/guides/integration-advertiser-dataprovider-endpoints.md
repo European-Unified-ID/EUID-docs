@@ -31,7 +31,7 @@ At a high level, the steps for advertisers and data providers integrating with E
 
 3. [Manipulate or combine raw EUIDs](#3-manipulate-or-combine-raw-euids)
 
-4. [Send stored raw EUIDs to DSPs to create audiences or conversions](#4-send-stored-raw-euids-to-dsps-to-create-audiences-or-conversions)
+4. [Use stored raw EUIDs to create audiences or conversions](#4-use-stored-raw-euids-to-create-audiences-or-conversions)
 
 5. [Monitor for raw EUID refresh](#5-monitor-for-raw-euid-refresh)
 
@@ -52,7 +52,7 @@ Personal data refers to a user's normalized email address or phone number, or th
 | Step | Endpoint | Description |
 | --- | --- | --- |
 | 1-a | [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) request | Send a request containing personal data to the identity mapping endpoint. |
-| 1-b | [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) response | The raw EUID (`u` field) returned in the response can be used to target audiences on relevant DSPs.<br/>The response returns a user's raw EUID (`u`), refresh timestamp (`r`), and optionally the previous raw EUID (`p`) if the current EUID was rotated within the last 90 days. Use the refresh timestamp to determine when to refresh the EUID. For details, see [5: Monitor for raw EUID refresh](#5-monitor-for-raw-euid-refresh). |
+| 1-b | [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) response | The raw EUID (`u` field) returned in the response can be used to build audiences.<br/>The response returns a user's raw EUID (`u`), refresh timestamp (`r`), and optionally the previous raw EUID (`p`) if the current EUID was rotated within the last 90 days. Use the refresh timestamp to determine when to refresh the EUID. For details, see [5: Monitor for raw EUID refresh](#5-monitor-for-raw-euid-refresh). |
 
 ### 2: Store raw EUIDs and refresh timestamps
 
@@ -69,14 +69,14 @@ Use the EUIDs you received in Step 1. For example, you might do one or more of t
 - Do some manipulation: for example, combine raw EUIDs you generated from personal data and raw EUIDs received from another participant such as an advertiser or data provider.
 - Add new raw EUIDs into an existing audience.
 
-### 4: Send stored raw EUIDs to DSPs to create audiences or conversions
+### 4: Use stored raw EUIDs to create audiences or conversions
 
 Use the raw EUIDs for some purpose such as:
 
-   - Sending stored raw EUIDs to DSPs to create audiences and conversions.
+   - Using stored raw EUIDs to create audiences and conversions.
    - Using the raw EUIDs for measurement.
 
-For example, you could send the (<Link href="../ref-info/glossary-uid#gl-raw-euid">raw EUID</Link>) (`u` field) returned in Step 1-b to a DSP while building your audiences. Each DSP has a unique integration process for building audiences; follow the integration guidance provided by the DSP for sending raw EUIDs to build an audience.
+For example, you could use the (<Link href="../ref-info/glossary-uid#gl-raw-euid">raw EUID</Link>) (`u` field) returned in Step 1-b while building your audiences.
 
 You could also send conversion information via API or pixels for measurement (attribution) or for retargeting.
 

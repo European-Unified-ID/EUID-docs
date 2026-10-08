@@ -206,7 +206,7 @@ The bidding step is shown in the following table.
 | 2-a | SDK for JavaScript | Gets the current user's advertising token by using the [getAdvertisingToken() function](../sdks/sdk-ref-javascript.md#getadvertisingtoken-string) as shown below. |
 
 :::note
-For an example of what an EUID token might look like in the bidstream, when it's sent from an SSP to a DSP, see [What does an EUID token look like in the bidstream?](../getting-started/gs-faqs.md#what-does-an-euid-token-look-like-in-the-bidstream).
+For an example of what an EUID token might look like in the bidstream, when it's sent by an SSP, see [What does an EUID token look like in the bidstream?](../getting-started/gs-faqs.md#what-does-an-euid-token-look-like-in-the-bidstream).
 :::
 
 ```html

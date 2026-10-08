@@ -41,7 +41,7 @@ At a high level, the steps for advertisers and data providers integrating with E
 
 3. [Manipulate or combine raw EUIDs](#3-manipulate-or-combine-raw-euids)
 
-4. [Send stored raw EUIDs to DSPs to create audiences or conversions](#4-send-stored-raw-euids-to-dsps-to-create-audiences-or-conversions)
+4. [Use stored raw EUIDs to create audiences or conversions](#4-use-stored-raw-euids-to-create-audiences-or-conversions)
 
 5. [Monitor for raw EUID refresh](#5-monitor-for-raw-euid-refresh)
 
@@ -60,7 +60,7 @@ The following table shows the implementation options that are available for adve
 | [1: Generate raw EUIDs from personal data](#1-generate-raw-euids-from-personal-data) | Use any of the following options to map personal data to raw EUIDs:<ul><li>One of these EUID SDKs:<ul><li>Python SDK: [Map personal data to raw EUIDs](../sdks/sdk-ref-python.md#map-personal-data-to-raw-euids)</li><li>Java SDK: [Usage for advertisers/data providers](../sdks/sdk-ref-java.md#usage-for-advertisersdata-providers)</li></ul></li><li>Snowflake: [Map personal data](integration-snowflake.md#map-personal-data)</li><li>HTTP endpoints: [POST&nbsp;/identity/map](../endpoints/post-identity-map.md)</li></ul> |
 | [2: Store raw EUIDs and refresh timestamps](#2-store-raw-euids-and-refresh-timestamps) | Custom (your choice). |
 | [3: Manipulate or combine raw EUIDs](#3-manipulate-or-combine-raw-euids) | Custom (your choice). |
-| [4: Send stored raw EUIDs to DSPs to create audiences or conversions](#4-send-stored-raw-euids-to-dsps-to-create-audiences-or-conversions) | Custom (your choice). |
+| [4: Use stored raw EUIDs to create audiences or conversions](#4-use-stored-raw-euids-to-create-audiences-or-conversions) | Custom (your choice). |
 | [5: Monitor for raw EUID refresh](#5-monitor-for-raw-euid-refresh) | Use the refresh timestamp (`r` field) returned from the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint to determine when to refresh Raw EUIDs. |
 | [6: Monitor for opt-out status](#6-monitor-for-opt-out-status) | API call to the [POST /optout/status](../endpoints/post-optout-status.md) endpoint. |
 
@@ -108,14 +108,14 @@ Use the raw EUIDs you received in Step 1. For example, you might do one or more 
 - Do some manipulation: for example, combine raw EUIDs you generated from personal data and raw EUIDs received from another participant such as an advertiser or data provider.
 - Add new raw EUIDs into an existing audience.
 
-### 4: Send stored raw EUIDs to DSPs to create audiences or conversions
+### 4: Use stored raw EUIDs to create audiences or conversions
 
 Use the raw EUIDs for some purpose such as:
 
-   - Sending stored raw EUIDs to DSPs to create audiences and conversions.
+   - Using stored raw EUIDs to create audiences and conversions.
    - Using the raw EUIDs for measurement.
 
-For example, you could send the (<Link href="../ref-info/glossary-uid#gl-raw-euid">raw EUID</Link> (`u` field) returned in Step 1 to a DSP while building your audiences. Each DSP has a unique integration process for building audiences; follow the integration guidance provided by the DSP for sending raw EUIDs to build an audience.
+For example, you could use the (<Link href="../ref-info/glossary-uid#gl-raw-euid">raw EUID</Link> (`u` field) returned in Step 1 while building your audiences.
 
 You could also send conversion information via API or pixels for measurement (attribution) or for retargeting.
 

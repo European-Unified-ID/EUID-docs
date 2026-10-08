@@ -14,7 +14,7 @@ You can use the SDK for Python on the server side to facilitate the process of g
 
 ## Functionality
 
-This SDK simplifies integration with EUID for any DSPs who are using Python for their server-side coding. The following table shows the functions it supports.
+This SDK simplifies integration with EUID for anyone using Python for their server-side coding. The following table shows the functions it supports.
 
 | Encrypt raw EUID to EUID token | Decrypt EUID token to raw EUID | Generate EUID token from personal data | Refresh EUID token | Map personal data to raw EUIDs | Monitor rotated salt buckets&ast; |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -70,7 +70,6 @@ The initialization step depends on the role, as shown in the following table.
 |:------------------------------------------|:-------------------------|:-----------------------------------------------------------------------------|
 | Publisher                                 | `Uid2PublisherClient`    | [Usage for publishers](#usage-for-publishers)                                |
 | Advertiser/data provider                  | `IdentityMapV3Client`      | [Usage for advertisers/data providers](#usage-for-advertisersdata-providers) |
-| DSP                                       | `BidstreamClient`        | [Usage for DSPs](#usage-for-dsps)                                            |
 | Sharer (not currently supported for EUID) | `SharingClient`          | Not applicable                                                               |
 
 You will need to provide the values necessary for the SDK to authenticate with the EUID service.
@@ -414,34 +413,3 @@ The following examples are valid timestamp strings:
    else:
        print("No bucket was returned")
    ```
-
-## Usage for DSPs
-
-The following instructions provide an example of how you can decode <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link> tokens using the SDK for Python as a DSP.
-
-1. Create a `BidstreamClient`:
-
-```py
-client = BidstreamClient(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY)
-```
-
-2. Refresh once at startup, and then periodically (recommended refresh interval is hourly):
-
-```py
-client.refresh()
-```
-
-3. Decrypt a token into a raw EUID. Pass the token, and then do one of the following:
-   * If the bid request originated from a publisher's website, pass the domain name. The domain name must be all lower case, without spaces and without subdomain. For example, for `Subdomain.DOMAIN.com`, pass `domain.com` instead. <!--    * If the bid request originated from a mobile app, pass the <Link href="../ref-info/glossary-uid#gl-app-name">app name</Link>. -->
-   * Otherwise, pass `null`.
-
-```py
-decrypted = client.decrypt_token_into_raw_uid(uid_token, domainOrAppName)
-# If decryption succeeded, use the raw EUID.
-if decrypted.success:
-    # Use decrypted.uid
-else:
-   # Check decrypted.status for the failure reason.
-```
-
-For a full example, see the `sample_bidstream_client.py` in [examples/sample_bidstream_client.py](https://github.com/IABTechLab/uid2-client-python/blob/main/examples/sample_bidstream_client.py).

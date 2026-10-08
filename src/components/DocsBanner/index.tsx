@@ -4,14 +4,12 @@ import styles from "./styles.module.scss";
 import IconDocuments from "@site/static/img/documents-icon.svg";
 import IconAdvertisers from "@site/static/img/icon-page-advertisers.svg";
 import IconDataProviders from "@site/static/img/icon-page-dataproviders.svg";
-import IconDsps from "@site/static/img/icon-page-dsps.svg";
 import IconPublishers from "@site/static/img/icon-page-publishers.svg";
 
 const icons: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
   documents: IconDocuments,
   advertisers: IconAdvertisers,
   dataProviders: IconDataProviders,
-  dsps: IconDsps,
   publishers: IconPublishers,
 };
 

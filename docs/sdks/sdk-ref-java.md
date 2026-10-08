@@ -15,7 +15,7 @@ You can use the SDK for Java on the server side to facilitate the process of gen
 
 ## Functionality
 
-This SDK simplifies integration with EUID for any publishers, DSPs, advertisers, and data providers who are using Java for their server-side coding. The following table shows the functions it supports.
+This SDK simplifies integration with EUID for any publishers, advertisers, and data providers who are using Java for their server-side coding. The following table shows the functions it supports.
 
 | Encrypt raw EUID to EUID token | Decrypt EUID token to raw EUID | Generate EUID token from personal data | Refresh EUID token | Map personal data to raw EUIDs | Monitor rotated salt buckets |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -57,7 +57,6 @@ The initialization step depends on the role, as shown in the following table.
 |:------------------------------------------| :--- |:-----------------------------------------------------------------------------|
 | Publisher                                 | `PublisherUid2Client` | [Usage for publishers](#usage-for-publishers)                                |
 | Advertiser/data provider                  | `IdentityMapV3Client` | [Usage for advertisers/data providers](#usage-for-advertisersdata-providers) |
-| DSP                                       | `BidstreamClient` | [Usage for DSPs](#usage-for-dsps)                                            |
 | Sharer (not currently supported for EUID) | `SharingClient` | Not applicable                                                               |
 
 You will need to provide the values necessary for the SDK to authenticate with the EUID service.
@@ -533,39 +532,3 @@ To use the earlier version, follow these instructions.
         String reason = unmappedIdentity.getReason();
    }
    ```
-
-## Usage for DSPs
-
-The following instructions provide an example of how a DSP can decode <Link href="../ref-info/glossary-uid#gl-bidstream">bidstream</Link> tokens using the SDK for Java.
-
-1. Create a `BidstreamClient`:
-
-   ```java
-   BidstreamClient client = new BidstreamClient(EUID_BASE_URL, EUID_API_KEY, EUID_SECRET_KEY);
-   ```
-
-2. Refresh once at startup, and then periodically (recommended refresh interval is hourly):
-
-   ```java
-   client.refresh();
-   ```
-
-3. Decrypt a token into a raw EUID. Pass the token, and then do one of the following:
-   * If the bid request originated from a publisher's website, pass the domain name. The domain name must be all lower case, without spaces and without subdomain. For example, for `Subdomain.DOMAIN.com`, pass `domain.com` instead.
-   * If the bid request originated from a mobile app, pass the <Link href="../ref-info/glossary-uid#gl-app-name">app name</Link>.
-   * Otherwise, pass `null`.
-
-   ```java
-   DecryptionResponse decrypted = client.decryptTokenIntoRawUid(uidToken, domainOrAppName); 
-   //If decryption succeeded, use the raw EUID.
-   if (decrypted.isSuccess()) 
-   {
-       //Use decrypted.getUid()
-   }
-   else 
-   {
-       // Check decrypted.getStatus() for the failure reason.
-   }
-   ```
-
-For a full example, see the `ExampleBidStreamClient` method in [test/IntegrationExamples.java](https://github.com/IABTechLab/uid2-client-java/blob/main/src/test/java/com/uid2/client/test/IntegrationExamples.java).

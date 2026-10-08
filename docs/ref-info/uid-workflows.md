@@ -10,12 +10,11 @@ import Link from '@docusaurus/Link';
 
 # EUID workflows
 
-The following table lists four key workflows in the EUID framework with links to their high-level overviews. It also provides links to the respective integration guides, which include diagrams, integration steps, FAQs, and other relevant information for each workflow.
+The following table lists three key workflows in the EUID framework with links to their high-level overviews. It also provides links to the respective integration guides, which include diagrams, integration steps, FAQs, and other relevant information for each workflow.
 
 | Workflow | Intended primary participants | Integration guides |
 | :--- | :--- | :--- |
-| [Workflow for DSPs](overviews/overview-dsps.md#workflow-for-dsps) (buy-side) | DSPs who transact on EUID tokens in the bidstream. | N/A |
-| [Workflow for advertisers](overviews/overview-advertisers.md#workflow-for-advertisers) and [Workflow for data providers](overviews/overview-data-providers.md#workflow-for-data-providers) | Organizations that collect user data and push it to DSPs. | See [Advertiser/data provider integrations](../guides/summary-guides#advertiserdata-provider-integrations) |
+| [Workflow for advertisers](overviews/overview-advertisers.md#workflow-for-advertisers) and [Workflow for data providers](overviews/overview-data-providers.md#workflow-for-data-providers) | Organizations that collect user data and push it to other EUID participants. | See [Advertiser/data provider integrations](../guides/summary-guides#advertiserdata-provider-integrations) |
 | [Workflow for publishers](overviews/overview-publishers.md#workflow-for-publishers) | Organizations that propagate EUID tokens to the bidstream via SSPs.<br/> NOTE: Publishers can choose to integrate using Prebid, leverage the SDK for JavaScript, or complete their own server-side integration without using an SDK. | See [Publisher integrations](../guides/summary-guides#publisher-integrations) |
 | [Opt-out workflow](getting-started/gs-opt-out.md#opt-out-workflow) | Consumers who engage with publishers or their SSO providers and other identity providers. | N/A |
 
