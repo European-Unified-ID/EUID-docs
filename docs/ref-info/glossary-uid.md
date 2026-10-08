@@ -36,6 +36,7 @@ import MdxJumpAnchor from '@site/src/components/MdxJumpAnchor';
 
 **D**
 <a href="#gl-data-provider">Data provider</a> | 
+<a href="#gl-demand-side-platform">Demand-side platform</a> | 
 
 **E**
 <a href="#gl-enclave">Enclave</a> | 
@@ -146,7 +147,7 @@ import MdxJumpAnchor from '@site/src/components/MdxJumpAnchor';
 <dd>A bearer token is a special string that identifies the client. For authentication, some EUID endpoints require the <a href="#gl-client-key">client key</a> to be specified as a bearer token in the Authorization header of the request: for example, <a href="../endpoints/post-token-generate">POST&nbsp;/token/generate</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-bidstream"><a href="#gl-bidstream">Bidstream</a></MdxJumpAnchor></dt>
-<dd>To place a request for an ad to be placed in an advertising spot (bid request), the publisher sends different pieces of information, so that advertisers can bid on it, generally through an advertising exchange. The flow of bidding data is the bidstream.</dd>
+<dd>To place a request for an ad to be placed in an advertising spot (bid request), the publisher sends different pieces of information, so that advertisers can bid on it, generally through an advertising exchange or DSP. The flow of bidding data is the bidstream.</dd>
 <dd>Bidstream data goes from publishers to other entities (depending on the publisher's configuration) and back to the publisher.</dd>
 </dl>
 
@@ -192,6 +193,9 @@ import MdxJumpAnchor from '@site/src/components/MdxJumpAnchor';
 <dt><MdxJumpAnchor id="gl-data-provider"><a href="#gl-data-provider">Data provider</a></MdxJumpAnchor></dt>
 <dd>In the context of EUID, a data provider is any entity that provides data and measurement services relating to advertising, such as a data partner, measurement partner, or offline measurement provider.</dd>
 <dd>For details, see <a href="../overviews/participants-overview">participant</a> (Data Providers).</dd>
+
+<dt><MdxJumpAnchor id="gl-demand-side-platform"><a href="#gl-demand-side-platform">Demand-side platform</a></MdxJumpAnchor></dt>
+<dd>A demand-side platform (DSP) provides services to companies that want to buy digital advertising, such as advertisers, brands, and media agencies.</dd>
 
 </dl>
 
@@ -345,7 +349,7 @@ import MdxJumpAnchor from '@site/src/components/MdxJumpAnchor';
 <dl>
 
 <dt><MdxJumpAnchor id="gl-participant"><a href="#gl-participant">Participant</a></MdxJumpAnchor></dt>
-<dd>An entity that fulfils a key role in EUID. Participants include the following: Core Administrator, Operator, data provider, advertiser, publisher, consumer.</dd>
+<dd>An entity that fulfils a key role in EUID. Participants include the following: Core Administrator, Operator, DSP, data provider, advertiser, publisher, consumer.</dd>
 <dd>For details, see <a href="../overviews/participants-overview">participants</a>.</dd>
 
 <dt><MdxJumpAnchor id="gl-personal-data"><a href="#gl-personal-data">Personal data</a></MdxJumpAnchor></dt>
