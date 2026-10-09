@@ -215,7 +215,7 @@ Yes. Not storing mappings might increase processing time drastically when you ha
 
 #### How should I handle user opt-outs?
 
-When a user opts out of EUID-based targeted advertising through the [Transparency and Control Portal](https://www.transparentadvertising.eu/), the opt-out signal is sent to publishers, who handle opt-outs at bid time. We recommend that advertisers and data providers regularly check whether a user has opted out, via the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint.
+When a user opts out of EUID-based targeted advertising through the [Transparency and Control Portal](https://www.transparentadvertising.eu/), the opt-out signal is sent to publishers who handle opt-outs at bid time. We recommend that advertisers and data providers regularly check whether a user has opted out, via the [POST&nbsp;/identity/map](../endpoints/post-identity-map.md) endpoint.
 
 Advertisers and data providers can also check the opt-out status of raw EUIDs using the [POST&nbsp;/optout/status](../endpoints/post-optout-status.md) endpoint.
 
