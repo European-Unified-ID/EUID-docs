@@ -23,7 +23,6 @@ The following table summarizes the functionality available with each SDK.
       <th colspan="2">Audience&nbsp;&nbsp;&gt;&nbsp;&gt;&nbsp;&gt;</th>
       <th colspan="2">Publisher</th>
       <th colspan="2">Advertiser&nbsp;/ data provider</th>
-      <th colspan="2">DSP</th>
     </tr>
     <tr>
       <th> SDK for...</th>
@@ -32,8 +31,6 @@ The following table summarizes the functionality available with each SDK.
       <th>Refresh EUID token</th>
       <th>Map personal data to raw EUIDs&ast;</th>
       <th>Monitor rotated salt buckets&ast;&ast;</th>
-      <th>Encrypt raw EUID to EUID token for sharing</th>
-      <th>Decrypt EUID token to raw EUID</th>
     </tr>
   </thead>
   <tbody>
@@ -44,8 +41,6 @@ The following table summarizes the functionality available with each SDK.
       <td>&#9989;</td>
       <td>&#8212;</td>
       <td>&#8212;</td>
-      <td>&#8212;</td>
-      <td>&#8212;</td>
     </tr>
     <tr>
       <td>Java</td>
@@ -54,36 +49,12 @@ The following table summarizes the functionality available with each SDK.
       <td>&#9989;</td>
       <td>&#9989;</td>
       <td>&#8212;</td>
-      <td>&#9989;</td>
-      <td>&#9989;</td>
     </tr>
     <tr>
       <td>Python</td>
       <td>Server</td>
       <td>&#9989;</td>
       <td>&#9989;</td>
-      <td>&#9989;</td>
-      <td>&#9989;</td>
-      <td>&#9989;</td>
-      <td>&#9989;</td>
-    </tr>
-    <tr>
-      <td>C# / .NET</td>
-      <td>Server</td>
-      <td>&#8212;</td>
-      <td>&#8212;</td>
-      <td>&#8212;</td>
-      <td>&#8212;</td>
-      <td>&#9989;</td>
-      <td>&#9989;</td>
-    </tr>
-    <tr>
-      <td>C++</td>
-      <td>Server</td>
-      <td>&#8212;</td>
-      <td>&#8212;</td>
-      <td>&#8212;</td>
-      <td>&#8212;</td>
       <td>&#9989;</td>
       <td>&#9989;</td>
     </tr>
@@ -94,16 +65,12 @@ The following table summarizes the functionality available with each SDK.
       <td>&#9989;</td>
       <td>&#8212;</td>
       <td>&#8212;</td>
-      <td>&#8212;</td>
-      <td>&#8212;</td>
     </tr>
     <tr>
       <td>iOS</td>
       <td>Client&nbsp;(Mobile)</td>
       <td>&#9989;</td>
       <td>&#9989;</td>
-      <td>&#8212;</td>
-      <td>&#8212;</td>
       <td>&#8212;</td>
       <td>&#8212;</td>
     </tr>
@@ -123,9 +90,7 @@ The following SDK documentation is available for EUID integration. Documentation
 | SDK/link&nbsp;to&nbsp;guide | Description | Audience
 | :--- | :--- | :--- |
 | [SDK for JavaScript](sdk-ref-javascript.md) | Client-side JavaScript SDK that facilitates the process of establishing client identity using EUID and retrieving EUID tokens for publishers. | Publishers |
-| [SDK for Java](sdk-ref-java.md) | An SDK for audiences using Java server-side:<ul><li>Helps publishers to generate or refresh EUID tokens from <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> ([POST&nbsp;/token/generate](../endpoints/post-token-generate)).</li><li>Helps DSPs to decrypt EUID tokens from bid requests ([Decrypt EUID tokens for RTB use](guides/dsp-guide.md#decrypt-euid-tokens-for-rtb-use)).</li></ul> | Publishers<br/>DSPs<br/>Advertisers<br/>Data&nbsp;Providers |
-| [SDK for Python](sdk-ref-python.md) | An SDK for audiences using Python server-side:<ul><li>Helps publishers to generate or refresh EUID tokens from personal data ([POST&nbsp;/token/generate](../endpoints/post-token-generate)).</li><li>Helps DSPs to decrypt EUID tokens from bid requests ([Decrypt EUID tokens for RTB use](../guides/dsp-guide.md#decrypt-euid-tokens-for-rtb-use)).</li></ul> | Publishers<br/>DSPs |
-| [SDK for C# / .NET](sdk-ref-csharp-dotnet.md) | An SDK for audiences using .NET server-side:<ul><li>Helps DSPs to decrypt EUID tokens from bid requests.</li></ul> | DSPs<br/>Data Providers |
-| [SDK for C++](sdk-ref-cplusplus.md) | An SDK for audiences using C++ server-side:<ul><li>Helps DSPs to decrypt EUID tokens from bid requests.</li></ul> | DSPs<br/>Data Providers |
+| [SDK for Java](sdk-ref-java.md) | An SDK for audiences using Java server-side:<ul><li>Helps publishers to generate or refresh EUID tokens from <Link href="../ref-info/glossary-uid#gl-personal-data">personal data</Link> ([POST&nbsp;/token/generate](../endpoints/post-token-generate)).</li></ul> | Publishers<br/>Advertisers<br/>Data&nbsp;Providers |
+| [SDK for Python](sdk-ref-python.md) | An SDK for audiences using Python server-side:<ul><li>Helps publishers to generate or refresh EUID tokens from personal data ([POST&nbsp;/token/generate](../endpoints/post-token-generate)).</li></ul> | Publishers<br/>Advertisers<br/>Data&nbsp;Providers |
 | [SDK for Android](sdk-ref-android.md) |An SDK that facilitates the process of generating or establishing client identity using EUID and retrieving EUID tokens for publishers that need to support Android apps. | Publishers |
 | [SDK for iOS](sdk-ref-ios.md) | An SDK that facilitates the process of generating or establishing client identity using EUID and retrieving EUID tokens for publishers that need to support iOS apps. | Publishers |
