@@ -24,7 +24,7 @@ Contacting The Trade Desk for access is temporary. When the system is moved to i
 | Your role | Contact email |
 | :--- | :--- |
 | Publisher, app developer | [dl-EUID-publishers@thetradedesk.com](mailto:dl-EUID-publishers@thetradedesk.com) |
-| Agency, brand, DSP, SSP, customer data platform (CDP), data provider | [dl-EUID-partners@thetradedesk.com](mailto:dl-EUID-partners@thetradedesk.com) |
+| Agency, brand, SSP, customer data platform (CDP), data provider | [dl-EUID-partners@thetradedesk.com](mailto:dl-EUID-partners@thetradedesk.com) |
 
 ## Account setup details
 

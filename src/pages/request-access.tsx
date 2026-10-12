@@ -37,7 +37,7 @@ const componentData = {
   subheading: translate({
     id: "requestAccess.subheading",
     message:
-      "Interested in adopting EUID as a part of your identity strategy? Contact The Trade Desk to learn more about integrating with the EUID framework today. Advertisers, publishers, data and measurement providers, DSPs, SSPs, and data storage and audience platforms are all welcome!",
+      "Interested in adopting EUID as a part of your identity strategy? Contact The Trade Desk to learn more about integrating with the EUID framework today. Advertisers, publishers, data and measurement providers, SSPs, and data storage and audience platforms are all welcome!",
     description: "The request access page subheading",
   }),
 };

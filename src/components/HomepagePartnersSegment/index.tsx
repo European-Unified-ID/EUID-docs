@@ -14,7 +14,6 @@ import chartIconAnimation from "./chartIconData.json";
 // @ts-ignore - Lottie animation data
 import documentsAnimation from "./documentsIconData.json";
 // @ts-ignore - Lottie animation data
-import flowchartAnimation from "./flowchartIconData.json";
 // @ts-ignore - Lottie animation data
 import uploadAnimation from "./uploadIconData.json";
 
@@ -53,20 +52,6 @@ const PartnerList: PartnerItem[] = [
       id: "homepage.partnersAdvertisersDescription",
       message:
         "Leverage first-party data for more durable identity strategies and better addressability.",
-    }),
-  },
-  {
-    heading: translate({
-      id: "homepage.partnersDspsHeading",
-      message: "Demand-side platforms",
-    }),
-    url: "/docs/overviews/overview-dsps",
-    Svg: require("@site/static/img/flowchart-icon.svg").default,
-    animationData: flowchartAnimation,
-    description: translate({
-      id: "homepage.partnersDspsDescription",
-      message:
-        "Maintain cross-device identity resolution and one-to-one targeting connections with deterministic IDs for more precision and omnichannel reach.",
     }),
   },
   {

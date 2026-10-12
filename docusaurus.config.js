@@ -117,12 +117,6 @@ const config = {
           },
           {
             type: "doc",
-            docId: "overviews/overview-dsps",
-            label: "DSPs",
-            position: "left",
-          },
-          {
-            type: "doc",
             docId: "overviews/overview-data-providers",
             label: "Data Providers",
             position: "left",

@@ -21,7 +21,7 @@ The following table shows the EUID endpoints, with the audience for each. For de
 | [POST&nbsp;/token/validate](post-token-validate.md) | Publishers | [EUID tokens](#euid-tokens) |
 | [POST&nbsp;/token/refresh](post-token-refresh.md) | Publishers | [EUID tokens](#euid-tokens) |
 | [POST&nbsp;/v3/identity/map](post-identity-map.md) | Advertisers, data providers | [Identity map](#identity-map) |
-| [POST&nbsp;/optout/status](post-optout-status.md) | Advertisers, data providers, DSPs<!-- , sharers --> | [Opt-out status](#opt-out-status)|
+| [POST&nbsp;/optout/status](post-optout-status.md) | Advertisers, data providers<!-- , sharers --> | [Opt-out status](#opt-out-status)|
 
 ## EUID tokens
 
@@ -62,7 +62,7 @@ The following endpoints are part of the earlier identity map integration (versio
 
 ## Opt-out status
 
-The following endpoint can be used by advertisers, third-party data providers, and DSPs. Publishers do not need to use this endpoint.
+The following endpoint can be used by advertisers and third-party data providers. Publishers do not need to use this endpoint.
 
 For details about the EUID opt-out workflow and how users can opt out, see [User opt-out](../getting-started/gs-opt-out.md).
 

@@ -11,13 +11,12 @@ import Link from '@docusaurus/Link';
 
 # Integration guides: Summary
 
-The following guides provide integration instructions based on the needs and requirements of your organization and its primary role as a publisher, DSP, or data provider/advertiser. As an EUID participant, you can also integrate via Enterprise Partners that enable engaging with an Open Operator service and hosting of a Private Operator service.
+The following guides provide integration instructions based on the needs and requirements of your organization and its primary role as a publisher or data provider/advertiser. As an EUID participant, you can also integrate via Enterprise Partners that enable engaging with an Open Operator service and hosting of a Private Operator service.
 
 Integrations fall into these categories:
 
 - [Publisher integrations](#publisher-integrations)
 - [Advertiser/data provider integrations](#advertiserdata-provider-integrations)
-- [DSP integrations](#dsp-integrations)
 - [Private Operator service integrations](#private-operator-service-integrations)
 
 ## Publisher integrations
@@ -102,14 +101,6 @@ The following documentation resources are available for advertisers and data pro
 | [Advertiser/data provider overview](integration-advertiser-dataprovider-overview.md) | This guide provides an overview of integration options for organizations that collect user data and push it to other EUID participants. |
 | [Snowflake integration guide](integration-snowflake.md) | Instructions for generating raw EUIDs from emails within Snowflake. |
 | [Advertiser/data provider integration to HTTP endpoints](integration-advertiser-dataprovider-endpoints.md) | This guide covers integration steps for advertisers and data providers to integrate with EUID by writing code to call EUID HTTP endpoints, rather than using another implementation option such as an SDK or Snowflake. |
-
-## DSP integrations
-
-The following documentation resources are available for DSPs integrating with EUID.
-
-| Integration guide | Content description |
-| :--- | :--- |
-| [DSP integration guide](dsp-guide.md) | This integration guide for DSPs covers handling EUIDs for bidding and honoring user opt-outs. |
 
 ## Private Operator service integrations
 

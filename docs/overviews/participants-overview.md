@@ -36,7 +36,6 @@ The following table summarizes the main types of external participant partners f
 | :--- | :--- |
 | [Publishers](overview-publishers.md) | Organizations that propagate EUID tokens to the bidstream via SSPs&#8212;for example, identity providers, publishers, and SSO providers. Publishers can choose to work with an SSO provider or an independent ID provider that is interoperable with EUID. Independent ID providers can handle the EUID integration on behalf of publishers. |
 | [Advertisers](overview-advertisers.md) | Organizations that buy impressions across a range of publisher sites and use DSPs to decide which ad impressions to purchase and how much to bid on them. |
-| [DSPs](overview-dsps.md) | DSPs integrate with the EUID system to receive EUIDs from advertisers (as first-party data) and third-party data providers (as third-party data) and leverage them to inform bidding on EUIDs in the bidstream. |
 | [Data providers](overview-data-providers.md) | Organizations that collect user data and push it to other EUID participants&#8212;for example, advertisers, identity graph providers, and third-party data providers. |
 
 ## EUID consumers
