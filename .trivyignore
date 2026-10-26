@@ -159,3 +159,11 @@ CVE-2026-104849 exp:2027-01-07
 # CVE-2026-112942 — launch-editor (HIGH). Not vulnerable.
 # See: UID2-8126
 CVE-2026-112942
+
+# CVE-2026-111181 — body-parser (HIGH). Not vulnerable.
+# See: UID2-8175
+CVE-2026-111181
+
+# CVE-2023-54404 — zod (HIGH). Not vulnerable.
+# See: UID2-8176
+CVE-2023-54404 exp:2027-04-26
